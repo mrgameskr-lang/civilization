@@ -1,0 +1,30 @@
+{
+  "model_version": "3.0",
+  "labor": "reallocate",
+  "investment": "capital",
+  "trade_order": [
+    "food",
+    "ore",
+    "tools"
+  ],
+  "seeds": [
+    0,
+    19
+  ],
+  "baseline_years": 500,
+  "intervention_years": [
+    51,
+    200
+  ],
+  "regime_confirmation_years": 5,
+  "python": "3.12.14",
+  "sha256": {
+    "checkpoints.csv": "972ab145a45cac50b67ce397574faa9ff878e12df346cb22bf0f73d22c228189",
+    "country_year.csv.gz": "d2c1dd4273581e617d911ec173c0cd7869dbcb637186ebdb02ea0b7fd6df0516",
+    "paired.csv": "350809a88491987062ba5ea6f01ed977cc944ee5f6f15275ad01977e640a20bd",
+    "prefix_hashes.csv": "c992b0c925864be60e2bd1b16ac8149b7ed5ade18842e84fce79f1b3311e2e53",
+    "transitions.csv": "5e9f41452eb393a55e216752510c740acb6ac93630510f7407d6a5d05c08f731",
+    "turning_points.csv": "6ee950baeaca50bf44decbd5c66fc2f38790ddc19916d96b0c69be68de4f8dfb",
+    "world_year.csv.gz": "bc28bf6fadc655ddbb02c89816f2153a8e087fdd251b874e75ea9a63260f896e"
+  }
+}
