@@ -6,6 +6,8 @@
 
 3.0은 도구의 목표 재고를 두고, 농업 설비·광공업 설비·경작지 개간에 광석·도구·노동을 투자한다. 유지비를 낸 기존 설비가 생산에 참여하며, 새 설비는 다음 해부터 가동된다. [투자 정책과 수식](docs/investment-rules.md) · [50년·200년 비교 보고서](docs/phase3.md)
 
+3.1에서는 설비의 체감수익, 규모별 효과·유지비, 연간 사업 수를 각각 선택할 수 있다. 개발 세계 20개와 별도 검증 세계 20개에서 투자 규칙을 비교했다. 개발 세계에서는 인구와 식량을 500년까지 추적했다. [장기 안정성과 투자 비교](docs/phase31.md) · [투자 수식](docs/investment31-rules.md)
+
 ## 실행
 
 Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용한다. 런타임과 테스트는 모두 표준 라이브러리를 사용한다.
@@ -26,6 +28,13 @@ python -m benchmarks.benchmark
 python -m civsim run --seed 7 --years 50 --labor reallocate --investment capital --out runs/capital-7
 python -m civsim verify runs/capital-7
 python -m experiments.phase3 --seeds 20 --horizons 50,200 --out runs/investment-study
+```
+
+3.1의 체감·규모 보정과 복수 사업을 함께 적용하는 예는 다음과 같다.
+
+```sh
+python -m civsim run --seed 7 --years 200 --labor reallocate --investment capital --policy31 combined-multi --out runs/combined-7
+python -m civsim verify runs/combined-7
 ```
 
 `run`과 CSV 내보내기는 새 경로에 쓴다. 다른 실험을 저장할 때는 새 디렉터리·파일 이름을 지정한다. `--width`, `--height`, `--nations`로 규모를 바꿀 수 있다. 이미 저장된 예제를 살펴볼 때는 `python -m civsim analyze examples/seed-42`를 실행한다.
