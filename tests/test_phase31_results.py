@@ -17,12 +17,26 @@ def rows(path):
 
 class Published31Tests(unittest.TestCase):
     def test_independent_500_year_baselines_and_two_policy_checkpoints(self):
-        long_paths = rows(ROOT / "long-primary.csv")
-        self.assertEqual(len(long_paths), 20 * 2 * 7)
+        file = ROOT / "long-primary.csv"
+        long_paths = rows(file)
+        horizons = (50, 100, 150, 200, 300, 400, 500)
+        expected = {(s, p, y) for s in range(20) for p in ("off", "combined-multi") for y in horizons}
+        self.assertEqual(len(long_paths), len(expected))
+        self.assertEqual({(int(r["seed"]), r["policy"], int(r["year"])) for r in long_paths}, expected)
+        self.assertEqual(hashlib.sha256(file.read_bytes()).hexdigest(),
+                         "ce0c2ac1e61d4379c2908b854e392fcb40fa26ec8d9e64ab89df921ee0489bb3")
         baseline = {(r["seed"], r["year"]): r for r in rows(ROOT / "stability/checkpoints.csv")
                     if r["arm"] == "baseline"}
         dev = {(r["seed"], r["arm"], r["horizon"]): r for r in rows(ROOT / "investment/dev/runs.csv")}
+        last = {}
         for r in long_paths:
+            key = r["seed"], r["policy"]
+            previous_year, population = last.get(key, (0, int(dev[r["seed"], "control", "50"]["initial_population"])))
+            self.assertEqual(int(r["interval_start"]), previous_year + 1)
+            self.assertEqual(int(r["population"]), population + int(r["population_delta"]))
+            self.assertLessEqual(int(r["interval_min_population"]), min(population, int(r["population"])))
+            self.assertGreaterEqual(int(r["interval_max_population"]), max(population, int(r["population"])))
+            last[key] = int(r["year"]), int(r["population"])
             self.assertEqual(int(r["population_delta"]), int(r["births"]) - int(r["deaths"]))
             if r["policy"] == "off":
                 other = baseline[r["seed"], r["year"]]

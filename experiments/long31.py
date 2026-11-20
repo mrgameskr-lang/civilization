@@ -8,6 +8,7 @@ from tempfile import TemporaryDirectory
 from civsim.engine import step
 from civsim.model import generate_world
 from civsim.rules import Rules
+from experiments.publication import publish_file
 
 
 def trajectory(job):
@@ -64,9 +65,8 @@ def main():
                     writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
                     writer.writeheader()
                 writer.writerows(rows)
-        # Exclusive creation preserves historical experiment artifacts in concurrent runs.
-        with args.out.open("xb") as target:
-            target.write(path.read_bytes())
+        # Both paths share a filesystem. A concurrent run cannot replace an existing result.
+        publish_file(path, args.out)
     print("40 paired-arm trajectories, 20,000 audited world-years, 280 checkpoints")
 
 

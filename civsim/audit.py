@@ -193,6 +193,46 @@ def _audit_investment(opening, closing, p):
         _check(inv["forecast_limits"] == forecast_limits, "investment valuation limits")
         _audit_selection(inv, recipes, workers, project_cap, target_parts["farm_wear"], opening, scaled)
     _audit_investment_output(opening, p, remaining, target)
+    if variant:
+        _audit_operating_benefits(opening, p, remaining, target)
+
+
+def _audit_operating_benefits(opening, p, remaining, target):
+    """Replay production with each class removed from the verified physical inputs."""
+    from dataclasses import fields
+    from .economy import produce_sectors
+    from .model import Nation
+    from .rules import Rules
+
+    inv = p["investment"]
+    effects = {"farm_multiplier": inv["farm_multiplier"], "industry_multiplier": inv["industry_multiplier"],
+               "land_capacity": 20 * opening["land"] + inv["added_land_capacity"]}
+    disabled = {"farm": ("farm_multiplier", 1000), "industry": ("industry_multiplier", 1000),
+                "land": ("land_capacity", 20 * opening["land"])}
+    actual = {g: p["produced"][g] - inv["sector_used"][g] for g in GOODS}
+    state = {f.name: opening[f.name] for f in fields(Nation)}
+    rules = Rules(labor=p["labor_policy"], investment="capital", policy31=inv["policy31"])
+
+    def without(kinds):
+        options = effects.copy()
+        for kind in kinds:
+            param, value = disabled[kind]
+            options[param] = value
+        trial = Nation(**{**state, "stock": remaining.copy()})
+        reference = produce_sectors(trial, p["climate"], rules, workers=p["workers"], tool_target=target, **options)
+        gain = {g: actual[g] - reference["produced"][g] + reference["used"][g] for g in GOODS}
+        return reference, gain, 8 * gain["food"] + 4 * gain["ore"] + 12 * gain["tools"]
+
+    reference, gain, gross = without(disabled)
+    _check(inv["reference_output"] == reference["produced"] and inv["reference_used"] == reference["used"]
+           and inv["net_output_gain"] == gain and inv["gross_gain_value"] == gross, "portfolio valuation")
+    active = [k for k in disabled if inv["operated"][k]]
+    for kind in disabled:
+        expected = 0
+        if kind in active:
+            expected = gross if len(active) == 1 else without((kind,))[2]
+        value = inv["class_accounts"][kind]["marginal_gain_value"]
+        _check(type(value) is int and value == expected, f"{kind} marginal operating value")
 
 
 def _audit_selection(inv, recipes, workers, project_cap, wear, opening, scaled):

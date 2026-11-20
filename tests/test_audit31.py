@@ -9,6 +9,19 @@ from tests.test_investment_audit import operating_world
 
 
 class Audit31Tests(unittest.TestCase):
+    def test_rejects_unearned_and_misassigned_gains(self):
+        for funded in (True, False):
+            world = operating_world()
+            if not funded:
+                world.nations[0].stock.update(tools=0, ore=0)
+            record = step(world, 1, Rules("reallocate", investment="capital", policy31="combined-multi"))
+            for kind in ("farm", "industry", "land"):
+                altered = deepcopy(record)
+                inv = altered["countries"][0]["production"]["investment"]
+                inv["class_accounts"][kind]["marginal_gain_value"] += 1
+                with self.assertRaisesRegex(BalanceError, "marginal operating value"):
+                    audit(altered)
+
     def test_rejects_fabricated_round_budgets_rankings_and_class_postings(self):
         record = step(operating_world(), 1, Rules("reallocate", investment="capital", policy31="scaled-multi"))
         for field in ("upkeep", "state", "valuation", "constraints", "cap", "effect", "round"):
