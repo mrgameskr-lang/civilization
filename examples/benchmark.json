@@ -1,0 +1,174 @@
+{
+  "python": "3.12.14",
+  "seed": 42,
+  "years": 50,
+  "repeats": 5,
+  "statistic": "median wall-clock milliseconds; file bytes are logical, uncompressed bytes",
+  "scenarios": [
+    {
+      "width": 48,
+      "height": 32,
+      "nations": 8,
+      "init_ms": 3.312,
+      "core_ms": 17.425,
+      "end_to_end_ms": 47.192,
+      "bytes_persisted": 829696
+    },
+    {
+      "width": 96,
+      "height": 64,
+      "nations": 8,
+      "init_ms": 13.149,
+      "core_ms": 17.813,
+      "end_to_end_ms": 71.525,
+      "bytes_persisted": 1180554
+    },
+    {
+      "width": 48,
+      "height": 32,
+      "nations": 32,
+      "init_ms": 3.677,
+      "core_ms": 61.959,
+      "end_to_end_ms": 123.834,
+      "bytes_persisted": 2915963
+    },
+    {
+      "width": 96,
+      "height": 64,
+      "nations": 32,
+      "init_ms": 13.389,
+      "core_ms": 64.669,
+      "end_to_end_ms": 152.911,
+      "bytes_persisted": 3345782
+    }
+  ],
+  "profile": {
+    "width": 48,
+    "height": 32,
+    "nations": 8,
+    "by_self_time": [
+      {
+        "function": "dataclasses.py:1332 _asdict_inner",
+        "calls": 26111,
+        "self_ms": 13.104,
+        "cumulative_ms": 24.251
+      },
+      {
+        "function": "encoder.py:205 iterencode",
+        "calls": 52,
+        "self_ms": 11.484,
+        "cumulative_ms": 11.484
+      },
+      {
+        "function": "audit.py:42 audit",
+        "calls": 50,
+        "self_ms": 4.825,
+        "cumulative_ms": 15.06
+      },
+      {
+        "function": "audit.py:15 _quantity",
+        "calls": 11301,
+        "self_ms": 4.582,
+        "cumulative_ms": 5.276
+      },
+      {
+        "function": "audit.py:20 _goods",
+        "calls": 2400,
+        "self_ms": 3.855,
+        "cumulative_ms": 7.701
+      },
+      {
+        "function": "dataclasses.py:1278 fields",
+        "calls": 2345,
+        "self_ms": 3.641,
+        "cumulative_ms": 6.095
+      },
+      {
+        "function": "~:0 <built-in method nt.rename>",
+        "calls": 1,
+        "self_ms": 3.129,
+        "cumulative_ms": 3.131
+      },
+      {
+        "function": "random.py:291 randrange",
+        "calls": 4695,
+        "self_ms": 2.636,
+        "cumulative_ms": 6.644
+      },
+      {
+        "function": "~:0 <built-in method builtins.getattr>",
+        "calls": 26065,
+        "self_ms": 2.58,
+        "cumulative_ms": 2.58
+      },
+      {
+        "function": "economy.py:6 produce",
+        "calls": 400,
+        "self_ms": 2.142,
+        "cumulative_ms": 2.97
+      }
+    ],
+    "by_cumulative_time": [
+      {
+        "function": "storage.py:23 write_run",
+        "calls": 1,
+        "self_ms": 0.642,
+        "cumulative_ms": 89.846
+      },
+      {
+        "function": "engine.py:10 step",
+        "calls": 50,
+        "self_ms": 1.639,
+        "cumulative_ms": 44.158
+      },
+      {
+        "function": "dataclasses.py:1308 asdict",
+        "calls": 801,
+        "self_ms": 0.365,
+        "cumulative_ms": 24.919
+      },
+      {
+        "function": "dataclasses.py:1332 _asdict_inner",
+        "calls": 26111,
+        "self_ms": 13.104,
+        "cumulative_ms": 24.251
+      },
+      {
+        "function": "audit.py:42 audit",
+        "calls": 50,
+        "self_ms": 4.825,
+        "cumulative_ms": 15.06
+      },
+      {
+        "function": "storage.py:18 _line",
+        "calls": 52,
+        "self_ms": 0.213,
+        "cumulative_ms": 12.324
+      },
+      {
+        "function": "model.py:71 generate_world",
+        "calls": 1,
+        "self_ms": 1.793,
+        "cumulative_ms": 12.273
+      },
+      {
+        "function": "__init__.py:183 dumps",
+        "calls": 52,
+        "self_ms": 0.111,
+        "cumulative_ms": 11.758
+      },
+      {
+        "function": "encoder.py:183 encode",
+        "calls": 52,
+        "self_ms": 0.103,
+        "cumulative_ms": 11.621
+      },
+      {
+        "function": "encoder.py:205 iterencode",
+        "calls": 52,
+        "self_ms": 11.484,
+        "cumulative_ms": 11.484
+      }
+    ]
+  }
+}

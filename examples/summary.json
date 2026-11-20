@@ -1,0 +1,13 @@
+{
+  "years": 50,
+  "initial_population": 75643,
+  "final_population": 140748,
+  "total_births": 146244,
+  "total_deaths": 81139,
+  "total_migrants": 2792,
+  "total_food_traded": 49171,
+  "shortage_country_years": 96,
+  "total_food_need": 5382215,
+  "total_food_eaten": 5229901,
+  "total_food_spoiled": 398019
+}
