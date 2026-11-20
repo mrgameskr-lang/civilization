@@ -1,0 +1,273 @@
+factor,a_labor,a_order,b_labor,b_order,metric,seeds,a_mean,b_mean,mean_delta,median_delta,increased,equal,decreased,min_delta,max_delta,min_seeds,max_seeds,q1_delta,q3_delta,outlier_seeds
+labor,idle,food-ore-tools,reallocate,food-ore-tools,final_population,20,120978.8,121058.0,79.2,0.0,9,10,1,-1.0,438.0,0,13,0.0,127.5,13
+labor,idle,food-ore-tools,reallocate,food-ore-tools,food_deficit,20,276515.55,276084.05,-431.5,0.0,2,9,9,-2525.0,86.0,13,0,-721.25,0.0,13
+labor,idle,food-ore-tools,reallocate,food-ore-tools,shortage_country_years,20,152.5,152.35,-0.15,0.0,0,17,3,-1.0,0.0,6 7 13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,food-ore-tools,reallocate,food-ore-tools,food_output,20,5159979.65,5161806.0,1826.35,3.0,10,10,0,0.0,8164.0,3 5 8 9 10 11 12 15 16 19,13,0.0,3798.0,
+labor,idle,food-ore-tools,reallocate,food-ore-tools,ore_output,20,244911.15,318344.8,73433.65,73659.5,20,0,0,37569.0,109378.0,9,4,64471.25,80701.25,4 9
+labor,idle,food-ore-tools,reallocate,food-ore-tools,tools_output,20,123301.0,160011.6,36710.6,36842.0,20,0,0,18785.0,54685.0,9,4,32212.75,40364.25,4 9
+labor,idle,food-ore-tools,reallocate,food-ore-tools,food_trade,20,51478.9,51499.6,20.7,0.0,6,10,4,-958.0,723.0,1,7,0.0,12.5,0 1 4 6 7 8
+labor,idle,food-ore-tools,reallocate,food-ore-tools,ore_trade,20,150.6,234.65,84.05,0.0,7,13,0,0.0,815.0,1 3 5 7 9 10 11 12 13 15 16 18 19,6,0.0,34.5,0 4 6
+labor,idle,food-ore-tools,reallocate,food-ore-tools,tools_trade,20,19.45,16.5,-2.95,0.0,0,17,3,-46.0,0.0,13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,food-ore-tools,reallocate,food-ore-tools,trade_value,20,294378.25,295127.9,749.65,0.0,8,10,2,-9766.0,7214.0,1,0,0.0,621.75,0 1 4 6 7
+labor,idle,food-ore-tools,reallocate,food-ore-tools,farm_overflow,20,276454.15,276468.85,14.7,0.0,8,10,2,-4442.0,2104.0,1,13,0.0,87.0,0 1 2 4 6 7 13
+labor,idle,food-ore-tools,reallocate,food-ore-tools,reassigned_mine,20,0.0,138180.35,138180.35,135672.5,20,0,0,75731.0,177977.0,9,4,130543.0,150870.5,9
+labor,idle,food-ore-tools,reallocate,food-ore-tools,reassigned_factory,20,0.0,138288.5,138288.5,135785.0,20,0,0,75801.0,178103.0,9,4,130650.5,150973.0,9
+labor,idle,food-ore-tools,reallocate,food-ore-tools,final_top1_share,20,0.8418179002882509,0.8425803415850337,0.0007624412968000001,0.0,7,10,3,-0.016489394177,0.017879891104,6,7,0.0,0.00037852147075,0 1 4 6 7
+labor,idle,food-ore-tools,reallocate,food-ore-tools,final_hhi,20,0.7770331327279528,0.778259760886471,0.00122662815855,0.0,7,10,3,-0.007127677336,0.024156884898,6,7,0.0,0.0005987174232500001,0 1 4 6 7
+labor,idle,food-ore-tools,reallocate,food-ore-tools,zero_country_years,20,34.25,34.65,0.4,0.0,1,18,1,-6.0,14.0,8,7,0.0,0.0,7 8
+labor,idle,food-ore-tools,reallocate,food-ore-tools,near_zero_country_years,20,153.35,152.9,-0.45,0.0,0,18,2,-8.0,0.0,6,0 1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,4 6
+labor,idle,food-tools-ore,reallocate,food-tools-ore,final_population,20,120978.8,121058.0,79.2,0.0,9,10,1,-1.0,438.0,0,13,0.0,127.5,13
+labor,idle,food-tools-ore,reallocate,food-tools-ore,food_deficit,20,276515.55,276084.05,-431.5,0.0,2,9,9,-2525.0,86.0,13,0,-721.25,0.0,13
+labor,idle,food-tools-ore,reallocate,food-tools-ore,shortage_country_years,20,152.5,152.35,-0.15,0.0,0,17,3,-1.0,0.0,6 7 13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,food-tools-ore,reallocate,food-tools-ore,food_output,20,5159979.65,5161806.0,1826.35,3.0,10,10,0,0.0,8164.0,3 5 8 9 10 11 12 15 16 19,13,0.0,3798.0,
+labor,idle,food-tools-ore,reallocate,food-tools-ore,ore_output,20,244911.15,318344.8,73433.65,73659.5,20,0,0,37569.0,109378.0,9,4,64471.25,80701.25,4 9
+labor,idle,food-tools-ore,reallocate,food-tools-ore,tools_output,20,123301.0,160011.6,36710.6,36842.0,20,0,0,18785.0,54685.0,9,4,32212.75,40364.25,4 9
+labor,idle,food-tools-ore,reallocate,food-tools-ore,food_trade,20,51478.9,51499.6,20.7,0.0,6,10,4,-958.0,723.0,1,7,0.0,12.5,0 1 4 6 7 8
+labor,idle,food-tools-ore,reallocate,food-tools-ore,ore_trade,20,150.6,234.65,84.05,0.0,7,13,0,0.0,815.0,1 3 5 7 9 10 11 12 13 15 16 18 19,6,0.0,34.5,0 4 6
+labor,idle,food-tools-ore,reallocate,food-tools-ore,tools_trade,20,19.45,16.5,-2.95,0.0,0,17,3,-46.0,0.0,13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,food-tools-ore,reallocate,food-tools-ore,trade_value,20,294378.25,295127.9,749.65,0.0,8,10,2,-9766.0,7214.0,1,0,0.0,621.75,0 1 4 6 7
+labor,idle,food-tools-ore,reallocate,food-tools-ore,farm_overflow,20,276454.15,276468.85,14.7,0.0,8,10,2,-4442.0,2104.0,1,13,0.0,87.0,0 1 2 4 6 7 13
+labor,idle,food-tools-ore,reallocate,food-tools-ore,reassigned_mine,20,0.0,138180.35,138180.35,135672.5,20,0,0,75731.0,177977.0,9,4,130543.0,150870.5,9
+labor,idle,food-tools-ore,reallocate,food-tools-ore,reassigned_factory,20,0.0,138288.5,138288.5,135785.0,20,0,0,75801.0,178103.0,9,4,130650.5,150973.0,9
+labor,idle,food-tools-ore,reallocate,food-tools-ore,final_top1_share,20,0.8418179002882509,0.8425803415850337,0.0007624412968000001,0.0,7,10,3,-0.016489394177,0.017879891104,6,7,0.0,0.00037852147075,0 1 4 6 7
+labor,idle,food-tools-ore,reallocate,food-tools-ore,final_hhi,20,0.7770331327279528,0.778259760886471,0.00122662815855,0.0,7,10,3,-0.007127677336,0.024156884898,6,7,0.0,0.0005987174232500001,0 1 4 6 7
+labor,idle,food-tools-ore,reallocate,food-tools-ore,zero_country_years,20,34.25,34.65,0.4,0.0,1,18,1,-6.0,14.0,8,7,0.0,0.0,7 8
+labor,idle,food-tools-ore,reallocate,food-tools-ore,near_zero_country_years,20,153.35,152.9,-0.45,0.0,0,18,2,-8.0,0.0,6,0 1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,4 6
+labor,idle,ore-food-tools,reallocate,ore-food-tools,final_population,20,120978.7,121057.75,79.05,0.0,9,10,1,-1.0,438.0,0,13,0.0,127.25,13
+labor,idle,ore-food-tools,reallocate,ore-food-tools,food_deficit,20,276519.45,276082.45,-437.0,0.0,2,9,9,-2525.0,49.0,13,0,-722.0,0.0,13
+labor,idle,ore-food-tools,reallocate,ore-food-tools,shortage_country_years,20,152.55,152.35,-0.2,0.0,0,17,3,-2.0,0.0,6,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,ore-food-tools,reallocate,ore-food-tools,food_output,20,5159982.1,5161810.9,1828.8,25.5,10,10,0,0.0,8164.0,3 5 8 9 10 11 12 15 16 19,13,0.0,3798.0,
+labor,idle,ore-food-tools,reallocate,ore-food-tools,ore_output,20,244911.65,318344.2,73432.55,73657.0,20,0,0,37569.0,109383.0,9,4,64471.25,80701.25,4 9
+labor,idle,ore-food-tools,reallocate,ore-food-tools,tools_output,20,123302.05,160012.05,36710.0,36840.5,20,0,0,18785.0,54688.0,9,4,32213.25,40364.25,4 9
+labor,idle,ore-food-tools,reallocate,ore-food-tools,food_trade,20,51476.85,51498.65,21.8,0.0,6,10,4,-958.0,723.0,1,7,0.0,18.5,0 1 4 6 7 8
+labor,idle,ore-food-tools,reallocate,ore-food-tools,ore_trade,20,151.15,235.25,84.1,0.0,7,13,0,0.0,815.0,1 3 5 7 9 10 11 12 13 15 16 18 19,6,0.0,34.5,0 4 6
+labor,idle,ore-food-tools,reallocate,ore-food-tools,tools_trade,20,19.45,16.5,-2.95,0.0,0,17,3,-46.0,0.0,13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,ore-food-tools,reallocate,ore-food-tools,trade_value,20,294376.15,295129.55,753.4,0.0,8,10,2,-9766.0,7170.0,1,0,0.0,704.25,0 1 4 6 7
+labor,idle,ore-food-tools,reallocate,ore-food-tools,farm_overflow,20,276453.8,276462.95,9.15,0.0,7,9,4,-4442.0,2104.0,1,13,0.0,83.25,0 1 2 4 6 7 13
+labor,idle,ore-food-tools,reallocate,ore-food-tools,reassigned_mine,20,0.0,138177.25,138177.25,135672.5,20,0,0,75731.0,177982.0,9,4,130543.0,150854.75,9
+labor,idle,ore-food-tools,reallocate,ore-food-tools,reassigned_factory,20,0.0,138285.7,138285.7,135785.0,20,0,0,75801.0,178106.0,9,4,130650.5,150959.5,9
+labor,idle,ore-food-tools,reallocate,ore-food-tools,final_top1_share,20,0.8418334669744549,0.8427081433061183,0.0008746763316500001,0.0,6,10,4,-0.01541965402,0.017879891104,6,7,0.0,0.00047805542024999996,0 1 4 6 7
+labor,idle,ore-food-tools,reallocate,ore-food-tools,final_hhi,20,0.7770818870048595,0.7784529711410215,0.0013710841361,0.0,6,10,4,-0.00621508582,0.024156884898,6,7,0.0,0.000608796098,0 1 4 6 7
+labor,idle,ore-food-tools,reallocate,ore-food-tools,zero_country_years,20,36.2,36.0,-0.2,0.0,5,13,2,-20.0,14.0,0,7,0.0,0.25,0 2 4 6 7 8 17
+labor,idle,ore-food-tools,reallocate,ore-food-tools,near_zero_country_years,20,153.45,153.05,-0.4,0.0,0,18,2,-7.0,0.0,6,0 1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,4 6
+labor,idle,ore-tools-food,reallocate,ore-tools-food,final_population,20,120978.7,121058.2,79.5,0.0,9,10,1,-1.0,436.0,0,13,0.0,127.25,13
+labor,idle,ore-tools-food,reallocate,ore-tools-food,food_deficit,20,276526.05,276085.1,-440.95,0.0,2,9,9,-2544.0,49.0,13,0,-722.0,0.0,13
+labor,idle,ore-tools-food,reallocate,ore-tools-food,shortage_country_years,20,152.45,152.35,-0.1,0.0,0,18,2,-1.0,0.0,7 13,0 1 2 3 4 5 6 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,7 13
+labor,idle,ore-tools-food,reallocate,ore-tools-food,food_output,20,5160008.55,5161839.75,1831.2,25.5,10,10,0,0.0,7910.0,3 5 8 9 10 11 12 15 16 19,13,0.0,3798.0,
+labor,idle,ore-tools-food,reallocate,ore-tools-food,ore_output,20,244913.0,318345.3,73432.3,73657.0,20,0,0,37569.0,109383.0,9,4,64471.25,80701.5,4 9
+labor,idle,ore-tools-food,reallocate,ore-tools-food,tools_output,20,123302.7,160012.55,36709.85,36840.5,20,0,0,18785.0,54688.0,9,4,32213.25,40364.5,4 9
+labor,idle,ore-tools-food,reallocate,ore-tools-food,food_trade,20,51465.05,51497.25,32.2,0.0,6,10,4,-958.0,772.0,1,7,0.0,21.75,0 1 4 6 7
+labor,idle,ore-tools-food,reallocate,ore-tools-food,ore_trade,20,151.15,235.25,84.1,0.0,7,13,0,0.0,815.0,1 3 5 7 9 10 11 12 13 15 16 18 19,6,0.0,34.5,0 4 6
+labor,idle,ore-tools-food,reallocate,ore-tools-food,tools_trade,20,22.3,17.25,-5.05,0.0,0,17,3,-67.0,0.0,13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,ore-tools-food,reallocate,ore-tools-food,trade_value,20,294335.05,295123.2,788.15,0.0,8,10,2,-9766.0,7170.0,1,0,0.0,704.25,0 1 4 6 7
+labor,idle,ore-tools-food,reallocate,ore-tools-food,farm_overflow,20,276451.15,276471.95,20.8,0.0,8,9,3,-4442.0,1977.0,1,13,0.0,152.25,1 2 4 7 13
+labor,idle,ore-tools-food,reallocate,ore-tools-food,reassigned_mine,20,0.0,138181.7,138181.7,135672.5,20,0,0,75731.0,177982.0,9,4,130543.0,150854.75,9
+labor,idle,ore-tools-food,reallocate,ore-tools-food,reassigned_factory,20,0.0,138290.25,138290.25,135785.0,20,0,0,75801.0,178106.0,9,4,130650.5,150959.5,9
+labor,idle,ore-tools-food,reallocate,ore-tools-food,final_top1_share,20,0.841656085959577,0.842689296767378,0.00103321080775,0.0,6,10,4,-0.013601361198,0.018992130261,6,7,0.0,0.00053258686075,0 1 4 6 7
+labor,idle,ore-tools-food,reallocate,ore-tools-food,final_hhi,20,0.7768949760018722,0.7784317823895648,0.00153680638765,0.0,6,10,4,-0.004685715384,0.025636173863,6,7,0.0,0.0007181783754999999,0 1 4 6 7
+labor,idle,ore-tools-food,reallocate,ore-tools-food,zero_country_years,20,35.75,34.35,-1.4,0.0,4,13,3,-23.0,14.0,6,7,0.0,0.0,0 2 4 6 7 8 17
+labor,idle,ore-tools-food,reallocate,ore-tools-food,near_zero_country_years,20,153.45,153.05,-0.4,0.0,0,18,2,-7.0,0.0,6,0 1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,4 6
+labor,idle,tools-food-ore,reallocate,tools-food-ore,final_population,20,120978.8,121058.3,79.5,0.0,9,10,1,-1.0,436.0,0,13,0.0,127.5,13
+labor,idle,tools-food-ore,reallocate,tools-food-ore,food_deficit,20,276522.25,276086.35,-435.9,0.0,2,9,9,-2544.0,86.0,13,0,-721.25,0.0,13
+labor,idle,tools-food-ore,reallocate,tools-food-ore,shortage_country_years,20,152.45,152.35,-0.1,0.0,0,18,2,-1.0,0.0,7 13,0 1 2 3 4 5 6 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,7 13
+labor,idle,tools-food-ore,reallocate,tools-food-ore,food_output,20,5160006.1,5161834.85,1828.75,3.0,10,10,0,0.0,7910.0,3 5 8 9 10 11 12 15 16 19,13,0.0,3798.0,
+labor,idle,tools-food-ore,reallocate,tools-food-ore,ore_output,20,244912.8,318345.6,73432.8,73659.5,20,0,0,37569.0,109378.0,9,4,64471.25,80701.5,4 9
+labor,idle,tools-food-ore,reallocate,tools-food-ore,tools_output,20,123301.8,160012.0,36710.2,36842.0,20,0,0,18785.0,54685.0,9,4,32212.75,40364.5,4 9
+labor,idle,tools-food-ore,reallocate,tools-food-ore,food_trade,20,51467.15,51498.2,31.05,0.0,6,10,4,-958.0,772.0,1,7,0.0,14.75,0 1 4 6 7 13
+labor,idle,tools-food-ore,reallocate,tools-food-ore,ore_trade,20,150.6,234.65,84.05,0.0,7,13,0,0.0,815.0,1 3 5 7 9 10 11 12 13 15 16 18 19,6,0.0,34.5,0 4 6
+labor,idle,tools-food-ore,reallocate,tools-food-ore,tools_trade,20,22.3,17.25,-5.05,0.0,0,17,3,-67.0,0.0,13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,tools-food-ore,reallocate,tools-food-ore,trade_value,20,294337.5,295121.55,784.05,0.0,8,10,2,-9766.0,7214.0,1,0,0.0,621.75,0 1 4 6 7
+labor,idle,tools-food-ore,reallocate,tools-food-ore,farm_overflow,20,276450.5,276476.1,25.6,0.0,9,10,1,-4442.0,1977.0,1,13,0.0,194.25,1 2 4 7 13
+labor,idle,tools-food-ore,reallocate,tools-food-ore,reassigned_mine,20,0.0,138183.7,138183.7,135672.5,20,0,0,75731.0,177977.0,9,4,130543.0,150870.5,9
+labor,idle,tools-food-ore,reallocate,tools-food-ore,reassigned_factory,20,0.0,138292.4,138292.4,135785.0,20,0,0,75801.0,178103.0,9,4,130650.5,150973.0,9
+labor,idle,tools-food-ore,reallocate,tools-food-ore,final_top1_share,20,0.8416414483280995,0.8425614950462936,0.0009200467182,0.0,7,10,3,-0.014689682449,0.018992130261,6,7,0.0,0.0004313003545,0 1 4 6 7
+labor,idle,tools-food-ore,reallocate,tools-food-ore,final_hhi,20,0.7768471628478361,0.7782386436222529,0.0013914807744499999,0.0,7,10,3,-0.005615699613,0.025636173863,6,7,0.0,0.00063531193125,0 1 4 6 7
+labor,idle,tools-food-ore,reallocate,tools-food-ore,zero_country_years,20,34.35,33.0,-1.35,0.0,1,17,2,-35.0,14.0,6,7,0.0,0.0,6 7 8
+labor,idle,tools-food-ore,reallocate,tools-food-ore,near_zero_country_years,20,153.35,152.9,-0.45,0.0,0,18,2,-8.0,0.0,6,0 1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,4 6
+labor,idle,tools-ore-food,reallocate,tools-ore-food,final_population,20,120978.7,121058.2,79.5,0.0,9,10,1,-1.0,436.0,0,13,0.0,127.25,13
+labor,idle,tools-ore-food,reallocate,tools-ore-food,food_deficit,20,276526.05,276085.1,-440.95,0.0,2,9,9,-2544.0,49.0,13,0,-722.0,0.0,13
+labor,idle,tools-ore-food,reallocate,tools-ore-food,shortage_country_years,20,152.45,152.35,-0.1,0.0,0,18,2,-1.0,0.0,7 13,0 1 2 3 4 5 6 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,7 13
+labor,idle,tools-ore-food,reallocate,tools-ore-food,food_output,20,5160008.55,5161839.75,1831.2,25.5,10,10,0,0.0,7910.0,3 5 8 9 10 11 12 15 16 19,13,0.0,3798.0,
+labor,idle,tools-ore-food,reallocate,tools-ore-food,ore_output,20,244913.0,318345.3,73432.3,73657.0,20,0,0,37569.0,109383.0,9,4,64471.25,80701.5,4 9
+labor,idle,tools-ore-food,reallocate,tools-ore-food,tools_output,20,123302.7,160012.55,36709.85,36840.5,20,0,0,18785.0,54688.0,9,4,32213.25,40364.5,4 9
+labor,idle,tools-ore-food,reallocate,tools-ore-food,food_trade,20,51465.05,51497.25,32.2,0.0,6,10,4,-958.0,772.0,1,7,0.0,21.75,0 1 4 6 7
+labor,idle,tools-ore-food,reallocate,tools-ore-food,ore_trade,20,151.15,235.25,84.1,0.0,7,13,0,0.0,815.0,1 3 5 7 9 10 11 12 13 15 16 18 19,6,0.0,34.5,0 4 6
+labor,idle,tools-ore-food,reallocate,tools-ore-food,tools_trade,20,22.3,17.25,-5.05,0.0,0,17,3,-67.0,0.0,13,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+labor,idle,tools-ore-food,reallocate,tools-ore-food,trade_value,20,294335.05,295123.2,788.15,0.0,8,10,2,-9766.0,7170.0,1,0,0.0,704.25,0 1 4 6 7
+labor,idle,tools-ore-food,reallocate,tools-ore-food,farm_overflow,20,276451.15,276471.95,20.8,0.0,8,9,3,-4442.0,1977.0,1,13,0.0,152.25,1 2 4 7 13
+labor,idle,tools-ore-food,reallocate,tools-ore-food,reassigned_mine,20,0.0,138181.7,138181.7,135672.5,20,0,0,75731.0,177982.0,9,4,130543.0,150854.75,9
+labor,idle,tools-ore-food,reallocate,tools-ore-food,reassigned_factory,20,0.0,138290.25,138290.25,135785.0,20,0,0,75801.0,178106.0,9,4,130650.5,150959.5,9
+labor,idle,tools-ore-food,reallocate,tools-ore-food,final_top1_share,20,0.841656085959577,0.842689296767378,0.00103321080775,0.0,6,10,4,-0.013601361198,0.018992130261,6,7,0.0,0.00053258686075,0 1 4 6 7
+labor,idle,tools-ore-food,reallocate,tools-ore-food,final_hhi,20,0.7768949760018722,0.7784317823895648,0.00153680638765,0.0,6,10,4,-0.004685715384,0.025636173863,6,7,0.0,0.0007181783754999999,0 1 4 6 7
+labor,idle,tools-ore-food,reallocate,tools-ore-food,zero_country_years,20,35.75,34.35,-1.4,0.0,4,13,3,-23.0,14.0,6,7,0.0,0.0,0 2 4 6 7 8 17
+labor,idle,tools-ore-food,reallocate,tools-ore-food,near_zero_country_years,20,153.45,153.05,-0.4,0.0,0,18,2,-7.0,0.0,6,0 1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,4 6
+order,idle,food-ore-tools,idle,food-tools-ore,final_population,20,120978.8,120978.8,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,food_deficit,20,276515.55,276515.55,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,shortage_country_years,20,152.5,152.5,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,food_output,20,5159979.65,5159979.65,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,ore_output,20,244911.15,244911.15,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,tools_output,20,123301.0,123301.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,food_trade,20,51478.9,51478.9,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,ore_trade,20,150.6,150.6,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,tools_trade,20,19.45,19.45,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,trade_value,20,294378.25,294378.25,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,farm_overflow,20,276454.15,276454.15,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,reassigned_mine,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,reassigned_factory,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,final_top1_share,20,0.8418179002882509,0.8418179002882509,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,final_hhi,20,0.7770331327279528,0.7770331327279528,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,zero_country_years,20,34.25,34.25,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,food-tools-ore,near_zero_country_years,20,153.35,153.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,ore-food-tools,final_population,20,120978.8,120978.7,-0.1,0.0,2,16,2,-3.0,1.0,14,0 17,0.0,0.0,0 4 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,food_deficit,20,276515.55,276519.45,3.9,0.0,4,15,1,-5.0,28.0,4,17,0.0,0.0,0 4 6 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,shortage_country_years,20,152.5,152.55,0.05,0.0,1,19,0,0.0,1.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,idle,food-ore-tools,idle,ore-food-tools,food_output,20,5159979.65,5159982.1,2.45,0.0,2,18,0,0.0,46.0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19,0,0.0,0.0,0 17
+order,idle,food-ore-tools,idle,ore-food-tools,ore_output,20,244911.15,244911.65,0.5,0.0,2,17,1,-5.0,10.0,14,6,0.0,0.0,0 6 14
+order,idle,food-ore-tools,idle,ore-food-tools,tools_output,20,123301.0,123302.05,1.05,0.0,4,16,0,0.0,7.0,1 2 3 4 5 7 8 9 10 11 12 13 15 16 18 19,17,0.0,0.0,0 6 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,food_trade,20,51478.9,51476.85,-2.05,0.0,2,15,3,-54.0,20.0,14,4,0.0,0.0,0 4 6 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,ore_trade,20,150.6,151.15,0.55,0.0,2,18,0,0.0,9.0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19,17,0.0,0.0,0 17
+order,idle,food-ore-tools,idle,ore-food-tools,tools_trade,20,19.45,19.45,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,ore-food-tools,trade_value,20,294378.25,294376.15,-2.1,0.0,3,15,2,-270.0,124.0,14,4,0.0,0.0,0 4 6 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,farm_overflow,20,276454.15,276453.8,-0.35,0.0,4,15,1,-33.0,11.0,6,17,0.0,0.0,0 4 6 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,reassigned_mine,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,ore-food-tools,reassigned_factory,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,ore-food-tools,final_top1_share,20,0.8418179002882509,0.8418334669744549,1.5566686199999993e-05,0.0,4,15,1,-0.000705943258,0.00056550265,14,0,0.0,0.0,0 4 6 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,final_hhi,20,0.7770331327279528,0.7770818870048595,4.875427695e-05,0.0,4,15,1,-0.000705280629,0.000846366751,14,0,0.0,0.0,0 4 6 14 17
+order,idle,food-ore-tools,idle,ore-food-tools,zero_country_years,20,34.25,36.2,1.95,0.0,3,17,0,0.0,29.0,1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 18 19,0,0.0,0.0,0 4 17
+order,idle,food-ore-tools,idle,ore-food-tools,near_zero_country_years,20,153.35,153.45,0.1,0.0,2,18,0,0.0,1.0,1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 4,0.0,0.0,0 4
+order,idle,food-ore-tools,idle,ore-tools-food,final_population,20,120978.8,120978.7,-0.1,0.0,4,13,3,-4.0,2.0,6,7 13,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,ore-tools-food,food_deficit,20,276515.55,276526.05,10.5,0.0,6,13,1,-5.0,82.0,4,6,0.0,19.5,6
+order,idle,food-ore-tools,idle,ore-tools-food,shortage_country_years,20,152.5,152.45,-0.05,0.0,0,19,1,-1.0,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,idle,food-ore-tools,idle,ore-tools-food,food_output,20,5159979.65,5160008.55,28.9,0.0,5,15,0,0.0,254.0,1 2 3 4 5 8 9 10 11 12 14 15 16 18 19,13,0.0,0.75,0 6 7 13 17
+order,idle,food-ore-tools,idle,ore-tools-food,ore_output,20,244911.15,244913.0,1.85,0.0,3,15,2,-5.0,31.0,14,6,0.0,0.0,0 6 7 13 14
+order,idle,food-ore-tools,idle,ore-tools-food,tools_output,20,123301.0,123302.7,1.7,0.0,5,14,1,-1.0,15.0,13,6,0.0,0.75,0 6 7 14 17
+order,idle,food-ore-tools,idle,ore-tools-food,food_trade,20,51478.9,51465.05,-13.85,0.0,2,13,5,-197.0,20.0,6,4,-0.5,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,ore-tools-food,ore_trade,20,150.6,151.15,0.55,0.0,2,18,0,0.0,9.0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19,17,0.0,0.0,0 17
+order,idle,food-ore-tools,idle,ore-tools-food,tools_trade,20,19.45,22.3,2.85,0.0,3,17,0,0.0,25.0,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,6,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,ore-tools-food,trade_value,20,294378.25,294335.05,-43.2,0.0,4,13,3,-737.0,124.0,6,4,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,ore-tools-food,farm_overflow,20,276454.15,276451.15,-3.0,0.0,6,13,1,-273.0,127.0,6,13,0.0,3.0,6 7 13 14 17
+order,idle,food-ore-tools,idle,ore-tools-food,reassigned_mine,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,ore-tools-food,reassigned_factory,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,ore-tools-food,final_top1_share,20,0.8418179002882509,0.841656085959577,-0.00016181432865,0.0,3,13,4,-0.002128862545,0.00056550265,6,0,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,ore-tools-food,final_hhi,20,0.7770331327279528,0.7768949760018722,-0.00013815672605,0.0,3,13,4,-0.001752846518,0.000846366751,6,0,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,ore-tools-food,zero_country_years,20,34.25,35.75,1.5,0.0,3,16,1,-9.0,29.0,6,0,0.0,0.0,0 4 6 17
+order,idle,food-ore-tools,idle,ore-tools-food,near_zero_country_years,20,153.35,153.45,0.1,0.0,2,18,0,0.0,1.0,1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 4,0.0,0.0,0 4
+order,idle,food-ore-tools,idle,tools-food-ore,final_population,20,120978.8,120978.8,0.0,0.0,2,17,1,-4.0,2.0,6,7 13,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,food_deficit,20,276515.55,276522.25,6.7,0.0,3,17,0,0.0,76.0,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,6,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,shortage_country_years,20,152.5,152.45,-0.05,0.0,0,19,1,-1.0,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,idle,food-ore-tools,idle,tools-food-ore,food_output,20,5159979.65,5160006.1,26.45,0.0,3,17,0,0.0,254.0,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,13,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,ore_output,20,244911.15,244912.8,1.65,0.0,2,17,1,-1.0,27.0,13,6,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,tools_output,20,123301.0,123301.8,0.8,0.0,2,17,1,-1.0,13.0,13,6,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,food_trade,20,51478.9,51467.15,-11.75,0.0,0,17,3,-173.0,0.0,6,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,ore_trade,20,150.6,150.6,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,tools-food-ore,tools_trade,20,19.45,22.3,2.85,0.0,3,17,0,0.0,25.0,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,6,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,trade_value,20,294378.25,294337.5,-40.75,0.0,1,17,2,-620.0,72.0,6,13,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,farm_overflow,20,276454.15,276450.5,-3.65,0.0,2,17,1,-260.0,127.0,6,13,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,reassigned_mine,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,tools-food-ore,reassigned_factory,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,tools-food-ore,final_top1_share,20,0.8418179002882509,0.8416414483280995,-0.00017645196009999999,0.0,0,17,3,-0.002176642502,0.0,6,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,final_hhi,20,0.7770331327279528,0.7768471628478361,-0.00018596988015,0.0,0,17,3,-0.001934323008,0.0,6,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-food-ore,zero_country_years,20,34.25,34.35,0.1,0.0,1,19,0,0.0,2.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,idle,food-ore-tools,idle,tools-food-ore,near_zero_country_years,20,153.35,153.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,tools-ore-food,final_population,20,120978.8,120978.7,-0.1,0.0,4,13,3,-4.0,2.0,6,7 13,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,tools-ore-food,food_deficit,20,276515.55,276526.05,10.5,0.0,6,13,1,-5.0,82.0,4,6,0.0,19.5,6
+order,idle,food-ore-tools,idle,tools-ore-food,shortage_country_years,20,152.5,152.45,-0.05,0.0,0,19,1,-1.0,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,idle,food-ore-tools,idle,tools-ore-food,food_output,20,5159979.65,5160008.55,28.9,0.0,5,15,0,0.0,254.0,1 2 3 4 5 8 9 10 11 12 14 15 16 18 19,13,0.0,0.75,0 6 7 13 17
+order,idle,food-ore-tools,idle,tools-ore-food,ore_output,20,244911.15,244913.0,1.85,0.0,3,15,2,-5.0,31.0,14,6,0.0,0.0,0 6 7 13 14
+order,idle,food-ore-tools,idle,tools-ore-food,tools_output,20,123301.0,123302.7,1.7,0.0,5,14,1,-1.0,15.0,13,6,0.0,0.75,0 6 7 14 17
+order,idle,food-ore-tools,idle,tools-ore-food,food_trade,20,51478.9,51465.05,-13.85,0.0,2,13,5,-197.0,20.0,6,4,-0.5,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,tools-ore-food,ore_trade,20,150.6,151.15,0.55,0.0,2,18,0,0.0,9.0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19,17,0.0,0.0,0 17
+order,idle,food-ore-tools,idle,tools-ore-food,tools_trade,20,19.45,22.3,2.85,0.0,3,17,0,0.0,25.0,0 1 2 3 4 5 8 9 10 11 12 14 15 16 17 18 19,6,0.0,0.0,6 7 13
+order,idle,food-ore-tools,idle,tools-ore-food,trade_value,20,294378.25,294335.05,-43.2,0.0,4,13,3,-737.0,124.0,6,4,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,tools-ore-food,farm_overflow,20,276454.15,276451.15,-3.0,0.0,6,13,1,-273.0,127.0,6,13,0.0,3.0,6 7 13 14 17
+order,idle,food-ore-tools,idle,tools-ore-food,reassigned_mine,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,tools-ore-food,reassigned_factory,20,0.0,0.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,idle,food-ore-tools,idle,tools-ore-food,final_top1_share,20,0.8418179002882509,0.841656085959577,-0.00016181432865,0.0,3,13,4,-0.002128862545,0.00056550265,6,0,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,tools-ore-food,final_hhi,20,0.7770331327279528,0.7768949760018722,-0.00013815672605,0.0,3,13,4,-0.001752846518,0.000846366751,6,0,0.0,0.0,0 4 6 7 13 14 17
+order,idle,food-ore-tools,idle,tools-ore-food,zero_country_years,20,34.25,35.75,1.5,0.0,3,16,1,-9.0,29.0,6,0,0.0,0.0,0 4 6 17
+order,idle,food-ore-tools,idle,tools-ore-food,near_zero_country_years,20,153.35,153.45,0.1,0.0,2,18,0,0.0,1.0,1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 4,0.0,0.0,0 4
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,final_population,20,121058.0,121058.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,food_deficit,20,276084.05,276084.05,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,shortage_country_years,20,152.35,152.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,food_output,20,5161806.0,5161806.0,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,ore_output,20,318344.8,318344.8,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,tools_output,20,160011.6,160011.6,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,food_trade,20,51499.6,51499.6,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,ore_trade,20,234.65,234.65,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,tools_trade,20,16.5,16.5,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,trade_value,20,295127.9,295127.9,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,farm_overflow,20,276468.85,276468.85,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,reassigned_mine,20,138180.35,138180.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,reassigned_factory,20,138288.5,138288.5,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,final_top1_share,20,0.8425803415850337,0.8425803415850337,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,final_hhi,20,0.778259760886471,0.778259760886471,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,zero_country_years,20,34.65,34.65,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,food-tools-ore,near_zero_country_years,20,152.9,152.9,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,final_population,20,121058.0,121057.75,-0.25,0.0,4,13,3,-4.0,1.0,6 14,0 2 8 17,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,food_deficit,20,276084.05,276082.45,-1.6,0.0,3,13,4,-38.0,20.0,6,14,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,shortage_country_years,20,152.35,152.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,food_output,20,5161806.0,5161810.9,4.9,0.0,2,18,0,0.0,50.0,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19,0,0.0,0.0,0 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,ore_output,20,318344.8,318344.2,-0.6,0.0,2,16,2,-15.0,5.0,6,4,0.0,0.0,2 4 6 14
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,tools_output,20,160011.6,160012.05,0.45,0.0,3,16,1,-7.0,9.0,6,17,0.0,0.0,4 6 14 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,food_trade,20,51499.6,51498.65,-0.95,0.0,4,13,3,-56.0,27.0,14,4,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,ore_trade,20,234.65,235.25,0.6,0.0,3,16,1,-5.0,15.0,0,17,0.0,0.0,0 2 4 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,tools_trade,20,16.5,16.5,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,trade_value,20,295127.9,295129.55,1.65,0.0,5,13,2,-280.0,168.0,14,4,0.0,15.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,farm_overflow,20,276468.85,276462.95,-5.9,0.0,3,13,4,-90.0,9.0,6,8,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,reassigned_mine,20,138180.35,138177.25,-3.1,0.0,3,14,3,-50.0,5.0,6,4 8,0.0,0.0,0 2 4 6 8 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,reassigned_factory,20,138288.5,138285.7,-2.8,0.0,3,13,4,-40.0,4.0,6,8,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,final_top1_share,20,0.8425803415850337,0.8427081433061183,0.0001278017211,0.0,5,13,2,-0.000732089304,0.001136101209,14,6,0.0,3.5941006e-05,0 2 4 6 8 14
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,final_hhi,20,0.778259760886471,0.7784529711410215,0.00019321025455,0.0,5,13,2,-0.000734672839,0.001597856835,14,0,0.0,7.200593725e-05,0 2 4 6 8 14
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,zero_country_years,20,34.65,36.0,1.35,0.0,6,14,0,0.0,9.0,1 3 5 7 9 10 11 12 13 14 15 16 18 19,0,0.0,1.0,0 4 17
+order,reallocate,food-ore-tools,reallocate,ore-food-tools,near_zero_country_years,20,152.9,153.05,0.15,0.0,3,17,0,0.0,1.0,1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0 4 6,0.0,0.0,0 4 6
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,final_population,20,121058.0,121058.2,0.2,0.0,5,13,2,-4.0,5.0,14,6,0.0,0.25,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,food_deficit,20,276084.05,276085.1,1.05,0.0,4,13,3,-14.0,20.0,8,14,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,shortage_country_years,20,152.35,152.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,food_output,20,5161806.0,5161839.75,33.75,0.0,3,17,0,0.0,577.0,1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 18 19,6,0.0,0.0,0 6 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,ore_output,20,318344.8,318345.3,0.5,0.0,3,16,1,-3.0,7.0,14,6,0.0,0.0,2 4 6 14
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,tools_output,20,160011.6,160012.55,0.95,0.0,4,16,0,0.0,9.0,0 1 2 3 5 7 8 9 10 11 12 13 15 16 18 19,17,0.0,0.0,4 6 14 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,food_trade,20,51499.6,51497.25,-2.35,0.0,4,13,3,-63.0,27.0,6,4,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,ore_trade,20,234.65,235.25,0.6,0.0,3,16,1,-5.0,15.0,0,17,0.0,0.0,0 2 4 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,tools_trade,20,16.5,17.25,0.75,0.0,1,19,0,0.0,15.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,trade_value,20,295127.9,295123.2,-4.7,0.0,5,13,2,-338.0,168.0,6,4,0.0,15.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,farm_overflow,20,276468.85,276471.95,3.1,0.0,4,13,3,-39.0,90.0,0,6,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,reassigned_mine,20,138180.35,138181.7,1.35,0.0,4,14,2,-21.0,39.0,0,6,0.0,0.0,0 2 4 6 8 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,reassigned_factory,20,138288.5,138290.25,1.75,0.0,4,13,3,-18.0,51.0,0,6,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,final_top1_share,20,0.8425803415850337,0.842689296767378,0.00010895518235,0.0,5,13,2,-0.000732089304,0.00107473638,14,0,0.0,3.5941006e-05,0 2 4 6 8 14
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,final_hhi,20,0.778259760886471,0.7784317823895648,0.0001720215031,0.0,5,13,2,-0.000734672839,0.001597856835,14,0,0.0,7.200593725e-05,0 2 4 6 8 14
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,zero_country_years,20,34.65,34.35,-0.3,0.0,5,14,1,-32.0,9.0,6,0,0.0,0.25,0 2 4 6 8 17
+order,reallocate,food-ore-tools,reallocate,ore-tools-food,near_zero_country_years,20,152.9,153.05,0.15,0.0,3,17,0,0.0,1.0,1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0 4 6,0.0,0.0,0 4 6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,final_population,20,121058.0,121058.3,0.3,0.0,1,19,0,0.0,6.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,food_deficit,20,276084.05,276086.35,2.3,0.0,1,19,0,0.0,46.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,shortage_country_years,20,152.35,152.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,food_output,20,5161806.0,5161834.85,28.85,0.0,1,19,0,0.0,577.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,ore_output,20,318344.8,318345.6,0.8,0.0,1,19,0,0.0,16.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,tools_output,20,160011.6,160012.0,0.4,0.0,1,19,0,0.0,8.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,food_trade,20,51499.6,51498.2,-1.4,0.0,0,19,1,-28.0,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,ore_trade,20,234.65,234.65,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,tools_trade,20,16.5,17.25,0.75,0.0,1,19,0,0.0,15.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,trade_value,20,295127.9,295121.55,-6.35,0.0,0,19,1,-127.0,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,farm_overflow,20,276468.85,276476.1,7.25,0.0,1,19,0,0.0,145.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,reassigned_mine,20,138180.35,138183.7,3.35,0.0,1,19,0,0.0,67.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,reassigned_factory,20,138288.5,138292.4,3.9,0.0,1,19,0,0.0,78.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,final_top1_share,20,0.8425803415850337,0.8425614950462936,-1.8846538749999998e-05,0.0,0,19,1,-0.000376930775,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,final_hhi,20,0.778259760886471,0.7782386436222529,-2.11172642e-05,0.0,0,19,1,-0.000422345284,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,zero_country_years,20,34.65,33.0,-1.65,0.0,0,19,1,-33.0,0.0,6,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-food-ore,near_zero_country_years,20,152.9,152.9,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,final_population,20,121058.0,121058.2,0.2,0.0,5,13,2,-4.0,5.0,14,6,0.0,0.25,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,food_deficit,20,276084.05,276085.1,1.05,0.0,4,13,3,-14.0,20.0,8,14,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,shortage_country_years,20,152.35,152.35,0.0,0.0,0,20,0,0.0,0.0,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19,0.0,0.0,
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,food_output,20,5161806.0,5161839.75,33.75,0.0,3,17,0,0.0,577.0,1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 18 19,6,0.0,0.0,0 6 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,ore_output,20,318344.8,318345.3,0.5,0.0,3,16,1,-3.0,7.0,14,6,0.0,0.0,2 4 6 14
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,tools_output,20,160011.6,160012.55,0.95,0.0,4,16,0,0.0,9.0,0 1 2 3 5 7 8 9 10 11 12 13 15 16 18 19,17,0.0,0.0,4 6 14 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,food_trade,20,51499.6,51497.25,-2.35,0.0,4,13,3,-63.0,27.0,6,4,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,ore_trade,20,234.65,235.25,0.6,0.0,3,16,1,-5.0,15.0,0,17,0.0,0.0,0 2 4 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,tools_trade,20,16.5,17.25,0.75,0.0,1,19,0,0.0,15.0,0 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19,6,0.0,0.0,6
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,trade_value,20,295127.9,295123.2,-4.7,0.0,5,13,2,-338.0,168.0,6,4,0.0,15.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,farm_overflow,20,276468.85,276471.95,3.1,0.0,4,13,3,-39.0,90.0,0,6,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,reassigned_mine,20,138180.35,138181.7,1.35,0.0,4,14,2,-21.0,39.0,0,6,0.0,0.0,0 2 4 6 8 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,reassigned_factory,20,138288.5,138290.25,1.75,0.0,4,13,3,-18.0,51.0,0,6,0.0,0.0,0 2 4 6 8 14 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,final_top1_share,20,0.8425803415850337,0.842689296767378,0.00010895518235,0.0,5,13,2,-0.000732089304,0.00107473638,14,0,0.0,3.5941006e-05,0 2 4 6 8 14
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,final_hhi,20,0.778259760886471,0.7784317823895648,0.0001720215031,0.0,5,13,2,-0.000734672839,0.001597856835,14,0,0.0,7.200593725e-05,0 2 4 6 8 14
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,zero_country_years,20,34.65,34.35,-0.3,0.0,5,14,1,-32.0,9.0,6,0,0.0,0.25,0 2 4 6 8 17
+order,reallocate,food-ore-tools,reallocate,tools-ore-food,near_zero_country_years,20,152.9,153.05,0.15,0.0,3,17,0,0.0,1.0,1 2 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19,0 4 6,0.0,0.0,0 4 6

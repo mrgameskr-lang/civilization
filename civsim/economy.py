@@ -1,9 +1,10 @@
 """Annual production, national markets, and consumption in integer units."""
 
 from .model import GOODS, Nation
+from .rules import LEGACY, Rules
 
 
-def produce(nation: Nation, climate: int) -> dict:
+def produce(nation: Nation, climate: int, rules: Rules = LEGACY) -> dict:
     """Allocate the year's workers and post real production and material costs."""
     opening = nation.stock.copy()
     workers = nation.population // 2
@@ -11,10 +12,17 @@ def produce(nation: Nation, climate: int) -> dict:
     farmers = workers * farm_share // 1000
     miners = (workers - farmers) // 2
     artisans = workers - farmers - miners
+    labor_before = {"farm": farmers, "mine": miners, "factory": artisans}
 
     # A tile supports at most 20 productive farmers. Only opening tools equip them.
     land_capacity = 20 * nation.land
     active_farmers = min(farmers, land_capacity)
+    idle_before = farmers - active_farmers
+    if rules.labor == "reallocate":
+        farmers = active_farmers
+        extra_miners = idle_before // 2
+        miners += extra_miners
+        artisans += idle_before - extra_miners
     tool_need = (active_farmers + 29) // 30
     tools_used = min(opening["tools"], tool_need)
     equipment = 1000 + 150 * tools_used // max(1, tool_need)
@@ -36,7 +44,7 @@ def produce(nation: Nation, climate: int) -> dict:
     nation.deposit -= ore
     erosion = 8 * active_farmers // max(1, land_capacity)
     nation.soil = min(1150, max(550, old_soil + 6 - erosion))
-    return {
+    record = {
         "opening_stock": opening, "population": nation.population,
         "productivity": nation.productivity, "technology": nation.technology,
         "fertility": nation.fertility, "climate": climate, "land": nation.land,
@@ -50,12 +58,25 @@ def produce(nation: Nation, climate: int) -> dict:
         "factory_capacity": factory_capacity, "produced": produced, "used": used,
         "closing_stock": nation.stock.copy(),
     }
+    if rules != LEGACY:
+        ore_available = opening["ore"] + ore
+        record.update({
+            "labor_policy": rules.labor, "land_capacity": land_capacity,
+            "labor_before": labor_before, "active_labor": {
+                "farm": active_farmers, "mine": miners, "factory": artisans,
+            },
+            "idle_before": idle_before, "idle_after": farmers - active_farmers,
+            "reassigned": {"mine": miners - labor_before["mine"],
+                           "factory": artisans - labor_before["factory"]},
+            "ore_available": ore_available, "factory_ore_limit": ore_available // 2,
+        })
+    return record
 
 
 BASE_PRICES = {"food": 8, "ore": 4, "tools": 12}
 
 
-def market(nations: list[Nation]) -> dict:
+def market(nations: list[Nation], rules: Rules = LEGACY) -> dict:
     """Clear each good against fixed opening quotes. Funds settle per fill."""
     ordered = sorted(nations, key=lambda nation: nation.id)
     targets = {}
@@ -76,7 +97,7 @@ def market(nations: list[Nation]) -> dict:
 
     trades = []
     active = [n for n in ordered if n.population > 0]
-    for good in GOODS:
+    for good in rules.order:
         sellers = sorted((n for n in active if n.stock[good] > targets[n.id][good]),
                          key=lambda n: (prices[n.id][good], n.id))
         buyers = sorted((n for n in active if n.stock[good] < targets[n.id][good]),
@@ -105,7 +126,10 @@ def market(nations: list[Nation]) -> dict:
                 need -= quantity
                 if quantity == available:
                     seller_index += 1
-    return {"opening": opening, "targets": targets, "prices": prices, "trades": trades}
+    record = {"opening": opening, "targets": targets, "prices": prices, "trades": trades}
+    if rules != LEGACY:
+        record["settlement_order"] = list(rules.order)
+    return record
 
 
 def consume(nation: Nation) -> dict:

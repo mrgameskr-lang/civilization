@@ -6,21 +6,23 @@ from dataclasses import asdict
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from . import MODEL_VERSION
 from .audit import audit
 from .engine import step
 from .model import generate_world
+from .rules import LEGACY, Rules
 
 
 SCHEMA = 1
 
 
-def _line(value):
+def canonical_line(value):
+    """Canonical UTF-8 ledger bytes shared by persisted runs and experiment digests."""
     return (json.dumps(value, ensure_ascii=False, allow_nan=False, sort_keys=True,
                        separators=(",", ":")) + "\n").encode("utf-8")
 
 
-def write_run(directory: Path, *, seed=42, width=48, height=32, nations=8, years=50):
+def write_run(directory: Path, *, seed=42, width=48, height=32, nations=8, years=50,
+              rules: Rules = LEGACY):
     """Write and validate a run in a sibling staging directory, then publish once."""
     directory = Path(directory)
     if directory.exists():
@@ -28,17 +30,19 @@ def write_run(directory: Path, *, seed=42, width=48, height=32, nations=8, years
     if type(years) is not int or years < 1:
         raise ValueError("years must be a positive integer")
     world = generate_world(seed, width, height, nations)
-    manifest = {"schema": SCHEMA, "model_version": MODEL_VERSION, "years": years,
+    manifest = {"schema": SCHEMA, "model_version": rules.version, "years": years,
                 "seed": seed, "width": width, "height": height, "nations": nations}
+    if rules != LEGACY:
+        manifest["rules"] = {"labor": rules.labor, "order": list(rules.order)}
     directory.parent.mkdir(exist_ok=True, parents=True)
     with TemporaryDirectory(dir=directory.parent, prefix=".civsim-") as scratch:
         staging = Path(scratch) / "run"
         staging.mkdir()
-        (staging / "manifest.json").write_bytes(_line(manifest))
-        (staging / "world.json").write_bytes(_line(asdict(world)))
+        (staging / "manifest.json").write_bytes(canonical_line(manifest))
+        (staging / "world.json").write_bytes(canonical_line(asdict(world)))
         with (staging / "years.jsonl").open("wb") as file:
             for year in range(1, years + 1):
-                file.write(_line(step(world, year)))
+                file.write(canonical_line(step(world, year, rules)))
         staging.rename(directory)
 
 
@@ -71,15 +75,36 @@ def read_years(directory):
     yield from _rows(path, _manifest(path)["years"])
 
 
+def _replay_rules(meta):
+    version = meta.get("model_version")
+    if version == LEGACY.version:
+        if "rules" in meta:
+            raise ValueError("legacy manifest cannot contain a rules override")
+        return LEGACY
+    if version != "2.0":
+        raise ValueError(f"incompatible model version for replay: {version!r}")
+    config = meta.get("rules")
+    if not isinstance(config, dict) or set(config) != {"labor", "order"}:
+        raise ValueError("rules must contain exactly labor and order")
+    order = config["order"]
+    if not isinstance(config["labor"], str) or not isinstance(order, list) or not all(
+        isinstance(good, str) for good in order
+    ):
+        raise ValueError("invalid rule types; expected a labor string and an array of goods")
+    rules = Rules(labor=config["labor"], order=tuple(order))
+    if rules.version != version:
+        raise ValueError("rules do not match model version")
+    return rules
+
+
 def verify_run(directory):
     """Audit stored ledgers, regenerate the map and every trace, return exact file SHA-256."""
     path = Path(directory)
     meta = _manifest(path)
-    if meta.get("model_version") != MODEL_VERSION:
-        raise ValueError("incompatible model version for replay")
+    rules = _replay_rules(meta)
     world = generate_world(meta["seed"], meta["width"], meta["height"], meta["nations"])
     initial = json.loads((path / "world.json").read_bytes())
-    if _line(initial) != _line(asdict(world)):
+    if canonical_line(initial) != canonical_line(asdict(world)):
         raise ValueError("year 0: initial world differs from seed")
     digest = hashlib.sha256()
     for row in _rows(path, meta["years"], digest):
@@ -88,7 +113,7 @@ def verify_run(directory):
             audit(row)
         except (KeyError, TypeError, ValueError) as error:
             raise ValueError(f"year {year}: {error}") from error
-        if _line(step(world, year)) != _line(row):
+        if canonical_line(step(world, year, rules)) != canonical_line(row):
             raise ValueError(f"year {year}: recorded inputs or results differ from replay")
     return digest.hexdigest()
 

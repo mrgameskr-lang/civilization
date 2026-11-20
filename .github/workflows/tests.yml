@@ -20,4 +20,5 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: python -m unittest discover -v
       - run: python -m civsim verify examples/seed-42
+      - run: python -m civsim verify examples/phase2-seeds-0-19/seed13-reallocated
 

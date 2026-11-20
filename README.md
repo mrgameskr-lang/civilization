@@ -2,6 +2,8 @@
 
 8개 가상 국가가 48×32 타일 세계에서 50년을 살아가는 Python 엔진이다. 시드는 영토·자원·인구·생산성·기술의 초기 차이와 기후 주기를 결정한다. 이후 식량 재고가 다음 해의 노동 배분을 바꾸고, 무역으로 확보한 식량이 출생·사망·이동에 영향을 준다. 식량 부족과 이주 사건은 실제 수량이 계산된 연도에 기록한다.
 
+기본 실행은 1.0 규칙을 사용한다. 2.0은 농지 수용 한도를 초과하는 인력의 재배치와 재화별 결제 순서를 선택할 수 있다. 20개 시드·240개 조합의 실측 결과, 반례, 검증 명령은 [2차 실험 보고서](docs/phase2.md)에 있다.
+
 ## 실행
 
 Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용한다. 런타임과 테스트는 모두 표준 라이브러리를 사용한다.
@@ -13,6 +15,8 @@ python -m civsim analyze runs/seed-42 --csv runs/country-years.csv
 python -m unittest discover -v
 python -m benchmarks.benchmark
 ```
+
+2.0 예제를 새 디렉터리에 만들려면 `python -m civsim run --seed 13 --years 50 --labor reallocate --trade-order food,ore,tools --out runs/phase2-seed13`를 실행한다. `verify`는 매니페스트에 저장된 버전·규칙을 읽어 해당 실행을 재생한다.
 
 `run`과 CSV 내보내기는 새 경로에 쓴다. 다른 실험을 저장할 때는 새 디렉터리·파일 이름을 지정한다. `--width`, `--height`, `--nations`로 규모를 바꿀 수 있다. 이미 저장된 예제를 살펴볼 때는 `python -m civsim analyze examples/seed-42`를 실행한다.
 

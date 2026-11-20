@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 
 from .analysis import summary, write_panel
+from .rules import LEGACY, Rules
 from .storage import verify_run, write_run
 
 
@@ -19,6 +20,10 @@ def main() -> int:
     run.add_argument("--height", type=int, default=32, help="세로 타일 수 (기본 32)")
     run.add_argument("--nations", type=int, default=8, help="국가 수 (기본 8)")
     run.add_argument("--years", type=int, default=50, help="실행 연수 (기본 50)")
+    run.add_argument("--labor", choices=("idle", "reallocate"), default=LEGACY.labor,
+                     help="농업 유휴 노동 처리 (기본 idle)")
+    run.add_argument("--trade-order", default=",".join(LEGACY.order), metavar="GOODS",
+                     help="세 재화의 결제 순서 (기본 food,ore,tools)")
 
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
@@ -30,8 +35,10 @@ def main() -> int:
 
     try:
         if args.command == "run":
+            order = tuple(good.strip() for good in args.trade_order.split(","))
+            rules = Rules(labor=args.labor, order=order)
             write_run(args.out, seed=args.seed, width=args.width, height=args.height,
-                      nations=args.nations, years=args.years)
+                      nations=args.nations, years=args.years, rules=rules)
             print(f"{args.years}년 실행 기록을 저장했습니다. {args.out.resolve()}")
         elif args.command == "analyze":
             totals = summary(args.directory)
