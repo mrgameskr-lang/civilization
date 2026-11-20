@@ -40,6 +40,14 @@ def main() -> int:
     regional.add_argument("--close-road", action="append", default=[], metavar="A-B",
                           help="해당 국내 도로 폐쇄. 지역 번호 두 개를 작은 순서로 지정")
 
+    government = commands.add_parser("government", help="5.0A 지역·정부·국가 재정 원장 저장")
+    government.add_argument("--out", required=True, type=Path)
+    government.add_argument("--seed", type=int, default=42)
+    government.add_argument("--years", type=int, default=50)
+    government.add_argument("--per-nation", type=int, default=4)
+    from .fiscal_policy import MODES
+    government.add_argument("--policy", choices=MODES, default="integrated")
+
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
@@ -62,6 +70,11 @@ def main() -> int:
             policy = RegionalPolicy(args.logistics, args.investment_scope, not args.no_soil_care, closed)
             write_regional_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation, policy=policy)
             print(f"4.0 지역 원장을 저장했습니다. {args.out.resolve()}")
+        elif args.command == "government":
+            from .fiscal_storage import write_government_run
+            write_government_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
+                                 policy=args.policy)
+            print(f"5.0A 정부 원장을 저장했습니다. {args.out.resolve()}")
         elif args.command == "analyze":
             totals = summary(args.directory)
             if args.csv is not None:
