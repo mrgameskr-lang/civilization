@@ -8,6 +8,8 @@
 
 3.1에서는 설비의 체감수익, 규모별 효과·유지비, 연간 사업 수를 각각 선택할 수 있다. 개발 세계 20개와 별도 검증 세계 20개에서 투자 규칙을 비교했다. 개발 세계에서는 인구와 식량을 500년까지 추적했다. [장기 안정성과 투자 비교](docs/phase31.md) · [투자 수식](docs/investment31-rules.md)
 
+4.0은 국가마다 기본 4개의 연결된 지역을 만들고 지역별 생산·재고·소비·인구를 계산한다. 국내 화물은 공유 용량이 있는 도로를 지나며, 운송한 수량과 타일 거리에 따라 식량을 지출한다. [지역 생성·국가 회계](docs/regions4.md) · [연간 계산과 실행 방법](docs/phase4.md) · [50년·200년 실험과 반례](docs/phase4-results.md)
+
 ## 실행
 
 Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용한다. 런타임과 테스트는 모두 표준 라이브러리를 사용한다.
@@ -19,6 +21,8 @@ python -m civsim analyze runs/seed-42 --csv runs/country-years.csv
 python -m unittest discover -v
 python -m benchmarks.benchmark
 ```
+
+지역 버전은 `python -m civsim regional --seed 7 --years 50 --out runs/regional-7`로 선택한다. `python -m civsim verify runs/regional-7`은 초기 지도·도로와 연간 원장을 재생한다. `python -m civsim analyze runs/regional-7 --csv runs/region-panel.csv`는 지역·연도별 CSV를 쓴다.
 
 2.0 예제를 새 디렉터리에 만들려면 `python -m civsim run --seed 13 --years 50 --labor reallocate --trade-order food,ore,tools --out runs/phase2-seed13`를 실행한다. `verify`는 매니페스트에 저장된 버전·규칙을 읽어 해당 실행을 재생한다.
 
