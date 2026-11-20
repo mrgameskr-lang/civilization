@@ -1,0 +1,39 @@
+{
+  "seed_start": 0,
+  "seeds": 20,
+  "horizons": [
+    50,
+    200
+  ],
+  "workers": 8,
+  "policies": {
+    "limited": {
+      "logistics": "limited",
+      "investment_scope": "regional",
+      "soil_care": true,
+      "closed_roads": []
+    },
+    "unlimited": {
+      "logistics": "unlimited",
+      "investment_scope": "regional",
+      "soil_care": true,
+      "closed_roads": []
+    },
+    "limited-national": {
+      "logistics": "limited",
+      "investment_scope": "national",
+      "soil_care": true,
+      "closed_roads": []
+    },
+    "limited-no-care": {
+      "logistics": "limited",
+      "investment_scope": "regional",
+      "soil_care": false,
+      "closed_roads": []
+    }
+  },
+  "python": "3.12.14",
+  "wall_seconds": 116.50047720002476,
+  "runs": 80,
+  "annual_transitions": 16000
+}
