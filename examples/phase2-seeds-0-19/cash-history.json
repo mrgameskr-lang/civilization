@@ -1,0 +1,160 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "years_per_seed": 50,
+  "baseline": "idle/food-ore-tools",
+  "checkpoints": [
+    {
+      "year": 0,
+      "mean_top1_share": 0.17732407894980773,
+      "mean_hhi": 0.1326645016035668,
+      "worlds_top1_at_least_half": 0
+    },
+    {
+      "year": 5,
+      "mean_top1_share": 0.222180736044369,
+      "mean_hhi": 0.15554304436694,
+      "worlds_top1_at_least_half": 0
+    },
+    {
+      "year": 10,
+      "mean_top1_share": 0.27408320290878385,
+      "mean_hhi": 0.17847309848568305,
+      "worlds_top1_at_least_half": 0
+    },
+    {
+      "year": 25,
+      "mean_top1_share": 0.43152761817495433,
+      "mean_hhi": 0.2888864743540605,
+      "worlds_top1_at_least_half": 5
+    },
+    {
+      "year": 50,
+      "mean_top1_share": 0.8418179002882509,
+      "mean_hhi": 0.7770331327279528,
+      "worlds_top1_at_least_half": 18
+    }
+  ],
+  "ever_zero_countries": 25,
+  "zero_country_years": 685,
+  "recovered_above_one_percent_after_zero": 0,
+  "food_net_buyers_at_first_zero": 25,
+  "food_only_net_cost_at_first_zero": 23,
+  "final_food_net_buyers": 128,
+  "median_first_zero_year": 21,
+  "same_leader_y5_y50": 7,
+  "recovery_criterion": "After first zero year-end cash, any later year-end cash > 1% of initial cash.",
+  "net_food_buyer_criterion": "Cumulative food import payments exceed food export receipts.",
+  "first_divergences": [
+    {
+      "seed": 6,
+      "year": 8,
+      "nation_id": 0,
+      "name": "\uc544\ub974\ub374",
+      "opening_cash": 1067,
+      "population": 12516,
+      "market_open_food": 10744,
+      "food-ore-tools": {
+        "trades": [
+          {
+            "good": "food",
+            "seller": 5,
+            "buyer": 0,
+            "quantity": 177,
+            "unit_price": 6,
+            "value": 1062
+          }
+        ],
+        "closing_cash": 5,
+        "food_unmet": 1595
+      },
+      "ore-tools-food": {
+        "trades": [
+          {
+            "good": "tools",
+            "seller": 1,
+            "buyer": 0,
+            "quantity": 25,
+            "unit_price": 8,
+            "value": 200
+          },
+          {
+            "good": "food",
+            "seller": 5,
+            "buyer": 0,
+            "quantity": 144,
+            "unit_price": 6,
+            "value": 864
+          }
+        ],
+        "closing_cash": 3,
+        "food_unmet": 1628
+      }
+    },
+    {
+      "seed": 17,
+      "year": 29,
+      "nation_id": 1,
+      "name": "\ubca8\ub85c\ub77c",
+      "opening_cash": 3,
+      "population": 8939,
+      "market_open_food": 7706,
+      "food-ore-tools": {
+        "trades": [
+          {
+            "good": "ore",
+            "seller": 1,
+            "buyer": 2,
+            "quantity": 8,
+            "unit_price": 9,
+            "value": 72
+          }
+        ],
+        "closing_cash": 75,
+        "food_unmet": 1233
+      },
+      "ore-tools-food": {
+        "trades": [
+          {
+            "good": "ore",
+            "seller": 1,
+            "buyer": 2,
+            "quantity": 8,
+            "unit_price": 9,
+            "value": 72
+          },
+          {
+            "good": "food",
+            "seller": 0,
+            "buyer": 1,
+            "quantity": 12,
+            "unit_price": 6,
+            "value": 72
+          }
+        ],
+        "closing_cash": 3,
+        "food_unmet": 1221
+      }
+    }
+  ]
+}
