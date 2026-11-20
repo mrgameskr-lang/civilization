@@ -1,0 +1,8265 @@
+[
+  {
+    "seed": 0,
+    "year": 11,
+    "owner": 1,
+    "kind": "worse",
+    "region": 4,
+    "actual_unmet": 82,
+    "other_unmet": 0,
+    "limited": {
+      "nodes": [
+        {
+          "id": 4,
+          "population": 6328,
+          "food_open": 5369,
+          "food_close": 6246,
+          "unmet": 82,
+          "cost_food": 0
+        },
+        {
+          "id": 5,
+          "population": 976,
+          "food_open": 1266,
+          "food_close": 976,
+          "unmet": 0,
+          "cost_food": 34
+        },
+        {
+          "id": 6,
+          "population": 1284,
+          "food_open": 2017,
+          "food_close": 1458,
+          "unmet": 0,
+          "cost_food": 65
+        },
+        {
+          "id": 7,
+          "population": 769,
+          "food_open": 912,
+          "food_close": 769,
+          "unmet": 0,
+          "cost_food": 16
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 7,
+          "target": 4,
+          "good": "food",
+          "quantity": 127,
+          "path": [
+            7,
+            4
+          ],
+          "tile_path": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            67,
+            115,
+            163,
+            211,
+            259,
+            307,
+            355
+          ],
+          "legs": [
+            {
+              "a": 7,
+              "b": 4,
+              "distance": 12,
+              "cost_food": 16
+            }
+          ],
+          "cost_food": 16,
+          "distance": 12
+        },
+        {
+          "source": 5,
+          "target": 4,
+          "good": "food",
+          "quantity": 256,
+          "path": [
+            5,
+            4
+          ],
+          "tile_path": [
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            68,
+            67,
+            115,
+            163,
+            211,
+            259,
+            307,
+            355
+          ],
+          "legs": [
+            {
+              "a": 5,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 34
+            }
+          ],
+          "cost_food": 34,
+          "distance": 13
+        },
+        {
+          "source": 6,
+          "target": 4,
+          "good": "food",
+          "quantity": 494,
+          "path": [
+            6,
+            4
+          ],
+          "tile_path": [
+            697,
+            649,
+            601,
+            553,
+            505,
+            457,
+            409,
+            361,
+            360,
+            359,
+            358,
+            357,
+            356,
+            355
+          ],
+          "legs": [
+            {
+              "a": 6,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 65
+            }
+          ],
+          "cost_food": 65,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 4,
+          "b": 5,
+          "distance": 13,
+          "capacity": 352,
+          "used": 256,
+          "remaining": 96,
+          "cost_food": 34
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "distance": 13,
+          "capacity": 494,
+          "used": 494,
+          "remaining": 0,
+          "cost_food": 65
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "distance": 12,
+          "capacity": 350,
+          "used": 127,
+          "remaining": 223,
+          "cost_food": 16
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "distance": 11,
+          "capacity": 106,
+          "used": 0,
+          "remaining": 106,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 4,
+          "population": 6328,
+          "food_open": 5369,
+          "food_close": 6328,
+          "unmet": 0,
+          "cost_food": 0
+        },
+        {
+          "id": 5,
+          "population": 976,
+          "food_open": 1266,
+          "food_close": 976,
+          "unmet": 0,
+          "cost_food": 34
+        },
+        {
+          "id": 6,
+          "population": 1284,
+          "food_open": 2017,
+          "food_close": 1364,
+          "unmet": 0,
+          "cost_food": 77
+        },
+        {
+          "id": 7,
+          "population": 769,
+          "food_open": 912,
+          "food_close": 769,
+          "unmet": 0,
+          "cost_food": 16
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 7,
+          "target": 4,
+          "good": "food",
+          "quantity": 127,
+          "path": [
+            7,
+            4
+          ],
+          "tile_path": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            67,
+            115,
+            163,
+            211,
+            259,
+            307,
+            355
+          ],
+          "legs": [
+            {
+              "a": 7,
+              "b": 4,
+              "distance": 12,
+              "cost_food": 16
+            }
+          ],
+          "cost_food": 16,
+          "distance": 12
+        },
+        {
+          "source": 5,
+          "target": 4,
+          "good": "food",
+          "quantity": 256,
+          "path": [
+            5,
+            4
+          ],
+          "tile_path": [
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            68,
+            67,
+            115,
+            163,
+            211,
+            259,
+            307,
+            355
+          ],
+          "legs": [
+            {
+              "a": 5,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 34
+            }
+          ],
+          "cost_food": 34,
+          "distance": 13
+        },
+        {
+          "source": 6,
+          "target": 4,
+          "good": "food",
+          "quantity": 576,
+          "path": [
+            6,
+            4
+          ],
+          "tile_path": [
+            697,
+            649,
+            601,
+            553,
+            505,
+            457,
+            409,
+            361,
+            360,
+            359,
+            358,
+            357,
+            356,
+            355
+          ],
+          "legs": [
+            {
+              "a": 6,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 75
+            }
+          ],
+          "cost_food": 75,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 4,
+          "b": 5,
+          "distance": 13,
+          "capacity": 352,
+          "used": 256,
+          "remaining": null,
+          "cost_food": 34
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "distance": 13,
+          "capacity": 494,
+          "used": 577,
+          "remaining": null,
+          "cost_food": 76
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "distance": 12,
+          "capacity": 350,
+          "used": 128,
+          "remaining": null,
+          "cost_food": 17
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "distance": 11,
+          "capacity": 106,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 1,
+    "year": 2,
+    "owner": 0,
+    "kind": "worse",
+    "region": 0,
+    "actual_unmet": 1371,
+    "other_unmet": 816,
+    "limited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 6713,
+          "food_open": 4222,
+          "food_close": 5342,
+          "unmet": 1371,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 1426,
+          "food_open": 2269,
+          "food_close": 1763,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 2,
+          "population": 810,
+          "food_open": 1336,
+          "food_close": 1000,
+          "unmet": 0,
+          "cost_food": 36
+        },
+        {
+          "id": 3,
+          "population": 1065,
+          "food_open": 1576,
+          "food_close": 1161,
+          "unmet": 0,
+          "cost_food": 42
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 373,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            58,
+            57,
+            56,
+            55,
+            54,
+            53,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 42
+            }
+          ],
+          "cost_food": 42,
+          "distance": 11
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 300,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            52,
+            100,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 12,
+              "cost_food": 36
+            }
+          ],
+          "cost_food": 36,
+          "distance": 12
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 447,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            720,
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 13,
+          "capacity": 447,
+          "used": 447,
+          "remaining": 0,
+          "cost_food": 59
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 12,
+          "capacity": 300,
+          "used": 300,
+          "remaining": 0,
+          "cost_food": 36
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 11,
+          "capacity": 373,
+          "used": 373,
+          "remaining": 0,
+          "cost_food": 42
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "distance": 11,
+          "capacity": 160,
+          "used": 0,
+          "remaining": 160,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 6713,
+          "food_open": 4222,
+          "food_close": 5897,
+          "unmet": 816,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 1426,
+          "food_open": 2269,
+          "food_close": 1426,
+          "unmet": 0,
+          "cost_food": 97
+        },
+        {
+          "id": 2,
+          "population": 810,
+          "food_open": 1336,
+          "food_close": 810,
+          "unmet": 0,
+          "cost_food": 57
+        },
+        {
+          "id": 3,
+          "population": 1065,
+          "food_open": 1576,
+          "food_close": 1065,
+          "unmet": 0,
+          "cost_food": 51
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 460,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            58,
+            57,
+            56,
+            55,
+            54,
+            53,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 51
+            }
+          ],
+          "cost_food": 51,
+          "distance": 11
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 469,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            52,
+            100,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 12,
+              "cost_food": 57
+            }
+          ],
+          "cost_food": 57,
+          "distance": 12
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 746,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            720,
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 97
+            }
+          ],
+          "cost_food": 97,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 13,
+          "capacity": 447,
+          "used": 746,
+          "remaining": null,
+          "cost_food": 97
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 12,
+          "capacity": 300,
+          "used": 469,
+          "remaining": null,
+          "cost_food": 57
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 11,
+          "capacity": 373,
+          "used": 460,
+          "remaining": null,
+          "cost_food": 51
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "distance": 11,
+          "capacity": 160,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 2,
+    "year": 2,
+    "owner": 0,
+    "kind": "worse",
+    "region": 0,
+    "actual_unmet": 78,
+    "other_unmet": 0,
+    "limited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 6051,
+          "food_open": 4871,
+          "food_close": 5973,
+          "unmet": 78,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 844,
+          "food_open": 1326,
+          "food_close": 981,
+          "unmet": 0,
+          "cost_food": 40
+        },
+        {
+          "id": 2,
+          "population": 1192,
+          "food_open": 1908,
+          "food_close": 1402,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 3,
+          "population": 843,
+          "food_open": 1273,
+          "food_close": 880,
+          "unmet": 0,
+          "cost_food": 43
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 350,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            58,
+            57,
+            56,
+            55,
+            54,
+            53,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341,
+            389
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 12,
+              "cost_food": 42
+            }
+          ],
+          "cost_food": 42,
+          "distance": 12
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 305,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            52,
+            100,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341,
+            389
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 40
+            }
+          ],
+          "cost_food": 40,
+          "distance": 13
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 447,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            768,
+            720,
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 13,
+          "capacity": 305,
+          "used": 305,
+          "remaining": 0,
+          "cost_food": 40
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 13,
+          "capacity": 447,
+          "used": 447,
+          "remaining": 0,
+          "cost_food": 59
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 12,
+          "capacity": 350,
+          "used": 350,
+          "remaining": 0,
+          "cost_food": 42
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "distance": 11,
+          "capacity": 160,
+          "used": 1,
+          "remaining": 159,
+          "cost_food": 1
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 6051,
+          "food_open": 4871,
+          "food_close": 6051,
+          "unmet": 0,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 844,
+          "food_open": 1326,
+          "food_close": 844,
+          "unmet": 0,
+          "cost_food": 56
+        },
+        {
+          "id": 2,
+          "population": 1192,
+          "food_open": 1908,
+          "food_close": 1488,
+          "unmet": 0,
+          "cost_food": 49
+        },
+        {
+          "id": 3,
+          "population": 843,
+          "food_open": 1273,
+          "food_close": 843,
+          "unmet": 0,
+          "cost_food": 47
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 383,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            58,
+            57,
+            56,
+            55,
+            54,
+            53,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341,
+            389
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 12,
+              "cost_food": 46
+            }
+          ],
+          "cost_food": 46,
+          "distance": 12
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 426,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            52,
+            100,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341,
+            389
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 56
+            }
+          ],
+          "cost_food": 56,
+          "distance": 13
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 371,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            768,
+            720,
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 13,
+          "capacity": 305,
+          "used": 426,
+          "remaining": null,
+          "cost_food": 56
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 13,
+          "capacity": 447,
+          "used": 371,
+          "remaining": null,
+          "cost_food": 49
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 12,
+          "capacity": 350,
+          "used": 383,
+          "remaining": null,
+          "cost_food": 46
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "distance": 11,
+          "capacity": 160,
+          "used": 1,
+          "remaining": null,
+          "cost_food": 1
+        }
+      ]
+    }
+  },
+  {
+    "seed": 3,
+    "year": 1,
+    "owner": 7,
+    "kind": "worse",
+    "region": 28,
+    "actual_unmet": 893,
+    "other_unmet": 570,
+    "limited": {
+      "nodes": [
+        {
+          "id": 28,
+          "population": 8998,
+          "food_open": 6962,
+          "food_close": 8105,
+          "unmet": 893,
+          "cost_food": 0
+        },
+        {
+          "id": 29,
+          "population": 1050,
+          "food_open": 1525,
+          "food_close": 1170,
+          "unmet": 0,
+          "cost_food": 44
+        },
+        {
+          "id": 30,
+          "population": 1273,
+          "food_open": 1793,
+          "food_close": 1273,
+          "unmet": 0,
+          "cost_food": 64
+        },
+        {
+          "id": 31,
+          "population": 1276,
+          "food_open": 1948,
+          "food_close": 1523,
+          "unmet": 0,
+          "cost_food": 49
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 31,
+          "target": 28,
+          "good": "food",
+          "quantity": 376,
+          "path": [
+            31,
+            28
+          ],
+          "tile_path": [
+            815,
+            814,
+            813,
+            812,
+            811,
+            810,
+            809,
+            857,
+            905,
+            953,
+            1001,
+            1049,
+            1097,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 31,
+              "b": 28,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        },
+        {
+          "source": 29,
+          "target": 28,
+          "good": "food",
+          "quantity": 311,
+          "path": [
+            29,
+            28
+          ],
+          "tile_path": [
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            808,
+            856,
+            857,
+            905,
+            953,
+            1001,
+            1049,
+            1097,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 29,
+              "b": 28,
+              "distance": 14,
+              "cost_food": 44
+            }
+          ],
+          "cost_food": 44,
+          "distance": 14
+        },
+        {
+          "source": 30,
+          "target": 28,
+          "good": "food",
+          "quantity": 456,
+          "path": [
+            30,
+            28
+          ],
+          "tile_path": [
+            1523,
+            1475,
+            1427,
+            1379,
+            1331,
+            1283,
+            1235,
+            1187,
+            1139,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 30,
+              "b": 28,
+              "distance": 14,
+              "cost_food": 64
+            }
+          ],
+          "cost_food": 64,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 28,
+          "b": 29,
+          "distance": 14,
+          "capacity": 311,
+          "used": 311,
+          "remaining": 0,
+          "cost_food": 44
+        },
+        {
+          "a": 28,
+          "b": 30,
+          "distance": 14,
+          "capacity": 488,
+          "used": 456,
+          "remaining": 32,
+          "cost_food": 64
+        },
+        {
+          "a": 28,
+          "b": 31,
+          "distance": 13,
+          "capacity": 376,
+          "used": 376,
+          "remaining": 0,
+          "cost_food": 49
+        },
+        {
+          "a": 29,
+          "b": 31,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": 141,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 28,
+          "population": 8998,
+          "food_open": 6962,
+          "food_close": 8428,
+          "unmet": 570,
+          "cost_food": 0
+        },
+        {
+          "id": 29,
+          "population": 1050,
+          "food_open": 1525,
+          "food_close": 1050,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 30,
+          "population": 1273,
+          "food_open": 1793,
+          "food_close": 1273,
+          "unmet": 0,
+          "cost_food": 64
+        },
+        {
+          "id": 31,
+          "population": 1276,
+          "food_open": 1948,
+          "food_close": 1276,
+          "unmet": 0,
+          "cost_food": 78
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 31,
+          "target": 28,
+          "good": "food",
+          "quantity": 594,
+          "path": [
+            31,
+            28
+          ],
+          "tile_path": [
+            815,
+            814,
+            813,
+            812,
+            811,
+            810,
+            809,
+            857,
+            905,
+            953,
+            1001,
+            1049,
+            1097,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 31,
+              "b": 28,
+              "distance": 13,
+              "cost_food": 78
+            }
+          ],
+          "cost_food": 78,
+          "distance": 13
+        },
+        {
+          "source": 29,
+          "target": 28,
+          "good": "food",
+          "quantity": 416,
+          "path": [
+            29,
+            28
+          ],
+          "tile_path": [
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            808,
+            856,
+            857,
+            905,
+            953,
+            1001,
+            1049,
+            1097,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 29,
+              "b": 28,
+              "distance": 14,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 14
+        },
+        {
+          "source": 30,
+          "target": 28,
+          "good": "food",
+          "quantity": 456,
+          "path": [
+            30,
+            28
+          ],
+          "tile_path": [
+            1523,
+            1475,
+            1427,
+            1379,
+            1331,
+            1283,
+            1235,
+            1187,
+            1139,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 30,
+              "b": 28,
+              "distance": 14,
+              "cost_food": 64
+            }
+          ],
+          "cost_food": 64,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 28,
+          "b": 29,
+          "distance": 14,
+          "capacity": 311,
+          "used": 416,
+          "remaining": null,
+          "cost_food": 59
+        },
+        {
+          "a": 28,
+          "b": 30,
+          "distance": 14,
+          "capacity": 488,
+          "used": 456,
+          "remaining": null,
+          "cost_food": 64
+        },
+        {
+          "a": 28,
+          "b": 31,
+          "distance": 13,
+          "capacity": 376,
+          "used": 594,
+          "remaining": null,
+          "cost_food": 78
+        },
+        {
+          "a": 29,
+          "b": 31,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 4,
+    "year": 2,
+    "owner": 0,
+    "kind": "worse",
+    "region": 0,
+    "actual_unmet": 898,
+    "other_unmet": 851,
+    "limited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 4903,
+          "food_open": 3093,
+          "food_close": 4005,
+          "unmet": 898,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 711,
+          "food_open": 1032,
+          "food_close": 711,
+          "unmet": 0,
+          "cost_food": 32
+        },
+        {
+          "id": 2,
+          "population": 1053,
+          "food_open": 1579,
+          "food_close": 1106,
+          "unmet": 0,
+          "cost_food": 47
+        },
+        {
+          "id": 3,
+          "population": 740,
+          "food_open": 957,
+          "food_close": 740,
+          "unmet": 0,
+          "cost_food": 20
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 197,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            56,
+            55,
+            54,
+            53,
+            52,
+            100,
+            148,
+            196,
+            244,
+            292,
+            340
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 10,
+              "cost_food": 20
+            }
+          ],
+          "cost_food": 20,
+          "distance": 10
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 289,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            51,
+            99,
+            100,
+            148,
+            196,
+            244,
+            292,
+            340
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 32
+            }
+          ],
+          "cost_food": 32,
+          "distance": 11
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 426,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            336,
+            337,
+            338,
+            339,
+            340
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 47
+            }
+          ],
+          "cost_food": 47,
+          "distance": 11
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 11,
+          "capacity": 293,
+          "used": 289,
+          "remaining": 4,
+          "cost_food": 32
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 11,
+          "capacity": 426,
+          "used": 426,
+          "remaining": 0,
+          "cost_food": 47
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 10,
+          "capacity": 342,
+          "used": 197,
+          "remaining": 145,
+          "cost_food": 20
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "distance": 9,
+          "capacity": 184,
+          "used": 0,
+          "remaining": 184,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 4903,
+          "food_open": 3093,
+          "food_close": 4052,
+          "unmet": 851,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 711,
+          "food_open": 1032,
+          "food_close": 711,
+          "unmet": 0,
+          "cost_food": 32
+        },
+        {
+          "id": 2,
+          "population": 1053,
+          "food_open": 1579,
+          "food_close": 1053,
+          "unmet": 0,
+          "cost_food": 53
+        },
+        {
+          "id": 3,
+          "population": 740,
+          "food_open": 957,
+          "food_close": 740,
+          "unmet": 0,
+          "cost_food": 20
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 197,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            56,
+            55,
+            54,
+            53,
+            52,
+            100,
+            148,
+            196,
+            244,
+            292,
+            340
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 10,
+              "cost_food": 20
+            }
+          ],
+          "cost_food": 20,
+          "distance": 10
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 289,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            51,
+            99,
+            100,
+            148,
+            196,
+            244,
+            292,
+            340
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 32
+            }
+          ],
+          "cost_food": 32,
+          "distance": 11
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 473,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            336,
+            337,
+            338,
+            339,
+            340
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 53
+            }
+          ],
+          "cost_food": 53,
+          "distance": 11
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 11,
+          "capacity": 293,
+          "used": 289,
+          "remaining": null,
+          "cost_food": 32
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 11,
+          "capacity": 426,
+          "used": 473,
+          "remaining": null,
+          "cost_food": 53
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 10,
+          "capacity": 342,
+          "used": 197,
+          "remaining": null,
+          "cost_food": 20
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "distance": 9,
+          "capacity": 184,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 5,
+    "year": 1,
+    "owner": 3,
+    "kind": "worse",
+    "region": 12,
+    "actual_unmet": 260,
+    "other_unmet": 222,
+    "limited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 7883,
+          "food_open": 6738,
+          "food_close": 7623,
+          "unmet": 260,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 919,
+          "food_open": 1277,
+          "food_close": 922,
+          "unmet": 0,
+          "cost_food": 44
+        },
+        {
+          "id": 14,
+          "population": 1126,
+          "food_open": 1352,
+          "food_close": 1126,
+          "unmet": 0,
+          "cost_food": 28
+        },
+        {
+          "id": 15,
+          "population": 1122,
+          "food_open": 1587,
+          "food_close": 1162,
+          "unmet": 0,
+          "cost_food": 49
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 376,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            791,
+            790,
+            789,
+            788,
+            787,
+            786,
+            785,
+            833,
+            881,
+            929,
+            977,
+            1025,
+            1073,
+            1121
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 311,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            731,
+            732,
+            733,
+            734,
+            735,
+            736,
+            784,
+            832,
+            833,
+            881,
+            929,
+            977,
+            1025,
+            1073,
+            1121
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 44
+            }
+          ],
+          "cost_food": 44,
+          "distance": 14
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 198,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1116,
+            1117,
+            1118,
+            1119,
+            1120,
+            1121
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 28
+            }
+          ],
+          "cost_food": 28,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 311,
+          "used": 311,
+          "remaining": 0,
+          "cost_food": 44
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 14,
+          "capacity": 488,
+          "used": 198,
+          "remaining": 290,
+          "cost_food": 28
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 13,
+          "capacity": 376,
+          "used": 376,
+          "remaining": 0,
+          "cost_food": 49
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": 141,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 7883,
+          "food_open": 6738,
+          "food_close": 7661,
+          "unmet": 222,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 919,
+          "food_open": 1277,
+          "food_close": 919,
+          "unmet": 0,
+          "cost_food": 44
+        },
+        {
+          "id": 14,
+          "population": 1126,
+          "food_open": 1352,
+          "food_close": 1126,
+          "unmet": 0,
+          "cost_food": 28
+        },
+        {
+          "id": 15,
+          "population": 1122,
+          "food_open": 1587,
+          "food_close": 1122,
+          "unmet": 0,
+          "cost_food": 54
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 411,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            791,
+            790,
+            789,
+            788,
+            787,
+            786,
+            785,
+            833,
+            881,
+            929,
+            977,
+            1025,
+            1073,
+            1121
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 54
+            }
+          ],
+          "cost_food": 54,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 314,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            731,
+            732,
+            733,
+            734,
+            735,
+            736,
+            784,
+            832,
+            833,
+            881,
+            929,
+            977,
+            1025,
+            1073,
+            1121
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 44
+            }
+          ],
+          "cost_food": 44,
+          "distance": 14
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 198,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1116,
+            1117,
+            1118,
+            1119,
+            1120,
+            1121
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 28
+            }
+          ],
+          "cost_food": 28,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 311,
+          "used": 314,
+          "remaining": null,
+          "cost_food": 44
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 14,
+          "capacity": 488,
+          "used": 198,
+          "remaining": null,
+          "cost_food": 28
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 13,
+          "capacity": 376,
+          "used": 411,
+          "remaining": null,
+          "cost_food": 54
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 6,
+    "year": 1,
+    "owner": 0,
+    "kind": "worse",
+    "region": 0,
+    "actual_unmet": 135,
+    "other_unmet": 124,
+    "limited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 7967,
+          "food_open": 6785,
+          "food_close": 7832,
+          "unmet": 135,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 1376,
+          "food_open": 1968,
+          "food_close": 1387,
+          "unmet": 0,
+          "cost_food": 76
+        },
+        {
+          "id": 2,
+          "population": 921,
+          "food_open": 1098,
+          "food_close": 921,
+          "unmet": 0,
+          "cost_food": 22
+        },
+        {
+          "id": 3,
+          "population": 936,
+          "food_open": 1376,
+          "food_close": 936,
+          "unmet": 0,
+          "cost_food": 53
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 376,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            54,
+            102,
+            150,
+            198,
+            246,
+            294,
+            342
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 155,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            55,
+            54,
+            102,
+            150,
+            198,
+            246,
+            294,
+            342
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 14,
+              "cost_food": 22
+            }
+          ],
+          "cost_food": 22,
+          "distance": 14
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 505,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            733,
+            685,
+            637,
+            589,
+            541,
+            493,
+            445,
+            397,
+            349,
+            348,
+            347,
+            346,
+            345,
+            344,
+            343,
+            342
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 15,
+              "cost_food": 76
+            }
+          ],
+          "cost_food": 76,
+          "distance": 15
+        },
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 11,
+          "path": [
+            3,
+            2,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            55,
+            54,
+            102,
+            150,
+            198,
+            246,
+            294,
+            342
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 2,
+              "distance": 13,
+              "cost_food": 2
+            },
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 14,
+              "cost_food": 2
+            }
+          ],
+          "cost_food": 4,
+          "distance": 27
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 15,
+          "capacity": 505,
+          "used": 505,
+          "remaining": 0,
+          "cost_food": 76
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 14,
+          "capacity": 355,
+          "used": 166,
+          "remaining": 189,
+          "cost_food": 24
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 13,
+          "capacity": 376,
+          "used": 376,
+          "remaining": 0,
+          "cost_food": 49
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "distance": 13,
+          "capacity": 94,
+          "used": 11,
+          "remaining": 83,
+          "cost_food": 2
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 7967,
+          "food_open": 6785,
+          "food_close": 7843,
+          "unmet": 124,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 1376,
+          "food_open": 1968,
+          "food_close": 1376,
+          "unmet": 0,
+          "cost_food": 78
+        },
+        {
+          "id": 2,
+          "population": 921,
+          "food_open": 1098,
+          "food_close": 921,
+          "unmet": 0,
+          "cost_food": 22
+        },
+        {
+          "id": 3,
+          "population": 936,
+          "food_open": 1376,
+          "food_close": 936,
+          "unmet": 0,
+          "cost_food": 51
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 389,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            54,
+            102,
+            150,
+            198,
+            246,
+            294,
+            342
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 51
+            }
+          ],
+          "cost_food": 51,
+          "distance": 13
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 155,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            55,
+            54,
+            102,
+            150,
+            198,
+            246,
+            294,
+            342
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 14,
+              "cost_food": 22
+            }
+          ],
+          "cost_food": 22,
+          "distance": 14
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 514,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            733,
+            685,
+            637,
+            589,
+            541,
+            493,
+            445,
+            397,
+            349,
+            348,
+            347,
+            346,
+            345,
+            344,
+            343,
+            342
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 15,
+              "cost_food": 78
+            }
+          ],
+          "cost_food": 78,
+          "distance": 15
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 15,
+          "capacity": 505,
+          "used": 514,
+          "remaining": null,
+          "cost_food": 78
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 14,
+          "capacity": 355,
+          "used": 155,
+          "remaining": null,
+          "cost_food": 22
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 13,
+          "capacity": 376,
+          "used": 389,
+          "remaining": null,
+          "cost_food": 51
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "distance": 13,
+          "capacity": 94,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 7,
+    "year": 2,
+    "owner": 3,
+    "kind": "worse",
+    "region": 12,
+    "actual_unmet": 302,
+    "other_unmet": 82,
+    "limited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 6913,
+          "food_open": 5548,
+          "food_close": 6611,
+          "unmet": 302,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 984,
+          "food_open": 1464,
+          "food_close": 1070,
+          "unmet": 0,
+          "cost_food": 56
+        },
+        {
+          "id": 14,
+          "population": 1296,
+          "food_open": 1956,
+          "food_close": 1450,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 15,
+          "population": 1130,
+          "food_open": 1442,
+          "food_close": 1130,
+          "unmet": 0,
+          "cost_food": 34
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 278,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            1414,
+            1366,
+            1318,
+            1270,
+            1222,
+            1174,
+            1126,
+            1078,
+            1077,
+            1076,
+            1075,
+            1074,
+            1073
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 34
+            }
+          ],
+          "cost_food": 34,
+          "distance": 12
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 447,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            684,
+            685,
+            686,
+            687,
+            688,
+            689,
+            737,
+            785,
+            833,
+            881,
+            929,
+            977,
+            1025,
+            1073
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 266,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            1500,
+            1452,
+            1404,
+            1356,
+            1308,
+            1260,
+            1212,
+            1164,
+            1116,
+            1068,
+            1069,
+            1070,
+            1071,
+            1072,
+            1073
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 38
+            }
+          ],
+          "cost_food": 38,
+          "distance": 14
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 72,
+          "path": [
+            13,
+            15,
+            12
+          ],
+          "tile_path": [
+            1500,
+            1452,
+            1404,
+            1405,
+            1406,
+            1407,
+            1408,
+            1409,
+            1410,
+            1411,
+            1412,
+            1413,
+            1414,
+            1366,
+            1318,
+            1270,
+            1222,
+            1174,
+            1126,
+            1078,
+            1077,
+            1076,
+            1075,
+            1074,
+            1073
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 15,
+              "distance": 12,
+              "cost_food": 9
+            },
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 9
+            }
+          ],
+          "cost_food": 18,
+          "distance": 24
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 266,
+          "remaining": 0,
+          "cost_food": 38
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 13,
+          "capacity": 447,
+          "used": 447,
+          "remaining": 0,
+          "cost_food": 59
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 350,
+          "remaining": 0,
+          "cost_food": 43
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 72,
+          "remaining": 128,
+          "cost_food": 9
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 6913,
+          "food_open": 5548,
+          "food_close": 6831,
+          "unmet": 82,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 984,
+          "food_open": 1464,
+          "food_close": 984,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 14,
+          "population": 1296,
+          "food_open": 1956,
+          "food_close": 1296,
+          "unmet": 0,
+          "cost_food": 76
+        },
+        {
+          "id": 15,
+          "population": 1130,
+          "food_open": 1442,
+          "food_close": 1130,
+          "unmet": 0,
+          "cost_food": 34
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 278,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            1414,
+            1366,
+            1318,
+            1270,
+            1222,
+            1174,
+            1126,
+            1078,
+            1077,
+            1076,
+            1075,
+            1074,
+            1073
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 34
+            }
+          ],
+          "cost_food": 34,
+          "distance": 12
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 584,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            684,
+            685,
+            686,
+            687,
+            688,
+            689,
+            737,
+            785,
+            833,
+            881,
+            929,
+            977,
+            1025,
+            1073
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 76
+            }
+          ],
+          "cost_food": 76,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 421,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            1500,
+            1452,
+            1404,
+            1356,
+            1308,
+            1260,
+            1212,
+            1164,
+            1116,
+            1068,
+            1069,
+            1070,
+            1071,
+            1072,
+            1073
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 421,
+          "remaining": null,
+          "cost_food": 59
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 13,
+          "capacity": 447,
+          "used": 584,
+          "remaining": null,
+          "cost_food": 76
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 278,
+          "remaining": null,
+          "cost_food": 34
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 8,
+    "year": 2,
+    "owner": 6,
+    "kind": "worse",
+    "region": 24,
+    "actual_unmet": 39,
+    "other_unmet": 0,
+    "limited": {
+      "nodes": [
+        {
+          "id": 24,
+          "population": 6388,
+          "food_open": 5286,
+          "food_close": 6349,
+          "unmet": 39,
+          "cost_food": 0
+        },
+        {
+          "id": 25,
+          "population": 896,
+          "food_open": 1143,
+          "food_close": 896,
+          "unmet": 0,
+          "cost_food": 31
+        },
+        {
+          "id": 26,
+          "population": 1198,
+          "food_open": 1832,
+          "food_close": 1326,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 27,
+          "population": 973,
+          "food_open": 1505,
+          "food_close": 1050,
+          "unmet": 0,
+          "cost_food": 55
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 27,
+          "target": 24,
+          "good": "food",
+          "quantity": 350,
+          "path": [
+            27,
+            24
+          ],
+          "tile_path": [
+            1424,
+            1376,
+            1328,
+            1280,
+            1232,
+            1184,
+            1136,
+            1088,
+            1087,
+            1086,
+            1085,
+            1084,
+            1083
+          ],
+          "legs": [
+            {
+              "a": 27,
+              "b": 24,
+              "distance": 12,
+              "cost_food": 42
+            }
+          ],
+          "cost_food": 42,
+          "distance": 12
+        },
+        {
+          "source": 26,
+          "target": 24,
+          "good": "food",
+          "quantity": 447,
+          "path": [
+            26,
+            24
+          ],
+          "tile_path": [
+            694,
+            695,
+            696,
+            697,
+            698,
+            699,
+            747,
+            795,
+            843,
+            891,
+            939,
+            987,
+            1035,
+            1083
+          ],
+          "legs": [
+            {
+              "a": 26,
+              "b": 24,
+              "distance": 13,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 13
+        },
+        {
+          "source": 25,
+          "target": 24,
+          "good": "food",
+          "quantity": 216,
+          "path": [
+            25,
+            24
+          ],
+          "tile_path": [
+            1510,
+            1462,
+            1414,
+            1366,
+            1318,
+            1270,
+            1222,
+            1174,
+            1126,
+            1078,
+            1079,
+            1080,
+            1081,
+            1082,
+            1083
+          ],
+          "legs": [
+            {
+              "a": 25,
+              "b": 24,
+              "distance": 14,
+              "cost_food": 31
+            }
+          ],
+          "cost_food": 31,
+          "distance": 14
+        },
+        {
+          "source": 27,
+          "target": 24,
+          "good": "food",
+          "quantity": 50,
+          "path": [
+            27,
+            25,
+            24
+          ],
+          "tile_path": [
+            1424,
+            1423,
+            1422,
+            1421,
+            1420,
+            1419,
+            1418,
+            1417,
+            1416,
+            1415,
+            1414,
+            1462,
+            1510,
+            1462,
+            1414,
+            1366,
+            1318,
+            1270,
+            1222,
+            1174,
+            1126,
+            1078,
+            1079,
+            1080,
+            1081,
+            1082,
+            1083
+          ],
+          "legs": [
+            {
+              "a": 27,
+              "b": 25,
+              "distance": 12,
+              "cost_food": 6
+            },
+            {
+              "a": 25,
+              "b": 24,
+              "distance": 14,
+              "cost_food": 7
+            }
+          ],
+          "cost_food": 13,
+          "distance": 26
+        }
+      ],
+      "roads": [
+        {
+          "a": 24,
+          "b": 25,
+          "distance": 14,
+          "capacity": 266,
+          "used": 266,
+          "remaining": 0,
+          "cost_food": 38
+        },
+        {
+          "a": 24,
+          "b": 26,
+          "distance": 13,
+          "capacity": 447,
+          "used": 447,
+          "remaining": 0,
+          "cost_food": 59
+        },
+        {
+          "a": 24,
+          "b": 27,
+          "distance": 12,
+          "capacity": 350,
+          "used": 350,
+          "remaining": 0,
+          "cost_food": 42
+        },
+        {
+          "a": 25,
+          "b": 27,
+          "distance": 12,
+          "capacity": 200,
+          "used": 50,
+          "remaining": 150,
+          "cost_food": 6
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 24,
+          "population": 6388,
+          "food_open": 5286,
+          "food_close": 6388,
+          "unmet": 0,
+          "cost_food": 0
+        },
+        {
+          "id": 25,
+          "population": 896,
+          "food_open": 1143,
+          "food_close": 1067,
+          "unmet": 0,
+          "cost_food": 10
+        },
+        {
+          "id": 26,
+          "population": 1198,
+          "food_open": 1832,
+          "food_close": 1198,
+          "unmet": 0,
+          "cost_food": 73
+        },
+        {
+          "id": 27,
+          "population": 973,
+          "food_open": 1505,
+          "food_close": 973,
+          "unmet": 0,
+          "cost_food": 57
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 27,
+          "target": 24,
+          "good": "food",
+          "quantity": 475,
+          "path": [
+            27,
+            24
+          ],
+          "tile_path": [
+            1424,
+            1376,
+            1328,
+            1280,
+            1232,
+            1184,
+            1136,
+            1088,
+            1087,
+            1086,
+            1085,
+            1084,
+            1083
+          ],
+          "legs": [
+            {
+              "a": 27,
+              "b": 24,
+              "distance": 12,
+              "cost_food": 57
+            }
+          ],
+          "cost_food": 57,
+          "distance": 12
+        },
+        {
+          "source": 26,
+          "target": 24,
+          "good": "food",
+          "quantity": 561,
+          "path": [
+            26,
+            24
+          ],
+          "tile_path": [
+            694,
+            695,
+            696,
+            697,
+            698,
+            699,
+            747,
+            795,
+            843,
+            891,
+            939,
+            987,
+            1035,
+            1083
+          ],
+          "legs": [
+            {
+              "a": 26,
+              "b": 24,
+              "distance": 13,
+              "cost_food": 73
+            }
+          ],
+          "cost_food": 73,
+          "distance": 13
+        },
+        {
+          "source": 25,
+          "target": 24,
+          "good": "food",
+          "quantity": 66,
+          "path": [
+            25,
+            24
+          ],
+          "tile_path": [
+            1510,
+            1462,
+            1414,
+            1366,
+            1318,
+            1270,
+            1222,
+            1174,
+            1126,
+            1078,
+            1079,
+            1080,
+            1081,
+            1082,
+            1083
+          ],
+          "legs": [
+            {
+              "a": 25,
+              "b": 24,
+              "distance": 14,
+              "cost_food": 10
+            }
+          ],
+          "cost_food": 10,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 24,
+          "b": 25,
+          "distance": 14,
+          "capacity": 266,
+          "used": 66,
+          "remaining": null,
+          "cost_food": 10
+        },
+        {
+          "a": 24,
+          "b": 26,
+          "distance": 13,
+          "capacity": 447,
+          "used": 561,
+          "remaining": null,
+          "cost_food": 73
+        },
+        {
+          "a": 24,
+          "b": 27,
+          "distance": 12,
+          "capacity": 350,
+          "used": 475,
+          "remaining": null,
+          "cost_food": 57
+        },
+        {
+          "a": 25,
+          "b": 27,
+          "distance": 12,
+          "capacity": 200,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 9,
+    "year": 1,
+    "owner": 1,
+    "kind": "worse",
+    "region": 4,
+    "actual_unmet": 43,
+    "other_unmet": 0,
+    "limited": {
+      "nodes": [
+        {
+          "id": 4,
+          "population": 7913,
+          "food_open": 6666,
+          "food_close": 7870,
+          "unmet": 43,
+          "cost_food": 0
+        },
+        {
+          "id": 5,
+          "population": 1027,
+          "food_open": 1578,
+          "food_close": 1223,
+          "unmet": 0,
+          "cost_food": 44
+        },
+        {
+          "id": 6,
+          "population": 1250,
+          "food_open": 1889,
+          "food_close": 1304,
+          "unmet": 0,
+          "cost_food": 68
+        },
+        {
+          "id": 7,
+          "population": 1250,
+          "food_open": 1894,
+          "food_close": 1469,
+          "unmet": 0,
+          "cost_food": 49
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 6,
+          "target": 4,
+          "good": "food",
+          "quantity": 517,
+          "path": [
+            6,
+            4
+          ],
+          "tile_path": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            65,
+            113,
+            161,
+            209,
+            257,
+            305,
+            353
+          ],
+          "legs": [
+            {
+              "a": 6,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 68
+            }
+          ],
+          "cost_food": 68,
+          "distance": 13
+        },
+        {
+          "source": 7,
+          "target": 4,
+          "good": "food",
+          "quantity": 376,
+          "path": [
+            7,
+            4
+          ],
+          "tile_path": [
+            695,
+            647,
+            599,
+            551,
+            503,
+            455,
+            407,
+            359,
+            358,
+            357,
+            356,
+            355,
+            354,
+            353
+          ],
+          "legs": [
+            {
+              "a": 7,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        },
+        {
+          "source": 5,
+          "target": 4,
+          "good": "food",
+          "quantity": 311,
+          "path": [
+            5,
+            4
+          ],
+          "tile_path": [
+            731,
+            683,
+            635,
+            587,
+            539,
+            491,
+            443,
+            395,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353
+          ],
+          "legs": [
+            {
+              "a": 5,
+              "b": 4,
+              "distance": 14,
+              "cost_food": 44
+            }
+          ],
+          "cost_food": 44,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 4,
+          "b": 5,
+          "distance": 14,
+          "capacity": 311,
+          "used": 311,
+          "remaining": 0,
+          "cost_food": 44
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "distance": 13,
+          "capacity": 517,
+          "used": 517,
+          "remaining": 0,
+          "cost_food": 68
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "distance": 13,
+          "capacity": 376,
+          "used": 376,
+          "remaining": 0,
+          "cost_food": 49
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": 141,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 4,
+          "population": 7913,
+          "food_open": 6666,
+          "food_close": 7913,
+          "unmet": 0,
+          "cost_food": 0
+        },
+        {
+          "id": 5,
+          "population": 1027,
+          "food_open": 1578,
+          "food_close": 1449,
+          "unmet": 0,
+          "cost_food": 16
+        },
+        {
+          "id": 6,
+          "population": 1250,
+          "food_open": 1889,
+          "food_close": 1250,
+          "unmet": 0,
+          "cost_food": 74
+        },
+        {
+          "id": 7,
+          "population": 1250,
+          "food_open": 1894,
+          "food_close": 1251,
+          "unmet": 0,
+          "cost_food": 74
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 6,
+          "target": 4,
+          "good": "food",
+          "quantity": 565,
+          "path": [
+            6,
+            4
+          ],
+          "tile_path": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            65,
+            113,
+            161,
+            209,
+            257,
+            305,
+            353
+          ],
+          "legs": [
+            {
+              "a": 6,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 74
+            }
+          ],
+          "cost_food": 74,
+          "distance": 13
+        },
+        {
+          "source": 7,
+          "target": 4,
+          "good": "food",
+          "quantity": 569,
+          "path": [
+            7,
+            4
+          ],
+          "tile_path": [
+            695,
+            647,
+            599,
+            551,
+            503,
+            455,
+            407,
+            359,
+            358,
+            357,
+            356,
+            355,
+            354,
+            353
+          ],
+          "legs": [
+            {
+              "a": 7,
+              "b": 4,
+              "distance": 13,
+              "cost_food": 74
+            }
+          ],
+          "cost_food": 74,
+          "distance": 13
+        },
+        {
+          "source": 5,
+          "target": 4,
+          "good": "food",
+          "quantity": 113,
+          "path": [
+            5,
+            4
+          ],
+          "tile_path": [
+            731,
+            683,
+            635,
+            587,
+            539,
+            491,
+            443,
+            395,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353
+          ],
+          "legs": [
+            {
+              "a": 5,
+              "b": 4,
+              "distance": 14,
+              "cost_food": 16
+            }
+          ],
+          "cost_food": 16,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 4,
+          "b": 5,
+          "distance": 14,
+          "capacity": 311,
+          "used": 113,
+          "remaining": null,
+          "cost_food": 16
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "distance": 13,
+          "capacity": 517,
+          "used": 565,
+          "remaining": null,
+          "cost_food": 74
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "distance": 13,
+          "capacity": 376,
+          "used": 569,
+          "remaining": null,
+          "cost_food": 74
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 10,
+    "year": 2,
+    "owner": 2,
+    "kind": "worse",
+    "region": 8,
+    "actual_unmet": 580,
+    "other_unmet": 179,
+    "limited": {
+      "nodes": [
+        {
+          "id": 8,
+          "population": 7126,
+          "food_open": 5481,
+          "food_close": 6546,
+          "unmet": 580,
+          "cost_food": 0
+        },
+        {
+          "id": 9,
+          "population": 1077,
+          "food_open": 1703,
+          "food_close": 1364,
+          "unmet": 0,
+          "cost_food": 45
+        },
+        {
+          "id": 10,
+          "population": 1432,
+          "food_open": 1997,
+          "food_close": 1488,
+          "unmet": 0,
+          "cost_food": 67
+        },
+        {
+          "id": 11,
+          "population": 1021,
+          "food_open": 1509,
+          "food_close": 1137,
+          "unmet": 0,
+          "cost_food": 43
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 11,
+          "target": 8,
+          "good": "food",
+          "quantity": 329,
+          "path": [
+            11,
+            8
+          ],
+          "tile_path": [
+            672,
+            673,
+            674,
+            675,
+            676,
+            677,
+            725,
+            773,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061
+          ],
+          "legs": [
+            {
+              "a": 11,
+              "b": 8,
+              "distance": 13,
+              "cost_food": 43
+            }
+          ],
+          "cost_food": 43,
+          "distance": 13
+        },
+        {
+          "source": 9,
+          "target": 8,
+          "good": "food",
+          "quantity": 294,
+          "path": [
+            9,
+            8
+          ],
+          "tile_path": [
+            635,
+            634,
+            633,
+            632,
+            631,
+            630,
+            678,
+            726,
+            774,
+            773,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061
+          ],
+          "legs": [
+            {
+              "a": 9,
+              "b": 8,
+              "distance": 15,
+              "cost_food": 45
+            }
+          ],
+          "cost_food": 45,
+          "distance": 15
+        },
+        {
+          "source": 10,
+          "target": 8,
+          "good": "food",
+          "quantity": 442,
+          "path": [
+            10,
+            8
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1067,
+            1066,
+            1065,
+            1064,
+            1063,
+            1062,
+            1061
+          ],
+          "legs": [
+            {
+              "a": 10,
+              "b": 8,
+              "distance": 15,
+              "cost_food": 67
+            }
+          ],
+          "cost_food": 67,
+          "distance": 15
+        }
+      ],
+      "roads": [
+        {
+          "a": 8,
+          "b": 9,
+          "distance": 15,
+          "capacity": 294,
+          "used": 294,
+          "remaining": 0,
+          "cost_food": 45
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "distance": 15,
+          "capacity": 442,
+          "used": 442,
+          "remaining": 0,
+          "cost_food": 67
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "distance": 13,
+          "capacity": 329,
+          "used": 329,
+          "remaining": 0,
+          "cost_food": 43
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "distance": 12,
+          "capacity": 175,
+          "used": 0,
+          "remaining": 175,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 8,
+          "population": 7126,
+          "food_open": 5481,
+          "food_close": 6947,
+          "unmet": 179,
+          "cost_food": 0
+        },
+        {
+          "id": 9,
+          "population": 1077,
+          "food_open": 1703,
+          "food_close": 1077,
+          "unmet": 0,
+          "cost_food": 82
+        },
+        {
+          "id": 10,
+          "population": 1432,
+          "food_open": 1997,
+          "food_close": 1432,
+          "unmet": 0,
+          "cost_food": 74
+        },
+        {
+          "id": 11,
+          "population": 1021,
+          "food_open": 1509,
+          "food_close": 1021,
+          "unmet": 0,
+          "cost_food": 57
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 11,
+          "target": 8,
+          "good": "food",
+          "quantity": 431,
+          "path": [
+            11,
+            8
+          ],
+          "tile_path": [
+            672,
+            673,
+            674,
+            675,
+            676,
+            677,
+            725,
+            773,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061
+          ],
+          "legs": [
+            {
+              "a": 11,
+              "b": 8,
+              "distance": 13,
+              "cost_food": 57
+            }
+          ],
+          "cost_food": 57,
+          "distance": 13
+        },
+        {
+          "source": 9,
+          "target": 8,
+          "good": "food",
+          "quantity": 544,
+          "path": [
+            9,
+            8
+          ],
+          "tile_path": [
+            635,
+            634,
+            633,
+            632,
+            631,
+            630,
+            678,
+            726,
+            774,
+            773,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061
+          ],
+          "legs": [
+            {
+              "a": 9,
+              "b": 8,
+              "distance": 15,
+              "cost_food": 82
+            }
+          ],
+          "cost_food": 82,
+          "distance": 15
+        },
+        {
+          "source": 10,
+          "target": 8,
+          "good": "food",
+          "quantity": 491,
+          "path": [
+            10,
+            8
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1067,
+            1066,
+            1065,
+            1064,
+            1063,
+            1062,
+            1061
+          ],
+          "legs": [
+            {
+              "a": 10,
+              "b": 8,
+              "distance": 15,
+              "cost_food": 74
+            }
+          ],
+          "cost_food": 74,
+          "distance": 15
+        }
+      ],
+      "roads": [
+        {
+          "a": 8,
+          "b": 9,
+          "distance": 15,
+          "capacity": 294,
+          "used": 544,
+          "remaining": null,
+          "cost_food": 82
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "distance": 15,
+          "capacity": 442,
+          "used": 491,
+          "remaining": null,
+          "cost_food": 74
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "distance": 13,
+          "capacity": 329,
+          "used": 431,
+          "remaining": null,
+          "cost_food": 57
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "distance": 12,
+          "capacity": 175,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 11,
+    "year": 2,
+    "owner": 4,
+    "kind": "worse",
+    "region": 16,
+    "actual_unmet": 1264,
+    "other_unmet": 386,
+    "limited": {
+      "nodes": [
+        {
+          "id": 16,
+          "population": 8916,
+          "food_open": 6502,
+          "food_close": 7652,
+          "unmet": 1264,
+          "cost_food": 0
+        },
+        {
+          "id": 17,
+          "population": 1776,
+          "food_open": 3000,
+          "food_close": 2467,
+          "unmet": 0,
+          "cost_food": 70
+        },
+        {
+          "id": 18,
+          "population": 1043,
+          "food_open": 1704,
+          "food_close": 1349,
+          "unmet": 0,
+          "cost_food": 44
+        },
+        {
+          "id": 19,
+          "population": 1269,
+          "food_open": 1705,
+          "food_close": 1280,
+          "unmet": 0,
+          "cost_food": 49
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 19,
+          "target": 16,
+          "good": "food",
+          "quantity": 376,
+          "path": [
+            19,
+            16
+          ],
+          "tile_path": [
+            84,
+            83,
+            82,
+            81,
+            80,
+            79,
+            78,
+            126,
+            174,
+            222,
+            270,
+            318,
+            366,
+            414
+          ],
+          "legs": [
+            {
+              "a": 19,
+              "b": 16,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        },
+        {
+          "source": 18,
+          "target": 16,
+          "good": "food",
+          "quantity": 311,
+          "path": [
+            18,
+            16
+          ],
+          "tile_path": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            77,
+            125,
+            126,
+            174,
+            222,
+            270,
+            318,
+            366,
+            414
+          ],
+          "legs": [
+            {
+              "a": 18,
+              "b": 16,
+              "distance": 14,
+              "cost_food": 44
+            }
+          ],
+          "cost_food": 44,
+          "distance": 14
+        },
+        {
+          "source": 17,
+          "target": 16,
+          "good": "food",
+          "quantity": 463,
+          "path": [
+            17,
+            16
+          ],
+          "tile_path": [
+            840,
+            792,
+            744,
+            696,
+            648,
+            600,
+            552,
+            504,
+            456,
+            408,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414
+          ],
+          "legs": [
+            {
+              "a": 17,
+              "b": 16,
+              "distance": 15,
+              "cost_food": 70
+            }
+          ],
+          "cost_food": 70,
+          "distance": 15
+        }
+      ],
+      "roads": [
+        {
+          "a": 16,
+          "b": 17,
+          "distance": 15,
+          "capacity": 463,
+          "used": 463,
+          "remaining": 0,
+          "cost_food": 70
+        },
+        {
+          "a": 16,
+          "b": 18,
+          "distance": 14,
+          "capacity": 311,
+          "used": 311,
+          "remaining": 0,
+          "cost_food": 44
+        },
+        {
+          "a": 16,
+          "b": 19,
+          "distance": 13,
+          "capacity": 376,
+          "used": 376,
+          "remaining": 0,
+          "cost_food": 49
+        },
+        {
+          "a": 18,
+          "b": 19,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": 141,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 16,
+          "population": 8916,
+          "food_open": 6502,
+          "food_close": 8530,
+          "unmet": 386,
+          "cost_food": 0
+        },
+        {
+          "id": 17,
+          "population": 1776,
+          "food_open": 3000,
+          "food_close": 1776,
+          "unmet": 0,
+          "cost_food": 160
+        },
+        {
+          "id": 18,
+          "population": 1043,
+          "food_open": 1704,
+          "food_close": 1043,
+          "unmet": 0,
+          "cost_food": 82
+        },
+        {
+          "id": 19,
+          "population": 1269,
+          "food_open": 1705,
+          "food_close": 1269,
+          "unmet": 0,
+          "cost_food": 51
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 19,
+          "target": 16,
+          "good": "food",
+          "quantity": 385,
+          "path": [
+            19,
+            16
+          ],
+          "tile_path": [
+            84,
+            83,
+            82,
+            81,
+            80,
+            79,
+            78,
+            126,
+            174,
+            222,
+            270,
+            318,
+            366,
+            414
+          ],
+          "legs": [
+            {
+              "a": 19,
+              "b": 16,
+              "distance": 13,
+              "cost_food": 51
+            }
+          ],
+          "cost_food": 51,
+          "distance": 13
+        },
+        {
+          "source": 18,
+          "target": 16,
+          "good": "food",
+          "quantity": 579,
+          "path": [
+            18,
+            16
+          ],
+          "tile_path": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            77,
+            125,
+            126,
+            174,
+            222,
+            270,
+            318,
+            366,
+            414
+          ],
+          "legs": [
+            {
+              "a": 18,
+              "b": 16,
+              "distance": 14,
+              "cost_food": 82
+            }
+          ],
+          "cost_food": 82,
+          "distance": 14
+        },
+        {
+          "source": 17,
+          "target": 16,
+          "good": "food",
+          "quantity": 1064,
+          "path": [
+            17,
+            16
+          ],
+          "tile_path": [
+            840,
+            792,
+            744,
+            696,
+            648,
+            600,
+            552,
+            504,
+            456,
+            408,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414
+          ],
+          "legs": [
+            {
+              "a": 17,
+              "b": 16,
+              "distance": 15,
+              "cost_food": 160
+            }
+          ],
+          "cost_food": 160,
+          "distance": 15
+        }
+      ],
+      "roads": [
+        {
+          "a": 16,
+          "b": 17,
+          "distance": 15,
+          "capacity": 463,
+          "used": 1064,
+          "remaining": null,
+          "cost_food": 160
+        },
+        {
+          "a": 16,
+          "b": 18,
+          "distance": 14,
+          "capacity": 311,
+          "used": 579,
+          "remaining": null,
+          "cost_food": 82
+        },
+        {
+          "a": 16,
+          "b": 19,
+          "distance": 13,
+          "capacity": 376,
+          "used": 385,
+          "remaining": null,
+          "cost_food": 51
+        },
+        {
+          "a": 18,
+          "b": 19,
+          "distance": 13,
+          "capacity": 141,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 12,
+    "year": 1,
+    "owner": 2,
+    "kind": "worse",
+    "region": 8,
+    "actual_unmet": 247,
+    "other_unmet": 0,
+    "limited": {
+      "nodes": [
+        {
+          "id": 8,
+          "population": 8377,
+          "food_open": 7062,
+          "food_close": 8130,
+          "unmet": 247,
+          "cost_food": 0
+        },
+        {
+          "id": 9,
+          "population": 1046,
+          "food_open": 1625,
+          "food_close": 1270,
+          "unmet": 0,
+          "cost_food": 44
+        },
+        {
+          "id": 10,
+          "population": 1240,
+          "food_open": 1705,
+          "food_close": 1241,
+          "unmet": 0,
+          "cost_food": 57
+        },
+        {
+          "id": 11,
+          "population": 965,
+          "food_open": 1587,
+          "food_close": 1195,
+          "unmet": 0,
+          "cost_food": 42
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 11,
+          "target": 8,
+          "good": "food",
+          "quantity": 350,
+          "path": [
+            11,
+            8
+          ],
+          "tile_path": [
+            768,
+            769,
+            770,
+            771,
+            772,
+            773,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061,
+            1109
+          ],
+          "legs": [
+            {
+              "a": 11,
+              "b": 8,
+              "distance": 12,
+              "cost_food": 42
+            }
+          ],
+          "cost_food": 42,
+          "distance": 12
+        },
+        {
+          "source": 9,
+          "target": 8,
+          "good": "food",
+          "quantity": 311,
+          "path": [
+            9,
+            8
+          ],
+          "tile_path": [
+            731,
+            730,
+            729,
+            728,
+            727,
+            726,
+            774,
+            822,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061,
+            1109
+          ],
+          "legs": [
+            {
+              "a": 9,
+              "b": 8,
+              "distance": 14,
+              "cost_food": 44
+            }
+          ],
+          "cost_food": 44,
+          "distance": 14
+        },
+        {
+          "source": 10,
+          "target": 8,
+          "good": "food",
+          "quantity": 407,
+          "path": [
+            10,
+            8
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1114,
+            1113,
+            1112,
+            1111,
+            1110,
+            1109
+          ],
+          "legs": [
+            {
+              "a": 10,
+              "b": 8,
+              "distance": 14,
+              "cost_food": 57
+            }
+          ],
+          "cost_food": 57,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 8,
+          "b": 9,
+          "distance": 14,
+          "capacity": 311,
+          "used": 311,
+          "remaining": 0,
+          "cost_food": 44
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "distance": 14,
+          "capacity": 466,
+          "used": 407,
+          "remaining": 59,
+          "cost_food": 57
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "distance": 12,
+          "capacity": 350,
+          "used": 350,
+          "remaining": 0,
+          "cost_food": 42
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "distance": 12,
+          "capacity": 150,
+          "used": 0,
+          "remaining": 150,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 8,
+          "population": 8377,
+          "food_open": 7062,
+          "food_close": 8377,
+          "unmet": 0,
+          "cost_food": 0
+        },
+        {
+          "id": 9,
+          "population": 1046,
+          "food_open": 1625,
+          "food_close": 1047,
+          "unmet": 0,
+          "cost_food": 71
+        },
+        {
+          "id": 10,
+          "population": 1240,
+          "food_open": 1705,
+          "food_close": 1416,
+          "unmet": 0,
+          "cost_food": 36
+        },
+        {
+          "id": 11,
+          "population": 965,
+          "food_open": 1587,
+          "food_close": 965,
+          "unmet": 0,
+          "cost_food": 67
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 11,
+          "target": 8,
+          "good": "food",
+          "quantity": 555,
+          "path": [
+            11,
+            8
+          ],
+          "tile_path": [
+            768,
+            769,
+            770,
+            771,
+            772,
+            773,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061,
+            1109
+          ],
+          "legs": [
+            {
+              "a": 11,
+              "b": 8,
+              "distance": 12,
+              "cost_food": 67
+            }
+          ],
+          "cost_food": 67,
+          "distance": 12
+        },
+        {
+          "source": 9,
+          "target": 8,
+          "good": "food",
+          "quantity": 507,
+          "path": [
+            9,
+            8
+          ],
+          "tile_path": [
+            731,
+            730,
+            729,
+            728,
+            727,
+            726,
+            774,
+            822,
+            821,
+            869,
+            917,
+            965,
+            1013,
+            1061,
+            1109
+          ],
+          "legs": [
+            {
+              "a": 9,
+              "b": 8,
+              "distance": 14,
+              "cost_food": 71
+            }
+          ],
+          "cost_food": 71,
+          "distance": 14
+        },
+        {
+          "source": 10,
+          "target": 8,
+          "good": "food",
+          "quantity": 253,
+          "path": [
+            10,
+            8
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1114,
+            1113,
+            1112,
+            1111,
+            1110,
+            1109
+          ],
+          "legs": [
+            {
+              "a": 10,
+              "b": 8,
+              "distance": 14,
+              "cost_food": 36
+            }
+          ],
+          "cost_food": 36,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 8,
+          "b": 9,
+          "distance": 14,
+          "capacity": 311,
+          "used": 507,
+          "remaining": null,
+          "cost_food": 71
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "distance": 14,
+          "capacity": 466,
+          "used": 253,
+          "remaining": null,
+          "cost_food": 36
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "distance": 12,
+          "capacity": 350,
+          "used": 555,
+          "remaining": null,
+          "cost_food": 67
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "distance": 12,
+          "capacity": 150,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 13,
+    "year": 2,
+    "owner": 6,
+    "kind": "worse",
+    "region": 24,
+    "actual_unmet": 1640,
+    "other_unmet": 1025,
+    "limited": {
+      "nodes": [
+        {
+          "id": 24,
+          "population": 8851,
+          "food_open": 5975,
+          "food_close": 7211,
+          "unmet": 1640,
+          "cost_food": 0
+        },
+        {
+          "id": 25,
+          "population": 1548,
+          "food_open": 2544,
+          "food_close": 1963,
+          "unmet": 0,
+          "cost_food": 76
+        },
+        {
+          "id": 26,
+          "population": 1036,
+          "food_open": 1615,
+          "food_close": 1210,
+          "unmet": 0,
+          "cost_food": 50
+        },
+        {
+          "id": 27,
+          "population": 1021,
+          "food_open": 1562,
+          "food_close": 1137,
+          "unmet": 0,
+          "cost_food": 49
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 27,
+          "target": 24,
+          "good": "food",
+          "quantity": 376,
+          "path": [
+            27,
+            24
+          ],
+          "tile_path": [
+            790,
+            791,
+            792,
+            793,
+            794,
+            795,
+            796,
+            844,
+            892,
+            940,
+            988,
+            1036,
+            1084,
+            1132
+          ],
+          "legs": [
+            {
+              "a": 27,
+              "b": 24,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        },
+        {
+          "source": 26,
+          "target": 24,
+          "good": "food",
+          "quantity": 355,
+          "path": [
+            26,
+            24
+          ],
+          "tile_path": [
+            803,
+            802,
+            801,
+            800,
+            799,
+            798,
+            797,
+            845,
+            844,
+            892,
+            940,
+            988,
+            1036,
+            1084,
+            1132
+          ],
+          "legs": [
+            {
+              "a": 26,
+              "b": 24,
+              "distance": 14,
+              "cost_food": 50
+            }
+          ],
+          "cost_food": 50,
+          "distance": 14
+        },
+        {
+          "source": 25,
+          "target": 24,
+          "good": "food",
+          "quantity": 505,
+          "path": [
+            25,
+            24
+          ],
+          "tile_path": [
+            1523,
+            1475,
+            1427,
+            1379,
+            1331,
+            1283,
+            1235,
+            1187,
+            1139,
+            1138,
+            1137,
+            1136,
+            1135,
+            1134,
+            1133,
+            1132
+          ],
+          "legs": [
+            {
+              "a": 25,
+              "b": 24,
+              "distance": 15,
+              "cost_food": 76
+            }
+          ],
+          "cost_food": 76,
+          "distance": 15
+        }
+      ],
+      "roads": [
+        {
+          "a": 24,
+          "b": 25,
+          "distance": 15,
+          "capacity": 505,
+          "used": 505,
+          "remaining": 0,
+          "cost_food": 76
+        },
+        {
+          "a": 24,
+          "b": 26,
+          "distance": 14,
+          "capacity": 355,
+          "used": 355,
+          "remaining": 0,
+          "cost_food": 50
+        },
+        {
+          "a": 24,
+          "b": 27,
+          "distance": 13,
+          "capacity": 376,
+          "used": 376,
+          "remaining": 0,
+          "cost_food": 49
+        },
+        {
+          "a": 26,
+          "b": 27,
+          "distance": 13,
+          "capacity": 94,
+          "used": 0,
+          "remaining": 94,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 24,
+          "population": 8851,
+          "food_open": 5975,
+          "food_close": 7826,
+          "unmet": 1025,
+          "cost_food": 0
+        },
+        {
+          "id": 25,
+          "population": 1548,
+          "food_open": 2544,
+          "food_close": 1548,
+          "unmet": 0,
+          "cost_food": 130
+        },
+        {
+          "id": 26,
+          "population": 1036,
+          "food_open": 1615,
+          "food_close": 1037,
+          "unmet": 0,
+          "cost_food": 71
+        },
+        {
+          "id": 27,
+          "population": 1021,
+          "food_open": 1562,
+          "food_close": 1021,
+          "unmet": 0,
+          "cost_food": 63
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 27,
+          "target": 24,
+          "good": "food",
+          "quantity": 478,
+          "path": [
+            27,
+            24
+          ],
+          "tile_path": [
+            790,
+            791,
+            792,
+            793,
+            794,
+            795,
+            796,
+            844,
+            892,
+            940,
+            988,
+            1036,
+            1084,
+            1132
+          ],
+          "legs": [
+            {
+              "a": 27,
+              "b": 24,
+              "distance": 13,
+              "cost_food": 63
+            }
+          ],
+          "cost_food": 63,
+          "distance": 13
+        },
+        {
+          "source": 26,
+          "target": 24,
+          "good": "food",
+          "quantity": 507,
+          "path": [
+            26,
+            24
+          ],
+          "tile_path": [
+            803,
+            802,
+            801,
+            800,
+            799,
+            798,
+            797,
+            845,
+            844,
+            892,
+            940,
+            988,
+            1036,
+            1084,
+            1132
+          ],
+          "legs": [
+            {
+              "a": 26,
+              "b": 24,
+              "distance": 14,
+              "cost_food": 71
+            }
+          ],
+          "cost_food": 71,
+          "distance": 14
+        },
+        {
+          "source": 25,
+          "target": 24,
+          "good": "food",
+          "quantity": 866,
+          "path": [
+            25,
+            24
+          ],
+          "tile_path": [
+            1523,
+            1475,
+            1427,
+            1379,
+            1331,
+            1283,
+            1235,
+            1187,
+            1139,
+            1138,
+            1137,
+            1136,
+            1135,
+            1134,
+            1133,
+            1132
+          ],
+          "legs": [
+            {
+              "a": 25,
+              "b": 24,
+              "distance": 15,
+              "cost_food": 130
+            }
+          ],
+          "cost_food": 130,
+          "distance": 15
+        }
+      ],
+      "roads": [
+        {
+          "a": 24,
+          "b": 25,
+          "distance": 15,
+          "capacity": 505,
+          "used": 866,
+          "remaining": null,
+          "cost_food": 130
+        },
+        {
+          "a": 24,
+          "b": 26,
+          "distance": 14,
+          "capacity": 355,
+          "used": 507,
+          "remaining": null,
+          "cost_food": 71
+        },
+        {
+          "a": 24,
+          "b": 27,
+          "distance": 13,
+          "capacity": 376,
+          "used": 478,
+          "remaining": null,
+          "cost_food": 63
+        },
+        {
+          "a": 26,
+          "b": 27,
+          "distance": 13,
+          "capacity": 94,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 14,
+    "year": 1,
+    "owner": 0,
+    "kind": "worse",
+    "region": 0,
+    "actual_unmet": 316,
+    "other_unmet": 72,
+    "limited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 6692,
+          "food_open": 5256,
+          "food_close": 6376,
+          "unmet": 316,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 1399,
+          "food_open": 2127,
+          "food_close": 1621,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 2,
+          "population": 793,
+          "food_open": 1227,
+          "food_close": 841,
+          "unmet": 0,
+          "cost_food": 46
+        },
+        {
+          "id": 3,
+          "population": 972,
+          "food_open": 1342,
+          "food_close": 972,
+          "unmet": 0,
+          "cost_food": 37
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 333,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            58,
+            57,
+            56,
+            55,
+            54,
+            53,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 37
+            }
+          ],
+          "cost_food": 37,
+          "distance": 11
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 300,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            52,
+            100,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 12,
+              "cost_food": 36
+            }
+          ],
+          "cost_food": 36,
+          "distance": 12
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 447,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            720,
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 13
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 40,
+          "path": [
+            2,
+            3,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            58,
+            57,
+            56,
+            55,
+            54,
+            53,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 3,
+              "distance": 11,
+              "cost_food": 5
+            },
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 5
+            }
+          ],
+          "cost_food": 10,
+          "distance": 22
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 13,
+          "capacity": 447,
+          "used": 447,
+          "remaining": 0,
+          "cost_food": 59
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 12,
+          "capacity": 300,
+          "used": 300,
+          "remaining": 0,
+          "cost_food": 36
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 11,
+          "capacity": 373,
+          "used": 373,
+          "remaining": 0,
+          "cost_food": 42
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "distance": 11,
+          "capacity": 160,
+          "used": 40,
+          "remaining": 120,
+          "cost_food": 5
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 0,
+          "population": 6692,
+          "food_open": 5256,
+          "food_close": 6620,
+          "unmet": 72,
+          "cost_food": 0
+        },
+        {
+          "id": 1,
+          "population": 1399,
+          "food_open": 2127,
+          "food_close": 1399,
+          "unmet": 0,
+          "cost_food": 84
+        },
+        {
+          "id": 2,
+          "population": 793,
+          "food_open": 1227,
+          "food_close": 793,
+          "unmet": 0,
+          "cost_food": 47
+        },
+        {
+          "id": 3,
+          "population": 972,
+          "food_open": 1342,
+          "food_close": 972,
+          "unmet": 0,
+          "cost_food": 37
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 3,
+          "target": 0,
+          "good": "food",
+          "quantity": 333,
+          "path": [
+            3,
+            0
+          ],
+          "tile_path": [
+            58,
+            57,
+            56,
+            55,
+            54,
+            53,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 3,
+              "b": 0,
+              "distance": 11,
+              "cost_food": 37
+            }
+          ],
+          "cost_food": 37,
+          "distance": 11
+        },
+        {
+          "source": 2,
+          "target": 0,
+          "good": "food",
+          "quantity": 387,
+          "path": [
+            2,
+            0
+          ],
+          "tile_path": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            52,
+            100,
+            101,
+            149,
+            197,
+            245,
+            293,
+            341
+          ],
+          "legs": [
+            {
+              "a": 2,
+              "b": 0,
+              "distance": 12,
+              "cost_food": 47
+            }
+          ],
+          "cost_food": 47,
+          "distance": 12
+        },
+        {
+          "source": 1,
+          "target": 0,
+          "good": "food",
+          "quantity": 644,
+          "path": [
+            1,
+            0
+          ],
+          "tile_path": [
+            720,
+            672,
+            624,
+            576,
+            528,
+            480,
+            432,
+            384,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341
+          ],
+          "legs": [
+            {
+              "a": 1,
+              "b": 0,
+              "distance": 13,
+              "cost_food": 84
+            }
+          ],
+          "cost_food": 84,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 0,
+          "b": 1,
+          "distance": 13,
+          "capacity": 447,
+          "used": 644,
+          "remaining": null,
+          "cost_food": 84
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "distance": 12,
+          "capacity": 300,
+          "used": 387,
+          "remaining": null,
+          "cost_food": 47
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "distance": 11,
+          "capacity": 373,
+          "used": 333,
+          "remaining": null,
+          "cost_food": 37
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "distance": 11,
+          "capacity": 160,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 15,
+    "year": 2,
+    "owner": 3,
+    "kind": "worse",
+    "region": 12,
+    "actual_unmet": 1434,
+    "other_unmet": 1011,
+    "limited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 8356,
+          "food_open": 5884,
+          "food_close": 6922,
+          "unmet": 1434,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 1081,
+          "food_open": 1595,
+          "food_close": 1291,
+          "unmet": 0,
+          "cost_food": 38
+        },
+        {
+          "id": 14,
+          "population": 1427,
+          "food_open": 2039,
+          "food_close": 1557,
+          "unmet": 0,
+          "cost_food": 60
+        },
+        {
+          "id": 15,
+          "population": 1154,
+          "food_open": 1687,
+          "food_close": 1295,
+          "unmet": 0,
+          "cost_food": 42
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 350,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            741,
+            740,
+            739,
+            738,
+            737,
+            736,
+            784,
+            832,
+            880,
+            928,
+            976,
+            1024,
+            1072
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 42
+            }
+          ],
+          "cost_food": 42,
+          "distance": 12
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 266,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            635,
+            636,
+            637,
+            638,
+            639,
+            687,
+            735,
+            783,
+            784,
+            832,
+            880,
+            928,
+            976,
+            1024,
+            1072
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 38
+            }
+          ],
+          "cost_food": 38,
+          "distance": 14
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 422,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1067,
+            1068,
+            1069,
+            1070,
+            1071,
+            1072
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 60
+            }
+          ],
+          "cost_food": 60,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 266,
+          "remaining": 0,
+          "cost_food": 38
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 14,
+          "capacity": 422,
+          "used": 422,
+          "remaining": 0,
+          "cost_food": 60
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 350,
+          "remaining": 0,
+          "cost_food": 42
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 0,
+          "remaining": 200,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 8356,
+          "food_open": 5884,
+          "food_close": 7345,
+          "unmet": 1011,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 1081,
+          "food_open": 1595,
+          "food_close": 1082,
+          "unmet": 0,
+          "cost_food": 63
+        },
+        {
+          "id": 14,
+          "population": 1427,
+          "food_open": 2039,
+          "food_close": 1427,
+          "unmet": 0,
+          "cost_food": 76
+        },
+        {
+          "id": 15,
+          "population": 1154,
+          "food_open": 1687,
+          "food_close": 1155,
+          "unmet": 0,
+          "cost_food": 57
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 475,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            741,
+            740,
+            739,
+            738,
+            737,
+            736,
+            784,
+            832,
+            880,
+            928,
+            976,
+            1024,
+            1072
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 57
+            }
+          ],
+          "cost_food": 57,
+          "distance": 12
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 450,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            635,
+            636,
+            637,
+            638,
+            639,
+            687,
+            735,
+            783,
+            784,
+            832,
+            880,
+            928,
+            976,
+            1024,
+            1072
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 63
+            }
+          ],
+          "cost_food": 63,
+          "distance": 14
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 536,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            1499,
+            1451,
+            1403,
+            1355,
+            1307,
+            1259,
+            1211,
+            1163,
+            1115,
+            1067,
+            1068,
+            1069,
+            1070,
+            1071,
+            1072
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 76
+            }
+          ],
+          "cost_food": 76,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 450,
+          "remaining": null,
+          "cost_food": 63
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 14,
+          "capacity": 422,
+          "used": 536,
+          "remaining": null,
+          "cost_food": 76
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 475,
+          "remaining": null,
+          "cost_food": 57
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 16,
+    "year": 2,
+    "owner": 2,
+    "kind": "worse",
+    "region": 8,
+    "actual_unmet": 902,
+    "other_unmet": 377,
+    "limited": {
+      "nodes": [
+        {
+          "id": 8,
+          "population": 6278,
+          "food_open": 4322,
+          "food_close": 5376,
+          "unmet": 902,
+          "cost_food": 0
+        },
+        {
+          "id": 9,
+          "population": 1361,
+          "food_open": 2430,
+          "food_close": 1952,
+          "unmet": 0,
+          "cost_food": 55
+        },
+        {
+          "id": 10,
+          "population": 821,
+          "food_open": 1140,
+          "food_close": 821,
+          "unmet": 0,
+          "cost_food": 35
+        },
+        {
+          "id": 11,
+          "population": 806,
+          "food_open": 1190,
+          "food_close": 806,
+          "unmet": 0,
+          "cost_food": 37
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 11,
+          "target": 8,
+          "good": "food",
+          "quantity": 342,
+          "path": [
+            11,
+            8
+          ],
+          "tile_path": [
+            816,
+            817,
+            818,
+            819,
+            820,
+            868,
+            916,
+            964,
+            1012,
+            1060,
+            1108
+          ],
+          "legs": [
+            {
+              "a": 11,
+              "b": 8,
+              "distance": 10,
+              "cost_food": 35
+            }
+          ],
+          "cost_food": 35,
+          "distance": 10
+        },
+        {
+          "source": 10,
+          "target": 8,
+          "good": "food",
+          "quantity": 284,
+          "path": [
+            10,
+            8
+          ],
+          "tile_path": [
+            777,
+            776,
+            775,
+            774,
+            773,
+            821,
+            869,
+            868,
+            916,
+            964,
+            1012,
+            1060,
+            1108
+          ],
+          "legs": [
+            {
+              "a": 10,
+              "b": 8,
+              "distance": 12,
+              "cost_food": 35
+            }
+          ],
+          "cost_food": 35,
+          "distance": 12
+        },
+        {
+          "source": 9,
+          "target": 8,
+          "good": "food",
+          "quantity": 423,
+          "path": [
+            9,
+            8
+          ],
+          "tile_path": [
+            1497,
+            1449,
+            1401,
+            1353,
+            1305,
+            1257,
+            1209,
+            1161,
+            1113,
+            1112,
+            1111,
+            1110,
+            1109,
+            1108
+          ],
+          "legs": [
+            {
+              "a": 9,
+              "b": 8,
+              "distance": 13,
+              "cost_food": 55
+            }
+          ],
+          "cost_food": 55,
+          "distance": 13
+        },
+        {
+          "source": 11,
+          "target": 8,
+          "good": "food",
+          "quantity": 5,
+          "path": [
+            11,
+            10,
+            8
+          ],
+          "tile_path": [
+            816,
+            768,
+            769,
+            770,
+            771,
+            772,
+            773,
+            774,
+            775,
+            776,
+            777,
+            776,
+            775,
+            774,
+            773,
+            821,
+            869,
+            868,
+            916,
+            964,
+            1012,
+            1060,
+            1108
+          ],
+          "legs": [
+            {
+              "a": 11,
+              "b": 10,
+              "distance": 10,
+              "cost_food": 1
+            },
+            {
+              "a": 10,
+              "b": 8,
+              "distance": 12,
+              "cost_food": 1
+            }
+          ],
+          "cost_food": 2,
+          "distance": 22
+        }
+      ],
+      "roads": [
+        {
+          "a": 8,
+          "b": 9,
+          "distance": 13,
+          "capacity": 423,
+          "used": 423,
+          "remaining": 0,
+          "cost_food": 55
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "distance": 12,
+          "capacity": 300,
+          "used": 289,
+          "remaining": 11,
+          "cost_food": 36
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "distance": 10,
+          "capacity": 342,
+          "used": 342,
+          "remaining": 0,
+          "cost_food": 35
+        },
+        {
+          "a": 10,
+          "b": 11,
+          "distance": 10,
+          "capacity": 171,
+          "used": 5,
+          "remaining": 166,
+          "cost_food": 1
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 8,
+          "population": 6278,
+          "food_open": 4322,
+          "food_close": 5901,
+          "unmet": 377,
+          "cost_food": 0
+        },
+        {
+          "id": 9,
+          "population": 1361,
+          "food_open": 2430,
+          "food_close": 1361,
+          "unmet": 0,
+          "cost_food": 123
+        },
+        {
+          "id": 10,
+          "population": 821,
+          "food_open": 1140,
+          "food_close": 821,
+          "unmet": 0,
+          "cost_food": 35
+        },
+        {
+          "id": 11,
+          "population": 806,
+          "food_open": 1190,
+          "food_close": 806,
+          "unmet": 0,
+          "cost_food": 35
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 11,
+          "target": 8,
+          "good": "food",
+          "quantity": 349,
+          "path": [
+            11,
+            8
+          ],
+          "tile_path": [
+            816,
+            817,
+            818,
+            819,
+            820,
+            868,
+            916,
+            964,
+            1012,
+            1060,
+            1108
+          ],
+          "legs": [
+            {
+              "a": 11,
+              "b": 8,
+              "distance": 10,
+              "cost_food": 35
+            }
+          ],
+          "cost_food": 35,
+          "distance": 10
+        },
+        {
+          "source": 10,
+          "target": 8,
+          "good": "food",
+          "quantity": 284,
+          "path": [
+            10,
+            8
+          ],
+          "tile_path": [
+            777,
+            776,
+            775,
+            774,
+            773,
+            821,
+            869,
+            868,
+            916,
+            964,
+            1012,
+            1060,
+            1108
+          ],
+          "legs": [
+            {
+              "a": 10,
+              "b": 8,
+              "distance": 12,
+              "cost_food": 35
+            }
+          ],
+          "cost_food": 35,
+          "distance": 12
+        },
+        {
+          "source": 9,
+          "target": 8,
+          "good": "food",
+          "quantity": 946,
+          "path": [
+            9,
+            8
+          ],
+          "tile_path": [
+            1497,
+            1449,
+            1401,
+            1353,
+            1305,
+            1257,
+            1209,
+            1161,
+            1113,
+            1112,
+            1111,
+            1110,
+            1109,
+            1108
+          ],
+          "legs": [
+            {
+              "a": 9,
+              "b": 8,
+              "distance": 13,
+              "cost_food": 123
+            }
+          ],
+          "cost_food": 123,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 8,
+          "b": 9,
+          "distance": 13,
+          "capacity": 423,
+          "used": 946,
+          "remaining": null,
+          "cost_food": 123
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "distance": 12,
+          "capacity": 300,
+          "used": 284,
+          "remaining": null,
+          "cost_food": 35
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "distance": 10,
+          "capacity": 342,
+          "used": 349,
+          "remaining": null,
+          "cost_food": 35
+        },
+        {
+          "a": 10,
+          "b": 11,
+          "distance": 10,
+          "capacity": 171,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 17,
+    "year": 1,
+    "owner": 5,
+    "kind": "worse",
+    "region": 20,
+    "actual_unmet": 388,
+    "other_unmet": 259,
+    "limited": {
+      "nodes": [
+        {
+          "id": 20,
+          "population": 7595,
+          "food_open": 6177,
+          "food_close": 7207,
+          "unmet": 388,
+          "cost_food": 0
+        },
+        {
+          "id": 21,
+          "population": 1035,
+          "food_open": 1555,
+          "food_close": 1130,
+          "unmet": 0,
+          "cost_food": 49
+        },
+        {
+          "id": 22,
+          "population": 1277,
+          "food_open": 1619,
+          "food_close": 1277,
+          "unmet": 0,
+          "cost_food": 40
+        },
+        {
+          "id": 23,
+          "population": 1013,
+          "food_open": 1462,
+          "food_close": 1064,
+          "unmet": 0,
+          "cost_food": 46
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 21,
+          "target": 20,
+          "good": "food",
+          "quantity": 376,
+          "path": [
+            21,
+            20
+          ],
+          "tile_path": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            89,
+            137,
+            185,
+            233,
+            281,
+            329,
+            377
+          ],
+          "legs": [
+            {
+              "a": 21,
+              "b": 20,
+              "distance": 13,
+              "cost_food": 49
+            }
+          ],
+          "cost_food": 49,
+          "distance": 13
+        },
+        {
+          "source": 22,
+          "target": 20,
+          "good": "food",
+          "quantity": 302,
+          "path": [
+            22,
+            20
+          ],
+          "tile_path": [
+            707,
+            659,
+            611,
+            563,
+            515,
+            467,
+            419,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            377
+          ],
+          "legs": [
+            {
+              "a": 22,
+              "b": 20,
+              "distance": 13,
+              "cost_food": 40
+            }
+          ],
+          "cost_food": 40,
+          "distance": 13
+        },
+        {
+          "source": 23,
+          "target": 20,
+          "good": "food",
+          "quantity": 352,
+          "path": [
+            23,
+            20
+          ],
+          "tile_path": [
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            90,
+            89,
+            137,
+            185,
+            233,
+            281,
+            329,
+            377
+          ],
+          "legs": [
+            {
+              "a": 23,
+              "b": 20,
+              "distance": 13,
+              "cost_food": 46
+            }
+          ],
+          "cost_food": 46,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 20,
+          "b": 21,
+          "distance": 13,
+          "capacity": 376,
+          "used": 376,
+          "remaining": 0,
+          "cost_food": 49
+        },
+        {
+          "a": 20,
+          "b": 22,
+          "distance": 13,
+          "capacity": 517,
+          "used": 302,
+          "remaining": 215,
+          "cost_food": 40
+        },
+        {
+          "a": 20,
+          "b": 23,
+          "distance": 13,
+          "capacity": 352,
+          "used": 352,
+          "remaining": 0,
+          "cost_food": 46
+        },
+        {
+          "a": 21,
+          "b": 23,
+          "distance": 12,
+          "capacity": 100,
+          "used": 0,
+          "remaining": 100,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 20,
+          "population": 7595,
+          "food_open": 6177,
+          "food_close": 7336,
+          "unmet": 259,
+          "cost_food": 0
+        },
+        {
+          "id": 21,
+          "population": 1035,
+          "food_open": 1555,
+          "food_close": 1035,
+          "unmet": 0,
+          "cost_food": 60
+        },
+        {
+          "id": 22,
+          "population": 1277,
+          "food_open": 1619,
+          "food_close": 1277,
+          "unmet": 0,
+          "cost_food": 40
+        },
+        {
+          "id": 23,
+          "population": 1013,
+          "food_open": 1462,
+          "food_close": 1013,
+          "unmet": 0,
+          "cost_food": 52
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 21,
+          "target": 20,
+          "good": "food",
+          "quantity": 460,
+          "path": [
+            21,
+            20
+          ],
+          "tile_path": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            89,
+            137,
+            185,
+            233,
+            281,
+            329,
+            377
+          ],
+          "legs": [
+            {
+              "a": 21,
+              "b": 20,
+              "distance": 13,
+              "cost_food": 60
+            }
+          ],
+          "cost_food": 60,
+          "distance": 13
+        },
+        {
+          "source": 22,
+          "target": 20,
+          "good": "food",
+          "quantity": 302,
+          "path": [
+            22,
+            20
+          ],
+          "tile_path": [
+            707,
+            659,
+            611,
+            563,
+            515,
+            467,
+            419,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            377
+          ],
+          "legs": [
+            {
+              "a": 22,
+              "b": 20,
+              "distance": 13,
+              "cost_food": 40
+            }
+          ],
+          "cost_food": 40,
+          "distance": 13
+        },
+        {
+          "source": 23,
+          "target": 20,
+          "good": "food",
+          "quantity": 397,
+          "path": [
+            23,
+            20
+          ],
+          "tile_path": [
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            90,
+            89,
+            137,
+            185,
+            233,
+            281,
+            329,
+            377
+          ],
+          "legs": [
+            {
+              "a": 23,
+              "b": 20,
+              "distance": 13,
+              "cost_food": 52
+            }
+          ],
+          "cost_food": 52,
+          "distance": 13
+        }
+      ],
+      "roads": [
+        {
+          "a": 20,
+          "b": 21,
+          "distance": 13,
+          "capacity": 376,
+          "used": 460,
+          "remaining": null,
+          "cost_food": 60
+        },
+        {
+          "a": 20,
+          "b": 22,
+          "distance": 13,
+          "capacity": 517,
+          "used": 302,
+          "remaining": null,
+          "cost_food": 40
+        },
+        {
+          "a": 20,
+          "b": 23,
+          "distance": 13,
+          "capacity": 352,
+          "used": 397,
+          "remaining": null,
+          "cost_food": 52
+        },
+        {
+          "a": 21,
+          "b": 23,
+          "distance": 12,
+          "capacity": 100,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 18,
+    "year": 2,
+    "owner": 3,
+    "kind": "worse",
+    "region": 12,
+    "actual_unmet": 591,
+    "other_unmet": 0,
+    "limited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 7165,
+          "food_open": 5511,
+          "food_close": 6574,
+          "unmet": 591,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 1018,
+          "food_open": 1864,
+          "food_close": 1560,
+          "unmet": 0,
+          "cost_food": 38
+        },
+        {
+          "id": 14,
+          "population": 1346,
+          "food_open": 2331,
+          "food_close": 1825,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 15,
+          "population": 1152,
+          "food_open": 1660,
+          "food_close": 1268,
+          "unmet": 0,
+          "cost_food": 42
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 350,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            1412,
+            1364,
+            1316,
+            1268,
+            1220,
+            1172,
+            1124,
+            1076,
+            1075,
+            1074,
+            1073,
+            1072,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 42
+            }
+          ],
+          "cost_food": 42,
+          "distance": 12
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 447,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            682,
+            683,
+            684,
+            685,
+            686,
+            687,
+            735,
+            783,
+            831,
+            879,
+            927,
+            975,
+            1023,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 266,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            1498,
+            1450,
+            1402,
+            1354,
+            1306,
+            1258,
+            1210,
+            1162,
+            1114,
+            1066,
+            1067,
+            1068,
+            1069,
+            1070,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 38
+            }
+          ],
+          "cost_food": 38,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 266,
+          "remaining": 0,
+          "cost_food": 38
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 13,
+          "capacity": 447,
+          "used": 447,
+          "remaining": 0,
+          "cost_food": 59
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 350,
+          "remaining": 0,
+          "cost_food": 42
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 0,
+          "remaining": 200,
+          "cost_food": 0
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 7165,
+          "food_open": 5511,
+          "food_close": 7165,
+          "unmet": 0,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 1018,
+          "food_open": 1864,
+          "food_close": 1487,
+          "unmet": 0,
+          "cost_food": 47
+        },
+        {
+          "id": 14,
+          "population": 1346,
+          "food_open": 2331,
+          "food_close": 1346,
+          "unmet": 0,
+          "cost_food": 114
+        },
+        {
+          "id": 15,
+          "population": 1152,
+          "food_open": 1660,
+          "food_close": 1152,
+          "unmet": 0,
+          "cost_food": 55
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 15,
+          "target": 12,
+          "good": "food",
+          "quantity": 453,
+          "path": [
+            15,
+            12
+          ],
+          "tile_path": [
+            1412,
+            1364,
+            1316,
+            1268,
+            1220,
+            1172,
+            1124,
+            1076,
+            1075,
+            1074,
+            1073,
+            1072,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 55
+            }
+          ],
+          "cost_food": 55,
+          "distance": 12
+        },
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 871,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            682,
+            683,
+            684,
+            685,
+            686,
+            687,
+            735,
+            783,
+            831,
+            879,
+            927,
+            975,
+            1023,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 114
+            }
+          ],
+          "cost_food": 114,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 330,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            1498,
+            1450,
+            1402,
+            1354,
+            1306,
+            1258,
+            1210,
+            1162,
+            1114,
+            1066,
+            1067,
+            1068,
+            1069,
+            1070,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 47
+            }
+          ],
+          "cost_food": 47,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 330,
+          "remaining": null,
+          "cost_food": 47
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 13,
+          "capacity": 447,
+          "used": 871,
+          "remaining": null,
+          "cost_food": 114
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 453,
+          "remaining": null,
+          "cost_food": 55
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 18,
+    "year": 12,
+    "owner": 3,
+    "kind": "better",
+    "region": 15,
+    "actual_unmet": 30,
+    "other_unmet": 31,
+    "limited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 7333,
+          "food_open": 5717,
+          "food_close": 6538,
+          "unmet": 795,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 1191,
+          "food_open": 1631,
+          "food_close": 1191,
+          "unmet": 0,
+          "cost_food": 65
+        },
+        {
+          "id": 14,
+          "population": 1956,
+          "food_open": 2594,
+          "food_close": 2088,
+          "unmet": 0,
+          "cost_food": 59
+        },
+        {
+          "id": 15,
+          "population": 1873,
+          "food_open": 1842,
+          "food_close": 1843,
+          "unmet": 30,
+          "cost_food": 0
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 447,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            682,
+            683,
+            684,
+            685,
+            686,
+            687,
+            735,
+            783,
+            831,
+            879,
+            927,
+            975,
+            1023,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 59
+            }
+          ],
+          "cost_food": 59,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 266,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            1498,
+            1450,
+            1402,
+            1354,
+            1306,
+            1258,
+            1210,
+            1162,
+            1114,
+            1066,
+            1067,
+            1068,
+            1069,
+            1070,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 38
+            }
+          ],
+          "cost_food": 38,
+          "distance": 14
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 108,
+          "path": [
+            13,
+            15,
+            12
+          ],
+          "tile_path": [
+            1498,
+            1450,
+            1402,
+            1403,
+            1404,
+            1405,
+            1406,
+            1407,
+            1408,
+            1409,
+            1410,
+            1411,
+            1412,
+            1364,
+            1316,
+            1268,
+            1220,
+            1172,
+            1124,
+            1076,
+            1075,
+            1074,
+            1073,
+            1072,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 15,
+              "distance": 12,
+              "cost_food": 13
+            },
+            {
+              "a": 15,
+              "b": 12,
+              "distance": 12,
+              "cost_food": 13
+            }
+          ],
+          "cost_food": 26,
+          "distance": 24
+        },
+        {
+          "source": 13,
+          "target": 15,
+          "good": "food",
+          "quantity": 1,
+          "path": [
+            13,
+            15
+          ],
+          "tile_path": [
+            1498,
+            1450,
+            1402,
+            1403,
+            1404,
+            1405,
+            1406,
+            1407,
+            1408,
+            1409,
+            1410,
+            1411,
+            1412
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 15,
+              "distance": 12,
+              "cost_food": 1
+            }
+          ],
+          "cost_food": 1,
+          "distance": 12
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 266,
+          "remaining": 0,
+          "cost_food": 38
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 13,
+          "capacity": 447,
+          "used": 447,
+          "remaining": 0,
+          "cost_food": 59
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 108,
+          "remaining": 242,
+          "cost_food": 13
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 109,
+          "remaining": 91,
+          "cost_food": 14
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 12,
+          "population": 7333,
+          "food_open": 5717,
+          "food_close": 6666,
+          "unmet": 667,
+          "cost_food": 0
+        },
+        {
+          "id": 13,
+          "population": 1191,
+          "food_open": 1631,
+          "food_close": 1192,
+          "unmet": 0,
+          "cost_food": 54
+        },
+        {
+          "id": 14,
+          "population": 1956,
+          "food_open": 2594,
+          "food_close": 1956,
+          "unmet": 0,
+          "cost_food": 74
+        },
+        {
+          "id": 15,
+          "population": 1873,
+          "food_open": 1842,
+          "food_close": 1842,
+          "unmet": 31,
+          "cost_food": 0
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 14,
+          "target": 12,
+          "good": "food",
+          "quantity": 564,
+          "path": [
+            14,
+            12
+          ],
+          "tile_path": [
+            682,
+            683,
+            684,
+            685,
+            686,
+            687,
+            735,
+            783,
+            831,
+            879,
+            927,
+            975,
+            1023,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 14,
+              "b": 12,
+              "distance": 13,
+              "cost_food": 74
+            }
+          ],
+          "cost_food": 74,
+          "distance": 13
+        },
+        {
+          "source": 13,
+          "target": 12,
+          "good": "food",
+          "quantity": 385,
+          "path": [
+            13,
+            12
+          ],
+          "tile_path": [
+            1498,
+            1450,
+            1402,
+            1354,
+            1306,
+            1258,
+            1210,
+            1162,
+            1114,
+            1066,
+            1067,
+            1068,
+            1069,
+            1070,
+            1071
+          ],
+          "legs": [
+            {
+              "a": 13,
+              "b": 12,
+              "distance": 14,
+              "cost_food": 54
+            }
+          ],
+          "cost_food": 54,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 12,
+          "b": 13,
+          "distance": 14,
+          "capacity": 266,
+          "used": 385,
+          "remaining": null,
+          "cost_food": 54
+        },
+        {
+          "a": 12,
+          "b": 14,
+          "distance": 13,
+          "capacity": 447,
+          "used": 564,
+          "remaining": null,
+          "cost_food": 74
+        },
+        {
+          "a": 12,
+          "b": 15,
+          "distance": 12,
+          "capacity": 350,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        },
+        {
+          "a": 13,
+          "b": 15,
+          "distance": 12,
+          "capacity": 200,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  },
+  {
+    "seed": 19,
+    "year": 2,
+    "owner": 7,
+    "kind": "worse",
+    "region": 28,
+    "actual_unmet": 2396,
+    "other_unmet": 2391,
+    "limited": {
+      "nodes": [
+        {
+          "id": 28,
+          "population": 7181,
+          "food_open": 4152,
+          "food_close": 4785,
+          "unmet": 2396,
+          "cost_food": 0
+        },
+        {
+          "id": 29,
+          "population": 1016,
+          "food_open": 1428,
+          "food_close": 1016,
+          "unmet": 0,
+          "cost_food": 56
+        },
+        {
+          "id": 30,
+          "population": 1183,
+          "food_open": 1381,
+          "food_close": 1183,
+          "unmet": 0,
+          "cost_food": 23
+        },
+        {
+          "id": 31,
+          "population": 927,
+          "food_open": 1042,
+          "food_close": 927,
+          "unmet": 0,
+          "cost_food": 13
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 31,
+          "target": 28,
+          "good": "food",
+          "quantity": 102,
+          "path": [
+            31,
+            28
+          ],
+          "tile_path": [
+            1476,
+            1428,
+            1380,
+            1332,
+            1284,
+            1236,
+            1188,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 31,
+              "b": 28,
+              "distance": 12,
+              "cost_food": 13
+            }
+          ],
+          "cost_food": 13,
+          "distance": 12
+        },
+        {
+          "source": 30,
+          "target": 28,
+          "good": "food",
+          "quantity": 175,
+          "path": [
+            30,
+            28
+          ],
+          "tile_path": [
+            815,
+            814,
+            813,
+            812,
+            811,
+            810,
+            809,
+            857,
+            905,
+            953,
+            1001,
+            1049,
+            1097,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 30,
+              "b": 28,
+              "distance": 13,
+              "cost_food": 23
+            }
+          ],
+          "cost_food": 23,
+          "distance": 13
+        },
+        {
+          "source": 29,
+          "target": 28,
+          "good": "food",
+          "quantity": 311,
+          "path": [
+            29,
+            28
+          ],
+          "tile_path": [
+            1535,
+            1487,
+            1439,
+            1391,
+            1343,
+            1295,
+            1247,
+            1199,
+            1151,
+            1150,
+            1149,
+            1148,
+            1147,
+            1146,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 29,
+              "b": 28,
+              "distance": 14,
+              "cost_food": 44
+            }
+          ],
+          "cost_food": 44,
+          "distance": 14
+        },
+        {
+          "source": 29,
+          "target": 28,
+          "good": "food",
+          "quantity": 45,
+          "path": [
+            29,
+            31,
+            28
+          ],
+          "tile_path": [
+            1535,
+            1487,
+            1486,
+            1485,
+            1484,
+            1483,
+            1482,
+            1481,
+            1480,
+            1479,
+            1478,
+            1477,
+            1476,
+            1428,
+            1380,
+            1332,
+            1284,
+            1236,
+            1188,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 29,
+              "b": 31,
+              "distance": 12,
+              "cost_food": 6
+            },
+            {
+              "a": 31,
+              "b": 28,
+              "distance": 12,
+              "cost_food": 6
+            }
+          ],
+          "cost_food": 12,
+          "distance": 24
+        }
+      ],
+      "roads": [
+        {
+          "a": 28,
+          "b": 29,
+          "distance": 14,
+          "capacity": 311,
+          "used": 311,
+          "remaining": 0,
+          "cost_food": 44
+        },
+        {
+          "a": 28,
+          "b": 30,
+          "distance": 13,
+          "capacity": 494,
+          "used": 175,
+          "remaining": 319,
+          "cost_food": 23
+        },
+        {
+          "a": 28,
+          "b": 31,
+          "distance": 12,
+          "capacity": 350,
+          "used": 147,
+          "remaining": 203,
+          "cost_food": 19
+        },
+        {
+          "a": 29,
+          "b": 31,
+          "distance": 12,
+          "capacity": 150,
+          "used": 45,
+          "remaining": 105,
+          "cost_food": 6
+        }
+      ]
+    },
+    "unlimited": {
+      "nodes": [
+        {
+          "id": 28,
+          "population": 7181,
+          "food_open": 4152,
+          "food_close": 4790,
+          "unmet": 2391,
+          "cost_food": 0
+        },
+        {
+          "id": 29,
+          "population": 1016,
+          "food_open": 1428,
+          "food_close": 1016,
+          "unmet": 0,
+          "cost_food": 51
+        },
+        {
+          "id": 30,
+          "population": 1183,
+          "food_open": 1381,
+          "food_close": 1183,
+          "unmet": 0,
+          "cost_food": 23
+        },
+        {
+          "id": 31,
+          "population": 927,
+          "food_open": 1042,
+          "food_close": 927,
+          "unmet": 0,
+          "cost_food": 13
+        }
+      ],
+      "food_shipments": [
+        {
+          "source": 31,
+          "target": 28,
+          "good": "food",
+          "quantity": 102,
+          "path": [
+            31,
+            28
+          ],
+          "tile_path": [
+            1476,
+            1428,
+            1380,
+            1332,
+            1284,
+            1236,
+            1188,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 31,
+              "b": 28,
+              "distance": 12,
+              "cost_food": 13
+            }
+          ],
+          "cost_food": 13,
+          "distance": 12
+        },
+        {
+          "source": 30,
+          "target": 28,
+          "good": "food",
+          "quantity": 175,
+          "path": [
+            30,
+            28
+          ],
+          "tile_path": [
+            815,
+            814,
+            813,
+            812,
+            811,
+            810,
+            809,
+            857,
+            905,
+            953,
+            1001,
+            1049,
+            1097,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 30,
+              "b": 28,
+              "distance": 13,
+              "cost_food": 23
+            }
+          ],
+          "cost_food": 23,
+          "distance": 13
+        },
+        {
+          "source": 29,
+          "target": 28,
+          "good": "food",
+          "quantity": 361,
+          "path": [
+            29,
+            28
+          ],
+          "tile_path": [
+            1535,
+            1487,
+            1439,
+            1391,
+            1343,
+            1295,
+            1247,
+            1199,
+            1151,
+            1150,
+            1149,
+            1148,
+            1147,
+            1146,
+            1145
+          ],
+          "legs": [
+            {
+              "a": 29,
+              "b": 28,
+              "distance": 14,
+              "cost_food": 51
+            }
+          ],
+          "cost_food": 51,
+          "distance": 14
+        }
+      ],
+      "roads": [
+        {
+          "a": 28,
+          "b": 29,
+          "distance": 14,
+          "capacity": 311,
+          "used": 361,
+          "remaining": null,
+          "cost_food": 51
+        },
+        {
+          "a": 28,
+          "b": 30,
+          "distance": 13,
+          "capacity": 494,
+          "used": 175,
+          "remaining": null,
+          "cost_food": 23
+        },
+        {
+          "a": 28,
+          "b": 31,
+          "distance": 12,
+          "capacity": 350,
+          "used": 102,
+          "remaining": null,
+          "cost_food": 13
+        },
+        {
+          "a": 29,
+          "b": 31,
+          "distance": 12,
+          "capacity": 150,
+          "used": 0,
+          "remaining": null,
+          "cost_food": 0
+        }
+      ]
+    }
+  }
+]
