@@ -59,7 +59,9 @@ class GovernmentStudyTests(unittest.TestCase):
             for filename, field in (("world.json", "initial_fiscal_sha256"), ("years.jsonl", "years_sha256")):
                 self.assertEqual(hashlib.sha256((saved / filename).read_bytes()).hexdigest(), full[field])
             self.assertEqual(len(rows(out / "paired.csv")), 6)
-            self.assertTrue(isinstance(json.loads((out / "cases.json").read_text()), list))
+            self.assertIsInstance(json.loads((out / "cases.json").read_text(encoding="utf-8")), list)
+            for filename in ("cases.json", "execution.json"):
+                self.assertNotIn(b"\r", (out / filename).read_bytes())
             with self.assertRaises(FileExistsError):
                 run_study(out, sample="dev", seeds=1, horizons=(1,), workers=1)
             repeated = Path(temp, "repeat")
