@@ -17,13 +17,11 @@ def step(world: World, year: int, rules: Rules = LEGACY) -> dict:
         raise ValueError("switching between capital and pre-capital worlds requires a new run")
     if version_three:
         working = [investment.prepare(n) for n in world.nations]
-        produce = investment.produce
     else:
         working = [replace(n, stock=n.stock.copy()) for n in world.nations]
-        produce = economy.produce
     opening = {n.id: asdict(n) for n in working}
     climate = {n.id: climate_factor(world.seed, year, n.id) for n in working}
-    production = {n.id: produce(n, climate[n.id], rules) for n in working}
+    production = {n.id: economy.produce(n, climate[n.id], rules) for n in working}
     market = economy.market(working, rules)
     for key in ("opening", "prices", "targets"):
         market[key] = {str(i): values for i, values in market[key].items()}
