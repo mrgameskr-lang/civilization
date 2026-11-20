@@ -21,4 +21,5 @@ jobs:
       - run: python -m unittest discover -v
       - run: python -m civsim verify examples/seed-42
       - run: python -m civsim verify examples/phase2-seeds-0-19/seed13-reallocated
+      - run: python -m civsim verify examples/phase3/seed7-capital
 
