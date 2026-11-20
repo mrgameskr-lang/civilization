@@ -1,0 +1,42 @@
+test_small_run_measures_all_four_scenarios_and_profiles_persistence (benchmarks.test_benchmark.BenchmarkTests.test_small_run_measures_all_four_scenarios_and_profiles_persistence) ... ok
+test_panel_preserves_units_country_names_and_transfer_direction (tests.test_analysis.AnalysisTests.test_panel_preserves_units_country_names_and_transfer_direction) ... ok
+test_raw_ledger_and_existing_exports_are_preserved (tests.test_analysis.AnalysisTests.test_raw_ledger_and_existing_exports_are_preserved) ... ok
+test_summary_uses_first_open_last_close_and_counts_each_transfer_once (tests.test_analysis.AnalysisTests.test_summary_uses_first_open_last_close_and_counts_each_transfer_once) ... ok
+test_truncated_input_has_no_partial_export (tests.test_analysis.AnalysisTests.test_truncated_input_has_no_partial_export) ... ok
+test_existing_directory_survives_refused_run (tests.test_cli.CommandLineTests.test_existing_directory_survives_refused_run) ... ok
+test_input_and_dataset_errors_return_diagnostics (tests.test_cli.CommandLineTests.test_input_and_dataset_errors_return_diagnostics) ... ok
+test_run_analyze_export_and_replay (tests.test_cli.CommandLineTests.test_run_analyze_export_and_replay) ... ok
+test_crowding_triggers_moves_capped_by_host_land (tests.test_demography.DemographyTests.test_crowding_triggers_moves_capped_by_host_land) ... ok
+test_empty_settlement_accepts_arrivals_only_with_food_reserve (tests.test_demography.DemographyTests.test_empty_settlement_accepts_arrivals_only_with_food_reserve) ... ok
+test_invalid_inputs_cannot_partially_advance_population (tests.test_demography.DemographyTests.test_invalid_inputs_cannot_partially_advance_population) ... ok
+test_one_source_can_fill_multiple_hosts_without_chained_migration (tests.test_demography.DemographyTests.test_one_source_can_fill_multiple_hosts_without_chained_migration) ... ok
+test_rationing_changes_births_and_deaths (tests.test_demography.DemographyTests.test_rationing_changes_births_and_deaths) ... ok
+test_several_donors_cannot_spend_one_hosts_food_twice (tests.test_demography.DemographyTests.test_several_donors_cannot_spend_one_hosts_food_twice) ... ok
+test_deficit_is_unmet_need_without_negative_stock (tests.test_economy.ConsumptionTests.test_deficit_is_unmet_need_without_negative_stock) ... ok
+test_surplus_food_carries_after_explicit_storage_loss (tests.test_economy.ConsumptionTests.test_surplus_food_carries_after_explicit_storage_loss) ... ok
+test_affluent_buyer_cannot_drain_seller_reserve (tests.test_economy.MarketTests.test_affluent_buyer_cannot_drain_seller_reserve) ... ok
+test_cash_limited_buyer_and_conserved_settlement (tests.test_economy.MarketTests.test_cash_limited_buyer_and_conserved_settlement) ... ok
+test_multi_good_partial_fills_and_order_independence (tests.test_economy.MarketTests.test_multi_good_partial_fills_and_order_independence) ... ok
+test_no_trade_without_counterparty_or_available_credit (tests.test_economy.MarketTests.test_no_trade_without_counterparty_or_available_credit) ... ok
+test_empty_country_does_not_produce (tests.test_economy.ProductionTests.test_empty_country_does_not_produce) ... ok
+test_large_food_reserve_shifts_workers_from_farming (tests.test_economy.ProductionTests.test_large_food_reserve_shifts_workers_from_farming) ... ok
+test_limited_deposit_and_odd_ore_remainder (tests.test_economy.ProductionTests.test_limited_deposit_and_odd_ore_remainder) ... ok
+test_neutral_country_with_no_stock (tests.test_economy.ProductionTests.test_neutral_country_with_no_stock) ... ok
+test_tools_soil_climate_and_land_constrain_harvest (tests.test_economy.ProductionTests.test_tools_soil_climate_and_land_constrain_harvest) ... ok
+test_detects_tampered_stock_cash_population_deposit_and_movements (tests.test_engine.AnnualEngineTests.test_detects_tampered_stock_cash_population_deposit_and_movements) ... ok
+test_events_follow_observed_shortfalls_and_flows (tests.test_engine.AnnualEngineTests.test_events_follow_observed_shortfalls_and_flows) ... ok
+test_fifty_year_runs_balance_independently (tests.test_engine.AnnualEngineTests.test_fifty_year_runs_balance_independently) ... ok
+test_years_must_be_consecutive_and_failed_transition_is_atomic (tests.test_engine.AnnualEngineTests.test_years_must_be_consecutive_and_failed_transition_is_atomic) ... ok
+test_default_map_aggregates_tile_resources_exactly (tests.test_model.WorldTests.test_default_map_aggregates_tile_resources_exactly) ... ok
+test_invalid_map_sizes_are_rejected (tests.test_model.WorldTests.test_invalid_map_sizes_are_rejected) ... ok
+test_partition_is_complete_and_each_territory_is_connected (tests.test_model.WorldTests.test_partition_is_complete_and_each_territory_is_connected) ... ok
+test_rainfall_is_bounded_smooth_with_distinct_local_cycles (tests.test_model.WorldTests.test_rainfall_is_bounded_smooth_with_distinct_local_cycles) ... ok
+test_replay_is_independent_of_global_random_state_and_mutations (tests.test_model.WorldTests.test_replay_is_independent_of_global_random_state_and_mutations) ... ok
+test_fifty_year_byte_replay_and_other_seed (tests.test_storage.RunStorageTests.test_fifty_year_byte_replay_and_other_seed) ... ok
+test_original_run_is_protected_and_failed_run_is_never_published (tests.test_storage.RunStorageTests.test_original_run_is_protected_and_failed_run_is_never_published) ... ok
+test_replay_detects_even_an_unbalanced_or_audit_neutral_edit (tests.test_storage.RunStorageTests.test_replay_detects_even_an_unbalanced_or_audit_neutral_edit) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 2.595s
+
+OK
