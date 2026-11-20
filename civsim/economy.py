@@ -6,8 +6,17 @@ from .rules import LEGACY, Rules
 
 def produce(nation: Nation, climate: int, rules: Rules = LEGACY) -> dict:
     """Allocate the year's workers and post real production and material costs."""
+    if rules.investment != "off":
+        from .investment import produce as produce_with_capital
+        return produce_with_capital(nation, climate, rules)
+    return produce_sectors(nation, climate, rules, workers=nation.population // 2,
+                           land_capacity=20 * nation.land)
+
+
+def produce_sectors(nation, climate, rules, *, workers, land_capacity,
+                    farm_multiplier=1000, industry_multiplier=1000, tool_target=None):
+    """Post production with the supplied labor budget, field capacity and equipment."""
     opening = nation.stock.copy()
-    workers = nation.population // 2
     farm_share = max(450, 760 - 220 * opening["food"] // max(1, nation.population))
     farmers = workers * farm_share // 1000
     miners = (workers - farmers) // 2
@@ -15,7 +24,6 @@ def produce(nation: Nation, climate: int, rules: Rules = LEGACY) -> dict:
     labor_before = {"farm": farmers, "mine": miners, "factory": artisans}
 
     # A tile supports at most 20 productive farmers. Only opening tools equip them.
-    land_capacity = 20 * nation.land
     active_farmers = min(farmers, land_capacity)
     idle_before = farmers - active_farmers
     if rules.labor == "reallocate":
@@ -28,12 +36,14 @@ def produce(nation: Nation, climate: int, rules: Rules = LEGACY) -> dict:
     equipment = 1000 + 150 * tools_used // max(1, tool_need)
     skill = nation.productivity * nation.technology
     food = (active_farmers * 32 * skill * nation.fertility * nation.soil
-            * climate * equipment // (10 * 1000**6))
+            * climate * equipment * farm_multiplier // (10 * 1000**7))
 
-    mining_capacity = miners * skill * nation.ore_grade // (2 * 1000**3)
+    mining_capacity = miners * skill * nation.ore_grade * industry_multiplier // (2 * 1000**4)
     ore = min(nation.deposit, mining_capacity)
-    factory_capacity = artisans * skill // (3 * 1000**2)
+    factory_capacity = artisans * skill * industry_multiplier // (3 * 1000**3)
     tools = min(factory_capacity, (opening["ore"] + ore) // 2)
+    if tool_target is not None:
+        tools = min(tools, max(0, tool_target - (opening["tools"] - tools_used)))
     produced = {"food": food, "ore": ore, "tools": tools}
     used = {"food": 0, "ore": 2 * tools, "tools": tools_used}
     for good in GOODS:
