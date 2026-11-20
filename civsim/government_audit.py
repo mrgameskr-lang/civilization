@@ -1,6 +1,7 @@
 """Reconstruct regional private, regional depot and consolidated country flows independently."""
 from collections import Counter
 
+from .appropriation_audit import audit_appropriations
 from .audit import BalanceError
 from .model import GOODS
 from .public_works import ROAD_BONUS
@@ -102,7 +103,7 @@ def _road_audit(record):
                and e["unused"] >= 0, "road capacity balance")
 
 
-def audit_fiscal_year(record):
+def audit_fiscal_year(record, *, previous_record=None):
     gov = record["government"]
     regions = _by(record["regions"], "id")
     depots = _by(gov["depots"], "region")
@@ -189,3 +190,4 @@ def audit_fiscal_year(record):
     for owner, a in accounts.items():
         _check(combined[owner] == a["combined_close"], "consolidated national balance")
     _road_audit(record)
+    audit_appropriations(record, previous_record=previous_record)

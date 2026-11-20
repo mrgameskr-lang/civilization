@@ -311,7 +311,8 @@ def run_study(output, *, sample, seeds=20, horizons=(50, 100, 200), workers=8, v
         for name, data in (("runs", runs), ("countries", countries), ("regions", regions), ("paired", paired),
                            ("means", means)):
             _write(stage / (name + ".csv"), data)
-        (stage / "cases.json").write_text(json.dumps(cases, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (stage / "cases.json").write_text(json.dumps(cases, ensure_ascii=False, indent=2) + "\n",
+                                          encoding="utf-8", newline="\n")
         tables = sorted(p.name for p in stage.iterdir())
         if verify is not None:
             for name in tables:
@@ -323,7 +324,7 @@ def run_study(output, *, sample, seeds=20, horizons=(50, 100, 200), workers=8, v
                    "archived_control_checkpoints": archive_count, "replayed_tables": tables if verify is not None else [],
                    "python": platform.python_version(),
                    "wall_seconds": time.perf_counter() - start}
-        (stage / "execution.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+        (stage / "execution.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8", newline="\n")
         if os.path.lexists(output):
             raise FileExistsError(output)
         stage.rename(output)
