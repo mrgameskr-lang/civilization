@@ -23,6 +23,43 @@ def _goods(values, label):
         _quantity(qty, f"{label}.{g}")
 
 
+def _audit_labor(opening, trace):
+    """Rebuild v2 worker assignments from opening population, stock, land and policy."""
+    policy = trace.get("labor_policy")
+    _check(policy in ("idle", "reallocate"), "unknown or missing labor policy")
+    population = opening["population"]
+    workers = population // 2
+    share = max(450, 760 - 220 * opening["stock"]["food"] // max(1, population))
+    farmers = workers * share // 1000
+    miners = (workers - farmers) // 2
+    artisans = workers - farmers - miners
+    capacity = 20 * _quantity(opening["land"], "land")
+    active_farmers = min(farmers, capacity)
+    surplus = farmers - active_farmers
+    moved = surplus if policy == "reallocate" else 0
+    to_mine = moved // 2
+    to_factory = moved - to_mine
+    counts = {
+        "population": population, "workers": workers, "farm_share": share,
+        "land": opening["land"], "land_capacity": capacity, "active_farmers": active_farmers,
+        "idle_before": surplus, "idle_after": surplus - moved,
+    }
+    for key, expected in counts.items():
+        _check(_quantity(trace.get(key), key) == expected, f"labor: {key} mismatch")
+    active = {"farm": active_farmers, "mine": miners + to_mine, "factory": artisans + to_factory}
+    assignments = {
+        "labor_before": {"farm": farmers, "mine": miners, "factory": artisans},
+        "reassigned": {"mine": to_mine, "factory": to_factory},
+        "active_labor": active,
+        "labor": {**active, "farm": farmers - moved},
+    }
+    for name, expected in assignments.items():
+        actual = trace.get(name)
+        _check(isinstance(actual, dict) and actual.keys() == expected.keys(), f"labor: {name} sectors")
+        for sector, count in expected.items():
+            _check(_quantity(actual[sector], sector) == count, f"labor: {name}.{sector} mismatch")
+
+
 def observed_events(countries, moves):
     """Deterministic observations with the same units as their underlying evidence."""
     events = []
@@ -52,6 +89,10 @@ def audit(record):
             _goods(state["stock"], f"country {i} {name} stock")
             for field in ("cash", "deposit", "population"):
                 _quantity(state[field], f"country {i} {name} {field}")
+        if "settlement_order" in record["market"]:
+            _audit_labor(o, p)
+        else:
+            _check("labor_policy" not in p, "missing settlement order for versioned labor trace")
         _goods(p["produced"], "production")
         _goods(p["used"], "production input")
         stock[i] = {g: o["stock"][g] + p["produced"][g] - p["used"][g] for g in GOODS}
