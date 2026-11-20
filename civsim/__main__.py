@@ -24,6 +24,8 @@ def main() -> int:
                      help="농업 유휴 노동 처리 (기본 idle)")
     run.add_argument("--trade-order", default=",".join(LEGACY.order), metavar="GOODS",
                      help="세 재화의 결제 순서 (기본 food,ore,tools)")
+    run.add_argument("--investment", choices=("off", "inventory", "capital"), default="off",
+                     help="3.0 도구 재고 제어(inventory) 또는 재고 제어와 설비 투자(capital)")
 
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
@@ -36,7 +38,7 @@ def main() -> int:
     try:
         if args.command == "run":
             order = tuple(good.strip() for good in args.trade_order.split(","))
-            rules = Rules(labor=args.labor, order=order)
+            rules = Rules(labor=args.labor, order=order, investment=args.investment)
             write_run(args.out, seed=args.seed, width=args.width, height=args.height,
                       nations=args.nations, years=args.years, rules=rules)
             print(f"{args.years}년 실행 기록을 저장했습니다. {args.out.resolve()}")

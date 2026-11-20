@@ -34,6 +34,8 @@ def write_run(directory: Path, *, seed=42, width=48, height=32, nations=8, years
                 "seed": seed, "width": width, "height": height, "nations": nations}
     if rules != LEGACY:
         manifest["rules"] = {"labor": rules.labor, "order": list(rules.order)}
+        if rules.investment != "off":
+            manifest["rules"]["investment"] = rules.investment
     directory.parent.mkdir(exist_ok=True, parents=True)
     with TemporaryDirectory(dir=directory.parent, prefix=".civsim-") as scratch:
         staging = Path(scratch) / "run"
@@ -81,17 +83,18 @@ def _replay_rules(meta):
         if "rules" in meta:
             raise ValueError("legacy manifest cannot contain a rules override")
         return LEGACY
-    if version != "2.0":
+    if version not in ("2.0", "3.0"):
         raise ValueError(f"incompatible model version for replay: {version!r}")
     config = meta.get("rules")
-    if not isinstance(config, dict) or set(config) != {"labor", "order"}:
-        raise ValueError("rules must contain exactly labor and order")
+    required = {"labor", "order", "investment"} if version == "3.0" else {"labor", "order"}
+    if not isinstance(config, dict) or set(config) != required:
+        raise ValueError(f"version {version} rule keys must be {sorted(required)}")
     order = config["order"]
     if not isinstance(config["labor"], str) or not isinstance(order, list) or not all(
         isinstance(good, str) for good in order
     ):
         raise ValueError("invalid rule types; expected a labor string and an array of goods")
-    rules = Rules(labor=config["labor"], order=tuple(order))
+    rules = Rules(labor=config["labor"], order=tuple(order), investment=config.get("investment", "off"))
     if rules.version != version:
         raise ValueError("rules do not match model version")
     return rules
