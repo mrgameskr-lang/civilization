@@ -9,8 +9,11 @@ from .model import GOODS
 class Rules:
     labor: str = "idle"
     order: tuple[str, ...] = GOODS
+    investment: str = "off"
 
     def __post_init__(self) -> None:
+        if self.investment not in ("off", "inventory", "capital"):
+            raise ValueError("investment must be 'off', 'inventory' or 'capital'")
         if self.labor not in ("idle", "reallocate"):
             raise ValueError("labor must be 'idle' or 'reallocate'")
         if (type(self.order) is not tuple or len(self.order) != len(GOODS)
@@ -19,6 +22,8 @@ class Rules:
 
     @property
     def version(self) -> str:
+        if self.investment != "off":
+            return "3.0"
         return "1.0" if self == LEGACY else "2.0"
 
 

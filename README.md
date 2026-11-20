@@ -4,6 +4,8 @@
 
 기본 실행은 1.0 규칙을 사용한다. 2.0은 농지 수용 한도를 초과하는 인력의 재배치와 재화별 결제 순서를 선택할 수 있다. 20개 시드·240개 조합의 실측 결과, 반례, 검증 명령은 [2차 실험 보고서](docs/phase2.md)에 있다.
 
+3.0은 도구의 목표 재고를 두고, 농업 설비·광공업 설비·경작지 개간에 광석·도구·노동을 투자한다. 유지비를 낸 기존 설비가 생산에 참여하며, 새 설비는 다음 해부터 가동된다. [투자 정책과 수식](docs/investment-rules.md) · [50년·200년 비교 보고서](docs/phase3.md)
+
 ## 실행
 
 Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용한다. 런타임과 테스트는 모두 표준 라이브러리를 사용한다.
@@ -17,6 +19,14 @@ python -m benchmarks.benchmark
 ```
 
 2.0 예제를 새 디렉터리에 만들려면 `python -m civsim run --seed 13 --years 50 --labor reallocate --trade-order food,ore,tools --out runs/phase2-seed13`를 실행한다. `verify`는 매니페스트에 저장된 버전·규칙을 읽어 해당 실행을 재생한다.
+
+3.0의 설비 투자군은 `--investment capital`, 도구 재고 제어만 적용하는 대조군은 `--investment inventory`로 선택한다. 다음 명령은 3차 보고서와 같은 노동·결제 규칙을 사용한다.
+
+```sh
+python -m civsim run --seed 7 --years 50 --labor reallocate --investment capital --out runs/capital-7
+python -m civsim verify runs/capital-7
+python -m experiments.phase3 --seeds 20 --horizons 50,200 --out runs/investment-study
+```
 
 `run`과 CSV 내보내기는 새 경로에 쓴다. 다른 실험을 저장할 때는 새 디렉터리·파일 이름을 지정한다. `--width`, `--height`, `--nations`로 규모를 바꿀 수 있다. 이미 저장된 예제를 살펴볼 때는 `python -m civsim analyze examples/seed-42`를 실행한다.
 

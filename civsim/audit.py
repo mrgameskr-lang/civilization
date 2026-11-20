@@ -23,17 +23,17 @@ def _goods(values, label):
         _quantity(qty, f"{label}.{g}")
 
 
-def _audit_labor(opening, trace):
-    """Rebuild v2 worker assignments from opening population, stock, land and policy."""
+def _audit_labor(opening, trace, construction_labor=0, added_land_capacity=0):
+    """Rebuild worker assignments after any construction or land improvements."""
     policy = trace.get("labor_policy")
     _check(policy in ("idle", "reallocate"), "unknown or missing labor policy")
     population = opening["population"]
-    workers = population // 2
+    workers = population // 2 - construction_labor
     share = max(450, 760 - 220 * opening["stock"]["food"] // max(1, population))
     farmers = workers * share // 1000
     miners = (workers - farmers) // 2
     artisans = workers - farmers - miners
-    capacity = 20 * _quantity(opening["land"], "land")
+    capacity = 20 * _quantity(opening["land"], "land") + added_land_capacity
     active_farmers = min(farmers, capacity)
     surplus = farmers - active_farmers
     moved = surplus if policy == "reallocate" else 0
@@ -58,6 +58,130 @@ def _audit_labor(opening, trace):
         _check(isinstance(actual, dict) and actual.keys() == expected.keys(), f"labor: {name} sectors")
         for sector, count in expected.items():
             _check(_quantity(actual[sector], sector) == count, f"labor: {name}.{sector} mismatch")
+
+
+def _audit_investment(opening, closing, p):
+    """Reconstruct the capital roll-forward and physical spending from opening resources."""
+    inv = p.get("investment")
+    _check(isinstance(inv, dict), "missing investment stages")
+    policy = inv.get("policy")
+    _check(policy in ("inventory", "capital"), "unknown investment policy")
+    # Columns are build tools, ore, workers; annual operating tools, ore.
+    recipes = {"farm": (8, 8, 6, 1, 0), "industry": (12, 12, 8, 1, 1),
+               "land": (10, 6, 12, 1, 0)}
+    for state, key in ((opening, "opening_capital"), (closing, "closing_capital")):
+        assets = state.get("capital")
+        _check(isinstance(assets, dict) and assets.keys() == recipes.keys(), f"invalid {key} accounts")
+        _check(assets == inv.get(key), f"unreconciled {key} snapshot")
+        for kind, cohorts in assets.items():
+            _check(isinstance(cohorts, list) and len(cohorts) == 8, f"invalid {kind} cohorts")
+            for count in cohorts:
+                _quantity(count, f"{kind} cohort count")
+    book = inv.get("book")
+    _check(isinstance(book, dict) and book.keys() == recipes.keys(), "invalid book value accounts")
+    for key in ("built", "retired", "operated"):
+        values = inv.get(key)
+        _check(isinstance(values, dict) and values.keys() == recipes.keys(), f"invalid {key} ledger")
+        for count in values.values():
+            _quantity(count, f"{key} count")
+
+    remaining = opening["stock"].copy()
+    build_cost = dict.fromkeys(GOODS, 0)
+    upkeep = dict.fromkeys(GOODS, 0)
+    labor_cost = 0
+    limit = (_quantity(opening["land"], "land") + 5) // 6
+    _check(sum(inv["built"].values()) <= 1, "multiple construction projects in one year")
+    for kind, (tools, ore, labor, tool_upkeep, ore_upkeep) in recipes.items():
+        before, after = opening["capital"][kind], closing["capital"][kind]
+        count, added = sum(before), inv["built"][kind]
+        _check(count <= limit and sum(after) <= limit, f"{kind} exceeds asset limit")
+        _check(policy == "capital" or count + added == 0, "inventory control owns capital")
+        _check(inv["retired"][kind] == before[-1] and after == [added, *before[:-1]],
+               f"{kind} vintage or retirement mismatch")
+        unit_value = 12 * tools + 4 * ore + 8 * labor
+        expected_book = {
+            "open_eighths": unit_value * sum((8 - age) * n for age, n in enumerate(before)),
+            "depreciation_eighths": unit_value * count,
+            "additions_eighths": 8 * unit_value * added,
+            "close_eighths": unit_value * sum((8 - age) * n for age, n in enumerate(after)),
+        }
+        account = book[kind]
+        _check(isinstance(account, dict) and account.keys() == expected_book.keys(),
+               f"{kind} book account fields")
+        for field, expected in expected_book.items():
+            _check(_quantity(account[field], field) == expected, f"{kind} book {field} mismatch")
+        active = min(count, remaining["tools"] // tool_upkeep)
+        if ore_upkeep:
+            active = min(active, remaining["ore"] // ore_upkeep)
+        _check(inv["operated"][kind] == active, f"unfunded or premature {kind} operation")
+        remaining["tools"] -= active * tool_upkeep
+        remaining["ore"] -= active * ore_upkeep
+        upkeep["tools"] += active * tool_upkeep
+        upkeep["ore"] += active * ore_upkeep
+        build_cost["tools"] += added * tools
+        build_cost["ore"] += added * ore
+        labor_cost += added * labor
+    for key, expected in (("build_used", build_cost), ("upkeep_used", upkeep)):
+        _goods(inv[key], key)
+        _check(inv[key] == expected, f"{key} does not match asset recipes")
+    _goods(inv["stock_after_upkeep"], "stock after upkeep")
+    _check(inv["stock_after_upkeep"] == remaining, "stock after upkeep mismatch")
+    for good in GOODS:
+        remaining[good] -= build_cost[good]
+    _goods(remaining, "resources after upkeep and construction")
+    _goods(inv["stock_after_build"], "stock after construction")
+    _check(inv["stock_after_build"] == remaining, "stock after construction mismatch")
+    _check(_quantity(inv["construction_labor"], "construction labor") == labor_cost
+           and labor_cost <= opening["population"] // 2, "unfunded or misposted builder labor")
+    operated = inv["operated"]
+    extra_capacity = min(4 * opening["land"], 24 * operated["land"])
+    for key, expected in (("added_land_capacity", extra_capacity),
+                          ("farm_multiplier", 1000 + 12 * operated["farm"]),
+                          ("industry_multiplier", 1000 + 25 * operated["industry"])):
+        _check(_quantity(inv[key], key) == expected, f"{key} requires paid opening assets")
+    _audit_labor(opening, p, labor_cost, extra_capacity)
+
+    workers = opening["population"] // 2
+    anticipated_farmers = min(workers * p["farm_share"] // 1000, 24 * opening["land"])
+    target_parts = {
+        "farm_wear": (anticipated_farmers + 29) // 30, "trade_buffer": opening["population"] // 40,
+        "project_buffer": 12 if opening["land"] and workers >= 6 else 0,
+        "replacement_buffer": (30 * limit + 7) // 8,
+    }
+    target = sum(target_parts.values())
+    _check(inv["target_components"] == target_parts and inv["tool_target"] == target,
+           "tool replacement or reserve target mismatch")
+    if any(inv["built"].values()):
+        _check(remaining["tools"] >= target_parts["farm_wear"], "construction spent farm tool reserve")
+    _audit_investment_output(opening, p, remaining, target)
+
+
+def _audit_investment_output(opening, p, remaining, target):
+    """Check actual output against paid equipment, labor, reserves and input caps."""
+    inv = p["investment"]
+    skill = opening["productivity"] * opening["technology"]
+    active = p["active_labor"]
+    need = (p["active_farmers"] + 29) // 30
+    wear = min(need, remaining["tools"])
+    equipment = 1000 + 150 * wear // max(1, need)
+    food = (active["farm"] * 32 * skill * opening["fertility"] * opening["soil"]
+            * p["climate"] * equipment * inv["farm_multiplier"] // (10 * 1000**7))
+    mine = active["mine"] * skill * opening["ore_grade"] * inv["industry_multiplier"] // (2 * 1000**4)
+    factory = active["factory"] * skill * inv["industry_multiplier"] // (3 * 1000**3)
+    ore = min(mine, opening["deposit"])
+    available_ore = remaining["ore"] + ore
+    tool_gap = max(0, target - (remaining["tools"] - wear))
+    tools = min(factory, available_ore // 2, tool_gap)
+    output = p["produced"]
+    for key, expected in (("equipment", equipment), ("mining_capacity", mine), ("factory_capacity", factory),
+                          ("ore_available", available_ore), ("factory_ore_limit", available_ore // 2)):
+        _check(_quantity(p[key], key) == expected, f"unfunded or incorrect {key}")
+    _check(output == {"food": food, "ore": ore, "tools": tools}, "output exceeds or differs from capacity")
+    sector_used = {"food": 0, "ore": 2 * output["tools"], "tools": wear}
+    _goods(inv["sector_used"], "sector inputs")
+    _check(p["tool_need"] == need and inv["sector_used"] == sector_used, "sector input mismatch")
+    _check(all(p["used"][g] == inv["upkeep_used"][g] + inv["build_used"][g] + sector_used[g] for g in GOODS),
+           "investment and sector inputs do not reconcile to total use")
 
 
 def observed_events(countries, moves):
@@ -89,12 +213,15 @@ def audit(record):
             _goods(state["stock"], f"country {i} {name} stock")
             for field in ("cash", "deposit", "population"):
                 _quantity(state[field], f"country {i} {name} {field}")
-        if "settlement_order" in record["market"]:
+        _goods(p["produced"], "production")
+        _goods(p["used"], "production input")
+        if "capital" in o or "capital" in end or "investment" in p:
+            _check("settlement_order" in record["market"], "missing v3 settlement order")
+            _audit_investment(o, end, p)
+        elif "settlement_order" in record["market"]:
             _audit_labor(o, p)
         else:
             _check("labor_policy" not in p, "missing settlement order for versioned labor trace")
-        _goods(p["produced"], "production")
-        _goods(p["used"], "production input")
         stock[i] = {g: o["stock"][g] + p["produced"][g] - p["used"][g] for g in GOODS}
         _goods(stock[i], "after production")
         _check(o["deposit"] - p["produced"]["ore"] == end["deposit"], f"country {i}: deposit")
@@ -129,8 +256,19 @@ def audit(record):
         _goods(u["used"], "consumption")
         need, eaten = u["food_need"], _quantity(u["food_eaten"], "food eaten")
         spoiled = _quantity(u["food_spoiled"], "food spoiled")
-        _check(need == o["population"] and eaten == min(need, stock[i]["food"])
-               and eaten + spoiled == u["used"]["food"], f"country {i}: food allocation")
+        before_meals = stock[i]["food"]
+        carry = before_meals - eaten - spoiled
+        _check(_quantity(need, "food need") == o["population"] and eaten == min(need, before_meals)
+               and spoiled == (before_meals - eaten) // 12
+               and u["used"] == {"food": eaten + spoiled, "ore": 0, "tools": 0},
+               f"country {i}: food allocation")
+        _check(_quantity(u["opening_food"], "opening food") == before_meals
+               and _quantity(u["closing_food"], "closing food") == carry
+               and _quantity(u["food_unmet"], "unmet need") == need - eaten,
+               f"country {i}: food carry or unmet need")
+        _check(d["food_need"] == need and d["food_eaten"] == eaten
+               and d["food_shortage"] == need - eaten and d["food_reserve"] == carry,
+               f"country {i}: consumption to demography boundary")
         for g in GOODS:
             _check(stock[i][g] - u["used"][g] == end["stock"][g], f"country {i}: {g} balance")
         _check(cash[i] == end["cash"], f"country {i}: cash balance")
