@@ -4,10 +4,13 @@ import csv
 from pathlib import Path
 
 from .model import GOODS
-from .storage import read_years
+from .storage import _manifest, read_years
 
 
-def summary(directory: Path) -> dict[str, int]:
+def summary(directory: Path) -> dict:
+    if _manifest(Path(directory)).get("model_version") == "4.0":
+        from .regional_storage import regional_summary
+        return regional_summary(directory)
     result = dict.fromkeys((
         "years", "initial_population", "final_population", "total_births", "total_deaths",
         "total_migrants", "total_food_traded", "shortage_country_years",
@@ -67,6 +70,10 @@ def _panel_rows(year: dict):
 
 def write_panel(directory: Path, output: Path) -> None:
     """Export one row per nation/year, refusing to overwrite any existing path."""
+    if _manifest(Path(directory)).get("model_version") == "4.0":
+        from .regional_storage import regional_summary
+        regional_summary(directory, output)
+        return
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
     stream = output.open("x", encoding="utf-8-sig", newline="")
