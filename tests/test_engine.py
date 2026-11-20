@@ -7,6 +7,24 @@ from civsim.model import GOODS, generate_world
 
 
 class AnnualEngineTests(unittest.TestCase):
+    def test_years_must_be_consecutive_and_failed_transition_is_atomic(self):
+        world = generate_world(17)
+        initial = copy.deepcopy(world)
+        with self.assertRaises(ValueError):
+            step(world, 2)
+        self.assertEqual(world, initial)
+        step(world, 1)
+        after_one = copy.deepcopy(world)
+        with self.assertRaises(ValueError):
+            step(world, 1)
+        self.assertEqual(world, after_one)
+        # An invalid opening account fails the audit after computation.
+        world.nations[0].cash = -1
+        before_failure = copy.deepcopy(world)
+        with self.assertRaises(BalanceError):
+            step(world, 2)
+        self.assertEqual(world, before_failure)
+
     def test_fifty_year_runs_balance_independently(self):
         for seed in (0, 17, 42, -4):
             world = generate_world(seed)

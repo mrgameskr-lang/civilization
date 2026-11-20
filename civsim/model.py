@@ -41,6 +41,7 @@ class World:
     height: int
     tiles: list[Tile]
     nations: list[Nation]
+    year: int = 0
 
 
 def _regions(x, y, width, height, count, rng):

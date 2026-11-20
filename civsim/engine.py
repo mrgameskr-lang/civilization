@@ -9,8 +9,8 @@ from .model import World, climate_factor
 
 def step(world: World, year: int) -> dict:
     """Advance one year, publishing fresh country objects only after balances pass."""
-    if type(year) is not int or year < 1:
-        raise ValueError("year must be a positive integer")
+    if type(year) is not int or year != world.year + 1:
+        raise ValueError(f"expected next year {world.year + 1}, got {year!r}")
     working = [replace(n, stock=n.stock.copy()) for n in world.nations]
     opening = {n.id: asdict(n) for n in working}
     climate = {n.id: climate_factor(world.seed, year, n.id) for n in working}
@@ -31,5 +31,6 @@ def step(world: World, year: int) -> dict:
               "events": observed_events(countries, moves)}
     audit(record)
     world.nations = working
+    world.year = year
     return record
 
