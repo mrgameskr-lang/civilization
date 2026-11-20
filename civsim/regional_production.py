@@ -21,10 +21,9 @@ def _care_plan(farmland, soil, stock, workers, enabled):
             "workers": 4*packages, "used": {"food": 0, "ore": packages, "tools": packages}}
 
 
-def _plan(r, climate, care_enabled):
+def _plan(r, climate, care_enabled, workers):
     opening = r.stock.copy()
     cohorts = r.capital
-    workers = r.population//2
     operated, upkeep = _spend_upkeep(r, cohorts)
     after_upkeep = r.stock.copy()
     care = _care_plan(r.farmland, r.soil, r.stock, workers, care_enabled)
@@ -90,8 +89,8 @@ def _allocate(owners, operating, scope):
     return effects
 
 
-def _finish(r, opening, plan, care, effect, climate):
-    workers = r.population//2 - plan["construction_labor"] - care["workers"]
+def _finish(r, opening, plan, care, effect, climate, workers):
+    workers -= plan["construction_labor"] + care["workers"]
     field_capacity = 20*r.farmland
     added = min(4*r.farmland, 24*plan["operated"]["land"])
     multipliers = {k: 1000 + effect["applied_bonus"][k] for k in BONUS}
@@ -115,11 +114,20 @@ def _finish(r, opening, plan, care, effect, climate):
     return p
 
 
-def produce_regions(regions, climate_by_owner, investment_scope="regional", soil_care=True):
+def _private_workers(population, assigned):
+    if type(assigned) is not int or not 0 <= assigned <= population//2:
+        raise ValueError("unfunded public labor")
+    return population//2 - assigned
+
+
+def produce_regions(regions, climate_by_owner, investment_scope="regional", soil_care=True, *, public_labor=None):
     """Plan from local opening stocks first; commit all regions together after production."""
     if investment_scope not in ("regional", "national") or type(soil_care) is not bool:
         raise ValueError("expected regional/national investment scope and boolean soil_care")
     originals = {r.id: r for r in regions}
+    public_labor = {} if public_labor is None else public_labor
+    if public_labor.keys() - originals.keys():
+        raise ValueError("public labor assigned to unknown region")
     if len(originals) != len(regions):
         raise ValueError("duplicate region ID")
     working, plans, operating, owners = {}, {}, {}, defaultdict(list)
@@ -138,11 +146,13 @@ def produce_regions(regions, climate_by_owner, investment_scope="regional", soil
                 raise ValueError("invalid opening asset cohorts")
         r = replace(source, stock=source.stock.copy(), capital={k:v.copy() for k,v in source.capital.items()})
         working[uid] = r
-        plans[uid] = _plan(r, climate_by_owner[r.owner], soil_care)
+        workers = _private_workers(r.population, public_labor.get(uid, 0))
+        plans[uid] = _plan(r, climate_by_owner[r.owner], soil_care, workers)
         operating[uid] = plans[uid][1]["operated"]
-        owners[r.owner].append((uid, r.population//2, r.farmland))
+        owners[r.owner].append((uid, workers, r.farmland))
     effects = _allocate(owners, operating, investment_scope)
-    traces = {uid: _finish(r, *plans[uid], effects[uid], climate_by_owner[r.owner]) for uid,r in working.items()}
+    traces = {uid: _finish(r, *plans[uid], effects[uid], climate_by_owner[r.owner],
+                           r.population//2 - public_labor.get(uid, 0)) for uid,r in working.items()}
     for uid, source in originals.items():
         r = working[uid]
         source.stock, source.capital, source.soil, source.deposit = r.stock, r.capital, r.soil, r.deposit
@@ -195,7 +205,7 @@ def _physical(state, opening, workers, climate, capacity, farm_factor, industry_
     }
 
 
-def _check_host(s, end, p, climate, care_enabled):
+def _check_host(s, end, p, climate, care_enabled, workers):
     farmland, area, opening = s["farmland"], s["land"], s["stock"]
     if not 0 <= farmland <= area or set(opening) != set(GOODS):
         raise ValueError("invalid regional opening stocks or land")
@@ -222,7 +232,6 @@ def _check_host(s, end, p, climate, care_enabled):
     upkeep = {g: opening[g]-paid[g] for g in GOODS}
     _check_fields(plan, {"policy":"capital", "opening_capital":cohorts, "operated":operated,
                          "class_limit":cap, "upkeep_used":upkeep,"stock_after_upkeep":paid}, "investment")
-    workers = s["population"]//2
     possible = min((farmland+7)//8, workers//4, paid["ore"], paid["tools"])
     gain = (min(8*possible,farmland)*8//max(1,farmland)) if care_enabled and s["soil"]<950 else 0
     packages = (gain*farmland+63)//64
@@ -289,19 +298,25 @@ def _check_host(s, end, p, climate, care_enabled):
     return operated, workers-labor, after_build, target
 
 
-def audit_production(opening, closing, traces, climate_by_owner, investment_scope="regional", soil_care=True):
+def audit_production(opening, closing, traces, climate_by_owner, investment_scope="regional", soil_care=True,
+                     *, public_labor=None):
     """Verify saved country-group effects and every local sector using independent formulas."""
     before, after, rows = ({int(i):v for i,v in source.items()} for source in (opening, closing, traces))
     climate_by_owner = {int(owner): weather for owner, weather in climate_by_owner.items()}
+    public_labor = {} if public_labor is None else {int(i): n for i, n in public_labor.items()}
+    if public_labor.keys() - before.keys():
+        raise ValueError("unknown public work crew")
     if before.keys()!=after.keys() or before.keys()!=rows.keys() or investment_scope not in ("regional","national"):
         raise ValueError("inconsistent regional production boundaries or investment scope")
     prepared, owners = {}, defaultdict(list)
     for uid,s in before.items():
         _equal(s["id"],uid,"region ID")
         owners[s["owner"]].append(uid)
-        prepared[uid] = _check_host(s,after[uid],rows[uid],climate_by_owner[s["owner"]],soil_care)
+        workers = _private_workers(s["population"], public_labor.get(uid, 0))
+        prepared[uid] = _check_host(s,after[uid],rows[uid],climate_by_owner[s["owner"]],soil_care,workers)
     for owner,ids in owners.items():
-        eligible = {k:sorted(i for i in ids if before[i]["population"]>=2 and (k=="industry" or before[i]["farmland"]>0))
+        eligible = {k:sorted(i for i in ids if before[i]["population"]//2 > public_labor.get(i, 0)
+                             and (k=="industry" or before[i]["farmland"]>0))
                     for k in BONUS}
         budget = {k:sum(prepared[i][0][k] for i in ids)*rate for k,rate in BONUS.items()}
         for uid in ids:

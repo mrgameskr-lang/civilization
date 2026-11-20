@@ -108,7 +108,7 @@ def _audit_residents(regions, opening, meals, vital, moves, roads, delivered):
                "regional population balance")
 
 
-def audit_national_year(record):
+def audit_national_year(record, *, private_transfers=None):
     """Post flows to independent opening country accounts, then match consolidated closes."""
     groups = {c["id"]: [] for c in record["countries"]}
     for r in record["regions"]:
@@ -133,6 +133,10 @@ def audit_national_year(record):
                           "population": c["opening"]["population"], "deposit": c["opening"]["deposit"]}
                 for c in record["countries"]}
     owners = {r["id"]: r["owner"] for r in record["regions"]}
+    if private_transfers is not None:
+        for region, transfer in private_transfers.items():
+            for good in GOODS:
+                balances[owners[region]][good] += transfer[good]
     for r in record["regions"]:
         b = balances[r["owner"]]
         prod, meal, d = r["production"], r["consumption"], r["demography"]

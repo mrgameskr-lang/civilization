@@ -1,0 +1,24 @@
+{
+  "sample": "dev",
+  "seed_start": 0,
+  "seeds": 20,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "modes": [
+    "none",
+    "relief",
+    "infrastructure",
+    "integrated"
+  ],
+  "workers": 8,
+  "paths": 80,
+  "transitions": 16000,
+  "replayed_checkpoints": 0,
+  "archived_control_checkpoints": 40,
+  "replayed_tables": [],
+  "python": "3.12.14",
+  "wall_seconds": 215.94018420006614
+}

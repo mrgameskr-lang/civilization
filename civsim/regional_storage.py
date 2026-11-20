@@ -22,15 +22,19 @@ def write_regional_run(directory, *, seed=42, years=50, width=48, height=32, nat
     world = regionalize(generate_world(seed, width, height, nations), per_nation)
     meta = {"schema": 1, "model_version": "4.0", "seed": seed, "years": years, "width": width,
             "height": height, "nations": nations, "per_nation": per_nation, "policy": asdict(policy)}
+    _publish(directory, meta, asdict(world), lambda year: step_regional(world, year, policy))
+
+
+def _publish(directory, meta, initial, annual):
     directory.parent.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(dir=directory.parent) as tmp:
         stage = Path(tmp, "run")
         stage.mkdir()
-        (stage / "world.json").write_bytes(canonical_line(asdict(world)))
+        (stage / "world.json").write_bytes(canonical_line(initial))
         (stage / "manifest.json").write_bytes(canonical_line(meta))
         with (stage / "years.jsonl").open("xb") as stream:
-            for year in range(1, years + 1):
-                stream.write(canonical_line(step_regional(world, year, policy)))
+            for year in range(1, meta["years"] + 1):
+                stream.write(canonical_line(annual(year)))
         if os.path.lexists(directory):
             raise FileExistsError(directory)
         stage.rename(directory)
@@ -46,13 +50,17 @@ def verify_regional(directory, meta):
     rules = RegionalPolicy(**{**policy, "closed_roads": tuple(tuple(x) for x in policy["closed_roads"])})
     world = regionalize(generate_world(meta["seed"], meta["width"], meta["height"], meta["nations"]),
                         meta["per_nation"])
-    if canonical_line(asdict(world)) != (directory / "world.json").read_bytes():
+    return _verify_stream(directory, meta, asdict(world), lambda year: step_regional(world, year, rules))
+
+
+def _verify_stream(directory, meta, initial, annual):
+    if canonical_line(initial) != (directory / "world.json").read_bytes():
         raise ValueError("year 0: region partitions, roads or endowments differ")
     digest = hashlib.sha256()
     with (directory / "years.jsonl").open("rb") as source:
         for year in range(1, meta["years"] + 1):
             line = source.readline()
-            if canonical_line(step_regional(world, year, rules)) != line:
+            if canonical_line(annual(year)) != line:
                 raise ValueError(f"year {year}: regional ledger differs from replay")
             digest.update(line)
         if source.read(1):
@@ -70,6 +78,15 @@ def regional_summary(directory, export=None):
         export.parent.mkdir(parents=True, exist_ok=True)
     def reduce_rows(writer):
         for row in read_years(directory):
+            if "government" in row:
+                gov = row["government"]
+                result["model_version"] = "5.0A"
+                result["policy"] = gov["mode"]
+                for field in ("relief_food", "public_freight_food", "public_labor", "collection_cost_food",
+                              "public_spoil_food", "road_build_units", "soil_packages"):
+                    result[field] = result.get(field, 0) + sum(a["totals"][field] for a in gov["accounts"])
+                result["public_reserve"] = {g: sum(a["public_close"][g] for a in gov["accounts"]) for g in GOODS}
+                result["freight_food"] += sum(a["totals"]["public_freight_food"] for a in gov["accounts"])
             if not result["years"]:
                 result["initial_population"] = sum(r["opening"]["population"] for r in row["regions"])
             result["years"] += 1
