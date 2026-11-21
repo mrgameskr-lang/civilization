@@ -2,6 +2,8 @@
 
 Windows의 CPython 3.12.14에서 표준 라이브러리로 실행했다. 기준은 PR #11 `a4721bd`, 실험 계획은 `d271693`, 독립 표본을 열기 전에 고정한 엔진·실험기는 `5ff36abb8ff1a77018cce40cdde81cd4cc1f29f7`이다. 4군은 동일 시드·지도·국가·초기 창고·정치 상태로 출발한다. 결과를 다시 생성할 때는 아래 명령의 출력만 새 경로로 바꾼다.
 
+공개 자료를 모두 배치한 뒤 `python -B -m unittest discover -v`를 실행했다. 상속한 242개와 신규 38개를 합해 **280/280 통과**, 78.095초였고 건너뛴 시험은 0개였다. 40개 시드의 별도 반복이 생성한 480/480 체크포인트 및 18/18 과학 자료 파일이 일치했다. 압축 표도 실제 파일 전체를 직접 비교했다. 매년의 8개 국가와 28개 쌍을 기록한 공개 표에는 각각 256,000행과 896,000행이 있다. [테스트별 원문 로그](../examples/phase6a/test-log.txt) · [개발 반복](../examples/phase6a/study/replay-dev.json) · [독립 검증 반복](../examples/phase6a/study/replay-holdout.json)
+
 ## 전체 원장 재생과 상속 기록
 
 ```sh
@@ -20,6 +22,20 @@ python -B -m civsim analyze examples/phase6a/seed0-diplomacy
 - 6.0A의 공개 6년 원장은 5,307,771바이트이며 SHA-256이 `d4ee8225688cde4dc82d967d450ca3f6f2f79769164e4762ee9583630de11507`로 재현됐다. 세계 인구는 75,029명에서 77,827명으로 변했고 누적 미충족 식량은 32,474였다. 원조 발송 489에서 취급 손실 21을 제외해 468이 입고됐다. 공여 창고들은 운임 51도 지급했다. 6년차에 유효한 협정은 2개였다. [초기 세계와 원장](../examples/phase6a/seed0-diplomacy)
 
 ## 성능
+
+40개 표본의 주 경로 및 반복 실행 명령은 [실험 보고서](phase6a-results.md)의 마지막에 있다. 개발과 검증을 각각 5개 작업자로 동시에 실행했다. 다음은 동일 연초의 단년 개입, 보조 생산 추적, 국경 패널 검산에 사용한 명령이다.
+
+```sh
+python -B -m experiments.diplomacy_forks6a --study examples/phase6a/study/dev --out examples/phase6a/study/forks-dev.json
+python -B -m experiments.diplomacy_forks6a --study examples/phase6a/study/dev --out ../../work/phase6a-forks-repeat.json
+python -m experiments.propagate_border6a --study examples/phase6a/study/dev --forks examples/phase6a/study/forks-dev.json --out examples/phase6a/study/trade-followup-dev.json
+python -m experiments.propagate_border6a --study examples/phase6a/study/dev --forks examples/phase6a/study/forks-dev.json --out ../../work/phase6a-trade-followup-repeat.json --verify examples/phase6a/study/trade-followup-dev.json
+python -B -m experiments.describe_borders6a --study examples/phase6a/study --out examples/phase6a/border-diagnostics.json
+```
+
+단년 개입 6건은 독립 실행에서 338,665바이트가 일치했다. SHA-256은 `35e4ef79ba0f3b86501147c1ba3e768c48df37c1f400eeb8372a801b81543508`이었다. 2년 추적 2건은 182,960바이트이고 독립 재생 SHA-256은 `0d55c545dbd30b18717b2f70d75b07a379e8c18313d018bf2b505c6fd9f3db8e`였다. [단년 재생 로그](../examples/phase6a/study/replay-forks.json) · [생산까지 추적한 결과](../examples/phase6a/study/trade-followup-dev.json)
+
+### 30년 전체 원장 프로파일
 
 ```sh
 python -B -m cProfile -o ../../work/phase6a-diplomacy.prof -m civsim diplomacy --seed 0 --arm D --years 30 --out ../../work/phase6a-profile
