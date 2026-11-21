@@ -1,0 +1,98 @@
+[
+  {
+    "pr": 4,
+    "base": "102dd33cb2e9f56cbf4461a18f048d657a6de582",
+    "head": "64fcfeb1a83c046ed523949583c251abc329dfbf",
+    "ancestor": true,
+    "previous_examples": 13,
+    "changed_or_removed_examples": [],
+    "new_examples": 8,
+    "tests_passed": 91,
+    "seconds": 8.946,
+    "integration_tree": "6750a74186604c4b132c95e5ba0b5c1486097551"
+  },
+  {
+    "pr": 5,
+    "base": "64fcfeb1a83c046ed523949583c251abc329dfbf",
+    "head": "881469a70083db50fd38525cc2335cdf5748f2f1",
+    "ancestor": true,
+    "previous_examples": 21,
+    "changed_or_removed_examples": [],
+    "new_examples": 22,
+    "tests_passed": 115,
+    "seconds": 12.359,
+    "integration_tree": "db44f2addabadf37a34a7e59ce458b3efcbaf14f"
+  },
+  {
+    "pr": 6,
+    "base": "881469a70083db50fd38525cc2335cdf5748f2f1",
+    "head": "a8172b9c92662872d5fb4d8acd1c015ad8c13e30",
+    "ancestor": true,
+    "previous_examples": 43,
+    "changed_or_removed_examples": [],
+    "new_examples": 1,
+    "tests_passed": 120,
+    "seconds": 12.451,
+    "integration_tree": "2c64d5d440a714aa5c8fe1ab75e4e502827d5961"
+  },
+  {
+    "pr": 7,
+    "base": "a8172b9c92662872d5fb4d8acd1c015ad8c13e30",
+    "head": "37935d78954b5c11de697257a8d38a4cb7a1d3c9",
+    "ancestor": true,
+    "previous_examples": 44,
+    "changed_or_removed_examples": [],
+    "new_examples": 10,
+    "tests_passed": 149,
+    "seconds": 15.336,
+    "integration_tree": "0a7e4660e32282480607b5415b27ec7ec57f65cd"
+  },
+  {
+    "pr": 8,
+    "base": "37935d78954b5c11de697257a8d38a4cb7a1d3c9",
+    "head": "739a1685c249d04854e67d6334ab83feacde8fb9",
+    "ancestor": true,
+    "previous_examples": 54,
+    "changed_or_removed_examples": [],
+    "new_examples": 20,
+    "tests_passed": 178,
+    "seconds": 19.326,
+    "integration_tree": "79aa67715ec5b1cf458f666ad846aacf48c3ae61"
+  },
+  {
+    "pr": 9,
+    "base": "739a1685c249d04854e67d6334ab83feacde8fb9",
+    "head": "b7c2aaacbb6d95f6788b398b4152056bf8b7325f",
+    "ancestor": true,
+    "previous_examples": 74,
+    "changed_or_removed_examples": [],
+    "new_examples": 45,
+    "tests_passed": 198,
+    "seconds": 42.722,
+    "integration_tree": "365d957543b02b56868ca22474307370bc92fc1a"
+  },
+  {
+    "pr": 10,
+    "base": "b7c2aaacbb6d95f6788b398b4152056bf8b7325f",
+    "head": "c220dc526d88b4e08396cdbd7a7717d7a0c59cf7",
+    "ancestor": true,
+    "previous_examples": 119,
+    "changed_or_removed_examples": [],
+    "new_examples": 31,
+    "tests_passed": 222,
+    "seconds": 50.238,
+    "integration_tree": "e4b221c54d22969d427b07e7e2e30ab335a6e383"
+  },
+  {
+    "pr": 11,
+    "base": "c220dc526d88b4e08396cdbd7a7717d7a0c59cf7",
+    "head": "a4721bd26a685dba1a8f46bddc14e4a2c560e6f9",
+    "ancestor": true,
+    "previous_examples": 150,
+    "changed_or_removed_examples": [],
+    "new_examples": 34,
+    "tests_passed": 242,
+    "seconds": 54.918,
+    "integration_tree": "a168196ccd28d92023345c687447ba4612b302dc"
+  }
+]
