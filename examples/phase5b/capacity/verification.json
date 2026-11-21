@@ -1,0 +1,299 @@
+{
+  "dev": {
+    "tables": {
+      "runs": {
+        "matched_rows": 240,
+        "changed_endpoints": 18
+      },
+      "countries": {
+        "matched_rows": 1920,
+        "changed_endpoints": 25
+      },
+      "paired": {
+        "matched_rows": 180,
+        "changed_endpoints": 18
+      },
+      "means": {
+        "matched_rows": 12,
+        "changed_endpoints": 2
+      }
+    },
+    "changed_checkpoints": [
+      {
+        "seed": 1,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11561,
+        "available_next_year": 11609
+      },
+      {
+        "seed": 1,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10025,
+        "available_next_year": 10073
+      },
+      {
+        "seed": 2,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11158,
+        "available_next_year": 11206
+      },
+      {
+        "seed": 4,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11807,
+        "available_next_year": 11711
+      },
+      {
+        "seed": 5,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11445,
+        "available_next_year": 11349
+      },
+      {
+        "seed": 5,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10485,
+        "available_next_year": 10437
+      },
+      {
+        "seed": 6,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11045,
+        "available_next_year": 10949
+      },
+      {
+        "seed": 8,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10454,
+        "available_next_year": 10502
+      },
+      {
+        "seed": 10,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 10855,
+        "available_next_year": 10903
+      },
+      {
+        "seed": 11,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10647,
+        "available_next_year": 10407
+      },
+      {
+        "seed": 12,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11309,
+        "available_next_year": 11357
+      },
+      {
+        "seed": 13,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10532,
+        "available_next_year": 10484
+      },
+      {
+        "seed": 14,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11108,
+        "available_next_year": 11156
+      },
+      {
+        "seed": 17,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10468,
+        "available_next_year": 10516
+      },
+      {
+        "seed": 18,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11337,
+        "available_next_year": 11097
+      },
+      {
+        "seed": 18,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10281,
+        "available_next_year": 10329
+      },
+      {
+        "seed": 19,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11029,
+        "available_next_year": 10981
+      },
+      {
+        "seed": 19,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10021,
+        "available_next_year": 10069
+      }
+    ],
+    "identical_files_sha256": {
+      "regions.csv": "fbec16c5f104ac16e843ba082c8ce082829d559a33f1b172d0332e33c837eb40",
+      "cases.json": "203fe6abdc152c6f4253a66d18ee14709975d32a9a27fa7777f8e470a1a60f53"
+    }
+  },
+  "holdout": {
+    "tables": {
+      "runs": {
+        "matched_rows": 240,
+        "changed_endpoints": 17
+      },
+      "countries": {
+        "matched_rows": 1920,
+        "changed_endpoints": 21
+      },
+      "paired": {
+        "matched_rows": 180,
+        "changed_endpoints": 17
+      },
+      "means": {
+        "matched_rows": 12,
+        "changed_endpoints": 3
+      }
+    },
+    "changed_checkpoints": [
+      {
+        "seed": 22,
+        "mode": "infrastructure",
+        "year": 100,
+        "available_during_year": 10368,
+        "available_next_year": 10320
+      },
+      {
+        "seed": 23,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11398,
+        "available_next_year": 11446
+      },
+      {
+        "seed": 25,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11291,
+        "available_next_year": 11339
+      },
+      {
+        "seed": 26,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 12024,
+        "available_next_year": 11832
+      },
+      {
+        "seed": 28,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10376,
+        "available_next_year": 10328
+      },
+      {
+        "seed": 29,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11711,
+        "available_next_year": 11759
+      },
+      {
+        "seed": 30,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11078,
+        "available_next_year": 10982
+      },
+      {
+        "seed": 30,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10070,
+        "available_next_year": 10118
+      },
+      {
+        "seed": 31,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10309,
+        "available_next_year": 10261
+      },
+      {
+        "seed": 32,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11169,
+        "available_next_year": 11217
+      },
+      {
+        "seed": 32,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10353,
+        "available_next_year": 10257
+      },
+      {
+        "seed": 33,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10575,
+        "available_next_year": 10527
+      },
+      {
+        "seed": 35,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10564,
+        "available_next_year": 10420
+      },
+      {
+        "seed": 36,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 10830,
+        "available_next_year": 10878
+      },
+      {
+        "seed": 37,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11974,
+        "available_next_year": 11926
+      },
+      {
+        "seed": 38,
+        "mode": "infrastructure",
+        "year": 50,
+        "available_during_year": 11493,
+        "available_next_year": 11253
+      },
+      {
+        "seed": 39,
+        "mode": "integrated",
+        "year": 50,
+        "available_during_year": 10304,
+        "available_next_year": 10352
+      }
+    ],
+    "identical_files_sha256": {
+      "regions.csv": "82e42a9a39bb403e219596a9201690c0f0b3c7e72d102e2513f96a2181d646de",
+      "cases.json": "fb33c58b709f2eaced5445ec5b3ae5cb3eeeab7bf30a202250537755e02d3f40"
+    }
+  }
+}
