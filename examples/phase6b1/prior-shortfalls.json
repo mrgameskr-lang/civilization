@@ -1,0 +1,76 @@
+{
+  "dev": {
+    "input_sha256": {
+      "direction-years.csv.gz": "8218e8d186991a5d90dfb8c594de8bbaf7157aea65c10ebcb09ace2a84590995",
+      "aid-attempts.csv.gz": "1cb1ed7a726acc9791c0404dcfbf787bbc1f5ff0251de961fa89ebe34810b06e",
+      "region-years.csv.gz": "4ffada66c51de7f94515d37a795a837963046ec5ad0d37a6a9bd3930de462603"
+    },
+    "counts": {
+      "unfilled_directions": 1217,
+      "unfilled_food": 91210,
+      "stock_in_reasons": 1132,
+      "stock_in_reasons_unfilled_food": 90888,
+      "other_opening_food_directions": 1132,
+      "other_opening_food_unfilled": 90888,
+      "capped_overlap": 90770,
+      "stock_only": 646,
+      "stock_only_unfilled_food": 80769
+    },
+    "illustration": {
+      "seed": 9,
+      "year": 36,
+      "donor": 6,
+      "recipient": 4,
+      "accepted": 388,
+      "unfilled": 316,
+      "reasons": [
+        "stock"
+      ],
+      "attempted_origins": [
+        26,
+        27
+      ],
+      "other_opening_depots": {
+        "24": 1265,
+        "25": 480
+      }
+    }
+  },
+  "holdout": {
+    "input_sha256": {
+      "direction-years.csv.gz": "c3ed058dc1f55116609e44e45d9f6d0c2dd453a2971b9c3af6f874f0d852e00c",
+      "aid-attempts.csv.gz": "77ca530fd23459b3c33f9e59be2a46efb500830353ff930d13ee452a31bc9879",
+      "region-years.csv.gz": "5c1ae2035a59475e1b43758d21fda482d217761d3857070dc3fc348bedcf01c8"
+    },
+    "counts": {
+      "unfilled_directions": 1284,
+      "unfilled_food": 104426,
+      "stock_in_reasons": 1150,
+      "stock_in_reasons_unfilled_food": 103861,
+      "other_opening_food_directions": 1150,
+      "other_opening_food_unfilled": 103861,
+      "capped_overlap": 103436,
+      "stock_only": 676,
+      "stock_only_unfilled_food": 92398
+    },
+    "illustration": {
+      "seed": 30,
+      "year": 29,
+      "donor": 1,
+      "recipient": 3,
+      "accepted": 378,
+      "unfilled": 343,
+      "reasons": [
+        "stock"
+      ],
+      "attempted_origins": [
+        6
+      ],
+      "other_opening_depots": {
+        "4": 0,
+        "5": 296,
+        "7": 402
+      }
+    }
+  }
+}
