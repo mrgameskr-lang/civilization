@@ -1,0 +1,3467 @@
+{
+  "dev": {
+    "checkpoints": {
+      "100": {
+        "A": {
+          "aid_approved": 194043,
+          "aid_budget": 282370,
+          "aid_budget_left": 170522,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 9015,
+          "aid_handling_food": 4450,
+          "aid_received": 98383,
+          "aid_sent": 102833,
+          "aid_total_debit": 111848,
+          "aid_unshipped": 91210,
+          "closing_population": 2381314,
+          "depot_edge_cargo": 0,
+          "domestic_reserve_freight_food": 0,
+          "domestic_reserve_units": 0,
+          "emergency_aid_units": 0,
+          "exports_value": 4422575,
+          "food_deficit": 18626657,
+          "food_eaten": 195534321,
+          "food_need": 214160978,
+          "foreign_out": 80247,
+          "foreign_out_food": 592291,
+          "foreign_out_ore": 48387,
+          "foreign_out_tools": 2651,
+          "forward_aid_units": 0,
+          "internal_aid_freight_food": 0,
+          "private_edge_cargo": 3147774,
+          "private_freight_food": 415167,
+          "private_transfer_out_food": 3088117,
+          "private_transfer_out_ore": 15788,
+          "private_transfer_out_tools": 791,
+          "produced_food": 197377837,
+          "public_relief_freight_food": 21386,
+          "public_spoil_food": 107822,
+          "public_transfer_out_food": 0,
+          "public_transfer_out_ore": 0,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 5280,
+          "relief_food": 186729,
+          "road_capacity": 20672020,
+          "road_relief_use": 148861,
+          "road_unused": 17367313,
+          "road_works_use": 8072,
+          "trade_freight_food": 71291
+        },
+        "B": {
+          "aid_approved": 141450,
+          "aid_budget": 203611,
+          "aid_budget_left": 58246,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 8985,
+          "aid_handling_food": 5285,
+          "aid_received": 124218,
+          "aid_sent": 129503,
+          "aid_total_debit": 145365,
+          "aid_unshipped": 11947,
+          "closing_population": 2380732,
+          "depot_edge_cargo": 205476,
+          "domestic_reserve_freight_food": 23064,
+          "domestic_reserve_units": 156888,
+          "emergency_aid_units": 37344,
+          "exports_value": 4394713,
+          "food_deficit": 18629245,
+          "food_eaten": 195512121,
+          "food_need": 214141366,
+          "foreign_out": 79689,
+          "foreign_out_food": 588624,
+          "foreign_out_ore": 47554,
+          "foreign_out_tools": 2687,
+          "forward_aid_units": 5206,
+          "internal_aid_freight_food": 6877,
+          "private_edge_cargo": 3150611,
+          "private_freight_food": 415328,
+          "private_transfer_out_food": 3088416,
+          "private_transfer_out_ore": 16177,
+          "private_transfer_out_tools": 853,
+          "produced_food": 197347844,
+          "public_relief_freight_food": 3331,
+          "public_spoil_food": 82147,
+          "public_transfer_out_food": 199332,
+          "public_transfer_out_ore": 104,
+          "public_transfer_out_tools": 2,
+          "public_works_freight_food": 6576,
+          "relief_food": 199010,
+          "road_capacity": 20703124,
+          "road_relief_use": 21735,
+          "road_unused": 17315430,
+          "road_works_use": 9872,
+          "trade_freight_food": 70941
+        },
+        "B_requests": {
+          "domestic_reserve": {
+            "below_target": 40431,
+            "no_transfer": 38107,
+            "observed_source_freight": 14,
+            "observed_source_freight|source_reserve_or_stock": 1841,
+            "observed_source_reserve_or_stock": 38576,
+            "requests": 40700
+          },
+          "emergency_aid": {
+            "below_target": 2254,
+            "no_transfer": 2607,
+            "observed_aid_budget": 405,
+            "observed_aid_budget|no_additional_border_dispatch": 9,
+            "observed_aid_budget|no_additional_border_dispatch|source_freight": 1,
+            "observed_aid_budget|no_additional_border_dispatch|source_reserve_or_stock": 7,
+            "observed_aid_budget|source_freight": 84,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 34,
+            "observed_aid_budget|source_reserve_or_stock": 1560,
+            "observed_no_additional_border_dispatch": 58,
+            "observed_no_additional_border_dispatch|source_freight": 5,
+            "observed_no_additional_border_dispatch|source_reserve_or_stock": 91,
+            "requests": 3272
+          },
+          "forward_aid": {
+            "below_target": 944,
+            "no_transfer": 1638,
+            "observed_aid_budget": 169,
+            "observed_aid_budget|source_freight": 33,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 23,
+            "observed_aid_budget|source_reserve_or_stock": 719,
+            "requests": 1795
+          }
+        },
+        "B_shipments": {
+          "domestic_reserve": {
+            "edge_units": 156959,
+            "fee": 23064,
+            "food": 156782,
+            "ore": 104,
+            "tools": 2,
+            "trips": 4892
+          },
+          "emergency_aid": {
+            "edge_units": 42860,
+            "fee": 6097,
+            "food": 37344,
+            "trips": 839
+          },
+          "forward_aid": {
+            "edge_units": 5657,
+            "fee": 780,
+            "food": 5206,
+            "trips": 185
+          }
+        },
+        "delta": {
+          "aid_approved": -52593,
+          "aid_budget": -78759,
+          "aid_budget_left": -112276,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": -30,
+          "aid_handling_food": 835,
+          "aid_received": 25835,
+          "aid_sent": 26670,
+          "aid_total_debit": 33517,
+          "aid_unshipped": -79263,
+          "closing_population": -582,
+          "depot_edge_cargo": 205476,
+          "domestic_reserve_freight_food": 23064,
+          "domestic_reserve_units": 156888,
+          "emergency_aid_units": 37344,
+          "exports_value": -27862,
+          "food_deficit": 2588,
+          "food_eaten": -22200,
+          "food_need": -19612,
+          "foreign_out": -558,
+          "foreign_out_food": -3667,
+          "foreign_out_ore": -833,
+          "foreign_out_tools": 36,
+          "forward_aid_units": 5206,
+          "internal_aid_freight_food": 6877,
+          "private_edge_cargo": 2837,
+          "private_freight_food": 161,
+          "private_transfer_out_food": 299,
+          "private_transfer_out_ore": 389,
+          "private_transfer_out_tools": 62,
+          "produced_food": -29993,
+          "public_relief_freight_food": -18055,
+          "public_spoil_food": -25675,
+          "public_transfer_out_food": 199332,
+          "public_transfer_out_ore": 104,
+          "public_transfer_out_tools": 2,
+          "public_works_freight_food": 1296,
+          "relief_food": 12281,
+          "road_capacity": 31104,
+          "road_relief_use": -127126,
+          "road_unused": -51883,
+          "road_works_use": 1800,
+          "trade_freight_food": -350
+        },
+        "matched_A_stock_only": {
+          "A_authorized": 103425,
+          "A_received": 21590,
+          "A_sent": 22656,
+          "A_unshipped": 80769,
+          "B_authorized": 57278,
+          "B_fewer_unshipped": 639,
+          "B_more_sent": 507,
+          "B_no_authorization": 67,
+          "B_received": 48535,
+          "B_sent": 50467,
+          "B_unshipped": 6811,
+          "direction_years": 646,
+          "same_authorization": 101
+        },
+        "paired_road_congestion": {
+          "counts": {
+            "country_year": {
+              "drop_exceeds_new_public": 370,
+              "observations": 16000,
+              "private_lower": 1061,
+              "public_active": 3281
+            },
+            "road_year": {
+              "drop_exceeds_new_public": 543,
+              "observations": 63400,
+              "private_lower": 1713,
+              "public_active": 6005
+            },
+            "world_checkpoint": {
+              "drop_exceeds_new_public": 0,
+              "observations": 20,
+              "private_lower": 6,
+              "public_active": 20
+            },
+            "world_year": {
+              "drop_exceeds_new_public": 110,
+              "observations": 2000,
+              "private_lower": 502,
+              "public_active": 1036
+            }
+          },
+          "largest": {
+            "country_year": {
+              "A_private": 1219,
+              "B_private": 708,
+              "B_public": 14,
+              "excess": 497,
+              "key": [
+                2,
+                36,
+                1
+              ]
+            },
+            "road_year": {
+              "A_private": 315,
+              "B_private": 0,
+              "B_public": 13,
+              "excess": 302,
+              "key": [
+                9,
+                54,
+                3,
+                12,
+                14
+              ]
+            },
+            "world_year": {
+              "A_private": 2560,
+              "B_private": 1787,
+              "B_public": 268,
+              "excess": 505,
+              "key": [
+                2,
+                56
+              ]
+            }
+          }
+        },
+        "pooled_shortage_rate": {
+          "A": 0.08697502772890774,
+          "B": 0.08699507875559176
+        },
+        "regions_by_B_aid_receipt": {
+          "B_no_receipt": {
+            "B_receipts": 0,
+            "food_deficit": 5153,
+            "food_eaten": -37940,
+            "food_need": -32787,
+            "regions": 392,
+            "relief_food": 1834
+          },
+          "B_received": {
+            "B_receipts": 124218,
+            "food_deficit": -2565,
+            "food_eaten": 15740,
+            "food_need": 13175,
+            "regions": 248,
+            "relief_food": 10447
+          }
+        },
+        "seed_signs": {
+          "aid_sent": {
+            "negative": 1,
+            "positive": 19,
+            "zero": 0
+          },
+          "closing_population": {
+            "negative": 10,
+            "positive": 10,
+            "zero": 0
+          },
+          "exports_value": {
+            "negative": 15,
+            "positive": 5,
+            "zero": 0
+          },
+          "food_deficit": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "food_eaten": {
+            "negative": 11,
+            "positive": 9,
+            "zero": 0
+          },
+          "private_edge_cargo": {
+            "negative": 6,
+            "positive": 14,
+            "zero": 0
+          }
+        },
+        "shortfall_reasons": {
+          "A": {
+            "budget|minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 19
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 10,
+              "units": 21
+            },
+            "budget|road|stock": {
+              "directions": 60,
+              "units": 1205
+            },
+            "budget|stock": {
+              "directions": 336,
+              "units": 2111
+            },
+            "budget|stock|storage": {
+              "directions": 1,
+              "units": 15
+            },
+            "budget|storage": {
+              "directions": 2,
+              "units": 15
+            },
+            "minimum_lot": {
+              "directions": 81,
+              "units": 81
+            },
+            "minimum_lot|road|stock|storage": {
+              "directions": 1,
+              "units": 84
+            },
+            "minimum_lot|stock": {
+              "directions": 1,
+              "units": 20
+            },
+            "road|stock": {
+              "directions": 68,
+              "units": 6306
+            },
+            "road|stock|storage": {
+              "directions": 6,
+              "units": 260
+            },
+            "stock": {
+              "directions": 646,
+              "units": 80769
+            },
+            "stock|storage": {
+              "directions": 2,
+              "units": 78
+            },
+            "storage": {
+              "directions": 2,
+              "units": 226
+            }
+          },
+          "B": {
+            "budget": {
+              "directions": 19,
+              "units": 101
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 5,
+              "units": 14
+            },
+            "budget|road|stock": {
+              "directions": 103,
+              "units": 2115
+            },
+            "budget|stock": {
+              "directions": 746,
+              "units": 6292
+            },
+            "budget|stock|storage": {
+              "directions": 8,
+              "units": 142
+            },
+            "minimum_lot": {
+              "directions": 141,
+              "units": 141
+            },
+            "road|stock": {
+              "directions": 1,
+              "units": 24
+            },
+            "stock": {
+              "directions": 74,
+              "units": 2878
+            },
+            "stock|storage": {
+              "directions": 5,
+              "units": 240
+            }
+          }
+        }
+      },
+      "200": {
+        "A": {
+          "aid_approved": 194043,
+          "aid_budget": 282370,
+          "aid_budget_left": 170522,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 9015,
+          "aid_handling_food": 4450,
+          "aid_received": 98383,
+          "aid_sent": 102833,
+          "aid_total_debit": 111848,
+          "aid_unshipped": 91210,
+          "closing_population": 2400189,
+          "depot_edge_cargo": 0,
+          "domestic_reserve_freight_food": 0,
+          "domestic_reserve_units": 0,
+          "emergency_aid_units": 0,
+          "exports_value": 4491834,
+          "food_deficit": 46228496,
+          "food_eaten": 407165730,
+          "food_need": 453394226,
+          "foreign_out": 107726,
+          "foreign_out_food": 597239,
+          "foreign_out_ore": 52322,
+          "foreign_out_tools": 2979,
+          "forward_aid_units": 0,
+          "internal_aid_freight_food": 0,
+          "private_edge_cargo": 3229719,
+          "private_freight_food": 426733,
+          "private_transfer_out_food": 3159353,
+          "private_transfer_out_ore": 20043,
+          "private_transfer_out_tools": 1196,
+          "produced_food": 409073107,
+          "public_relief_freight_food": 21408,
+          "public_spoil_food": 107882,
+          "public_transfer_out_food": 0,
+          "public_transfer_out_ore": 0,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 5280,
+          "relief_food": 186859,
+          "road_capacity": 41217320,
+          "road_relief_use": 148980,
+          "road_unused": 37830549,
+          "road_works_use": 8072,
+          "trade_freight_food": 72165
+        },
+        "B": {
+          "aid_approved": 141450,
+          "aid_budget": 203611,
+          "aid_budget_left": 58246,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 8985,
+          "aid_handling_food": 5285,
+          "aid_received": 124218,
+          "aid_sent": 129503,
+          "aid_total_debit": 145365,
+          "aid_unshipped": 11947,
+          "closing_population": 2400383,
+          "depot_edge_cargo": 205687,
+          "domestic_reserve_freight_food": 23101,
+          "domestic_reserve_units": 157098,
+          "emergency_aid_units": 37344,
+          "exports_value": 4464944,
+          "food_deficit": 46224769,
+          "food_eaten": 407153060,
+          "food_need": 453377829,
+          "foreign_out": 106828,
+          "foreign_out_food": 593969,
+          "foreign_out_ore": 51175,
+          "foreign_out_tools": 3002,
+          "forward_aid_units": 5206,
+          "internal_aid_freight_food": 6877,
+          "private_edge_cargo": 3232665,
+          "private_freight_food": 426946,
+          "private_transfer_out_food": 3159432,
+          "private_transfer_out_ore": 20910,
+          "private_transfer_out_tools": 1228,
+          "produced_food": 409053133,
+          "public_relief_freight_food": 3337,
+          "public_spoil_food": 82227,
+          "public_transfer_out_food": 199542,
+          "public_transfer_out_ore": 104,
+          "public_transfer_out_tools": 2,
+          "public_works_freight_food": 6576,
+          "relief_food": 199254,
+          "road_capacity": 41248424,
+          "road_relief_use": 21756,
+          "road_unused": 37778444,
+          "road_works_use": 9872,
+          "trade_freight_food": 71819
+        },
+        "B_requests": {
+          "domestic_reserve": {
+            "below_target": 101281,
+            "no_transfer": 98949,
+            "observed_source_freight": 14,
+            "observed_source_freight|source_reserve_or_stock": 1857,
+            "observed_source_reserve_or_stock": 99410,
+            "requests": 101550
+          },
+          "emergency_aid": {
+            "below_target": 2254,
+            "no_transfer": 2607,
+            "observed_aid_budget": 405,
+            "observed_aid_budget|no_additional_border_dispatch": 9,
+            "observed_aid_budget|no_additional_border_dispatch|source_freight": 1,
+            "observed_aid_budget|no_additional_border_dispatch|source_reserve_or_stock": 7,
+            "observed_aid_budget|source_freight": 84,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 34,
+            "observed_aid_budget|source_reserve_or_stock": 1560,
+            "observed_no_additional_border_dispatch": 58,
+            "observed_no_additional_border_dispatch|source_freight": 5,
+            "observed_no_additional_border_dispatch|source_reserve_or_stock": 91,
+            "requests": 3272
+          },
+          "forward_aid": {
+            "below_target": 944,
+            "no_transfer": 1638,
+            "observed_aid_budget": 169,
+            "observed_aid_budget|source_freight": 33,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 23,
+            "observed_aid_budget|source_reserve_or_stock": 719,
+            "requests": 1795
+          }
+        },
+        "B_shipments": {
+          "domestic_reserve": {
+            "edge_units": 157170,
+            "fee": 23101,
+            "food": 156992,
+            "ore": 104,
+            "tools": 2,
+            "trips": 4901
+          },
+          "emergency_aid": {
+            "edge_units": 42860,
+            "fee": 6097,
+            "food": 37344,
+            "trips": 839
+          },
+          "forward_aid": {
+            "edge_units": 5657,
+            "fee": 780,
+            "food": 5206,
+            "trips": 185
+          }
+        },
+        "delta": {
+          "aid_approved": -52593,
+          "aid_budget": -78759,
+          "aid_budget_left": -112276,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": -30,
+          "aid_handling_food": 835,
+          "aid_received": 25835,
+          "aid_sent": 26670,
+          "aid_total_debit": 33517,
+          "aid_unshipped": -79263,
+          "closing_population": 194,
+          "depot_edge_cargo": 205687,
+          "domestic_reserve_freight_food": 23101,
+          "domestic_reserve_units": 157098,
+          "emergency_aid_units": 37344,
+          "exports_value": -26890,
+          "food_deficit": -3727,
+          "food_eaten": -12670,
+          "food_need": -16397,
+          "foreign_out": -898,
+          "foreign_out_food": -3270,
+          "foreign_out_ore": -1147,
+          "foreign_out_tools": 23,
+          "forward_aid_units": 5206,
+          "internal_aid_freight_food": 6877,
+          "private_edge_cargo": 2946,
+          "private_freight_food": 213,
+          "private_transfer_out_food": 79,
+          "private_transfer_out_ore": 867,
+          "private_transfer_out_tools": 32,
+          "produced_food": -19974,
+          "public_relief_freight_food": -18071,
+          "public_spoil_food": -25655,
+          "public_transfer_out_food": 199542,
+          "public_transfer_out_ore": 104,
+          "public_transfer_out_tools": 2,
+          "public_works_freight_food": 1296,
+          "relief_food": 12395,
+          "road_capacity": 31104,
+          "road_relief_use": -127224,
+          "road_unused": -52105,
+          "road_works_use": 1800,
+          "trade_freight_food": -346
+        },
+        "matched_A_stock_only": {
+          "A_authorized": 103425,
+          "A_received": 21590,
+          "A_sent": 22656,
+          "A_unshipped": 80769,
+          "B_authorized": 57278,
+          "B_fewer_unshipped": 639,
+          "B_more_sent": 507,
+          "B_no_authorization": 67,
+          "B_received": 48535,
+          "B_sent": 50467,
+          "B_unshipped": 6811,
+          "direction_years": 646,
+          "same_authorization": 101
+        },
+        "paired_road_congestion": {
+          "counts": {
+            "country_year": {
+              "drop_exceeds_new_public": 370,
+              "observations": 32000,
+              "private_lower": 1061,
+              "public_active": 3289
+            },
+            "road_year": {
+              "drop_exceeds_new_public": 543,
+              "observations": 126800,
+              "private_lower": 1713,
+              "public_active": 6015
+            },
+            "world_checkpoint": {
+              "drop_exceeds_new_public": 0,
+              "observations": 20,
+              "private_lower": 7,
+              "public_active": 20
+            },
+            "world_year": {
+              "drop_exceeds_new_public": 110,
+              "observations": 4000,
+              "private_lower": 502,
+              "public_active": 1044
+            }
+          },
+          "largest": {
+            "country_year": {
+              "A_private": 1219,
+              "B_private": 708,
+              "B_public": 14,
+              "excess": 497,
+              "key": [
+                2,
+                36,
+                1
+              ]
+            },
+            "road_year": {
+              "A_private": 315,
+              "B_private": 0,
+              "B_public": 13,
+              "excess": 302,
+              "key": [
+                9,
+                54,
+                3,
+                12,
+                14
+              ]
+            },
+            "world_year": {
+              "A_private": 2560,
+              "B_private": 1787,
+              "B_public": 268,
+              "excess": 505,
+              "key": [
+                2,
+                56
+              ]
+            }
+          }
+        },
+        "pooled_shortage_rate": {
+          "A": 0.10196092792765296,
+          "B": 0.10195639496081314
+        },
+        "regions_by_B_aid_receipt": {
+          "B_no_receipt": {
+            "B_receipts": 0,
+            "food_deficit": -440,
+            "food_eaten": -37351,
+            "food_need": -37791,
+            "regions": 392,
+            "relief_food": 1947
+          },
+          "B_received": {
+            "B_receipts": 124218,
+            "food_deficit": -3287,
+            "food_eaten": 24681,
+            "food_need": 21394,
+            "regions": 248,
+            "relief_food": 10448
+          }
+        },
+        "seed_signs": {
+          "aid_sent": {
+            "negative": 1,
+            "positive": 19,
+            "zero": 0
+          },
+          "closing_population": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "exports_value": {
+            "negative": 13,
+            "positive": 7,
+            "zero": 0
+          },
+          "food_deficit": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "food_eaten": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "private_edge_cargo": {
+            "negative": 7,
+            "positive": 13,
+            "zero": 0
+          }
+        },
+        "shortfall_reasons": {
+          "A": {
+            "budget|minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 19
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 10,
+              "units": 21
+            },
+            "budget|road|stock": {
+              "directions": 60,
+              "units": 1205
+            },
+            "budget|stock": {
+              "directions": 336,
+              "units": 2111
+            },
+            "budget|stock|storage": {
+              "directions": 1,
+              "units": 15
+            },
+            "budget|storage": {
+              "directions": 2,
+              "units": 15
+            },
+            "minimum_lot": {
+              "directions": 81,
+              "units": 81
+            },
+            "minimum_lot|road|stock|storage": {
+              "directions": 1,
+              "units": 84
+            },
+            "minimum_lot|stock": {
+              "directions": 1,
+              "units": 20
+            },
+            "road|stock": {
+              "directions": 68,
+              "units": 6306
+            },
+            "road|stock|storage": {
+              "directions": 6,
+              "units": 260
+            },
+            "stock": {
+              "directions": 646,
+              "units": 80769
+            },
+            "stock|storage": {
+              "directions": 2,
+              "units": 78
+            },
+            "storage": {
+              "directions": 2,
+              "units": 226
+            }
+          },
+          "B": {
+            "budget": {
+              "directions": 19,
+              "units": 101
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 5,
+              "units": 14
+            },
+            "budget|road|stock": {
+              "directions": 103,
+              "units": 2115
+            },
+            "budget|stock": {
+              "directions": 746,
+              "units": 6292
+            },
+            "budget|stock|storage": {
+              "directions": 8,
+              "units": 142
+            },
+            "minimum_lot": {
+              "directions": 141,
+              "units": 141
+            },
+            "road|stock": {
+              "directions": 1,
+              "units": 24
+            },
+            "stock": {
+              "directions": 74,
+              "units": 2878
+            },
+            "stock|storage": {
+              "directions": 5,
+              "units": 240
+            }
+          }
+        }
+      },
+      "50": {
+        "A": {
+          "aid_approved": 191883,
+          "aid_budget": 279877,
+          "aid_budget_left": 169581,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 8964,
+          "aid_handling_food": 4392,
+          "aid_received": 96940,
+          "aid_sent": 101332,
+          "aid_total_debit": 110296,
+          "aid_unshipped": 90551,
+          "closing_population": 2269663,
+          "depot_edge_cargo": 0,
+          "domestic_reserve_freight_food": 0,
+          "domestic_reserve_units": 0,
+          "emergency_aid_units": 0,
+          "exports_value": 4220749,
+          "food_deficit": 5756245,
+          "food_eaten": 90418526,
+          "food_need": 96174771,
+          "foreign_out": 65340,
+          "foreign_out_food": 567747,
+          "foreign_out_ore": 45512,
+          "foreign_out_tools": 2388,
+          "forward_aid_units": 0,
+          "internal_aid_freight_food": 0,
+          "private_edge_cargo": 2848983,
+          "private_freight_food": 375498,
+          "private_transfer_out_food": 2802263,
+          "private_transfer_out_ore": 11276,
+          "private_transfer_out_tools": 693,
+          "produced_food": 92243037,
+          "public_relief_freight_food": 19558,
+          "public_spoil_food": 104864,
+          "public_transfer_out_food": 0,
+          "public_transfer_out_ore": 0,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 5146,
+          "relief_food": 172873,
+          "road_capacity": 10395866,
+          "road_relief_use": 135622,
+          "road_unused": 7403403,
+          "road_works_use": 7858,
+          "trade_freight_food": 68912
+        },
+        "B": {
+          "aid_approved": 140186,
+          "aid_budget": 202261,
+          "aid_budget_left": 58240,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 8929,
+          "aid_handling_food": 5234,
+          "aid_received": 123040,
+          "aid_sent": 128274,
+          "aid_total_debit": 144021,
+          "aid_unshipped": 11912,
+          "closing_population": 2269392,
+          "depot_edge_cargo": 193956,
+          "domestic_reserve_freight_food": 21506,
+          "domestic_reserve_units": 145787,
+          "emergency_aid_units": 37116,
+          "exports_value": 4198710,
+          "food_deficit": 5758290,
+          "food_eaten": 90418732,
+          "food_need": 96177022,
+          "foreign_out": 65049,
+          "foreign_out_food": 564879,
+          "foreign_out_ore": 44708,
+          "foreign_out_tools": 2450,
+          "forward_aid_units": 5206,
+          "internal_aid_freight_food": 6818,
+          "private_edge_cargo": 2850044,
+          "private_freight_food": 375432,
+          "private_transfer_out_food": 2801038,
+          "private_transfer_out_ore": 11361,
+          "private_transfer_out_tools": 667,
+          "produced_food": 92233864,
+          "public_relief_freight_food": 3121,
+          "public_spoil_food": 79302,
+          "public_transfer_out_food": 188004,
+          "public_transfer_out_ore": 103,
+          "public_transfer_out_tools": 2,
+          "public_works_freight_food": 6374,
+          "relief_food": 186484,
+          "road_capacity": 10425098,
+          "road_relief_use": 20390,
+          "road_unused": 7351150,
+          "road_works_use": 9558,
+          "trade_freight_food": 68568
+        },
+        "B_requests": {
+          "domestic_reserve": {
+            "below_target": 11616,
+            "no_transfer": 9433,
+            "observed_source_freight": 14,
+            "observed_source_freight|source_reserve_or_stock": 1598,
+            "observed_source_reserve_or_stock": 10004,
+            "requests": 11870
+          },
+          "emergency_aid": {
+            "below_target": 2249,
+            "no_transfer": 2603,
+            "observed_aid_budget": 405,
+            "observed_aid_budget|no_additional_border_dispatch": 9,
+            "observed_aid_budget|no_additional_border_dispatch|source_freight": 1,
+            "observed_aid_budget|no_additional_border_dispatch|source_reserve_or_stock": 7,
+            "observed_aid_budget|source_freight": 84,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 32,
+            "observed_aid_budget|source_reserve_or_stock": 1557,
+            "observed_no_additional_border_dispatch": 58,
+            "observed_no_additional_border_dispatch|source_freight": 5,
+            "observed_no_additional_border_dispatch|source_reserve_or_stock": 91,
+            "requests": 3263
+          },
+          "forward_aid": {
+            "below_target": 934,
+            "no_transfer": 1604,
+            "observed_aid_budget": 168,
+            "observed_aid_budget|source_freight": 33,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 22,
+            "observed_aid_budget|source_reserve_or_stock": 711,
+            "requests": 1761
+          }
+        },
+        "B_shipments": {
+          "domestic_reserve": {
+            "edge_units": 145857,
+            "fee": 21506,
+            "food": 145682,
+            "ore": 103,
+            "tools": 2,
+            "trips": 4658
+          },
+          "emergency_aid": {
+            "edge_units": 42442,
+            "fee": 6038,
+            "food": 37116,
+            "trips": 831
+          },
+          "forward_aid": {
+            "edge_units": 5657,
+            "fee": 780,
+            "food": 5206,
+            "trips": 185
+          }
+        },
+        "delta": {
+          "aid_approved": -51697,
+          "aid_budget": -77616,
+          "aid_budget_left": -111341,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": -35,
+          "aid_handling_food": 842,
+          "aid_received": 26100,
+          "aid_sent": 26942,
+          "aid_total_debit": 33725,
+          "aid_unshipped": -78639,
+          "closing_population": -271,
+          "depot_edge_cargo": 193956,
+          "domestic_reserve_freight_food": 21506,
+          "domestic_reserve_units": 145787,
+          "emergency_aid_units": 37116,
+          "exports_value": -22039,
+          "food_deficit": 2045,
+          "food_eaten": 206,
+          "food_need": 2251,
+          "foreign_out": -291,
+          "foreign_out_food": -2868,
+          "foreign_out_ore": -804,
+          "foreign_out_tools": 62,
+          "forward_aid_units": 5206,
+          "internal_aid_freight_food": 6818,
+          "private_edge_cargo": 1061,
+          "private_freight_food": -66,
+          "private_transfer_out_food": -1225,
+          "private_transfer_out_ore": 85,
+          "private_transfer_out_tools": -26,
+          "produced_food": -9173,
+          "public_relief_freight_food": -16437,
+          "public_spoil_food": -25562,
+          "public_transfer_out_food": 188004,
+          "public_transfer_out_ore": 103,
+          "public_transfer_out_tools": 2,
+          "public_works_freight_food": 1228,
+          "relief_food": 13611,
+          "road_capacity": 29232,
+          "road_relief_use": -115232,
+          "road_unused": -52253,
+          "road_works_use": 1700,
+          "trade_freight_food": -344
+        },
+        "matched_A_stock_only": {
+          "A_authorized": 102630,
+          "A_received": 21444,
+          "A_sent": 22504,
+          "A_unshipped": 80126,
+          "B_authorized": 57015,
+          "B_fewer_unshipped": 631,
+          "B_more_sent": 502,
+          "B_no_authorization": 63,
+          "B_received": 48315,
+          "B_sent": 50238,
+          "B_unshipped": 6777,
+          "direction_years": 637,
+          "same_authorization": 101
+        },
+        "paired_road_congestion": {
+          "counts": {
+            "country_year": {
+              "drop_exceeds_new_public": 355,
+              "observations": 8000,
+              "private_lower": 1017,
+              "public_active": 3120
+            },
+            "road_year": {
+              "drop_exceeds_new_public": 525,
+              "observations": 31700,
+              "private_lower": 1654,
+              "public_active": 5758
+            },
+            "world_checkpoint": {
+              "drop_exceeds_new_public": 0,
+              "observations": 20,
+              "private_lower": 7,
+              "public_active": 20
+            },
+            "world_year": {
+              "drop_exceeds_new_public": 90,
+              "observations": 1000,
+              "private_lower": 450,
+              "public_active": 902
+            }
+          },
+          "largest": {
+            "country_year": {
+              "A_private": 1219,
+              "B_private": 708,
+              "B_public": 14,
+              "excess": 497,
+              "key": [
+                2,
+                36,
+                1
+              ]
+            },
+            "road_year": {
+              "A_private": 258,
+              "B_private": 0,
+              "B_public": 1,
+              "excess": 257,
+              "key": [
+                11,
+                39,
+                0,
+                0,
+                1
+              ]
+            },
+            "world_year": {
+              "A_private": 2739,
+              "B_private": 2201,
+              "B_public": 107,
+              "excess": 431,
+              "key": [
+                10,
+                48
+              ]
+            }
+          }
+        },
+        "pooled_shortage_rate": {
+          "A": 0.05985192312025365,
+          "B": 0.0598717851754653
+        },
+        "regions_by_B_aid_receipt": {
+          "B_no_receipt": {
+            "B_receipts": 0,
+            "food_deficit": 4412,
+            "food_eaten": -11980,
+            "food_need": -7568,
+            "regions": 392,
+            "relief_food": 2850
+          },
+          "B_received": {
+            "B_receipts": 123040,
+            "food_deficit": -2367,
+            "food_eaten": 12186,
+            "food_need": 9819,
+            "regions": 248,
+            "relief_food": 10761
+          }
+        },
+        "seed_signs": {
+          "aid_sent": {
+            "negative": 1,
+            "positive": 19,
+            "zero": 0
+          },
+          "closing_population": {
+            "negative": 12,
+            "positive": 8,
+            "zero": 0
+          },
+          "exports_value": {
+            "negative": 13,
+            "positive": 7,
+            "zero": 0
+          },
+          "food_deficit": {
+            "negative": 10,
+            "positive": 10,
+            "zero": 0
+          },
+          "food_eaten": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "private_edge_cargo": {
+            "negative": 7,
+            "positive": 13,
+            "zero": 0
+          }
+        },
+        "shortfall_reasons": {
+          "A": {
+            "budget|minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 19
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 10,
+              "units": 21
+            },
+            "budget|road|stock": {
+              "directions": 60,
+              "units": 1205
+            },
+            "budget|stock": {
+              "directions": 336,
+              "units": 2111
+            },
+            "budget|stock|storage": {
+              "directions": 1,
+              "units": 15
+            },
+            "minimum_lot": {
+              "directions": 80,
+              "units": 80
+            },
+            "minimum_lot|road|stock|storage": {
+              "directions": 1,
+              "units": 84
+            },
+            "minimum_lot|stock": {
+              "directions": 1,
+              "units": 20
+            },
+            "road|stock": {
+              "directions": 68,
+              "units": 6306
+            },
+            "road|stock|storage": {
+              "directions": 6,
+              "units": 260
+            },
+            "stock": {
+              "directions": 637,
+              "units": 80126
+            },
+            "stock|storage": {
+              "directions": 2,
+              "units": 78
+            },
+            "storage": {
+              "directions": 2,
+              "units": 226
+            }
+          },
+          "B": {
+            "budget": {
+              "directions": 19,
+              "units": 101
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 5,
+              "units": 14
+            },
+            "budget|road|stock": {
+              "directions": 103,
+              "units": 2115
+            },
+            "budget|stock": {
+              "directions": 742,
+              "units": 6258
+            },
+            "budget|stock|storage": {
+              "directions": 8,
+              "units": 142
+            },
+            "minimum_lot": {
+              "directions": 140,
+              "units": 140
+            },
+            "road|stock": {
+              "directions": 1,
+              "units": 24
+            },
+            "stock": {
+              "directions": 74,
+              "units": 2878
+            },
+            "stock|storage": {
+              "directions": 5,
+              "units": 240
+            }
+          }
+        }
+      }
+    },
+    "seeds": 20,
+    "sha256": {
+      "depot-requests.csv.gz": "ff7faae654d3c622f9c4d61a81cff9e149929e2ca942e5966b192ace8ed68b50",
+      "foreign-years.csv.gz": "947c8a035f7955bd0072eee9b9ee42b4fbac6fd336f4f7482c08ec330c78c736",
+      "public-shipments.csv.gz": "5537de4e29edaa55b183b3817998e60303b978f63745a3a3830bdf152addf509",
+      "regions.csv": "a7c9b903ab91e8d4c4355e1f87eae3316c4684f21783318991c4df1b3531d345",
+      "road-years.csv.gz": "006343deab01f9e7aaa24da5c58eaf3f5d153ec6fa45ae3f0e1c91c07036eead",
+      "runs.csv": "b411d0660b848a86798cec9678733abfd0fe4308483331c9b874d861a7aa73a0"
+    }
+  },
+  "holdout": {
+    "checkpoints": {
+      "100": {
+        "A": {
+          "aid_approved": 220068,
+          "aid_budget": 425887,
+          "aid_budget_left": 300105,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 10140,
+          "aid_handling_food": 5003,
+          "aid_received": 110639,
+          "aid_sent": 115642,
+          "aid_total_debit": 125782,
+          "aid_unshipped": 104426,
+          "closing_population": 2459801,
+          "depot_edge_cargo": 0,
+          "domestic_reserve_freight_food": 0,
+          "domestic_reserve_units": 0,
+          "emergency_aid_units": 0,
+          "exports_value": 4456928,
+          "food_deficit": 18287546,
+          "food_eaten": 198763819,
+          "food_need": 217051365,
+          "foreign_out": 76743,
+          "foreign_out_food": 604518,
+          "foreign_out_ore": 49344,
+          "foreign_out_tools": 3595,
+          "forward_aid_units": 0,
+          "internal_aid_freight_food": 0,
+          "private_edge_cargo": 3159113,
+          "private_freight_food": 417355,
+          "private_transfer_out_food": 3100055,
+          "private_transfer_out_ore": 16738,
+          "private_transfer_out_tools": 428,
+          "produced_food": 201100368,
+          "public_relief_freight_food": 24596,
+          "public_spoil_food": 145362,
+          "public_transfer_out_food": 0,
+          "public_transfer_out_ore": 0,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 5044,
+          "relief_food": 211898,
+          "road_capacity": 20614408,
+          "road_relief_use": 170544,
+          "road_unused": 17277133,
+          "road_works_use": 7618,
+          "trade_freight_food": 68600
+        },
+        "B": {
+          "aid_approved": 151984,
+          "aid_budget": 325800,
+          "aid_budget_left": 169835,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 9960,
+          "aid_handling_food": 5740,
+          "aid_received": 133816,
+          "aid_sent": 139556,
+          "aid_total_debit": 155965,
+          "aid_unshipped": 12428,
+          "closing_population": 2459660,
+          "depot_edge_cargo": 219104,
+          "domestic_reserve_freight_food": 25733,
+          "domestic_reserve_units": 174414,
+          "emergency_aid_units": 32405,
+          "exports_value": 4450054,
+          "food_deficit": 18293066,
+          "food_eaten": 198795498,
+          "food_need": 217088564,
+          "foreign_out": 76408,
+          "foreign_out_food": 603866,
+          "foreign_out_ore": 49178,
+          "foreign_out_tools": 3653,
+          "forward_aid_units": 7111,
+          "internal_aid_freight_food": 6449,
+          "private_edge_cargo": 3162840,
+          "private_freight_food": 417512,
+          "private_transfer_out_food": 3101191,
+          "private_transfer_out_ore": 16901,
+          "private_transfer_out_tools": 397,
+          "produced_food": 201122967,
+          "public_relief_freight_food": 3262,
+          "public_spoil_food": 121901,
+          "public_transfer_out_food": 213823,
+          "public_transfer_out_ore": 107,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 6189,
+          "relief_food": 222454,
+          "road_capacity": 20641912,
+          "road_relief_use": 20687,
+          "road_unused": 17230037,
+          "road_works_use": 9244,
+          "trade_freight_food": 68502
+        },
+        "B_requests": {
+          "domestic_reserve": {
+            "below_target": 40357,
+            "no_transfer": 38040,
+            "observed_source_freight": 9,
+            "observed_source_freight|source_reserve_or_stock": 1724,
+            "observed_source_reserve_or_stock": 38624,
+            "requests": 40652
+          },
+          "emergency_aid": {
+            "below_target": 2273,
+            "no_transfer": 2657,
+            "observed_aid_budget": 372,
+            "observed_aid_budget|no_additional_border_dispatch": 3,
+            "observed_aid_budget|no_additional_border_dispatch|source_reserve_or_stock": 12,
+            "observed_aid_budget|source_freight": 79,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 71,
+            "observed_aid_budget|source_reserve_or_stock": 1578,
+            "observed_no_additional_border_dispatch": 65,
+            "observed_no_additional_border_dispatch|source_freight": 10,
+            "observed_no_additional_border_dispatch|source_freight|source_reserve_or_stock": 4,
+            "observed_no_additional_border_dispatch|source_reserve_or_stock": 79,
+            "requests": 3332
+          },
+          "forward_aid": {
+            "below_target": 947,
+            "no_transfer": 1674,
+            "observed_aid_budget": 195,
+            "observed_aid_budget|source_freight": 41,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 44,
+            "observed_aid_budget|source_reserve_or_stock": 667,
+            "requests": 1878
+          }
+        },
+        "B_shipments": {
+          "domestic_reserve": {
+            "edge_units": 174741,
+            "fee": 25733,
+            "food": 174307,
+            "ore": 107,
+            "trips": 4955
+          },
+          "emergency_aid": {
+            "edge_units": 36841,
+            "fee": 5318,
+            "food": 32405,
+            "trips": 816
+          },
+          "forward_aid": {
+            "edge_units": 7522,
+            "fee": 1131,
+            "food": 7111,
+            "trips": 272
+          }
+        },
+        "delta": {
+          "aid_approved": -68084,
+          "aid_budget": -100087,
+          "aid_budget_left": -130270,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": -180,
+          "aid_handling_food": 737,
+          "aid_received": 23177,
+          "aid_sent": 23914,
+          "aid_total_debit": 30183,
+          "aid_unshipped": -91998,
+          "closing_population": -141,
+          "depot_edge_cargo": 219104,
+          "domestic_reserve_freight_food": 25733,
+          "domestic_reserve_units": 174414,
+          "emergency_aid_units": 32405,
+          "exports_value": -6874,
+          "food_deficit": 5520,
+          "food_eaten": 31679,
+          "food_need": 37199,
+          "foreign_out": -335,
+          "foreign_out_food": -652,
+          "foreign_out_ore": -166,
+          "foreign_out_tools": 58,
+          "forward_aid_units": 7111,
+          "internal_aid_freight_food": 6449,
+          "private_edge_cargo": 3727,
+          "private_freight_food": 157,
+          "private_transfer_out_food": 1136,
+          "private_transfer_out_ore": 163,
+          "private_transfer_out_tools": -31,
+          "produced_food": 22599,
+          "public_relief_freight_food": -21334,
+          "public_spoil_food": -23461,
+          "public_transfer_out_food": 213823,
+          "public_transfer_out_ore": 107,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 1145,
+          "relief_food": 10556,
+          "road_capacity": 27504,
+          "road_relief_use": -149857,
+          "road_unused": -47096,
+          "road_works_use": 1626,
+          "trade_freight_food": -98
+        },
+        "matched_A_stock_only": {
+          "A_authorized": 119898,
+          "A_received": 26200,
+          "A_sent": 27500,
+          "A_unshipped": 92398,
+          "B_authorized": 56208,
+          "B_fewer_unshipped": 672,
+          "B_more_sent": 526,
+          "B_no_authorization": 81,
+          "B_received": 47709,
+          "B_sent": 49682,
+          "B_unshipped": 6526,
+          "direction_years": 676,
+          "same_authorization": 83
+        },
+        "paired_road_congestion": {
+          "counts": {
+            "country_year": {
+              "drop_exceeds_new_public": 330,
+              "observations": 16000,
+              "private_lower": 1020,
+              "public_active": 3323
+            },
+            "road_year": {
+              "drop_exceeds_new_public": 476,
+              "observations": 63200,
+              "private_lower": 1706,
+              "public_active": 6121
+            },
+            "world_checkpoint": {
+              "drop_exceeds_new_public": 0,
+              "observations": 20,
+              "private_lower": 9,
+              "public_active": 20
+            },
+            "world_year": {
+              "drop_exceeds_new_public": 112,
+              "observations": 2000,
+              "private_lower": 468,
+              "public_active": 1051
+            }
+          },
+          "largest": {
+            "country_year": {
+              "A_private": 634,
+              "B_private": 72,
+              "B_public": 6,
+              "excess": 556,
+              "key": [
+                35,
+                47,
+                5
+              ]
+            },
+            "road_year": {
+              "A_private": 456,
+              "B_private": 0,
+              "B_public": 50,
+              "excess": 406,
+              "key": [
+                32,
+                43,
+                7,
+                28,
+                30
+              ]
+            },
+            "world_year": {
+              "A_private": 1270,
+              "B_private": 598,
+              "B_public": 6,
+              "excess": 666,
+              "key": [
+                35,
+                47
+              ]
+            }
+          }
+        },
+        "pooled_shortage_rate": {
+          "A": 0.0842544620716852,
+          "B": 0.08426545214053745
+        },
+        "regions_by_B_aid_receipt": {
+          "B_no_receipt": {
+            "B_receipts": 0,
+            "food_deficit": 1287,
+            "food_eaten": -7081,
+            "food_need": -5794,
+            "regions": 397,
+            "relief_food": 3832
+          },
+          "B_received": {
+            "B_receipts": 133816,
+            "food_deficit": 4233,
+            "food_eaten": 38760,
+            "food_need": 42993,
+            "regions": 243,
+            "relief_food": 6724
+          }
+        },
+        "seed_signs": {
+          "aid_sent": {
+            "negative": 0,
+            "positive": 20,
+            "zero": 0
+          },
+          "closing_population": {
+            "negative": 12,
+            "positive": 8,
+            "zero": 0
+          },
+          "exports_value": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "food_deficit": {
+            "negative": 5,
+            "positive": 15,
+            "zero": 0
+          },
+          "food_eaten": {
+            "negative": 7,
+            "positive": 13,
+            "zero": 0
+          },
+          "private_edge_cargo": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          }
+        },
+        "shortfall_reasons": {
+          "A": {
+            "budget|minimum_lot|stock": {
+              "directions": 11,
+              "units": 36
+            },
+            "budget|minimum_lot|storage": {
+              "directions": 1,
+              "units": 3
+            },
+            "budget|road|stock": {
+              "directions": 70,
+              "units": 1406
+            },
+            "budget|road|storage": {
+              "directions": 1,
+              "units": 7
+            },
+            "budget|stock": {
+              "directions": 278,
+              "units": 1896
+            },
+            "budget|stock|storage": {
+              "directions": 4,
+              "units": 45
+            },
+            "minimum_lot": {
+              "directions": 127,
+              "units": 127
+            },
+            "minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 157
+            },
+            "minimum_lot|stock": {
+              "directions": 3,
+              "units": 464
+            },
+            "minimum_lot|storage": {
+              "directions": 1,
+              "units": 62
+            },
+            "road|stock": {
+              "directions": 90,
+              "units": 6381
+            },
+            "road|stock|storage": {
+              "directions": 7,
+              "units": 363
+            },
+            "road|storage": {
+              "directions": 2,
+              "units": 142
+            },
+            "stock": {
+              "directions": 676,
+              "units": 92398
+            },
+            "stock|storage": {
+              "directions": 10,
+              "units": 715
+            },
+            "storage": {
+              "directions": 2,
+              "units": 224
+            }
+          },
+          "B": {
+            "budget": {
+              "directions": 4,
+              "units": 18
+            },
+            "budget|minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 14
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 4,
+              "units": 18
+            },
+            "budget|road|stock": {
+              "directions": 111,
+              "units": 2110
+            },
+            "budget|stock": {
+              "directions": 771,
+              "units": 6088
+            },
+            "budget|stock|storage": {
+              "directions": 6,
+              "units": 111
+            },
+            "minimum_lot": {
+              "directions": 167,
+              "units": 167
+            },
+            "road|stock": {
+              "directions": 4,
+              "units": 66
+            },
+            "stock": {
+              "directions": 79,
+              "units": 3352
+            },
+            "stock|storage": {
+              "directions": 4,
+              "units": 212
+            },
+            "storage": {
+              "directions": 7,
+              "units": 272
+            }
+          }
+        }
+      },
+      "200": {
+        "A": {
+          "aid_approved": 220068,
+          "aid_budget": 425887,
+          "aid_budget_left": 300105,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 10140,
+          "aid_handling_food": 5003,
+          "aid_received": 110639,
+          "aid_sent": 115642,
+          "aid_total_debit": 125782,
+          "aid_unshipped": 104426,
+          "closing_population": 2455348,
+          "depot_edge_cargo": 0,
+          "domestic_reserve_freight_food": 0,
+          "domestic_reserve_units": 0,
+          "emergency_aid_units": 0,
+          "exports_value": 4552377,
+          "food_deficit": 46694174,
+          "food_eaten": 415088406,
+          "food_need": 461782580,
+          "foreign_out": 103281,
+          "foreign_out_food": 609571,
+          "foreign_out_ore": 57007,
+          "foreign_out_tools": 4051,
+          "forward_aid_units": 0,
+          "internal_aid_freight_food": 0,
+          "private_edge_cargo": 3242589,
+          "private_freight_food": 429048,
+          "private_transfer_out_food": 3171914,
+          "private_transfer_out_ore": 21283,
+          "private_transfer_out_tools": 504,
+          "produced_food": 417485595,
+          "public_relief_freight_food": 24632,
+          "public_spoil_food": 145479,
+          "public_transfer_out_food": 0,
+          "public_transfer_out_ore": 0,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 5044,
+          "relief_food": 212257,
+          "road_capacity": 41107808,
+          "road_relief_use": 170776,
+          "road_unused": 37686825,
+          "road_works_use": 7618,
+          "trade_freight_food": 70040
+        },
+        "B": {
+          "aid_approved": 151984,
+          "aid_budget": 325800,
+          "aid_budget_left": 169835,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 9960,
+          "aid_handling_food": 5740,
+          "aid_received": 133816,
+          "aid_sent": 139556,
+          "aid_total_debit": 155965,
+          "aid_unshipped": 12428,
+          "closing_population": 2455832,
+          "depot_edge_cargo": 219413,
+          "domestic_reserve_freight_food": 25778,
+          "domestic_reserve_units": 174606,
+          "emergency_aid_units": 32405,
+          "exports_value": 4534674,
+          "food_deficit": 46701000,
+          "food_eaten": 415154270,
+          "food_need": 461855270,
+          "foreign_out": 104242,
+          "foreign_out_food": 607477,
+          "foreign_out_ore": 56919,
+          "foreign_out_tools": 4149,
+          "forward_aid_units": 7111,
+          "internal_aid_freight_food": 6449,
+          "private_edge_cargo": 3246141,
+          "private_freight_food": 429151,
+          "private_transfer_out_food": 3172922,
+          "private_transfer_out_ore": 21583,
+          "private_transfer_out_tools": 494,
+          "produced_food": 417541785,
+          "public_relief_freight_food": 3273,
+          "public_spoil_food": 121967,
+          "public_transfer_out_food": 214015,
+          "public_transfer_out_ore": 107,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 6189,
+          "relief_food": 222655,
+          "road_capacity": 41135312,
+          "road_relief_use": 20754,
+          "road_unused": 37639760,
+          "road_works_use": 9244,
+          "trade_freight_food": 69816
+        },
+        "B_requests": {
+          "domestic_reserve": {
+            "below_target": 101713,
+            "no_transfer": 99385,
+            "observed_source_freight": 9,
+            "observed_source_freight|source_reserve_or_stock": 1736,
+            "observed_source_reserve_or_stock": 99968,
+            "requests": 102008
+          },
+          "emergency_aid": {
+            "below_target": 2273,
+            "no_transfer": 2657,
+            "observed_aid_budget": 372,
+            "observed_aid_budget|no_additional_border_dispatch": 3,
+            "observed_aid_budget|no_additional_border_dispatch|source_reserve_or_stock": 12,
+            "observed_aid_budget|source_freight": 79,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 71,
+            "observed_aid_budget|source_reserve_or_stock": 1578,
+            "observed_no_additional_border_dispatch": 65,
+            "observed_no_additional_border_dispatch|source_freight": 10,
+            "observed_no_additional_border_dispatch|source_freight|source_reserve_or_stock": 4,
+            "observed_no_additional_border_dispatch|source_reserve_or_stock": 79,
+            "requests": 3332
+          },
+          "forward_aid": {
+            "below_target": 947,
+            "no_transfer": 1674,
+            "observed_aid_budget": 195,
+            "observed_aid_budget|source_freight": 41,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 44,
+            "observed_aid_budget|source_reserve_or_stock": 667,
+            "requests": 1878
+          }
+        },
+        "B_shipments": {
+          "domestic_reserve": {
+            "edge_units": 175050,
+            "fee": 25778,
+            "food": 174499,
+            "ore": 107,
+            "trips": 4966
+          },
+          "emergency_aid": {
+            "edge_units": 36841,
+            "fee": 5318,
+            "food": 32405,
+            "trips": 816
+          },
+          "forward_aid": {
+            "edge_units": 7522,
+            "fee": 1131,
+            "food": 7111,
+            "trips": 272
+          }
+        },
+        "delta": {
+          "aid_approved": -68084,
+          "aid_budget": -100087,
+          "aid_budget_left": -130270,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": -180,
+          "aid_handling_food": 737,
+          "aid_received": 23177,
+          "aid_sent": 23914,
+          "aid_total_debit": 30183,
+          "aid_unshipped": -91998,
+          "closing_population": 484,
+          "depot_edge_cargo": 219413,
+          "domestic_reserve_freight_food": 25778,
+          "domestic_reserve_units": 174606,
+          "emergency_aid_units": 32405,
+          "exports_value": -17703,
+          "food_deficit": 6826,
+          "food_eaten": 65864,
+          "food_need": 72690,
+          "foreign_out": 961,
+          "foreign_out_food": -2094,
+          "foreign_out_ore": -88,
+          "foreign_out_tools": 98,
+          "forward_aid_units": 7111,
+          "internal_aid_freight_food": 6449,
+          "private_edge_cargo": 3552,
+          "private_freight_food": 103,
+          "private_transfer_out_food": 1008,
+          "private_transfer_out_ore": 300,
+          "private_transfer_out_tools": -10,
+          "produced_food": 56190,
+          "public_relief_freight_food": -21359,
+          "public_spoil_food": -23512,
+          "public_transfer_out_food": 214015,
+          "public_transfer_out_ore": 107,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 1145,
+          "relief_food": 10398,
+          "road_capacity": 27504,
+          "road_relief_use": -150022,
+          "road_unused": -47065,
+          "road_works_use": 1626,
+          "trade_freight_food": -224
+        },
+        "matched_A_stock_only": {
+          "A_authorized": 119898,
+          "A_received": 26200,
+          "A_sent": 27500,
+          "A_unshipped": 92398,
+          "B_authorized": 56208,
+          "B_fewer_unshipped": 672,
+          "B_more_sent": 526,
+          "B_no_authorization": 81,
+          "B_received": 47709,
+          "B_sent": 49682,
+          "B_unshipped": 6526,
+          "direction_years": 676,
+          "same_authorization": 83
+        },
+        "paired_road_congestion": {
+          "counts": {
+            "country_year": {
+              "drop_exceeds_new_public": 330,
+              "observations": 32000,
+              "private_lower": 1020,
+              "public_active": 3334
+            },
+            "road_year": {
+              "drop_exceeds_new_public": 476,
+              "observations": 126400,
+              "private_lower": 1706,
+              "public_active": 6135
+            },
+            "world_checkpoint": {
+              "drop_exceeds_new_public": 0,
+              "observations": 20,
+              "private_lower": 9,
+              "public_active": 20
+            },
+            "world_year": {
+              "drop_exceeds_new_public": 113,
+              "observations": 4000,
+              "private_lower": 469,
+              "public_active": 1062
+            }
+          },
+          "largest": {
+            "country_year": {
+              "A_private": 634,
+              "B_private": 72,
+              "B_public": 6,
+              "excess": 556,
+              "key": [
+                35,
+                47,
+                5
+              ]
+            },
+            "road_year": {
+              "A_private": 456,
+              "B_private": 0,
+              "B_public": 50,
+              "excess": 406,
+              "key": [
+                32,
+                43,
+                7,
+                28,
+                30
+              ]
+            },
+            "world_year": {
+              "A_private": 1270,
+              "B_private": 598,
+              "B_public": 6,
+              "excess": 666,
+              "key": [
+                35,
+                47
+              ]
+            }
+          }
+        },
+        "pooled_shortage_rate": {
+          "A": 0.1011172270725327,
+          "B": 0.10111609206061457
+        },
+        "regions_by_B_aid_receipt": {
+          "B_no_receipt": {
+            "B_receipts": 0,
+            "food_deficit": -774,
+            "food_eaten": 34554,
+            "food_need": 33780,
+            "regions": 397,
+            "relief_food": 3679
+          },
+          "B_received": {
+            "B_receipts": 133816,
+            "food_deficit": 7600,
+            "food_eaten": 31310,
+            "food_need": 38910,
+            "regions": 243,
+            "relief_food": 6719
+          }
+        },
+        "seed_signs": {
+          "aid_sent": {
+            "negative": 0,
+            "positive": 20,
+            "zero": 0
+          },
+          "closing_population": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "exports_value": {
+            "negative": 13,
+            "positive": 7,
+            "zero": 0
+          },
+          "food_deficit": {
+            "negative": 7,
+            "positive": 13,
+            "zero": 0
+          },
+          "food_eaten": {
+            "negative": 7,
+            "positive": 13,
+            "zero": 0
+          },
+          "private_edge_cargo": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          }
+        },
+        "shortfall_reasons": {
+          "A": {
+            "budget|minimum_lot|stock": {
+              "directions": 11,
+              "units": 36
+            },
+            "budget|minimum_lot|storage": {
+              "directions": 1,
+              "units": 3
+            },
+            "budget|road|stock": {
+              "directions": 70,
+              "units": 1406
+            },
+            "budget|road|storage": {
+              "directions": 1,
+              "units": 7
+            },
+            "budget|stock": {
+              "directions": 278,
+              "units": 1896
+            },
+            "budget|stock|storage": {
+              "directions": 4,
+              "units": 45
+            },
+            "minimum_lot": {
+              "directions": 127,
+              "units": 127
+            },
+            "minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 157
+            },
+            "minimum_lot|stock": {
+              "directions": 3,
+              "units": 464
+            },
+            "minimum_lot|storage": {
+              "directions": 1,
+              "units": 62
+            },
+            "road|stock": {
+              "directions": 90,
+              "units": 6381
+            },
+            "road|stock|storage": {
+              "directions": 7,
+              "units": 363
+            },
+            "road|storage": {
+              "directions": 2,
+              "units": 142
+            },
+            "stock": {
+              "directions": 676,
+              "units": 92398
+            },
+            "stock|storage": {
+              "directions": 10,
+              "units": 715
+            },
+            "storage": {
+              "directions": 2,
+              "units": 224
+            }
+          },
+          "B": {
+            "budget": {
+              "directions": 4,
+              "units": 18
+            },
+            "budget|minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 14
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 4,
+              "units": 18
+            },
+            "budget|road|stock": {
+              "directions": 111,
+              "units": 2110
+            },
+            "budget|stock": {
+              "directions": 771,
+              "units": 6088
+            },
+            "budget|stock|storage": {
+              "directions": 6,
+              "units": 111
+            },
+            "minimum_lot": {
+              "directions": 167,
+              "units": 167
+            },
+            "road|stock": {
+              "directions": 4,
+              "units": 66
+            },
+            "stock": {
+              "directions": 79,
+              "units": 3352
+            },
+            "stock|storage": {
+              "directions": 4,
+              "units": 212
+            },
+            "storage": {
+              "directions": 7,
+              "units": 272
+            }
+          }
+        }
+      },
+      "50": {
+        "A": {
+          "aid_approved": 216814,
+          "aid_budget": 421980,
+          "aid_budget_left": 298140,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 10013,
+          "aid_handling_food": 4924,
+          "aid_received": 108903,
+          "aid_sent": 113827,
+          "aid_total_debit": 123840,
+          "aid_unshipped": 102987,
+          "closing_population": 2328473,
+          "depot_edge_cargo": 0,
+          "domestic_reserve_freight_food": 0,
+          "domestic_reserve_units": 0,
+          "emergency_aid_units": 0,
+          "exports_value": 4237465,
+          "food_deficit": 5260503,
+          "food_eaten": 91231484,
+          "food_need": 96491987,
+          "foreign_out": 64724,
+          "foreign_out_food": 579138,
+          "foreign_out_ore": 44835,
+          "foreign_out_tools": 3185,
+          "forward_aid_units": 0,
+          "internal_aid_freight_food": 0,
+          "private_edge_cargo": 2829032,
+          "private_freight_food": 373047,
+          "private_transfer_out_food": 2783213,
+          "private_transfer_out_ore": 12315,
+          "private_transfer_out_tools": 428,
+          "produced_food": 93563379,
+          "public_relief_freight_food": 22053,
+          "public_spoil_food": 141581,
+          "public_transfer_out_food": 0,
+          "public_transfer_out_ore": 0,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 4780,
+          "relief_food": 193719,
+          "road_capacity": 10360316,
+          "road_relief_use": 152994,
+          "road_unused": 7371040,
+          "road_works_use": 7250,
+          "trade_freight_food": 65748
+        },
+        "B": {
+          "aid_approved": 150338,
+          "aid_budget": 323708,
+          "aid_budget_left": 169482,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": 9849,
+          "aid_handling_food": 5673,
+          "aid_received": 132331,
+          "aid_sent": 138004,
+          "aid_total_debit": 154226,
+          "aid_unshipped": 12334,
+          "closing_population": 2329206,
+          "depot_edge_cargo": 202327,
+          "domestic_reserve_freight_food": 23337,
+          "domestic_reserve_units": 158396,
+          "emergency_aid_units": 32018,
+          "exports_value": 4236641,
+          "food_deficit": 5257581,
+          "food_eaten": 91250944,
+          "food_need": 96508525,
+          "foreign_out": 64410,
+          "foreign_out_food": 579222,
+          "foreign_out_ore": 44851,
+          "foreign_out_tools": 3183,
+          "forward_aid_units": 7102,
+          "internal_aid_freight_food": 6373,
+          "private_edge_cargo": 2837067,
+          "private_freight_food": 373778,
+          "private_transfer_out_food": 2788757,
+          "private_transfer_out_ore": 12453,
+          "private_transfer_out_tools": 393,
+          "produced_food": 93574917,
+          "public_relief_freight_food": 3030,
+          "public_spoil_food": 118430,
+          "public_transfer_out_food": 197411,
+          "public_transfer_out_ore": 105,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 5929,
+          "relief_food": 204802,
+          "road_capacity": 10387916,
+          "road_relief_use": 19126,
+          "road_unused": 7320540,
+          "road_works_use": 8856,
+          "trade_freight_food": 65846
+        },
+        "B_requests": {
+          "domestic_reserve": {
+            "below_target": 11387,
+            "no_transfer": 9250,
+            "observed_source_freight": 9,
+            "observed_source_freight|source_reserve_or_stock": 1400,
+            "observed_source_reserve_or_stock": 9978,
+            "requests": 11660
+          },
+          "emergency_aid": {
+            "below_target": 2254,
+            "no_transfer": 2636,
+            "observed_aid_budget": 369,
+            "observed_aid_budget|no_additional_border_dispatch": 3,
+            "observed_aid_budget|no_additional_border_dispatch|source_reserve_or_stock": 11,
+            "observed_aid_budget|source_freight": 79,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 71,
+            "observed_aid_budget|source_reserve_or_stock": 1563,
+            "observed_no_additional_border_dispatch": 65,
+            "observed_no_additional_border_dispatch|source_freight": 10,
+            "observed_no_additional_border_dispatch|source_freight|source_reserve_or_stock": 4,
+            "observed_no_additional_border_dispatch|source_reserve_or_stock": 79,
+            "requests": 3303
+          },
+          "forward_aid": {
+            "below_target": 923,
+            "no_transfer": 1636,
+            "observed_aid_budget": 190,
+            "observed_aid_budget|source_freight": 41,
+            "observed_aid_budget|source_freight|source_reserve_or_stock": 44,
+            "observed_aid_budget|source_reserve_or_stock": 648,
+            "requests": 1839
+          }
+        },
+        "B_shipments": {
+          "domestic_reserve": {
+            "edge_units": 158501,
+            "fee": 23337,
+            "food": 158291,
+            "ore": 105,
+            "trips": 4639
+          },
+          "emergency_aid": {
+            "edge_units": 36313,
+            "fee": 5243,
+            "food": 32018,
+            "trips": 803
+          },
+          "forward_aid": {
+            "edge_units": 7513,
+            "fee": 1130,
+            "food": 7102,
+            "trips": 271
+          }
+        },
+        "delta": {
+          "aid_approved": -66476,
+          "aid_budget": -98272,
+          "aid_budget_left": -128658,
+          "aid_budget_overrun": 0,
+          "aid_freight_food": -164,
+          "aid_handling_food": 749,
+          "aid_received": 23428,
+          "aid_sent": 24177,
+          "aid_total_debit": 30386,
+          "aid_unshipped": -90653,
+          "closing_population": 733,
+          "depot_edge_cargo": 202327,
+          "domestic_reserve_freight_food": 23337,
+          "domestic_reserve_units": 158396,
+          "emergency_aid_units": 32018,
+          "exports_value": -824,
+          "food_deficit": -2922,
+          "food_eaten": 19460,
+          "food_need": 16538,
+          "foreign_out": -314,
+          "foreign_out_food": 84,
+          "foreign_out_ore": 16,
+          "foreign_out_tools": -2,
+          "forward_aid_units": 7102,
+          "internal_aid_freight_food": 6373,
+          "private_edge_cargo": 8035,
+          "private_freight_food": 731,
+          "private_transfer_out_food": 5544,
+          "private_transfer_out_ore": 138,
+          "private_transfer_out_tools": -35,
+          "produced_food": 11538,
+          "public_relief_freight_food": -19023,
+          "public_spoil_food": -23151,
+          "public_transfer_out_food": 197411,
+          "public_transfer_out_ore": 105,
+          "public_transfer_out_tools": 0,
+          "public_works_freight_food": 1149,
+          "relief_food": 11083,
+          "road_capacity": 27600,
+          "road_relief_use": -133868,
+          "road_unused": -50500,
+          "road_works_use": 1606,
+          "trade_freight_food": 98
+        },
+        "matched_A_stock_only": {
+          "A_authorized": 118072,
+          "A_received": 25753,
+          "A_sent": 27033,
+          "A_unshipped": 91039,
+          "B_authorized": 55525,
+          "B_fewer_unshipped": 663,
+          "B_more_sent": 521,
+          "B_no_authorization": 80,
+          "B_received": 47118,
+          "B_sent": 49069,
+          "B_unshipped": 6456,
+          "direction_years": 667,
+          "same_authorization": 83
+        },
+        "paired_road_congestion": {
+          "counts": {
+            "country_year": {
+              "drop_exceeds_new_public": 298,
+              "observations": 8000,
+              "private_lower": 934,
+              "public_active": 3114
+            },
+            "road_year": {
+              "drop_exceeds_new_public": 456,
+              "observations": 31600,
+              "private_lower": 1606,
+              "public_active": 5785
+            },
+            "world_checkpoint": {
+              "drop_exceeds_new_public": 0,
+              "observations": 20,
+              "private_lower": 5,
+              "public_active": 20
+            },
+            "world_year": {
+              "drop_exceeds_new_public": 79,
+              "observations": 1000,
+              "private_lower": 402,
+              "public_active": 903
+            }
+          },
+          "largest": {
+            "country_year": {
+              "A_private": 634,
+              "B_private": 72,
+              "B_public": 6,
+              "excess": 556,
+              "key": [
+                35,
+                47,
+                5
+              ]
+            },
+            "road_year": {
+              "A_private": 456,
+              "B_private": 0,
+              "B_public": 50,
+              "excess": 406,
+              "key": [
+                32,
+                43,
+                7,
+                28,
+                30
+              ]
+            },
+            "world_year": {
+              "A_private": 1270,
+              "B_private": 598,
+              "B_public": 6,
+              "excess": 666,
+              "key": [
+                35,
+                47
+              ]
+            }
+          }
+        },
+        "pooled_shortage_rate": {
+          "A": 0.054517511386722714,
+          "B": 0.05447789197897284
+        },
+        "regions_by_B_aid_receipt": {
+          "B_no_receipt": {
+            "B_receipts": 0,
+            "food_deficit": 976,
+            "food_eaten": 2252,
+            "food_need": 3228,
+            "regions": 401,
+            "relief_food": 3960
+          },
+          "B_received": {
+            "B_receipts": 132331,
+            "food_deficit": -3898,
+            "food_eaten": 17208,
+            "food_need": 13310,
+            "regions": 239,
+            "relief_food": 7123
+          }
+        },
+        "seed_signs": {
+          "aid_sent": {
+            "negative": 0,
+            "positive": 20,
+            "zero": 0
+          },
+          "closing_population": {
+            "negative": 4,
+            "positive": 15,
+            "zero": 1
+          },
+          "exports_value": {
+            "negative": 9,
+            "positive": 11,
+            "zero": 0
+          },
+          "food_deficit": {
+            "negative": 12,
+            "positive": 8,
+            "zero": 0
+          },
+          "food_eaten": {
+            "negative": 5,
+            "positive": 15,
+            "zero": 0
+          },
+          "private_edge_cargo": {
+            "negative": 5,
+            "positive": 15,
+            "zero": 0
+          }
+        },
+        "shortfall_reasons": {
+          "A": {
+            "budget|minimum_lot|stock": {
+              "directions": 11,
+              "units": 36
+            },
+            "budget|minimum_lot|storage": {
+              "directions": 1,
+              "units": 3
+            },
+            "budget|road|stock": {
+              "directions": 70,
+              "units": 1406
+            },
+            "budget|road|storage": {
+              "directions": 1,
+              "units": 7
+            },
+            "budget|stock": {
+              "directions": 273,
+              "units": 1870
+            },
+            "budget|stock|storage": {
+              "directions": 4,
+              "units": 45
+            },
+            "minimum_lot": {
+              "directions": 126,
+              "units": 126
+            },
+            "minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 157
+            },
+            "minimum_lot|stock": {
+              "directions": 3,
+              "units": 464
+            },
+            "minimum_lot|storage": {
+              "directions": 1,
+              "units": 62
+            },
+            "road|stock": {
+              "directions": 89,
+              "units": 6328
+            },
+            "road|stock|storage": {
+              "directions": 7,
+              "units": 363
+            },
+            "road|storage": {
+              "directions": 2,
+              "units": 142
+            },
+            "stock": {
+              "directions": 667,
+              "units": 91039
+            },
+            "stock|storage": {
+              "directions": 10,
+              "units": 715
+            },
+            "storage": {
+              "directions": 2,
+              "units": 224
+            }
+          },
+          "B": {
+            "budget": {
+              "directions": 4,
+              "units": 18
+            },
+            "budget|minimum_lot|road|stock": {
+              "directions": 1,
+              "units": 14
+            },
+            "budget|minimum_lot|stock": {
+              "directions": 4,
+              "units": 18
+            },
+            "budget|road|stock": {
+              "directions": 111,
+              "units": 2110
+            },
+            "budget|stock": {
+              "directions": 760,
+              "units": 6002
+            },
+            "budget|stock|storage": {
+              "directions": 6,
+              "units": 111
+            },
+            "minimum_lot": {
+              "directions": 164,
+              "units": 164
+            },
+            "road|stock": {
+              "directions": 4,
+              "units": 66
+            },
+            "stock": {
+              "directions": 78,
+              "units": 3347
+            },
+            "stock|storage": {
+              "directions": 4,
+              "units": 212
+            },
+            "storage": {
+              "directions": 7,
+              "units": 272
+            }
+          }
+        }
+      }
+    },
+    "seeds": 20,
+    "sha256": {
+      "depot-requests.csv.gz": "619c1d9eaafd52f6bec3ba1ef3f814c577c7423fb97b9a806aeb115d5e4e0c90",
+      "foreign-years.csv.gz": "347c6c5ed7bd5735c9521870ecc84e266f02e52577a221bff1703ffc77c58fa1",
+      "public-shipments.csv.gz": "a8dbb56b080185ca80a14c54c43ca6bd6fb38dfed6f9b8f41a8870c032b8a948",
+      "regions.csv": "c4484be0bcf0c6c48966bbee11838ebe5120d5c52bbf2dae75283489cb342e9c",
+      "road-years.csv.gz": "aa99ec677ad545b10f7be92a30374a2f537c6961d98da664d31334667a1c5736",
+      "runs.csv": "93f2fc83adb84a6763043708c1942d7030b4ed3b118dc2371859f3c0df71cb62"
+    }
+  },
+  "same_opening": {
+    "delta": {
+      "aid_received": 121,
+      "food_eaten": -64,
+      "food_need": 0,
+      "food_unmet": 64,
+      "foreign_food": 0,
+      "foreign_ore": 0,
+      "foreign_tools": 0,
+      "foreign_value": 0,
+      "internal_fee": 43,
+      "private_edge_units": -78,
+      "private_food": -64,
+      "private_ore": 0,
+      "public_edge_units": 320,
+      "public_food": 320,
+      "relief": 0
+    },
+    "foreign_held": [
+      {
+        "good": "food",
+        "quantity": 230,
+        "source": 4,
+        "target": 0,
+        "value": 2070
+      },
+      {
+        "good": "food",
+        "quantity": 84,
+        "source": 22,
+        "target": 28,
+        "value": 672
+      },
+      {
+        "good": "food",
+        "quantity": 94,
+        "source": 5,
+        "target": 16,
+        "value": 564
+      },
+      {
+        "good": "food",
+        "quantity": 88,
+        "source": 23,
+        "target": 16,
+        "value": 616
+      },
+      {
+        "good": "food",
+        "quantity": 125,
+        "source": 4,
+        "target": 16,
+        "value": 875
+      },
+      {
+        "good": "food",
+        "quantity": 211,
+        "source": 13,
+        "target": 24,
+        "value": 1477
+      },
+      {
+        "good": "food",
+        "quantity": 106,
+        "source": 11,
+        "target": 12,
+        "value": 530
+      },
+      {
+        "good": "food",
+        "quantity": 51,
+        "source": 8,
+        "target": 12,
+        "value": 306
+      },
+      {
+        "good": "food",
+        "quantity": 66,
+        "source": 18,
+        "target": 20,
+        "value": 396
+      },
+      {
+        "good": "food",
+        "quantity": 80,
+        "source": 25,
+        "target": 20,
+        "value": 480
+      },
+      {
+        "good": "food",
+        "quantity": 114,
+        "source": 25,
+        "target": 29,
+        "value": 684
+      },
+      {
+        "good": "food",
+        "quantity": 51,
+        "source": 22,
+        "target": 30,
+        "value": 306
+      },
+      {
+        "good": "food",
+        "quantity": 76,
+        "source": 26,
+        "target": 31,
+        "value": 456
+      },
+      {
+        "good": "ore",
+        "quantity": 22,
+        "source": 19,
+        "target": 23,
+        "value": 132
+      },
+      {
+        "good": "ore",
+        "quantity": 29,
+        "source": 20,
+        "target": 29,
+        "value": 174
+      },
+      {
+        "good": "ore",
+        "quantity": 15,
+        "source": 18,
+        "target": 25,
+        "value": 60
+      },
+      {
+        "good": "ore",
+        "quantity": 11,
+        "source": 12,
+        "target": 27,
+        "value": 33
+      },
+      {
+        "good": "ore",
+        "quantity": 21,
+        "source": 5,
+        "target": 1,
+        "value": 63
+      },
+      {
+        "good": "ore",
+        "quantity": 18,
+        "source": 4,
+        "target": 3,
+        "value": 54
+      },
+      {
+        "good": "ore",
+        "quantity": 88,
+        "source": 24,
+        "target": 28,
+        "value": 264
+      },
+      {
+        "good": "ore",
+        "quantity": 8,
+        "source": 9,
+        "target": 13,
+        "value": 16
+      },
+      {
+        "good": "tools",
+        "quantity": 4,
+        "source": 22,
+        "target": 30,
+        "value": 44
+      },
+      {
+        "good": "tools",
+        "quantity": 4,
+        "source": 26,
+        "target": 31,
+        "value": 36
+      }
+    ],
+    "foreign_on": [
+      {
+        "good": "food",
+        "quantity": 230,
+        "source": 4,
+        "target": 0,
+        "value": 2070
+      },
+      {
+        "good": "food",
+        "quantity": 84,
+        "source": 22,
+        "target": 28,
+        "value": 672
+      },
+      {
+        "good": "food",
+        "quantity": 94,
+        "source": 5,
+        "target": 16,
+        "value": 564
+      },
+      {
+        "good": "food",
+        "quantity": 88,
+        "source": 23,
+        "target": 16,
+        "value": 616
+      },
+      {
+        "good": "food",
+        "quantity": 125,
+        "source": 4,
+        "target": 16,
+        "value": 875
+      },
+      {
+        "good": "food",
+        "quantity": 211,
+        "source": 13,
+        "target": 24,
+        "value": 1477
+      },
+      {
+        "good": "food",
+        "quantity": 106,
+        "source": 11,
+        "target": 12,
+        "value": 530
+      },
+      {
+        "good": "food",
+        "quantity": 51,
+        "source": 8,
+        "target": 12,
+        "value": 306
+      },
+      {
+        "good": "food",
+        "quantity": 66,
+        "source": 18,
+        "target": 20,
+        "value": 396
+      },
+      {
+        "good": "food",
+        "quantity": 80,
+        "source": 25,
+        "target": 20,
+        "value": 480
+      },
+      {
+        "good": "food",
+        "quantity": 114,
+        "source": 25,
+        "target": 29,
+        "value": 684
+      },
+      {
+        "good": "food",
+        "quantity": 51,
+        "source": 22,
+        "target": 30,
+        "value": 306
+      },
+      {
+        "good": "food",
+        "quantity": 76,
+        "source": 26,
+        "target": 31,
+        "value": 456
+      },
+      {
+        "good": "ore",
+        "quantity": 22,
+        "source": 19,
+        "target": 23,
+        "value": 132
+      },
+      {
+        "good": "ore",
+        "quantity": 29,
+        "source": 20,
+        "target": 29,
+        "value": 174
+      },
+      {
+        "good": "ore",
+        "quantity": 15,
+        "source": 18,
+        "target": 25,
+        "value": 60
+      },
+      {
+        "good": "ore",
+        "quantity": 11,
+        "source": 12,
+        "target": 27,
+        "value": 33
+      },
+      {
+        "good": "ore",
+        "quantity": 21,
+        "source": 5,
+        "target": 1,
+        "value": 63
+      },
+      {
+        "good": "ore",
+        "quantity": 18,
+        "source": 4,
+        "target": 3,
+        "value": 54
+      },
+      {
+        "good": "ore",
+        "quantity": 88,
+        "source": 24,
+        "target": 28,
+        "value": 264
+      },
+      {
+        "good": "ore",
+        "quantity": 8,
+        "source": 9,
+        "target": 13,
+        "value": 16
+      },
+      {
+        "good": "tools",
+        "quantity": 4,
+        "source": 22,
+        "target": 30,
+        "value": 44
+      },
+      {
+        "good": "tools",
+        "quantity": 4,
+        "source": 26,
+        "target": 31,
+        "value": 36
+      }
+    ],
+    "held": {
+      "aid_received": 99,
+      "food_eaten": 75840,
+      "food_need": 77702,
+      "food_unmet": 1862,
+      "foreign_food": 1376,
+      "foreign_ore": 212,
+      "foreign_tools": 8,
+      "foreign_value": 10308,
+      "private_edge_units": 1777,
+      "private_food": 1677,
+      "private_ore": 85,
+      "relief": 223
+    },
+    "on": {
+      "aid_received": 220,
+      "food_eaten": 75776,
+      "food_need": 77702,
+      "food_unmet": 1926,
+      "foreign_food": 1376,
+      "foreign_ore": 212,
+      "foreign_tools": 8,
+      "foreign_value": 10308,
+      "internal_fee": 43,
+      "private_edge_units": 1699,
+      "private_food": 1613,
+      "private_ore": 85,
+      "public_edge_units": 320,
+      "public_food": 320,
+      "relief": 223
+    },
+    "private_held": [
+      {
+        "fee": 15,
+        "good": "food",
+        "path": [
+          29,
+          28
+        ],
+        "quantity": 103,
+        "source": 29,
+        "target": 28
+      },
+      {
+        "fee": 15,
+        "good": "food",
+        "path": [
+          30,
+          28
+        ],
+        "quantity": 103,
+        "source": 30,
+        "target": 28
+      },
+      {
+        "fee": 15,
+        "good": "food",
+        "path": [
+          31,
+          28
+        ],
+        "quantity": 103,
+        "source": 31,
+        "target": 28
+      },
+      {
+        "fee": 37,
+        "good": "food",
+        "path": [
+          3,
+          0
+        ],
+        "quantity": 329,
+        "source": 3,
+        "target": 0
+      },
+      {
+        "fee": 33,
+        "good": "food",
+        "path": [
+          2,
+          0
+        ],
+        "quantity": 267,
+        "source": 2,
+        "target": 0
+      },
+      {
+        "fee": 53,
+        "good": "food",
+        "path": [
+          1,
+          0
+        ],
+        "quantity": 404,
+        "source": 1,
+        "target": 0
+      },
+      {
+        "fee": 4,
+        "good": "food",
+        "path": [
+          3,
+          2,
+          0
+        ],
+        "quantity": 15,
+        "source": 3,
+        "target": 0
+      },
+      {
+        "fee": 42,
+        "good": "food",
+        "path": [
+          19,
+          16
+        ],
+        "quantity": 350,
+        "source": 19,
+        "target": 16
+      },
+      {
+        "fee": 1,
+        "good": "food",
+        "path": [
+          17,
+          16
+        ],
+        "quantity": 3,
+        "source": 17,
+        "target": 16
+      },
+      {
+        "fee": 10,
+        "good": "ore",
+        "path": [
+          20,
+          22
+        ],
+        "quantity": 59,
+        "source": 20,
+        "target": 22
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          24,
+          26
+        ],
+        "quantity": 7,
+        "source": 24,
+        "target": 26
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          17,
+          19
+        ],
+        "quantity": 9,
+        "source": 17,
+        "target": 19
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          12,
+          13
+        ],
+        "quantity": 7,
+        "source": 12,
+        "target": 13
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          12,
+          15
+        ],
+        "quantity": 3,
+        "source": 12,
+        "target": 15
+      }
+    ],
+    "private_on": [
+      {
+        "fee": 15,
+        "good": "food",
+        "path": [
+          29,
+          28
+        ],
+        "quantity": 103,
+        "source": 29,
+        "target": 28
+      },
+      {
+        "fee": 15,
+        "good": "food",
+        "path": [
+          30,
+          28
+        ],
+        "quantity": 103,
+        "source": 30,
+        "target": 28
+      },
+      {
+        "fee": 15,
+        "good": "food",
+        "path": [
+          31,
+          28
+        ],
+        "quantity": 103,
+        "source": 31,
+        "target": 28
+      },
+      {
+        "fee": 40,
+        "good": "food",
+        "path": [
+          3,
+          0
+        ],
+        "quantity": 355,
+        "source": 3,
+        "target": 0
+      },
+      {
+        "fee": 33,
+        "good": "food",
+        "path": [
+          2,
+          0
+        ],
+        "quantity": 267,
+        "source": 2,
+        "target": 0
+      },
+      {
+        "fee": 43,
+        "good": "food",
+        "path": [
+          1,
+          0
+        ],
+        "quantity": 328,
+        "source": 1,
+        "target": 0
+      },
+      {
+        "fee": 2,
+        "good": "food",
+        "path": [
+          3,
+          2,
+          0
+        ],
+        "quantity": 1,
+        "source": 3,
+        "target": 0
+      },
+      {
+        "fee": 42,
+        "good": "food",
+        "path": [
+          19,
+          16
+        ],
+        "quantity": 350,
+        "source": 19,
+        "target": 16
+      },
+      {
+        "fee": 1,
+        "good": "food",
+        "path": [
+          17,
+          16
+        ],
+        "quantity": 3,
+        "source": 17,
+        "target": 16
+      },
+      {
+        "fee": 10,
+        "good": "ore",
+        "path": [
+          20,
+          22
+        ],
+        "quantity": 59,
+        "source": 20,
+        "target": 22
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          24,
+          26
+        ],
+        "quantity": 7,
+        "source": 24,
+        "target": 26
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          17,
+          19
+        ],
+        "quantity": 9,
+        "source": 17,
+        "target": 19
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          12,
+          13
+        ],
+        "quantity": 7,
+        "source": 12,
+        "target": 13
+      },
+      {
+        "fee": 1,
+        "good": "ore",
+        "path": [
+          12,
+          15
+        ],
+        "quantity": 3,
+        "source": 12,
+        "target": 15
+      }
+    ],
+    "public": [
+      {
+        "fee": 16,
+        "good": "food",
+        "path": [
+          8,
+          10
+        ],
+        "quantity": 126,
+        "source": 8,
+        "target": 10
+      },
+      {
+        "fee": 4,
+        "good": "food",
+        "path": [
+          29,
+          28
+        ],
+        "quantity": 24,
+        "source": 29,
+        "target": 28
+      },
+      {
+        "fee": 4,
+        "good": "food",
+        "path": [
+          31,
+          28
+        ],
+        "quantity": 25,
+        "source": 31,
+        "target": 28
+      },
+      {
+        "fee": 2,
+        "good": "food",
+        "path": [
+          3,
+          0
+        ],
+        "quantity": 18,
+        "source": 3,
+        "target": 0
+      },
+      {
+        "fee": 1,
+        "good": "food",
+        "path": [
+          2,
+          0
+        ],
+        "quantity": 8,
+        "source": 2,
+        "target": 0
+      },
+      {
+        "fee": 16,
+        "good": "food",
+        "path": [
+          1,
+          0
+        ],
+        "quantity": 119,
+        "source": 1,
+        "target": 0
+      }
+    ],
+    "regions": [
+      {
+        "eaten_held": 6082,
+        "eaten_on": 6018,
+        "owner": 0,
+        "region": 0
+      }
+    ],
+    "roads": [
+      {
+        "capacity": 447,
+        "edge": [
+          0,
+          1
+        ],
+        "private_held": 404,
+        "private_on": 328,
+        "public": 119,
+        "relief_held": 30,
+        "relief_on": 0
+      },
+      {
+        "capacity": 300,
+        "edge": [
+          0,
+          2
+        ],
+        "private_held": 282,
+        "private_on": 268,
+        "public": 8,
+        "relief_held": 18,
+        "relief_on": 0
+      },
+      {
+        "capacity": 373,
+        "edge": [
+          0,
+          3
+        ],
+        "private_held": 329,
+        "private_on": 355,
+        "public": 18,
+        "relief_held": 44,
+        "relief_on": 0
+      },
+      {
+        "capacity": 160,
+        "edge": [
+          2,
+          3
+        ],
+        "private_held": 15,
+        "private_on": 1,
+        "public": 0,
+        "relief_held": 0,
+        "relief_on": 0
+      },
+      {
+        "capacity": 300,
+        "edge": [
+          8,
+          10
+        ],
+        "private_held": 0,
+        "private_on": 0,
+        "public": 126,
+        "relief_held": 0,
+        "relief_on": 0
+      },
+      {
+        "capacity": 377,
+        "edge": [
+          28,
+          29
+        ],
+        "private_held": 103,
+        "private_on": 103,
+        "public": 24,
+        "relief_held": 32,
+        "relief_on": 0
+      },
+      {
+        "capacity": 377,
+        "edge": [
+          28,
+          31
+        ],
+        "private_held": 103,
+        "private_on": 103,
+        "public": 25,
+        "relief_held": 17,
+        "relief_on": 0
+      }
+    ],
+    "seed": 1,
+    "year": 5
+  }
+}

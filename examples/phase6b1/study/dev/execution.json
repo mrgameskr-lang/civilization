@@ -1,0 +1,36 @@
+{
+  "sample": "dev",
+  "first_seed": 0,
+  "seeds": 20,
+  "workers": 5,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "arms": [
+    "A",
+    "B"
+  ],
+  "paths": 40,
+  "annual_transitions": 8000,
+  "archived_6a1_F": 60,
+  "b1_reference_checkpoints": 0,
+  "b1_reference_runs_sha256": null,
+  "replayed_checkpoints": 0,
+  "table_sha256": {
+    "countries.csv": "cb4d93ec5695bf2893bab67d9ee09b48a85f942f6aee1720ddc11ea2cce9aade",
+    "country-years.csv.gz": "ab0bd2769761ef6f1f88a855d915da17bd9d9c48e6d12d3695d6c11a421b15f4",
+    "depot-requests.csv.gz": "ff7faae654d3c622f9c4d61a81cff9e149929e2ca942e5966b192ace8ed68b50",
+    "foreign-years.csv.gz": "947c8a035f7955bd0072eee9b9ee42b4fbac6fd336f4f7482c08ec330c78c736",
+    "means.csv": "ba05def1dc290d9a2318ff94e9c8c6333ec72a3961dbc73b3c3d8513e81b0dde",
+    "paired.csv": "9ceb1c30b0ad4f83e379185e413b0c01d143a7276c005620e1778f40cf571847",
+    "public-shipments.csv.gz": "5537de4e29edaa55b183b3817998e60303b978f63745a3a3830bdf152addf509",
+    "region-years.csv.gz": "563ed55a54913297839311d05f832bb7475b75d14aa2448d152d67efb33578da",
+    "regions.csv": "a7c9b903ab91e8d4c4355e1f87eae3316c4684f21783318991c4df1b3531d345",
+    "road-years.csv.gz": "006343deab01f9e7aaa24da5c58eaf3f5d153ec6fa45ae3f0e1c91c07036eead",
+    "runs.csv": "b411d0660b848a86798cec9678733abfd0fe4308483331c9b874d861a7aa73a0"
+  },
+  "wall_seconds": 413.18513050000183,
+  "python": "3.12.14"
+}

@@ -1,0 +1,270 @@
+{
+  "same_opening": {
+    "delta": {
+      "aid_received": 39,
+      "food_eaten": -80,
+      "food_need": 0,
+      "food_unmet": 80,
+      "foreign_food": 0,
+      "foreign_value": 0,
+      "internal_fee": 14,
+      "private_edge_units": -80,
+      "private_food": -80,
+      "public_edge_units": 106,
+      "public_food": 66,
+      "relief": 0
+    },
+    "foreign_held": [
+      {
+        "good": "food",
+        "quantity": 266,
+        "source": 31,
+        "target": 25,
+        "value": 1862
+      }
+    ],
+    "foreign_on": [
+      {
+        "good": "food",
+        "quantity": 266,
+        "source": 31,
+        "target": 25,
+        "value": 1862
+      }
+    ],
+    "held": {
+      "aid_received": 44,
+      "food_eaten": 105774,
+      "food_need": 119112,
+      "food_unmet": 13338,
+      "foreign_food": 266,
+      "foreign_value": 1862,
+      "private_edge_units": 1279,
+      "private_food": 1279,
+      "relief": 64
+    },
+    "on": {
+      "aid_received": 83,
+      "food_eaten": 105694,
+      "food_need": 119112,
+      "food_unmet": 13418,
+      "foreign_food": 266,
+      "foreign_value": 1862,
+      "internal_fee": 14,
+      "private_edge_units": 1199,
+      "private_food": 1199,
+      "public_edge_units": 106,
+      "public_food": 66,
+      "relief": 64
+    },
+    "private_held": [
+      {
+        "fee": 44,
+        "good": "food",
+        "path": [
+          31,
+          28
+        ],
+        "quantity": 392,
+        "source": 31,
+        "target": 28
+      },
+      {
+        "fee": 55,
+        "good": "food",
+        "path": [
+          30,
+          28
+        ],
+        "quantity": 423,
+        "source": 30,
+        "target": 28
+      },
+      {
+        "fee": 32,
+        "good": "food",
+        "path": [
+          29,
+          28
+        ],
+        "quantity": 222,
+        "source": 29,
+        "target": 28
+      },
+      {
+        "fee": 11,
+        "good": "food",
+        "path": [
+          9,
+          8
+        ],
+        "quantity": 84,
+        "source": 9,
+        "target": 8
+      },
+      {
+        "fee": 17,
+        "good": "food",
+        "path": [
+          10,
+          8
+        ],
+        "quantity": 140,
+        "source": 10,
+        "target": 8
+      },
+      {
+        "fee": 3,
+        "good": "food",
+        "path": [
+          15,
+          12
+        ],
+        "quantity": 18,
+        "source": 15,
+        "target": 12
+      }
+    ],
+    "private_on": [
+      {
+        "fee": 39,
+        "good": "food",
+        "path": [
+          31,
+          28
+        ],
+        "quantity": 352,
+        "source": 31,
+        "target": 28
+      },
+      {
+        "fee": 50,
+        "good": "food",
+        "path": [
+          30,
+          28
+        ],
+        "quantity": 383,
+        "source": 30,
+        "target": 28
+      },
+      {
+        "fee": 32,
+        "good": "food",
+        "path": [
+          29,
+          28
+        ],
+        "quantity": 222,
+        "source": 29,
+        "target": 28
+      },
+      {
+        "fee": 11,
+        "good": "food",
+        "path": [
+          9,
+          8
+        ],
+        "quantity": 84,
+        "source": 9,
+        "target": 8
+      },
+      {
+        "fee": 17,
+        "good": "food",
+        "path": [
+          10,
+          8
+        ],
+        "quantity": 140,
+        "source": 10,
+        "target": 8
+      },
+      {
+        "fee": 3,
+        "good": "food",
+        "path": [
+          15,
+          12
+        ],
+        "quantity": 18,
+        "source": 15,
+        "target": 12
+      }
+    ],
+    "public": [
+      {
+        "fee": 11,
+        "good": "food",
+        "path": [
+          31,
+          28,
+          30
+        ],
+        "quantity": 40,
+        "source": 31,
+        "target": 30
+      },
+      {
+        "fee": 3,
+        "good": "food",
+        "path": [
+          18,
+          16
+        ],
+        "quantity": 26,
+        "source": 18,
+        "target": 16
+      }
+    ],
+    "regions": [
+      {
+        "eaten_held": 9550,
+        "eaten_on": 9470,
+        "owner": 7,
+        "region": 28
+      }
+    ],
+    "roads": [
+      {
+        "capacity": 480,
+        "edge": [
+          16,
+          18
+        ],
+        "private_held": 0,
+        "private_on": 0,
+        "public": 26,
+        "relief_held": 0,
+        "relief_on": 0
+      },
+      {
+        "capacity": 423,
+        "edge": [
+          28,
+          30
+        ],
+        "private_held": 423,
+        "private_on": 383,
+        "public": 40,
+        "relief_held": 0,
+        "relief_on": 0
+      },
+      {
+        "capacity": 394,
+        "edge": [
+          28,
+          31
+        ],
+        "private_held": 392,
+        "private_on": 352,
+        "public": 40,
+        "relief_held": 0,
+        "relief_on": 0
+      }
+    ],
+    "seed": 2,
+    "year": 42
+  }
+}
