@@ -63,6 +63,13 @@ def main() -> int:
     competition.add_argument("--arm", choices=("A", "B", "C", "D"), default="C")
     competition.add_argument("--tax-policy", choices=("fixed", "platform"), default="fixed")
 
+    collective = commands.add_parser("collective", help="5.0D 집단행동·정부 대응 원장 저장")
+    collective.add_argument("--out", required=True, type=Path)
+    collective.add_argument("--seed", type=int, default=42)
+    collective.add_argument("--years", type=int, default=50)
+    collective.add_argument("--per-nation", type=int, default=4)
+    collective.add_argument("--actions", choices=("on", "off"), default="on")
+
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
@@ -95,6 +102,11 @@ def main() -> int:
             write_political_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
                                 feedback=args.feedback == "on")
             print(f"5.0B 원장을 저장했습니다. {args.out.resolve()}")
+        elif args.command == "collective":
+            from .collective_storage import write_collective_run
+            write_collective_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
+                                 enabled=args.actions == "on")
+            print(f"5.0D 원장을 저장했습니다. {args.out.resolve()}")
         elif args.command == "competition":
             from .competition_storage import write_competition_run
             write_competition_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,

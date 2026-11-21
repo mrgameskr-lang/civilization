@@ -112,6 +112,14 @@ def regional_summary(directory, export=None):
                 for key in ("election", "installation", "turnover"):
                     count = sum(bool(c["election"] and c["election"][key]) for c in race["countries"])
                     result["total_" + key] = result.get("total_" + key, 0) + count
+            if "collective" in row:
+                groups = [g for r in row["collective"]["regions"] for g in r["groups"].values()]
+                for key in ("participants", "withheld_workers"):
+                    result[key] = result.get(key, 0) + sum(g[key] for g in groups)
+                refused = result.setdefault("refused", dict.fromkeys(GOODS, 0))
+                for levy in row["government"]["levies"]:
+                    for good in GOODS:
+                        refused[good] += levy["refused"][good]
             result["years"] += 1
             result["final_population"] = sum(r["closing"]["population"] for r in row["regions"])
             result["total_migrants"] += sum(m["people"] for m in row["moves"])

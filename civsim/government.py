@@ -56,7 +56,7 @@ def step_government(sim, year, mode):
     return _advance_fiscal(sim, year, mode)
 
 
-def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, competition=None):
+def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, competition=None, collective=None):
     source = sim.world
     if type(year) is not int or year != source.year + 1 or mode not in MODES:
         raise ValueError("expected the next year and a supported government program")
@@ -75,16 +75,34 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, com
     elif political_open is not None:
         from .politics import select_plans
         decisions, recommendations = select_plans(decisions, political_open, feedback)
+    unavailable = {}
+    if collective is not None:
+        from .civic_fiscal import respond, withheld_labor
+        if competition is None or competition["arm"]!="C" or competition["tax_policy"]!="fixed":
+            raise ValueError("collective fiscal effects require the fixed-tax C economy")
+        unavailable = withheld_labor(local,collective)
+        collective["responses"] = []
+        for owner, plan in decisions.items():
+            voices = [r for r in collective["regions"] if r["owner"]==owner]
+            decisions[owner], receipt = respond(plan,voices)
+            collective["responses"].append(receipt)
     works, next_units, residual, labor = execute_works(local, roads, depots, sim.road_units, decisions,
-                                                        width=trial.width)
+                                                        width=trial.width,withheld=unavailable)
     climate = {n.id: climate_factor(trial.seed, year, n.id) for n in trial.nations}
     prod_open = {r.id: {**opening[r.id], "soil": r.soil} for r in local}
-    prod = produce_regions(local, climate, public_labor=labor)
+    reserved = {i:n+unavailable.get(i,0) for i,n in labor.items()}
+    prod = produce_regions(local, climate, public_labor=reserved)
+    if collective is not None:
+        for i,n in unavailable.items():
+            prod[i]["withheld_workers"]=n
     produced = {r.id: state(r) for r in local}
-    audit_production(prod_open, produced, prod, climate, public_labor=labor)
+    audit_production(prod_open, produced, prod, climate, public_labor=reserved)
     market = border_market(local, trial.borders)
     audit_borders(local, trial.borders, market, produced, {r.id:(r.stock.copy(), r.cash) for r in local})
-    if competition is not None and competition["tax_policy"] == "platform":
+    if collective is not None:
+        from .civic_fiscal import collect_civic
+        levies = collect_civic(local,depots,decisions,collective)
+    elif competition is not None and competition["tax_policy"] == "platform":
         from .tax_policy5c import collect_with_rates
         tariffs = {c["id"]: c["tariff"] for c in competition["countries"]}
         levies = collect_with_rates(local, depots, decisions, mode, tariffs)
@@ -92,6 +110,8 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, com
         levies = collect(local, depots, decisions, mode)
     admin_limits = {owner: plan["relief_throughput"] if mode != "none" else 0
                     for owner, plan in decisions.items()}
+    if collective is not None:
+        admin_limits = {r["id"]:r["admin_remaining"] for r in collective["responses"]}
     relief, left = execute_relief(local, roads, depots, decisions, residual, admin_limits, width=trial.width)
     freight = ship(local, residual_roads(roads, left), "limited", width=trial.width)
     delivered = {r.id: r.stock.copy() for r in local}
@@ -134,6 +154,10 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, com
     if political_open is not None:
         from .politics import political_ledger
         record["politics"] = political_ledger(record, political_open, recommendations, feedback)
+    if collective is not None:
+        from .collective import finish_actions
+        record["collective"] = collective
+        finish_actions(record)
     audit_fiscal_year(record)
     previous = {r.id: {"unmet":meals[r.id]["food_unmet"], "pop_delta":r.population-opening[r.id]["population"],
                        "food_output":prod[r.id]["produced"]["food"], "food_need":meals[r.id]["food_need"],

@@ -1,5 +1,6 @@
 """Reconstruct regional private, regional depot and consolidated country flows independently."""
 from collections import Counter
+from types import SimpleNamespace
 
 from .appropriation_audit import audit_appropriations
 from .audit import BalanceError
@@ -117,6 +118,13 @@ def audit_fiscal_year(record, *, previous_record=None):
     depots = _by(gov["depots"], "region")
     levies = _by(gov["levies"], "region")
     accounts = _by(gov["accounts"], "id")
+    civic = record.get("collective")
+    withheld = {}
+    if civic is not None:
+        from .civic_fiscal import withheld_labor
+        _check(record.get("competition",{}).get("arm")=="C" and record["competition"]["tax_policy"]=="fixed",
+               "invalid civic treatment baseline")
+        withheld = withheld_labor([SimpleNamespace(**r["opening"]) for r in regions.values()],civic)
     _check(regions.keys() == depots.keys() == levies.keys(), "physical warehouses differ from regions")
     pub = {i: d["opening"].copy() for i, d in depots.items()}
     private = {i: r["opening"]["stock"].copy() for i, r in regions.items()}
@@ -188,7 +196,9 @@ def audit_fiscal_year(record, *, previous_record=None):
         _check(private[i] == r["closing"]["stock"] and _valid(private[i]), "regional private balance")
         _check(cash[i] == r["closing"]["cash"] and cash[i] >= 0, "regional border cash balance")
         p = r["production"]
-        _check(reserved[i] + p["workers"] + p["soil_care"]["workers"] + p["investment"]["construction_labor"]
+        if civic is not None:
+            _check(p["withheld_workers"]==withheld[i],"unavailable civic labor differs from group actions")
+        _check(withheld.get(i,0) + reserved[i] + p["workers"] + p["soil_care"]["workers"] + p["investment"]["construction_labor"]
                == r["opening"]["population"] // 2, "public and private worker allocation")
         _check(r["opening"]["soil"] + restored[i] == p["soil_before"], "public soil treatment")
     audit_national_year(record, private_transfers=transfers)
@@ -205,3 +215,6 @@ def audit_fiscal_year(record, *, previous_record=None):
     if "competition" in record:
         from .competition import audit_cabinets
         audit_cabinets(record, previous_record)
+    if civic is not None:
+        from .collective import audit_actions
+        audit_actions(record,previous_record)
