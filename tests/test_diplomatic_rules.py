@@ -3,7 +3,8 @@ from types import SimpleNamespace
 import unittest
 
 from civsim.audit import BalanceError
-from civsim.diplomatic_rules import _choices, _close_pair, _empty_flow, _empty_pair, _movements, initial_pairs
+from civsim.diplomatic_rules import (_choices, _close_pair, _empty_flow, _empty_pair, _movements,
+                                      audit_diplomatic_rules, initial_pairs)
 from civsim.fiscal_policy import ACTIONS
 from civsim.political_rules import GROUPS
 
@@ -201,3 +202,26 @@ class DiplomaticRulesTests(unittest.TestCase):
         _,m,_ = _close_pair(row,_movements(record),2)
         self.assertEqual((m["totals"][1]["import_dependence"],m["totals"][1]["food_import_share"]),(400,30))
         self.assertEqual(m["last"][1]["import_dependence"],0)
+
+    def test_audit_rejects_tampered_domestic_evidence_policy_denominator_and_events(self):
+        from civsim.diplomacy import start_diplomacy, step_diplomacy
+        from civsim.model import generate_world
+        from civsim.regions import regionalize
+        sim = start_diplomacy(regionalize(generate_world(0,18,12,3),3))
+        row = step_diplomacy(sim,1,"D")
+        paths = (("countries",0,"groups","consumer","signals","relief"),
+                 ("pairs",0,"policy","directions",0,"border_capacity"),
+                 ("pairs",0,"closing","totals",0,"source_food_need"))
+        for path in paths:
+            with self.subTest(path=path):
+                forged = deepcopy(row)
+                obj = forged["diplomacy"]
+                for key in path[:-1]:
+                    obj = obj[key]
+                obj[path[-1]]+=1
+                with self.assertRaises(BalanceError):
+                    audit_diplomatic_rules(forged)
+        forged = deepcopy(row)
+        forged["diplomacy"]["events"].append({"kind":"pact_started"})
+        with self.assertRaises(BalanceError):
+            audit_diplomatic_rules(forged)
