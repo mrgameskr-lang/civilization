@@ -33,6 +33,17 @@ def read_forks(phase, engine):
 
 def read_grid(phase, sample, arms):
     folder = ROOT/"examples"/phase/"study"/sample
+    first_pass = json.loads((folder/"execution.json").read_bytes())
+    replay = json.loads((folder.parent/f"replay-{sample}.json").read_bytes())
+    if replay["replayed_checkpoints"]!=120 or replay["table_sha256"]!=first_pass["table_sha256"]:
+        raise ValueError("independent replay receipts disagree")
+    paths = {p.name:p for p in folder.iterdir() if p.name!="execution.json"}
+    if set(paths)!=set(first_pass["table_sha256"]):
+        raise ValueError("published science tables differ from manifest")
+    for name,path in paths.items():
+        with path.open("rb") as stream:
+            if hashlib.file_digest(stream,"sha256").hexdigest()!=first_pass["table_sha256"][name]:
+                raise ValueError(f"published table checksum mismatch: {name}")
     with (folder/"runs.csv").open(encoding="utf-8",newline="") as stream:
         rows = list(csv.DictReader(stream))
     first = 0 if sample=="dev" else 20

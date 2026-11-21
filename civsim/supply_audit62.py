@@ -10,8 +10,9 @@ from .diplomacy61 import audit_rules61
 from .diplomatic_flows import _audit_aid, _network
 from .depot_supply62 import audit_depot_supply
 from .government_audit import _by, _check, _valid, country_accounts
+from .logistics import audit_logistics
 from .model import GOODS
-from .public_works import ROAD_BONUS, audit_works
+from .public_works import ROAD_BONUS, audit_relief, audit_works, residual_roads
 from .regional_engine import audit_borders, audit_national_year
 from .supply_border62 import audit_envelope, charge_border
 
@@ -212,11 +213,49 @@ def _accounts(record, previous_record=None):
         audit_actions(record,previous_record)
 
 
+def _audit_domestic_delivery(record, geography):
+    """Reconstruct the balance and physical network at each domestic dispatch boundary."""
+    gov = record["government"]
+    levies = _by(gov["levies"],"region")
+    places = {r.id:r for r in geography.regions}
+    local = []
+    for row in record["regions"]:
+        i = row["id"]
+        place = SimpleNamespace(**row["opening"],members=places[i].members)
+        place.stock = levies[i]["private_close"].copy()
+        local.append(place)
+    depots = {i:l["depot_close"] for i,l in levies.items()}
+    plans = {a["id"]:a["decision"] for a in gov["accounts"]}
+    admin = {r["id"]:r["admin_remaining"] for r in record["collective"]["responses"]}
+    stage = record.get("supply",gov["works"])
+    left = {(e["a"],e["b"]):e["remaining"] for e in stage["roads"]}
+    for move in record.get("service",{}).get("moves",[]):
+        edge = tuple(sorted((move["home"],move["station"])))
+        _check(edge in left and left[edge]>=move["road_load"]>=0,"unfunded travel before domestic relief")
+        left[edge] -= move["road_load"]
+    relief = gov["relief"]
+    audit_relief(local,geography.roads,depots,plans,left,admin,relief,width=geography.width)
+    relief_nodes = _by(relief["nodes"],"id")
+    for place in local:
+        place.stock["food"] = relief_nodes[place.id]["private_food_close"]
+    left = {(e["a"],e["b"]):e["remaining"] for e in relief["roads"]}
+    _check(record["domestic"]["mode"]=="limited","private road capacity must be finite")
+    audit_logistics(local,residual_roads(geography.roads,left),record["domestic"],width=geography.width)
+
+
 def audit62(record, *, geography, previous_record=None, program=None):
     """Check a standalone annual entry against its immutable map and, optionally, its predecessor."""
     if "public_policy" not in record:
         _check(previous_record is None or "public_policy" not in previous_record, "control followed a different arm")
-        return audit_fiscal61(record, geography=geography, previous_record=previous_record)
+        for entry in (record,previous_record):
+            if entry is not None:
+                ctx = entry.get("diplomacy",{})
+                _check(ctx.get("phase61",{}).get("arm")=="F" and ctx.get("intervention") is None
+                       and "supply" not in entry and "service" not in entry,
+                       "control requires the ordinary historical F policy")
+        audit_fiscal61(record, geography=geography, previous_record=previous_record)
+        _audit_domestic_delivery(record,geography)
+        return
     cfg = record["public_policy"]
     arm = cfg["arm"]
     _check(arm in ("B","C","D") and (arm != "B") == ("service" in record) == (program is not None),
@@ -303,4 +342,5 @@ def audit62(record, *, geography, previous_record=None, program=None):
     _check(moves == record["moves"] and all(vital[i]==r["demography"] for i,r in rows.items())
            and access.trace()==ctx["physical"], "foreign receipts or migration differ")
     _accounts(record, previous_record)
+    _audit_domestic_delivery(record,geography)
     audit_rules61(record, previous_record)
