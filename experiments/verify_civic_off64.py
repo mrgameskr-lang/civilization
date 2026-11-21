@@ -196,14 +196,43 @@ def publish_receipt(path,report):
         publish_file(file,path)
 
 
+def compare_release(first,repeat,output):
+    blobs=[p.read_bytes() for p in (first,repeat)]
+    data=[json.loads(b) for b in blobs]
+    times=[r.pop("wall_seconds") for r in data]
+    require(data[0]==data[1],"repeat differs in fields other than elapsed time")
+    common=data[0]
+    require(common["reference_revision"]=="2114ca3" and len(common["paths"])==44,
+            "unexpected compatibility release")
+    report=dict(
+        first={"file":first.name,"file_sha256":sha256(blobs[0]).hexdigest(),"wall_seconds":times[0]},
+        repeat={"file":repeat.name,"file_sha256":sha256(blobs[1]).hexdigest(),"wall_seconds":times[1]},
+        comparison=dict(omitted_fields=["wall_seconds"],all_remaining_fields_identical=True,
+                        normalized_sha256=sha256(canonical_line(common)).hexdigest(),
+                        encoding="Sorted-key compact JSON as UTF-8 with literal Unicode and one final LF"),
+        reference_revision=common["reference_revision"],paths=len(common["paths"]),
+        annual_economic_records=common["independent_audit"]["years"],
+        economic_civic_checkpoint_pairs=sum(len(path["matched"]) for path in common["paths"]),
+        enabled_register_matches=common["study_comparison"]["enabled_register_checkpoints"],
+        first_procedure="Replayed 44 live paths. The six additional register digests were joined after two separately repeated enabled paths matched their original economic and civic receipts. The first wall time covers the 44 paths.",
+        repeat_procedure="One complete invocation generated the 44 paths, all three hash series and the comparisons to the published study.")
+    publish_receipt(output,report)
+    return report
+
+
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workers",type=int,default=8)
     parser.add_argument("--study",type=Path,default=ROOT/"phase6c1-followup"/"pledges")
+    parser.add_argument("--compare-release",nargs=2,type=Path,metavar=("FIRST","REPEAT"))
     parser.add_argument("--out",required=True,type=Path)
     args=parser.parse_args()
     if os.path.lexists(args.out):
         raise FileExistsError(args.out)
-    result=verify(args.workers,args.study)
-    publish_receipt(args.out,result)
-    print(f"Verified {len(result['paths'])} paths in {result['wall_seconds']} seconds.")
+    if args.compare_release:
+        compare_release(*args.compare_release,args.out)
+        print("The two compatibility receipts agree on every field except elapsed time.")
+    else:
+        result=verify(args.workers,args.study)
+        publish_receipt(args.out,result)
+        print(f"Verified {len(result['paths'])} paths in {result['wall_seconds']} seconds.")

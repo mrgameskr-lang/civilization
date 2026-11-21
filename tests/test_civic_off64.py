@@ -7,7 +7,7 @@ from civsim.civic_diplomacy63 import CivicDiplomacy
 from civsim.civic_followup64 import run as followup
 from civsim.civic_observer63 import run as original
 from civsim.storage import canonical_line
-from experiments.verify_civic_off64 import PAIRS, ROOT, check_pairs, crosscheck_study, extension_line, load_references, publish_receipt
+from experiments.verify_civic_off64 import PAIRS, ROOT, check_pairs, compare_release, crosscheck_study, extension_line, load_references, publish_receipt
 
 
 class HistoricalCompatibilityTests(unittest.TestCase):
@@ -71,3 +71,12 @@ class HistoricalCompatibilityTests(unittest.TestCase):
         point["pledge_years_sha256"]=point["civic"]
         with self.assertRaisesRegex(ValueError,"live serialized"):
             crosscheck_study([case],folder)
+
+    def test_repeat_does_not_exclude_a_nested_scientific_change(self):
+        with TemporaryDirectory() as tmp:
+            first,second,out=(Path(tmp)/name for name in ("first","second","out"))
+            publish_receipt(first, {"wall_seconds":1,"paths":[{"matched":[1]}]})
+            publish_receipt(second, {"wall_seconds":2,"paths":[{"matched":[2]}]})
+            with self.assertRaisesRegex(ValueError,"other than elapsed time"):
+                compare_release(first,second,out)
+            self.assertFalse(out.exists())
