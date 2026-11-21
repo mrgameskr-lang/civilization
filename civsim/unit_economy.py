@@ -163,13 +163,13 @@ def audit_positions(turn, service):
         location_totals({"service":service,"unit_game":turn},when)
 
 
-def step_game(game, command=None, *, upkeep=None):
+def step_game(game, command=None, *, upkeep=None, relief_first=None):
     """Run a full year of the existing fixed 6.0B2 economy and commit its closing positions."""
     from . import service62
     from .supply62 import advance62
     year = game.economy.world.year + 1
     return advance62(game.economy, year, "C", program=service62, mode="fixed",
-                     unit_input=(game.away, command), upkeep=upkeep)
+                     unit_input=(game.away, command), upkeep=upkeep, relief_first=relief_first)
 
 
 def audit_game(record, geography, previous=None):

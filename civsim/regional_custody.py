@@ -19,6 +19,7 @@ def audit_meal_custody(record):
     _check(regions.keys() == freight.keys() == duties.keys() == levies.keys() == relief.keys(), "different meal accounts")
     movement = record["unit_game"]["receipt"]
     issues = _by(record.get("unit_upkeep", {}).get("groups", []), "location")
+    relief_first = record.get("unit_upkeep", {}).get("priority") == "relief_first"
     _check(issues.keys() <= regions.keys(), "unknown depot in local inventory issue")
     receipts = []
     for home, region in sorted(regions.items()):
@@ -26,11 +27,19 @@ def audit_meal_custody(record):
         public = levies[home]["depot_close"].copy()
         if movement and movement["ok"] and movement["source"]==home:
             public["food"] -= _quantity(movement["food_spent"])
-        if home in issues:
+        if home in issues and not relief_first:
             for good in ("food", "tools"):
                 public[good] -= _quantity(issues[home][good])
         _check(all(_quantity(public[g]) == relief[home]["depot_open"][g] for g in GOODS),
                "public custody after movement differs from the opening for relief")
+        if home in issues and relief_first:
+            group = issues[home]
+            after = relief[home]["depot_close"].copy()
+            _check(group["before"] == after, "checkout does not start at the relief closing balance")
+            for good in ("food", "tools"):
+                after[good] -= _quantity(group[good])
+            _check(after == group["after"] and all(_quantity(q) >= 0 for q in after.values()),
+                   "post-relief checkout differs from receipt")
         issued = _quantity(duty["ration_food"])
         fee, wear = _quantity(duty["travel_food"]), _quantity(duty["tools_used"])
         paid = {"food": issued + fee, "ore": 0, "tools": wear}

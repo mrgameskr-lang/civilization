@@ -54,7 +54,7 @@ def snapshot62(sim):
 
 
 def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None,
-             unit_input=None, upkeep=None):
+             unit_input=None, upkeep=None, relief_first=False):
     ctx = _context(sim.engine, year, _mode('F'), None)
     collective = sim.engine.collective
     race = collective.competition
@@ -114,12 +114,15 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     if unit_turn is not None:
         after_move = residual.copy()
         apply_move(unit_turn,service,roads,depots,after_move)
-        if upkeep is not None:
-            from .unit_upkeep import settle
-            previous = sim.game_upkeep["closing"] if sim.game_upkeep is not None else None
+    if upkeep is not None:
+        from .unit_upkeep import settle
+        previous = sim.game_upkeep["closing"] if sim.game_upkeep is not None else None
+        if not relief_first:
             kit = settle(upkeep, previous, unit_turn, service, depots)
     admin = {r["id"]:r["admin_remaining"] for r in civic["responses"]}
     relief,left = execute_relief(local,roads,depots,decisions,after_move,admin,width=trial.width)
+    if relief_first:
+        kit = settle(upkeep, previous, unit_turn, service, depots, relief_first=True)
     freight = ship(local,residual_roads(roads,left),"limited",width=trial.width)
     if service is not None:
         program.apply_service_rations(service, local)
@@ -198,13 +201,18 @@ def _require(sim, year, arm):
     _check(sim.arm is None or sim.arm == arm, "cannot switch policy during a trajectory")
 
 
-def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None):
+def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None, relief_first=None):
     _require(sim, year, arm)
+    _check(relief_first is None or type(relief_first) is bool, "expected a boolean relief priority")
     if sim.game_upkeep is not None:
         from .unit_upkeep import Upkeep
         carried = Upkeep(**sim.game_upkeep["selection"])
         _check(upkeep is None or upkeep == carried, "cannot replace marked pieces mid-game")
         upkeep = carried
+        carried_priority = sim.game_upkeep.get("priority") == "relief_first"
+        _check(relief_first is None or relief_first == carried_priority, "cannot change inventory priority mid-run")
+        relief_first = carried_priority
+    _check(not relief_first or upkeep is not None, "relief-first requires an inventory selection")
     _check(upkeep is None or unit_input is not None, "inventory checkout requires game locations")
     if sim.unit_positions is not None:
         _check(unit_input is not None and unit_input[0]==[list(row) for row in sim.unit_positions],
@@ -214,7 +222,8 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
     if arm == "A":
         record = step61(sim.engine, year, "F")
     else:
-        fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input, upkeep=upkeep)
+        fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input,
+                                  upkeep=upkeep, relief_first=relief_first)
         pairs = {(p["a"],p["b"]):deepcopy(p["closing"]) for p in record["diplomacy"]["pairs"]}
         _commit_collective(sim.engine.collective, fiscal, record)
         sim.engine.pairs, sim.engine.arm = pairs, "F"
@@ -224,6 +233,8 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
             sim.unit_positions = tuple(tuple(row) for row in record["unit_game"]["closing_away"])
         if upkeep is not None:
             sim.game_upkeep = {k:deepcopy(record["unit_upkeep"][k]) for k in ("selection","closing")}
+            if relief_first:
+                sim.game_upkeep["priority"] = "relief_first"
     sim.arm = arm
     return record
 

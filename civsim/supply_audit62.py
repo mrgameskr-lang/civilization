@@ -79,6 +79,17 @@ def _roads(record):
                civil[key]["capacity"] == e["unused"] + e["private_use"], "domestic road residual mismatch")
 
 
+def _charge_sets(groups, pub, combined, regions):
+    for g in groups:
+        i = g["location"]
+        _check(g["before"] == pub[i] and g["food"] == g["tools"] == g["supplied"]
+               == min(pub[i]["food"], pub[i]["tools"], g["nominal"]), "invalid local inventory issue")
+        for good in ("food","tools"):
+            pub[i][good] -= g[good]
+            combined[regions[i]["owner"]][good] -= g[good]
+        _check(g["after"] == pub[i] and _valid(pub[i]), "local inventory closing differs")
+
+
 def _accounts(record, previous_record=None):
     gov = record["government"]
     if previous_record is not None:
@@ -178,14 +189,10 @@ def _accounts(record, previous_record=None):
         pub[i]["food"] -= receipt["food_spent"]
         combined[regions[i]["owner"]]["food"] -= receipt["food_spent"]
         _check(pub[i]["food"] == receipt["food_after"] >= 0, "unit move depot closing differs")
-    for g in record.get("unit_upkeep", {}).get("groups", []):
-        i = g["location"]
-        _check(g["before"] == pub[i] and g["food"] == g["tools"] == g["supplied"]
-               == min(pub[i]["food"], pub[i]["tools"], g["nominal"]), "invalid local inventory issue")
-        for good in ("food","tools"):
-            pub[i][good] -= g[good]
-            combined[regions[i]["owner"]][good] -= g[good]
-        _check(g["after"] == pub[i] and _valid(pub[i]), "local inventory closing differs")
+    issue = record.get("unit_upkeep", {})
+    relief_first = issue.get("priority") == "relief_first"
+    if not relief_first:
+        _charge_sets(issue.get("groups", ()), pub, combined, regions)
     for s in gov["relief"]["shipments"]:
         a, b, qty, fee = s["source"], s["target"], s["quantity"], s["cost_food"]
         _check(regions[a]["owner"] == regions[b]["owner"] == s["owner"], "foreign domestic relief")
@@ -193,6 +200,8 @@ def _accounts(record, previous_record=None):
         private[b]["food"] += qty
         transfers[b]["food"] += qty
         combined[s["owner"]]["food"] -= fee
+    if relief_first:
+        _charge_sets(issue["groups"], pub, combined, regions)
     for i, d in depots.items():
         _check(_valid(pub[i]) and d["spoil_food"] == pub[i]["food"]//12, "public storage loss mismatch")
         pub[i]["food"] -= d["spoil_food"]
@@ -269,15 +278,21 @@ def _audit_domestic_delivery(record, geography):
         close_turn(rebuilt,record["service"])
         _check(rebuilt == game, "unit receipt, position or population differs from replay")
         audit_positions(game,record["service"])
-        if "unit_upkeep" in record:
-            from .unit_upkeep import Upkeep, close, settle
-            issue = record["unit_upkeep"]
-            opening = None if issue["first_turn"] else issue["opening"]
-            replay = settle(Upkeep(**issue["selection"]), opening, game, record["service"], depots)
-            close(replay, game, record["service"])
-            _check(replay == issue, "local game inventory differs from replay")
+    issue = record.get("unit_upkeep")
     relief = gov["relief"]
-    audit_relief(local,geography.roads,depots,plans,left,admin,relief,width=geography.width)
+    relief_first = issue is not None and issue.get("priority") == "relief_first"
+    if relief_first:
+        from .public_works import execute_relief
+        expected, _ = execute_relief(local, geography.roads, depots, plans, left, admin, width=geography.width)
+        _check(expected == relief, "relief-first dispatch differs from replay")
+    if issue is not None:
+        from .unit_upkeep import Upkeep, close, settle
+        opening = None if issue["first_turn"] else issue["opening"]
+        replay = settle(Upkeep(**issue["selection"]), opening, game, record["service"], depots, relief_first=relief_first)
+        close(replay, game, record["service"])
+        _check(replay == issue, "local game inventory differs from replay")
+    if not relief_first:
+        audit_relief(local,geography.roads,depots,plans,left,admin,relief,width=geography.width)
     relief_nodes = _by(relief["nodes"],"id")
     for place in local:
         place.stock["food"] = relief_nodes[place.id]["private_food_close"]
@@ -314,13 +329,15 @@ def audit62(record, *, geography, previous_record=None, program=None):
     issue = record.get("unit_upkeep")
     prior = (previous_record or {}).get("unit_upkeep")
     if issue is not None or "upkeep_rule" in cfg or prior is not None:
-        from .unit_upkeep import VERSION as UPKEEP_VERSION
-        _check(game is not None and issue is not None and cfg.get("upkeep_rule") == issue["version"] == UPKEEP_VERSION
+        from .unit_upkeep import RELIEF_FIRST_VERSION, VERSION as UPKEEP_VERSION
+        expected = RELIEF_FIRST_VERSION if (issue or {}).get("priority") == "relief_first" else UPKEEP_VERSION
+        _check(game is not None and issue is not None and cfg.get("upkeep_rule") == issue["version"] == expected
                and type(issue["first_turn"]) is bool, "missing or invalid game inventory version")
         if previous_record is not None or record["year"] == 1:
             _check(issue["first_turn"] is (prior is None), "unexpected game inventory activation")
         if prior is not None:
-            _check(issue["opening"] == prior["closing"] and issue["selection"] == prior["selection"],
+            _check(issue["opening"] == prior["closing"] and issue["selection"] == prior["selection"]
+                   and issue["version"] == prior["version"],
                    "game inventory status not carried across turns")
     _check(arm in ("B","C","D") and (arm != "B") == ("service" in record) == (program is not None),
            "public program missing or mismatched")

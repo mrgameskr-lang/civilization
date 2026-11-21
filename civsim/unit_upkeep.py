@@ -6,6 +6,7 @@ from .government_audit import _check
 from .inventory_sets import take_sets
 
 VERSION = "annual-unit-upkeep/1"
+RELIEF_FIRST_VERSION = "annual-unit-upkeep/2"
 
 
 @dataclass(frozen=True)
@@ -37,7 +38,7 @@ def _mark(config, places):
     return sorted(marked)
 
 
-def settle(config, previous, turn, service, depots):
+def settle(config, previous, turn, service, depots, *, relief_first=False):
     """Pay from the live local balance after movement. Never enroll replacements."""
     home = config.home
     region = next((r for r in service["regions"] if r["id"] == home), None)
@@ -72,8 +73,11 @@ def settle(config, previous, turn, service, depots):
         paid = take_sets(stock, n)
         groups.append({"home":home, "location":loc, "nominal":n, "supplied":paid, "unsupplied":n-paid,
                        "food":paid, "tools":paid, "before":before, "after":stock.copy()})
-    return {"version":VERSION, "selection":asdict(config), "first_turn":previous is None, "opening":start,
-            "released":released, "marked_moved":moved, "groups":groups}
+    result = {"version":VERSION, "selection":asdict(config), "first_turn":previous is None, "opening":start,
+              "released":released, "marked_moved":moved, "groups":groups}
+    if relief_first:
+        result.update(version=RELIEF_FIRST_VERSION, priority="relief_first")
+    return result
 
 
 def close(ledger, turn, service):
