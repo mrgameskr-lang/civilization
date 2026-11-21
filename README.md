@@ -18,6 +18,8 @@
 
 5.0D는 직전 해의 식량·현물세·정책 경험과 요구 지속 기간을 이용해 지역 집단의 청원, 시위, 부분 노동 중단, 현물세 미납과 종료를 계산한다. [실행과 행동 규칙](docs/collective5d.md) · [집단행동 실험](docs/phase5d-results.md) · [5.0C 선거 진단](docs/election-diagnostics5d.md) · [PR별 통합 점검](docs/integration5d.md)
 
+6.0A는 8개국의 28개 국가 쌍에 신뢰, 교역 경험, 기간제 협정을 기록한다. 정부의 협력·식량 지원·수출 및 출입국 결정은 국경 도로와 양국 창고, 민간 거래와 정주 여력에 적용된다. `python -m civsim diplomacy --arm D --seed 0 --years 6 --out runs/diplomacy-0`으로 실행하고 `python -m civsim verify runs/diplomacy-0`으로 재생할 수 있다. [실험 설계](docs/phase6a-protocol.md) · [국경 운송·수지](docs/diplomatic-flows6a.md) · [40시드 결과와 반사실](docs/phase6a-results.md) · [실행·검증 로그](docs/phase6a-run.md) · [통합 순서](docs/integration6a.md)
+
 ## 실행
 
 Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용한다. 런타임과 테스트는 모두 표준 라이브러리를 사용한다.
