@@ -1,0 +1,30 @@
+{
+  "sample": "dev",
+  "first_seed": 0,
+  "seeds": 20,
+  "workers": 8,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "python": "3.12.14",
+  "paths": 40,
+  "annual_transitions": 8000,
+  "archived_fiscal_checkpoints": 60,
+  "replayed_checkpoints": 0,
+  "table_sha256": {
+    "cases.json": "c6d816d0fa54e5c39aa6e27ae248e1ba91d731ddc7c640284e52f96d7b50981c",
+    "countries.csv": "fa0beac3e5545eb79f9be0288a567ebc55599d53c3681de36f184ec5e4b582db",
+    "demands.csv": "acdba95b8cdc4768331a37ecc9076fb6cb110246673ae838c014eea8b8948b7c",
+    "distributions.csv": "6ebe02b47a3a59be90c52aeb8309cbeec1b16f50bb5e27986a8f1e530770be45",
+    "groups.csv": "7aa1a6cfd1b6b0134b22d700919a86323adf9ca5640d1464c5022f3ba5ba9cb1",
+    "means.csv": "b99d45e9561df7337a0407195c412f30387d903d8347402f469261612e2e958c",
+    "paired.csv": "ac9d285be4cb3f8f6389c6efd066ecd3133448d65e6cb14dde46c411fe942582",
+    "regional_groups.csv": "2d95125813c564b6e74f47cccfa5daf25d74436334893e09fb980fa59626eb12",
+    "regions.csv": "613bd261ae82e45feeb5bfab29b81ac3fa19b6842f5a3b3d01d3b951986224fc",
+    "runs.csv": "60c31c31b69b43bdb782817a351f139b1df6bb13ebfcd4c38af80d7fa79597a3",
+    "switches.csv": "9ffb0877f844c75e350b145b19e027d559887fd7782a750a9c215a1cc5882a64"
+  },
+  "wall_seconds": 231.8636705999961
+}

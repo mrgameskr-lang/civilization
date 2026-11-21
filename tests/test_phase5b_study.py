@@ -6,6 +6,7 @@ import unittest
 
 from civsim.government import fiscal_snapshot, start_government, step_government
 from civsim.model import generate_world
+from civsim.political_storage import write_political_run
 from civsim.regions import regionalize
 from civsim.storage import canonical_line
 from experiments.phase5b import PoliticalMeasures, band, choice_key, run_study
@@ -51,6 +52,11 @@ class PoliticsStudyTests(unittest.TestCase):
                 digest.update(canonical_line(step_government(baseline,y,"integrated")))
             end = next(r for r in rows if r["arm"]=="off" and r["year"]=="3")
             self.assertEqual((end["initial_fiscal_sha256"], end["fiscal_sha256"]), (world_hash,digest.hexdigest()))
+            saved=Path(tmp,"saved")
+            write_political_run(saved,seed=0,years=3,feedback=True)
+            full=next(r for r in rows if r["arm"]=="on" and r["year"]=="3")
+            for path,key in (("world.json","initial_political_sha256"),("years.jsonl","years_sha256")):
+                self.assertEqual(hashlib.sha256((saved/path).read_bytes()).hexdigest(),full[key])
             self.assertEqual(int(end["actual_switches"]),0)
             groups = [r for r in read(out/"groups.csv") if r["arm"]=="off" and r["year"]=="3"]
             self.assertEqual(sum(int(r["member_years"]) for r in groups),int(end["food_need"]))

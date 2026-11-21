@@ -12,6 +12,8 @@
 
 ## 실행 및 재생
 
+시드 0의 동일한 연초를 복제한 한 해 비교에서, 도로 신설 대신 구호 84단위를 승인하자 기존 민간 배송 70단위가 밀려 주민 섭취는 14단위 늘었다. 다른 해에는 토양 사업 대상만 바꿔 세계 식량 부족이 2단위 늘었다. 집단 지지에 반영되는 수혜는 실물 수령과 사업 경험이며 순섭취·순후생의 측정값과 구분해야 한다. [같은 연초에서의 두 승인 실험](political-forks5.md)
+
 ```sh
 python -m civsim politics --feedback off --seed 7 --years 50 --out runs/5b-shadow7
 python -m civsim politics --feedback on --seed 7 --years 50 --out runs/5b-feedback7
