@@ -11,6 +11,24 @@ def _require(valid, reason):
         raise ValueError("unit board: " + reason)
 
 
+def assess_crossing(*, count, tokens, food, remaining) -> tuple[str, int, int]:
+    """Quote one board move as (reason, food spent, edge units spent).
+
+    The three balances are nonnegative integer counters. A rejected request
+    spends zero. A successful request costs one of each resource per token.
+    """
+    _require(all(_natural(q) for q in (tokens, food, remaining)), "invalid crossing balance")
+    if not _natural(count) or not count:
+        return "invalid_count", 0, 0
+    if count > tokens:
+        return "insufficient_tokens", 0, 0
+    if count > food:
+        return "insufficient_food", 0, 0
+    if count > remaining:
+        return "insufficient_capacity", 0, 0
+    return "moved", count, count
+
+
 def _read_rows(rows, fields):
     """Persist integer keys as JSON rows, rejecting duplicate and non-integer values."""
     _require(type(rows) is list, "expected rows")
@@ -116,30 +134,24 @@ class UnitBoard:
         with self._lock:
             return self._positions.copy()
 
-    def _move_reason(self, home, affiliation, source, destination, count):
+    def _move_terms(self, home, affiliation, source, destination, count):
         if not _natural(count) or not count:
-            return "invalid_count"
+            return "invalid_count", 0, 0
         if not all(_natural(i) for i in (home,affiliation,source,destination)):
-            return "invalid_key"
+            return "invalid_key", 0, 0
         if (home,affiliation) not in self._roster:
-            return "unknown_group"
+            return "unknown_group", 0, 0
         if source == destination or source not in self._edge or destination not in self._edge:
-            return "invalid_edge"
-        if self._positions.get((home,affiliation,source),0) < count:
-            return "insufficient_tokens"
-        if self._food[source] < count:
-            return "insufficient_food"
-        if self._remaining < count:
-            return "insufficient_capacity"
-        return "moved"
+            return "invalid_edge", 0, 0
+        return assess_crossing(count=count, tokens=self._positions.get((home,affiliation,source),0),
+                               food=self._food[source], remaining=self._remaining)
 
     def move(self, home, affiliation, source, destination, count):
         with self._lock:
-            reason = self._move_reason(home, affiliation, source, destination, count)
+            reason, food_spent, road_used = self._move_terms(home, affiliation, source, destination, count)
             values = (self._turn, home, affiliation, source, destination, count)
             # Bad noninteger inputs have a safe and JSON-serializable representation.
             move = {k:v if type(v) is int else None for k,v in zip(_MOVE, values, strict=True)}
-            paid = 0
             if reason == "moved":
                 old_key = (home,affiliation,source)
                 new_key = (home,affiliation,destination)
@@ -147,11 +159,10 @@ class UnitBoard:
                 if not self._positions[old_key]:
                     del self._positions[old_key]
                 self._positions[new_key] = self._positions.get(new_key,0) + count
-                self._food[source] -= count
-                self._remaining -= count
+                self._food[source] -= food_spent
+                self._remaining -= road_used
                 self._moves.append(move)
-                paid = count
-            return {**move, "ok":reason == "moved", "reason":reason, "food_spent":paid, "road_used":paid}
+            return {**move, "ok":reason == "moved", "reason":reason, "food_spent":food_spent, "road_used":road_used}
 
     def next_turn(self):
         with self._lock:
