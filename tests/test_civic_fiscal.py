@@ -34,6 +34,76 @@ class CivicFiscalTests(unittest.TestCase):
             bad[0][key]["food"]+=1
             with self.assertRaises(ValueError):
                 audit_civic_collection([r],choice,ctx,bad)
+        # Duplicate the correct aggregate in a second occupation or transfer a loss between phases.
+        for kind in ("duplicate", "wrong_phase", "hidden_fee", "phantom_good"):
+            bad=deepcopy(result)
+            if kind == "duplicate":
+                bad[0]["civic_tax"]["by_group"]["consumer"]["paid"]["food"]=57
+            elif kind == "wrong_phase":
+                bad[0]["standing_levy"]["food"]+=1
+                bad[0]["extra_levy"]["food"]-=1
+            elif kind == "hidden_fee":
+                bad[0]["handling_used"]["food"]=1
+                bad[0]["deposited"]["food"]+=1
+                bad[0]["depot_close"]["food"]+=1
+            else:
+                bad[0]["depot_close"]["extra_food"]=1
+            with self.subTest(kind=kind), self.assertRaises(ValueError):
+                audit_civic_collection([r],choice,ctx,bad)
+
+    def test_compromise_forfeits_reserve_and_pays_only_for_completed_soil_work(self):
+        from civsim.model import generate_world
+        from civsim.regions import regionalize
+        world=regionalize(generate_world(1,8,8,1),2)
+        r=world.regions[0]
+        r.soil=900
+        r.population=3000
+        r.stock={"food":4075,"ore":300,"tools":300}
+        cash={q.id:{"food":0,"ore":6,"tools":6} for q in world.regions}
+        def option(action, score, quantity, budget):
+            return {"action":action,"score":score,"quantity":quantity,"permitted":True,"constraints":[],
+                    "target_region":0,"target_edge":None,"population_loss":0,"budget":budget}
+        reserve=option("reserve",50,80,{"food":80,"ore":0,"tools":0,"workers":0,"admin_units":1})
+        soil=option("soil",20,1,{"food":0,"ore":2,"tools":2,"workers":4,"admin_units":1})
+        plan={**reserve,"owner":0,"mode":"integrated","selected_score":50,"relief_throughput":20,
+              "candidates":[reserve,soil]}
+        rows=[{"id":q.id,"owner":q.owner,"groups":groups("refusal","soil",500) if q.id==0 else groups()}
+              for q in world.regions]
+        actual,reply=respond(plan,rows)
+        self.assertEqual((reply["kind"],reply["legal_concession_permille"]),("compromise",125))
+        self.assertEqual((reply["before"]["action"],reply["before"]["quantity"],reply["after"]["action"]),
+                         ("reserve",80,"soil"))
+        with self.subTest("a later staffing constraint can prevent any expenditure"):
+            scarce=deepcopy(world)
+            vault=deepcopy(cash)
+            receipt,_,_,reserved=execute_works(scarce.regions,scarce.roads,vault,{}, {0:actual},
+                width=scarce.width,withheld={q.id:q.population//2 for q in scarce.regions})
+            self.assertFalse(receipt["projects"])
+            self.assertEqual((reserved[0],scarce.regions[0].soil,vault[0]),(0,900,cash[0]))
+        receipt,_,_,reserved=execute_works(world.regions,world.roads,cash,{}, {0:actual},width=world.width)
+        project,=receipt["projects"]
+        self.assertEqual((project["used"],reserved[0],cash[0]),({"food":0,"ore":2,"tools":2},4,
+                                                                {"food":0,"ore":4,"tools":4}))
+        self.assertEqual(r.soil-900,project["soil_gain"])
+        self.assertGreater(project["soil_gain"],0)
+        ledger=collect_civic(world.regions,cash,{0:actual},{"regions":rows,"responses":[reply]})
+        self.assertEqual((ledger[0]["baseline_levy"]["food"],ledger[0]["foregone_concession"]["food"],
+                          ledger[0]["refused"]["food"],ledger[0]["levied"]["food"]),(43,5,19,19))
+        self.assertEqual(ledger[0]["extra_levy"]["food"],0)
+        self.assertEqual(r.stock["food"],4075-19)
+
+    def test_unassessed_group_can_win_a_concession_without_revenue_loss(self):
+        r=SimpleNamespace(id=0,owner=0,population=3000,stock={"food":4075,"ore":300,"tools":300})
+        depot={0:dict.fromkeys(r.stock,0)}
+        choice={0:{"owner":0,"mode":"integrated","action":"defer","quantity":0,"target_region":None}}
+        gs=groups()
+        gs["consumer"].update(action="refusal",participants=1000)
+        ctx={"regions":[{"id":0,"owner":0,"groups":gs}],"responses":[
+            {"id":0,"concession_region":0,"concession_group":"consumer","legal_concession_permille":250}]}
+        receipt,=collect_civic([r],depot,choice,ctx)
+        self.assertEqual(receipt["foregone_concession"],dict.fromkeys(r.stock,0))
+        self.assertEqual(receipt["refused"],dict.fromkeys(r.stock,0))
+        self.assertGreater(receipt["baseline_levy"]["food"],0)
 
     def test_workers_withdrawn_before_construction_and_oversubscription_rejected(self):
         from civsim.model import generate_world

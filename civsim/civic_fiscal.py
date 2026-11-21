@@ -141,10 +141,48 @@ def audit_civic_collection(regions, plans, context, postings):
         taxpayer = SimpleNamespace(id=r.id,owner=r.owner,population=r.population,stock=t["private_open"])
         base = _posting(taxpayer,t["depot_open"],plans[r.owner],"integrated")
         baseline.append(base)
-        _check(t==_settlement(base,civic[r.id],answers[r.owner]),"incorrect tax relief, nonpayment or group incidence")
+        movements = ("assessed", "concession", "refused", "paid")
+        detail = t["civic_tax"]
+        resource_keys = set(GOODS)
+        _check(set(t) == set(base) | {"baseline_levy","foregone_concession","refused","civic_tax"}
+               and set(detail) == {*movements,"baseline_standing","baseline_extra","by_group"},
+               "unexpected posting field")
+        ledgers = [v for k,v in t.items() if k not in ("region","owner","population","civic_tax")]
+        for group in detail["by_group"].values():
+            _check(set(group) == set(movements), "unexpected group posting field")
+            ledgers.extend(group.values())
+        _check(all(set(v)==resource_keys and all(type(n) is int and n>=0 for n in v.values()) for v in ledgers),
+               "invalid commodity or quantity")
+        _check(detail["baseline_standing"] == base["standing_levy"] and detail["baseline_extra"] == base["extra_levy"]
+               and t["baseline_levy"] == detail["assessed"] == base["levied"], "wrong assessment before settlement")
+        for key in ("region","owner","population","protected","reserve_cap"):
+            _check(t[key] == base[key], "invalid tax identity or legal bounds")
+        for k, ledger_key in zip(movements, ("baseline_levy","foregone_concession","refused","levied"), strict=True):
+            _check(detail[k] == t[ledger_key], "tax breakdown differs from its ledger")
+        _check(set(detail["by_group"]) == set(GROUPS), "incomplete group incidence")
         for good in GOODS:
-            losses = t["refused"][good]+t["foregone_concession"][good]
-            _check(base["levied"][good]-losses==t["levied"][good]==t["private_open"][good]-t["private_close"][good]
-                   and t["levied"][good]-t["handling_used"][good]==t["depot_close"][good]-t["depot_open"][good],
-                   "assessments or custody failed to reconcile")
+            producer = "farm" if good == "food" else "industry"
+            liable = producer if civic[r.id][producer]["members"] else "consumer"
+            g, answer = civic[r.id][liable], answers[r.owner]
+            rate = (answer["legal_concession_permille"] if
+                    (answer["concession_region"],answer["concession_group"]) == (r.id,liable) else 0)
+            original, supplement = base["standing_levy"][good], base["extra_levy"][good]
+            discount = original * rate // 1000
+            refusers = g["participants"] if g["action"] == "refusal" else 0
+            members = max(1, g["members"])
+            lost_regular = (original-discount)*refusers//members
+            lost_extra = supplement*refusers//members
+            due = original-discount-lost_regular
+            extra = supplement-lost_extra
+            paid = due+extra
+            fee = (extra+31)//32 if good=="food" else 0
+            amounts = (original+supplement,discount,lost_regular+lost_extra,paid)
+            _check(tuple(detail[k][good] for k in movements) == amounts, "incorrect tax relief or nonpayment")
+            for name in GROUPS:
+                incidence = tuple(detail["by_group"][name][k][good] for k in movements)
+                _check(incidence == (amounts if name == liable else (0,0,0,0)), "incorrect group incidence")
+            _check((due,extra,fee,paid-fee) == tuple(t[k][good] for k in
+                   ("standing_levy","extra_levy","handling_used","deposited")), "invalid levy or handling")
+            _check(t["private_open"][good]-t["private_close"][good] == paid and
+                   t["depot_close"][good]-t["depot_open"][good] == paid-fee, "custody failed to reconcile")
     audit_collection(local.values(),plans,"integrated",baseline)
