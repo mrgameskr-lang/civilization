@@ -111,6 +111,9 @@ def verify_run(directory):
     """Audit stored ledgers, regenerate the map and every trace, return exact file SHA-256."""
     path = Path(directory)
     meta = _manifest(path)
+    if meta.get("model_version") == "6.0A":
+        from .diplomacy_storage import verify_diplomacy
+        return verify_diplomacy(path, meta)
     if meta.get("model_version") == "5.0D":
         from .collective_storage import verify_collective
         return verify_collective(path, meta)
