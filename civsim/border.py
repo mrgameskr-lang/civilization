@@ -27,13 +27,15 @@ def validate_border_paths(regions, borders, width):
             crossed = region == b
 
 
-def border_market(regions, borders):
+def border_market(regions, borders, *, access=None):
     by_id = {r.id: r for r in regions}
     targets = {r.id: {"food": r.population + r.population // 8, "ore": r.population // 20,
                       "tools": r.population // 40} for r in regions}
     quotes = {r.id: {g: max(b // 4, min(4*b, b * targets[r.id][g] // max(1, r.stock[g])))
                      for g, b in BASE_PRICES.items()} for r in regions}
     free = {(r.a, r.b): r.capacity for r in borders}
+    if access is not None:
+        free = {key: capacity-access.aid_used[key] for key,capacity in free.items()}
     trades = []
     for good in GOODS:
         offers = []
@@ -43,7 +45,10 @@ def border_market(regions, borders):
                         and by_id[seller].stock[good] > targets[seller][good]
                         and by_id[buyer].stock[good] < targets[buyer][good]):
                     offers.append((-quotes[buyer][good], buyer, quotes[seller][good], seller, road))
-        for _, buyer_id, _, seller_id, road in sorted(offers, key=lambda t: t[:4]):
+        ranked = sorted(offers, key=lambda t: t[:4])
+        if access is not None and access.partners:
+            ranked.sort(key=lambda t: not access.preferred(t[3],t[1]))
+        for _, buyer_id, _, seller_id, road in ranked:
             buyer, seller = by_id[buyer_id], by_id[seller_id]
             price = (quotes[buyer_id][good] + quotes[seller_id][good]) // 2
             excess = seller.stock[good] - targets[seller_id][good]
@@ -55,6 +60,8 @@ def border_market(regions, borders):
                 affordable_freight = 100 * food_spare // road.distance
             key = road.a, road.b
             qty = min(excess, demand, buyer.cash // price, free[key], affordable_freight)
+            if access is not None:
+                qty = access.trade(seller_id,buyer_id,good,road,qty)
             if qty <= 0:
                 continue
             freight = (qty * road.distance + 99) // 100
@@ -72,7 +79,7 @@ def border_market(regions, borders):
                                         for r in regions]}
 
 
-def move_people(regions, meals, roads):
+def move_people(regions, meals, roads, *, access=None):
     vital = {r.id: _local_balance(r, meals[r.id]) for r in regions}
     neighbors = {r.id: [] for r in regions}
     for road in roads:
@@ -88,6 +95,8 @@ def move_people(regions, meals, roads):
         for j, distance in sorted(neighbors[i], key=lambda e: (vital[e[0]]["pressure_permille"], e[1], e[0])):
             host = vital[j]
             qty = min(remaining, host["host_capacity"] - host["immigrants"])
+            if access is not None:
+                qty = access.migrate(i,j,qty,donor,host)
             if qty:
                 donor["emigrants"] += qty
                 host["immigrants"] += qty

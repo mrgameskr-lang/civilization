@@ -56,7 +56,8 @@ def step_government(sim, year, mode):
     return _advance_fiscal(sim, year, mode)
 
 
-def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, competition=None, collective=None):
+def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, competition=None, collective=None,
+                    diplomacy=None):
     source = sim.world
     if type(year) is not int or year != source.year + 1 or mode not in MODES:
         raise ValueError("expected the next year and a supported government program")
@@ -97,7 +98,12 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, com
             prod[i]["withheld_workers"]=n
     produced = {r.id: state(r) for r in local}
     audit_production(prod_open, produced, prod, climate, public_labor=reserved)
-    market = border_market(local, trial.borders)
+    foreign = None
+    if diplomacy is not None:
+        from .diplomatic_flows import ForeignFlows
+        foreign = ForeignFlows(diplomacy,local,trial.borders,trial.width)
+        foreign.send_aid(depots)
+    market = border_market(local, trial.borders, access=foreign)
     audit_borders(local, trial.borders, market, produced, {r.id:(r.stock.copy(), r.cash) for r in local})
     if collective is not None:
         from .civic_fiscal import collect_civic
@@ -117,7 +123,7 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, com
     delivered = {r.id: r.stock.copy() for r in local}
     meals = {r.id: consume(r) for r in local}
     paths = [*roads, *trial.borders]
-    vital, moves = move_people(local, meals, paths)
+    vital, moves = move_people(local, meals, paths, access=foreign)
     _audit_residents(local, opening, meals, vital, moves, paths, delivered)
     warehouses = []
     for r in local:
@@ -148,6 +154,9 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, com
                           "private_use":civil["used"],"unused":civil["remaining"]})
     gov = {"mode":mode, "depots":warehouses, "levies":levies, "works":works, "relief":relief, "roads":edge_rows}
     record["government"] = gov
+    if foreign is not None:
+        diplomacy["physical"] = foreign.trace()
+        record["diplomacy"] = diplomacy
     gov["accounts"] = country_accounts(record, decisions)
     if competition is not None:
         record["competition"] = competition
@@ -158,7 +167,10 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, com
         from .collective import finish_actions
         record["collective"] = collective
         finish_actions(record)
-    audit_fiscal_year(record)
+    if diplomacy is not None:
+        from .diplomatic_rules import finish_diplomacy
+        finish_diplomacy(record)
+    audit_fiscal_year(record,geography=source)
     previous = {r.id: {"unmet":meals[r.id]["food_unmet"], "pop_delta":r.population-opening[r.id]["population"],
                        "food_output":prod[r.id]["produced"]["food"], "food_need":meals[r.id]["food_need"],
                        "soil_delta":r.soil-opening[r.id]["soil"]} for r in local}

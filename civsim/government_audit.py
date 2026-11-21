@@ -104,11 +104,12 @@ def _road_audit(record):
                and e["unused"] >= 0, "road capacity balance")
 
 
-def audit_fiscal_year(record, *, previous_record=None):
+def audit_fiscal_year(record, *, previous_record=None, geography=None):
     gov = record["government"]
     if previous_record is not None:
         _check(("competition" in record) == ("competition" in previous_record), "competition version changed mid-run")
         _check(("politics" in record) == ("politics" in previous_record), "political ledger missing or introduced mid-run")
+        _check(("diplomacy" in record) == ("diplomacy" in previous_record), "foreign policy version changed mid-run")
     _check(gov["relief"]["delivered"] == sum(s["quantity"] for s in gov["relief"]["shipments"]),
            "total relief differs from actual deliveries")
     for stage in ("works", "relief"):
@@ -160,6 +161,16 @@ def audit_fiscal_year(record, *, previous_record=None):
     for s in gov["works"]["shipments"]:
         pub[s["source"]]["food"] -= s["cost_food"]
         combined[s["owner"]]["food"] -= s["cost_food"]
+    if "diplomacy" in record:
+        for s in record["diplomacy"]["physical"]["aid"]["shipments"]:
+            a,b = s["source"],s["target"]
+            outgoing = s["quantity"] + s["cost_food"]
+            _check(regions[a]["owner"]==s["donor"]!=s["recipient"]==regions[b]["owner"]
+                   and pub[a]["food"]>=outgoing, "aid exceeds its local public appropriation")
+            pub[a]["food"] -= outgoing
+            pub[b]["food"] += s["received"]
+            combined[s["donor"]]["food"] -= outgoing
+            combined[s["recipient"]]["food"] += s["received"]
     for i, l in levies.items():
         _check(l["private_open"] == private[i] and l["depot_open"] == pub[i], "collection opening mismatch")
         for g in GOODS:
@@ -218,3 +229,8 @@ def audit_fiscal_year(record, *, previous_record=None):
     if civic is not None:
         from .collective import audit_actions
         audit_actions(record,previous_record)
+    if "diplomacy" in record:
+        from .diplomatic_flows import audit_foreign_flows
+        from .diplomatic_rules import audit_diplomatic_rules
+        audit_foreign_flows(record,previous_record,geography=geography)
+        audit_diplomatic_rules(record,previous_record)

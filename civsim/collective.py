@@ -103,7 +103,7 @@ def audit_actions(record, previous_record=None):
             raise BalanceError("mobilization exceeds the available population or labor")
 
 
-def _trial(sim, year, suppress=None):
+def _trial(sim, year, suppress=None, *, diplomacy=None):
     race = sim.competition
     states = race.political.states
     if type(year) is not int or year != sim.world.year+1:
@@ -116,8 +116,9 @@ def _trial(sim, year, suppress=None):
         for r in sim.world.regions], "responses": [], "suppressed": suppress}
     election = _prepare(year, states, race.cabinets, "C", "fixed")
     fiscal = replace(race.political.fiscal)
+    extra = {"diplomacy": diplomacy} if diplomacy is not None else {}
     record = _advance_fiscal(fiscal, year, "integrated", political_open=states, feedback=True,
-                             competition=election, collective=context)
+                             competition=election, collective=context, **extra)
     return fiscal, record
 
 
@@ -129,6 +130,11 @@ def step_collective(sim, year, enabled=True):
         sim.enabled = False
         return row
     fiscal, row = _trial(sim, year)
+    _commit_collective(sim, fiscal, row)
+    return row
+
+
+def _commit_collective(sim, fiscal, row):
     states = {r["id"]: deepcopy(r["closing"]) for r in row["politics"]["regions"]}
     cabinets = {c["id"]: deepcopy(c["closing"]) for c in row["competition"]["countries"]}
     memory = {r["id"]: {k: g["closing"].copy() for k, g in r["groups"].items()}
@@ -136,7 +142,6 @@ def step_collective(sim, year, enabled=True):
     sim.competition.political = PoliticalWorld(fiscal, states, True)
     sim.competition.arm, sim.competition.tax_policy, sim.competition.cabinets = "C", "fixed", cabinets
     sim.memory, sim.enabled = memory, True
-    return row
 
 
 def fork_action_year(sim, year, region, group):

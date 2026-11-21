@@ -1,0 +1,29 @@
+{
+  "sample": "dev",
+  "first_seed": 0,
+  "seeds": 20,
+  "workers": 5,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "paths": 80,
+  "annual_transitions": 16000,
+  "archive_5d_A": 60,
+  "archive_5d_B": 60,
+  "replayed_checkpoints": 0,
+  "table_sha256": {
+    "borders.csv.gz": "abc1634fd0c07491b112b4c1d6ce73ee3c0f6a3d61d25c83cac9d8f4be976450",
+    "countries.csv": "b520fe55739504501535288050d07961b51ed96250160b8cf678bf70a7e4acb5",
+    "country-years.csv.gz": "6bcf81a985662c367ee2e71335a1a81d0d8ab7d6aa73bf569c574de00fa533c3",
+    "events.csv.gz": "6da73f9440edc002f8c089d8762437979735ed7123af9b29154feedd14057c67",
+    "means.csv": "72b250c10892bd3439c0f2ec57235f9ce5a37d824bfda13ee391ec4c1f5f1954",
+    "pair-years.csv.gz": "1c5ac76676512fe9de44fdb8c893f8dc0b67d1f2a4dcbd4f973c356ad62f702c",
+    "paired.csv": "19eb42843027731465caaf4e9c20dd2683bfbf6b53c192d564cf94cc62533757",
+    "pairs.csv": "2a8f7f9c2412f5de2b1d1082399c75501a8b91cdae27d258675494f42c4fb955",
+    "runs.csv": "33e116e72b4d8940a3a42790107ad8cfe728c2d1673f1b767f63cd909b4d3bc5"
+  },
+  "python": "3.12.14",
+  "wall_seconds": 690.8269031000091
+}

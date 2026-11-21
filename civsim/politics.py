@@ -41,7 +41,11 @@ def select_plans(plans, opening, feedback):
 def _closing_states(record, opening):
     if record.get("competition", {}).get("arm", "A") != "A":
         from .competition_rules import differentiated_observe
-        return differentiated_observe(record, opening)
+        closing = differentiated_observe(record, opening)
+        if record.get("diplomacy", {}).get("arm") == "D":
+            from .aid_opinion import observe_aid
+            observe_aid(closing, opening, record["diplomacy"]["physical"]["aid"]["shipments"])
+        return closing
     return observe(record, opening)
 
 

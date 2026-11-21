@@ -1,0 +1,10 @@
+{
+  "sample": "dev",
+  "cases": 6,
+  "identical": true,
+  "matched_bytes": 338665,
+  "sha256": "35e4ef79ba0f3b86501147c1ba3e768c48df37c1f400eeb8372a801b81543508",
+  "development_pair_years_sha256": "1c5ac76676512fe9de44fdb8c893f8dc0b67d1f2a4dcbd4f973c356ad62f702c",
+  "primary_wall_seconds": 27.361175899975933,
+  "repeat_wall_seconds": 31.10514769994188
+}

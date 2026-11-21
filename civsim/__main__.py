@@ -70,6 +70,13 @@ def main() -> int:
     collective.add_argument("--per-nation", type=int, default=4)
     collective.add_argument("--actions", choices=("on", "off"), default="on")
 
+    diplomacy = commands.add_parser("diplomacy", help="6.0A 외교·국경·국제구호 원장 저장")
+    diplomacy.add_argument("--out", required=True, type=Path)
+    diplomacy.add_argument("--seed", type=int, default=42)
+    diplomacy.add_argument("--years", type=int, default=50)
+    diplomacy.add_argument("--per-nation", type=int, default=4)
+    diplomacy.add_argument("--arm", choices=("A", "B", "C", "D"), default="D")
+
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
@@ -102,6 +109,10 @@ def main() -> int:
             write_political_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
                                 feedback=args.feedback == "on")
             print(f"5.0B 원장을 저장했습니다. {args.out.resolve()}")
+        elif args.command == "diplomacy":
+            from .diplomacy_storage import write_diplomacy_run
+            write_diplomacy_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation, arm=args.arm)
+            print(f"6.0A 원장을 저장했습니다. {args.out.resolve()}")
         elif args.command == "collective":
             from .collective_storage import write_collective_run
             write_collective_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
