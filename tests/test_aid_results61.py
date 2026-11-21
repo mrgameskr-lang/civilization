@@ -22,6 +22,7 @@ class AidResultTests(unittest.TestCase):
                  limit_authorized="6",limit_road="3",limit_stock="15",limit_storage="9",limit_budget="3")
         count_attempt(row,counter)
         self.assertEqual((counter["ties"],counter["budget_tied"],counter["budget_reducing"]), (1,1,0))
+        self.assertEqual([k for k in counter if k.startswith("binding_")], ["binding_road","binding_budget"])
         row.update(quantity="0",uncapped_quantity="3",budget_displaced="3",binding="budget",limit_budget="1")
         count_attempt(row,counter)
         self.assertEqual((counter["minimum_lot"],counter["budget_reducing"],counter["displaced_attempt_qty"]),(1,1,3))

@@ -227,6 +227,10 @@ def audit_fiscal61(record, geography=None, previous_record=None):
     from .government_audit import audit_fiscal_year
 
     if "phase61" not in record["diplomacy"]:
+        if previous_record is not None:
+            prior = previous_record.get("diplomacy", {})
+            _check("phase61" not in prior and prior.get("intervention") is None,
+                   "legacy control requires a preceding standard legacy record")
         return audit_fiscal_year(record,geography=geography,previous_record=previous_record)
 
     audit_accounts61(record,previous_record)

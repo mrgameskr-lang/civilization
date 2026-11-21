@@ -77,8 +77,9 @@ def count_attempt(r,c):
     limits={k:int(r["limit_"+k]) for k in LIMITS if r["limit_"+k] not in ("",None)}
     raw=min(limits.values())
     physical=min(v for k,v in limits.items() if k!="budget")
-    tied={k for k,v in limits.items() if v==raw}
-    check(tied==set(r["binding"].split("|")) and q==(raw if raw>=2 else 0) and
+    # Use the published constraint order when a tie first introduces multiple JSON fields.
+    tied=[k for k,v in limits.items() if v==raw]
+    check(set(tied)==set(r["binding"].split("|")) and q==(raw if raw>=2 else 0) and
           uncapped==(physical if physical>=2 else 0) and displaced==uncapped-q,"misreported attempt limit")
     c.update(attempts=1,ties=int(len(tied)>1),budget_tied=int("budget" in tied and len(tied)>1),
              budget_reducing=int(displaced>0),displaced_attempt_qty=displaced,minimum_lot=int(raw==1),
