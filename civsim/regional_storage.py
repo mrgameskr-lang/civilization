@@ -105,6 +105,13 @@ def regional_summary(directory, export=None):
                     opinions.append({"region": region["id"], "owner": region["owner"],
                                      "observed_members": members, **indices})
                 result["latest_regional_opinion_permille"] = opinions
+            if "competition" in row:
+                race = row["competition"]
+                result.update(model_version="5.0C", arm=race["arm"], tax_policy=race["tax_policy"])
+                result["governments"] = {c["id"]: c["governing_faction"] for c in race["countries"]}
+                for key in ("election", "installation", "turnover"):
+                    count = sum(bool(c["election"] and c["election"][key]) for c in race["countries"])
+                    result["total_" + key] = result.get("total_" + key, 0) + count
             result["years"] += 1
             result["final_population"] = sum(r["closing"]["population"] for r in row["regions"])
             result["total_migrants"] += sum(m["people"] for m in row["moves"])

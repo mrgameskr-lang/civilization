@@ -136,12 +136,20 @@ def _audit(record, previous_record):
                 last = prior_roads[key]
                 _check(usage[key] == last["capacity"]-last["unused"], "decision used incorrect prior road loads")
         expected = decide(owner, local, network, stocks, previous, units, gov["mode"], usage)
-        if "politics" in record:
+        if "competition" in record:
+            from .competition import audit_competition_plan
+            expected = audit_competition_plan(record, expected)
+        elif "politics" in record:
             from .politics import audit_plan
             expected = audit_plan(record["politics"], expected)
         _check(_decision_view(d)==expected, "decision differs from opening state, eligible candidates or budget")
         plans[owner] = expected
-    audit_collection(regional.values(), plans, gov["mode"], gov["levies"])
+    if record.get("competition", {}).get("tax_policy") == "platform":
+        from .tax_policy5c import audit_collection_with_rates
+        tariffs = {c["id"]: c["tariff"] for c in record["competition"]["countries"]}
+        audit_collection_with_rates(regional.values(), plans, gov["mode"], gov["levies"], tariffs)
+    else:
+        audit_collection(regional.values(), plans, gov["mode"], gov["levies"])
     _spending(gov, plans)
 
 

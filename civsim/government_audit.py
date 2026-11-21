@@ -106,6 +106,7 @@ def _road_audit(record):
 def audit_fiscal_year(record, *, previous_record=None):
     gov = record["government"]
     if previous_record is not None:
+        _check(("competition" in record) == ("competition" in previous_record), "competition version changed mid-run")
         _check(("politics" in record) == ("politics" in previous_record), "political ledger missing or introduced mid-run")
     _check(gov["relief"]["delivered"] == sum(s["quantity"] for s in gov["relief"]["shipments"]),
            "total relief differs from actual deliveries")
@@ -201,3 +202,6 @@ def audit_fiscal_year(record, *, previous_record=None):
     if "politics" in record:
         from .politics import audit_political_states
         audit_political_states(record, previous_record=previous_record)
+    if "competition" in record:
+        from .competition import audit_cabinets
+        audit_cabinets(record, previous_record)

@@ -55,6 +55,14 @@ def main() -> int:
     politics.add_argument("--per-nation", type=int, default=4)
     politics.add_argument("--feedback", choices=("on", "off"), default="on")
 
+    competition = commands.add_parser("competition", help="5.0C 집단 선호·대표 선거·재정 원장 저장")
+    competition.add_argument("--out", required=True, type=Path)
+    competition.add_argument("--seed", type=int, default=42)
+    competition.add_argument("--years", type=int, default=50)
+    competition.add_argument("--per-nation", type=int, default=4)
+    competition.add_argument("--arm", choices=("A", "B", "C", "D"), default="C")
+    competition.add_argument("--tax-policy", choices=("fixed", "platform"), default="fixed")
+
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
@@ -87,6 +95,11 @@ def main() -> int:
             write_political_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
                                 feedback=args.feedback == "on")
             print(f"5.0B 원장을 저장했습니다. {args.out.resolve()}")
+        elif args.command == "competition":
+            from .competition_storage import write_competition_run
+            write_competition_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
+                                  arm=args.arm, tax_policy=args.tax_policy)
+            print(f"5.0C 원장을 저장했습니다. {args.out.resolve()}")
         elif args.command == "analyze":
             totals = summary(args.directory)
             if args.csv is not None:

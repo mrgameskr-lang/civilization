@@ -220,7 +220,7 @@ def decide(owner, regions, roads, depots, previous, road_units, mode, road_use=N
     }
 
 
-def _posting(r, depot, decision, mode):
+def _posting(r, depot, decision, mode, schedule=None):
     private, public = r.stock.copy(), depot.copy()
     protected, cap = _bounds(r.population)
     standing = _goods()
@@ -228,7 +228,10 @@ def _posting(r, depot, decision, mode):
     if mode != "none":
         for g in GOODS:
             surplus = max(0, private[g]-protected[g])
-            normal = min(surplus//16, r.population//64) if g=="food" else surplus//5
+            divisor = schedule["surplus_divisor"][g] if schedule else (16 if g == "food" else 5)
+            normal = surplus//divisor
+            if g == "food":
+                normal = min(normal, r.population//64)
             standing[g] = min(normal, max(0, cap[g]-public[g]))
         if decision["action"] == "reserve" and decision["target_region"] == r.id:
             after_levy = private["food"]-standing["food"]
@@ -239,14 +242,17 @@ def _posting(r, depot, decision, mode):
     handling = _goods(food=(extra["food"]+31)//32)
     levied = {g:standing[g]+extra[g] for g in GOODS}
     deposited = {g:levied[g]-handling[g] for g in GOODS}
-    return {"region":r.id,"owner":r.owner,"population":r.population,"private_open":private,"depot_open":public,
+    receipt = {"region":r.id,"owner":r.owner,"population":r.population,"private_open":private,"depot_open":public,
             "protected":protected,"reserve_cap":cap,"standing_levy":standing,"extra_levy":extra,
             "levied":levied,"handling_used":handling,"deposited":deposited,
             "private_close":{g:private[g]-levied[g] for g in GOODS},
             "depot_close":{g:public[g]+deposited[g] for g in GOODS}}
+    if schedule is not None:
+        receipt["standing_schedule"] = {**schedule, "surplus_divisor": schedule["surplus_divisor"].copy()}
+    return receipt
 
 
-def audit_collection(regions, decisions, mode, postings):
+def audit_collection(regions, decisions, mode, postings, *, _schedules=None):
     """Reconcile each transfer, its lawful ceiling and its storage loss from recorded openings."""
     if mode not in PERMITTED:
         raise ValueError("unknown public finance mode")
@@ -256,6 +262,9 @@ def audit_collection(regions, decisions, mode, postings):
     for t in postings:
         r = regions_by_id[t["region"]]
         d = decisions[r.owner]
+        schedule = _schedules[r.owner] if _schedules is not None else None
+        if t.get("standing_schedule") != schedule or (schedule is None and "standing_schedule" in t):
+            raise ValueError("standing schedule differs from the governing platform")
         if (t["owner"],t["population"],d["owner"],d["mode"]) != (r.owner,r.population,r.owner,mode):
             raise ValueError("collection identity, population or mode differs")
         if d["action"] not in PERMITTED[mode]:
@@ -270,7 +279,10 @@ def audit_collection(regions, decisions, mode, postings):
         for g in GOODS:
             start, vault = t["private_open"][g], t["depot_open"][g]
             excess, space = max(0,start-protected[g]), max(0,cap[g]-vault)
-            permitted = min(space,excess//5) if g!="food" else min(space,excess//16,r.population//64)
+            divisor = schedule["surplus_divisor"][g] if schedule else (16 if g == "food" else 5)
+            permitted = min(space, excess//divisor)
+            if g == "food":
+                permitted = min(permitted, r.population//64)
             base = permitted if mode!="none" else 0
             supplement = 0
             if mode!="none" and g=="food" and d["action"]=="reserve" and d["target_region"]==r.id:
@@ -284,14 +296,15 @@ def audit_collection(regions, decisions, mode, postings):
                 raise ValueError(f"incorrect collection posting in region {r.id} for {g}")
 
 
-def collect(regions, depots, decisions, mode):
+def collect(regions, depots, decisions, mode, *, _schedules=None):
     """Post-border, pre-domestic-shipment taxation; stage all transfers before changing state."""
     regions = list(regions)
     if len({r.id for r in regions})!=len(regions):
         raise ValueError("duplicate collection region")
     ordered = sorted(regions,key=lambda r:r.id)
-    records = [_posting(r,depots[r.id],decisions[r.owner],mode) for r in ordered]
-    audit_collection(ordered, decisions, mode, records)
+    records = [_posting(r,depots[r.id],decisions[r.owner],mode,
+                        _schedules[r.owner] if _schedules is not None else None) for r in ordered]
+    audit_collection(ordered, decisions, mode, records, _schedules=_schedules)
     for r,t in zip(ordered,records,strict=True):
         r.stock = t["private_close"].copy()
         depots[r.id] = t["depot_close"].copy()
