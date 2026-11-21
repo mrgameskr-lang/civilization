@@ -1,0 +1,1879 @@
+[
+  {
+    "seed": 0,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 44,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "A",
+    "reference": {
+      "need": 7728,
+      "unmet": 1227,
+      "food_output": 6065,
+      "levied_food": 0,
+      "relief_food": 172
+    },
+    "actual": {
+      "need": 7761,
+      "unmet": 1508,
+      "food_output": 6065,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 0,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 30,
+    "region": 16,
+    "owner": 4,
+    "reference_arm": "B",
+    "reference": {
+      "need": 6134,
+      "unmet": 824,
+      "food_output": 4522,
+      "levied_food": 0,
+      "relief_food": 363
+    },
+    "actual": {
+      "need": 6416,
+      "unmet": 1438,
+      "food_output": 4522,
+      "levied_food": 0,
+      "relief_food": 289
+    }
+  },
+  {
+    "seed": 0,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 91,
+    "region": 7,
+    "owner": 1,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1482,
+      "unmet": 158,
+      "food_output": 1324,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1487,
+      "unmet": 238,
+      "food_output": 1249,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 0,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 155,
+    "region": 9,
+    "owner": 2,
+    "reference_arm": "C",
+    "reference": {
+      "need": 3836,
+      "unmet": 0,
+      "food_output": 3891,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4020,
+      "unmet": 211,
+      "food_output": 3809,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 1,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 61,
+    "region": 5,
+    "owner": 1,
+    "reference_arm": "A",
+    "reference": {
+      "need": 4127,
+      "unmet": 413,
+      "food_output": 3714,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4167,
+      "unmet": 639,
+      "food_output": 3528,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 1,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 34,
+    "region": 4,
+    "owner": 1,
+    "reference_arm": "B",
+    "reference": {
+      "need": 8750,
+      "unmet": 293,
+      "food_output": 7544,
+      "levied_food": 0,
+      "relief_food": 414
+    },
+    "actual": {
+      "need": 8786,
+      "unmet": 615,
+      "food_output": 7544,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 1,
+    "arm": "D",
+    "kind": "first_paid_negative",
+    "year": 86,
+    "owner": 5,
+    "party": "stewards",
+    "economic_score": -40,
+    "choice": {
+      "action": "soil",
+      "region": 20,
+      "edge": ""
+    },
+    "budget": {
+      "food": 0,
+      "ore": 2,
+      "tools": 2,
+      "workers": 4,
+      "admin_units": 1
+    },
+    "actual": {
+      "food_delivered": 0,
+      "freight_food": 0,
+      "works_ore": 2,
+      "works_tools": 2,
+      "workers": 4,
+      "extra_levy_food": 0,
+      "handling_food": 0
+    }
+  },
+  {
+    "seed": 1,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 116,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "C",
+    "reference": {
+      "need": 11200,
+      "unmet": 197,
+      "food_output": 11003,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 11210,
+      "unmet": 276,
+      "food_output": 10934,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 1,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 41,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "C",
+    "reference": {
+      "need": 12540,
+      "unmet": 866,
+      "food_output": 10749,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 12496,
+      "unmet": 1064,
+      "food_output": 10749,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 2,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 39,
+    "region": 4,
+    "owner": 1,
+    "reference_arm": "A",
+    "reference": {
+      "need": 12794,
+      "unmet": 1900,
+      "food_output": 10110,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 12805,
+      "unmet": 2061,
+      "food_output": 10090,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 2,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 105,
+    "region": 29,
+    "owner": 7,
+    "reference_arm": "B",
+    "reference": {
+      "need": 4153,
+      "unmet": 347,
+      "food_output": 3735,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4144,
+      "unmet": 593,
+      "food_output": 3535,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 2,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 104,
+    "region": 10,
+    "owner": 2,
+    "reference_arm": "C",
+    "reference": {
+      "need": 2379,
+      "unmet": 0,
+      "food_output": 2223,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2385,
+      "unmet": 112,
+      "food_output": 2142,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 2,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 37,
+    "region": 8,
+    "owner": 2,
+    "reference_arm": "C",
+    "reference": {
+      "need": 5767,
+      "unmet": 415,
+      "food_output": 4949,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 5803,
+      "unmet": 643,
+      "food_output": 4928,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 3,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 40,
+    "region": 16,
+    "owner": 4,
+    "reference_arm": "A",
+    "reference": {
+      "need": 11160,
+      "unmet": 1062,
+      "food_output": 9129,
+      "levied_food": 0,
+      "relief_food": 392
+    },
+    "actual": {
+      "need": 11162,
+      "unmet": 1207,
+      "food_output": 9100,
+      "levied_food": 0,
+      "relief_food": 375
+    }
+  },
+  {
+    "seed": 3,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 29,
+    "region": 24,
+    "owner": 6,
+    "reference_arm": "B",
+    "reference": {
+      "need": 9633,
+      "unmet": 782,
+      "food_output": 7683,
+      "levied_food": 0,
+      "relief_food": 146
+    },
+    "actual": {
+      "need": 9642,
+      "unmet": 911,
+      "food_output": 7683,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 3,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 185,
+    "region": 16,
+    "owner": 4,
+    "reference_arm": "C",
+    "reference": {
+      "need": 9377,
+      "unmet": 1033,
+      "food_output": 8344,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 9388,
+      "unmet": 1096,
+      "food_output": 8292,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 3,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 43,
+    "region": 12,
+    "owner": 3,
+    "reference_arm": "C",
+    "reference": {
+      "need": 9533,
+      "unmet": 1769,
+      "food_output": 7466,
+      "levied_food": 0,
+      "relief_food": 49
+    },
+    "actual": {
+      "need": 9548,
+      "unmet": 1921,
+      "food_output": 7466,
+      "levied_food": 0,
+      "relief_food": 43
+    }
+  },
+  {
+    "seed": 4,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 57,
+    "region": 23,
+    "owner": 5,
+    "reference_arm": "A",
+    "reference": {
+      "need": 2913,
+      "unmet": 287,
+      "food_output": 2363,
+      "levied_food": 0,
+      "relief_food": 263
+    },
+    "actual": {
+      "need": 2927,
+      "unmet": 594,
+      "food_output": 2333,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 4,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 30,
+    "region": 24,
+    "owner": 6,
+    "reference_arm": "B",
+    "reference": {
+      "need": 8761,
+      "unmet": 196,
+      "food_output": 7184,
+      "levied_food": 0,
+      "relief_food": 279
+    },
+    "actual": {
+      "need": 8805,
+      "unmet": 519,
+      "food_output": 7184,
+      "levied_food": 0,
+      "relief_food": 506
+    }
+  },
+  {
+    "seed": 4,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 150,
+    "region": 4,
+    "owner": 1,
+    "reference_arm": "C",
+    "reference": {
+      "need": 6476,
+      "unmet": 0,
+      "food_output": 6205,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 6534,
+      "unmet": 197,
+      "food_output": 6173,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 4,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 150,
+    "region": 4,
+    "owner": 1,
+    "reference_arm": "C",
+    "reference": {
+      "need": 6476,
+      "unmet": 0,
+      "food_output": 6205,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 6490,
+      "unmet": 160,
+      "food_output": 6205,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 5,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 119,
+    "region": 8,
+    "owner": 2,
+    "reference_arm": "A",
+    "reference": {
+      "need": 9734,
+      "unmet": 342,
+      "food_output": 9085,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 9741,
+      "unmet": 486,
+      "food_output": 9085,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 5,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 103,
+    "region": 2,
+    "owner": 0,
+    "reference_arm": "B",
+    "reference": {
+      "need": 4942,
+      "unmet": 226,
+      "food_output": 4586,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4916,
+      "unmet": 377,
+      "food_output": 4539,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 5,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 165,
+    "region": 12,
+    "owner": 3,
+    "reference_arm": "C",
+    "reference": {
+      "need": 6997,
+      "unmet": 255,
+      "food_output": 6573,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 6975,
+      "unmet": 332,
+      "food_output": 6573,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 5,
+    "arm": "D",
+    "kind": "first_paid_negative",
+    "year": 129,
+    "owner": 5,
+    "party": "stewards",
+    "economic_score": -16,
+    "choice": {
+      "action": "soil",
+      "region": 20,
+      "edge": ""
+    },
+    "budget": {
+      "food": 0,
+      "ore": 2,
+      "tools": 2,
+      "workers": 4,
+      "admin_units": 1
+    },
+    "actual": {
+      "food_delivered": 0,
+      "freight_food": 0,
+      "works_ore": 2,
+      "works_tools": 2,
+      "workers": 4,
+      "extra_levy_food": 0,
+      "handling_food": 0
+    }
+  },
+  {
+    "seed": 5,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 59,
+    "region": 0,
+    "owner": 0,
+    "reference_arm": "C",
+    "reference": {
+      "need": 11211,
+      "unmet": 3016,
+      "food_output": 7842,
+      "levied_food": 0,
+      "relief_food": 37
+    },
+    "actual": {
+      "need": 11247,
+      "unmet": 3307,
+      "food_output": 7809,
+      "levied_food": 0,
+      "relief_food": 39
+    }
+  },
+  {
+    "seed": 6,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 148,
+    "region": 4,
+    "owner": 1,
+    "reference_arm": "A",
+    "reference": {
+      "need": 6926,
+      "unmet": 149,
+      "food_output": 6336,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 6926,
+      "unmet": 265,
+      "food_output": 6363,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 6,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 38,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "B",
+    "reference": {
+      "need": 7771,
+      "unmet": 219,
+      "food_output": 6414,
+      "levied_food": 0,
+      "relief_food": 446
+    },
+    "actual": {
+      "need": 7774,
+      "unmet": 378,
+      "food_output": 6414,
+      "levied_food": 0,
+      "relief_food": 446
+    }
+  },
+  {
+    "seed": 6,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 117,
+    "region": 10,
+    "owner": 2,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1895,
+      "unmet": 65,
+      "food_output": 1763,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1896,
+      "unmet": 167,
+      "food_output": 1665,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 7,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 146,
+    "region": 31,
+    "owner": 7,
+    "reference_arm": "A",
+    "reference": {
+      "need": 1643,
+      "unmet": 92,
+      "food_output": 1551,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1673,
+      "unmet": 202,
+      "food_output": 1471,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 7,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 116,
+    "region": 24,
+    "owner": 6,
+    "reference_arm": "B",
+    "reference": {
+      "need": 11454,
+      "unmet": 208,
+      "food_output": 10914,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 11494,
+      "unmet": 626,
+      "food_output": 10868,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 7,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 36,
+    "region": 0,
+    "owner": 0,
+    "reference_arm": "C",
+    "reference": {
+      "need": 6908,
+      "unmet": 617,
+      "food_output": 5785,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 6908,
+      "unmet": 625,
+      "food_output": 5785,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 7,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 197,
+    "region": 26,
+    "owner": 6,
+    "reference_arm": "C",
+    "reference": {
+      "need": 4392,
+      "unmet": 0,
+      "food_output": 4150,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4575,
+      "unmet": 346,
+      "food_output": 4229,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 8,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 67,
+    "region": 4,
+    "owner": 1,
+    "reference_arm": "A",
+    "reference": {
+      "need": 10199,
+      "unmet": 1476,
+      "food_output": 8500,
+      "levied_food": 0,
+      "relief_food": 223
+    },
+    "actual": {
+      "need": 10196,
+      "unmet": 1660,
+      "food_output": 8536,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 8,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 67,
+    "region": 0,
+    "owner": 0,
+    "reference_arm": "B",
+    "reference": {
+      "need": 4951,
+      "unmet": 32,
+      "food_output": 4613,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4987,
+      "unmet": 203,
+      "food_output": 4594,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 8,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 179,
+    "region": 16,
+    "owner": 4,
+    "reference_arm": "C",
+    "reference": {
+      "need": 8440,
+      "unmet": 246,
+      "food_output": 7788,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 8446,
+      "unmet": 336,
+      "food_output": 7796,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 8,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 51,
+    "region": 16,
+    "owner": 4,
+    "reference_arm": "C",
+    "reference": {
+      "need": 9004,
+      "unmet": 1223,
+      "food_output": 7551,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 9018,
+      "unmet": 1451,
+      "food_output": 7567,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 9,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 71,
+    "region": 1,
+    "owner": 0,
+    "reference_arm": "A",
+    "reference": {
+      "need": 5324,
+      "unmet": 177,
+      "food_output": 4235,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 5324,
+      "unmet": 466,
+      "food_output": 4235,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 9,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 39,
+    "region": 24,
+    "owner": 6,
+    "reference_arm": "B",
+    "reference": {
+      "need": 11760,
+      "unmet": 636,
+      "food_output": 9311,
+      "levied_food": 0,
+      "relief_food": 663
+    },
+    "actual": {
+      "need": 11846,
+      "unmet": 1072,
+      "food_output": 9311,
+      "levied_food": 0,
+      "relief_food": 313
+    }
+  },
+  {
+    "seed": 9,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 69,
+    "region": 18,
+    "owner": 4,
+    "reference_arm": "C",
+    "reference": {
+      "need": 2776,
+      "unmet": 171,
+      "food_output": 2605,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2776,
+      "unmet": 202,
+      "food_output": 2574,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 9,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 55,
+    "region": 3,
+    "owner": 0,
+    "reference_arm": "C",
+    "reference": {
+      "need": 3231,
+      "unmet": 394,
+      "food_output": 2647,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 3252,
+      "unmet": 587,
+      "food_output": 2647,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 10,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 80,
+    "region": 28,
+    "owner": 7,
+    "reference_arm": "A",
+    "reference": {
+      "need": 7396,
+      "unmet": 217,
+      "food_output": 6622,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 7396,
+      "unmet": 449,
+      "food_output": 6608,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 10,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 21,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "B",
+    "reference": {
+      "need": 9238,
+      "unmet": 571,
+      "food_output": 7181,
+      "levied_food": 0,
+      "relief_food": 250
+    },
+    "actual": {
+      "need": 9222,
+      "unmet": 898,
+      "food_output": 7088,
+      "levied_food": 0,
+      "relief_food": 279
+    }
+  },
+  {
+    "seed": 10,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 107,
+    "region": 29,
+    "owner": 7,
+    "reference_arm": "C",
+    "reference": {
+      "need": 2483,
+      "unmet": 111,
+      "food_output": 2372,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2494,
+      "unmet": 191,
+      "food_output": 2303,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 10,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 80,
+    "region": 28,
+    "owner": 7,
+    "reference_arm": "C",
+    "reference": {
+      "need": 7381,
+      "unmet": 261,
+      "food_output": 6608,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 7396,
+      "unmet": 511,
+      "food_output": 6608,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 11,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 61,
+    "region": 28,
+    "owner": 7,
+    "reference_arm": "A",
+    "reference": {
+      "need": 10808,
+      "unmet": 604,
+      "food_output": 9145,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 10811,
+      "unmet": 741,
+      "food_output": 9145,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 11,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 53,
+    "region": 28,
+    "owner": 7,
+    "reference_arm": "B",
+    "reference": {
+      "need": 10217,
+      "unmet": 641,
+      "food_output": 7867,
+      "levied_food": 0,
+      "relief_food": 554
+    },
+    "actual": {
+      "need": 10218,
+      "unmet": 1161,
+      "food_output": 7730,
+      "levied_food": 0,
+      "relief_food": 491
+    }
+  },
+  {
+    "seed": 11,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 125,
+    "region": 0,
+    "owner": 0,
+    "reference_arm": "C",
+    "reference": {
+      "need": 9312,
+      "unmet": 553,
+      "food_output": 8759,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 9321,
+      "unmet": 608,
+      "food_output": 8713,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 11,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 191,
+    "region": 2,
+    "owner": 0,
+    "reference_arm": "C",
+    "reference": {
+      "need": 4118,
+      "unmet": 116,
+      "food_output": 3848,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4127,
+      "unmet": 269,
+      "food_output": 3821,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 12,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 141,
+    "region": 29,
+    "owner": 7,
+    "reference_arm": "A",
+    "reference": {
+      "need": 2241,
+      "unmet": 143,
+      "food_output": 2098,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2385,
+      "unmet": 317,
+      "food_output": 2068,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 12,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 49,
+    "region": 4,
+    "owner": 1,
+    "reference_arm": "B",
+    "reference": {
+      "need": 10934,
+      "unmet": 707,
+      "food_output": 9307,
+      "levied_food": 0,
+      "relief_food": 250
+    },
+    "actual": {
+      "need": 10911,
+      "unmet": 1000,
+      "food_output": 9346,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 12,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 73,
+    "region": 30,
+    "owner": 7,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1569,
+      "unmet": 0,
+      "food_output": 1590,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1587,
+      "unmet": 168,
+      "food_output": 1391,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 12,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 33,
+    "region": 16,
+    "owner": 4,
+    "reference_arm": "C",
+    "reference": {
+      "need": 6393,
+      "unmet": 178,
+      "food_output": 5293,
+      "levied_food": 0,
+      "relief_food": 187
+    },
+    "actual": {
+      "need": 6385,
+      "unmet": 413,
+      "food_output": 5293,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 13,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 101,
+    "region": 26,
+    "owner": 6,
+    "reference_arm": "A",
+    "reference": {
+      "need": 1915,
+      "unmet": 59,
+      "food_output": 1856,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1978,
+      "unmet": 257,
+      "food_output": 1721,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 13,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 76,
+    "region": 24,
+    "owner": 6,
+    "reference_arm": "B",
+    "reference": {
+      "need": 7281,
+      "unmet": 1,
+      "food_output": 6790,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 7058,
+      "unmet": 194,
+      "food_output": 6808,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 13,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 62,
+    "region": 13,
+    "owner": 3,
+    "reference_arm": "C",
+    "reference": {
+      "need": 2446,
+      "unmet": 0,
+      "food_output": 2354,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2447,
+      "unmet": 93,
+      "food_output": 2354,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 13,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 108,
+    "region": 26,
+    "owner": 6,
+    "reference_arm": "C",
+    "reference": {
+      "need": 2003,
+      "unmet": 199,
+      "food_output": 1804,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2013,
+      "unmet": 366,
+      "food_output": 1647,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 14,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 77,
+    "region": 1,
+    "owner": 0,
+    "reference_arm": "A",
+    "reference": {
+      "need": 2967,
+      "unmet": 89,
+      "food_output": 2732,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2948,
+      "unmet": 270,
+      "food_output": 2678,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 14,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 51,
+    "region": 24,
+    "owner": 6,
+    "reference_arm": "B",
+    "reference": {
+      "need": 10786,
+      "unmet": 732,
+      "food_output": 8496,
+      "levied_food": 0,
+      "relief_food": 603
+    },
+    "actual": {
+      "need": 10831,
+      "unmet": 1127,
+      "food_output": 8451,
+      "levied_food": 0,
+      "relief_food": 604
+    }
+  },
+  {
+    "seed": 14,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 62,
+    "region": 31,
+    "owner": 7,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1934,
+      "unmet": 0,
+      "food_output": 1935,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1921,
+      "unmet": 86,
+      "food_output": 1835,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 14,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 123,
+    "region": 19,
+    "owner": 4,
+    "reference_arm": "C",
+    "reference": {
+      "need": 4131,
+      "unmet": 205,
+      "food_output": 3926,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 4192,
+      "unmet": 361,
+      "food_output": 3831,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 15,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 63,
+    "region": 11,
+    "owner": 2,
+    "reference_arm": "A",
+    "reference": {
+      "need": 3433,
+      "unmet": 58,
+      "food_output": 3375,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 3460,
+      "unmet": 166,
+      "food_output": 3294,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 15,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 141,
+    "region": 11,
+    "owner": 2,
+    "reference_arm": "B",
+    "reference": {
+      "need": 3647,
+      "unmet": 194,
+      "food_output": 3282,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 3652,
+      "unmet": 404,
+      "food_output": 3248,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 15,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 61,
+    "region": 21,
+    "owner": 5,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1952,
+      "unmet": 198,
+      "food_output": 1754,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1993,
+      "unmet": 315,
+      "food_output": 1678,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 15,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 51,
+    "region": 22,
+    "owner": 5,
+    "reference_arm": "C",
+    "reference": {
+      "need": 2009,
+      "unmet": 87,
+      "food_output": 1922,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2019,
+      "unmet": 248,
+      "food_output": 1771,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 16,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 123,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "A",
+    "reference": {
+      "need": 7867,
+      "unmet": 712,
+      "food_output": 7057,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 7931,
+      "unmet": 897,
+      "food_output": 7034,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 16,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 15,
+    "region": 28,
+    "owner": 7,
+    "reference_arm": "B",
+    "reference": {
+      "need": 8653,
+      "unmet": 271,
+      "food_output": 6905,
+      "levied_food": 0,
+      "relief_food": 302
+    },
+    "actual": {
+      "need": 8690,
+      "unmet": 610,
+      "food_output": 6905,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 16,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 171,
+    "region": 26,
+    "owner": 6,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1942,
+      "unmet": 119,
+      "food_output": 1823,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 2039,
+      "unmet": 285,
+      "food_output": 1754,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 16,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 73,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "C",
+    "reference": {
+      "need": 7652,
+      "unmet": 129,
+      "food_output": 7200,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 7666,
+      "unmet": 307,
+      "food_output": 7155,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 17,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 60,
+    "region": 13,
+    "owner": 3,
+    "reference_arm": "A",
+    "reference": {
+      "need": 1986,
+      "unmet": 35,
+      "food_output": 1951,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1976,
+      "unmet": 205,
+      "food_output": 1770,
+      "levied_food": 0,
+      "relief_food": 1
+    }
+  },
+  {
+    "seed": 17,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 17,
+    "region": 28,
+    "owner": 7,
+    "reference_arm": "B",
+    "reference": {
+      "need": 9073,
+      "unmet": 174,
+      "food_output": 7368,
+      "levied_food": 0,
+      "relief_food": 314
+    },
+    "actual": {
+      "need": 9042,
+      "unmet": 546,
+      "food_output": 7279,
+      "levied_food": 0,
+      "relief_food": 312
+    }
+  },
+  {
+    "seed": 17,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 17,
+    "region": 12,
+    "owner": 3,
+    "reference_arm": "C",
+    "reference": {
+      "need": 7101,
+      "unmet": 645,
+      "food_output": 5981,
+      "levied_food": 0,
+      "relief_food": 5
+    },
+    "actual": {
+      "need": 7101,
+      "unmet": 648,
+      "food_output": 5981,
+      "levied_food": 0,
+      "relief_food": 2
+    }
+  },
+  {
+    "seed": 17,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 72,
+    "region": 12,
+    "owner": 3,
+    "reference_arm": "C",
+    "reference": {
+      "need": 6899,
+      "unmet": 35,
+      "food_output": 6691,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 6910,
+      "unmet": 207,
+      "food_output": 6691,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 18,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 61,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "A",
+    "reference": {
+      "need": 15725,
+      "unmet": 2359,
+      "food_output": 12936,
+      "levied_food": 0,
+      "relief_food": 31
+    },
+    "actual": {
+      "need": 15828,
+      "unmet": 2784,
+      "food_output": 12963,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 18,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 46,
+    "region": 20,
+    "owner": 5,
+    "reference_arm": "B",
+    "reference": {
+      "need": 15390,
+      "unmet": 2169,
+      "food_output": 11544,
+      "levied_food": 0,
+      "relief_food": 753
+    },
+    "actual": {
+      "need": 15362,
+      "unmet": 2745,
+      "food_output": 11411,
+      "levied_food": 0,
+      "relief_food": 752
+    }
+  },
+  {
+    "seed": 18,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 78,
+    "region": 25,
+    "owner": 6,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1688,
+      "unmet": 146,
+      "food_output": 1542,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1692,
+      "unmet": 278,
+      "food_output": 1414,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 18,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 25,
+    "region": 28,
+    "owner": 7,
+    "reference_arm": "C",
+    "reference": {
+      "need": 9480,
+      "unmet": 626,
+      "food_output": 7996,
+      "levied_food": 0,
+      "relief_food": 190
+    },
+    "actual": {
+      "need": 9489,
+      "unmet": 824,
+      "food_output": 7996,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 19,
+    "arm": "B",
+    "kind": "largest_regional_unmet_increase",
+    "year": 136,
+    "region": 30,
+    "owner": 7,
+    "reference_arm": "A",
+    "reference": {
+      "need": 1957,
+      "unmet": 183,
+      "food_output": 1774,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1910,
+      "unmet": 399,
+      "food_output": 1511,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 19,
+    "arm": "C",
+    "kind": "largest_regional_unmet_increase",
+    "year": 28,
+    "region": 8,
+    "owner": 2,
+    "reference_arm": "B",
+    "reference": {
+      "need": 12600,
+      "unmet": 868,
+      "food_output": 9970,
+      "levied_food": 0,
+      "relief_food": 661
+    },
+    "actual": {
+      "need": 12631,
+      "unmet": 1167,
+      "food_output": 9970,
+      "levied_food": 0,
+      "relief_food": 544
+    }
+  },
+  {
+    "seed": 19,
+    "arm": "D",
+    "kind": "largest_regional_unmet_increase",
+    "year": 170,
+    "region": 30,
+    "owner": 7,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1821,
+      "unmet": 271,
+      "food_output": 1550,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1822,
+      "unmet": 426,
+      "food_output": 1396,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  },
+  {
+    "seed": 19,
+    "arm": "E",
+    "kind": "largest_regional_unmet_increase",
+    "year": 138,
+    "region": 30,
+    "owner": 7,
+    "reference_arm": "C",
+    "reference": {
+      "need": 1918,
+      "unmet": 277,
+      "food_output": 1641,
+      "levied_food": 0,
+      "relief_food": 0
+    },
+    "actual": {
+      "need": 1916,
+      "unmet": 487,
+      "food_output": 1429,
+      "levied_food": 0,
+      "relief_food": 0
+    }
+  }
+]
