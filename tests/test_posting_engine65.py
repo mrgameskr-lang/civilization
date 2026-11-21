@@ -68,3 +68,34 @@ class AdministrativeEconomyTests(unittest.TestCase):
         self.assertEqual(sum(row["held"] for row in held["assignments"]),1)
         self.assertEqual(opening,old_opening)
         self.assertEqual(canonical_line(second),old_economy)
+
+    def test_rewritten_death_as_emigration_fails_even_with_a_consistent_office_book(self):
+        from civsim.postings65 import advance_postings, audit_postings
+        economy,_,_=next(run(0,1,policy="A_fixed"))
+        service=economy["service"]
+        resident=next(row for row in service["regions"] if row["service_deaths"]>0)
+        national=next(n for n in service["countries"] if n["id"]==resident["owner"])
+        for row in (resident,national):
+            row["service_deaths"]-=1
+            row["service_emigrants"]+=1
+        book,_=advance_postings({},service,year=1)
+        audit_postings(book,service)
+        with self.assertRaisesRegex(ValueError,"roster exits"):
+            audit_households(economy)
+
+    def test_balancing_corruptions_to_vital_or_worker_accounts_are_rejected(self):
+        original,_,_=next(run(0,1,policy="A_fixed"))
+        for field in ("births","immigrants","workers"):
+            rec=deepcopy(original)
+            r=rec["regions"][0]
+            vital=r["demography"]
+            if field=="births":
+                vital["births"]+=1
+                vital["deaths"]+=1
+            elif field=="immigrants":
+                vital["immigrants"]+=1
+                vital["emigrants"]+=1
+            else:
+                r["production"]["workers"]+=1
+            with self.subTest(field=field),self.assertRaises(ValueError):
+                audit_households(rec)
