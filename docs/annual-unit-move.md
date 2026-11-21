@@ -26,7 +26,7 @@ python -m civsim.annual_game step moved.json --out next.json
 python -m civsim.annual_game show next.json
 ```
 
-매 저장에는 시드와 연도별 명령·결과 해시가 들어간다. 읽을 때 해당 연도까지 경제를 다시 실행해 해시를 확인한다. 저장 비용은 작고 불러오는 시간은 경과 연수에 비례한다. [저장 예제](../examples/annual-unit-v1/saves) · [게임 진입점](../civsim/annual_game.py) · [연간 원장 적용 코드](../civsim/unit_economy.py)
+매 저장에는 연말 실제 위치, 시드, 연도별 명령·결과 해시가 들어간다. 읽을 때 해당 연도까지 경제를 다시 실행해 해시와 저장된 위치를 각각 확인한다. 저장 비용은 작고 불러오는 시간은 경과 연수에 비례한다. [편도 이동을 끝낸 저장](../examples/annual-unit-v1/position-saves/moved.json) · [다음 해 저장](../examples/annual-unit-v1/position-saves/next.json) · [게임 진입점](../civsim/annual_game.py) · [연간 원장 적용 코드](../civsim/unit_economy.py)
 
 ## 연간 처리와 회계 규칙
 
@@ -55,6 +55,7 @@ python -B -m experiments.annual_unit_case --verify examples/annual-unit-v1/case
 python -B -m experiments.annual_unit_study --workers 6 --out new-study
 python -B -m experiments.annual_unit_results new-study --out new-summary.json
 python -B -m experiments.annual_unit_results new-study --repeat-seeds 0 20 --out new-repeat.json
+python -B -m experiments.annual_unit_results new-study --verify-openings --out new-openings.json
 python -B -m unittest discover -v
 ```
 
@@ -68,6 +69,8 @@ python -B -m unittest discover -v
 |---|---:|---:|---|---:|---:|
 | 개발 0~19 | 16 | 4 | 16 / 16 / 16 | −27 ~ +59 | −504 ~ +114 |
 | 독립 검증 20~39 | 18 | 2 | 18 / 18 / 18 | −60 ~ +128 | −716 ~ +2 |
+
+40개 시드의 첫 3년을 별도로 돌려 2년 말의 위치와 3년 초의 위치를 하나씩 대조했다. 34건의 성공에서 34명 모두가 다음 연초에 도착지에 남았다. 시드 0과 20의 200년 두 경로를 별도 프로세스에서 다시 실행했을 때 각각의 원자료가 바이트 단위로 같았다. [다음 연초 40개 대조](../examples/annual-unit-v1/next-openings.json) · [독립 200년 재생](../examples/annual-unit-v1/repeated-seeds.json)
 
 두 표본에서 200년 말 인구 차이의 중앙값은 0명이었다. 독립 검증 시드 31에서는 민간 국내 배송이 누적 961단위 줄고 최종 인구가 60명 줄었다. 시드 27에서는 각각 814단위와 128명이 늘었다. 34개 세계에서 방문 인원이 200년까지 유지된 결과에는 명부에서 인원을 제외할 때 주소지에 있는 사람을 먼저 빼는 집계 규칙이 작용한다. 한 사람이 200년을 살았다는 의미로 해석할 수 없다. [시드별 차이 및 분포](../examples/annual-unit-v1/summary.json)
 

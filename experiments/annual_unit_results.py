@@ -7,7 +7,20 @@ from pathlib import Path
 from statistics import median
 
 from civsim.storage import canonical_line
-from experiments.annual_unit_study import run_seed
+from civsim.annual_game import create
+from civsim.unit_economy import step_game
+from experiments.annual_unit_study import ORDER, run_seed
+
+
+def verify_opening(seed, full):
+    game = create(seed)
+    step_game(game)
+    second = step_game(game,ORDER)["unit_game"]
+    third = step_game(game)["unit_game"]
+    if second["receipt"]!=full["paths"][0]["receipt"] or second["closing_away"]!=third["opening_away"]:
+        raise ValueError(f"arrival or next opening differed at seed {seed}")
+    return {"seed":seed,"moved":second["receipt"]["ok"],"year2_close":second["closing_away"],
+            "year3_open":third["opening_away"]}
 
 
 def summarize(directory):
@@ -44,7 +57,9 @@ if __name__ == "__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("study",type=Path)
     parser.add_argument("--out",type=Path,required=True)
-    parser.add_argument("--repeat-seeds",type=int,nargs="+")
+    mode=parser.add_mutually_exclusive_group()
+    mode.add_argument("--repeat-seeds",type=int,nargs="+")
+    mode.add_argument("--verify-openings",action="store_true")
     args=parser.parse_args()
     if args.repeat_seeds:
         matched={}
@@ -55,6 +70,10 @@ if __name__ == "__main__":
                 raise ValueError(f"independent replay differed at seed {seed}")
             matched[seed]=sha256(original).hexdigest()
         result={"matched_seed_files":matched, "years":200, "arms":["move","hold"]}
+    elif args.verify_openings:
+        rows=[verify_opening(seed,json.loads((args.study/f"seed-{seed:02}.json").read_bytes())) for seed in range(40)]
+        result={"seeds":rows,"moves":sum(r["moved"] for r in rows),
+                "next_open_at_destination":sum(n for r in rows for h,loc,n in r["year3_open"] if (h,loc)==(5,4))}
     else:
         result=summarize(args.study)
     with args.out.open("xb") as stream:

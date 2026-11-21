@@ -4,7 +4,7 @@ from dataclasses import asdict
 import json
 from pathlib import Path
 
-from .game_journal import append_turn, new_journal, restore_journal, save_journal
+from .game_journal import append_turn, new_journal, restore_journal, save_json_slot
 from .model import generate_world
 from .peace62 import start62
 from .regions import regionalize
@@ -23,6 +23,23 @@ def play(game, command):
     return json.loads(canonical_line(record))
 
 
+def save(path, journal, away):
+    save_json_slot(path,{"schema":"annual-game/1","journal":journal,"closing_away":away})
+
+
+def load(path):
+    slot = json.loads(path.read_bytes())
+    if isinstance(slot,dict) and slot.get("schema")=="game-journal/1":
+        # Early replay-only slots published with this branch.
+        return slot, restore_journal(slot,create,play)
+    if type(slot) is not dict or slot.keys()!={"schema","journal","closing_away"} or slot["schema"]!="annual-game/1":
+        raise ValueError("invalid annual game save")
+    game = restore_journal(slot["journal"],create,play)
+    if canonical_line(slot["closing_away"])!=canonical_line(game.away):
+        raise ValueError("saved locations disagree with the replayed closing ledger")
+    return slot["journal"], game
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="action",required=True)
@@ -38,17 +55,16 @@ def main(argv=None):
     try:
         if args.action == "new":
             journal = new_journal(args.seed)
-            save_journal(args.out,journal)
+            save(args.out,journal,[])
             result = {"seed":args.seed,"year":0,"closing_away":[]}
         else:
-            journal = json.loads(args.save.read_bytes())
-            game = restore_journal(journal,create,play)
+            journal, game = load(args.save)
             if args.action == "show":
                 result = {"seed":journal["seed"],"year":game.economy.world.year,"closing_away":game.away}
             else:
                 command = asdict(Move(*args.move)) if args.move is not None else None
                 row = play(game,command)
-                save_journal(args.out,append_turn(journal,command,row))
+                save(args.out,append_turn(journal,command,row),game.away)
                 result = {"year":row["year"],**row["unit_game"]}
         print(json.dumps(result,sort_keys=True))
     except (ValueError,OSError,TypeError) as exc:

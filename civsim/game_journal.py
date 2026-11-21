@@ -88,7 +88,12 @@ def restore_journal(journal, create, step):
 def save_journal(path, journal):
     """Write complete canonical JSON to a new path, refusing to replace any prior save."""
     _check_journal(journal)
-    data = _canonical_line(journal)
+    save_json_slot(path, journal)
+
+
+def save_json_slot(path, value):
+    """Publish a complete game save to a fresh slot."""
+    data = _canonical_line(value)
     path = Path(path)
     if os.path.lexists(path):
         raise FileExistsError(f"journal already exists: {path}")

@@ -20,6 +20,13 @@ class GameSaveTests(unittest.TestCase):
             after=json.loads(run("step",paths[2],"--out",paths[3]).stdout)
             self.assertTrue(moved["receipt"]["ok"])
             self.assertEqual(moved["closing_away"],[[5,4,1]])
+            slot=json.loads(Path(paths[2]).read_bytes())
+            self.assertEqual(slot["closing_away"],[[5,4,1]])
             self.assertEqual(after["opening_away"],moved["closing_away"])
             self.assertEqual(Path(paths[1]).read_bytes(),before)
             self.assertEqual(json.loads(run("show",paths[3]).stdout)["year"],3)
+            slot["closing_away"]=[]
+            edited=Path(root)/"edited.json"
+            edited.write_text(json.dumps(slot),encoding="utf8")
+            with self.assertRaises(subprocess.CalledProcessError):
+                run("show",str(edited))
