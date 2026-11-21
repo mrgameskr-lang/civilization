@@ -1,0 +1,141 @@
+{
+  "a_input_table_sha256": {
+    "dev": "4c6a17872a515c1e46fa79c04f46846bf75410790272b579fd1623ade388eaeb",
+    "holdout": "886771ba045a79578ca708a6883d6d9d58562d868504433ddb652079e4ef111f"
+  },
+  "archives": {
+    "A": {
+      "path": "examples/phase6c1-m1/pr18-replay.json",
+      "sha256": "f5a5e37195021a91643a2ef1e6347c815f8ade6a4ed785f8507c1521ac4076fc"
+    },
+    "B": {
+      "path": "examples/phase6c1-m1/register-repeat.json",
+      "sha256": "d883f95c82bc490165df572b080e388ab789128cfc84c0f84347bbc91efd9f2f"
+    }
+  },
+  "baseline_commit": "b0490cdd8c987342258f992f4234f3c8a3330614",
+  "elapsed_seconds_including_sample": 49.342,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "paths": {
+    "A": {
+      "checkpoints": [
+        {
+          "civic_years_sha256": "ff144c785ef9ad10a806230efdc732fc40c807daa897dc229ee2a6f0f59b2de1",
+          "economic_years_sha256": "a5d465c3ac64c1720fd551ffb9490d8a88b5c8f349f002c254649d6ce512b75b",
+          "register_sha256": "5351f5940c1a9cd2bc14560d8790d0284ca71d602cd00d26451f420949dd7ea2",
+          "seed": 0,
+          "year": 50
+        },
+        {
+          "civic_years_sha256": "1656818597f50c7018e7790668578917ec3cf8e758c401c51d909b9ff48b8bcb",
+          "economic_years_sha256": "c070f59fc90ea6ed760fe3ec761e238aa880ea482308fd0e28533715dcd2c3f6",
+          "register_sha256": "fee352eadff299d80674d68f1773a8d0ab173085b52aeccf157dbc370bf9d1e4",
+          "seed": 0,
+          "year": 100
+        },
+        {
+          "civic_years_sha256": "7e2ecb186f83a911f9316e61083205737c21f26d8b7743753155751b987e4e23",
+          "economic_years_sha256": "fcc01746ed5cd92a5215bb8c3d69632bd9005e134a2fea3c9a497dd628cb9084",
+          "register_sha256": "201cca3ff603be3a6752d382269e8ae1976642b8545abc4a7a2f875459e844f0",
+          "seed": 0,
+          "year": 200
+        },
+        {
+          "civic_years_sha256": "7e52630a6380d95bda86ce43ef3706bc7e5b77d1a73ae43f873f38631abf5b83",
+          "economic_years_sha256": "710c8b8810adadd83d7831c167a8ad71ad95d6445c0203bb55b0a46530c36de1",
+          "register_sha256": "70cdae55be56d26d74a1c2e4868284dd6872754c1bae81cb2069150aa1fcf575",
+          "seed": 20,
+          "year": 50
+        },
+        {
+          "civic_years_sha256": "8a6fc76b872ba973aaab6f0c7dbf3c9738da58c833b70f79ee51b978a5c12784",
+          "economic_years_sha256": "2a90a1099ed3f1ff8c635898b137a6dee6fb1a56fcc8a9f07962390068bb05b4",
+          "register_sha256": "33ad927447f73aaa2633dfb4009533012cb02e4e6493ca0ab15764a708a20997",
+          "seed": 20,
+          "year": 100
+        },
+        {
+          "civic_years_sha256": "e8ccc537d01c84afdbed4f9cf79a749240965f3d0e57213d81f1904a35189e11",
+          "economic_years_sha256": "1211d7865aebbacf75095f0917b501e677f87fde818ee8eb3edad41fd41d0ffe",
+          "register_sha256": "a03b721054eb96e0d967b2b56c225fd02d2b975adcd7f73f9b483188ed8091ad",
+          "seed": 20,
+          "year": 200
+        }
+      ],
+      "matched_digests": 18,
+      "streams": [
+        "economic_years_sha256",
+        "civic_years_sha256",
+        "register_sha256"
+      ],
+      "world_years": 400
+    },
+    "B": {
+      "checkpoints": [
+        {
+          "affiliation_sha256": "7755516bc02d674e4cc94eca4ffc1e24dea39d7b7a7ae4698e7cd6dbacf7d5c4",
+          "economy_sha256": "693a65647c6a3edc9439dc590cb1bd2b7a6c1090864d7625f651bde50597f1d9",
+          "seed": 0,
+          "year": 50
+        },
+        {
+          "affiliation_sha256": "72dc44948a9aa8430c61add106cf11cbc04a2846ab00fb6c83f9e53a43572da7",
+          "economy_sha256": "fd8db22f4e872535d5f5fcbdeb8949b2df51ab1eb14d539b9956a4b7acbfdd33",
+          "seed": 0,
+          "year": 100
+        },
+        {
+          "affiliation_sha256": "6b5850e427b5b12cb9119599c317d123082d12dbe77261c6fdac686d7633b67f",
+          "economy_sha256": "d13e95e5e1e82e046c910f10dc10da47c4e75881be7c9d7f437d75b0f3a732d6",
+          "seed": 0,
+          "year": 200
+        },
+        {
+          "affiliation_sha256": "f91c6f40bfe6f1fc34e6b5756f6dd6cb86b945895145ba26e03f6639baddfb90",
+          "economy_sha256": "d064befa7b4f2b91fcd18c4172405f0547bd25a074a702bd0f6e6e08438c447d",
+          "seed": 20,
+          "year": 50
+        },
+        {
+          "affiliation_sha256": "ad8ca8b2fe84953bcd8f723c09a38bf505d3131cf6e8aefe9862a22afa2860f4",
+          "economy_sha256": "f83342fa97c3f3c4ddd5cb67eedcf212a15af734342df68e318a013a904ef5a0",
+          "seed": 20,
+          "year": 100
+        },
+        {
+          "affiliation_sha256": "33807ee51c942a69fdf72c58dbefcff37d5fd1d16584711b2c06b3dc654fc921",
+          "economy_sha256": "daee3c146bd8d56a595216d941d2a53e85f00aff2b4e7ee02a15c94fa4522a08",
+          "seed": 20,
+          "year": 200
+        }
+      ],
+      "matched_digests": 12,
+      "streams": [
+        "economy_sha256",
+        "affiliation_sha256"
+      ],
+      "world_years": 400
+    }
+  },
+  "sample_included": false,
+  "seeds": [
+    0,
+    20
+  ],
+  "started_utc": "2026-11-21T17:41:14.898610+00:00",
+  "workers_total": 4,
+  "working_source_sha256": {
+    "civsim/peace62.py": "fa3aee294e413cf7d1b9731c310130280eecdf93bbfe637b9f02f23d9f75569a",
+    "civsim/posting_engine65.py": "44d0f2222aea8170b128da7ceaaab18372e96eb406661e36591624d1dce0365e",
+    "civsim/postings65.py": "69498f1d70fe690ab8286eae85b0f3aabb8bd10d44be555644cb53b15e6c4b98",
+    "civsim/service62.py": "5a6b4ed083d30c44d6e0df137a3b47d55fa6fa2748547459b7a0dec0d1a69f88",
+    "civsim/supply62.py": "07579007391f6f9241e25a4ed8084de5ade5c4f83b91b4746468b38dde8f4ea2",
+    "civsim/supply_audit62.py": "934f192a85cf06dcc526198eeccee210f8b7d640b80b9d4798596b1bc34206ef",
+    "experiments/posting_replay65.py": "202072e7960e5c0861663061511c683f170c030291984bc16c948dcaf1b01f3c",
+    "experiments/repeat_posting_register65.py": "d48e8219047b3f8c9ea168cc37c749404cb50fdf9a34328589b8b74ecd37ca57"
+  }
+}

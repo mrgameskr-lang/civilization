@@ -1,0 +1,34 @@
+{
+  "annual_horizons": [
+    50,
+    100,
+    200
+  ],
+  "matched_digests": 600,
+  "paths": {
+    "A": {
+      "checkpoints": 120,
+      "matched_digests": 360,
+      "original_path": "examples/phase6c1-m1/pr18-replay.json",
+      "original_receipt_sha256": "f5a5e37195021a91643a2ef1e6347c815f8ade6a4ed785f8507c1521ac4076fc",
+      "replayed_receipt_sha256": "3280a0f46d412478f6fc0e1a6bebefe2b5be8e3ad07aca29aa9eeb01308cee0f",
+      "streams_per_checkpoint": 3,
+      "wall_seconds": 373.934,
+      "workers_in_source_receipt": null,
+      "world_years": 8000
+    },
+    "B": {
+      "checkpoints": 120,
+      "matched_digests": 240,
+      "original_path": "examples/phase6c1-m1/register-repeat.json",
+      "original_receipt_sha256": "d883f95c82bc490165df572b080e388ab789128cfc84c0f84347bbc91efd9f2f",
+      "replayed_receipt_sha256": "fb0d9808d3145e36cf3979ef6c2dbc0c8eef7e4f26b9528acac68d079ac771eb",
+      "streams_per_checkpoint": 2,
+      "wall_seconds": 388.194,
+      "workers_in_source_receipt": 4,
+      "world_years": 8000
+    }
+  },
+  "reference_commit": "b0490cdd8c987342258f992f4234f3c8a3330614",
+  "seeds_each_path": 40
+}

@@ -74,4 +74,6 @@ python -B -m unittest discover -v
 
 두 표본에서 200년 말 인구 차이의 중앙값은 0명이었다. 독립 검증 시드 31에서는 민간 국내 배송이 누적 961단위 줄고 최종 인구가 60명 줄었다. 시드 27에서는 각각 814단위와 128명이 늘었다. 34개 세계에서 방문 인원이 200년까지 유지된 결과에는 명부에서 인원을 제외할 때 주소지에 있는 사람을 먼저 빼는 집계 규칙이 작용한다. 한 사람이 200년을 살았다는 의미로 해석할 수 없다. [시드별 차이 및 분포](../examples/annual-unit-v1/summary.json)
 
-본실험은 Python 3.12.14, 작업자 6개에서 521.831초가 걸렸다. 각 연도의 전체 경제를 결산하고 원장을 재생 검산하며 해시를 계산한다. 병렬화는 시드 단위로만 했다. 단계별 시간과 최대 메모리는 별도로 계측하지 않았다. 로컬 전체 테스트는 기존 454개와 신규 20개를 포함해 474개 모두 통과했다(214.106초). [실험 실행 조건](../examples/annual-unit-v1/study/execution.json) · [전체 테스트 로그](../examples/annual-unit-v1/full-tests.txt) · [이전 버전 호환성 재현 방법](../examples/unit-economy-compat/README.md)
+본실험은 Python 3.12.14, 작업자 6개에서 521.831초가 걸렸다. 각 연도의 전체 경제를 결산하고 원장을 재생 검산하며 해시를 계산한다. 병렬화는 시드 단위로만 했다. 단계별 시간과 최대 메모리는 별도로 계측하지 않았다. [실험 실행 조건](../examples/annual-unit-v1/study/execution.json)
+
+로컬 전체 테스트는 기존 454개와 신규 20개를 포함해 474개 모두 통과했다. 연말 위치를 저장 파일에 명시한 뒤 최종 재실행한 시간은 157.297초다. 기존 연간 경로 A·B에서 시드 0~39를 다시 200년까지 실행했고 최종 소스의 50·100·200년 원장 해시 600개가 모두 기준 커밋과 같았다. PR #20 독립 보드의 저장·실험 파일 8개도 바이트 단위로 같았다. [최종 테스트 로그](../examples/annual-unit-v1/final-tests.txt) · [600개 일치 결과](../examples/unit-economy-compat/final-off-all.json) · [기존 저장 8개 검산](../examples/unit-economy-compat/pr20-final.json) · [호환성 재현 명령](../examples/unit-economy-compat/README.md)

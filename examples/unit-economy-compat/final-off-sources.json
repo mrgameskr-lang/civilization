@@ -1,0 +1,34 @@
+{
+  "a_input_table_sha256": {
+    "dev": "4c6a17872a515c1e46fa79c04f46846bf75410790272b579fd1623ade388eaeb",
+    "holdout": "886771ba045a79578ca708a6883d6d9d58562d868504433ddb652079e4ef111f"
+  },
+  "archives": {
+    "A": {
+      "path": "examples/phase6c1-m1/pr18-replay.json",
+      "sha256": "f5a5e37195021a91643a2ef1e6347c815f8ade6a4ed785f8507c1521ac4076fc"
+    },
+    "B": {
+      "path": "examples/phase6c1-m1/register-repeat.json",
+      "sha256": "d883f95c82bc490165df572b080e388ab789128cfc84c0f84347bbc91efd9f2f"
+    }
+  },
+  "baseline_commit": "b0490cdd8c987342258f992f4234f3c8a3330614",
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "started_utc": "2026-11-21T17:41:14.898610+00:00",
+  "workers_total": 4,
+  "working_source_sha256": {
+    "civsim/peace62.py": "fa3aee294e413cf7d1b9731c310130280eecdf93bbfe637b9f02f23d9f75569a",
+    "civsim/posting_engine65.py": "44d0f2222aea8170b128da7ceaaab18372e96eb406661e36591624d1dce0365e",
+    "civsim/postings65.py": "69498f1d70fe690ab8286eae85b0f3aabb8bd10d44be555644cb53b15e6c4b98",
+    "civsim/service62.py": "5a6b4ed083d30c44d6e0df137a3b47d55fa6fa2748547459b7a0dec0d1a69f88",
+    "civsim/supply62.py": "07579007391f6f9241e25a4ed8084de5ade5c4f83b91b4746468b38dde8f4ea2",
+    "civsim/supply_audit62.py": "934f192a85cf06dcc526198eeccee210f8b7d640b80b9d4798596b1bc34206ef",
+    "experiments/posting_replay65.py": "202072e7960e5c0861663061511c683f170c030291984bc16c948dcaf1b01f3c",
+    "experiments/repeat_posting_register65.py": "d48e8219047b3f8c9ea168cc37c749404cb50fdf9a34328589b8b74ecd37ca57"
+  }
+}
