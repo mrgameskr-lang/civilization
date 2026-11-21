@@ -1,0 +1,11 @@
+{
+  "byte_compared_files": 0,
+  "python": "3.12.14",
+  "science_sha256": {
+    "seeds.csv": "4d19cbfd3012d29c6a3872b7cb4cf757a562f815c26033cf7da365747c2c95b8",
+    "short-cases.json": "71b781c783e9e59a2d34d245dadd89686b8a5be20f44c1eebf697af9b7b390c3",
+    "summary.json": "18aebbc5b27d40b8c5fb8b71191efe1cdecf6894ad91e92f6ca2e39052995b10",
+    "traces.jsonl.gz": "fcc92df3f7f3f6f8fe9f8b9016deb4646ad61236fc08c6ba5c57c0a6357a8874"
+  },
+  "wall_seconds": 2.5657391999848187
+}
