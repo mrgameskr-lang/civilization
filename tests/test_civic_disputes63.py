@@ -1,4 +1,5 @@
 import tempfile
+import os
 import unittest
 from pathlib import Path
 import hashlib
@@ -39,8 +40,10 @@ class DiplomaticArchiveTests(unittest.TestCase):
             new.mkdir()
             for folder in (old,new):
                 (folder/"test.csv").write_bytes(b"12\n")
+                os.utime(folder/"test.csv", (1600000000,1600000000))
             verify_tables(old, new, ("test.csv",))
             (new/"test.csv").write_bytes(b"13\n")
+            os.utime(new/"test.csv", (1600000000,1600000000))
             with self.assertRaises(ValueError):
                 verify_tables(old, new, ("test.csv",))
 

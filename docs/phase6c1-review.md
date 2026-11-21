@@ -2,9 +2,11 @@
 
 PR #16의 `5d686a5` 위에 기존 평시 모형의 회계 검증과 선택형 민간 외교분쟁 관측을 추가했다. [범위와 실험 조건](phase6c1-scope.md) · [평시 식사·노동·창고 분석](phase6c1-accounts.md) · [양자 협의·반사실 결과](phase6c1-diplomacy-results.md)
 
-Windows · Python 3.12.14에서 전체 테스트 **373개**가 91.588초에 통과했다. 기존 테스트 346개와 새 테스트 27개를 포함한다. [실행 로그](../examples/phase6c1/full-tests.txt)
+전체 테스트는 기존 346개와 새 테스트 27개다. 첫 로컬 실행은 91.588초에 통과했지만 Windows CI가 파일 비교의 결함을 발견했다. 같은 경로의 파일이 크기·수정 시각을 유지한 채 달라지면 Python의 비교 캐시가 이전 결과를 돌려줄 수 있었다. 변경 후 원자료를 1 MiB씩 직접 읽어 양쪽 끝까지 대조한다. 수정 시각을 동일하게 고정한 회귀 테스트는 변경 전 실패하고 변경 후 통과했다. [최종 전체 테스트 로그](../examples/phase6c1/final-tests.txt) · [최초 로컬 실행 로그](../examples/phase6c1/full-tests.txt)
 
 ## 검토할 결과
+
+수정 후 로컬 전체 **373/373** 테스트가 81.790초에 통과했다. 아래 독립 명령을 두 표본에서 다시 실행해 240개 체크포인트와 원자료 14개를 기존 발행본과 재대조했다. 개발 17.398초, 검증 17.789초가 걸렸다. [개발 최종 영수증](../examples/phase6c1/diplomacy/final-replay-dev.json) · [검증 최종 영수증](../examples/phase6c1/diplomacy/final-replay-holdout.json)
 
 독립 검증 20개 세계의 200년 합계에서 기존 고정 정원은 복무 5,464,740인년, 공공 식량 지급 303,191인년, 식량과 도구 모두 충족 302,840인년이었다. 기존 자율 정원은 각각 886,142, 270,264, 270,210인년이었다. 지역·연도마다 **복무 = 공공 미배식 + 배식 후 도구 미충족 + 두 요건 충족**을 확인했다. 단순 시드평균 충족률은 5.442%와 29.854%이고 인년을 합친 비율은 5.542%와 30.493%다. 이 분해는 결산 단계에서 직접 성립한다. 반면 도로·공공사업·원조 각각의 독립 인과효과나 식사를 받은 개인의 신원은 집계 원장으로 식별할 수 없다. [원래 지급과 실제 식사의 분자·분모](../examples/phase6c1/accounts/cohort-accounts.csv)
 
@@ -45,6 +47,8 @@ python -B -m experiments.civic_accounts63 --out examples/phase6c1/accounts --rep
 python -B -m experiments.civic_accounts63 --verify examples/phase6c1/accounts --report docs/phase6c1-accounts.md
 python -B -m experiments.civic_disputes63 --sample dev --out examples/phase6c1/diplomacy/dev
 python -B -m experiments.civic_disputes63 --sample holdout --out examples/phase6c1/diplomacy/holdout
+python -B -m experiments.civic_disputes63 --sample dev --out ../../work/phase6c1-content-replay-dev --verify-against examples/phase6c1/diplomacy/dev
+python -B -m experiments.civic_disputes63 --sample holdout --out ../../work/phase6c1-content-replay-holdout --verify-against examples/phase6c1/diplomacy/holdout
 python -B -m experiments.analyze_civic63 --study examples/phase6c1/diplomacy --out examples/phase6c1/diplomacy/outcomes.json
 python -B -m experiments.verify_live_civic63 --workers 4 --out examples/phase6c1/live-check.json
 python -B -m unittest discover -v

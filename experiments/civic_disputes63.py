@@ -3,7 +3,6 @@ import argparse
 from collections import Counter
 from contextlib import ExitStack
 import csv
-import filecmp
 import gzip
 import hashlib
 from itertools import combinations, groupby
@@ -61,9 +60,15 @@ def audit_national_year(rows, countries):
 
 
 def verify_tables(original, repeat, names):
+    block_size = 1024 * 1024
     for name in names:
-        if not filecmp.cmp(original/name, repeat/name, shallow=False):
-            raise ValueError(f"independent repeat differs in {name}")
+        with (original/name).open("rb") as first, (repeat/name).open("rb") as second:
+            while True:
+                block = first.read(block_size)
+                if block != second.read(block_size):
+                    raise ValueError(f"independent repeat differs in {name}")
+                if not block:
+                    break
 
 
 def selected_years(filename):
