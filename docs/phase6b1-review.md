@@ -1,5 +1,9 @@
 # 6.0B1 공공 보급망 검토 안내
 
+**전체 테스트 336개 통과.** 6.0B1만 체크아웃한 Windows·Python 3.12.14 환경에서 기존 311개와 신규 25개를 실행했다. 병행 실험과 CPU를 공유한 소요시간은 588.347초다. 단년 원장의 화물 거리나 타일 경로를 바꾸면 독립 검산이 오류를 내는 사례를 포함한다. [실제 전체 테스트 로그](../examples/phase6b1/full-tests.txt)
+
+별도 프로세스에서 강화된 지리·회계 검사로 A/B 80개 경로의 16,000연도를 다시 계산했다. 50·100·200년 시점의 초기 및 누적 해시는 240개씩 모두 일치했다. 5개 작업자에서 1,006.560초가 걸렸다. 실행 명령은 `python -B -m experiments.verify_public62 --stage B1 --workers 5 --out examples/phase6b1/final-audit.json`이다. 기준 커밋의 추적 파일 493개는 경로·파일 모드·Git 객체가 일치했다. [최종 감사 영수증](../examples/phase6b1/final-audit.json)
+
 PR #14의 `5480ebb`에서 분기했다. 외교팀의 연초 승인과 공여국 예산을 그대로 받아, 승인 물자가 국경창고에 없어 집행할 수 없는 경우를 국내 실물 수송으로 처리한다. 다음 링크에서 코드, 선행 진단, 실제 장기 및 단년 원장을 확인할 수 있다.
 
 - [이송 순서·경로·원가 코드](../civsim/depot_supply62.py) · [원조 예산 분개](../civsim/supply_border62.py) · [독립 결산](../civsim/supply_audit62.py)
@@ -16,6 +20,15 @@ python -B -m experiments.depot_forks62 --out ../../work/repeat-b1-forks
 python -B -m experiments.verify_archives31 --workers 3
 python -B -m civsim.aid61 verify samples/phase6a1/seed0-capped
 python -B -m unittest discover -v
+```
+
+장기 실험은 아래 두 명령을 개발·검증 표본별로 실행했다. 각 경로는 200년 한 번을 이어서 계산해 50·100·200년의 누계와 기말 상태를 저장한다.
+
+```powershell
+foreach ($sample in 'dev','holdout') {
+    python -B -m experiments.phase6b --sample $sample --workers 5 --out examples/phase6b1/study/$sample
+    python -B -m experiments.phase6b --sample $sample --workers 5 --out ../../work/phase6b1-repeat-$sample --verify-against examples/phase6b1/study/$sample
+}
 ```
 
 원장 검증기의 4년 연간 SHA-256은 `5e4355591de7b43ad60f3969c9f9acf7abf926d540e180afa0d811f5e3843963`이다. 단년 비교는 공공 이송 허용·보류 순의 정규 JSON 두 행을 담았고, 새 프로세스에서 재생성한 세 압축 파일 해시도 모두 동일했다. 각 쌍에서 연초 상태의 불변성, 양쪽 외교 승인, 일반 경로와의 일치, 실제 계정 결산을 검사했다.
