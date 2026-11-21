@@ -52,4 +52,25 @@ M1의 A 경로에서 기존 PR #18의 협의와 약속 옵션을 켜고 40개 �
 python -B -X utf8 -m experiments.posting_replay65 --workers 8 --out examples/phase6c1-m1/pr18-replay.json
 ```
 
-PR #18이 추적하던 파일은 700개다. 기준 커밋의 테스트 모듈을 열거해 실행한 기존 테스트 402개가 87.780초에 통과했다. [기준 테스트 로그](../examples/phase6c1-m1/pinned-tests.txt)
+PR #18이 추적하던 파일 700개가 보존됐다. 기준 커밋의 테스트 모듈을 열거해 실행한 기존 테스트 402개가 87.780초에 통과했다. 최종 로컬 테스트는 Windows의 Python 3.12.14에서 기존 402개와 신규 30개를 모두 실행해 432개가 87.856초에 통과했다. [기준 테스트 로그](../examples/phase6c1-m1/pinned-tests.txt) · [전체 테스트 로그](../examples/phase6c1-m1/full-tests.txt)
+
+## 실험 결과
+
+| 200년차·표본 20개 세계의 합 | 개발 0~19 | 검증 20~39 |
+|---|---:|---:|
+| 기말 복무 명부 | 28,105 | 28,715 |
+| 기말 타 지역 등록 근무지 | 5,275 | 5,591 |
+| 신규 타지 등록 누계(명회) | 8,420 | 9,168 |
+| 원래 왕복 영수증의 인원 중 신규 타지 등록에 쓰이지 않은 누계(명회) | 8,102 | 9,830 |
+
+검증 시드의 200년 말에는 28,715명 중 5,591명이 주소지 밖 근무지에 등록돼 있었다. 40개 세계를 합치면 누적 신규 등록 17,588에서 해제 1,937, 등록자 사망 4,740, 이주 이탈 45를 빼 기말 타지 소속 10,866이 된다. B와 A_fixed의 경제 해시는 모든 관측 시점에서 같다. A와 A_fixed의 모집 규칙이 만드는 차이는 새 등록 규칙의 경제 효과로 귀속할 수 없다. [50·100·200년 수치·사례·비교 명령](posting-study65.md) · [표본별 집계](../examples/phase6c1-m1/outcomes.json)
+
+시드 0·20의 지역별 경제 자료와 명부, 사례 파일을 별도 과정에서 바이트 단위로 비교했다. 40개 시드의 원본 결산으로 지역별 민간 재고 1,536,000건과 국가별 공공 재고 384,000건도 대조했다. 사무소 소속 명부만 따로 보면 실제 주민 사망과 이주를 바꿔 적어도 기말 총수가 같을 수 있다. 그래서 주민 식사·식량 부족으로 출생·사망을, 실제 이주 영수증으로 전입·전출을 재계산하고 노동 배분도 주소지별로 확인한다. [주민·노동 검산 및 변조 회귀 테스트](../tests/test_posting_engine65.py)
+
+최종 독립 재실행에서는 위 검사를 적용한 B 진입점으로 시드 0~39를 각각 처음부터 200년까지 진행했다. 8,000세계연도를 계산한 뒤 기준 실행의 경제 해시 120개와 등록 근무지 해시 120개를 대조해 240개가 모두 일치했다. 6개 작업 프로세스로 272.069초가 걸렸다. 첫 명령의 중간 파일은 저장소 밖에 뒀고 PR에는 비교를 통과한 확인서를 담았다. [최종 B 반복 확인서](../examples/phase6c1-m1/register-repeat.json)
+
+```text
+python -B -X utf8 -m experiments.repeat_posting_register65 compute --workers 6 --out ../../work/m1-final-register-repeat.json
+python -B -X utf8 -m experiments.repeat_posting_register65 compare --scratch ../../work/m1-final-register-repeat.json --study examples/phase6c1-m1 --out examples/phase6c1-m1/register-repeat.json
+python -B -m unittest discover -v
+```

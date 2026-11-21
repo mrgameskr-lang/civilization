@@ -114,4 +114,3 @@ class PostingBookTests(unittest.TestCase):
                 if corrupt=='invoice': t['assignments']=t1['assignments']
                 with self.assertRaises(ValueError):
                     audit_postings(t,s2,previous=prior)
-
