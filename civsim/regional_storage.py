@@ -96,6 +96,15 @@ def regional_summary(directory, export=None):
                 changed = sum(bool(d["recommendation"]["changed"]) for d in p["countries"])
                 result["different_recommendations"] = result.get("different_recommendations", 0) + changed
                 result["political_switches"] = result.get("political_switches", 0) + (changed if p["feedback"] else 0)
+                opinions = []
+                for region in p["regions"]:
+                    groups = region["closing"]["groups"].values()
+                    members = sum(g["members"] for g in groups)
+                    indices = {k: sum(g["members"]*g[k] for g in groups)/members if members else None
+                               for k in ("support", "discontent")}
+                    opinions.append({"region": region["id"], "owner": region["owner"],
+                                     "observed_members": members, **indices})
+                result["latest_regional_opinion_permille"] = opinions
             result["years"] += 1
             result["final_population"] = sum(r["closing"]["population"] for r in row["regions"])
             result["total_migrants"] += sum(m["people"] for m in row["moves"])

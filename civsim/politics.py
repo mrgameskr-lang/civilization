@@ -5,7 +5,7 @@ from types import SimpleNamespace
 
 from .audit import BalanceError
 from .government import FiscalWorld, _advance_fiscal, fiscal_snapshot, start_government
-from .political_rules import initial_politics, observe, prioritize
+from .political_rules import GROUPS, initial_politics, observe, prioritize
 from .storage import canonical_line
 
 
@@ -77,6 +77,20 @@ def audit_political_states(record, *, previous_record=None):
         initial = SimpleNamespace(regions=[SimpleNamespace(**r["opening"]) for r in areas.values()])
         if opening != initial_politics(initial):
             raise BalanceError("first year must start with neutral political memory")
+    else:
+        for state in opening.values():
+            p = state["population"]
+            groups, evidence = state["groups"], state["evidence"]
+            farm = evidence["labor"]["farm"]
+            industry = evidence["labor"]["mine"] + evidence["labor"]["factory"]
+            members = {"farm": farm, "industry": industry, "consumer": p - farm - industry}
+            if (state["membership_known"] is not True or state["unclassified"] != 0
+                    or set(groups) != set(GROUPS) or p != evidence["food_need"]
+                    or any(type(n) is not int or n < 0 or n != groups[k]["members"] for k, n in members.items())):
+                raise BalanceError("opening interest group sizes disagree with observed labor and residents")
+            for g in groups.values():
+                if any(type(g[k]) is not int or not 0 <= g[k] <= 1000 for k in ("support", "discontent", "pressure")):
+                    raise BalanceError("political index outside its scale")
     if previous_record is not None:
         last = previous_record.get("politics")
         if last is None or last["feedback"] != politics["feedback"] or previous_record["year"]+1 != record["year"]:

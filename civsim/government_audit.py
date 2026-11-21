@@ -105,6 +105,13 @@ def _road_audit(record):
 
 def audit_fiscal_year(record, *, previous_record=None):
     gov = record["government"]
+    if previous_record is not None:
+        _check(("politics" in record) == ("politics" in previous_record), "political ledger missing or introduced mid-run")
+    _check(gov["relief"]["delivered"] == sum(s["quantity"] for s in gov["relief"]["shipments"]),
+           "total relief differs from actual deliveries")
+    for stage in ("works", "relief"):
+        _check(gov[stage]["cost_food"] == sum(s["cost_food"] for s in gov[stage]["shipments"]),
+               "public freight cost differs from shipments")
     regions = _by(record["regions"], "id")
     depots = _by(gov["depots"], "region")
     levies = _by(gov["levies"], "region")

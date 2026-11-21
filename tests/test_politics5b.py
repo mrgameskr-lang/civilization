@@ -56,6 +56,25 @@ class PoliticalIntegrationTests(unittest.TestCase):
         self.assertEqual(a["politics"]["regions"], b["politics"]["regions"])
         self.assertTrue(all(not c["recommendation"]["changed"] for c in a["politics"]["countries"]))
 
+    def test_shadow_record_cannot_drop_observations_or_invent_members(self):
+        sim = start_political(initial())
+        prev = step_political(sim, 1, False)
+        row = step_political(sim, 2, False)
+        dropped = {k:v for k,v in row.items() if k != "politics"}
+        with self.assertRaises(ValueError):
+            audit_fiscal_year(dropped, previous_record=prev)
+        for field in ("unclassified", "members", "relief_total"):
+            forged = deepcopy(row)
+            opening = forged["politics"]["regions"][0]["opening"]
+            if field == "members":
+                opening["groups"]["consumer"][field] += 1000
+            elif field == "unclassified":
+                opening[field] += 1000
+            else:
+                forged["government"]["relief"]["delivered"] += 1
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                audit_fiscal_year(forged)
+
     def test_atomic_publication_and_no_shared_memory_with_returned_ledger(self):
         sim = start_political(initial())
         row = step_political(sim, 1, True)
@@ -80,6 +99,13 @@ class PoliticalIntegrationTests(unittest.TestCase):
                 self.assertEqual(verify_run(path), hashlib.sha256(data.read_bytes()).hexdigest())
                 result = summary(path)
                 self.assertEqual((result["model_version"], result["feedback"]), ("5.0B", enabled))
+                last = json.loads(data.read_bytes().splitlines()[-1])
+                people = result["latest_regional_opinion_permille"]
+                self.assertEqual(sum(r["observed_members"] for r in people),
+                                 sum(r["opening"]["population"] for r in last["regions"]))
+                groups = last["politics"]["regions"][0]["closing"]["groups"].values()
+                self.assertEqual(people[0]["support"],
+                                 sum(g["members"]*g["support"] for g in groups)/people[0]["observed_members"])
                 with self.assertRaises(FileExistsError):
                     write_political_run(path)
                 blob = data.read_bytes()
