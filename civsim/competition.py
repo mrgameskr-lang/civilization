@@ -4,7 +4,7 @@ from dataclasses import dataclass, replace
 from types import SimpleNamespace
 
 from .audit import BalanceError
-from .competition_rules import FACTIONS, SEATS, cabinet_plan, elect, initial_cabinets
+from .competition_rules import FACTIONS, SEATS, TERM, cabinet_plan, elect, initial_cabinets
 from .government import _advance_fiscal
 from .political_rules import prioritize
 from .politics import PoliticalWorld, political_snapshot, start_political
@@ -149,8 +149,13 @@ def audit_cabinets(record, previous_record=None):
             raise BalanceError("government history does not match last year")
     states = {r["id"]: r["opening"] for r in record["politics"]["regions"]}
     expected = _prepare(record["year"], states, prior, ctx["arm"], ctx["tax_policy"], ctx["kept_incumbent"])
+    past_elections = max(0, (record["year"] - 2) // TERM) if ctx["arm"] in ("C", "D") else 0
+    last_election = 1 + TERM * past_elections if past_elections else 0
     for c in expected["countries"]:
         actual = countries[c["id"]]
+        if (actual["opening"]["elections"] != past_elections
+                or actual["opening"]["last_election"] != last_election):
+            raise BalanceError("cabinet history differs from the election calendar")
         if actual["election"] is not None:
             _audit_ballot_totals(actual["election"], states)
         if any(c[k] != actual[k] for k in ("opening", "closing", "election", "governing_faction", "tariff")):

@@ -76,6 +76,16 @@ class CompetitionIntegrationTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     audit_fiscal_year(current, previous_record=damaged)
 
+    def test_standalone_year_rejects_shifted_election_counts(self):
+        sim = start_competition(world())
+        for year in range(1, 7):
+            row = step_competition(sim, year, "C")
+        cabinet = row["competition"]["countries"][0]
+        for endpoint in ("opening", "closing"):
+            cabinet[endpoint]["elections"] += 100
+        with self.assertRaisesRegex(ValueError, "calendar"):
+            audit_fiscal_year(row)
+
     def test_counterfactual_tax_preserves_openings_election_and_source(self):
         sim = start_competition(world())
         for y in range(1, 5):

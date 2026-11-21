@@ -1,4 +1,6 @@
 from copy import deepcopy
+from pathlib import Path
+from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
 
@@ -6,6 +8,7 @@ from civsim.competition_rules import FACTIONS, cabinet_plan, differentiated_obse
 from civsim.fiscal_policy import ACTIONS, decide
 from civsim.political_rules import initial_politics, prioritize
 from tests.test_political_rules import goods, sample
+from experiments.preferences5c import _blank, _record, run
 
 
 def fixture():
@@ -31,6 +34,32 @@ def single_issue(world, issue, *, support=500):
 
 
 class CompetitionRulesTests(unittest.TestCase):
+    def test_diagnostics_publish_readable_output_once(self):
+        with TemporaryDirectory() as tmp:
+            path = Path(tmp,"fixed-path.json")
+            result = run(path,seeds=1,years=1,workers=1)
+            self.assertEqual(result["totals"]["physical"]["region_years"],32)
+            first = path.read_bytes()
+            with self.assertRaises(FileExistsError):
+                run(path,seeds=1,years=1,workers=1)
+            self.assertEqual(path.read_bytes(),first)
+
+    def test_fixed_physical_path_uses_people_for_demands_and_unweighted_colocated_pairs(self):
+        w,r=fixture()
+        state=differentiated_observe(r,initial_politics(w))[0]
+        legacy=deepcopy(state)
+        for g in legacy["groups"].values():
+            g["demand"]="relief"
+        state["groups"]["farm"]["demand"]="soil"
+        state["groups"]["industry"]["demand"]="road"
+        state["groups"]["consumer"]["demand"]="none"
+        stats=_blank()
+        _record(stats,legacy,state)
+        self.assertEqual(stats["groups"]["farm"]["changed_member_years"],25)
+        self.assertEqual(stats["groups"]["consumer"]["member_years"],55)
+        self.assertEqual((stats["pairs"]["all"],stats["pairs"]["legacy_different"],
+                          stats["pairs"]["revised_different"],stats["pairs"]["revised_expressed_different"]),(3,0,3,1))
+
     def test_physical_bottlenecks_and_different_groups_in_same_region(self):
         w,r = fixture()
         n = r["regions"][0]
@@ -102,6 +131,21 @@ class CompetitionRulesTests(unittest.TestCase):
         for s in states.values(): s["groups"]["consumer"]["support"]=100
         _,bad=elect(9,states,c)
         self.assertGreater(good[0]["vote_points"]["builders"],bad[0]["vote_points"]["builders"])
+
+    def test_equal_seats_retain_incumbent_with_an_empty_region(self):
+        w,_ = fixture()
+        w.regions[0].population,w.regions[1].population = 300,0
+        states = initial_politics(w)
+        for name,action in (("farm","soil"),("industry","road"),("consumer","relief")):
+            g = states[0]["groups"][name]
+            g["members"] = 100
+            g["signals"][action] = 1000
+        cabinets = initial_cabinets(w)
+        cabinets[0]["incumbent"]="mutualists"
+        new,trace = elect(9,states,cabinets)
+        self.assertEqual(trace[0]["seats"],{"stewards":7,"builders":7,"mutualists":7,"restraint":0})
+        self.assertEqual((new[0]["incumbent"],trace[0]["turnover"]),("mutualists",False))
+        self.assertEqual(trace[0]["abstention_points"],0)
 
     def test_only_d_can_pay_a_capped_real_loss_with_a_graded_mandate(self):
         w,_=fixture()
