@@ -18,12 +18,17 @@ def audit_meal_custody(record):
     relief = _by(record["government"]["relief"]["nodes"], "id")
     _check(regions.keys() == freight.keys() == duties.keys() == levies.keys() == relief.keys(), "different meal accounts")
     movement = record["unit_game"]["receipt"]
+    issues = _by(record.get("unit_upkeep", {}).get("groups", []), "location")
+    _check(issues.keys() <= regions.keys(), "unknown depot in local inventory issue")
     receipts = []
     for home, region in sorted(regions.items()):
         node, duty = freight[home], duties[home]
         public = levies[home]["depot_close"].copy()
         if movement and movement["ok"] and movement["source"]==home:
             public["food"] -= _quantity(movement["food_spent"])
+        if home in issues:
+            for good in ("food", "tools"):
+                public[good] -= _quantity(issues[home][good])
         _check(all(_quantity(public[g]) == relief[home]["depot_open"][g] for g in GOODS),
                "public custody after movement differs from the opening for relief")
         issued = _quantity(duty["ration_food"])

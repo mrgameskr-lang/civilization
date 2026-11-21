@@ -30,6 +30,7 @@ class SupplyWorld:
     arm: str | None = None
     roster: dict | None = None
     unit_positions: tuple | None = None
+    game_upkeep: dict | None = None
 
     @property
     def world(self):
@@ -46,11 +47,14 @@ def snapshot62(sim):
         return base
     if sim.unit_positions is not None:
         base = {**base, "unit_positions":[list(row) for row in sim.unit_positions]}
+    if sim.game_upkeep is not None:
+        base = {**base, "game_upkeep":deepcopy(sim.game_upkeep)}
     return {**base, "public_arm":sim.arm,
             "service_roster":[[i,n] for i,n in sorted((sim.roster or {}).items())]}
 
 
-def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None, unit_input=None):
+def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None,
+             unit_input=None, upkeep=None):
     ctx = _context(sim.engine, year, _mode('F'), None)
     collective = sim.engine.collective
     race = collective.competition
@@ -106,9 +110,14 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     audit_borders(local,trial.borders,market,produced,{r.id:(r.stock.copy(),r.cash) for r in local})
     levies = collect_civic(local,depots,decisions,civic)
     after_move = residual
+    kit = None
     if unit_turn is not None:
         after_move = residual.copy()
         apply_move(unit_turn,service,roads,depots,after_move)
+        if upkeep is not None:
+            from .unit_upkeep import settle
+            previous = sim.game_upkeep["closing"] if sim.game_upkeep is not None else None
+            kit = settle(upkeep, previous, unit_turn, service, depots)
     admin = {r["id"]:r["admin_remaining"] for r in civic["responses"]}
     relief,left = execute_relief(local,roads,depots,decisions,after_move,admin,width=trial.width)
     freight = ship(local,residual_roads(roads,left),"limited",width=trial.width)
@@ -123,6 +132,9 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
         program.close_service(service, vital)
     if unit_turn is not None:
         close_turn(unit_turn, service)
+        if kit is not None:
+            from .unit_upkeep import close
+            close(kit, unit_turn, service)
     warehouses = []
     for r in local:
         remaining = depots[r.id]
@@ -162,6 +174,9 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     if unit_turn is not None:
         record["public_policy"]["unit_rule"] = unit_turn["version"]
         record["unit_game"] = unit_turn
+    if kit is not None:
+        record["public_policy"]["upkeep_rule"] = kit["version"]
+        record["unit_upkeep"] = kit
     gov["accounts"] = accounts62(record,decisions)
     record["competition"] = election
     record["politics"] = political_ledger(record,states,recommendations,True)
@@ -183,8 +198,14 @@ def _require(sim, year, arm):
     _check(sim.arm is None or sim.arm == arm, "cannot switch policy during a trajectory")
 
 
-def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None):
+def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None):
     _require(sim, year, arm)
+    if sim.game_upkeep is not None:
+        from .unit_upkeep import Upkeep
+        carried = Upkeep(**sim.game_upkeep["selection"])
+        _check(upkeep is None or upkeep == carried, "cannot replace marked pieces mid-game")
+        upkeep = carried
+    _check(upkeep is None or unit_input is not None, "inventory checkout requires game locations")
     if sim.unit_positions is not None:
         _check(unit_input is not None and unit_input[0]==[list(row) for row in sim.unit_positions],
                "use the previous closing unit positions")
@@ -193,7 +214,7 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None):
     if arm == "A":
         record = step61(sim.engine, year, "F")
     else:
-        fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input)
+        fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input, upkeep=upkeep)
         pairs = {(p["a"],p["b"]):deepcopy(p["closing"]) for p in record["diplomacy"]["pairs"]}
         _commit_collective(sim.engine.collective, fiscal, record)
         sim.engine.pairs, sim.engine.arm = pairs, "F"
@@ -201,6 +222,8 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None):
             sim.roster = {r["id"]:r["closing_roster"] for r in record["service"]["regions"]}
         if unit_input is not None:
             sim.unit_positions = tuple(tuple(row) for row in record["unit_game"]["closing_away"])
+        if upkeep is not None:
+            sim.game_upkeep = {k:deepcopy(record["unit_upkeep"][k]) for k in ("selection","closing")}
     sim.arm = arm
     return record
 

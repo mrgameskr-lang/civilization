@@ -17,14 +17,24 @@ def create(seed):
 
 
 def play(game, command):
-    record = step_game(game, None if command is None else Move(**command))
+    selection = None
+    if isinstance(command, dict) and "upkeep" in command:
+        from .unit_upkeep import Upkeep
+        if command.keys() != {"upkeep", "move"}:
+            raise ValueError("invalid game inventory command")
+        selection = Upkeep(**command["upkeep"])
+        command = command["move"]
+    record = step_game(game, None if command is None else Move(**command), upkeep=selection)
     # Historical annual records contain tuples and integer keys. Use exactly
     # their published JSON representation at the journal boundary.
     return json.loads(canonical_line(record))
 
 
-def save(path, journal, away):
-    save_json_slot(path,{"schema":"annual-game/1","journal":journal,"closing_away":away})
+def save(path, journal, away, upkeep=None):
+    slot = {"schema":"annual-game/1","journal":journal,"closing_away":away}
+    if upkeep is not None:
+        slot.update(schema="annual-game/2", game_upkeep=upkeep)
+    save_json_slot(path,slot)
 
 
 def load(path, *, observer=None):
@@ -38,11 +48,16 @@ def load(path, *, observer=None):
     if isinstance(slot,dict) and slot.get("schema")=="game-journal/1":
         # Early replay-only slots published with this branch.
         return slot, restore_journal(slot,create,replay_step)
-    if type(slot) is not dict or slot.keys()!={"schema","journal","closing_away"} or slot["schema"]!="annual-game/1":
+    fields = {"schema","journal","closing_away"}
+    schemas = {"annual-game/1":fields, "annual-game/2":fields | {"game_upkeep"}}
+    if type(slot) is not dict or slot.keys() != schemas.get(slot.get("schema")):
         raise ValueError("invalid annual game save")
     game = restore_journal(slot["journal"],create,replay_step)
     if canonical_line(slot["closing_away"])!=canonical_line(game.away):
         raise ValueError("saved locations disagree with the replayed closing ledger")
+    if (("game_upkeep" in slot) != (game.economy.game_upkeep is not None)
+            or canonical_line(slot.get("game_upkeep")) != canonical_line(game.economy.game_upkeep)):
+        raise ValueError("saved game inventory disagrees with replay")
     return slot["journal"], game
 
 
@@ -55,6 +70,8 @@ def main(argv=None):
     advance = commands.add_parser("step",help="play the next annual economy with an optional one-edge move")
     advance.add_argument("save",type=Path)
     advance.add_argument("--move",nargs=4,type=int,metavar=("HOME","FROM","TO","COUNT"))
+    advance.add_argument("--upkeep", nargs=2, type=int, metavar=("HOME","COUNT"),
+                         help="mark up to two existing game pieces for local inventory checkout each turn")
     advance.add_argument("--out",type=Path,required=True)
     show = commands.add_parser("show",help="replay and check a save")
     show.add_argument("save",type=Path)
@@ -73,13 +90,20 @@ def main(argv=None):
             journal, game = load(args.save,observer=observer)
             if args.action == "show":
                 result = {"seed":journal["seed"],"year":game.economy.world.year,"closing_away":game.away}
+                if game.economy.game_upkeep is not None:
+                    result["game_upkeep"] = game.economy.game_upkeep
                 if observer is not None:
                     result["custody"] = observer.latest
             else:
                 command = asdict(Move(*args.move)) if args.move is not None else None
+                if args.upkeep is not None:
+                    from .unit_upkeep import Upkeep
+                    command = {"move":command, "upkeep":asdict(Upkeep(*args.upkeep))}
                 row = play(game,command)
-                save(args.out,append_turn(journal,command,row),game.away)
+                save(args.out,append_turn(journal,command,row),game.away,game.economy.game_upkeep)
                 result = {"year":row["year"],**row["unit_game"]}
+                if "unit_upkeep" in row:
+                    result["unit_upkeep"] = row["unit_upkeep"]
         print(json.dumps(result,sort_keys=True))
     except (ValueError,OSError,TypeError) as exc:
         parser.exit(2,f"{parser.prog}: {exc}\n")
