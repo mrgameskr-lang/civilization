@@ -204,4 +204,4 @@ python -B -m experiments.collective_forks5d --study examples/phase5d/study/dev -
 
 각 표본의 `events.csv.gz`에 발생한 모든 행동 집단·연도의 조건, 참여, 회차 길이, 대응, 사후 지표, 재화별 기준 부과·감면·미납·실납이 있다. `actions.csv`는 무발생 조합까지 포함한 유형별 집계다. `responses.csv`는 정부 대응, `regions.csv`·`countries.csv`는 지역·국가별 결과, `runs.csv`·`paired.csv`는 세계별 수준과 짝 차이다. 지수는 모형의 관측 규칙에서 계산한 값이며, 참여자 개인을 추적하거나 현실의 실제 행동 확률을 추정하지 않는다. [개발 데이터](../examples/phase5d/study/dev) · [독립 검증 데이터](../examples/phase5d/study/holdout)
 
-표준 시드 40개 모두에서 행동이 관측됐다. 별도의 저밀도 초기 조건에서 행동이 없을 수 있는지 검사한 결과와 연간 국가별 상세 재정·정치 지표를 함께 제공한다. [실행 기록과 저밀도 조건](phase5d-run.md) · [연간 국가 원장](../examples/phase5d/country-years)
+표준 시드 40개 모두에서 행동이 관측됐다. 별도의 저밀도 초기 조건에서 행동이 없을 수 있는지 검사한 결과와 연간 국가별 상세 재정·정치 지표를 함께 제공한다. [실행 기록과 저밀도 조건](phase5d-run.md) · [개발 연간 국가 원장](../examples/phase5d/country-years/dev.csv.gz) · [독립 검증 연간 국가 원장](../examples/phase5d/country-years/holdout.csv.gz)
