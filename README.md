@@ -14,6 +14,8 @@
 
 5.0B는 5.0A 통합 재정에서 실제 집행된 구호·산업 부담·공공사업과 식량 사정을 지역 집단별로 관측한다. `python -m civsim politics --feedback on`은 그 기억을 다음 해 정책 순위에 반영하며, `off`는 같은 정치 지표를 관찰하면서 5.0A 경제 경로를 재생한다. [지역 정치 상태와 실행 방법](docs/phase5b.md) · [수식](docs/political-rules.md) · [검증 결과와 반례](docs/phase5b-results.md)
 
+5.0C는 생산·소비·납세 원장에서 지역별 정책 선호를 계산한다. 대표 의회의 선거 결과가 기존 예산을 승인할 내각을 결정한다. [실행과 원장 읽기](docs/phase5c.md) · [선호·선거·정부 수식](docs/competition-rules.md) · [비교 실험](docs/phase5c-results.md) · [같은 연초의 실제 정권 교체 사례](docs/competition-forks5c.md)
+
 ## 실행
 
 Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용한다. 런타임과 테스트는 모두 표준 라이브러리를 사용한다.
