@@ -1,0 +1,1269 @@
+{
+  "archived_reference_checkpoints_matched": 12,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "model": "5C C fixed taxes, seven election specifications, endogenous economics and politics",
+  "sample": "development seeds 0–3",
+  "settings": [
+    {
+      "name": "reference",
+      "performance": true,
+      "seats": 21,
+      "table": 0,
+      "term": 4
+    },
+    {
+      "name": "term2",
+      "performance": true,
+      "seats": 21,
+      "table": 0,
+      "term": 2
+    },
+    {
+      "name": "term8",
+      "performance": true,
+      "seats": 21,
+      "table": 0,
+      "term": 8
+    },
+    {
+      "name": "seats5",
+      "performance": true,
+      "seats": 5,
+      "table": 0,
+      "term": 4
+    },
+    {
+      "name": "seats101",
+      "performance": true,
+      "seats": 101,
+      "table": 0,
+      "term": 4
+    },
+    {
+      "name": "exchange_platform",
+      "performance": true,
+      "seats": 21,
+      "table": 1,
+      "term": 4
+    },
+    {
+      "name": "no_performance",
+      "performance": false,
+      "seats": 21,
+      "table": 0,
+      "term": 4
+    }
+  ],
+  "trials": [
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4615063,
+          "food_unmet": 327075,
+          "installations": 8,
+          "participation_points": 87204336,
+          "population": 103716,
+          "turnovers": 41,
+          "vote_mutualists": 66947648,
+          "year": 50,
+          "years_sha256": "42a9e2926768f46d6f99ef8dbe5fff772b9e86f21a566eace38a7ae486ca6210"
+        },
+        {
+          "elections": 192,
+          "food_need": 10178012,
+          "food_unmet": 928457,
+          "installations": 8,
+          "participation_points": 215404568,
+          "population": 109773,
+          "turnovers": 68,
+          "vote_mutualists": 174057841,
+          "year": 100,
+          "years_sha256": "3b848df03e7027dd67f974d1c5ca2138c979a9fc0dd67bc27277476c7e81face"
+        },
+        {
+          "elections": 392,
+          "food_need": 21539945,
+          "food_unmet": 2209253,
+          "installations": 8,
+          "participation_points": 506951635,
+          "population": 114820,
+          "turnovers": 115,
+          "vote_mutualists": 416395893,
+          "year": 200,
+          "years_sha256": "16f8febf4fd556414d25b4446a9a6bbbc2922353128bed5d7bb99bafd6e988e3"
+        }
+      ],
+      "initial_sha256": "5f98b84d15b774c5cbe877ba996d3d6317d461e2105c40f29820f9c363b40766",
+      "seed": 0,
+      "variant": "reference"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 192,
+          "food_need": 4615518,
+          "food_unmet": 327046,
+          "installations": 8,
+          "participation_points": 171390704,
+          "population": 103728,
+          "turnovers": 51,
+          "vote_mutualists": 129377092,
+          "year": 50,
+          "years_sha256": "9f719f1ff076e0d6a52d557fef933ff6d896c48fa366b4f497f51f010b2d6f74"
+        },
+        {
+          "elections": 392,
+          "food_need": 10178881,
+          "food_unmet": 929022,
+          "installations": 8,
+          "participation_points": 449573473,
+          "population": 109683,
+          "turnovers": 96,
+          "vote_mutualists": 361012555,
+          "year": 100,
+          "years_sha256": "401a7da1f9533ade42c0b41ef2f2930b780c71a0f866c2dd9319ea50e8df275f"
+        },
+        {
+          "elections": 792,
+          "food_need": 21538997,
+          "food_unmet": 2208611,
+          "installations": 8,
+          "participation_points": 1032437359,
+          "population": 114844,
+          "turnovers": 167,
+          "vote_mutualists": 847588193,
+          "year": 200,
+          "years_sha256": "f601363648b751af986b264071566d913060ed8baeeab753eb326bf9f0e3b392"
+        }
+      ],
+      "initial_sha256": "5f98b84d15b774c5cbe877ba996d3d6317d461e2105c40f29820f9c363b40766",
+      "seed": 0,
+      "variant": "term2"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 48,
+          "food_need": 4615536,
+          "food_unmet": 327160,
+          "installations": 8,
+          "participation_points": 45617130,
+          "population": 103709,
+          "turnovers": 25,
+          "vote_mutualists": 37809544,
+          "year": 50,
+          "years_sha256": "85c381070110da973e9e6464056b30d95afeb16b8bb17fdf420b0ef430ed0246"
+        },
+        {
+          "elections": 96,
+          "food_need": 10175065,
+          "food_unmet": 928900,
+          "installations": 8,
+          "participation_points": 110118020,
+          "population": 109656,
+          "turnovers": 49,
+          "vote_mutualists": 93918086,
+          "year": 100,
+          "years_sha256": "f16fcad44dfe07cbe7f9e021e4b5c4aded504d7268a1fab48ed7662cae5016f5"
+        },
+        {
+          "elections": 192,
+          "food_need": 21535205,
+          "food_unmet": 2208578,
+          "installations": 8,
+          "participation_points": 243883847,
+          "population": 114813,
+          "turnovers": 87,
+          "vote_mutualists": 209777129,
+          "year": 200,
+          "years_sha256": "f56d351ee758b8c018700742d6555e9213c2b29a4cab2fb3d29b9fbf1eba944c"
+        }
+      ],
+      "initial_sha256": "5f98b84d15b774c5cbe877ba996d3d6317d461e2105c40f29820f9c363b40766",
+      "seed": 0,
+      "variant": "term8"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4615063,
+          "food_unmet": 327075,
+          "installations": 8,
+          "participation_points": 87204336,
+          "population": 103716,
+          "turnovers": 41,
+          "vote_mutualists": 66947648,
+          "year": 50,
+          "years_sha256": "4d029f64c7c20a63eca34da1ebac7fc0cc9086971b833ae78a55ae9160c5fc7a"
+        },
+        {
+          "elections": 192,
+          "food_need": 10178012,
+          "food_unmet": 928457,
+          "installations": 8,
+          "participation_points": 215404568,
+          "population": 109773,
+          "turnovers": 66,
+          "vote_mutualists": 173743769,
+          "year": 100,
+          "years_sha256": "f2037c2a7cb69c00b80ebc88cbc41095f9f57889f7952640eb7d9c51fd22e574"
+        },
+        {
+          "elections": 392,
+          "food_need": 21539945,
+          "food_unmet": 2209253,
+          "installations": 8,
+          "participation_points": 506951635,
+          "population": 114820,
+          "turnovers": 113,
+          "vote_mutualists": 416236879,
+          "year": 200,
+          "years_sha256": "e8892cc16141a91234081565c9f4b464967a6aa36d425deab5ccd710503ee896"
+        }
+      ],
+      "initial_sha256": "5f98b84d15b774c5cbe877ba996d3d6317d461e2105c40f29820f9c363b40766",
+      "seed": 0,
+      "variant": "seats5"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4615063,
+          "food_unmet": 327075,
+          "installations": 8,
+          "participation_points": 87204336,
+          "population": 103716,
+          "turnovers": 41,
+          "vote_mutualists": 66947648,
+          "year": 50,
+          "years_sha256": "f35a5dfec824111e70c4ebecb550776a5bb40438cf1aa474d146862723706e49"
+        },
+        {
+          "elections": 192,
+          "food_need": 10178012,
+          "food_unmet": 928457,
+          "installations": 8,
+          "participation_points": 215404568,
+          "population": 109773,
+          "turnovers": 68,
+          "vote_mutualists": 174057841,
+          "year": 100,
+          "years_sha256": "db6bb7b355aa1ae1373dfefd6d65904840d646353948b84966af380f8f06526e"
+        },
+        {
+          "elections": 392,
+          "food_need": 21539945,
+          "food_unmet": 2209253,
+          "installations": 8,
+          "participation_points": 506951635,
+          "population": 114820,
+          "turnovers": 115,
+          "vote_mutualists": 416395893,
+          "year": 200,
+          "years_sha256": "97ffe021d623a2087f0ef2e2374f32665bd3aa7de84f9ab089f780a1a2fd6237"
+        }
+      ],
+      "initial_sha256": "5f98b84d15b774c5cbe877ba996d3d6317d461e2105c40f29820f9c363b40766",
+      "seed": 0,
+      "variant": "seats101"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4614451,
+          "food_unmet": 327416,
+          "installations": 8,
+          "participation_points": 87204306,
+          "population": 103660,
+          "turnovers": 49,
+          "vote_mutualists": 51493046,
+          "year": 50,
+          "years_sha256": "44db5e9d7a1ffcf436086252789b7ca9b14d6874713057e12c68607ac5e167a2"
+        },
+        {
+          "elections": 192,
+          "food_need": 10177851,
+          "food_unmet": 928629,
+          "installations": 8,
+          "participation_points": 215414859,
+          "population": 109745,
+          "turnovers": 86,
+          "vote_mutualists": 130800715,
+          "year": 100,
+          "years_sha256": "1875d02c039ac15d90d7fb427a35fec2cca99fa4a639835648543b510309cee3"
+        },
+        {
+          "elections": 392,
+          "food_need": 21542296,
+          "food_unmet": 2209311,
+          "installations": 8,
+          "participation_points": 507444138,
+          "population": 114820,
+          "turnovers": 188,
+          "vote_mutualists": 300939344,
+          "year": 200,
+          "years_sha256": "f739ce55c00dec330c078b8d752d1b10da09df1d85d8f629070b43abd8151eb4"
+        }
+      ],
+      "initial_sha256": "5f98b84d15b774c5cbe877ba996d3d6317d461e2105c40f29820f9c363b40766",
+      "seed": 0,
+      "variant": "exchange_platform"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4614767,
+          "food_unmet": 327070,
+          "installations": 8,
+          "participation_points": 87184373,
+          "population": 103716,
+          "turnovers": 33,
+          "vote_mutualists": 74655606,
+          "year": 50,
+          "years_sha256": "0a7d74b16537e5b34ef5d05f590aba25cda49e675e729fb923f8170644f61a40"
+        },
+        {
+          "elections": 192,
+          "food_need": 10176310,
+          "food_unmet": 928636,
+          "installations": 8,
+          "participation_points": 215492102,
+          "population": 109710,
+          "turnovers": 47,
+          "vote_mutualists": 198973230,
+          "year": 100,
+          "years_sha256": "f15d7a6bfd1f131234f4f26dc7a9751e1b52d917535edcb2048edf2ab10f7e73"
+        },
+        {
+          "elections": 392,
+          "food_need": 21538773,
+          "food_unmet": 2208580,
+          "installations": 8,
+          "participation_points": 507097383,
+          "population": 114839,
+          "turnovers": 67,
+          "vote_mutualists": 483714128,
+          "year": 200,
+          "years_sha256": "6759884a79eb8a24f0f2fdd0d211f83cef1e915a590e06e89a6a8266dfa9559e"
+        }
+      ],
+      "initial_sha256": "5f98b84d15b774c5cbe877ba996d3d6317d461e2105c40f29820f9c363b40766",
+      "seed": 0,
+      "variant": "no_performance"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4934017,
+          "food_unmet": 268986,
+          "installations": 8,
+          "participation_points": 73313488,
+          "population": 116162,
+          "turnovers": 33,
+          "vote_mutualists": 57180437,
+          "year": 50,
+          "years_sha256": "c8bff4dfd97bc5813a992fbbb95e7c94b2dbb79381ca0808200b59d969040b46"
+        },
+        {
+          "elections": 192,
+          "food_need": 11137924,
+          "food_unmet": 941043,
+          "installations": 8,
+          "participation_points": 218790881,
+          "population": 122679,
+          "turnovers": 58,
+          "vote_mutualists": 181462529,
+          "year": 100,
+          "years_sha256": "2bd4e1492d8d4abde817c04093b61af811285124b5005287f3fc5b9cda648305"
+        },
+        {
+          "elections": 392,
+          "food_need": 23719074,
+          "food_unmet": 2357997,
+          "installations": 8,
+          "participation_points": 536134715,
+          "population": 128440,
+          "turnovers": 101,
+          "vote_mutualists": 451507251,
+          "year": 200,
+          "years_sha256": "5575e48011f6be38747d24ff73dd25961b5413d6c4409b89f288195939762ae5"
+        }
+      ],
+      "initial_sha256": "000819634f790f324efd9a2de21c55988313eb875787822b8201f24373945887",
+      "seed": 1,
+      "variant": "reference"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 192,
+          "food_need": 4935747,
+          "food_unmet": 269795,
+          "installations": 8,
+          "participation_points": 142376303,
+          "population": 116081,
+          "turnovers": 44,
+          "vote_mutualists": 107486516,
+          "year": 50,
+          "years_sha256": "6952db5ca0718a1fa3077376aa0db76f7e6cc1c5c3b23f4da1ca8c0e57c06a6c"
+        },
+        {
+          "elections": 392,
+          "food_need": 11138526,
+          "food_unmet": 940592,
+          "installations": 8,
+          "participation_points": 448034193,
+          "population": 122751,
+          "turnovers": 82,
+          "vote_mutualists": 365904017,
+          "year": 100,
+          "years_sha256": "844e2b4e803679a37b912dbe1b99df9105c94578ddbe69de59816b1b45247285"
+        },
+        {
+          "elections": 792,
+          "food_need": 23728649,
+          "food_unmet": 2358760,
+          "installations": 8,
+          "participation_points": 1086651985,
+          "population": 128462,
+          "turnovers": 134,
+          "vote_mutualists": 906389719,
+          "year": 200,
+          "years_sha256": "d1191c29df343c0f25f39f777a14ce267d7a3e23f818f5f500c179e0875e0ae4"
+        }
+      ],
+      "initial_sha256": "000819634f790f324efd9a2de21c55988313eb875787822b8201f24373945887",
+      "seed": 1,
+      "variant": "term2"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 48,
+          "food_need": 4938634,
+          "food_unmet": 269407,
+          "installations": 8,
+          "participation_points": 39059972,
+          "population": 116153,
+          "turnovers": 26,
+          "vote_mutualists": 30737622,
+          "year": 50,
+          "years_sha256": "8b091f3b0da723f8233be98be2e6861492b4bbd18cf3dcf510b6732e09add5ab"
+        },
+        {
+          "elections": 96,
+          "food_need": 11145294,
+          "food_unmet": 941009,
+          "installations": 8,
+          "participation_points": 111491831,
+          "population": 122782,
+          "turnovers": 40,
+          "vote_mutualists": 95526477,
+          "year": 100,
+          "years_sha256": "74488579ab5222b13849a1eea966164a9bbb128680e77d9c2d0521d3e3027385"
+        },
+        {
+          "elections": 192,
+          "food_need": 23736899,
+          "food_unmet": 2359346,
+          "installations": 8,
+          "participation_points": 263540576,
+          "population": 128468,
+          "turnovers": 74,
+          "vote_mutualists": 230676971,
+          "year": 200,
+          "years_sha256": "5d2b83e060f84e899d79a9cbd6d051b34dd760245a303b19a4bb7d582f071c7a"
+        }
+      ],
+      "initial_sha256": "000819634f790f324efd9a2de21c55988313eb875787822b8201f24373945887",
+      "seed": 1,
+      "variant": "term8"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4934243,
+          "food_unmet": 269014,
+          "installations": 8,
+          "participation_points": 73308598,
+          "population": 116162,
+          "turnovers": 32,
+          "vote_mutualists": 56756786,
+          "year": 50,
+          "years_sha256": "9c896acc86214997d3958213d6a777a414aec8645ec377675e58942876a01cf1"
+        },
+        {
+          "elections": 192,
+          "food_need": 11138724,
+          "food_unmet": 940974,
+          "installations": 8,
+          "participation_points": 219022931,
+          "population": 122695,
+          "turnovers": 56,
+          "vote_mutualists": 181308626,
+          "year": 100,
+          "years_sha256": "93af2394a073f80e91aa674f11f8c1fbd4dec3dae12eefd7503a24902e386822"
+        },
+        {
+          "elections": 392,
+          "food_need": 23720888,
+          "food_unmet": 2358052,
+          "installations": 8,
+          "participation_points": 536898385,
+          "population": 128450,
+          "turnovers": 99,
+          "vote_mutualists": 451361433,
+          "year": 200,
+          "years_sha256": "e9b6dcb3ae589e60df522d98329c810c26590838ce5821aa1e91d06db4ed42d4"
+        }
+      ],
+      "initial_sha256": "000819634f790f324efd9a2de21c55988313eb875787822b8201f24373945887",
+      "seed": 1,
+      "variant": "seats5"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4934017,
+          "food_unmet": 268986,
+          "installations": 8,
+          "participation_points": 73313488,
+          "population": 116162,
+          "turnovers": 33,
+          "vote_mutualists": 57180437,
+          "year": 50,
+          "years_sha256": "377760b593fe5e2fa256678bc5d257c2ca03e3cd5ea6ecaabd44dcf57e73d4c1"
+        },
+        {
+          "elections": 192,
+          "food_need": 11137924,
+          "food_unmet": 941043,
+          "installations": 8,
+          "participation_points": 218790881,
+          "population": 122679,
+          "turnovers": 58,
+          "vote_mutualists": 181462529,
+          "year": 100,
+          "years_sha256": "a5d3063a68af61e018f5af8951180bd6aec8a66b068ed3f8b74ff2e3913ddaa6"
+        },
+        {
+          "elections": 392,
+          "food_need": 23719074,
+          "food_unmet": 2357997,
+          "installations": 8,
+          "participation_points": 536134715,
+          "population": 128440,
+          "turnovers": 101,
+          "vote_mutualists": 451507251,
+          "year": 200,
+          "years_sha256": "470aad69e500a7d140d721f58b4b38bae0763fcbc45aa77f3e506317220cfaeb"
+        }
+      ],
+      "initial_sha256": "000819634f790f324efd9a2de21c55988313eb875787822b8201f24373945887",
+      "seed": 1,
+      "variant": "seats101"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4933626,
+          "food_unmet": 268721,
+          "installations": 8,
+          "participation_points": 72898220,
+          "population": 116190,
+          "turnovers": 35,
+          "vote_mutualists": 41481036,
+          "year": 50,
+          "years_sha256": "bcd5139093d528b087778f0ae3e053c5bfac094d37878db6e37c6c1a2f681e99"
+        },
+        {
+          "elections": 192,
+          "food_need": 11141514,
+          "food_unmet": 941167,
+          "installations": 8,
+          "participation_points": 218182165,
+          "population": 122716,
+          "turnovers": 74,
+          "vote_mutualists": 129560790,
+          "year": 100,
+          "years_sha256": "9ee1ea23f4fe27f173e59259a97cdd75e05d0c44f8321f519059a781ba1bfd9e"
+        },
+        {
+          "elections": 392,
+          "food_need": 23724328,
+          "food_unmet": 2358970,
+          "installations": 8,
+          "participation_points": 536185769,
+          "population": 128379,
+          "turnovers": 170,
+          "vote_mutualists": 316955301,
+          "year": 200,
+          "years_sha256": "221040be4f54d1b4264c96ffa050e186cea101c82ef0f3744c005849c326ceb3"
+        }
+      ],
+      "initial_sha256": "000819634f790f324efd9a2de21c55988313eb875787822b8201f24373945887",
+      "seed": 1,
+      "variant": "exchange_platform"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4934017,
+          "food_unmet": 268986,
+          "installations": 8,
+          "participation_points": 73313488,
+          "population": 116162,
+          "turnovers": 30,
+          "vote_mutualists": 60681898,
+          "year": 50,
+          "years_sha256": "12947a46bbb96ae6035fcef3a4d593e4fca5ac3ddb9bf93c3d5c5066df969790"
+        },
+        {
+          "elections": 192,
+          "food_need": 11138780,
+          "food_unmet": 940669,
+          "installations": 8,
+          "participation_points": 218742212,
+          "population": 122745,
+          "turnovers": 44,
+          "vote_mutualists": 202143830,
+          "year": 100,
+          "years_sha256": "43ded72773b70857de01d9b300333606f759a9c4d48bd3e87685a551bfbc6bbc"
+        },
+        {
+          "elections": 392,
+          "food_need": 23724409,
+          "food_unmet": 2358536,
+          "installations": 8,
+          "participation_points": 536321410,
+          "population": 128457,
+          "turnovers": 74,
+          "vote_mutualists": 512866353,
+          "year": 200,
+          "years_sha256": "9e629b24a9c1ecf2337a1ffe7e46d6c339500c722b037abfc346a007457902d8"
+        }
+      ],
+      "initial_sha256": "000819634f790f324efd9a2de21c55988313eb875787822b8201f24373945887",
+      "seed": 1,
+      "variant": "no_performance"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 5156389,
+          "food_unmet": 324342,
+          "installations": 8,
+          "participation_points": 88550268,
+          "population": 119339,
+          "turnovers": 22,
+          "vote_mutualists": 68416524,
+          "year": 50,
+          "years_sha256": "e97b81f7fda1d63ddcfd3938fcb367ffe460c8afcef5754bd63efb490cc343c3"
+        },
+        {
+          "elections": 192,
+          "food_need": 11383225,
+          "food_unmet": 1013872,
+          "installations": 8,
+          "participation_points": 244443478,
+          "population": 123824,
+          "turnovers": 44,
+          "vote_mutualists": 200965101,
+          "year": 100,
+          "years_sha256": "6d006acee0fccafefb6fcc837fa0f8478d4b749c3ac1b04a583b3944a5a50f0d"
+        },
+        {
+          "elections": 392,
+          "food_need": 23951427,
+          "food_unmet": 2448064,
+          "installations": 8,
+          "participation_points": 571671107,
+          "population": 127017,
+          "turnovers": 88,
+          "vote_mutualists": 476262017,
+          "year": 200,
+          "years_sha256": "5d510dd97f3b09aea073fe246d4c84b5bea287958a77b2edb28976475bcfc3f3"
+        }
+      ],
+      "initial_sha256": "8fb9f15881429d82e555f93615e6b6ec24388385dae8444f12bb02c7d5a73326",
+      "seed": 2,
+      "variant": "reference"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 192,
+          "food_need": 5155662,
+          "food_unmet": 324231,
+          "installations": 8,
+          "participation_points": 175316653,
+          "population": 119357,
+          "turnovers": 36,
+          "vote_mutualists": 133885237,
+          "year": 50,
+          "years_sha256": "542d749ed6b3ffd2459c9199c7757724a3cd2b8a19488a5b85ca15174cfe3e05"
+        },
+        {
+          "elections": 392,
+          "food_need": 11382596,
+          "food_unmet": 1013766,
+          "installations": 8,
+          "participation_points": 493993942,
+          "population": 123832,
+          "turnovers": 67,
+          "vote_mutualists": 402411941,
+          "year": 100,
+          "years_sha256": "93f761024292302ae60c3ed0553d1ebf7dd2e3f91b1b0398c6763124e9e10c83"
+        },
+        {
+          "elections": 792,
+          "food_need": 23952523,
+          "food_unmet": 2448074,
+          "installations": 8,
+          "participation_points": 1139258880,
+          "population": 127053,
+          "turnovers": 143,
+          "vote_mutualists": 943710736,
+          "year": 200,
+          "years_sha256": "a6405a35e292112ae3951f8f0659d213b672c060a8933a8185be8df62d901f2f"
+        }
+      ],
+      "initial_sha256": "8fb9f15881429d82e555f93615e6b6ec24388385dae8444f12bb02c7d5a73326",
+      "seed": 2,
+      "variant": "term2"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 48,
+          "food_need": 5157958,
+          "food_unmet": 324742,
+          "installations": 8,
+          "participation_points": 46079169,
+          "population": 119315,
+          "turnovers": 16,
+          "vote_mutualists": 35560537,
+          "year": 50,
+          "years_sha256": "320b986ebf5b11a6b85a3270f424962f6d0ebcf8c6211e3822b3b8ab5f1e3d77"
+        },
+        {
+          "elections": 96,
+          "food_need": 11383055,
+          "food_unmet": 1014086,
+          "installations": 8,
+          "participation_points": 128170926,
+          "population": 123816,
+          "turnovers": 26,
+          "vote_mutualists": 106439093,
+          "year": 100,
+          "years_sha256": "8875cb0f9c27146c9384cbc203bb41ff257b49ec9b7c1459c73d01ab665bfb96"
+        },
+        {
+          "elections": 192,
+          "food_need": 23951039,
+          "food_unmet": 2448247,
+          "installations": 8,
+          "participation_points": 290568946,
+          "population": 127033,
+          "turnovers": 52,
+          "vote_mutualists": 248114419,
+          "year": 200,
+          "years_sha256": "5ec88197ae0651f1c9c3931c62dfddc5ee25674391aad385a9975be958f6d437"
+        }
+      ],
+      "initial_sha256": "8fb9f15881429d82e555f93615e6b6ec24388385dae8444f12bb02c7d5a73326",
+      "seed": 2,
+      "variant": "term8"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 5156389,
+          "food_unmet": 324342,
+          "installations": 8,
+          "participation_points": 88550268,
+          "population": 119339,
+          "turnovers": 21,
+          "vote_mutualists": 68416524,
+          "year": 50,
+          "years_sha256": "80e3addc8e46c6761a239b59e24a22f7296e2b4bc56c93b43b0e716df1ed2610"
+        },
+        {
+          "elections": 192,
+          "food_need": 11383225,
+          "food_unmet": 1013872,
+          "installations": 8,
+          "participation_points": 244443478,
+          "population": 123824,
+          "turnovers": 43,
+          "vote_mutualists": 200965101,
+          "year": 100,
+          "years_sha256": "edc7e608a19c71d0e06ef685948c5ae7a7e9df3c79f87465022c5479605afc39"
+        },
+        {
+          "elections": 392,
+          "food_need": 23951427,
+          "food_unmet": 2448064,
+          "installations": 8,
+          "participation_points": 571671107,
+          "population": 127017,
+          "turnovers": 87,
+          "vote_mutualists": 476010347,
+          "year": 200,
+          "years_sha256": "867d520c194abffd1afd6ddd2fb9c3457c2afaec59d80fcb975f5a64cef20c4d"
+        }
+      ],
+      "initial_sha256": "8fb9f15881429d82e555f93615e6b6ec24388385dae8444f12bb02c7d5a73326",
+      "seed": 2,
+      "variant": "seats5"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 5156389,
+          "food_unmet": 324342,
+          "installations": 8,
+          "participation_points": 88550268,
+          "population": 119339,
+          "turnovers": 22,
+          "vote_mutualists": 68416524,
+          "year": 50,
+          "years_sha256": "6a81839b3083989847ac6d15af7e7d2b067bc1fd916674b1c8449e6823f8d4ec"
+        },
+        {
+          "elections": 192,
+          "food_need": 11383225,
+          "food_unmet": 1013872,
+          "installations": 8,
+          "participation_points": 244443478,
+          "population": 123824,
+          "turnovers": 44,
+          "vote_mutualists": 200965101,
+          "year": 100,
+          "years_sha256": "417a0fc1551fc3759844c0cf2306a9e93953800c5a3387205a128fb6faab7574"
+        },
+        {
+          "elections": 392,
+          "food_need": 23951427,
+          "food_unmet": 2448064,
+          "installations": 8,
+          "participation_points": 571671107,
+          "population": 127017,
+          "turnovers": 88,
+          "vote_mutualists": 476010347,
+          "year": 200,
+          "years_sha256": "89127f773efa33bb0fe4c801ed23be9e84b2054e7d2be22f9e9b566d23cc8f46"
+        }
+      ],
+      "initial_sha256": "8fb9f15881429d82e555f93615e6b6ec24388385dae8444f12bb02c7d5a73326",
+      "seed": 2,
+      "variant": "seats101"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 5156790,
+          "food_unmet": 324580,
+          "installations": 8,
+          "participation_points": 88776014,
+          "population": 119317,
+          "turnovers": 35,
+          "vote_mutualists": 46086815,
+          "year": 50,
+          "years_sha256": "0390df60efd2b43b85a5ca7ffc9f4c6418f504b17dc927cd5765e73470427a8d"
+        },
+        {
+          "elections": 192,
+          "food_need": 11382450,
+          "food_unmet": 1014073,
+          "installations": 8,
+          "participation_points": 244933908,
+          "population": 123801,
+          "turnovers": 84,
+          "vote_mutualists": 128444515,
+          "year": 100,
+          "years_sha256": "4768737869e7a415c4203b5399d5496d078e976f3579b1ffb5bddf59db8f3a78"
+        },
+        {
+          "elections": 392,
+          "food_need": 23950829,
+          "food_unmet": 2448222,
+          "installations": 8,
+          "participation_points": 572195217,
+          "population": 126998,
+          "turnovers": 188,
+          "vote_mutualists": 309625838,
+          "year": 200,
+          "years_sha256": "9561532c67bcd2905fb6a5c28c38f05430117b3a95039f94ed8ed19adf77af9d"
+        }
+      ],
+      "initial_sha256": "8fb9f15881429d82e555f93615e6b6ec24388385dae8444f12bb02c7d5a73326",
+      "seed": 2,
+      "variant": "exchange_platform"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 5156429,
+          "food_unmet": 324260,
+          "installations": 8,
+          "participation_points": 88527723,
+          "population": 119349,
+          "turnovers": 20,
+          "vote_mutualists": 74810815,
+          "year": 50,
+          "years_sha256": "aed0bf302990f26bfc6d318d262ab167d6b9c863b938b0b4393eaae53a3e8ddc"
+        },
+        {
+          "elections": 192,
+          "food_need": 11382588,
+          "food_unmet": 1013993,
+          "installations": 8,
+          "participation_points": 244381672,
+          "population": 123798,
+          "turnovers": 32,
+          "vote_mutualists": 225684157,
+          "year": 100,
+          "years_sha256": "8d28a9191ad79c2e5a8183319e5cd76a0b1e25c4c793d02628fe9ff800c19ea8"
+        },
+        {
+          "elections": 392,
+          "food_need": 23950436,
+          "food_unmet": 2447788,
+          "installations": 8,
+          "participation_points": 571379633,
+          "population": 127045,
+          "turnovers": 65,
+          "vote_mutualists": 541778616,
+          "year": 200,
+          "years_sha256": "ad33df066949c74e2d844f84d8b4fc53dc04453cfa738b812b36c17fa1c013dd"
+        }
+      ],
+      "initial_sha256": "8fb9f15881429d82e555f93615e6b6ec24388385dae8444f12bb02c7d5a73326",
+      "seed": 2,
+      "variant": "no_performance"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4992063,
+          "food_unmet": 285990,
+          "installations": 8,
+          "participation_points": 78239614,
+          "population": 117012,
+          "turnovers": 30,
+          "vote_mutualists": 61679528,
+          "year": 50,
+          "years_sha256": "9e0febf07cf2724be83914d93ea996313b6990df740f5da3b09023737ab8a4b5"
+        },
+        {
+          "elections": 192,
+          "food_need": 11019515,
+          "food_unmet": 958182,
+          "installations": 8,
+          "participation_points": 224073083,
+          "population": 120697,
+          "turnovers": 44,
+          "vote_mutualists": 188180844,
+          "year": 100,
+          "years_sha256": "4036b5563c866a14a0217a0fbccd7dbbdf836e4a75bed857a6e5fdf0ed5ddb96"
+        },
+        {
+          "elections": 392,
+          "food_need": 23089640,
+          "food_unmet": 2341870,
+          "installations": 8,
+          "participation_points": 526592331,
+          "population": 122903,
+          "turnovers": 79,
+          "vote_mutualists": 447658084,
+          "year": 200,
+          "years_sha256": "adefff316fdf40595f306a5c9d568667dcad9b5bfa74fea59b4de78e90b2a8b2"
+        }
+      ],
+      "initial_sha256": "3e54f823d4040091c046f23babcbf1745e9937abf5cc99e3cc1f97ba490db2f9",
+      "seed": 3,
+      "variant": "reference"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 192,
+          "food_need": 4992523,
+          "food_unmet": 286156,
+          "installations": 8,
+          "participation_points": 155128270,
+          "population": 117017,
+          "turnovers": 44,
+          "vote_mutualists": 120251558,
+          "year": 50,
+          "years_sha256": "ee36932543f15ed8c0d511c77cbf0fdc36352157050f90e2835697bbe262f4f6"
+        },
+        {
+          "elections": 392,
+          "food_need": 11019393,
+          "food_unmet": 958384,
+          "installations": 8,
+          "participation_points": 456545904,
+          "population": 120667,
+          "turnovers": 77,
+          "vote_mutualists": 378495849,
+          "year": 100,
+          "years_sha256": "e3b37df019c812e2ce63b9cca86e0db48e505ae773937ce4e3e413f44d91f48d"
+        },
+        {
+          "elections": 792,
+          "food_need": 23088987,
+          "food_unmet": 2341677,
+          "installations": 8,
+          "participation_points": 1059143617,
+          "population": 122915,
+          "turnovers": 143,
+          "vote_mutualists": 894585096,
+          "year": 200,
+          "years_sha256": "1d24d188b690c71c5f595d742ede200c5d75eceec07bb1f4fd4325ca08219aa4"
+        }
+      ],
+      "initial_sha256": "3e54f823d4040091c046f23babcbf1745e9937abf5cc99e3cc1f97ba490db2f9",
+      "seed": 3,
+      "variant": "term2"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 48,
+          "food_need": 4991851,
+          "food_unmet": 286544,
+          "installations": 8,
+          "participation_points": 38295454,
+          "population": 116917,
+          "turnovers": 16,
+          "vote_mutualists": 30635527,
+          "year": 50,
+          "years_sha256": "06567efb6b1edabace36612899d631077084ab1152985e23b57d733976b4c6b2"
+        },
+        {
+          "elections": 96,
+          "food_need": 11018219,
+          "food_unmet": 957804,
+          "installations": 8,
+          "participation_points": 113526546,
+          "population": 120705,
+          "turnovers": 20,
+          "vote_mutualists": 95166128,
+          "year": 100,
+          "years_sha256": "4d5e745528ba8b0e592b5401bfe9c99f67a64392d58a022b8aa2cac7e9efead5"
+        },
+        {
+          "elections": 192,
+          "food_need": 23087511,
+          "food_unmet": 2341325,
+          "installations": 8,
+          "participation_points": 267394208,
+          "population": 122918,
+          "turnovers": 22,
+          "vote_mutualists": 227223001,
+          "year": 200,
+          "years_sha256": "e224248ab00e3f4be395fe675687db13582de461653d5452eff912bb6b5e5e0a"
+        }
+      ],
+      "initial_sha256": "3e54f823d4040091c046f23babcbf1745e9937abf5cc99e3cc1f97ba490db2f9",
+      "seed": 3,
+      "variant": "term8"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4992063,
+          "food_unmet": 285990,
+          "installations": 8,
+          "participation_points": 78239614,
+          "population": 117012,
+          "turnovers": 30,
+          "vote_mutualists": 61679528,
+          "year": 50,
+          "years_sha256": "e5cd3b3a4f4097eadbefaea008a3759519cee32c348d062c8ef2f62382b289da"
+        },
+        {
+          "elections": 192,
+          "food_need": 11019515,
+          "food_unmet": 958182,
+          "installations": 8,
+          "participation_points": 224073083,
+          "population": 120697,
+          "turnovers": 44,
+          "vote_mutualists": 188180844,
+          "year": 100,
+          "years_sha256": "b44e512942879de7fbcb0e5c8ca98df36e5cdf8273a7e52c6a1c89a301cdd757"
+        },
+        {
+          "elections": 392,
+          "food_need": 23089640,
+          "food_unmet": 2341870,
+          "installations": 8,
+          "participation_points": 526592331,
+          "population": 122903,
+          "turnovers": 79,
+          "vote_mutualists": 447658084,
+          "year": 200,
+          "years_sha256": "60adc7a35943e96b3e1fc323ff4d854c32641111fccb1659e2518ddca16826bf"
+        }
+      ],
+      "initial_sha256": "3e54f823d4040091c046f23babcbf1745e9937abf5cc99e3cc1f97ba490db2f9",
+      "seed": 3,
+      "variant": "seats5"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4992063,
+          "food_unmet": 285990,
+          "installations": 8,
+          "participation_points": 78239614,
+          "population": 117012,
+          "turnovers": 30,
+          "vote_mutualists": 61679528,
+          "year": 50,
+          "years_sha256": "d644f9607f4dca8595177996fcbcf53474cba09dd798e216ac433afa8e5a3c94"
+        },
+        {
+          "elections": 192,
+          "food_need": 11019515,
+          "food_unmet": 958182,
+          "installations": 8,
+          "participation_points": 224073083,
+          "population": 120697,
+          "turnovers": 44,
+          "vote_mutualists": 188180844,
+          "year": 100,
+          "years_sha256": "6031bf7f07d423fcab2c37fe67a1d52162018c3532e3fe143cd42cf847e63412"
+        },
+        {
+          "elections": 392,
+          "food_need": 23089640,
+          "food_unmet": 2341870,
+          "installations": 8,
+          "participation_points": 526592331,
+          "population": 122903,
+          "turnovers": 79,
+          "vote_mutualists": 447658084,
+          "year": 200,
+          "years_sha256": "8239dfcdcc9022ea559c995cd85a063db1fe13374df312ce6d2ab307bb7077a8"
+        }
+      ],
+      "initial_sha256": "3e54f823d4040091c046f23babcbf1745e9937abf5cc99e3cc1f97ba490db2f9",
+      "seed": 3,
+      "variant": "seats101"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4993337,
+          "food_unmet": 285949,
+          "installations": 8,
+          "participation_points": 78439581,
+          "population": 117047,
+          "turnovers": 47,
+          "vote_mutualists": 41770835,
+          "year": 50,
+          "years_sha256": "43196d8dd20057620b0842d7e5f035d2b8f1fecc00cb074efa3b4e0153cf37d9"
+        },
+        {
+          "elections": 192,
+          "food_need": 11020569,
+          "food_unmet": 958606,
+          "installations": 8,
+          "participation_points": 224171282,
+          "population": 120649,
+          "turnovers": 90,
+          "vote_mutualists": 127771051,
+          "year": 100,
+          "years_sha256": "9d4925b91e128db59a159a982c4350c870028a749a692079898861a8ec5351f2"
+        },
+        {
+          "elections": 392,
+          "food_need": 23086358,
+          "food_unmet": 2341358,
+          "installations": 8,
+          "participation_points": 526555013,
+          "population": 122871,
+          "turnovers": 186,
+          "vote_mutualists": 296195241,
+          "year": 200,
+          "years_sha256": "87cc14b0711fac8a88734e523af7fde0238baf3593462ef6f06ed2c4435e68cd"
+        }
+      ],
+      "initial_sha256": "3e54f823d4040091c046f23babcbf1745e9937abf5cc99e3cc1f97ba490db2f9",
+      "seed": 3,
+      "variant": "exchange_platform"
+    },
+    {
+      "checkpoints": [
+        {
+          "elections": 96,
+          "food_need": 4992063,
+          "food_unmet": 285990,
+          "installations": 8,
+          "participation_points": 78239614,
+          "population": 117012,
+          "turnovers": 30,
+          "vote_mutualists": 66905950,
+          "year": 50,
+          "years_sha256": "3b9fe539c3ab42d5866895fe0962ebb51d903a3d68df64518f3224dfbc9b0812"
+        },
+        {
+          "elections": 192,
+          "food_need": 11019195,
+          "food_unmet": 958210,
+          "installations": 8,
+          "participation_points": 224250192,
+          "population": 120690,
+          "turnovers": 38,
+          "vote_mutualists": 211402630,
+          "year": 100,
+          "years_sha256": "ed1eb38c5afc7f43828ad1591063441aae9bcdf07547203a0b34e9efb7035725"
+        },
+        {
+          "elections": 392,
+          "food_need": 23089225,
+          "food_unmet": 2341721,
+          "installations": 8,
+          "participation_points": 526738819,
+          "population": 122904,
+          "turnovers": 47,
+          "vote_mutualists": 511101913,
+          "year": 200,
+          "years_sha256": "9ef1ff836f7d63c1dcf17267abe1418ed6a57854d480e822a0d52c836998bd30"
+        }
+      ],
+      "initial_sha256": "3e54f823d4040091c046f23babcbf1745e9937abf5cc99e3cc1f97ba490db2f9",
+      "seed": 3,
+      "variant": "no_performance"
+    }
+  ],
+  "world_years": 5600,
+  "years": 200
+}
