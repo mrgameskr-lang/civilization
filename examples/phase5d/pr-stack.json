@@ -1,0 +1,79 @@
+[
+  {
+    "pr": 4,
+    "base": "102dd33cb2e9f56cbf4461a18f048d657a6de582",
+    "head": "64fcfeb1a83c046ed523949583c251abc329dfbf",
+    "ancestor": true,
+    "previous_examples": 13,
+    "changed_or_removed_examples": [],
+    "new_examples": 8,
+    "tests_passed": 91,
+    "seconds": 8.164
+  },
+  {
+    "pr": 5,
+    "base": "64fcfeb1a83c046ed523949583c251abc329dfbf",
+    "head": "881469a70083db50fd38525cc2335cdf5748f2f1",
+    "ancestor": true,
+    "previous_examples": 21,
+    "changed_or_removed_examples": [],
+    "new_examples": 22,
+    "tests_passed": 115,
+    "seconds": 11.076
+  },
+  {
+    "pr": 6,
+    "base": "881469a70083db50fd38525cc2335cdf5748f2f1",
+    "head": "a8172b9c92662872d5fb4d8acd1c015ad8c13e30",
+    "ancestor": true,
+    "previous_examples": 43,
+    "changed_or_removed_examples": [],
+    "new_examples": 1,
+    "tests_passed": 120,
+    "seconds": 11.06
+  },
+  {
+    "pr": 7,
+    "base": "a8172b9c92662872d5fb4d8acd1c015ad8c13e30",
+    "head": "37935d78954b5c11de697257a8d38a4cb7a1d3c9",
+    "ancestor": true,
+    "previous_examples": 44,
+    "changed_or_removed_examples": [],
+    "new_examples": 10,
+    "tests_passed": 149,
+    "seconds": 13.982
+  },
+  {
+    "pr": 8,
+    "base": "37935d78954b5c11de697257a8d38a4cb7a1d3c9",
+    "head": "739a1685c249d04854e67d6334ab83feacde8fb9",
+    "ancestor": true,
+    "previous_examples": 54,
+    "changed_or_removed_examples": [],
+    "new_examples": 20,
+    "tests_passed": 178,
+    "seconds": 17.894
+  },
+  {
+    "pr": 9,
+    "base": "739a1685c249d04854e67d6334ab83feacde8fb9",
+    "head": "b7c2aaacbb6d95f6788b398b4152056bf8b7325f",
+    "ancestor": true,
+    "previous_examples": 74,
+    "changed_or_removed_examples": [],
+    "new_examples": 45,
+    "tests_passed": 198,
+    "seconds": 47.441
+  },
+  {
+    "pr": 10,
+    "base": "b7c2aaacbb6d95f6788b398b4152056bf8b7325f",
+    "head": "c220dc526d88b4e08396cdbd7a7717d7a0c59cf7",
+    "ancestor": true,
+    "previous_examples": 119,
+    "changed_or_removed_examples": [],
+    "new_examples": 31,
+    "tests_passed": 222,
+    "seconds": 67.917
+  }
+]

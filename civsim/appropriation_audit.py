@@ -37,7 +37,7 @@ def _previous_observation(r):
             "soil_delta": r["closing"]["soil"]-r["opening"]["soil"]}
 
 
-def _spending(gov, plans):
+def _spending(gov, plans, responses=None):
     spending = {i: Counter() for i in plans}
     project_ids = {}
     for p in gov["works"]["projects"]:
@@ -75,7 +75,9 @@ def _spending(gov, plans):
     for owner, d in plans.items():
         spending[owner]["admin_units"] += int(delivery[owner] > 0)
         throughput = d["relief_throughput"] if gov["mode"] != "none" else 0
-        _check(admin[owner]["used"] == delivery[owner] <= d["relief_limit"] <= throughput == admin[owner]["limit"],
+        available = responses[owner]["admin_remaining"] if responses is not None else throughput
+        _check(admin[owner]["used"] == delivery[owner] <= d["relief_limit"] <= throughput
+               and delivery[owner] <= available == admin[owner]["limit"],
                "unsupported relief disbursement")
         _check(all(0 <= spending[owner][k] <= limit for k, limit in d["budget"].items()),
                "discretionary spending exceeds appropriation")
@@ -101,6 +103,10 @@ def _audit(record, previous_record):
         prior_roads = _indexed(previous_record["government"]["roads"], ("a","b"))
         _check(prior_regions.keys()==regions.keys() and prior_roads.keys()==roads.keys(), "previous geography differs")
     plans = {}
+    civic = record.get("collective")
+    responses = _indexed(civic["responses"],("id",)) if civic is not None else None
+    if civic is not None:
+        _check(responses.keys()==accounts.keys(),"civic response coverage")
     for owner, a in accounts.items():
         d = a["decision"]
         _check(a["mode"]==gov["mode"] and d["owner"]==owner, "decision ownership or regime")
@@ -142,15 +148,22 @@ def _audit(record, previous_record):
         elif "politics" in record:
             from .politics import audit_plan
             expected = audit_plan(record["politics"], expected)
+        if civic is not None:
+            from .civic_fiscal import respond
+            expected, response = respond(expected,[r for r in civic["regions"] if r["owner"]==owner])
+            _check(response==responses[owner],"authorization, concession or petition administration differs")
         _check(_decision_view(d)==expected, "decision differs from opening state, eligible candidates or budget")
         plans[owner] = expected
-    if record.get("competition", {}).get("tax_policy") == "platform":
+    if civic is not None:
+        from .civic_fiscal import audit_civic_collection
+        audit_civic_collection(regional.values(),plans,civic,gov["levies"])
+    elif record.get("competition", {}).get("tax_policy") == "platform":
         from .tax_policy5c import audit_collection_with_rates
         tariffs = {c["id"]: c["tariff"] for c in record["competition"]["countries"]}
         audit_collection_with_rates(regional.values(), plans, gov["mode"], gov["levies"], tariffs)
     else:
         audit_collection(regional.values(), plans, gov["mode"], gov["levies"])
-    _spending(gov, plans)
+    _spending(gov, plans,responses)
 
 
 def audit_appropriations(record, *, previous_record=None):

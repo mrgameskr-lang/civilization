@@ -1,0 +1,134 @@
+[
+  {
+    "seed": 0,
+    "initial_residents_per_region": 6,
+    "initial_population": 192,
+    "initial_sha256": "ecdf4f3e6d48030d0469f6fb7c033dab3cdf151791d8cb88b1af43d1a66a08fd",
+    "checkpoints": [
+      {
+        "year": 50,
+        "population": 192,
+        "potential_group_years": 4800,
+        "size_at_least_8": 0,
+        "discontent_at_least_35": 1617,
+        "active_group_years": 0,
+        "starts": 0,
+        "food_need": 9600,
+        "food_unmet": 658,
+        "annual_sha256": "79f63326a58d64056b51b880c721ec918d57ccb510bcba8671e5042e30a7902d"
+      },
+      {
+        "year": 100,
+        "population": 192,
+        "potential_group_years": 9600,
+        "size_at_least_8": 0,
+        "discontent_at_least_35": 2877,
+        "active_group_years": 0,
+        "starts": 0,
+        "food_need": 19200,
+        "food_unmet": 1148,
+        "annual_sha256": "9961250c69bb286fe78ad2a8c52ff5734effec1ac3302b92952421e195d02660"
+      },
+      {
+        "year": 200,
+        "population": 192,
+        "potential_group_years": 19200,
+        "size_at_least_8": 0,
+        "discontent_at_least_35": 5280,
+        "active_group_years": 0,
+        "starts": 0,
+        "food_need": 38400,
+        "food_unmet": 2102,
+        "annual_sha256": "9e0b5f90ab2eca736a7bf6585a65297592fed8a42dc5f62f838faa4e20d7f80e"
+      }
+    ]
+  },
+  {
+    "seed": 0,
+    "initial_residents_per_region": 30,
+    "initial_population": 960,
+    "initial_sha256": "2cfd5b2a8c698cefa8d7789f3635a2ec1a9ebe2d8803f5d141119d0bbbc5f25a",
+    "checkpoints": [
+      {
+        "year": 50,
+        "population": 906,
+        "potential_group_years": 4800,
+        "size_at_least_8": 2964,
+        "discontent_at_least_35": 627,
+        "active_group_years": 156,
+        "starts": 89,
+        "food_need": 45962,
+        "food_unmet": 1095,
+        "annual_sha256": "4a844fe92f0a7b672c407d99bdcdce3f2c2806e7602a1573b5d996b30560b288"
+      },
+      {
+        "year": 100,
+        "population": 904,
+        "potential_group_years": 9600,
+        "size_at_least_8": 5964,
+        "discontent_at_least_35": 1413,
+        "active_group_years": 359,
+        "starts": 186,
+        "food_need": 91256,
+        "food_unmet": 1942,
+        "annual_sha256": "cd95edb0d5780151cf7e4a62d2e7e4630039a11df03d6beb7aa45ac089af7494"
+      },
+      {
+        "year": 200,
+        "population": 902,
+        "potential_group_years": 19200,
+        "size_at_least_8": 11964,
+        "discontent_at_least_35": 3105,
+        "active_group_years": 822,
+        "starts": 412,
+        "food_need": 181608,
+        "food_unmet": 3682,
+        "annual_sha256": "c312c8492209ff202af79a02b094c28bb054fe8d260f34679c9ef37cb8bfe0b1"
+      }
+    ]
+  },
+  {
+    "seed": 0,
+    "initial_residents_per_region": 150,
+    "initial_population": 4800,
+    "initial_sha256": "4667b318d9ca18425c6ebf6fa7f32a935dc6ad84a56e48af14b74631c7866cad",
+    "checkpoints": [
+      {
+        "year": 50,
+        "population": 10011,
+        "potential_group_years": 4800,
+        "size_at_least_8": 4704,
+        "discontent_at_least_35": 1510,
+        "active_group_years": 872,
+        "starts": 258,
+        "food_need": 348641,
+        "food_unmet": 2293,
+        "annual_sha256": "42295f64980d4c99b515099c8a4342301fb578d4c3fc6d80ae252337f1681312"
+      },
+      {
+        "year": 100,
+        "population": 21887,
+        "potential_group_years": 9600,
+        "size_at_least_8": 9504,
+        "discontent_at_least_35": 2991,
+        "active_group_years": 1885,
+        "starts": 458,
+        "food_need": 1101519,
+        "food_unmet": 2764,
+        "annual_sha256": "957d8a6a42ffed287988f00f1d3231bb8384b8235d802822fa9b6bad7b181a31"
+      },
+      {
+        "year": 200,
+        "population": 101478,
+        "potential_group_years": 19200,
+        "size_at_least_8": 19104,
+        "discontent_at_least_35": 5937,
+        "active_group_years": 3803,
+        "starts": 899,
+        "food_need": 6364531,
+        "food_unmet": 36812,
+        "annual_sha256": "f5a64d89b6a0a1fd572266151cf59beb67929a7331e166a5c723a68f61c5d7a2"
+      }
+    ]
+  }
+]
