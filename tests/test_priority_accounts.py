@@ -91,3 +91,10 @@ class CompactAccountTests(unittest.TestCase):
         data[0][1]["aid_handling_food"]=1
         with archive("move_on",data) as path,self.assertRaisesRegex(ValueError,"matching dispatch"):
             check_file(path,7,"move_on",years=2,region_count=2,country_count=2)
+
+    def test_freight_requires_actual_civilian_cargo(self):
+        for field in ("depot_transfer_freight_food","relief_freight_food","aid_freight_food"):
+            data=records("move_on")
+            data[1][1][field]=1
+            with self.subTest(field=field),archive("move_on",data) as path,self.assertRaisesRegex(ValueError,"freight|dispatch"):
+                check_file(path,7,"move_on",years=2,region_count=2,country_count=2)

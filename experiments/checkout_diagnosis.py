@@ -47,6 +47,13 @@ def summarize_regions(study):
                         counts["marked_when_no_net_food_levy"]+=n if r["levy_deposited_food"]==0 else 0
                         counts["marked_when_checkout_food_zero"]+=n if F==0 else 0
                         counts["marked_when_checkout_tools_zero"]+=n if T==0 else 0
+                        # Compare two actual observations of this warehouse, including
+                        # when the following year has no marked pieces in that region.
+                        for good in ("food","tools"):
+                            next_balance=r["next_before_"+good]
+                            if r["after_"+good]==0 and next_balance is not None:
+                                name=good+"_empty_after_then_"
+                                counts[name+("empty" if next_balance==0 else "restocked")]+=1
                         # Local receipts seen earlier, held fixed. Independent one-expense accounting
                         # bounds overlap; these are not reruns under alternative spending decisions.
                         expenses={
