@@ -5,6 +5,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from civsim.posting_archive65 import verify, write
+from civsim.storage import canonical_line
 
 
 class PostingArchiveTests(unittest.TestCase):
@@ -30,7 +31,7 @@ class PostingArchiveTests(unittest.TestCase):
             header, first, second = path.read_bytes().splitlines(keepends=True)
             altered = json.loads(first)
             altered["economic_sha256"] = "0" * 64
-            for data in (header + json.dumps(altered).encode() + b"\n" + second,
+            for data in (header + canonical_line(altered) + second,
                          header + first, header + first + second + second):
                 with self.subTest(size=len(data)):
                     path.write_bytes(data)
