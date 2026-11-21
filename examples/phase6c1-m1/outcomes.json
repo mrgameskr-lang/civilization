@@ -1,0 +1,196 @@
+{
+  "dev": {
+    "administrative_invoice_rows": {
+      "assigned": 2769,
+      "no_unassigned": 1245,
+      "partial": 1149
+    },
+    "historical_region_sha256": "712eb64a9788ea9766f1117ba8a52d65a86ef8341a199b6c6d5a1cfe116237d0",
+    "verification": {
+      "economic_years": 8000,
+      "national_public_good_balances": 192000,
+      "raw_register_digests": 60,
+      "regional_private_good_balances": 768000
+    },
+    "years": {
+      "50": {
+        "carried_other_affiliation": 263093,
+        "closing_ledger": 26451,
+        "closing_other_affiliation_home": 7973,
+        "closing_population": 2261429,
+        "deaths_other_affiliation": 93,
+        "duty_ration_food": 243590,
+        "duty_tools_used": 26338,
+        "duty_travel_food": 6778,
+        "emigrants_other_affiliation": 3,
+        "fixed_relative_to_A": {
+          "closing_population": -8637,
+          "duty_serving": 568550,
+          "food_eaten": -284845,
+          "food_need": -252197,
+          "food_unmet": 32648
+        },
+        "food_need": 95800052,
+        "food_unmet": 5771340,
+        "invoice_people": 15831,
+        "ledger_assignments": 8132,
+        "released_other_affiliation": 63,
+        "unentered_invoice_people": 7699,
+        "worlds_without_closing_other_affiliation_home": 0,
+        "worlds_without_ledger_assignments": 0,
+        "worlds_without_unentered_invoice_people": 0
+      },
+      "100": {
+        "carried_other_affiliation": 611381,
+        "closing_ledger": 27836,
+        "closing_other_affiliation_home": 5988,
+        "closing_population": 2373529,
+        "deaths_other_affiliation": 1851,
+        "duty_ration_food": 254889,
+        "duty_tools_used": 27541,
+        "duty_travel_food": 7018,
+        "emigrants_other_affiliation": 18,
+        "fixed_relative_to_A": {
+          "closing_population": -7988,
+          "duty_serving": 1856876,
+          "food_eaten": -670749,
+          "food_need": -694000,
+          "food_unmet": -23251
+        },
+        "food_need": 213439529,
+        "food_unmet": 18599153,
+        "invoice_people": 16510,
+        "ledger_assignments": 8408,
+        "released_other_affiliation": 551,
+        "unentered_invoice_people": 8102,
+        "worlds_without_closing_other_affiliation_home": 0,
+        "worlds_without_ledger_assignments": 0,
+        "worlds_without_unentered_invoice_people": 0
+      },
+      "200": {
+        "carried_other_affiliation": 1168770,
+        "closing_ledger": 28105,
+        "closing_other_affiliation_home": 5275,
+        "closing_population": 2394773,
+        "deaths_other_affiliation": 2173,
+        "duty_ration_food": 255347,
+        "duty_tools_used": 27613,
+        "duty_travel_food": 7024,
+        "emigrants_other_affiliation": 23,
+        "fixed_relative_to_A": {
+          "closing_population": -4275,
+          "duty_serving": 4524077,
+          "food_eaten": -1105595,
+          "food_need": -1217078,
+          "food_unmet": -111483
+        },
+        "food_need": 452030967,
+        "food_unmet": 46108630,
+        "invoice_people": 16522,
+        "ledger_assignments": 8420,
+        "released_other_affiliation": 949,
+        "unentered_invoice_people": 8102,
+        "worlds_without_closing_other_affiliation_home": 0,
+        "worlds_without_ledger_assignments": 0,
+        "worlds_without_unentered_invoice_people": 0
+      }
+    }
+  },
+  "holdout": {
+    "administrative_invoice_rows": {
+      "assigned": 3066,
+      "no_unassigned": 1437,
+      "partial": 1337
+    },
+    "historical_region_sha256": "05633273703c51b43dc0432d1549f26b48957b31bcc41df21741ce4d18caa487",
+    "verification": {
+      "economic_years": 8000,
+      "national_public_good_balances": 192000,
+      "raw_register_digests": 60,
+      "regional_private_good_balances": 768000
+    },
+    "years": {
+      "50": {
+        "carried_other_affiliation": 277369,
+        "closing_ledger": 27166,
+        "closing_other_affiliation_home": 8709,
+        "closing_population": 2322571,
+        "deaths_other_affiliation": 70,
+        "duty_ration_food": 288449,
+        "duty_tools_used": 30514,
+        "duty_travel_food": 7791,
+        "emigrants_other_affiliation": 0,
+        "fixed_relative_to_A": {
+          "closing_population": -7699,
+          "duty_serving": 530652,
+          "food_eaten": -276825,
+          "food_need": -250425,
+          "food_unmet": 26400
+        },
+        "food_need": 96131348,
+        "food_unmet": 5262379,
+        "invoice_people": 18151,
+        "ledger_assignments": 8837,
+        "released_other_affiliation": 58,
+        "unentered_invoice_people": 9314,
+        "worlds_without_closing_other_affiliation_home": 0,
+        "worlds_without_ledger_assignments": 0,
+        "worlds_without_unentered_invoice_people": 0
+      },
+      "100": {
+        "carried_other_affiliation": 658784,
+        "closing_ledger": 28810,
+        "closing_other_affiliation_home": 6475,
+        "closing_population": 2456629,
+        "deaths_other_affiliation": 2118,
+        "duty_ration_food": 302898,
+        "duty_tools_used": 32057,
+        "duty_travel_food": 8078,
+        "emigrants_other_affiliation": 19,
+        "fixed_relative_to_A": {
+          "closing_population": -4703,
+          "duty_serving": 1843028,
+          "food_eaten": -545454,
+          "food_need": -579667,
+          "food_unmet": -34213
+        },
+        "food_need": 216524205,
+        "food_unmet": 18249339,
+        "invoice_people": 18998,
+        "ledger_assignments": 9168,
+        "released_other_affiliation": 556,
+        "unentered_invoice_people": 9830,
+        "worlds_without_closing_other_affiliation_home": 0,
+        "worlds_without_ledger_assignments": 0,
+        "worlds_without_unentered_invoice_people": 0
+      },
+      "200": {
+        "carried_other_affiliation": 1249772,
+        "closing_ledger": 28715,
+        "closing_other_affiliation_home": 5591,
+        "closing_population": 2447785,
+        "deaths_other_affiliation": 2567,
+        "duty_ration_food": 303191,
+        "duty_tools_used": 32110,
+        "duty_travel_food": 8078,
+        "emigrants_other_affiliation": 22,
+        "fixed_relative_to_A": {
+          "closing_population": -7649,
+          "duty_serving": 4578598,
+          "food_eaten": -1034185,
+          "food_need": -1106494,
+          "food_unmet": -72309
+        },
+        "food_need": 460736466,
+        "food_unmet": 46630228,
+        "invoice_people": 18998,
+        "ledger_assignments": 9168,
+        "released_other_affiliation": 988,
+        "unentered_invoice_people": 9830,
+        "worlds_without_closing_other_affiliation_home": 0,
+        "worlds_without_ledger_assignments": 0,
+        "worlds_without_unentered_invoice_people": 0
+      }
+    }
+  }
+}

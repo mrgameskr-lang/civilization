@@ -1,0 +1,37 @@
+{
+  "archived_economic_checkpoints": 6,
+  "economic_world_years": 400,
+  "historical_controls": {
+    "phase6b2/study/dev/runs.csv": "8316548fb4678a2e0c5e3dbcead763028269960a7189e677ea46f4a48d1f9f10",
+    "phase6b2/study/holdout/runs.csv": "b82e38340ffac1dffb608854bf5832ae94d006d7aff2e9b3e3ae2f784ee26d58",
+    "phase6c1/baseline/checkpoints.csv": "f272612dc74db41a8d48ffdccd0c29a5bdbbafe86a5ce129ff7ff2e4065bbd1c"
+  },
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "identical_seed_files": [
+    "seed-00/economic-regions.csv.gz",
+    "seed-00/affiliations.jsonl.gz",
+    "seed-00/cases.json"
+  ],
+  "nominal_register_years": 200,
+  "python": "3.12.14",
+  "register_checkpoints": 3,
+  "replayed_economic_checkpoints": 6,
+  "replayed_register_checkpoints": 3,
+  "sample": "dev",
+  "seeds": [
+    0
+  ],
+  "table_sha256": {
+    "regions.csv": "d04600631cc420b063bc400ba337d972ebdad7e44d02a692fa620437e78bcd5d",
+    "runs.csv": "0220e6f5e04c0ee771caa5666814a9994ba43c5bf09374900c247b93d8e5bfc0",
+    "seed-00/affiliations.jsonl.gz": "4cb703db9764f2ac89aa30d68e6aef6c2eabf2bef9c83c341ff3ba653b0c202f",
+    "seed-00/cases.json": "92570b956a12ac6c8323fabd971fa303ed5525c19a5191c3d0cfdc1d84d04837",
+    "seed-00/economic-regions.csv.gz": "d5dc172b0caf17fc7bc7ecf2dbaf741a52eaaf900f0429c889d15c630e17e45f"
+  },
+  "wall_seconds": 81.95355360000394,
+  "workers": 1
+}
