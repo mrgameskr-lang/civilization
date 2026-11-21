@@ -1,0 +1,25 @@
+{
+  "civic_world_years": 8000,
+  "economic_world_years": 4000,
+  "fork_pair_years": 112000,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "python": "3.12.14",
+  "replayed_civic_checkpoints": 120,
+  "sample": "dev",
+  "seeds": 20,
+  "table_sha256": {
+    "annual.jsonl.gz": "bd1daf03b9be835779e59af721f4d935abc72df518918caf535c2d370db54c09",
+    "fork-cases.json": "3dcaf719ab4e72c6513efe7c99b7a79ab63120cafc90faa819b27ee83a50cd85",
+    "fork-checkpoints.csv": "82697c22302ec324ce6a8b98266097faddccee725e820b368c8f097b5901ebf1",
+    "pairs.csv": "9a6f917c50f0c3f4757e8afdeee903904fae4d571ddce85caaacaca7cd5cbfb2",
+    "runs.csv": "b22f9773c303bdfe7075af6e9c09daf0b273ae426c29ef7ad26f637ded5ad5e6",
+    "same-opening.csv.gz": "8a3ae7221e7b0a35625d9975d74172dcd9214f85fc01c6d5c34cb8a0e0b4674b",
+    "source.json": "0dc27b519c5baf33b9df5e9f9f3e6700d5e5a88f5b1f7d19934c1eb16e420c9a"
+  },
+  "verified_files": 7,
+  "wall_seconds": 40.11296069994569
+}

@@ -1,0 +1,41 @@
+{
+  "case_source_sha256": "a42617242c1644b8ec5ed88c851ec1266b2501912f7b95d20911a4b366a303b7",
+  "method": "6.0C1-civilian-archive-1",
+  "output_sha256": {
+    "archived-cases.json": "94f6809b7cca6db5aaf4949ab2571f5847125c1648a7204d4acde3c92f140c9d",
+    "cohort-accounts.csv": "91703576d82421a03e59340d649c50c3d16512f691600a79ed2edb06133443b0",
+    "seed-accounts.csv": "93724cb1967ace65df833fe588d9d1811e9c5bac8a184a276979a7f9700c94cb"
+  },
+  "samples": {
+    "dev": {
+      "input_sha256": {
+        "country-years.csv.gz": "d874d5bf2fc507f53d4f0d3cabd8ccb99415e9b71d925c2dc27c2a056692276d",
+        "region-years.csv.gz": "712eb64a9788ea9766f1117ba8a52d65a86ef8341a199b6c6d5a1cfe116237d0",
+        "road-years.csv.gz": "49c99ddd7a8a14b9e2eb854a7d6f63c629c8b8ee695a3bca730c40b64c6dc1d8",
+        "runs.csv": "8316548fb4678a2e0c5e3dbcead763028269960a7189e677ea46f4a48d1f9f10",
+        "service-moves.csv.gz": "b0c19e872535c52a52d00a8632db68a1f3a077472540bd2768ad5ecc241f147a"
+      },
+      "rows_checked": {
+        "country_years": 64000,
+        "region_years": 256000,
+        "road_years": 253600,
+        "world_years": 8000
+      }
+    },
+    "holdout": {
+      "input_sha256": {
+        "country-years.csv.gz": "e6d1b8267cf471ba7f6131efd65d7c412960c712dff2378cfe49bc7f3c54ef4b",
+        "region-years.csv.gz": "05633273703c51b43dc0432d1549f26b48957b31bcc41df21741ce4d18caa487",
+        "road-years.csv.gz": "4091ded6876865e04129cbed76e454bfe37a454e546ef75249a0116895aec98e",
+        "runs.csv": "b82e38340ffac1dffb608854bf5832ae94d006d7aff2e9b3e3ae2f784ee26d58",
+        "service-moves.csv.gz": "93f324d11baa768c2142106999fbb6c01ba555d015f8720bd273e1d44f01c009"
+      },
+      "rows_checked": {
+        "country_years": 64000,
+        "region_years": 256000,
+        "road_years": 252800,
+        "world_years": 8000
+      }
+    }
+  }
+}

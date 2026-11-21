@@ -1,0 +1,215 @@
+{
+  "dev": {
+    "cases": {
+      "accepted_continued": {
+        "a": 0,
+        "b": 2,
+        "consent_constraints": [],
+        "decision": "accepted",
+        "event": "start",
+        "evidence_year": 2,
+        "next_event": "continue",
+        "next_tension": 87,
+        "next_year": 4,
+        "requester": 2,
+        "responder": 0,
+        "seed": 0,
+        "tension": 50,
+        "trust": 593,
+        "year": 3
+      },
+      "declined_continued": {
+        "a": 3,
+        "b": 6,
+        "consent_constraints": [
+          "no_observed_outbound_exchange"
+        ],
+        "decision": "declined",
+        "event": "start",
+        "evidence_year": 17,
+        "next_event": "continue",
+        "next_tension": 102,
+        "next_year": 19,
+        "requester": 3,
+        "responder": 6,
+        "seed": 0,
+        "tension": 136,
+        "trust": 457,
+        "year": 18
+      }
+    },
+    "coverage": {
+      "adjacent_dyads": 245,
+      "adjacent_dyads_without_observed_start": 75,
+      "fork_active_differences": 0,
+      "fork_consulting_differences": 1234,
+      "fork_observed": 48755,
+      "fork_pair_years": 112000,
+      "nonadjacent_dyads": 315,
+      "nonadjacent_dyads_without_observed_start": 315,
+      "paired_pair_years": 112000,
+      "verified_civic_digests": 120
+    },
+    "cumulative": {
+      "100": {
+        "accepted": 1212,
+        "active_observed_years": 1595,
+        "continue": 1264,
+        "declined": 29,
+        "defer": 354,
+        "ease": 331,
+        "no_direction_years": 31745,
+        "observed_years": 24255,
+        "one_direction_years": 0,
+        "pair_years": 56000,
+        "start": 331,
+        "worlds_without_accepted": 0,
+        "worlds_without_declined": 6,
+        "worlds_without_start": 0
+      },
+      "200": {
+        "accepted": 1234,
+        "active_observed_years": 1630,
+        "continue": 1286,
+        "declined": 29,
+        "defer": 367,
+        "ease": 343,
+        "no_direction_years": 63245,
+        "observed_years": 48755,
+        "one_direction_years": 0,
+        "pair_years": 112000,
+        "start": 344,
+        "worlds_without_accepted": 0,
+        "worlds_without_declined": 6,
+        "worlds_without_start": 0
+      },
+      "50": {
+        "accepted": 1172,
+        "active_observed_years": 1532,
+        "continue": 1222,
+        "declined": 29,
+        "defer": 331,
+        "ease": 307,
+        "no_direction_years": 15995,
+        "observed_years": 12005,
+        "one_direction_years": 0,
+        "pair_years": 28000,
+        "start": 310,
+        "worlds_without_accepted": 0,
+        "worlds_without_declined": 6,
+        "worlds_without_start": 0
+      }
+    },
+    "next_year_after_decision": {
+      "accepted_continued": 1234,
+      "declined_continued": 29
+    }
+  },
+  "holdout": {
+    "cases": {
+      "accepted_continued": {
+        "a": 1,
+        "b": 3,
+        "consent_constraints": [],
+        "decision": "accepted",
+        "event": "start",
+        "evidence_year": 4,
+        "next_event": "continue",
+        "next_tension": 262,
+        "next_year": 6,
+        "requester": 1,
+        "responder": 3,
+        "seed": 20,
+        "tension": 150,
+        "trust": 535,
+        "year": 5
+      },
+      "declined_continued": {
+        "a": 6,
+        "b": 7,
+        "consent_constraints": [
+          "no_observed_outbound_exchange"
+        ],
+        "decision": "declined",
+        "event": "continue",
+        "evidence_year": 28,
+        "next_event": "continue",
+        "next_tension": 136,
+        "next_year": 30,
+        "requester": 7,
+        "responder": 6,
+        "seed": 21,
+        "tension": 182,
+        "trust": 505,
+        "year": 29
+      }
+    },
+    "coverage": {
+      "adjacent_dyads": 252,
+      "adjacent_dyads_without_observed_start": 90,
+      "fork_active_differences": 0,
+      "fork_consulting_differences": 1190,
+      "fork_observed": 50148,
+      "fork_pair_years": 112000,
+      "nonadjacent_dyads": 308,
+      "nonadjacent_dyads_without_observed_start": 308,
+      "paired_pair_years": 112000,
+      "verified_civic_digests": 120
+    },
+    "cumulative": {
+      "100": {
+        "accepted": 1156,
+        "active_observed_years": 1500,
+        "continue": 1195,
+        "declined": 16,
+        "defer": 328,
+        "ease": 303,
+        "no_direction_years": 31052,
+        "observed_years": 24948,
+        "one_direction_years": 0,
+        "pair_years": 56000,
+        "start": 305,
+        "worlds_without_accepted": 0,
+        "worlds_without_declined": 10,
+        "worlds_without_start": 0
+      },
+      "200": {
+        "accepted": 1190,
+        "active_observed_years": 1557,
+        "continue": 1230,
+        "declined": 16,
+        "defer": 351,
+        "ease": 326,
+        "no_direction_years": 61852,
+        "observed_years": 50148,
+        "one_direction_years": 0,
+        "pair_years": 112000,
+        "start": 327,
+        "worlds_without_accepted": 0,
+        "worlds_without_declined": 10,
+        "worlds_without_start": 0
+      },
+      "50": {
+        "accepted": 1106,
+        "active_observed_years": 1427,
+        "continue": 1136,
+        "declined": 16,
+        "defer": 305,
+        "ease": 281,
+        "no_direction_years": 15652,
+        "observed_years": 12348,
+        "one_direction_years": 0,
+        "pair_years": 28000,
+        "start": 291,
+        "worlds_without_accepted": 0,
+        "worlds_without_declined": 10,
+        "worlds_without_start": 0
+      }
+    },
+    "next_year_after_decision": {
+      "accepted_continued": 1189,
+      "accepted_right_censored": 1,
+      "declined_continued": 16
+    }
+  }
+}
