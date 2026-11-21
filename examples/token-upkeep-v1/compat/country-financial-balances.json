@@ -1,0 +1,69 @@
+{
+  "elapsed_seconds": 0.873252,
+  "equations": {
+    "custody": "For each good and both boundaries: national public = sum(local public); national private = sum(household stock); national combined = private + public.",
+    "food": "opening + levied food + net international aid - collection handling - spoilage - relief - public freight - public household rations - public travel food - one-way fee - reported additional food expense = closing",
+    "ore": "opening + levied ore - works ore = closing",
+    "tools": "opening + levied tools - works tools - public office tools - reported additional tools expense = closing"
+  },
+  "files": {
+    "empty.jsonl.gz": {
+      "additional_expense": {
+        "food": 0,
+        "tools": 0
+      },
+      "input_sha256": "00c26d7b092ff476a3d324f694413a2432cdb48e4b747dbf0d16534d719757bc",
+      "national_rows": 24,
+      "record_rows": 3,
+      "stock_balances": 72
+    },
+    "hold_on.jsonl.gz": {
+      "additional_expense": {
+        "food": 2,
+        "tools": 2
+      },
+      "input_sha256": "303d1e3df935b21993bd98ba046d548081e2bb25e6e5a25266665f913cdf4bef",
+      "national_rows": 24,
+      "record_rows": 3,
+      "stock_balances": 72
+    },
+    "move_off.jsonl.gz": {
+      "additional_expense": {
+        "food": 0,
+        "tools": 0
+      },
+      "input_sha256": "55ba3c5962b5b317fc228129289939a64da85055bfb47addecdaa7e4271be519",
+      "national_rows": 24,
+      "record_rows": 3,
+      "stock_balances": 72
+    },
+    "move_on.jsonl.gz": {
+      "additional_expense": {
+        "food": 1,
+        "tools": 1
+      },
+      "input_sha256": "90d681c1e9d26fff4e7195deec84d2bbf22b44236a92e58a758770cebbd55d18",
+      "national_rows": 24,
+      "record_rows": 3,
+      "stock_balances": 72
+    },
+    "one.jsonl.gz": {
+      "additional_expense": {
+        "food": 1,
+        "tools": 1
+      },
+      "input_sha256": "692b28025a7cfa6ef067e22b9da61b1545c6528e15484a22ea08c5237ffa6922",
+      "national_rows": 24,
+      "record_rows": 3,
+      "stock_balances": 72
+    }
+  },
+  "inputs": "examples/token-upkeep-v1/case",
+  "matched_balances": 360,
+  "max_absolute_residual": 0,
+  "national_rows": 120,
+  "python": "3.12.14",
+  "schema": "national-public-accounts/1",
+  "scope": "five published case paths; shared opening years repeated by path; no long-run per-country ledger present in the seed checkpoint tables",
+  "started_utc": "2026-11-21T19:01:23.105249+00:00"
+}
