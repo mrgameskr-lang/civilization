@@ -8,7 +8,7 @@ from .storage import _manifest, read_years
 
 
 def summary(directory: Path) -> dict:
-    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A"):
+    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A", "5.0B"):
         from .regional_storage import regional_summary
         return regional_summary(directory)
     result = dict.fromkeys((
@@ -70,7 +70,7 @@ def _panel_rows(year: dict):
 
 def write_panel(directory: Path, output: Path) -> None:
     """Export one row per nation/year, refusing to overwrite any existing path."""
-    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A"):
+    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A", "5.0B"):
         from .regional_storage import regional_summary
         regional_summary(directory, output)
         return

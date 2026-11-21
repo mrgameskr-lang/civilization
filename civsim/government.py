@@ -53,6 +53,10 @@ def _plans(world, sim, mode):
 
 def step_government(sim, year, mode):
     """Commit public and private accounts together only after all independent audits pass."""
+    return _advance_fiscal(sim, year, mode)
+
+
+def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False):
     source = sim.world
     if type(year) is not int or year != source.year + 1 or mode not in MODES:
         raise ValueError("expected the next year and a supported government program")
@@ -65,6 +69,9 @@ def step_government(sim, year, mode):
     depots = {i: goods.copy() for i, goods in sim.depots.items()}
     opening = {r.id: state(r) for r in local}
     decisions = _plans(source, sim, mode)
+    if political_open is not None:
+        from .politics import select_plans
+        decisions, recommendations = select_plans(decisions, political_open, feedback)
     works, next_units, residual, labor = execute_works(local, roads, depots, sim.road_units, decisions,
                                                         width=trial.width)
     climate = {n.id: climate_factor(trial.seed, year, n.id) for n in trial.nations}
@@ -114,6 +121,9 @@ def step_government(sim, year, mode):
     gov = {"mode":mode, "depots":warehouses, "levies":levies, "works":works, "relief":relief, "roads":edge_rows}
     record["government"] = gov
     gov["accounts"] = country_accounts(record, decisions)
+    if political_open is not None:
+        from .politics import political_ledger
+        record["politics"] = political_ledger(record, political_open, recommendations, feedback)
     audit_fiscal_year(record)
     previous = {r.id: {"unmet":meals[r.id]["food_unmet"], "pop_delta":r.population-opening[r.id]["population"],
                        "food_output":prod[r.id]["produced"]["food"], "food_need":meals[r.id]["food_need"],

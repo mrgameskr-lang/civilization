@@ -89,6 +89,13 @@ def regional_summary(directory, export=None):
                 result["freight_food"] += sum(a["totals"]["public_freight_food"] for a in gov["accounts"])
             if not result["years"]:
                 result["initial_population"] = sum(r["opening"]["population"] for r in row["regions"])
+            if "politics" in row:
+                p = row["politics"]
+                result["model_version"] = "5.0B"
+                result["feedback"] = p["feedback"]
+                changed = sum(bool(d["recommendation"]["changed"]) for d in p["countries"])
+                result["different_recommendations"] = result.get("different_recommendations", 0) + changed
+                result["political_switches"] = result.get("political_switches", 0) + (changed if p["feedback"] else 0)
             result["years"] += 1
             result["final_population"] = sum(r["closing"]["population"] for r in row["regions"])
             result["total_migrants"] += sum(m["people"] for m in row["moves"])

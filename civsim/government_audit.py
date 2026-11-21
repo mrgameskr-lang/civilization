@@ -191,3 +191,6 @@ def audit_fiscal_year(record, *, previous_record=None):
         _check(combined[owner] == a["combined_close"], "consolidated national balance")
     _road_audit(record)
     audit_appropriations(record, previous_record=previous_record)
+    if "politics" in record:
+        from .politics import audit_political_states
+        audit_political_states(record, previous_record=previous_record)
