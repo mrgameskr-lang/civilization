@@ -1,0 +1,42 @@
+{
+  "stage": "B2",
+  "arms": [
+    "C",
+    "D"
+  ],
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "samples": {
+    "dev": {
+      "seed_range": [
+        0,
+        19
+      ],
+      "runs_csv_sha256": "8316548fb4678a2e0c5e3dbcead763028269960a7189e677ea46f4a48d1f9f10",
+      "paths": 40,
+      "annual_ledgers": 8000,
+      "initial_comparisons": 120,
+      "cumulative_comparisons": 120,
+      "matched_checkpoint_table_sha256": "12e5778a6b123cf00f50d693a808e7a66bc14c6c71ee71050b8ef8dd029ae538"
+    },
+    "holdout": {
+      "seed_range": [
+        20,
+        39
+      ],
+      "runs_csv_sha256": "b82e38340ffac1dffb608854bf5832ae94d006d7aff2e9b3e3ae2f784ee26d58",
+      "paths": 40,
+      "annual_ledgers": 8000,
+      "initial_comparisons": 120,
+      "cumulative_comparisons": 120,
+      "matched_checkpoint_table_sha256": "f402f9fa5958ef438e5aa49b8ec1181a869fda7a44f86ac06bbca9623705cb07"
+    }
+  },
+  "audit": "A: annual geographic audit plus predecessor; B/C/D: annual geographic audit inside regular step",
+  "workers": 5,
+  "python": "3.12.14",
+  "wall_seconds": 1001.044
+}
