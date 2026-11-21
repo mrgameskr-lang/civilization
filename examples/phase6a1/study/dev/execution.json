@@ -1,0 +1,29 @@
+{
+  "sample": "dev",
+  "first_seed": 0,
+  "seeds": 20,
+  "workers": 5,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "paths": 120,
+  "annual_transitions": 24000,
+  "archive_6a_A": 60,
+  "archive_6a_E": 60,
+  "replayed_checkpoints": 0,
+  "table_sha256": {
+    "aid-attempts.csv.gz": "1cb1ed7a726acc9791c0404dcfbf787bbc1f5ff0251de961fa89ebe34810b06e",
+    "countries.csv": "8a3d1e0abe63cdb47fee9ae265685afaef5dc5a39e492fea1734e37c0afce169",
+    "country-years.csv.gz": "cdfb38bac789d5abe0b34cb4c2b93a83d376473487a5a5c5a2e32fac6059d649",
+    "direction-years.csv.gz": "8218e8d186991a5d90dfb8c594de8bbaf7157aea65c10ebcb09ace2a84590995",
+    "means.csv": "476378807e36dfcb8db8b2046ef7cf0560476fbbfb16792e17a2ae6ef39ea293",
+    "paired.csv": "0593dba364e9ff9f799b672b3e90c81840cc20baa7ded3185bad3433f983398f",
+    "region-years.csv.gz": "4ffada66c51de7f94515d37a795a837963046ec5ad0d37a6a9bd3930de462603",
+    "regions.csv": "53656b3c637e8a90c48b9601039fb3315622a93f9d478bc81a44f1f62a088de6",
+    "runs.csv": "46a5ec2a49fbecbcfb12e610a5409c1626d91416552f138c45f47637759034d5"
+  },
+  "python": "3.12.14",
+  "wall_seconds": 1021.4936165999388
+}
