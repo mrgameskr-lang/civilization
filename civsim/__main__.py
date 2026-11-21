@@ -48,6 +48,13 @@ def main() -> int:
     from .fiscal_policy import MODES
     government.add_argument("--policy", choices=MODES, default="integrated")
 
+    politics = commands.add_parser("politics", help="5.0B 지역별 정당성·경제 원장 저장")
+    politics.add_argument("--out", required=True, type=Path)
+    politics.add_argument("--seed", type=int, default=42)
+    politics.add_argument("--years", type=int, default=50)
+    politics.add_argument("--per-nation", type=int, default=4)
+    politics.add_argument("--feedback", choices=("on", "off"), default="on")
+
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
@@ -75,6 +82,11 @@ def main() -> int:
             write_government_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
                                  policy=args.policy)
             print(f"5.0A 정부 원장을 저장했습니다. {args.out.resolve()}")
+        elif args.command == "politics":
+            from .political_storage import write_political_run
+            write_political_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
+                                feedback=args.feedback == "on")
+            print(f"5.0B 원장을 저장했습니다. {args.out.resolve()}")
         elif args.command == "analyze":
             totals = summary(args.directory)
             if args.csv is not None:

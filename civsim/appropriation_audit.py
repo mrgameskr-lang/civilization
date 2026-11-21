@@ -136,6 +136,9 @@ def _audit(record, previous_record):
                 last = prior_roads[key]
                 _check(usage[key] == last["capacity"]-last["unused"], "decision used incorrect prior road loads")
         expected = decide(owner, local, network, stocks, previous, units, gov["mode"], usage)
+        if "politics" in record:
+            from .politics import audit_plan
+            expected = audit_plan(record["politics"], expected)
         _check(_decision_view(d)==expected, "decision differs from opening state, eligible candidates or budget")
         plans[owner] = expected
     audit_collection(regional.values(), plans, gov["mode"], gov["levies"])
