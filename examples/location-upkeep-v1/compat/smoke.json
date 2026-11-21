@@ -1,0 +1,157 @@
+{
+  "cases": {
+    "empty_store.jsonl.gz": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "686c72d60750bd2130c84c22ebda3be82a6c99950ad74d4e8a36882d33c3a80c",
+      "reference_file_sha256": "6eafb7cd16f0de93a1388511752d4f07dba6951472bea9549e01e10234b12a89",
+      "replayed_file_sha256": "6eafb7cd16f0de93a1388511752d4f07dba6951472bea9549e01e10234b12a89"
+    },
+    "exhausted_road.jsonl.gz": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "b0ccd4d68c1ee74461392901bf8b005ce1b2b596c770116a6f3cb053df93090d",
+      "reference_file_sha256": "9a93af7050e5bb2b0cc749570be45af667910fc933066fd44c7072ac7e55b0cc",
+      "replayed_file_sha256": "9a93af7050e5bb2b0cc749570be45af667910fc933066fd44c7072ac7e55b0cc"
+    },
+    "hold-years2-3.jsonl.gz": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "a49d7d72bd9adf5e79fbf0891b51ab1061b8de31cc439036eff3b4e9ee146629",
+      "reference_file_sha256": "5db3d7400665d46d601092ce2fdb7abf273f48cd0e7c53b1696313479d07e1b1",
+      "replayed_file_sha256": "5db3d7400665d46d601092ce2fdb7abf273f48cd0e7c53b1696313479d07e1b1"
+    },
+    "move-years2-3.jsonl.gz": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "e5a0d0aa5c4ff775d5430e82616d8ada388b25fba6fc08081e0c5274a772be5b",
+      "reference_file_sha256": "78df06a9e4dfcfa1b25013dba52b837c10e2367bdc8bdc6e0528d46bd45101db",
+      "replayed_file_sha256": "78df06a9e4dfcfa1b25013dba52b837c10e2367bdc8bdc6e0528d46bd45101db"
+    },
+    "results.json": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "631bbc1b8194be068528a6e754ea1d8db5f27fcf46299aa931150b38e039ba26",
+      "reference_file_sha256": "631bbc1b8194be068528a6e754ea1d8db5f27fcf46299aa931150b38e039ba26",
+      "replayed_file_sha256": "631bbc1b8194be068528a6e754ea1d8db5f27fcf46299aa931150b38e039ba26"
+    },
+    "roster_exceeded.jsonl.gz": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "32154b5f8aa6cc83d163db3ce96a45ea0e34ad169c0c11fab953451504c8b713",
+      "reference_file_sha256": "effbf75a14fa2956f85fec859a9b35a36c146ab00c6736630128c10297026f1d",
+      "replayed_file_sha256": "effbf75a14fa2956f85fec859a9b35a36c146ab00c6736630128c10297026f1d"
+    },
+    "year1.jsonl.gz": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "116f2e1b9b9a79eb02b6c32f3c2f99bba3a341b2d9ae7f862a188808fb824398",
+      "reference_file_sha256": "a30cd4651acccc1a2ce1fd433f885705868d8e2bdb6b9c907f48bda2117595c7",
+      "replayed_file_sha256": "a30cd4651acccc1a2ce1fd433f885705868d8e2bdb6b9c907f48bda2117595c7"
+    },
+    "year2-opening.json.gz": {
+      "identical_file_bytes": true,
+      "matched_payload_sha256": "1cc4d4f66c6d1702e4439fd2b10137d24196a8672a6d5041508ebd35598abf73",
+      "reference_file_sha256": "b3547207b01c76ecc866023f4b5e6b28c0aafae0aa019da55c47d0f537219f5f",
+      "replayed_file_sha256": "b3547207b01c76ecc866023f4b5e6b28c0aafae0aa019da55c47d0f537219f5f"
+    }
+  },
+  "elapsed_seconds": 13.945,
+  "horizons": [
+    50
+  ],
+  "matched_checkpoints": 2,
+  "observed_arm_years": 100,
+  "python": "3.12.14",
+  "reference_commit": "a6d9e6b85f58a2cfc35fc96b1afd8c23b781276c",
+  "scope": "smoke",
+  "seed_results": [
+    {
+      "checkpoints": [
+        {
+          "annual_chain_sha256": "f2d418ba4575346d2af38f30d8863d989809a21ac34cfc1968bc4ea735e4d0c5",
+          "arm": "move",
+          "year": 50
+        },
+        {
+          "annual_chain_sha256": "05ce7340cb448997fc2610490c8fac39461c1c97000252ec9861dbf16839d00b",
+          "arm": "hold",
+          "year": 50
+        }
+      ],
+      "complete_seed_file": false,
+      "reference_file_sha256": "183758065eb05a57c2f5df6bb6c56e8f7e23057be80000fd408c3c2c8ac96dec",
+      "replayed_file_sha256": "2482d23ac04bd17e5e9483ec74cf926ced8b0b3276f2ccc7ced860e7abcf7b7a",
+      "seed": 0
+    }
+  ],
+  "seeds": [
+    0
+  ],
+  "started_utc": "2026-11-21T18:05:51.293946+00:00",
+  "unique_year_steps": 99,
+  "workers": 1,
+  "working_source_sha256": {
+    "civsim/__init__.py": "589b92573dca10d832579073918bb127040cc0b5e9ec10a6e4ff62e1a7cea92f",
+    "civsim/__main__.py": "95e7e6cc8e957ada02e79e4ceac70363ce36ec256abd90bfc92692c1a5ca3fbd",
+    "civsim/aid61.py": "583c8bc7f9a04fae40bac8ec36cd72c8e25d7f790f1ac86827365a46b1b48af0",
+    "civsim/aid_budget61.py": "7d43bd4a66ad97c83e55da82c21493780d48479fde7db8097899ce2dc8f7a6d9",
+    "civsim/aid_opinion.py": "df3c1d65529e4a6bf056e10176d1db8f67835225bbfc20519b058c456b3bb3ce",
+    "civsim/analysis.py": "c8db8a6ebb11f96f820d35e0470344f41fc1111a3af2d5c67c83ff32cfe8e790",
+    "civsim/annual_game.py": "acaa4d04e1dafb4ef3998e90e746aa043d64eec8341b656f23cc0b386710c999",
+    "civsim/appropriation_audit.py": "565c7aa9abb8e16cbb0cd50774c9d80509ef7d6fa72d682a40d7d1a23063c763",
+    "civsim/audit.py": "6d50112ef0a4df908c755d20331e0bc75643edad0b66113da8bcf365d0c2d102",
+    "civsim/border.py": "7f9f8fb60093f2f10e2211b3cef5a60061d09057bcb5af5a141e36ddc5e2f438",
+    "civsim/civic_diplomacy63.py": "ba84a8c715ba040e5cf9c85a6887df3d8ea282ddccbda6065a8c2b2729eb7814",
+    "civsim/civic_fiscal.py": "85ce3e3f90a5d698f032c60c19faf38de491d044bd18f785f9ec950911672219",
+    "civsim/civic_followup64.py": "99ee4c5dcb7045200e38c6f2d105ec302e60e268262fe010019dd64ea06f03dc",
+    "civsim/civic_observer63.py": "f99abcb9b6672baac19b015f00e8f7d5bc772b37af3f3126f60b7ef474f47709",
+    "civsim/civic_pledges64.py": "1312a750e0130736705df68df526cbfe2c843fc8216eca99915af1df4bf59cbb",
+    "civsim/collective.py": "122ead05c65e713e5512e5a9a069575d2c2b47e4b581c9dff45242c2a807bf34",
+    "civsim/collective_rules.py": "d02d1b1384c203e52e1b9860eba03fc2f8b0be9a25f565f32972fd7aa745c6d3",
+    "civsim/collective_storage.py": "21d1a04c2b00c2077ae5af6641c6240a3b5b8aa6b029643a63c87518d3145f5c",
+    "civsim/competition.py": "e00f87d9a2215f223100e87a5e4629b33ce3c776d83f6a32135af4d1b3bffe1b",
+    "civsim/competition_rules.py": "836ce1667d96859cf2e6f79608366353807b546e5349ae9409c974d2525e52c8",
+    "civsim/competition_storage.py": "f9d8a176aa93e32c5b39aad8c4a0293eac7dc5bb0eefea06fa318654d3a6b7b9",
+    "civsim/demography.py": "fbfa454edbabbb9b9b7b3a5179cd7b93a29d8e6338da225051d88a531ba6db30",
+    "civsim/depot62_cli.py": "2b4ab9985c04e29727a7496a1a9b48b03af54da5be94ecbf8bdb896f9e3a9ae9",
+    "civsim/depot_supply62.py": "9eda1b7ab2613f282e843adb4aa62bf9daf11144a4937028f883aee3294cab34",
+    "civsim/diplomacy.py": "432e72910607727311448fb0c3642cb28ecb72f6eeb1a3885dc9540658d0fa4e",
+    "civsim/diplomacy61.py": "a4ad9eefebc3eb2a1ed671c0754e1056ab218fd48cbe54541c26f886ee6f4c9c",
+    "civsim/diplomacy_storage.py": "649ee7ecff0657dbf6eb64724407336d4be195b7869446bc1d6f8dabd1301039",
+    "civsim/diplomatic_flows.py": "d0a0a9b7158275ef21ee4e477eaa405d2bc257eab56f970d981c0e7c7348adf8",
+    "civsim/diplomatic_rules.py": "a2a124580505e559f9c2310aac333bf5b9bdea9fc257dd0e91a1a0b0522a2c54",
+    "civsim/economy.py": "39e030ecadd2741aeb5f9238baaf439478ab4aba2ad99374f1a4e3fdbec2950e",
+    "civsim/engine.py": "38a389228738515804a55b3bc0193bc2458de527a877250e6c792cd434000b8f",
+    "civsim/fiscal_audit61.py": "10f03db62aa18ddc49b49778ac1dbde645ee6736cb3ecc525095e563749f2289",
+    "civsim/fiscal_policy.py": "c9520ac9ab294a4b89329ca7af4e63c9d0fbf483ae7ce3c8a8aeffdd3787ad86",
+    "civsim/fiscal_storage.py": "30339461029c602b117db57cd13caa549226a1f22aa0357e1ba62869bbd3ca45",
+    "civsim/game_journal.py": "4600bdb7bec1f1e91a02dcdeb24b6f531aaff33183a5130c998e7a235cc05593",
+    "civsim/government.py": "c60b7545677d41c818f73ae1993194ec90743744af5a1d247a88337910783798",
+    "civsim/government_audit.py": "c66437340f1153308991bccf2718f924c378cd6aec94069587e17556d16f0574",
+    "civsim/investment.py": "f91a215e8d7fc802ed85ae71ed07fb2aa62ac050cef99e38b4f6eb5596888cfc",
+    "civsim/investment31.py": "402d078e316fd70a46e5cd4ad102756bc84f6fbe306fd00045f8de0e2f6ef568",
+    "civsim/logistics.py": "9c179c7abdf42048b2304edfa220a7b22033fe26cf6dccc62009473875a08e1a",
+    "civsim/model.py": "5ff217fa60bd4b5b1003ade2866b8ee1d8f709d4cb614bd2c36c9c1cea6e25f7",
+    "civsim/peace62.py": "fa3aee294e413cf7d1b9731c310130280eecdf93bbfe637b9f02f23d9f75569a",
+    "civsim/peace62_cli.py": "6608d145473f6a98cde6141133df3f0de409ed441f12ccf9f7dc7b21b73ff5e9",
+    "civsim/political_rules.py": "e9e010f034b2e9b6d29bf65b17011f875811e76dcaa577dd4757b6a152dbc481",
+    "civsim/political_storage.py": "3e2646790c6da569c10d7d8b8cebf4c68fea16033eb0783684fd95aa0e476a74",
+    "civsim/politics.py": "e0d1b43d3f3077978df7e0549b68d44a2a03579353f70c74c277ac350e255b3a",
+    "civsim/posting_archive65.py": "04deb6d4d8b94f5d396e838b3a76ed9a1ec6dd60cddc284616b08fe1b571c5d0",
+    "civsim/posting_engine65.py": "44d0f2222aea8170b128da7ceaaab18372e96eb406661e36591624d1dce0365e",
+    "civsim/postings65.py": "69498f1d70fe690ab8286eae85b0f3aabb8bd10d44be555644cb53b15e6c4b98",
+    "civsim/public_works.py": "6541f5bd05392dba2cfb5ce528a7a8ac3d3d7bb886ea0ae012d3c88db99e3180",
+    "civsim/regional_engine.py": "83d71c6ab7c2fb999821eb11eadb277890fd065353259fe5b0fedd1fdde5d9fc",
+    "civsim/regional_production.py": "235aca2ddec2ff6e2b36aa5b8355b655fd9ce3c54945ed90e5dc4abd8c961bbb",
+    "civsim/regional_storage.py": "8e1071b7cac78172ea08e293ad60332db0ea67e79133ab721292022224d8fce6",
+    "civsim/regions.py": "9ec2c0ea26772bb89501b63528190046dc90f0100c7b26f16e4c1400231c7da5",
+    "civsim/rules.py": "f0879e7a70947817c03b0ac02564d5100baa8752c2b0228e08e2bfc1e3ca0631",
+    "civsim/service62.py": "5a6b4ed083d30c44d6e0df137a3b47d55fa6fa2748547459b7a0dec0d1a69f88",
+    "civsim/storage.py": "770866532af0e4459798b2828626a99d090d3a2fc58a8127ff3b9fc0582fc50b",
+    "civsim/supply62.py": "07579007391f6f9241e25a4ed8084de5ade5c4f83b91b4746468b38dde8f4ea2",
+    "civsim/supply_audit62.py": "934f192a85cf06dcc526198eeccee210f8b7d640b80b9d4798596b1bc34206ef",
+    "civsim/supply_border62.py": "11578d10bf9e50fdfad860c6a7d336e9eb803f280053e1712765bea83e76ad70",
+    "civsim/tax_policy5c.py": "bd5fd843410e786817502214b4dba4996e64ea922670dc2506325aa3d1ec6462",
+    "civsim/unit_board.py": "1c88827fd3441fbf5504fcf1748eb6f0f523f8f92cfbe34da2d8716a0467ef8e",
+    "civsim/unit_board_scenario.py": "9f7f0843360bbc294fba44e83a319a188e2df6eea2b6272c936044485882d034",
+    "civsim/unit_economy.py": "29b4a83fab50257d017717cb8016f010250abc008576ea00e5253922d9b46c58",
+    "civsim/unit_game.py": "f556fd605cf1db1dbae38790eb90b97455269eb299fcf319dc27596117a1562a",
+    "experiments/annual_unit_case.py": "5f3fc4f645e4dffed2badbc8f783db11aec6fcdf2d36145456f73fed40419da4",
+    "experiments/annual_unit_study.py": "b16079ebf2f0eb5b891fe1de71b64fdc88d7adcac379a63a3e298b413e9f475f",
+    "experiments/unit_economy_metrics.py": "ef401cc45ac85301700701c8f2d8058681f48bb1b2e82d8e1d0d0be88732f19a"
+  }
+}
