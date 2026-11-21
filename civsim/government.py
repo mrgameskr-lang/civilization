@@ -56,7 +56,7 @@ def step_government(sim, year, mode):
     return _advance_fiscal(sim, year, mode)
 
 
-def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False):
+def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False, competition=None):
     source = sim.world
     if type(year) is not int or year != source.year + 1 or mode not in MODES:
         raise ValueError("expected the next year and a supported government program")
@@ -69,7 +69,10 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False):
     depots = {i: goods.copy() for i, goods in sim.depots.items()}
     opening = {r.id: state(r) for r in local}
     decisions = _plans(source, sim, mode)
-    if political_open is not None:
+    if competition is not None:
+        from .competition import authorize_plans
+        decisions, recommendations = authorize_plans(decisions, political_open, competition)
+    elif political_open is not None:
         from .politics import select_plans
         decisions, recommendations = select_plans(decisions, political_open, feedback)
     works, next_units, residual, labor = execute_works(local, roads, depots, sim.road_units, decisions,
@@ -81,7 +84,12 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False):
     audit_production(prod_open, produced, prod, climate, public_labor=labor)
     market = border_market(local, trial.borders)
     audit_borders(local, trial.borders, market, produced, {r.id:(r.stock.copy(), r.cash) for r in local})
-    levies = collect(local, depots, decisions, mode)
+    if competition is not None and competition["tax_policy"] == "platform":
+        from .tax_policy5c import collect_with_rates
+        tariffs = {c["id"]: c["tariff"] for c in competition["countries"]}
+        levies = collect_with_rates(local, depots, decisions, mode, tariffs)
+    else:
+        levies = collect(local, depots, decisions, mode)
     admin_limits = {owner: plan["relief_throughput"] if mode != "none" else 0
                     for owner, plan in decisions.items()}
     relief, left = execute_relief(local, roads, depots, decisions, residual, admin_limits, width=trial.width)
@@ -121,6 +129,8 @@ def _advance_fiscal(sim, year, mode, *, political_open=None, feedback=False):
     gov = {"mode":mode, "depots":warehouses, "levies":levies, "works":works, "relief":relief, "roads":edge_rows}
     record["government"] = gov
     gov["accounts"] = country_accounts(record, decisions)
+    if competition is not None:
+        record["competition"] = competition
     if political_open is not None:
         from .politics import political_ledger
         record["politics"] = political_ledger(record, political_open, recommendations, feedback)

@@ -38,8 +38,15 @@ def select_plans(plans, opening, feedback):
     return approved, recommendations
 
 
+def _closing_states(record, opening):
+    if record.get("competition", {}).get("arm", "A") != "A":
+        from .competition_rules import differentiated_observe
+        return differentiated_observe(record, opening)
+    return observe(record, opening)
+
+
 def political_ledger(record, opening, recommendations, feedback):
-    closing = observe(record, opening)
+    closing = _closing_states(record, opening)
     return {"feedback": feedback, "countries": recommendations,
             "regions": [{"id": r["id"], "owner": r["owner"], "opening": deepcopy(opening[r["id"]]),
                          "closing": closing[r["id"]]} for r in record["regions"]]}
@@ -98,7 +105,7 @@ def audit_political_states(record, *, previous_record=None):
         prior = _index(last["regions"], "id")
         if opening != {i: entry["closing"] for i, entry in prior.items()}:
             raise BalanceError("political memory differs from prior closing")
-    expected = observe(record, opening)
+    expected = _closing_states(record, opening)
     for i, r in rows.items():
         if (r["owner"] != areas[i]["owner"] or opening[i]["year"] != record["year"]-1
                 or opening[i]["region"] != i or opening[i]["owner"] != r["owner"]

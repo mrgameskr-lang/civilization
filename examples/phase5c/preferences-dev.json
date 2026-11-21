@@ -1,0 +1,1686 @@
+{
+  "archived_hashes_matched": 20,
+  "seeds": 20,
+  "source": "5.0B feedback on",
+  "totals": {
+    "groups": {
+      "consumer": {
+        "changed_member_years": 87291056,
+        "legacy": {
+          "defer": 0,
+          "none": 52979555,
+          "relief": 162343323,
+          "reserve": 13029855,
+          "road": 0,
+          "soil": 0
+        },
+        "member_years": 228352733,
+        "revised": {
+          "defer": 0,
+          "none": 37640880,
+          "relief": 92709457,
+          "reserve": 97579165,
+          "road": 0,
+          "soil": 423231
+        }
+      },
+      "farm": {
+        "changed_member_years": 45063519,
+        "legacy": {
+          "defer": 4668178,
+          "none": 14162137,
+          "relief": 56636891,
+          "reserve": 0,
+          "road": 0,
+          "soil": 30521777
+        },
+        "member_years": 105988983,
+        "revised": {
+          "defer": 4651835,
+          "none": 11895104,
+          "relief": 33875428,
+          "reserve": 38460243,
+          "road": 1394449,
+          "soil": 15711924
+        }
+      },
+      "industry": {
+        "changed_member_years": 49422004,
+        "legacy": {
+          "defer": 1567793,
+          "none": 30007294,
+          "relief": 87960623,
+          "reserve": 0,
+          "road": 269780,
+          "soil": 0
+        },
+        "member_years": 119805490,
+        "revised": {
+          "defer": 1180383,
+          "none": 24886652,
+          "relief": 45774882,
+          "reserve": 42908440,
+          "road": 4902298,
+          "soil": 152835
+        }
+      }
+    },
+    "pairs": {
+      "all": 384000,
+      "legacy_different": 84675,
+      "legacy_expressed": 264747,
+      "legacy_expressed_different": 37417,
+      "revised_different": 96784,
+      "revised_expressed": 285765,
+      "revised_expressed_different": 45736
+    },
+    "physical": {
+      "industry_input_short": 21970,
+      "industry_short_without_congestion": 20807,
+      "region_years": 128000
+    }
+  },
+  "trajectories": [
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4302466,
+          "legacy": {
+            "defer": 0,
+            "none": 2470517,
+            "relief": 7703979,
+            "reserve": 658455,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 10832951,
+          "revised": {
+            "defer": 0,
+            "none": 1703613,
+            "relief": 4284585,
+            "reserve": 4826225,
+            "road": 0,
+            "soil": 18528
+          }
+        },
+        "farm": {
+          "changed_member_years": 2265127,
+          "legacy": {
+            "defer": 174543,
+            "none": 718821,
+            "relief": 2738486,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1636372
+          },
+          "member_years": 5268222,
+          "revised": {
+            "defer": 173369,
+            "none": 566256,
+            "relief": 1658344,
+            "reserve": 1991320,
+            "road": 918,
+            "soil": 878015
+          }
+        },
+        "industry": {
+          "changed_member_years": 2359020,
+          "legacy": {
+            "defer": 77056,
+            "none": 1332954,
+            "relief": 4020661,
+            "reserve": 0,
+            "road": 6734,
+            "soil": 0
+          },
+          "member_years": 5437405,
+          "revised": {
+            "defer": 47442,
+            "none": 1069570,
+            "relief": 2021538,
+            "reserve": 2047112,
+            "road": 247990,
+            "soil": 3753
+          }
+        }
+      },
+      "legacy_years_sha256": "69a172d6f2a5593ba8f0130a13c4562bfaf8a92b0aeffba7c8f29b0782b94c61",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4471,
+        "legacy_expressed": 13215,
+        "legacy_expressed_different": 2159,
+        "revised_different": 4989,
+        "revised_expressed": 14394,
+        "revised_expressed_different": 2557
+      },
+      "physical": {
+        "industry_input_short": 1104,
+        "industry_short_without_congestion": 1079,
+        "region_years": 6400
+      },
+      "seed": 0
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4533870,
+          "legacy": {
+            "defer": 0,
+            "none": 2859469,
+            "relief": 8393540,
+            "reserve": 679906,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11932915,
+          "revised": {
+            "defer": 0,
+            "none": 2068349,
+            "relief": 4763258,
+            "reserve": 5079106,
+            "road": 0,
+            "soil": 22202
+          }
+        },
+        "farm": {
+          "changed_member_years": 2210620,
+          "legacy": {
+            "defer": 274069,
+            "none": 690098,
+            "relief": 2720964,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1610763
+          },
+          "member_years": 5295894,
+          "revised": {
+            "defer": 274951,
+            "none": 615572,
+            "relief": 1629965,
+            "reserve": 1936348,
+            "road": 24924,
+            "soil": 814134
+          }
+        },
+        "industry": {
+          "changed_member_years": 2662232,
+          "legacy": {
+            "defer": 95910,
+            "none": 1658948,
+            "relief": 4750724,
+            "reserve": 0,
+            "road": 1520,
+            "soil": 0
+          },
+          "member_years": 6507102,
+          "revised": {
+            "defer": 80533,
+            "none": 1441705,
+            "relief": 2455400,
+            "reserve": 2347048,
+            "road": 180320,
+            "soil": 2096
+          }
+        }
+      },
+      "legacy_years_sha256": "97f6a5a6651afa4b9e6bc0bcf65515905ce484f19b9b581fef5799d50a72a914",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4449,
+        "legacy_expressed": 13054,
+        "legacy_expressed_different": 1881,
+        "revised_different": 4392,
+        "revised_expressed": 13944,
+        "revised_expressed_different": 1810
+      },
+      "physical": {
+        "industry_input_short": 687,
+        "industry_short_without_congestion": 664,
+        "region_years": 6400
+      },
+      "seed": 1
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4620180,
+          "legacy": {
+            "defer": 0,
+            "none": 2782803,
+            "relief": 8603791,
+            "reserve": 654953,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 12041547,
+          "revised": {
+            "defer": 0,
+            "none": 2058919,
+            "relief": 4803030,
+            "reserve": 5166615,
+            "road": 0,
+            "soil": 12983
+          }
+        },
+        "farm": {
+          "changed_member_years": 2316127,
+          "legacy": {
+            "defer": 246174,
+            "none": 700139,
+            "relief": 2887154,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1450794
+          },
+          "member_years": 5284261,
+          "revised": {
+            "defer": 244484,
+            "none": 584885,
+            "relief": 1669605,
+            "reserve": 1917424,
+            "road": 154874,
+            "soil": 712989
+          }
+        },
+        "industry": {
+          "changed_member_years": 2718990,
+          "legacy": {
+            "defer": 81276,
+            "none": 1676177,
+            "relief": 4863567,
+            "reserve": 0,
+            "road": 11340,
+            "soil": 0
+          },
+          "member_years": 6632360,
+          "revised": {
+            "defer": 76411,
+            "none": 1383627,
+            "relief": 2520647,
+            "reserve": 2432733,
+            "road": 217192,
+            "soil": 1750
+          }
+        }
+      },
+      "legacy_years_sha256": "b862b91a434043aa9f02a42ee413f67eac7406f6a7227d6d1cf3fdc277100b85",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4161,
+        "legacy_expressed": 13388,
+        "legacy_expressed_different": 1827,
+        "revised_different": 4679,
+        "revised_expressed": 14501,
+        "revised_expressed_different": 2333
+      },
+      "physical": {
+        "industry_input_short": 1105,
+        "industry_short_without_congestion": 1057,
+        "region_years": 6400
+      },
+      "seed": 2
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4443789,
+          "legacy": {
+            "defer": 0,
+            "none": 2758230,
+            "relief": 8180409,
+            "reserve": 673064,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11611703,
+          "revised": {
+            "defer": 0,
+            "none": 1885311,
+            "relief": 4764455,
+            "reserve": 4949130,
+            "road": 0,
+            "soil": 12807
+          }
+        },
+        "farm": {
+          "changed_member_years": 2297080,
+          "legacy": {
+            "defer": 217404,
+            "none": 828200,
+            "relief": 2915470,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1454482
+          },
+          "member_years": 5415556,
+          "revised": {
+            "defer": 215835,
+            "none": 736891,
+            "relief": 1784266,
+            "reserve": 1990483,
+            "road": 8994,
+            "soil": 679087
+          }
+        },
+        "industry": {
+          "changed_member_years": 2414433,
+          "legacy": {
+            "defer": 95384,
+            "none": 1526908,
+            "relief": 4432640,
+            "reserve": 0,
+            "road": 7839,
+            "soil": 0
+          },
+          "member_years": 6062771,
+          "revised": {
+            "defer": 71834,
+            "none": 1304922,
+            "relief": 2383588,
+            "reserve": 2189059,
+            "road": 111745,
+            "soil": 1623
+          }
+        }
+      },
+      "legacy_years_sha256": "083dc4130280b1da7f57e9e11c039fe0424a934200b646d51e4625b8abb64963",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 3849,
+        "legacy_expressed": 13026,
+        "legacy_expressed_different": 1599,
+        "revised_different": 3690,
+        "revised_expressed": 14007,
+        "revised_expressed_different": 1138
+      },
+      "physical": {
+        "industry_input_short": 556,
+        "industry_short_without_congestion": 520,
+        "region_years": 6400
+      },
+      "seed": 3
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4644150,
+          "legacy": {
+            "defer": 0,
+            "none": 2757566,
+            "relief": 8601413,
+            "reserve": 659509,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 12018488,
+          "revised": {
+            "defer": 0,
+            "none": 1929672,
+            "relief": 4933194,
+            "reserve": 5118825,
+            "road": 0,
+            "soil": 36797
+          }
+        },
+        "farm": {
+          "changed_member_years": 2282536,
+          "legacy": {
+            "defer": 235415,
+            "none": 672095,
+            "relief": 2913055,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1563204
+          },
+          "member_years": 5383769,
+          "revised": {
+            "defer": 234894,
+            "none": 570204,
+            "relief": 1692173,
+            "reserve": 1907078,
+            "road": 121416,
+            "soil": 858004
+          }
+        },
+        "industry": {
+          "changed_member_years": 2667695,
+          "legacy": {
+            "defer": 89831,
+            "none": 1593769,
+            "relief": 4810256,
+            "reserve": 0,
+            "road": 8619,
+            "soil": 0
+          },
+          "member_years": 6502475,
+          "revised": {
+            "defer": 76721,
+            "none": 1375328,
+            "relief": 2489682,
+            "reserve": 2333589,
+            "road": 201402,
+            "soil": 25753
+          }
+        }
+      },
+      "legacy_years_sha256": "d970084d6062efd74d0097be09d071ee5c2ad04c8b1cf721894db5c78d59f0b8",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4543,
+        "legacy_expressed": 13405,
+        "legacy_expressed_different": 2071,
+        "revised_different": 4834,
+        "revised_expressed": 14395,
+        "revised_expressed_different": 2350
+      },
+      "physical": {
+        "industry_input_short": 950,
+        "industry_short_without_congestion": 908,
+        "region_years": 6400
+      },
+      "seed": 4
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4392780,
+          "legacy": {
+            "defer": 0,
+            "none": 2904426,
+            "relief": 8217554,
+            "reserve": 675069,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11797049,
+          "revised": {
+            "defer": 0,
+            "none": 2108706,
+            "relief": 4728033,
+            "reserve": 4925325,
+            "road": 0,
+            "soil": 34985
+          }
+        },
+        "farm": {
+          "changed_member_years": 2180939,
+          "legacy": {
+            "defer": 267852,
+            "none": 796852,
+            "relief": 2775176,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1530087
+          },
+          "member_years": 5369967,
+          "revised": {
+            "defer": 265348,
+            "none": 673949,
+            "relief": 1734468,
+            "reserve": 1905484,
+            "road": 1243,
+            "soil": 789475
+          }
+        },
+        "industry": {
+          "changed_member_years": 2422638,
+          "legacy": {
+            "defer": 90061,
+            "none": 1660487,
+            "relief": 4532424,
+            "reserve": 0,
+            "road": 5861,
+            "soil": 0
+          },
+          "member_years": 6288833,
+          "revised": {
+            "defer": 70388,
+            "none": 1399172,
+            "relief": 2452880,
+            "reserve": 2258900,
+            "road": 91384,
+            "soil": 16109
+          }
+        }
+      },
+      "legacy_years_sha256": "f3f78b877f504bd6981ac1b92e18454a5dd8b7dc05c1ebf7b36b2b2106fea2b9",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4198,
+        "legacy_expressed": 12640,
+        "legacy_expressed_different": 1728,
+        "revised_different": 3959,
+        "revised_expressed": 13542,
+        "revised_expressed_different": 1091
+      },
+      "physical": {
+        "industry_input_short": 544,
+        "industry_short_without_congestion": 521,
+        "region_years": 6400
+      },
+      "seed": 5
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4341482,
+          "legacy": {
+            "defer": 0,
+            "none": 2608906,
+            "relief": 8060982,
+            "reserve": 630765,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11300653,
+          "revised": {
+            "defer": 0,
+            "none": 1814655,
+            "relief": 4648878,
+            "reserve": 4825788,
+            "road": 0,
+            "soil": 11332
+          }
+        },
+        "farm": {
+          "changed_member_years": 2390802,
+          "legacy": {
+            "defer": 201870,
+            "none": 713194,
+            "relief": 2760434,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1628139
+          },
+          "member_years": 5303637,
+          "revised": {
+            "defer": 200474,
+            "none": 609057,
+            "relief": 1636423,
+            "reserve": 1806418,
+            "road": 316057,
+            "soil": 735208
+          }
+        },
+        "industry": {
+          "changed_member_years": 2418734,
+          "legacy": {
+            "defer": 102039,
+            "none": 1439620,
+            "relief": 4332546,
+            "reserve": 0,
+            "road": 3264,
+            "soil": 0
+          },
+          "member_years": 5877469,
+          "revised": {
+            "defer": 93160,
+            "none": 1223019,
+            "relief": 2236235,
+            "reserve": 2067215,
+            "road": 251394,
+            "soil": 6446
+          }
+        }
+      },
+      "legacy_years_sha256": "5ed660e0327d6b0147dafcbe6788d2221d83f0e4745a8d6ec3b86309a3d94fa7",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4368,
+        "legacy_expressed": 13363,
+        "legacy_expressed_different": 2156,
+        "revised_different": 4395,
+        "revised_expressed": 14347,
+        "revised_expressed_different": 2157
+      },
+      "physical": {
+        "industry_input_short": 904,
+        "industry_short_without_congestion": 879,
+        "region_years": 6400
+      },
+      "seed": 6
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 3801503,
+          "legacy": {
+            "defer": 0,
+            "none": 2228466,
+            "relief": 7187463,
+            "reserve": 572145,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 9988074,
+          "revised": {
+            "defer": 0,
+            "none": 1535119,
+            "relief": 4161982,
+            "reserve": 4270855,
+            "road": 0,
+            "soil": 20118
+          }
+        },
+        "farm": {
+          "changed_member_years": 2314714,
+          "legacy": {
+            "defer": 125779,
+            "none": 730759,
+            "relief": 2665147,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1540630
+          },
+          "member_years": 5062315,
+          "revised": {
+            "defer": 122204,
+            "none": 570265,
+            "relief": 1541852,
+            "reserve": 1701953,
+            "road": 372736,
+            "soil": 753305
+          }
+        },
+        "industry": {
+          "changed_member_years": 2161200,
+          "legacy": {
+            "defer": 66848,
+            "none": 1173564,
+            "relief": 3552461,
+            "reserve": 0,
+            "road": 22905,
+            "soil": 0
+          },
+          "member_years": 4815778,
+          "revised": {
+            "defer": 40216,
+            "none": 898137,
+            "relief": 1769368,
+            "reserve": 1582025,
+            "road": 518990,
+            "soil": 7042
+          }
+        }
+      },
+      "legacy_years_sha256": "392f24eb274b12de98ba796a8efb8ef206dc8845aefc0924034b213fb1b0eea6",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4242,
+        "legacy_expressed": 13517,
+        "legacy_expressed_different": 2236,
+        "revised_different": 6159,
+        "revised_expressed": 14861,
+        "revised_expressed_different": 3875
+      },
+      "physical": {
+        "industry_input_short": 1990,
+        "industry_short_without_congestion": 1949,
+        "region_years": 6400
+      },
+      "seed": 7
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4171764,
+          "legacy": {
+            "defer": 0,
+            "none": 2659323,
+            "relief": 7775867,
+            "reserve": 678327,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11113517,
+          "revised": {
+            "defer": 0,
+            "none": 1786583,
+            "relief": 4615478,
+            "reserve": 4670002,
+            "road": 0,
+            "soil": 41454
+          }
+        },
+        "farm": {
+          "changed_member_years": 2188108,
+          "legacy": {
+            "defer": 183973,
+            "none": 745797,
+            "relief": 2748678,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1680975
+          },
+          "member_years": 5359423,
+          "revised": {
+            "defer": 180399,
+            "none": 622355,
+            "relief": 1704920,
+            "reserve": 1906309,
+            "road": 6123,
+            "soil": 939317
+          }
+        },
+        "industry": {
+          "changed_member_years": 2242611,
+          "legacy": {
+            "defer": 77746,
+            "none": 1422631,
+            "relief": 4101868,
+            "reserve": 0,
+            "road": 12255,
+            "soil": 0
+          },
+          "member_years": 5614500,
+          "revised": {
+            "defer": 56438,
+            "none": 1132345,
+            "relief": 2243587,
+            "reserve": 1974430,
+            "road": 192081,
+            "soil": 15619
+          }
+        }
+      },
+      "legacy_years_sha256": "69e6b5eb3e60db637bf96fab5562936dd8e3b624af6fb3d3293aa55f7a060eb8",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4424,
+        "legacy_expressed": 12846,
+        "legacy_expressed_different": 1988,
+        "revised_different": 4735,
+        "revised_expressed": 13992,
+        "revised_expressed_different": 1787
+      },
+      "physical": {
+        "industry_input_short": 972,
+        "industry_short_without_congestion": 898,
+        "region_years": 6400
+      },
+      "seed": 8
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4322515,
+          "legacy": {
+            "defer": 0,
+            "none": 2947772,
+            "relief": 8559602,
+            "reserve": 623040,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 12130414,
+          "revised": {
+            "defer": 0,
+            "none": 2284093,
+            "relief": 4990135,
+            "reserve": 4835839,
+            "road": 0,
+            "soil": 20347
+          }
+        },
+        "farm": {
+          "changed_member_years": 2012348,
+          "legacy": {
+            "defer": 430925,
+            "none": 494148,
+            "relief": 2757547,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1310885
+          },
+          "member_years": 4993505,
+          "revised": {
+            "defer": 431684,
+            "none": 397025,
+            "relief": 1667175,
+            "reserve": 1755579,
+            "road": 36042,
+            "soil": 706000
+          }
+        },
+        "industry": {
+          "changed_member_years": 2830546,
+          "legacy": {
+            "defer": 73740,
+            "none": 1914297,
+            "relief": 5037881,
+            "reserve": 0,
+            "road": 6357,
+            "soil": 0
+          },
+          "member_years": 7032275,
+          "revised": {
+            "defer": 51574,
+            "none": 1700000,
+            "relief": 2580195,
+            "reserve": 2318892,
+            "road": 381614,
+            "soil": 0
+          }
+        }
+      },
+      "legacy_years_sha256": "7c64b58c5500ff50086d56f17ff369e5a04c10fcb0b5504bf5d707bf686ba3df",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4319,
+        "legacy_expressed": 13690,
+        "legacy_expressed_different": 1715,
+        "revised_different": 7211,
+        "revised_expressed": 14630,
+        "revised_expressed_different": 4531
+      },
+      "physical": {
+        "industry_input_short": 2107,
+        "industry_short_without_congestion": 2092,
+        "region_years": 6400
+      },
+      "seed": 9
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4363361,
+          "legacy": {
+            "defer": 0,
+            "none": 2653295,
+            "relief": 8160481,
+            "reserve": 651912,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11465688,
+          "revised": {
+            "defer": 0,
+            "none": 1916115,
+            "relief": 4631728,
+            "reserve": 4905718,
+            "road": 0,
+            "soil": 12127
+          }
+        },
+        "farm": {
+          "changed_member_years": 2243174,
+          "legacy": {
+            "defer": 226044,
+            "none": 758041,
+            "relief": 2846648,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1587424
+          },
+          "member_years": 5418157,
+          "revised": {
+            "defer": 223949,
+            "none": 623932,
+            "relief": 1734224,
+            "reserve": 1946826,
+            "road": 15641,
+            "soil": 873585
+          }
+        },
+        "industry": {
+          "changed_member_years": 2439339,
+          "legacy": {
+            "defer": 63100,
+            "none": 1447670,
+            "relief": 4363490,
+            "reserve": 0,
+            "road": 34560,
+            "soil": 0
+          },
+          "member_years": 5908820,
+          "revised": {
+            "defer": 40504,
+            "none": 1120491,
+            "relief": 2338575,
+            "reserve": 2163324,
+            "road": 238186,
+            "soil": 7740
+          }
+        }
+      },
+      "legacy_years_sha256": "156de58911284e33d12ebc51538926e0c6200bd3e8b4170f637cd355f66edd35",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4320,
+        "legacy_expressed": 12876,
+        "legacy_expressed_different": 1800,
+        "revised_different": 4462,
+        "revised_expressed": 14059,
+        "revised_expressed_different": 1624
+      },
+      "physical": {
+        "industry_input_short": 952,
+        "industry_short_without_congestion": 812,
+        "region_years": 6400
+      },
+      "seed": 10
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4592420,
+          "legacy": {
+            "defer": 0,
+            "none": 3032201,
+            "relief": 8457675,
+            "reserve": 642388,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 12132264,
+          "revised": {
+            "defer": 0,
+            "none": 2161046,
+            "relief": 4885434,
+            "reserve": 5062248,
+            "road": 0,
+            "soil": 23536
+          }
+        },
+        "farm": {
+          "changed_member_years": 2171262,
+          "legacy": {
+            "defer": 277799,
+            "none": 679541,
+            "relief": 2708090,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1713032
+          },
+          "member_years": 5378462,
+          "revised": {
+            "defer": 278162,
+            "none": 553515,
+            "relief": 1678280,
+            "reserve": 1915905,
+            "road": 1967,
+            "soil": 950633
+          }
+        },
+        "industry": {
+          "changed_member_years": 2556320,
+          "legacy": {
+            "defer": 66464,
+            "none": 1753419,
+            "relief": 4765781,
+            "reserve": 0,
+            "road": 27370,
+            "soil": 0
+          },
+          "member_years": 6613034,
+          "revised": {
+            "defer": 49423,
+            "none": 1473446,
+            "relief": 2590876,
+            "reserve": 2379474,
+            "road": 105651,
+            "soil": 14164
+          }
+        }
+      },
+      "legacy_years_sha256": "fb846f40131d9c3d254d7e86b7f637c0f86e661f6be8cecd72af307d73762d75",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4707,
+        "legacy_expressed": 12717,
+        "legacy_expressed_different": 1899,
+        "revised_different": 4193,
+        "revised_expressed": 13719,
+        "revised_expressed_different": 1193
+      },
+      "physical": {
+        "industry_input_short": 464,
+        "industry_short_without_congestion": 370,
+        "region_years": 6400
+      },
+      "seed": 11
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4227321,
+          "legacy": {
+            "defer": 0,
+            "none": 2395797,
+            "relief": 8039324,
+            "reserve": 640650,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11075771,
+          "revised": {
+            "defer": 0,
+            "none": 1690084,
+            "relief": 4618165,
+            "reserve": 4739804,
+            "road": 0,
+            "soil": 27718
+          }
+        },
+        "farm": {
+          "changed_member_years": 2272911,
+          "legacy": {
+            "defer": 185471,
+            "none": 644914,
+            "relief": 2944674,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1635310
+          },
+          "member_years": 5410369,
+          "revised": {
+            "defer": 183654,
+            "none": 544730,
+            "relief": 1800566,
+            "reserve": 1991558,
+            "road": 3768,
+            "soil": 886093
+          }
+        },
+        "industry": {
+          "changed_member_years": 2319829,
+          "legacy": {
+            "defer": 73061,
+            "none": 1283583,
+            "relief": 4147146,
+            "reserve": 0,
+            "road": 24078,
+            "soil": 0
+          },
+          "member_years": 5527868,
+          "revised": {
+            "defer": 48148,
+            "none": 1006383,
+            "relief": 2194547,
+            "reserve": 2013512,
+            "road": 255734,
+            "soil": 9544
+          }
+        }
+      },
+      "legacy_years_sha256": "8249266c821f2953ada7db68a58a7a9b361df805384fcb8e6c520b677186afaf",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4340,
+        "legacy_expressed": 13474,
+        "legacy_expressed_different": 1916,
+        "revised_different": 4822,
+        "revised_expressed": 14594,
+        "revised_expressed_different": 2280
+      },
+      "physical": {
+        "industry_input_short": 1133,
+        "industry_short_without_congestion": 1005,
+        "region_years": 6400
+      },
+      "seed": 12
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4560418,
+          "legacy": {
+            "defer": 0,
+            "none": 2625181,
+            "relief": 8312489,
+            "reserve": 672632,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11610302,
+          "revised": {
+            "defer": 0,
+            "none": 1806298,
+            "relief": 4671172,
+            "reserve": 5102522,
+            "road": 0,
+            "soil": 30310
+          }
+        },
+        "farm": {
+          "changed_member_years": 2282928,
+          "legacy": {
+            "defer": 220513,
+            "none": 748542,
+            "relief": 3038004,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1386896
+          },
+          "member_years": 5393955,
+          "revised": {
+            "defer": 220421,
+            "none": 671314,
+            "relief": 1772880,
+            "reserve": 2042052,
+            "road": 0,
+            "soil": 687288
+          }
+        },
+        "industry": {
+          "changed_member_years": 2601287,
+          "legacy": {
+            "defer": 69631,
+            "none": 1466149,
+            "relief": 4528154,
+            "reserve": 0,
+            "road": 21164,
+            "soil": 0
+          },
+          "member_years": 6085098,
+          "revised": {
+            "defer": 45848,
+            "none": 1180214,
+            "relief": 2309190,
+            "reserve": 2199397,
+            "road": 331282,
+            "soil": 19167
+          }
+        }
+      },
+      "legacy_years_sha256": "5e8f9d6b6325454f636b9a26d7f7e02ed4502d59fb5f69e156f0d7a1d267c4cb",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 3762,
+        "legacy_expressed": 13235,
+        "legacy_expressed_different": 1496,
+        "revised_different": 4266,
+        "revised_expressed": 14137,
+        "revised_expressed_different": 1720
+      },
+      "physical": {
+        "industry_input_short": 959,
+        "industry_short_without_congestion": 856,
+        "region_years": 6400
+      },
+      "seed": 13
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4279684,
+          "legacy": {
+            "defer": 0,
+            "none": 2562894,
+            "relief": 7813372,
+            "reserve": 614688,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 10990954,
+          "revised": {
+            "defer": 0,
+            "none": 1865701,
+            "relief": 4360437,
+            "reserve": 4749987,
+            "road": 0,
+            "soil": 14829
+          }
+        },
+        "farm": {
+          "changed_member_years": 2331662,
+          "legacy": {
+            "defer": 244060,
+            "none": 715632,
+            "relief": 2841657,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1416871
+          },
+          "member_years": 5218220,
+          "revised": {
+            "defer": 243623,
+            "none": 580626,
+            "relief": 1590296,
+            "reserve": 1879048,
+            "road": 211005,
+            "soil": 713622
+          }
+        },
+        "industry": {
+          "changed_member_years": 2376900,
+          "legacy": {
+            "defer": 57358,
+            "none": 1457199,
+            "relief": 4124656,
+            "reserve": 0,
+            "road": 10743,
+            "soil": 0
+          },
+          "member_years": 5649956,
+          "revised": {
+            "defer": 46159,
+            "none": 1202963,
+            "relief": 2088537,
+            "reserve": 2073259,
+            "road": 230098,
+            "soil": 8940
+          }
+        }
+      },
+      "legacy_years_sha256": "93e19864260ddca0ff0d60b328f2d728f2bebf549d78d1693400c7a5614739aa",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 3859,
+        "legacy_expressed": 13276,
+        "legacy_expressed_different": 1661,
+        "revised_different": 4932,
+        "revised_expressed": 14382,
+        "revised_expressed_different": 2434
+      },
+      "physical": {
+        "industry_input_short": 1336,
+        "industry_short_without_congestion": 1291,
+        "region_years": 6400
+      },
+      "seed": 14
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4326181,
+          "legacy": {
+            "defer": 0,
+            "none": 2528011,
+            "relief": 8160168,
+            "reserve": 665667,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11353846,
+          "revised": {
+            "defer": 0,
+            "none": 1810977,
+            "relief": 4632333,
+            "reserve": 4890901,
+            "road": 0,
+            "soil": 19635
+          }
+        },
+        "farm": {
+          "changed_member_years": 2293541,
+          "legacy": {
+            "defer": 204220,
+            "none": 763120,
+            "relief": 2973472,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1466822
+          },
+          "member_years": 5407634,
+          "revised": {
+            "defer": 204220,
+            "none": 670277,
+            "relief": 1800036,
+            "reserve": 2004246,
+            "road": 5830,
+            "soil": 723025
+          }
+        },
+        "industry": {
+          "changed_member_years": 2363255,
+          "legacy": {
+            "defer": 61233,
+            "none": 1384534,
+            "relief": 4341496,
+            "reserve": 0,
+            "road": 23789,
+            "soil": 0
+          },
+          "member_years": 5811052,
+          "revised": {
+            "defer": 24667,
+            "none": 1114888,
+            "relief": 2353351,
+            "reserve": 2181827,
+            "road": 134701,
+            "soil": 1618
+          }
+        }
+      },
+      "legacy_years_sha256": "188f62e12fab247879ca2c70799368a279c36ea980888e1e488afb395922529e",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 3972,
+        "legacy_expressed": 13220,
+        "legacy_expressed_different": 1686,
+        "revised_different": 3583,
+        "revised_expressed": 14253,
+        "revised_expressed_different": 1135
+      },
+      "physical": {
+        "industry_input_short": 564,
+        "industry_short_without_congestion": 473,
+        "region_years": 6400
+      },
+      "seed": 15
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4178104,
+          "legacy": {
+            "defer": 0,
+            "none": 2377562,
+            "relief": 7630119,
+            "reserve": 629525,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 10637206,
+          "revised": {
+            "defer": 0,
+            "none": 1633309,
+            "relief": 4324472,
+            "reserve": 4664456,
+            "road": 0,
+            "soil": 14969
+          }
+        },
+        "farm": {
+          "changed_member_years": 2202903,
+          "legacy": {
+            "defer": 194116,
+            "none": 669980,
+            "relief": 2689489,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1466273
+          },
+          "member_years": 5019858,
+          "revised": {
+            "defer": 194550,
+            "none": 556119,
+            "relief": 1624395,
+            "reserve": 1897986,
+            "road": 37983,
+            "soil": 708825
+          }
+        },
+        "industry": {
+          "changed_member_years": 2353105,
+          "legacy": {
+            "defer": 82270,
+            "none": 1358322,
+            "relief": 4062532,
+            "reserve": 0,
+            "road": 2126,
+            "soil": 0
+          },
+          "member_years": 5505250,
+          "revised": {
+            "defer": 58721,
+            "none": 1129732,
+            "relief": 2032169,
+            "reserve": 1956059,
+            "road": 323056,
+            "soil": 5513
+          }
+        }
+      },
+      "legacy_years_sha256": "3b1fb1259b6453140ca6ae9b5b405ca1a9f2b8610eb47f67a7915ffbb23168ed",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4034,
+        "legacy_expressed": 13772,
+        "legacy_expressed_different": 1958,
+        "revised_different": 5801,
+        "revised_expressed": 14802,
+        "revised_expressed_different": 3687
+      },
+      "physical": {
+        "industry_input_short": 1631,
+        "industry_short_without_congestion": 1616,
+        "region_years": 6400
+      },
+      "seed": 16
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4242193,
+          "legacy": {
+            "defer": 0,
+            "none": 2475571,
+            "relief": 7827935,
+            "reserve": 628362,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 10931868,
+          "revised": {
+            "defer": 0,
+            "none": 1766701,
+            "relief": 4409725,
+            "reserve": 4748614,
+            "road": 0,
+            "soil": 6828
+          }
+        },
+        "farm": {
+          "changed_member_years": 2312426,
+          "legacy": {
+            "defer": 254033,
+            "none": 713582,
+            "relief": 2926319,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1436977
+          },
+          "member_years": 5330911,
+          "revised": {
+            "defer": 252900,
+            "none": 624479,
+            "relief": 1706871,
+            "reserve": 1986230,
+            "road": 49147,
+            "soil": 711284
+          }
+        },
+        "industry": {
+          "changed_member_years": 2351662,
+          "legacy": {
+            "defer": 69349,
+            "none": 1358379,
+            "relief": 4033502,
+            "reserve": 0,
+            "road": 18587,
+            "soil": 0
+          },
+          "member_years": 5479817,
+          "revised": {
+            "defer": 51231,
+            "none": 1110093,
+            "relief": 2017034,
+            "reserve": 1901533,
+            "road": 397398,
+            "soil": 2528
+          }
+        }
+      },
+      "legacy_years_sha256": "3108c256975d907c8d0aa59c257daf48feff31b75d2b1982cd11b9cf8adc8c34",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4095,
+        "legacy_expressed": 13420,
+        "legacy_expressed_different": 1901,
+        "revised_different": 5490,
+        "revised_expressed": 14403,
+        "revised_expressed_different": 2940
+      },
+      "physical": {
+        "industry_input_short": 1596,
+        "industry_short_without_congestion": 1522,
+        "region_years": 6400
+      },
+      "seed": 17
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4460855,
+          "legacy": {
+            "defer": 0,
+            "none": 2786902,
+            "relief": 8298461,
+            "reserve": 705285,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11790648,
+          "revised": {
+            "defer": 0,
+            "none": 1990263,
+            "relief": 4759159,
+            "reserve": 5012361,
+            "road": 0,
+            "soil": 28865
+          }
+        },
+        "farm": {
+          "changed_member_years": 2230357,
+          "legacy": {
+            "defer": 274079,
+            "none": 663250,
+            "relief": 2789409,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1619714
+          },
+          "member_years": 5346452,
+          "revised": {
+            "defer": 274987,
+            "none": 517486,
+            "relief": 1689802,
+            "reserve": 1964119,
+            "road": 25389,
+            "soil": 874669
+          }
+        },
+        "industry": {
+          "changed_member_years": 2584237,
+          "legacy": {
+            "defer": 79352,
+            "none": 1610890,
+            "relief": 4606799,
+            "reserve": 0,
+            "road": 16029,
+            "soil": 0
+          },
+          "member_years": 6313070,
+          "revised": {
+            "defer": 69033,
+            "none": 1328650,
+            "relief": 2387393,
+            "reserve": 2243396,
+            "road": 281168,
+            "soil": 3430
+          }
+        }
+      },
+      "legacy_years_sha256": "5498eac33a14a16ba0c759489fc55301611e0a121686cfbb7705432c87dc3c50",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 4734,
+        "legacy_expressed": 13094,
+        "legacy_expressed_different": 2104,
+        "revised_different": 5282,
+        "revised_expressed": 14362,
+        "revised_expressed_different": 2648
+      },
+      "physical": {
+        "industry_input_short": 1211,
+        "industry_short_without_congestion": 1109,
+        "region_years": 6400
+      },
+      "seed": 18
+    },
+    {
+      "groups": {
+        "consumer": {
+          "changed_member_years": 4486020,
+          "legacy": {
+            "defer": 0,
+            "none": 2564663,
+            "relief": 8358699,
+            "reserve": 673513,
+            "road": 0,
+            "soil": 0
+          },
+          "member_years": 11596875,
+          "revised": {
+            "defer": 0,
+            "none": 1825366,
+            "relief": 4723804,
+            "reserve": 5034844,
+            "road": 0,
+            "soil": 12861
+          }
+        },
+        "farm": {
+          "changed_member_years": 2263954,
+          "legacy": {
+            "defer": 229839,
+            "none": 715432,
+            "relief": 2997018,
+            "reserve": 0,
+            "road": 0,
+            "soil": 1386127
+          },
+          "member_years": 5328416,
+          "revised": {
+            "defer": 231727,
+            "none": 606167,
+            "relief": 1758887,
+            "reserve": 2013877,
+            "road": 392,
+            "soil": 717366
+          }
+        },
+        "industry": {
+          "changed_member_years": 2577971,
+          "legacy": {
+            "defer": 96084,
+            "none": 1487794,
+            "relief": 4552039,
+            "reserve": 0,
+            "road": 4640,
+            "soil": 0
+          },
+          "member_years": 6140557,
+          "revised": {
+            "defer": 81932,
+            "none": 1291967,
+            "relief": 2310090,
+            "reserve": 2245656,
+            "road": 210912,
+            "soil": 0
+          }
+        }
+      },
+      "legacy_years_sha256": "fb250d01df38054c3130b2ff63edadfece4103adadc23f20870042c0083fc76e",
+      "pairs": {
+        "all": 19200,
+        "legacy_different": 3828,
+        "legacy_expressed": 13519,
+        "legacy_expressed_different": 1636,
+        "revised_different": 4910,
+        "revised_expressed": 14441,
+        "revised_expressed_different": 2446
+      },
+      "physical": {
+        "industry_input_short": 1205,
+        "industry_short_without_congestion": 1186,
+        "region_years": 6400
+      },
+      "seed": 19
+    }
+  ],
+  "years": 200
+}
