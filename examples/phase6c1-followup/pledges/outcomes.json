@@ -1,0 +1,330 @@
+{
+  "dev": {
+    "assessment_reasons": {
+      "above_ceiling": 163,
+      "no_opportunity": 842,
+      "within_ceiling": 865
+    },
+    "by_type": {
+      "entry": {
+        "joint_no_agreement_signature_rows": 12,
+        "joint_signed_signature_rows": 2,
+        "signature_no": 6,
+        "signature_yes": 8,
+        "unknown": 2
+      },
+      "exit": {
+        "broken": 45,
+        "changed_no": 84,
+        "joint_defer_signature_rows": 168,
+        "joint_no_agreement_signature_rows": 6,
+        "joint_signed_signature_rows": 716,
+        "kept": 251,
+        "signature_no": 87,
+        "signature_yes": 803,
+        "unknown": 420
+      },
+      "trade": {
+        "broken": 118,
+        "changed_no": 104,
+        "changed_yes": 9,
+        "joint_defer_signature_rows": 174,
+        "joint_no_agreement_signature_rows": 238,
+        "joint_signed_signature_rows": 1152,
+        "kept": 614,
+        "signature_no": 223,
+        "signature_yes": 1341,
+        "unknown": 420
+      }
+    },
+    "by_year": {
+      "100": {
+        "assessed": 916,
+        "defer": 168,
+        "different_party_verdicts": 700,
+        "joint_broken": 158,
+        "joint_kept": 132,
+        "joint_unknown": 626,
+        "no_agreement": 128,
+        "none": 54788,
+        "observed_years": 24255,
+        "pair_years": 56000,
+        "party_broken": 161,
+        "party_kept": 856,
+        "party_unknown": 815,
+        "pending": 0,
+        "pending_party_judgments": 0,
+        "signed": 916,
+        "source_accepted": 1212,
+        "source_declined": 29,
+        "source_defer": 354,
+        "source_none": 54405,
+        "worlds_without": {
+          "defer": 0,
+          "joint_broken": 0,
+          "joint_kept": 5,
+          "joint_unknown": 0,
+          "no_agreement": 2,
+          "pending": 20,
+          "signed": 0
+        }
+      },
+      "200": {
+        "assessed": 935,
+        "defer": 171,
+        "different_party_verdicts": 711,
+        "joint_broken": 160,
+        "joint_kept": 132,
+        "joint_unknown": 643,
+        "no_agreement": 128,
+        "none": 110766,
+        "observed_years": 48755,
+        "pair_years": 112000,
+        "party_broken": 163,
+        "party_kept": 865,
+        "party_unknown": 842,
+        "pending": 0,
+        "pending_party_judgments": 0,
+        "signed": 935,
+        "source_accepted": 1234,
+        "source_declined": 29,
+        "source_defer": 367,
+        "source_none": 110370,
+        "worlds_without": {
+          "defer": 0,
+          "joint_broken": 0,
+          "joint_kept": 5,
+          "joint_unknown": 0,
+          "no_agreement": 2,
+          "pending": 20,
+          "signed": 0
+        }
+      },
+      "50": {
+        "assessed": 885,
+        "defer": 165,
+        "different_party_verdicts": 682,
+        "joint_broken": 154,
+        "joint_kept": 131,
+        "joint_unknown": 600,
+        "no_agreement": 120,
+        "none": 26828,
+        "observed_years": 12005,
+        "pair_years": 28000,
+        "party_broken": 157,
+        "party_kept": 839,
+        "party_unknown": 774,
+        "pending": 2,
+        "pending_party_judgments": 4,
+        "signed": 887,
+        "source_accepted": 1172,
+        "source_declined": 29,
+        "source_defer": 331,
+        "source_none": 26468,
+        "worlds_without": {
+          "defer": 0,
+          "joint_broken": 0,
+          "joint_kept": 5,
+          "joint_unknown": 0,
+          "no_agreement": 2,
+          "pending": 18,
+          "signed": 0
+        }
+      }
+    },
+    "same_opening": {
+      "100": {
+        "decision_changed": 177,
+        "individual_signature_changed": 194,
+        "joint_gained": 9,
+        "joint_lost": 168,
+        "joint_signature_changed": 177,
+        "pair_years": 56000,
+        "scored_signature_changed": 913
+      },
+      "200": {
+        "decision_changed": 180,
+        "individual_signature_changed": 197,
+        "joint_gained": 9,
+        "joint_lost": 171,
+        "joint_signature_changed": 180,
+        "pair_years": 112000,
+        "scored_signature_changed": 922
+      },
+      "50": {
+        "decision_changed": 174,
+        "individual_signature_changed": 189,
+        "joint_gained": 9,
+        "joint_lost": 165,
+        "joint_signature_changed": 174,
+        "pair_years": 28000,
+        "scored_signature_changed": 898
+      }
+    },
+    "verified_country_endpoints": 160,
+    "verified_journal_checkpoints": 240
+  },
+  "holdout": {
+    "assessment_reasons": {
+      "above_ceiling": 154,
+      "no_opportunity": 767,
+      "within_ceiling": 751
+    },
+    "by_type": {
+      "entry": {
+        "joint_no_agreement_signature_rows": 10,
+        "signature_no": 5,
+        "signature_yes": 5
+      },
+      "exit": {
+        "broken": 51,
+        "changed_no": 92,
+        "joint_defer_signature_rows": 184,
+        "joint_no_agreement_signature_rows": 6,
+        "joint_signed_signature_rows": 610,
+        "kept": 206,
+        "signature_no": 95,
+        "signature_yes": 705,
+        "unknown": 351
+      },
+      "trade": {
+        "broken": 103,
+        "changed_no": 81,
+        "changed_yes": 8,
+        "joint_defer_signature_rows": 128,
+        "joint_no_agreement_signature_rows": 378,
+        "joint_signed_signature_rows": 1064,
+        "kept": 545,
+        "signature_no": 270,
+        "signature_yes": 1300,
+        "unknown": 416
+      }
+    },
+    "by_year": {
+      "100": {
+        "assessed": 806,
+        "defer": 152,
+        "different_party_verdicts": 632,
+        "joint_broken": 149,
+        "joint_kept": 100,
+        "joint_unknown": 557,
+        "no_agreement": 197,
+        "none": 54844,
+        "observed_years": 24948,
+        "pair_years": 56000,
+        "party_broken": 152,
+        "party_kept": 735,
+        "party_unknown": 725,
+        "pending": 1,
+        "pending_party_judgments": 2,
+        "signed": 807,
+        "source_accepted": 1156,
+        "source_declined": 16,
+        "source_defer": 328,
+        "source_none": 54500,
+        "worlds_without": {
+          "defer": 0,
+          "joint_broken": 0,
+          "joint_kept": 5,
+          "joint_unknown": 0,
+          "no_agreement": 0,
+          "pending": 19,
+          "signed": 0
+        }
+      },
+      "200": {
+        "assessed": 836,
+        "defer": 156,
+        "different_party_verdicts": 650,
+        "joint_broken": 151,
+        "joint_kept": 100,
+        "joint_unknown": 585,
+        "no_agreement": 197,
+        "none": 110810,
+        "observed_years": 50148,
+        "pair_years": 112000,
+        "party_broken": 154,
+        "party_kept": 751,
+        "party_unknown": 767,
+        "pending": 1,
+        "pending_party_judgments": 2,
+        "signed": 837,
+        "source_accepted": 1190,
+        "source_declined": 16,
+        "source_defer": 351,
+        "source_none": 110443,
+        "worlds_without": {
+          "defer": 0,
+          "joint_broken": 0,
+          "joint_kept": 5,
+          "joint_unknown": 0,
+          "no_agreement": 0,
+          "pending": 19,
+          "signed": 0
+        }
+      },
+      "50": {
+        "assessed": 769,
+        "defer": 147,
+        "different_party_verdicts": 609,
+        "joint_broken": 147,
+        "joint_kept": 100,
+        "joint_unknown": 522,
+        "no_agreement": 184,
+        "none": 26894,
+        "observed_years": 12348,
+        "pair_years": 28000,
+        "party_broken": 150,
+        "party_kept": 714,
+        "party_unknown": 674,
+        "pending": 6,
+        "pending_party_judgments": 12,
+        "signed": 775,
+        "source_accepted": 1106,
+        "source_declined": 16,
+        "source_defer": 305,
+        "source_none": 26573,
+        "worlds_without": {
+          "defer": 0,
+          "joint_broken": 0,
+          "joint_kept": 5,
+          "joint_unknown": 0,
+          "no_agreement": 0,
+          "pending": 15,
+          "signed": 0
+        }
+      }
+    },
+    "same_opening": {
+      "100": {
+        "decision_changed": 160,
+        "individual_signature_changed": 177,
+        "joint_gained": 8,
+        "joint_lost": 152,
+        "joint_signature_changed": 160,
+        "pair_years": 56000,
+        "scored_signature_changed": 806
+      },
+      "200": {
+        "decision_changed": 164,
+        "individual_signature_changed": 181,
+        "joint_gained": 8,
+        "joint_lost": 156,
+        "joint_signature_changed": 164,
+        "pair_years": 112000,
+        "scored_signature_changed": 818
+      },
+      "50": {
+        "decision_changed": 155,
+        "individual_signature_changed": 172,
+        "joint_gained": 8,
+        "joint_lost": 147,
+        "joint_signature_changed": 155,
+        "pair_years": 28000,
+        "scored_signature_changed": 783
+      }
+    },
+    "verified_country_endpoints": 160,
+    "verified_journal_checkpoints": 240
+  }
+}

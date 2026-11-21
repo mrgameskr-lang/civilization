@@ -1,0 +1,28 @@
+{
+  "archived_civic_checkpoints": 120,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "off_world_years": 8000,
+  "path_checkpoints": 240,
+  "pledge_on_world_years": 8000,
+  "python": "3.12.14",
+  "replayed_checkpoints": 240,
+  "same_opening_pair_years": 112000,
+  "sample": "dev",
+  "seeds": 20,
+  "table_sha256": {
+    "annual.jsonl.gz": "579303754e03e34902d898a71e1a7fda929b13b30759196204fa83102aaa8daf",
+    "countries.csv": "84969ab3fe913f62f74ade9187a845f32d8ee8ce7f2ad3b76aa7166027f2ab34",
+    "forks.csv": "6bac4fa12501948096061dcb5e02d263c99820070de1b2c523434494476dd9ec",
+    "pairs.csv": "c3d6849ebcbdd17652b99e740ee921d0dba06050bf704740670da0037a2cb2ee",
+    "party-events.csv.gz": "d5f1b50a6d1fdb2e4000beb721afb15f346d28ac60e9ba60572a046e4430752b",
+    "runs.csv": "4c6a17872a515c1e46fa79c04f46846bf75410790272b579fd1623ade388eaeb",
+    "same-opening-cases.json": "f087995a7f57389c1a14a3c3e4d45e87f3c11d9ec04378bc1da911dfc6e33cc7",
+    "source.json": "4aa6f993038a2ad43d1193216615442d764bd39fc942615677d81c6ca1d065c6"
+  },
+  "verified_files": 8,
+  "wall_seconds": 32.77830410003662
+}
