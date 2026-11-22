@@ -120,6 +120,15 @@ def regional_summary(directory, export=None):
                 for levy in row["government"]["levies"]:
                     for good in GOODS:
                         refused[good] += levy["refused"][good]
+            if "diplomacy" in row:
+                diplomatic = row["diplomacy"]
+                loads = diplomatic["physical"]["aid"]["shipments"]
+                for field, key in (("aid_dispatched", "quantity"), ("aid_received", "received"),
+                                   ("aid_freight_food", "cost_food"), ("aid_handling_food", "handling_food")):
+                    result[field] = result.get(field, 0) + sum(s[key] for s in loads)
+                result["freight_food"] += sum(s["cost_food"] for s in loads)
+                result["active_agreements_last_year"] = sum(
+                    p["policy"]["agreement_active"] for p in diplomatic["pairs"])
             result["years"] += 1
             result["final_population"] = sum(r["closing"]["population"] for r in row["regions"])
             result["total_migrants"] += sum(m["people"] for m in row["moves"])

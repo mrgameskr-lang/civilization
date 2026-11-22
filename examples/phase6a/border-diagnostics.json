@@ -1,0 +1,620 @@
+{
+  "dev": {
+    "sample": "dev",
+    "seeds": 20,
+    "years": 200,
+    "arms": {
+      "A": {
+        "full_network_example": {
+          "seed": 1,
+          "year": 1,
+          "country_a": 5,
+          "country_b": 6,
+          "roads": 1,
+          "capacity": 80,
+          "forward": 0,
+          "reverse": 80,
+          "source_region": 20,
+          "target_region": 25
+        },
+        "highest_utilization_road": {
+          "seed": 11,
+          "source": 24,
+          "target": 28,
+          "cargo": 3927,
+          "capacity": 20000,
+          "forward": 0,
+          "reverse": 3927
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 49000,
+          "adjacent_no_trade_years": 43634,
+          "adjacent_no_pact_years": null,
+          "pact_years_no_trade": null,
+          "network_full_years": 76,
+          "network_full_one_way_years": 76,
+          "single_road_full_years": 74,
+          "single_road_years": 9600,
+          "cargo": 682353,
+          "capacity": 43713600,
+          "adjacent_seed_pairs": 245,
+          "never_trade_pairs": 8,
+          "never_pact_pairs": null,
+          "road_years": 145200,
+          "full_road_years_lower": 79,
+          "full_road_years_upper": 3529
+        },
+        "events": {
+          "pact_rejected": 0,
+          "pact_breached": 0,
+          "pact_terminated": 0,
+          "pact_expired": 0,
+          "aid_request_rejected": 0,
+          "aid_offer_rejected": 0,
+          "aid_shortfall": 0
+        },
+        "closing_relations": {
+          "adjacent": null,
+          "nonadjacent": null
+        }
+      },
+      "B": {
+        "full_network_example": {
+          "seed": 1,
+          "year": 1,
+          "country_a": 5,
+          "country_b": 6,
+          "roads": 1,
+          "capacity": 80,
+          "forward": 0,
+          "reverse": 80,
+          "source_region": 20,
+          "target_region": 25
+        },
+        "highest_utilization_road": {
+          "seed": 11,
+          "source": 24,
+          "target": 28,
+          "cargo": 3927,
+          "capacity": 20000,
+          "forward": 0,
+          "reverse": 3927
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 49000,
+          "adjacent_no_trade_years": 43634,
+          "adjacent_no_pact_years": 49000,
+          "pact_years_no_trade": 0,
+          "network_full_years": 76,
+          "network_full_one_way_years": 76,
+          "single_road_full_years": 74,
+          "single_road_years": 9600,
+          "cargo": 682353,
+          "capacity": 43713600,
+          "adjacent_seed_pairs": 245,
+          "never_trade_pairs": 8,
+          "never_pact_pairs": 245,
+          "road_years": 145200,
+          "full_road_years_lower": 79,
+          "full_road_years_upper": 3529
+        },
+        "events": {
+          "pact_rejected": 0,
+          "pact_breached": 0,
+          "pact_terminated": 0,
+          "pact_expired": 0,
+          "aid_request_rejected": 0,
+          "aid_offer_rejected": 0,
+          "aid_shortfall": 0
+        },
+        "closing_relations": {
+          "adjacent": {
+            "n": 245,
+            "negative": 0,
+            "zero": 223,
+            "positive": 22,
+            "median": 0
+          },
+          "nonadjacent": {
+            "n": 315,
+            "negative": 0,
+            "zero": 315,
+            "positive": 0,
+            "median": 0
+          }
+        }
+      },
+      "C": {
+        "full_network_example": {
+          "seed": 1,
+          "year": 1,
+          "country_a": 5,
+          "country_b": 6,
+          "roads": 1,
+          "capacity": 80,
+          "forward": 0,
+          "reverse": 80,
+          "source_region": 20,
+          "target_region": 25
+        },
+        "highest_utilization_road": {
+          "seed": 11,
+          "source": 24,
+          "target": 28,
+          "cargo": 3926,
+          "capacity": 20000,
+          "forward": 0,
+          "reverse": 3926
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 49000,
+          "adjacent_no_trade_years": 43736,
+          "adjacent_no_pact_years": 44566,
+          "pact_years_no_trade": 1279,
+          "network_full_years": 77,
+          "network_full_one_way_years": 77,
+          "single_road_full_years": 73,
+          "single_road_years": 9600,
+          "cargo": 682962,
+          "capacity": 43713600,
+          "adjacent_seed_pairs": 245,
+          "never_trade_pairs": 11,
+          "never_pact_pairs": 30,
+          "road_years": 145200,
+          "full_road_years_lower": 82,
+          "full_road_years_upper": 3550
+        },
+        "events": {
+          "pact_rejected": 913,
+          "pact_breached": 0,
+          "pact_terminated": 0,
+          "pact_expired": 886,
+          "aid_request_rejected": 0,
+          "aid_offer_rejected": 0,
+          "aid_shortfall": 0
+        },
+        "closing_relations": {
+          "adjacent": {
+            "n": 245,
+            "negative": 0,
+            "zero": 221,
+            "positive": 24,
+            "median": 0
+          },
+          "nonadjacent": {
+            "n": 315,
+            "negative": 0,
+            "zero": 315,
+            "positive": 0,
+            "median": 0
+          }
+        }
+      },
+      "D": {
+        "full_network_example": {
+          "seed": 1,
+          "year": 1,
+          "country_a": 5,
+          "country_b": 6,
+          "roads": 1,
+          "capacity": 80,
+          "forward": 0,
+          "reverse": 80,
+          "source_region": 20,
+          "target_region": 25
+        },
+        "highest_utilization_road": {
+          "seed": 15,
+          "source": 11,
+          "target": 12,
+          "cargo": 4028,
+          "capacity": 18800,
+          "forward": 4028,
+          "reverse": 0
+        },
+        "exposed_country_year_example": {
+          "seed": 11,
+          "year": 19,
+          "owner": 1,
+          "exposed_region_years": 3,
+          "sent": 256,
+          "received": 0,
+          "groups": {
+            "farm": {
+              "positive": 0,
+              "negative": 2,
+              "zero": 1,
+              "members": 2555,
+              "delta_x_members": -743
+            },
+            "industry": {
+              "positive": 0,
+              "negative": 0,
+              "zero": 3,
+              "members": 2858,
+              "delta_x_members": 0
+            },
+            "consumer": {
+              "positive": 0,
+              "negative": 0,
+              "zero": 3,
+              "members": 5439,
+              "delta_x_members": 0
+            }
+          }
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 49000,
+          "adjacent_no_trade_years": 43548,
+          "adjacent_no_pact_years": 44676,
+          "pact_years_no_trade": 1279,
+          "network_full_years": 56,
+          "network_full_one_way_years": 56,
+          "single_road_full_years": 51,
+          "single_road_years": 9600,
+          "cargo": 755844,
+          "capacity": 43713600,
+          "adjacent_seed_pairs": 245,
+          "never_trade_pairs": 12,
+          "never_pact_pairs": 24,
+          "road_years": 145200,
+          "full_road_years_lower": 63,
+          "full_road_years_upper": 3620
+        },
+        "events": {
+          "pact_rejected": 1038,
+          "pact_breached": 317,
+          "pact_terminated": 108,
+          "pact_expired": 790,
+          "aid_request_rejected": 23405,
+          "aid_offer_rejected": 108,
+          "aid_shortfall": 748
+        },
+        "closing_relations": {
+          "adjacent": {
+            "n": 245,
+            "negative": 10,
+            "zero": 209,
+            "positive": 26,
+            "median": 0
+          },
+          "nonadjacent": {
+            "n": 315,
+            "negative": 0,
+            "zero": 315,
+            "positive": 0,
+            "median": 0
+          }
+        },
+        "largest_origin_handling_loss": {
+          "seed": 18,
+          "owner": 5,
+          "region": 20,
+          "sent": 4999,
+          "received": 4821,
+          "handling": 178,
+          "freight": 769
+        }
+      }
+    },
+    "source_sha256": {
+      "borders.csv.gz": "abc1634fd0c07491b112b4c1d6ce73ee3c0f6a3d61d25c83cac9d8f4be976450",
+      "pair-years.csv.gz": "1c5ac76676512fe9de44fdb8c893f8dc0b67d1f2a4dcbd4f973c356ad62f702c",
+      "events.csv.gz": "6da73f9440edc002f8c089d8762437979735ed7123af9b29154feedd14057c67",
+      "country-years.csv.gz": "6bcf81a985662c367ee2e71335a1a81d0d8ab7d6aa73bf569c574de00fa533c3"
+    }
+  },
+  "holdout": {
+    "sample": "holdout",
+    "seeds": 20,
+    "years": 200,
+    "arms": {
+      "A": {
+        "full_network_example": {
+          "seed": 22,
+          "year": 42,
+          "country_a": 0,
+          "country_b": 3,
+          "roads": 1,
+          "capacity": 320,
+          "forward": 320,
+          "reverse": 0,
+          "source_region": 1,
+          "target_region": 14
+        },
+        "highest_utilization_road": {
+          "seed": 39,
+          "source": 20,
+          "target": 30,
+          "cargo": 4110,
+          "capacity": 16800,
+          "forward": 0,
+          "reverse": 4110
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 50400,
+          "adjacent_no_trade_years": 44683,
+          "adjacent_no_pact_years": null,
+          "pact_years_no_trade": null,
+          "network_full_years": 40,
+          "network_full_one_way_years": 40,
+          "single_road_full_years": 39,
+          "single_road_years": 9600,
+          "cargo": 698920,
+          "capacity": 46409000,
+          "adjacent_seed_pairs": 252,
+          "never_trade_pairs": 10,
+          "never_pact_pairs": null,
+          "road_years": 146000,
+          "full_road_years_lower": 41,
+          "full_road_years_upper": 3461
+        },
+        "events": {
+          "pact_rejected": 0,
+          "pact_breached": 0,
+          "pact_terminated": 0,
+          "pact_expired": 0,
+          "aid_request_rejected": 0,
+          "aid_offer_rejected": 0,
+          "aid_shortfall": 0
+        },
+        "closing_relations": {
+          "adjacent": null,
+          "nonadjacent": null
+        }
+      },
+      "B": {
+        "full_network_example": {
+          "seed": 22,
+          "year": 42,
+          "country_a": 0,
+          "country_b": 3,
+          "roads": 1,
+          "capacity": 320,
+          "forward": 320,
+          "reverse": 0,
+          "source_region": 1,
+          "target_region": 14
+        },
+        "highest_utilization_road": {
+          "seed": 39,
+          "source": 20,
+          "target": 30,
+          "cargo": 4110,
+          "capacity": 16800,
+          "forward": 0,
+          "reverse": 4110
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 50400,
+          "adjacent_no_trade_years": 44683,
+          "adjacent_no_pact_years": 50400,
+          "pact_years_no_trade": 0,
+          "network_full_years": 40,
+          "network_full_one_way_years": 40,
+          "single_road_full_years": 39,
+          "single_road_years": 9600,
+          "cargo": 698920,
+          "capacity": 46409000,
+          "adjacent_seed_pairs": 252,
+          "never_trade_pairs": 10,
+          "never_pact_pairs": 252,
+          "road_years": 146000,
+          "full_road_years_lower": 41,
+          "full_road_years_upper": 3461
+        },
+        "events": {
+          "pact_rejected": 0,
+          "pact_breached": 0,
+          "pact_terminated": 0,
+          "pact_expired": 0,
+          "aid_request_rejected": 0,
+          "aid_offer_rejected": 0,
+          "aid_shortfall": 0
+        },
+        "closing_relations": {
+          "adjacent": {
+            "n": 252,
+            "negative": 0,
+            "zero": 229,
+            "positive": 23,
+            "median": 0.0
+          },
+          "nonadjacent": {
+            "n": 308,
+            "negative": 0,
+            "zero": 308,
+            "positive": 0,
+            "median": 0.0
+          }
+        }
+      },
+      "C": {
+        "full_network_example": {
+          "seed": 22,
+          "year": 42,
+          "country_a": 0,
+          "country_b": 3,
+          "roads": 1,
+          "capacity": 320,
+          "forward": 320,
+          "reverse": 0,
+          "source_region": 1,
+          "target_region": 14
+        },
+        "highest_utilization_road": {
+          "seed": 39,
+          "source": 20,
+          "target": 30,
+          "cargo": 4116,
+          "capacity": 16800,
+          "forward": 0,
+          "reverse": 4116
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 50400,
+          "adjacent_no_trade_years": 44763,
+          "adjacent_no_pact_years": 45536,
+          "pact_years_no_trade": 1472,
+          "network_full_years": 37,
+          "network_full_one_way_years": 36,
+          "single_road_full_years": 36,
+          "single_road_years": 9600,
+          "cargo": 698646,
+          "capacity": 46409000,
+          "adjacent_seed_pairs": 252,
+          "never_trade_pairs": 15,
+          "never_pact_pairs": 33,
+          "road_years": 146000,
+          "full_road_years_lower": 38,
+          "full_road_years_upper": 3470
+        },
+        "events": {
+          "pact_rejected": 970,
+          "pact_breached": 0,
+          "pact_terminated": 0,
+          "pact_expired": 972,
+          "aid_request_rejected": 0,
+          "aid_offer_rejected": 0,
+          "aid_shortfall": 0
+        },
+        "closing_relations": {
+          "adjacent": {
+            "n": 252,
+            "negative": 0,
+            "zero": 226,
+            "positive": 26,
+            "median": 0.0
+          },
+          "nonadjacent": {
+            "n": 308,
+            "negative": 0,
+            "zero": 308,
+            "positive": 0,
+            "median": 0.0
+          }
+        }
+      },
+      "D": {
+        "full_network_example": {
+          "seed": 22,
+          "year": 42,
+          "country_a": 0,
+          "country_b": 3,
+          "roads": 1,
+          "capacity": 320,
+          "forward": 320,
+          "reverse": 0,
+          "source_region": 1,
+          "target_region": 14
+        },
+        "highest_utilization_road": {
+          "seed": 39,
+          "source": 20,
+          "target": 30,
+          "cargo": 3722,
+          "capacity": 16800,
+          "forward": 0,
+          "reverse": 3722
+        },
+        "exposed_country_year_example": {
+          "seed": 36,
+          "year": 39,
+          "owner": 5,
+          "exposed_region_years": 2,
+          "sent": 321,
+          "received": 0,
+          "groups": {
+            "farm": {
+              "positive": 0,
+              "negative": 2,
+              "zero": 0,
+              "members": 1060,
+              "delta_x_members": -1060
+            },
+            "industry": {
+              "positive": 0,
+              "negative": 0,
+              "zero": 2,
+              "members": 1593,
+              "delta_x_members": 0
+            },
+            "consumer": {
+              "positive": 0,
+              "negative": 0,
+              "zero": 2,
+              "members": 2653,
+              "delta_x_members": 0
+            }
+          }
+        },
+        "counts": {
+          "all_pair_years": 112000,
+          "adjacent_pair_years": 50400,
+          "adjacent_no_trade_years": 44710,
+          "adjacent_no_pact_years": 45845,
+          "pact_years_no_trade": 1371,
+          "network_full_years": 31,
+          "network_full_one_way_years": 31,
+          "single_road_full_years": 31,
+          "single_road_years": 9600,
+          "cargo": 785934,
+          "capacity": 46409000,
+          "adjacent_seed_pairs": 252,
+          "never_trade_pairs": 14,
+          "never_pact_pairs": 29,
+          "road_years": 146000,
+          "full_road_years_lower": 31,
+          "full_road_years_upper": 3622
+        },
+        "events": {
+          "pact_rejected": 1072,
+          "pact_breached": 268,
+          "pact_terminated": 92,
+          "pact_expired": 850,
+          "aid_request_rejected": 23180,
+          "aid_offer_rejected": 180,
+          "aid_shortfall": 817
+        },
+        "closing_relations": {
+          "adjacent": {
+            "n": 252,
+            "negative": 14,
+            "zero": 211,
+            "positive": 27,
+            "median": 0.0
+          },
+          "nonadjacent": {
+            "n": 308,
+            "negative": 0,
+            "zero": 308,
+            "positive": 0,
+            "median": 0.0
+          }
+        },
+        "largest_origin_handling_loss": {
+          "seed": 36,
+          "owner": 5,
+          "region": 20,
+          "sent": 3267,
+          "received": 3147,
+          "handling": 120,
+          "freight": 454
+        }
+      }
+    },
+    "source_sha256": {
+      "borders.csv.gz": "1274a54f3d99a3269b53eda221fd7cd1efc48e98764aad077c427dcab9319d6d",
+      "pair-years.csv.gz": "d1d6885927a20045edc6361d5d14b88d634fb97f68d02c4aed90fc21fbe1dff2",
+      "events.csv.gz": "fe9a8549e1d5db70fd0aa3005d60a79b1d802699449edd43c2142a8f3c8bbbb6",
+      "country-years.csv.gz": "1deef870169d700e44c7d2c6e76a1ae920bf04c9f7d4fec1541e6736106bef6c"
+    }
+  }
+}
