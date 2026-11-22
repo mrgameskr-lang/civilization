@@ -12,6 +12,7 @@ from .depot_supply62 import audit_depot_supply
 from .government_audit import _by, _check, _valid, country_accounts
 from .logistics import audit_logistics
 from .model import GOODS
+from .public_harvest import RESERVE_POLICIES
 from .public_works import ROAD_BONUS, audit_relief, audit_works, residual_roads
 from .regional_engine import audit_borders, audit_national_year
 from .supply_border62 import audit_envelope, charge_border
@@ -27,6 +28,12 @@ def accounts62(record, decisions):
         totals["depot_freight_food"] = supply["aid_freight_food"] + supply["domestic_freight_food"]
         totals["public_freight_food"] += totals["depot_freight_food"]
         totals["public_cargo"] += sum(e["supply_use"] for e in record["government"]["roads"] if e["owner"] == n)
+        if "emergency_relief" in record:
+            trips = [s for s in record["emergency_relief"]["shipments"] if s["owner"] == n]
+            totals["emergency_food"] = sum(s["quantity"] for s in trips)
+            totals["emergency_freight_food"] = sum(s["cost_food"] for s in trips)
+            totals["public_freight_food"] += totals["emergency_freight_food"]
+            totals["public_cargo"] += sum(e["emergency_use"] for e in record["government"]["roads"] if e["owner"] == n)
         if "unit_game" in record:
             receipt = record["unit_game"]["receipt"]
             totals["unit_move_food"] = receipt["food_spent"] if receipt and receipt["owner"] == n else 0
@@ -49,8 +56,11 @@ def _roads(record):
     civil = {(e["a"],e["b"]):e for e in record["domestic"]["roads"]}
     _check(edges.keys() == civil.keys() and len(edges) == len(government["roads"]), "duplicate or missing road")
     loads, projects = Counter(), Counter()
-    for kind, stage in (("works_use",government["works"]), ("supply_use",record["supply"]),
-                        ("relief_use",government["relief"]), ("private_use",record["domestic"])):
+    stages = [("works_use",government["works"]), ("supply_use",record["supply"]),
+              ("relief_use",government["relief"]), ("private_use",record["domestic"])]
+    if "emergency_relief" in record:
+        stages.append(("emergency_use", record["emergency_relief"]))
+    for kind, stage in stages:
         for trip in stage["shipments"]:
             for leg in trip["legs"]:
                 key = tuple(sorted((leg["a"],leg["b"])))
@@ -64,6 +74,8 @@ def _roads(record):
         if p["edge"] is not None:
             projects[tuple(p["edge"]),p["action"]] += 1
     kinds = ("works_use","supply_use","duty_use","relief_use","private_use")
+    if "emergency_relief" in record:
+        kinds += ("emergency_use",)
     if "unit_game" in record:
         kinds += ("unit_use",)
         receipt = record["unit_game"]["receipt"]
@@ -207,6 +219,15 @@ def _accounts(record, previous_record=None):
         combined[s["owner"]]["food"] -= fee
     if relief_first:
         _charge_sets(issue["groups"], pub, combined, regions)
+    for s in record.get("emergency_relief", {}).get("shipments", ()):
+        a, b, q, fee = s["source"], s["target"], s["quantity"], s["cost_food"]
+        owner = regions[a]["owner"]
+        _check(owner == s["owner"] == regions[b]["owner"] and 0 < q <= pub[a]["food"] - fee and fee >= 0,
+               "unfunded emergency delivery")
+        pub[a]["food"] -= q+fee
+        private[b]["food"] += q
+        transfers[b]["food"] += q
+        combined[owner]["food"] -= fee
     for i, d in depots.items():
         _check(_valid(pub[i]) and d["spoil_food"] == pub[i]["food"]//12, "public storage loss mismatch")
         pub[i]["food"] -= d["spoil_food"]
@@ -302,6 +323,16 @@ def _audit_domestic_delivery(record, geography):
     for place in local:
         place.stock["food"] = relief_nodes[place.id]["private_food_close"]
     left = {(e["a"],e["b"]):e["remaining"] for e in relief["roads"]}
+    if "emergency_relief" in record:
+        from .emergency_relief import execute_emergency_relief
+        from .storage import canonical_line
+        if not relief_first:
+            depots = {i:n["depot_close"].copy() for i,n in relief_nodes.items()}
+        paid = {r["id"]:r["ration_food"] for r in record.get("service", {}).get("regions", [])}
+        if not paid:
+            paid = dict.fromkeys(depots, 0)
+        expected, left = execute_emergency_relief(local, geography.roads, depots, left, relief, paid, width=geography.width)
+        _check(canonical_line(expected) == canonical_line(record["emergency_relief"]), "emergency relief differs from replay")
     _check(record["domestic"]["mode"]=="limited","private road capacity must be finite")
     audit_logistics(local,residual_roads(geography.roads,left),record["domestic"],width=geography.width)
 
@@ -315,13 +346,19 @@ def audit62(record, *, geography, previous_record=None, program=None):
                 ctx = entry.get("diplomacy",{})
                 _check(ctx.get("phase61",{}).get("arm")=="F" and ctx.get("intervention") is None
                        and "supply" not in entry and "service" not in entry and "unit_upkeep" not in entry
-                       and "public_harvest" not in entry,
+                       and "public_harvest" not in entry and "emergency_relief" not in entry,
                        "control requires the ordinary historical F policy")
         audit_fiscal61(record, geography=geography, previous_record=previous_record)
         _audit_domestic_delivery(record,geography)
         return
     cfg = record["public_policy"]
     harvest = record.get("public_harvest")
+    reserve_policy = cfg.get("reserve_policy")
+    _check("reserve_policy" not in cfg or (type(reserve_policy) is str and reserve_policy in RESERVE_POLICIES
+           and harvest is not None), "invalid reserve policy")
+    _check(("emergency_relief" in record) == (reserve_policy == "emergency"), "emergency authorization mismatch")
+    prior_policy = (previous_record or {}).get("public_policy", {}).get("reserve_policy")
+    _check(prior_policy in (None, reserve_policy), "reserve policy continuity")
     _check(("public_harvest" in record) == ("harvest_rule" in cfg)
            and (harvest is not None or "public_harvest" not in record)
            and (harvest is not None or "public_harvest" not in (previous_record or {})),
@@ -414,7 +451,7 @@ def audit62(record, *, geography, previous_record=None, program=None):
     public_crop = {}
     if harvest is not None:
         from .model import climate_factor
-        from .public_harvest import VERSION as HARVEST_VERSION, harvest_row
+        from .public_harvest import harvest_row, harvest_version
         from .regional_production import audit_production
         from .storage import canonical_line
         # The producer's receipt is also untrusted on replay. Anchor gross food,
@@ -427,10 +464,12 @@ def audit62(record, *, geography, previous_record=None, program=None):
         _check(all(r["climate"] == weather[r["owner"]] for r in rows.values()), "crop climate differs from seed")
         audit_production(gross_open, gross_close, {i:r["production"] for i,r in rows.items()},
                          weather, public_labor=labor)
-        expected = [harvest_row(i, rows[i]["owner"], rows[i]["production"], initial[i], balances[i])
+        reserve_days = RESERVE_POLICIES.get(reserve_policy)
+        version = harvest_version(reserve_days)
+        expected = [harvest_row(i, rows[i]["owner"], rows[i]["production"], initial[i], balances[i], reserve_days=reserve_days)
                     for i in sorted(rows)]
-        _check(cfg["harvest_rule"] == HARVEST_VERSION and
-               canonical_line(harvest) == canonical_line({"version":HARVEST_VERSION, "regions":expected}),
+        _check(cfg["harvest_rule"] == version and
+               canonical_line(harvest) == canonical_line({"version":version, "regions":expected}),
                "public harvest allocation mismatch")
         for h in expected:
             i, q = h["id"], h["food_public"]
