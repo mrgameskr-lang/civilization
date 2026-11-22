@@ -1,0 +1,1338 @@
+{
+  "dev": {
+    "sample": "dev",
+    "seeds": 20,
+    "years": 200,
+    "arms": {
+      "B": {
+        "meals": {
+          "receivers": {
+            "negative": 222,
+            "negative_units": -18236,
+            "net": -17601,
+            "count": 2277,
+            "zero": 2026,
+            "positive": 29,
+            "positive_units": 635
+          },
+          "donor_only": {
+            "zero": 2611,
+            "net": -284,
+            "count": 2613,
+            "negative": 2,
+            "negative_units": -284
+          },
+          "other": {
+            "zero": 19263,
+            "net": -626,
+            "count": 19494,
+            "positive": 107,
+            "positive_units": 714,
+            "negative": 124,
+            "negative_units": -1340
+          },
+          "world": {
+            "negative": 281,
+            "negative_units": -19791,
+            "net": -18511,
+            "count": 762,
+            "zero": 379,
+            "positive": 102,
+            "positive_units": 1280
+          }
+        },
+        "exposure": {
+          "all_world_years": 4000,
+          "received": 100454,
+          "sent": 104997,
+          "two_way": 0,
+          "aid_world_years": 762
+        },
+        "budget": {
+          "authorized": 188161,
+          "sent": 104997,
+          "received": 100454,
+          "freight": 9355,
+          "handling": 4543,
+          "actual_debit": 114352,
+          "approved_donor_budget": 220476,
+          "approved_years": 1653,
+          "overrun": 3688,
+          "overrun_years": 495,
+          "unspent_approved": 109812,
+          "unshipped": 83164,
+          "funded_donor_years": 1630,
+          "donor_support_members": 20748885,
+          "donor_support_weighted_vs_A": -1449389.8936732593
+        },
+        "donor": {
+          "actual_meals": {
+            "zero": 1623,
+            "net": -257,
+            "count": 1630,
+            "negative": 5,
+            "negative_units": -300,
+            "positive": 2,
+            "positive_units": 43
+          },
+          "reserve_vs_A": {
+            "negative": 1605,
+            "negative_units": -651587,
+            "net": -650615,
+            "count": 1630,
+            "positive": 25,
+            "positive_units": 972
+          },
+          "deficit_vs_A": {
+            "zero": 1472,
+            "net": 2121,
+            "count": 1630,
+            "negative": 76,
+            "negative_units": -3652,
+            "positive": 82,
+            "positive_units": 5773
+          }
+        },
+        "origin_opinion": {
+          "farm": {
+            "zero": 2508,
+            "net": -205,
+            "count": 2613,
+            "members": 1457222,
+            "weighted": -110816,
+            "negative": 105,
+            "negative_units": -205
+          },
+          "industry": {
+            "zero": 2613,
+            "net": 0,
+            "count": 2613,
+            "members": 1805260,
+            "weighted": 0
+          },
+          "consumer": {
+            "zero": 2613,
+            "net": 0,
+            "count": 2613,
+            "members": 3275022,
+            "weighted": 0
+          }
+        },
+        "attempts": {
+          "attempts": 3392,
+          "ties": 23,
+          "budget_tied": 0,
+          "budget_reducing": 0,
+          "displaced_attempt_qty": 0,
+          "minimum_lot": 1,
+          "zero_attempts": 688,
+          "binding_stock": 2292,
+          "binding_authorized": 930,
+          "binding_road": 174,
+          "binding_storage": 19
+        },
+        "shortfalls": {
+          "minimum_lot": {
+            "directions": 18,
+            "units": 18,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock": {
+            "directions": 617,
+            "units": 76320,
+            "zero_dispatch": 23,
+            "zero_dispatch_units": 1982
+          },
+          "road|stock": {
+            "directions": 79,
+            "units": 6210,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock|storage": {
+            "directions": 2,
+            "units": 125,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "storage": {
+            "directions": 2,
+            "units": 222,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|road|stock|storage": {
+            "directions": 1,
+            "units": 83,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock|storage": {
+            "directions": 4,
+            "units": 186,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          }
+        },
+        "cases": {
+          "world_negative": {
+            "roles": {
+              "receivers": -288,
+              "donor_only": 0,
+              "other": 0,
+              "world": -288
+            },
+            "seed": 9,
+            "year": 5,
+            "received": 422
+          },
+          "region_negative": {
+            "seed": 15,
+            "year": 15,
+            "owner": 3,
+            "region": 12,
+            "received": 180,
+            "delta": -180,
+            "eaten": 6292,
+            "need": 8050,
+            "world_delta": -179
+          },
+          "region_zero": {
+            "seed": 2,
+            "year": 34,
+            "owner": 6,
+            "region": 25,
+            "received": 317,
+            "delta": 0,
+            "eaten": 3710,
+            "need": 3710,
+            "world_delta": -16
+          },
+          "world_positive": {
+            "roles": {
+              "receivers": 185,
+              "donor_only": 0,
+              "other": 0,
+              "world": 185
+            },
+            "seed": 2,
+            "year": 35,
+            "received": 321
+          }
+        }
+      },
+      "E": {
+        "meals": {
+          "receivers": {
+            "negative": 214,
+            "negative_units": -17965,
+            "net": -17177,
+            "count": 2277,
+            "zero": 2031,
+            "positive": 32,
+            "positive_units": 788
+          },
+          "donor_only": {
+            "zero": 2613,
+            "net": -195,
+            "count": 2616,
+            "negative": 3,
+            "negative_units": -195
+          },
+          "other": {
+            "zero": 19295,
+            "net": -392,
+            "count": 19523,
+            "positive": 113,
+            "positive_units": 890,
+            "negative": 115,
+            "negative_units": -1282
+          },
+          "world": {
+            "negative": 272,
+            "negative_units": -19183,
+            "net": -17764,
+            "count": 763,
+            "zero": 388,
+            "positive": 103,
+            "positive_units": 1419
+          }
+        },
+        "exposure": {
+          "all_world_years": 4000,
+          "received": 99798,
+          "sent": 104305,
+          "two_way": 0,
+          "aid_world_years": 763
+        },
+        "budget": {
+          "authorized": 191011,
+          "sent": 104305,
+          "received": 99798,
+          "freight": 9266,
+          "handling": 4507,
+          "actual_debit": 113571,
+          "approved_donor_budget": 222077,
+          "approved_years": 1645,
+          "overrun": 3599,
+          "overrun_years": 484,
+          "unspent_approved": 112105,
+          "unshipped": 86706,
+          "funded_donor_years": 1623,
+          "donor_support_members": 20694419,
+          "donor_support_weighted_vs_A": -1117378.485784675
+        },
+        "donor": {
+          "actual_meals": {
+            "zero": 1615,
+            "net": -141,
+            "count": 1623,
+            "negative": 5,
+            "negative_units": -198,
+            "positive": 3,
+            "positive_units": 57
+          },
+          "reserve_vs_A": {
+            "negative": 1587,
+            "negative_units": -645386,
+            "net": -643761,
+            "count": 1623,
+            "positive": 35,
+            "positive_units": 1625,
+            "zero": 1
+          },
+          "deficit_vs_A": {
+            "zero": 1423,
+            "net": 1366,
+            "count": 1623,
+            "negative": 97,
+            "negative_units": -7172,
+            "positive": 103,
+            "positive_units": 8538
+          }
+        },
+        "origin_opinion": {
+          "farm": {
+            "zero": 2516,
+            "net": -180,
+            "count": 2616,
+            "members": 1456183,
+            "weighted": -100981,
+            "negative": 100,
+            "negative_units": -180
+          },
+          "industry": {
+            "zero": 2616,
+            "net": 0,
+            "count": 2616,
+            "members": 1802102,
+            "weighted": 0
+          },
+          "consumer": {
+            "zero": 2616,
+            "net": 0,
+            "count": 2616,
+            "members": 3270118,
+            "weighted": 0
+          }
+        },
+        "attempts": {
+          "attempts": 3420,
+          "ties": 22,
+          "budget_tied": 0,
+          "budget_reducing": 0,
+          "displaced_attempt_qty": 0,
+          "minimum_lot": 2,
+          "zero_attempts": 720,
+          "binding_stock": 2362,
+          "binding_authorized": 897,
+          "binding_road": 166,
+          "binding_storage": 17
+        },
+        "shortfalls": {
+          "stock": {
+            "directions": 646,
+            "units": 79699,
+            "zero_dispatch": 21,
+            "zero_dispatch_units": 1513
+          },
+          "minimum_lot": {
+            "directions": 16,
+            "units": 16,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock": {
+            "directions": 75,
+            "units": 6293,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock|storage": {
+            "directions": 2,
+            "units": 79,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|stock": {
+            "directions": 1,
+            "units": 20,
+            "zero_dispatch": 1,
+            "zero_dispatch_units": 20
+          },
+          "storage": {
+            "directions": 2,
+            "units": 226,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|road|stock|storage": {
+            "directions": 1,
+            "units": 76,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock|storage": {
+            "directions": 5,
+            "units": 297,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          }
+        },
+        "cases": {
+          "world_negative": {
+            "roles": {
+              "receivers": -288,
+              "donor_only": 0,
+              "other": 0,
+              "world": -288
+            },
+            "seed": 9,
+            "year": 5,
+            "received": 422
+          },
+          "region_negative": {
+            "seed": 15,
+            "year": 15,
+            "owner": 3,
+            "region": 12,
+            "received": 180,
+            "delta": -186,
+            "eaten": 6231,
+            "need": 8056,
+            "world_delta": -160
+          },
+          "region_zero": {
+            "seed": 2,
+            "year": 35,
+            "owner": 6,
+            "region": 25,
+            "received": 322,
+            "delta": 0,
+            "eaten": 3830,
+            "need": 3830,
+            "world_delta": -22
+          },
+          "world_positive": {
+            "roles": {
+              "receivers": 201,
+              "donor_only": 0,
+              "other": 0,
+              "world": 201
+            },
+            "seed": 2,
+            "year": 36,
+            "received": 326
+          }
+        }
+      },
+      "F": {
+        "meals": {
+          "receivers": {
+            "negative": 207,
+            "negative_units": -17356,
+            "net": -16758,
+            "count": 2258,
+            "zero": 2015,
+            "positive": 36,
+            "positive_units": 598
+          },
+          "donor_only": {
+            "zero": 2597,
+            "net": -168,
+            "count": 2600,
+            "negative": 3,
+            "negative_units": -168
+          },
+          "other": {
+            "zero": 19434,
+            "net": -205,
+            "count": 19654,
+            "positive": 112,
+            "positive_units": 956,
+            "negative": 108,
+            "negative_units": -1161
+          },
+          "world": {
+            "negative": 263,
+            "negative_units": -18453,
+            "net": -17131,
+            "count": 766,
+            "zero": 397,
+            "positive": 106,
+            "positive_units": 1322
+          }
+        },
+        "exposure": {
+          "all_world_years": 4000,
+          "received": 98383,
+          "sent": 102833,
+          "two_way": 0,
+          "aid_world_years": 766
+        },
+        "budget": {
+          "authorized": 194043,
+          "sent": 102833,
+          "received": 98383,
+          "freight": 9015,
+          "handling": 4450,
+          "actual_debit": 111848,
+          "approved_donor_budget": 225863,
+          "approved_years": 1644,
+          "overrun": 0,
+          "overrun_years": 0,
+          "unspent_approved": 114015,
+          "unshipped": 91210,
+          "funded_donor_years": 1624,
+          "donor_support_members": 20703735,
+          "donor_support_weighted_vs_A": -1240700.9389998887
+        },
+        "donor": {
+          "actual_meals": {
+            "zero": 1615,
+            "net": -130,
+            "count": 1624,
+            "negative": 6,
+            "negative_units": -175,
+            "positive": 3,
+            "positive_units": 45
+          },
+          "reserve_vs_A": {
+            "negative": 1588,
+            "negative_units": -633110,
+            "net": -631622,
+            "count": 1624,
+            "positive": 35,
+            "positive_units": 1488,
+            "zero": 1
+          },
+          "deficit_vs_A": {
+            "zero": 1418,
+            "net": 2232,
+            "count": 1624,
+            "negative": 94,
+            "negative_units": -6910,
+            "positive": 112,
+            "positive_units": 9142
+          }
+        },
+        "origin_opinion": {
+          "farm": {
+            "zero": 2498,
+            "net": -191,
+            "count": 2600,
+            "members": 1442763,
+            "weighted": -103402,
+            "negative": 102,
+            "negative_units": -191
+          },
+          "industry": {
+            "zero": 2600,
+            "net": 0,
+            "count": 2600,
+            "members": 1785755,
+            "weighted": 0
+          },
+          "consumer": {
+            "zero": 2600,
+            "net": 0,
+            "count": 2600,
+            "members": 3240327,
+            "weighted": 0
+          }
+        },
+        "attempts": {
+          "attempts": 3833,
+          "ties": 518,
+          "budget_tied": 513,
+          "budget_reducing": 736,
+          "displaced_attempt_qty": 5054,
+          "minimum_lot": 22,
+          "zero_attempts": 1154,
+          "binding_stock": 2503,
+          "binding_budget": 1251,
+          "binding_authorized": 427,
+          "binding_road": 159,
+          "binding_storage": 19
+        },
+        "shortfalls": {
+          "budget|stock": {
+            "directions": 336,
+            "units": 2111,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot": {
+            "directions": 81,
+            "units": 81,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock": {
+            "directions": 646,
+            "units": 80769,
+            "zero_dispatch": 19,
+            "zero_dispatch_units": 1325
+          },
+          "budget|minimum_lot|stock": {
+            "directions": 10,
+            "units": 21,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock": {
+            "directions": 68,
+            "units": 6306,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock|storage": {
+            "directions": 2,
+            "units": 78,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "budget|road|stock": {
+            "directions": 60,
+            "units": 1205,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "budget|stock|storage": {
+            "directions": 1,
+            "units": 15,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|stock": {
+            "directions": 1,
+            "units": 20,
+            "zero_dispatch": 1,
+            "zero_dispatch_units": 20
+          },
+          "budget|minimum_lot|road|stock": {
+            "directions": 1,
+            "units": 19,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "storage": {
+            "directions": 2,
+            "units": 226,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock|storage": {
+            "directions": 6,
+            "units": 260,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|road|stock|storage": {
+            "directions": 1,
+            "units": 84,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "budget|storage": {
+            "directions": 2,
+            "units": 15,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          }
+        },
+        "cases": {
+          "world_negative": {
+            "roles": {
+              "receivers": -288,
+              "donor_only": 0,
+              "other": 0,
+              "world": -288
+            },
+            "seed": 9,
+            "year": 5,
+            "received": 405
+          },
+          "region_negative": {
+            "seed": 15,
+            "year": 16,
+            "owner": 3,
+            "region": 12,
+            "received": 180,
+            "delta": -184,
+            "eaten": 5913,
+            "need": 7801,
+            "world_delta": -184
+          },
+          "region_zero": {
+            "seed": 2,
+            "year": 35,
+            "owner": 6,
+            "region": 25,
+            "received": 322,
+            "delta": 0,
+            "eaten": 3830,
+            "need": 3830,
+            "world_delta": -22
+          },
+          "world_positive": {
+            "roles": {
+              "receivers": 187,
+              "donor_only": 0,
+              "other": 0,
+              "world": 187
+            },
+            "seed": 2,
+            "year": 36,
+            "received": 308
+          }
+        }
+      }
+    },
+    "source_sha256": {
+      "region-years.csv.gz": "4ffada66c51de7f94515d37a795a837963046ec5ad0d37a6a9bd3930de462603",
+      "country-years.csv.gz": "cdfb38bac789d5abe0b34cb4c2b93a83d376473487a5a5c5a2e32fac6059d649",
+      "direction-years.csv.gz": "8218e8d186991a5d90dfb8c594de8bbaf7157aea65c10ebcb09ace2a84590995",
+      "aid-attempts.csv.gz": "1cb1ed7a726acc9791c0404dcfbf787bbc1f5ff0251de961fa89ebe34810b06e"
+    }
+  },
+  "holdout": {
+    "sample": "holdout",
+    "seeds": 20,
+    "years": 200,
+    "arms": {
+      "B": {
+        "meals": {
+          "receivers": {
+            "zero": 2144,
+            "net": -11017,
+            "count": 2401,
+            "negative": 171,
+            "negative_units": -12592,
+            "positive": 86,
+            "positive_units": 1575
+          },
+          "donor_only": {
+            "zero": 2902,
+            "net": -430,
+            "count": 2906,
+            "negative": 4,
+            "negative_units": -430
+          },
+          "other": {
+            "zero": 18749,
+            "net": -123,
+            "count": 18949,
+            "positive": 109,
+            "positive_units": 723,
+            "negative": 91,
+            "negative_units": -846
+          },
+          "world": {
+            "zero": 406,
+            "net": -11570,
+            "count": 758,
+            "negative": 204,
+            "negative_units": -13727,
+            "positive": 148,
+            "positive_units": 2157
+          }
+        },
+        "exposure": {
+          "all_world_years": 4000,
+          "received": 113113,
+          "sent": 118217,
+          "two_way": 0,
+          "aid_world_years": 758
+        },
+        "budget": {
+          "authorized": 214443,
+          "sent": 118217,
+          "received": 113113,
+          "freight": 10422,
+          "handling": 5104,
+          "actual_debit": 128639,
+          "approved_donor_budget": 268173,
+          "approved_years": 1679,
+          "overrun": 3600,
+          "overrun_years": 486,
+          "unspent_approved": 143134,
+          "unshipped": 96226,
+          "funded_donor_years": 1672,
+          "donor_support_members": 21989402,
+          "donor_support_weighted_vs_A": -1931666.7062984896
+        },
+        "donor": {
+          "actual_meals": {
+            "zero": 1665,
+            "net": -484,
+            "count": 1672,
+            "negative": 6,
+            "negative_units": -528,
+            "positive": 1,
+            "positive_units": 44
+          },
+          "reserve_vs_A": {
+            "negative": 1642,
+            "negative_units": -751278,
+            "net": -750002,
+            "count": 1672,
+            "zero": 3,
+            "positive": 27,
+            "positive_units": 1276
+          },
+          "deficit_vs_A": {
+            "zero": 1502,
+            "net": 3725,
+            "count": 1672,
+            "positive": 88,
+            "positive_units": 7063,
+            "negative": 82,
+            "negative_units": -3338
+          }
+        },
+        "origin_opinion": {
+          "farm": {
+            "zero": 2766,
+            "net": -244,
+            "count": 2906,
+            "members": 1640193,
+            "weighted": -129660,
+            "negative": 140,
+            "negative_units": -244
+          },
+          "industry": {
+            "zero": 2905,
+            "net": -1,
+            "count": 2906,
+            "members": 2079924,
+            "weighted": -126,
+            "negative": 1,
+            "negative_units": -1
+          },
+          "consumer": {
+            "zero": 2906,
+            "net": 0,
+            "count": 2906,
+            "members": 3730930,
+            "weighted": 0
+          }
+        },
+        "attempts": {
+          "attempts": 3657,
+          "ties": 15,
+          "budget_tied": 0,
+          "budget_reducing": 0,
+          "displaced_attempt_qty": 0,
+          "minimum_lot": 14,
+          "zero_attempts": 658,
+          "binding_authorized": 868,
+          "binding_stock": 2566,
+          "binding_road": 191,
+          "binding_storage": 47
+        },
+        "shortfalls": {
+          "stock": {
+            "directions": 665,
+            "units": 88200,
+            "zero_dispatch": 7,
+            "zero_dispatch_units": 922
+          },
+          "minimum_lot": {
+            "directions": 18,
+            "units": 18,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock": {
+            "directions": 104,
+            "units": 6262,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|stock": {
+            "directions": 3,
+            "units": 458,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|storage": {
+            "directions": 2,
+            "units": 116,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock|storage": {
+            "directions": 9,
+            "units": 766,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock|storage": {
+            "directions": 8,
+            "units": 326,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "storage": {
+            "directions": 2,
+            "units": 80,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          }
+        },
+        "cases": {}
+      },
+      "E": {
+        "meals": {
+          "receivers": {
+            "zero": 2125,
+            "net": -11696,
+            "count": 2371,
+            "negative": 170,
+            "negative_units": -12834,
+            "positive": 76,
+            "positive_units": 1138
+          },
+          "donor_only": {
+            "zero": 2878,
+            "net": -498,
+            "count": 2884,
+            "negative": 6,
+            "negative_units": -498
+          },
+          "other": {
+            "zero": 18653,
+            "net": 466,
+            "count": 18841,
+            "negative": 89,
+            "negative_units": -579,
+            "positive": 99,
+            "positive_units": 1045
+          },
+          "world": {
+            "zero": 424,
+            "net": -11728,
+            "count": 753,
+            "negative": 198,
+            "negative_units": -13830,
+            "positive": 131,
+            "positive_units": 2102
+          }
+        },
+        "exposure": {
+          "all_world_years": 4000,
+          "received": 111751,
+          "sent": 116780,
+          "two_way": 0,
+          "aid_world_years": 753
+        },
+        "budget": {
+          "authorized": 216516,
+          "sent": 116780,
+          "received": 111751,
+          "freight": 10296,
+          "handling": 5029,
+          "actual_debit": 127076,
+          "approved_donor_budget": 270766,
+          "approved_years": 1675,
+          "overrun": 3512,
+          "overrun_years": 480,
+          "unspent_approved": 147202,
+          "unshipped": 99736,
+          "funded_donor_years": 1667,
+          "donor_support_members": 21904702,
+          "donor_support_weighted_vs_A": -1425213.115244918
+        },
+        "donor": {
+          "actual_meals": {
+            "zero": 1660,
+            "net": -489,
+            "count": 1667,
+            "negative": 6,
+            "negative_units": -498,
+            "positive": 1,
+            "positive_units": 9
+          },
+          "reserve_vs_A": {
+            "negative": 1635,
+            "negative_units": -749609,
+            "net": -748418,
+            "count": 1667,
+            "positive": 32,
+            "positive_units": 1191
+          },
+          "deficit_vs_A": {
+            "zero": 1464,
+            "net": 2569,
+            "count": 1667,
+            "positive": 103,
+            "positive_units": 9441,
+            "negative": 100,
+            "negative_units": -6872
+          }
+        },
+        "origin_opinion": {
+          "farm": {
+            "zero": 2746,
+            "net": -233,
+            "count": 2884,
+            "members": 1613786,
+            "weighted": -124852,
+            "negative": 138,
+            "negative_units": -233
+          },
+          "industry": {
+            "zero": 2882,
+            "net": -2,
+            "count": 2884,
+            "members": 2044054,
+            "weighted": -373,
+            "negative": 2,
+            "negative_units": -2
+          },
+          "consumer": {
+            "zero": 2884,
+            "net": 0,
+            "count": 2884,
+            "members": 3668607,
+            "weighted": 0
+          }
+        },
+        "attempts": {
+          "attempts": 3630,
+          "ties": 15,
+          "budget_tied": 0,
+          "budget_reducing": 0,
+          "displaced_attempt_qty": 0,
+          "minimum_lot": 15,
+          "zero_attempts": 653,
+          "binding_authorized": 858,
+          "binding_stock": 2544,
+          "binding_road": 188,
+          "binding_storage": 55
+        },
+        "shortfalls": {
+          "stock": {
+            "directions": 672,
+            "units": 91137,
+            "zero_dispatch": 7,
+            "zero_dispatch_units": 1272
+          },
+          "road|stock": {
+            "directions": 104,
+            "units": 6391,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot": {
+            "directions": 11,
+            "units": 11,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|stock": {
+            "directions": 4,
+            "units": 464,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|storage": {
+            "directions": 2,
+            "units": 142,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock|storage": {
+            "directions": 9,
+            "units": 661,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock|storage": {
+            "directions": 10,
+            "units": 469,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|road|stock": {
+            "directions": 1,
+            "units": 149,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "storage": {
+            "directions": 3,
+            "units": 250,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|storage": {
+            "directions": 1,
+            "units": 62,
+            "zero_dispatch": 1,
+            "zero_dispatch_units": 62
+          }
+        },
+        "cases": {}
+      },
+      "F": {
+        "meals": {
+          "receivers": {
+            "zero": 2139,
+            "net": -11219,
+            "count": 2377,
+            "negative": 165,
+            "negative_units": -12337,
+            "positive": 73,
+            "positive_units": 1118
+          },
+          "donor_only": {
+            "zero": 2889,
+            "net": -498,
+            "count": 2895,
+            "negative": 6,
+            "negative_units": -498
+          },
+          "other": {
+            "zero": 18674,
+            "net": 216,
+            "count": 18856,
+            "negative": 93,
+            "negative_units": -677,
+            "positive": 89,
+            "positive_units": 893
+          },
+          "world": {
+            "zero": 440,
+            "net": -11501,
+            "count": 754,
+            "negative": 195,
+            "negative_units": -13449,
+            "positive": 119,
+            "positive_units": 1948
+          }
+        },
+        "exposure": {
+          "all_world_years": 4000,
+          "received": 110639,
+          "sent": 115642,
+          "two_way": 0,
+          "aid_world_years": 754
+        },
+        "budget": {
+          "authorized": 220068,
+          "sent": 115642,
+          "received": 110639,
+          "freight": 10140,
+          "handling": 5003,
+          "actual_debit": 125782,
+          "approved_donor_budget": 275571,
+          "approved_years": 1675,
+          "overrun": 0,
+          "overrun_years": 0,
+          "unspent_approved": 149789,
+          "unshipped": 104426,
+          "funded_donor_years": 1667,
+          "donor_support_members": 21931439,
+          "donor_support_weighted_vs_A": -1491746.2705904664
+        },
+        "donor": {
+          "actual_meals": {
+            "zero": 1660,
+            "net": -489,
+            "count": 1667,
+            "negative": 6,
+            "negative_units": -498,
+            "positive": 1,
+            "positive_units": 9
+          },
+          "reserve_vs_A": {
+            "negative": 1639,
+            "negative_units": -741155,
+            "net": -740097,
+            "count": 1667,
+            "positive": 28,
+            "positive_units": 1058
+          },
+          "deficit_vs_A": {
+            "zero": 1466,
+            "net": 2264,
+            "count": 1667,
+            "positive": 96,
+            "positive_units": 9198,
+            "negative": 105,
+            "negative_units": -6934
+          }
+        },
+        "origin_opinion": {
+          "farm": {
+            "zero": 2763,
+            "net": -226,
+            "count": 2895,
+            "members": 1623913,
+            "weighted": -122514,
+            "negative": 132,
+            "negative_units": -226
+          },
+          "industry": {
+            "zero": 2893,
+            "net": -2,
+            "count": 2895,
+            "members": 2056677,
+            "weighted": -373,
+            "negative": 2,
+            "negative_units": -2
+          },
+          "consumer": {
+            "zero": 2895,
+            "net": 0,
+            "count": 2895,
+            "members": 3691615,
+            "weighted": 0
+          }
+        },
+        "attempts": {
+          "attempts": 3945,
+          "ties": 358,
+          "budget_tied": 349,
+          "budget_reducing": 668,
+          "displaced_attempt_qty": 5042,
+          "minimum_lot": 23,
+          "zero_attempts": 959,
+          "binding_authorized": 391,
+          "binding_budget": 1017,
+          "binding_stock": 2665,
+          "binding_road": 181,
+          "binding_storage": 55
+        },
+        "shortfalls": {
+          "budget|stock": {
+            "directions": 278,
+            "units": 1896,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "budget|road|stock": {
+            "directions": 70,
+            "units": 1406,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot": {
+            "directions": 127,
+            "units": 127,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock": {
+            "directions": 676,
+            "units": 92398,
+            "zero_dispatch": 7,
+            "zero_dispatch_units": 1250
+          },
+          "road|stock": {
+            "directions": 90,
+            "units": 6381,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|stock": {
+            "directions": 3,
+            "units": 464,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "budget|minimum_lot|stock": {
+            "directions": 11,
+            "units": 36,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|storage": {
+            "directions": 2,
+            "units": 142,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "stock|storage": {
+            "directions": 10,
+            "units": 715,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "budget|stock|storage": {
+            "directions": 4,
+            "units": 45,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "road|stock|storage": {
+            "directions": 7,
+            "units": 363,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "budget|minimum_lot|storage": {
+            "directions": 1,
+            "units": 3,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|road|stock": {
+            "directions": 1,
+            "units": 157,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "storage": {
+            "directions": 2,
+            "units": 224,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          },
+          "minimum_lot|storage": {
+            "directions": 1,
+            "units": 62,
+            "zero_dispatch": 1,
+            "zero_dispatch_units": 62
+          },
+          "budget|road|storage": {
+            "directions": 1,
+            "units": 7,
+            "zero_dispatch": 0,
+            "zero_dispatch_units": 0
+          }
+        },
+        "cases": {}
+      }
+    },
+    "source_sha256": {
+      "region-years.csv.gz": "5c1ae2035a59475e1b43758d21fda482d217761d3857070dc3fc348bedcf01c8",
+      "country-years.csv.gz": "2c9e6c1649a65ccb25f893f526fcac75c9f45e26c4c4766acfffacccebeea70b",
+      "direction-years.csv.gz": "c3ed058dc1f55116609e44e45d9f6d0c2dd453a2971b9c3af6f874f0d852e00c",
+      "aid-attempts.csv.gz": "77ca530fd23459b3c33f9e59be2a46efb500830353ff930d13ee452a31bc9879"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "sample": "holdout",
+  "first_seed": 20,
+  "seeds": 20,
+  "workers": 5,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "paths": 120,
+  "annual_transitions": 24000,
+  "archive_6a_A": 60,
+  "archive_6a_E": 60,
+  "replayed_checkpoints": 0,
+  "table_sha256": {
+    "aid-attempts.csv.gz": "77ca530fd23459b3c33f9e59be2a46efb500830353ff930d13ee452a31bc9879",
+    "countries.csv": "cc73929ada2cfb88b73b7efa9a5365f502cc858fb04f1772f0fe9ec9ba656cbe",
+    "country-years.csv.gz": "2c9e6c1649a65ccb25f893f526fcac75c9f45e26c4c4766acfffacccebeea70b",
+    "direction-years.csv.gz": "c3ed058dc1f55116609e44e45d9f6d0c2dd453a2971b9c3af6f874f0d852e00c",
+    "means.csv": "d6ea7fad4173f1f714f9dfeca4b05549997471ba20af2a50b3804ba784741bc4",
+    "paired.csv": "1c25743f669f837741f8a637207a713cabf6d1892d55d220a381331a57921fdd",
+    "region-years.csv.gz": "5c1ae2035a59475e1b43758d21fda482d217761d3857070dc3fc348bedcf01c8",
+    "regions.csv": "aa6e0f39b0c29100e5418e740520a5dba51039bd48e4bb48daf6b65c06416e6e",
+    "runs.csv": "c84b87d954e751c4d8acf034a805db4600f8afab442ef2c7f74bf1f178cdd3a6"
+  },
+  "python": "3.12.14",
+  "wall_seconds": 1027.9089426000137
+}
