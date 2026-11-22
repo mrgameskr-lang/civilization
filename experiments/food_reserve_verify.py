@@ -1,13 +1,36 @@
 """Independently read published archives and verify time continuity and paired replay."""
 import argparse
 from collections import defaultdict
+from concurrent.futures import ProcessPoolExecutor
+from functools import partial
 import gzip
 from hashlib import sha256
 import json
 from pathlib import Path
 
 from civsim.storage import canonical_line
-from experiments.food_reserve_study import ARCHIVE, ARMS, CHECKPOINTS, LEGACY
+from civsim.annual_game import create
+from civsim.unit_economy import step_game
+from experiments.food_reserve_study import ARCHIVE, ARMS, CHECKPOINTS, LEGACY, advance, digest, extract
+
+
+def replay_harvest(seed, study):
+    """Regenerate each C year with the full production audit and compare all published cells."""
+    label = f"seed-{seed:02}"
+    digests = json.loads((study/(label+".json")).read_bytes())["arms"]["C"]
+    game = create(seed)
+    with gzip.open(study/(label+"-C-regions.jsonl.gz"), "rb") as regions, gzip.open(study/(label+"-C-totals.jsonl.gz"), "rb") as totals:
+        next(regions)
+        for year in range(1, 201):
+            record = step_game(game) if year == 1 else advance(game, year, "C")
+            rows, summary = extract(record)
+            if canonical_line(rows) != next(regions) or canonical_line(summary) != next(totals):
+                raise ValueError(f"replayed harvest statistics differ at {seed}/{year}")
+            if year in CHECKPOINTS and digest(record) != digests[str(year)]:
+                raise ValueError(f"replayed harvest record differs at {seed}/{year}")
+        if regions.read(1) or totals.read(1):
+            raise ValueError("extra years after end of replay")
+    return seed
 
 
 def verify(study, repeat):
@@ -80,14 +103,23 @@ def verify(study, repeat):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for option in ("study","repeat","out"):
+    for option in ("study","out"):
         parser.add_argument("--"+option,type=Path,required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--repeat", type=Path)
+    mode.add_argument("--replay-harvest", action="store_true")
+    parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
-    result = verify(args.study, args.repeat)
+    if args.replay_harvest:
+        with ProcessPoolExecutor(max_workers=args.workers) as pool:
+            seeds = list(pool.map(partial(replay_harvest, study=args.study), range(40)))
+        result = {"policy":"C", "seeds":seeds, "world_years_replayed":200*len(seeds),
+                  "regional_rows_compared":200*32*len(seeds), "annual_hashes_compared":3*len(seeds)}
+    else:
+        result = verify(args.study, args.repeat)
     with args.out.open("xb") as report:
         report.write(canonical_line(result))
-    print(f"verified {result['regional_rows_checked']} rows, {result['archived_annual_hashes']} old digests, "
-          f"{result['repeated_files_compared']} identical independently generated files")
+    print(f"Verification complete. Results saved to {args.out}")
 
 
 if __name__ == "__main__":

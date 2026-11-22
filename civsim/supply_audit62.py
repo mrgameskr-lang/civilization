@@ -413,8 +413,20 @@ def audit62(record, *, geography, previous_record=None, program=None):
     borders = _network(ctx["physical"], nodes)
     public_crop = {}
     if harvest is not None:
+        from .model import climate_factor
         from .public_harvest import VERSION as HARVEST_VERSION, harvest_row
+        from .regional_production import audit_production
         from .storage import canonical_line
+        # The producer's receipt is also untrusted on replay. Anchor gross food,
+        # productive labor and land to independent resident and public-works accounts.
+        gross_open = {i:{**r["opening"], "soil":after_soil[i]} for i,r in rows.items()}
+        gross_close = {i:{**r["opening"], "stock":r["production"]["closing_stock"],
+                          **{k:r["closing"][k] for k in ("soil","capital","deposit")}} for i,r in rows.items()}
+        labor = {w["id"]:occupied[w["id"]] + w["workers_reserved"] for w in work["nodes"]}
+        weather = {n.id:climate_factor(geography.seed, record["year"], n.id) for n in geography.nations}
+        _check(all(r["climate"] == weather[r["owner"]] for r in rows.values()), "crop climate differs from seed")
+        audit_production(gross_open, gross_close, {i:r["production"] for i,r in rows.items()},
+                         weather, public_labor=labor)
         expected = [harvest_row(i, rows[i]["owner"], rows[i]["production"], initial[i], balances[i])
                     for i in sorted(rows)]
         _check(cfg["harvest_rule"] == HARVEST_VERSION and

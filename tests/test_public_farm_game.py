@@ -12,6 +12,7 @@ from unittest.mock import patch
 
 from civsim import annual_game
 from civsim.game_journal import append_turn, new_journal
+from civsim.public_harvest import harvest_row
 from civsim.storage import canonical_line
 from civsim.unit_economy import audit_game, step_game
 
@@ -84,6 +85,29 @@ class PublicFarmGameTests(unittest.TestCase):
         row['rounding_food'] = bool(row['rounding_food'])
         with self.assertRaises(ValueError):
             audit_game(forged, self.geography, previous=self.prior)
+
+    def test_recomputed_receipt_cannot_legitimize_forged_underlying_production(self):
+        for damage in ('closing_store', 'farmland', 'production_factors'):
+            with self.subTest(damage=damage):
+                forged = deepcopy(self.record)
+                region = forged['regions'][0]
+                i, owner = region['id'], region['owner']
+                production = region['production']
+                if damage == 'closing_store':
+                    production['closing_stock']['food'] += 10000
+                elif damage == 'farmland':
+                    production['farmland'] += 1
+                    production['land_capacity'] += 20
+                else:
+                    self.assertNotEqual(production['productivity'], production['technology'])
+                    production['productivity'], production['technology'] = (
+                        production['technology'], production['productivity'])
+                crops = forged['public_harvest']['regions']
+                index = next(j for j, r in enumerate(crops) if r['id'] == i)
+                opening = next(d['opening'] for d in forged['government']['depots'] if d['region'] == i)
+                crops[index] = harvest_row(i, owner, production, opening, crops[index]['depot_before'])
+                with self.assertRaises(ValueError):
+                    audit_game(forged, self.geography, previous=self.prior)
 
     def test_stays_active_after_cli_replay_and_detects_a_missing_or_forged_flag(self):
         with TemporaryDirectory() as root:
