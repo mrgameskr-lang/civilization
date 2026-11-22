@@ -216,6 +216,7 @@ def _count_obstructions(world_rows):
         for key in amounts:
             q = row["world"]["emergency_unfilled_" + key]
             _require(type(q) is int and q >= 0, "invalid unfilled quantity")
+            _require(years > 1 or q == 0, "obstruction before emergency rule activation")
             amounts[key] += q
             found |= q > 0
         if found:
@@ -290,7 +291,7 @@ def scan_study(study, output):
     if output.exists():
         raise FileExistsError(output)
     report = {"schema":"household-relief-obstructions/1",
-              "definition":"Years have at least one application with residual approved rations coded road or freight. Quantities are the unserved balance at the terminal obstacle, not an estimate of food obtainable by removing that obstacle.",
+              "definition":"Years have at least one application with residual approved rations coded road or freight. Quantities are the unserved balance at the terminal obstacle. Activation is in year 2; the shared untreated first year is included only in the all-years denominator.",
               "selection":"first seed, then first year; development checked before validation", "samples":{}}
     first_case = None
     for name, seeds in (("development",range(20)),("validation",range(20,40))):
@@ -306,6 +307,7 @@ def scan_study(study, output):
             if first_case is None and first is not None:
                 first_case = (seed,first)
         report["samples"][name] = {"seeds":list(seeds),"world_years":len(seeds)*200,
+                                   "active_policy_world_years":len(seeds)*199,
                                    "world_years_with_obstruction":cases,"unfilled_at_stop":amounts}
     report["first_observed_case"] = None
     if first_case is not None:
