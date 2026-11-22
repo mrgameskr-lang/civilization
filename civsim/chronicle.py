@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 
 from .chronicle_diffusion import adoption_origins, first_contacts
+from .chronicle_crisis import transitions as border_transitions
 from .chronicle_event import resolve
 from .chronicle_research import farm_adoptions, farm_applications
 from .storage import canonical_line
@@ -90,8 +91,9 @@ class Chronicle:
         selected = eligible[:YEAR_LIMIT]
         advances = sorted(adoption_origins(row, farm_adoptions(row), self._farm_contacts), key=_order)
         contacts = sorted(first_contacts(row), key=_order)
+        crises = sorted(border_transitions(row), key=_order)
         applications = list(farm_applications(row))
-        digest = sha256(canonical_line(row)).hexdigest() if selected or advances or applications or contacts else None
+        digest = sha256(canonical_line(row)).hexdigest() if any((selected, advances, applications, contacts, crises)) else None
         entries = [_entry(row, digest, candidate) for candidate in selected]
         # Every attained level is history, even during a year with four other headlines.
         milestones = [_entry(row, digest, candidate) for candidate in advances]
@@ -121,8 +123,9 @@ class Chronicle:
         self._episodes = ongoing
         self._events.extend(entries)
         self._events.extend(milestones)
+        self._events.extend(_entry(row, digest, event) for event in crises)
         self._year = year
-        self._total += len(candidates) + len(advances) + len(contacts)
+        self._total += len(candidates) + len(advances) + len(contacts) + len(crises)
         self._repeats += len(candidates) - len(eligible)
         self._excluded += len(eligible) - len(selected)
 
@@ -146,7 +149,8 @@ def _location(event):
 def _source_pointer(event):
     facts = event["evidence"]
     # Prefer the quantity behind the statement over an identity or classification.
-    for key in ("food_unmet", "closing_population", "seats", "participants", "quantity", "level_after", "people"):
+    for key in ("food_unmet", "closing_population", "seats", "participants", "quantity", "level_after",
+                "people", "closing_level"):
         if key in facts:
             return facts[key]["pointer"]
     keys = sorted(facts)
