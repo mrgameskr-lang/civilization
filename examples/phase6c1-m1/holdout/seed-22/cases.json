@@ -1,0 +1,1921 @@
+{
+  "carried": {
+    "closing": [
+      {
+        "count": 1,
+        "home": 2,
+        "post": 0
+      },
+      {
+        "count": 7,
+        "home": 2,
+        "post": 2
+      }
+    ],
+    "home": 2,
+    "opening": [
+      {
+        "count": 1,
+        "home": 2,
+        "post": 0
+      },
+      {
+        "count": 7,
+        "home": 2,
+        "post": 2
+      }
+    ],
+    "seed": 22,
+    "values": {
+      "carried_other_affiliation": 1,
+      "closing_ledger": 8,
+      "closing_other_affiliation_home": 1,
+      "closing_other_affiliation_office": 0,
+      "deaths_other_affiliation": 0,
+      "during_other_affiliation": 1,
+      "emigrants_other_affiliation": 0,
+      "enrolled_ledger": 0,
+      "invoice_people": 0,
+      "ledger_assignments": 0,
+      "released_other_affiliation": 0,
+      "unentered_invoice_people": 0
+    },
+    "year": 3
+  },
+  "held_entry": {
+    "economic_year_sha256": "f731a97d84de6ad9658c8c0c15c732424d618c8ad42e2792ba21e3dd5b7cf9a9",
+    "held": {
+      "assignments": [
+        {
+          "assigned": 0,
+          "destination": 12,
+          "eligible": 8,
+          "held": true,
+          "home": 15,
+          "invoice": 0,
+          "invoice_people": 1,
+          "reason": "held",
+          "source": 15
+        },
+        {
+          "assigned": 1,
+          "destination": 12,
+          "eligible": 10,
+          "held": false,
+          "home": 14,
+          "invoice": 1,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 14
+        },
+        {
+          "assigned": 1,
+          "destination": 0,
+          "eligible": 8,
+          "held": false,
+          "home": 2,
+          "invoice": 2,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 2
+        },
+        {
+          "assigned": 1,
+          "destination": 8,
+          "eligible": 10,
+          "held": false,
+          "home": 11,
+          "invoice": 3,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 11
+        },
+        {
+          "assigned": 2,
+          "destination": 12,
+          "eligible": 8,
+          "held": false,
+          "home": 13,
+          "invoice": 4,
+          "invoice_people": 2,
+          "reason": "assigned",
+          "source": 13
+        },
+        {
+          "assigned": 1,
+          "destination": 20,
+          "eligible": 8,
+          "held": false,
+          "home": 21,
+          "invoice": 5,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 21
+        },
+        {
+          "assigned": 1,
+          "destination": 24,
+          "eligible": 10,
+          "held": false,
+          "home": 27,
+          "invoice": 6,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 27
+        },
+        {
+          "assigned": 1,
+          "destination": 4,
+          "eligible": 10,
+          "held": false,
+          "home": 7,
+          "invoice": 7,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 7
+        },
+        {
+          "assigned": 1,
+          "destination": 8,
+          "eligible": 12,
+          "held": false,
+          "home": 10,
+          "invoice": 8,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 10
+        },
+        {
+          "assigned": 1,
+          "destination": 8,
+          "eligible": 10,
+          "held": false,
+          "home": 9,
+          "invoice": 9,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 9
+        },
+        {
+          "assigned": 1,
+          "destination": 31,
+          "eligible": 16,
+          "held": false,
+          "home": 29,
+          "invoice": 10,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 29
+        }
+      ],
+      "closing": [
+        {
+          "count": 56,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 11,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 1,
+          "home": 2,
+          "post": 0
+        },
+        {
+          "count": 7,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 7,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 76,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 10,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 10,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 1,
+          "home": 7,
+          "post": 4
+        },
+        {
+          "count": 9,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 63,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 1,
+          "home": 9,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 1,
+          "home": 10,
+          "post": 8
+        },
+        {
+          "count": 11,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 1,
+          "home": 11,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 48,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 2,
+          "home": 13,
+          "post": 12
+        },
+        {
+          "count": 6,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 1,
+          "home": 14,
+          "post": 12
+        },
+        {
+          "count": 9,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 8,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 51,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 8,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 11,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 8,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 45,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 1,
+          "home": 21,
+          "post": 20
+        },
+        {
+          "count": 7,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 10,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 8,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 66,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 10,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 12,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 1,
+          "home": 27,
+          "post": 24
+        },
+        {
+          "count": 9,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 121,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 15,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 1,
+          "home": 29,
+          "post": 31
+        },
+        {
+          "count": 18,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 14,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "deaths": [
+        {
+          "count": 1,
+          "home": 28,
+          "post": 28
+        }
+      ],
+      "during": [
+        {
+          "count": 56,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 11,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 1,
+          "home": 2,
+          "post": 0
+        },
+        {
+          "count": 7,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 7,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 76,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 10,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 10,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 1,
+          "home": 7,
+          "post": 4
+        },
+        {
+          "count": 9,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 63,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 1,
+          "home": 9,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 1,
+          "home": 10,
+          "post": 8
+        },
+        {
+          "count": 11,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 1,
+          "home": 11,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 48,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 2,
+          "home": 13,
+          "post": 12
+        },
+        {
+          "count": 6,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 1,
+          "home": 14,
+          "post": 12
+        },
+        {
+          "count": 9,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 8,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 51,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 8,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 11,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 8,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 45,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 1,
+          "home": 21,
+          "post": 20
+        },
+        {
+          "count": 7,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 10,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 8,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 66,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 10,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 12,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 1,
+          "home": 27,
+          "post": 24
+        },
+        {
+          "count": 9,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 122,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 15,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 1,
+          "home": 29,
+          "post": 31
+        },
+        {
+          "count": 18,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 14,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "emigrants": [],
+      "enrolled": [
+        {
+          "count": 28,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 6,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 4,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 3,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 38,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 5,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 5,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 5,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 32,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 5,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 6,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 5,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 24,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 4,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 5,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 4,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 26,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 4,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 6,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 4,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 23,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 4,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 5,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 4,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 33,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 5,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 6,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 5,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 61,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 8,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 9,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 7,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "hold": [
+        15,
+        15,
+        12
+      ],
+      "opening": [
+        {
+          "count": 28,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 5,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 4,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 4,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 38,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 5,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 5,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 5,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 31,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 5,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 6,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 5,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 24,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 4,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 5,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 4,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 25,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 4,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 5,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 4,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 22,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 4,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 5,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 4,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 33,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 5,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 6,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 5,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 61,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 8,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 9,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 7,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "released": [],
+      "year": 2
+    },
+    "held_entries": [
+      {
+        "assigned": 0,
+        "destination": 12,
+        "eligible": 8,
+        "held": true,
+        "home": 15,
+        "invoice": 0,
+        "invoice_people": 1,
+        "reason": "held",
+        "source": 15
+      }
+    ],
+    "home": 15,
+    "home_closing_roster": 8,
+    "office": 12,
+    "ordinary": {
+      "assignments": [
+        {
+          "assigned": 1,
+          "destination": 12,
+          "eligible": 8,
+          "held": false,
+          "home": 15,
+          "invoice": 0,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 15
+        },
+        {
+          "assigned": 1,
+          "destination": 12,
+          "eligible": 10,
+          "held": false,
+          "home": 14,
+          "invoice": 1,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 14
+        },
+        {
+          "assigned": 1,
+          "destination": 0,
+          "eligible": 8,
+          "held": false,
+          "home": 2,
+          "invoice": 2,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 2
+        },
+        {
+          "assigned": 1,
+          "destination": 8,
+          "eligible": 10,
+          "held": false,
+          "home": 11,
+          "invoice": 3,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 11
+        },
+        {
+          "assigned": 2,
+          "destination": 12,
+          "eligible": 8,
+          "held": false,
+          "home": 13,
+          "invoice": 4,
+          "invoice_people": 2,
+          "reason": "assigned",
+          "source": 13
+        },
+        {
+          "assigned": 1,
+          "destination": 20,
+          "eligible": 8,
+          "held": false,
+          "home": 21,
+          "invoice": 5,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 21
+        },
+        {
+          "assigned": 1,
+          "destination": 24,
+          "eligible": 10,
+          "held": false,
+          "home": 27,
+          "invoice": 6,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 27
+        },
+        {
+          "assigned": 1,
+          "destination": 4,
+          "eligible": 10,
+          "held": false,
+          "home": 7,
+          "invoice": 7,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 7
+        },
+        {
+          "assigned": 1,
+          "destination": 8,
+          "eligible": 12,
+          "held": false,
+          "home": 10,
+          "invoice": 8,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 10
+        },
+        {
+          "assigned": 1,
+          "destination": 8,
+          "eligible": 10,
+          "held": false,
+          "home": 9,
+          "invoice": 9,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 9
+        },
+        {
+          "assigned": 1,
+          "destination": 31,
+          "eligible": 16,
+          "held": false,
+          "home": 29,
+          "invoice": 10,
+          "invoice_people": 1,
+          "reason": "assigned",
+          "source": 29
+        }
+      ],
+      "closing": [
+        {
+          "count": 56,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 11,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 1,
+          "home": 2,
+          "post": 0
+        },
+        {
+          "count": 7,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 7,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 76,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 10,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 10,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 1,
+          "home": 7,
+          "post": 4
+        },
+        {
+          "count": 9,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 63,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 1,
+          "home": 9,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 1,
+          "home": 10,
+          "post": 8
+        },
+        {
+          "count": 11,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 1,
+          "home": 11,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 48,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 2,
+          "home": 13,
+          "post": 12
+        },
+        {
+          "count": 6,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 1,
+          "home": 14,
+          "post": 12
+        },
+        {
+          "count": 9,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 1,
+          "home": 15,
+          "post": 12
+        },
+        {
+          "count": 7,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 51,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 8,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 11,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 8,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 45,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 1,
+          "home": 21,
+          "post": 20
+        },
+        {
+          "count": 7,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 10,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 8,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 66,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 10,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 12,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 1,
+          "home": 27,
+          "post": 24
+        },
+        {
+          "count": 9,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 121,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 15,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 1,
+          "home": 29,
+          "post": 31
+        },
+        {
+          "count": 18,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 14,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "deaths": [
+        {
+          "count": 1,
+          "home": 28,
+          "post": 28
+        }
+      ],
+      "during": [
+        {
+          "count": 56,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 11,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 1,
+          "home": 2,
+          "post": 0
+        },
+        {
+          "count": 7,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 7,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 76,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 10,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 10,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 1,
+          "home": 7,
+          "post": 4
+        },
+        {
+          "count": 9,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 63,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 1,
+          "home": 9,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 1,
+          "home": 10,
+          "post": 8
+        },
+        {
+          "count": 11,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 1,
+          "home": 11,
+          "post": 8
+        },
+        {
+          "count": 9,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 48,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 2,
+          "home": 13,
+          "post": 12
+        },
+        {
+          "count": 6,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 1,
+          "home": 14,
+          "post": 12
+        },
+        {
+          "count": 9,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 1,
+          "home": 15,
+          "post": 12
+        },
+        {
+          "count": 7,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 51,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 8,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 11,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 8,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 45,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 1,
+          "home": 21,
+          "post": 20
+        },
+        {
+          "count": 7,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 10,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 8,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 66,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 10,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 12,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 1,
+          "home": 27,
+          "post": 24
+        },
+        {
+          "count": 9,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 122,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 15,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 1,
+          "home": 29,
+          "post": 31
+        },
+        {
+          "count": 18,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 14,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "emigrants": [],
+      "enrolled": [
+        {
+          "count": 28,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 6,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 4,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 3,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 38,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 5,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 5,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 5,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 32,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 5,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 6,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 5,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 24,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 4,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 5,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 4,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 26,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 4,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 6,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 4,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 23,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 4,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 5,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 4,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 33,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 5,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 6,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 5,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 61,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 8,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 9,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 7,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "hold": null,
+      "opening": [
+        {
+          "count": 28,
+          "home": 0,
+          "post": 0
+        },
+        {
+          "count": 5,
+          "home": 1,
+          "post": 1
+        },
+        {
+          "count": 4,
+          "home": 2,
+          "post": 2
+        },
+        {
+          "count": 4,
+          "home": 3,
+          "post": 3
+        },
+        {
+          "count": 38,
+          "home": 4,
+          "post": 4
+        },
+        {
+          "count": 5,
+          "home": 5,
+          "post": 5
+        },
+        {
+          "count": 5,
+          "home": 6,
+          "post": 6
+        },
+        {
+          "count": 5,
+          "home": 7,
+          "post": 7
+        },
+        {
+          "count": 31,
+          "home": 8,
+          "post": 8
+        },
+        {
+          "count": 5,
+          "home": 9,
+          "post": 9
+        },
+        {
+          "count": 6,
+          "home": 10,
+          "post": 10
+        },
+        {
+          "count": 5,
+          "home": 11,
+          "post": 11
+        },
+        {
+          "count": 24,
+          "home": 12,
+          "post": 12
+        },
+        {
+          "count": 4,
+          "home": 13,
+          "post": 13
+        },
+        {
+          "count": 5,
+          "home": 14,
+          "post": 14
+        },
+        {
+          "count": 4,
+          "home": 15,
+          "post": 15
+        },
+        {
+          "count": 25,
+          "home": 16,
+          "post": 16
+        },
+        {
+          "count": 4,
+          "home": 17,
+          "post": 17
+        },
+        {
+          "count": 5,
+          "home": 18,
+          "post": 18
+        },
+        {
+          "count": 4,
+          "home": 19,
+          "post": 19
+        },
+        {
+          "count": 22,
+          "home": 20,
+          "post": 20
+        },
+        {
+          "count": 4,
+          "home": 21,
+          "post": 21
+        },
+        {
+          "count": 5,
+          "home": 22,
+          "post": 22
+        },
+        {
+          "count": 4,
+          "home": 23,
+          "post": 23
+        },
+        {
+          "count": 33,
+          "home": 24,
+          "post": 24
+        },
+        {
+          "count": 5,
+          "home": 25,
+          "post": 25
+        },
+        {
+          "count": 6,
+          "home": 26,
+          "post": 26
+        },
+        {
+          "count": 5,
+          "home": 27,
+          "post": 27
+        },
+        {
+          "count": 61,
+          "home": 28,
+          "post": 28
+        },
+        {
+          "count": 8,
+          "home": 29,
+          "post": 29
+        },
+        {
+          "count": 9,
+          "home": 30,
+          "post": 30
+        },
+        {
+          "count": 7,
+          "home": 31,
+          "post": 31
+        }
+      ],
+      "released": [],
+      "year": 2
+    },
+    "seed": 22,
+    "source_invoice": {
+      "demand": 4,
+      "distance": 10,
+      "fed_home_available": 8,
+      "food_before": 3,
+      "home": 15,
+      "owner": 3,
+      "path": [
+        1080,
+        1032,
+        984,
+        936,
+        888,
+        887,
+        886,
+        885,
+        884,
+        883,
+        882
+      ],
+      "people": 1,
+      "road_before": 342,
+      "road_load": 2,
+      "station": 12,
+      "surplus": 1,
+      "tool_places": 216,
+      "travel_food": 1
+    },
+    "year": 2
+  },
+  "not_entered": {
+    "assignment": {
+      "assigned": 1,
+      "destination": 12,
+      "eligible": 1,
+      "held": false,
+      "home": 13,
+      "invoice": 5,
+      "invoice_people": 2,
+      "reason": "partial",
+      "source": 13
+    },
+    "seed": 22,
+    "source_invoice": {
+      "demand": 2,
+      "distance": 12,
+      "fed_home_available": 9,
+      "food_before": 2,
+      "home": 13,
+      "owner": 3,
+      "path": [
+        698,
+        697,
+        696,
+        695,
+        694,
+        693,
+        692,
+        691,
+        690,
+        738,
+        786,
+        834,
+        882
+      ],
+      "people": 2,
+      "road_before": 250,
+      "road_load": 4,
+      "station": 12,
+      "surplus": 2,
+      "tool_places": 1760,
+      "travel_food": 1
+    },
+    "year": 8
+  }
+}
