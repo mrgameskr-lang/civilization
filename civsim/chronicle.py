@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import sys
 
+from .chronicle_diffusion import adoption_origins, first_contacts
 from .chronicle_event import resolve
 from .chronicle_research import farm_adoptions, farm_applications
 from .storage import canonical_line
@@ -69,6 +70,7 @@ class Chronicle:
         self._episodes = {}
         self._events = []
         self._awaiting_application = {}
+        self._farm_contacts = {}
 
     def observe(self, row):
         year = row["year"]
@@ -86,9 +88,10 @@ class Chronicle:
                     continue
             eligible.append(candidate)
         selected = eligible[:YEAR_LIMIT]
-        advances = sorted(farm_adoptions(row), key=_order)
+        advances = sorted(adoption_origins(row, farm_adoptions(row), self._farm_contacts), key=_order)
+        contacts = sorted(first_contacts(row), key=_order)
         applications = list(farm_applications(row))
-        digest = sha256(canonical_line(row)).hexdigest() if selected or advances or applications else None
+        digest = sha256(canonical_line(row)).hexdigest() if selected or advances or applications or contacts else None
         entries = [_entry(row, digest, candidate) for candidate in selected]
         # Every attained level is history, even during a year with four other headlines.
         milestones = [_entry(row, digest, candidate) for candidate in advances]
@@ -101,7 +104,17 @@ class Chronicle:
             self._awaiting_application.pop(key)["application"] = application
         for event in milestones:
             event["application"] = None
+            if event["kind"] == "farm_tech_transfer":
+                contact = self._farm_contacts[event["country"], event["region"]]
+                event["contact"] = {k: contact[k] for k in ("year", "record_sha256", "evidence")}
             self._awaiting_application[event["country"], event["region"], year] = event
+        for candidate in contacts:
+            key = (candidate.country, candidate.region)
+            if key in self._farm_contacts:
+                raise ValueError("region has more than one first farm contact")
+            event = _entry(row, digest, candidate)
+            self._farm_contacts[key] = event
+            milestones.append(event)
         for candidate in selected:
             if candidate.kind in EPISODES:
                 ongoing[_episode(candidate)] = candidate.importance
@@ -109,7 +122,7 @@ class Chronicle:
         self._events.extend(entries)
         self._events.extend(milestones)
         self._year = year
-        self._total += len(candidates) + len(advances)
+        self._total += len(candidates) + len(advances) + len(contacts)
         self._repeats += len(candidates) - len(eligible)
         self._excluded += len(eligible) - len(selected)
 
@@ -133,7 +146,7 @@ def _location(event):
 def _source_pointer(event):
     facts = event["evidence"]
     # Prefer the quantity behind the statement over an identity or classification.
-    for key in ("food_unmet", "closing_population", "seats", "participants", "quantity", "level_after"):
+    for key in ("food_unmet", "closing_population", "seats", "participants", "quantity", "level_after", "people"):
         if key in facts:
             return facts[key]["pointer"]
     keys = sorted(facts)
@@ -143,7 +156,7 @@ def _source_pointer(event):
 
 def _markdown_event(event):
     text = f"**{_location(event)}** · {event['description']} (`{_source_pointer(event)}`)"
-    if event["kind"] == "farm_tech_adoption":
+    if event["kind"] in ("farm_tech_adoption", "farm_tech_transfer"):
         application = event["application"]
         if application is None:
             return f"{text} 첫 적용 예정 연도는 {event['year'] + 1}년이다. 해당 생산 원장은 아직 관측되지 않았다."
