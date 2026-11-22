@@ -256,6 +256,8 @@ def _natural_case(seed, year):
     balances = {r["id"]: r["depot_open"]["food"] for r in stage["nodes"]}
     owners = {r["id"]: r["owner"] for r in stage["nodes"]}
     remaining = {(r["a"],r["b"]):r["capacity"] for r in stage["roads"]}
+    at_stage_open = remaining.copy()
+    annual_roads = {(r["a"],r["b"]):r for r in annual["government"]["roads"]}
     examples = []
     for a in stage["applications"]:
         trips = [s for s in stage["shipments"] if s["target"] == a["region"]]
@@ -268,8 +270,11 @@ def _natural_case(seed, year):
             stocks = {str(i): q for i, q in balances.items() if owners[i] == a["owner"]}
             _require(sum(stocks.values()) > 0, "reported transport obstruction without national public food")
             examples.append({"application":a, "target_shipments":trips, "national_depot_food_at_stop":stocks,
-                             "national_residual_roads_at_stop":[[i,j,q] for (i,j),q in remaining.items()
-                                                                if owners[i]==a["owner"]]})
+                             "national_roads_at_stop":[{"a":i, "b":j, "annual_capacity":annual_roads[i,j]["capacity"],
+                                                        "used_by_regular":annual_roads[i,j]["relief_use"],
+                                                        "used_before_extra":annual_roads[i,j]["capacity"]-at_stage_open[i,j],
+                                                        "extra_open":at_stage_open[i,j], "remaining_at_stop":q}
+                                                       for (i,j),q in remaining.items() if owners[i]==a["owner"]]})
     _require(examples and _economic_state(base) == before, "no natural constraints or mutated source")
     observed = _food_receipts(annual,before,_economic_state(early_game))
     withheld = _food_receipts(held,before,_economic_state(held_game))
