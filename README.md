@@ -4,6 +4,8 @@
 
 7.0에서는 저장된 세계의 역사를 한국어 연대기로 읽을 수 있다. `python -m civsim chronicle studies/chronicle7/small/seed-0/save.json`으로 6년 사례를 열고, `--format json`으로 각 사건의 원장 위치와 수량을 확인한다. [수록 기준과 검증 결과](docs/chronicle7.md) · [시드 0의 200년 연대기](studies/chronicle7/long/seed-0/chronicle.md) · [시드 20의 200년 연대기](studies/chronicle7/long/seed-20/chronicle.md)
 
+7.1은 선택형 지역 농업 연구다. 정부가 실제 토양 사업의 노동과 재료 일부를 현장 시험에 두 번 배정하면, 해당 지역이 새 농법을 습득해 이듬해부터 생산에 사용한다. `python -m civsim chronicle examples/research71/seed0-year6.json`으로 타비르의 습득과 첫 수확을 읽을 수 있다. [연구 규칙·원장](docs/research71.md) · [같은 연초 대조와 40개 세계 비교](docs/research71-study.md)
+
 기본 실행은 1.0 규칙을 사용한다. 2.0은 농지 수용 한도를 초과하는 인력의 재배치와 재화별 결제 순서를 선택할 수 있다. 20개 시드·240개 조합의 실측 결과, 반례, 검증 명령은 [2차 실험 보고서](docs/phase2.md)에 있다.
 
 3.0은 도구의 목표 재고를 두고, 농업 설비·광공업 설비·경작지 개간에 광석·도구·노동을 투자한다. 유지비를 낸 기존 설비가 생산에 참여하며, 새 설비는 다음 해부터 가동된다. [투자 정책과 수식](docs/investment-rules.md) · [50년·200년 비교 보고서](docs/phase3.md)
