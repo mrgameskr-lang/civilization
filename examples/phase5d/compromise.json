@@ -1,0 +1,283 @@
+{
+  "seed": 5,
+  "year": 58,
+  "owner": 0,
+  "opening_sha256": "8d50885693d1f055baa18b96230481fc70bdd9275663a6ec2dfb8a8a422eb1a1",
+  "actual": {
+    "annual_sha256": "99f3c78e69b8ad16887e77fe49eb2e67856661973b039a09fa740da5838a669a",
+    "response": {
+      "id": 0,
+      "kind": "compromise",
+      "target_region": 0,
+      "target_group": "farm",
+      "concession_region": 1,
+      "concession_group": "farm",
+      "legal_concession_permille": 125,
+      "petition_admin_used": 4,
+      "admin_before": 627,
+      "admin_remaining": 623,
+      "score_allowance": 28,
+      "before": {
+        "action": "relief",
+        "target_region": 0,
+        "target_edge": null,
+        "quantity": 91,
+        "budget": {
+          "food": 103,
+          "ore": 0,
+          "tools": 0,
+          "workers": 0,
+          "admin_units": 1
+        },
+        "economic_score": 632
+      },
+      "after": {
+        "action": "soil",
+        "target_region": 0,
+        "target_edge": null,
+        "quantity": 1,
+        "budget": {
+          "food": 0,
+          "ore": 2,
+          "tools": 2,
+          "workers": 4,
+          "admin_units": 1
+        },
+        "economic_score": 800
+      }
+    },
+    "country_projects": [
+      {
+        "project_id": 0,
+        "action": "soil",
+        "owner": 0,
+        "source": 0,
+        "target": 0,
+        "edge": null,
+        "workers": 4,
+        "used": {
+          "food": 0,
+          "ore": 2,
+          "tools": 2
+        },
+        "treated_tiles": 12,
+        "soil_gain": 4
+      }
+    ],
+    "region1_farm_levy": {
+      "assessed": {
+        "food": 45,
+        "ore": 0,
+        "tools": 0
+      },
+      "concession": {
+        "food": 5,
+        "ore": 0,
+        "tools": 0
+      },
+      "refused": {
+        "food": 5,
+        "ore": 0,
+        "tools": 0
+      },
+      "paid": {
+        "food": 35,
+        "ore": 0,
+        "tools": 0
+      }
+    },
+    "region0_food_output": 8223,
+    "region0_unmet_food": 2246,
+    "country_relief_food": 0,
+    "country_public_labor": 4,
+    "country_public_close": {
+      "food": 129,
+      "ore": 626,
+      "tools": 626
+    },
+    "country_private_close": {
+      "food": 627,
+      "ore": 70615,
+      "tools": 779
+    }
+  },
+  "without_region0_farm_petition": {
+    "annual_sha256": "80aff692efa7ba00389174563ee0970e9d82f21cd7232bb08bd2d33a715ac5cf",
+    "response": {
+      "id": 0,
+      "kind": "tax_adjust",
+      "target_region": 1,
+      "target_group": "farm",
+      "concession_region": 1,
+      "concession_group": "farm",
+      "legal_concession_permille": 250,
+      "petition_admin_used": 0,
+      "admin_before": 627,
+      "admin_remaining": 627,
+      "score_allowance": 16,
+      "before": {
+        "action": "relief",
+        "target_region": 0,
+        "target_edge": null,
+        "quantity": 91,
+        "budget": {
+          "food": 103,
+          "ore": 0,
+          "tools": 0,
+          "workers": 0,
+          "admin_units": 1
+        },
+        "economic_score": 632
+      },
+      "after": {
+        "action": "relief",
+        "target_region": 0,
+        "target_edge": null,
+        "quantity": 91,
+        "budget": {
+          "food": 103,
+          "ore": 0,
+          "tools": 0,
+          "workers": 0,
+          "admin_units": 1
+        },
+        "economic_score": 632
+      }
+    },
+    "country_projects": [],
+    "region1_farm_levy": {
+      "assessed": {
+        "food": 45,
+        "ore": 0,
+        "tools": 0
+      },
+      "concession": {
+        "food": 11,
+        "ore": 0,
+        "tools": 0
+      },
+      "refused": {
+        "food": 4,
+        "ore": 0,
+        "tools": 0
+      },
+      "paid": {
+        "food": 30,
+        "ore": 0,
+        "tools": 0
+      }
+    },
+    "region0_food_output": 8188,
+    "region0_unmet_food": 2217,
+    "country_relief_food": 90,
+    "country_public_labor": 0,
+    "country_public_close": {
+      "food": 29,
+      "ore": 627,
+      "tools": 627
+    },
+    "country_private_close": {
+      "food": 659,
+      "ore": 70617,
+      "tools": 780
+    }
+  },
+  "without_region1_farm_refusal": {
+    "annual_sha256": "c84fb0c26da8b94ba64b27c8b6f793640a9d029e589f73162c8e7b0bf11a2f2e",
+    "response": {
+      "id": 0,
+      "kind": "reprioritize",
+      "target_region": 0,
+      "target_group": "farm",
+      "concession_region": null,
+      "concession_group": null,
+      "legal_concession_permille": 0,
+      "petition_admin_used": 4,
+      "admin_before": 627,
+      "admin_remaining": 623,
+      "score_allowance": 28,
+      "before": {
+        "action": "relief",
+        "target_region": 0,
+        "target_edge": null,
+        "quantity": 91,
+        "budget": {
+          "food": 103,
+          "ore": 0,
+          "tools": 0,
+          "workers": 0,
+          "admin_units": 1
+        },
+        "economic_score": 632
+      },
+      "after": {
+        "action": "soil",
+        "target_region": 0,
+        "target_edge": null,
+        "quantity": 1,
+        "budget": {
+          "food": 0,
+          "ore": 2,
+          "tools": 2,
+          "workers": 4,
+          "admin_units": 1
+        },
+        "economic_score": 800
+      }
+    },
+    "country_projects": [
+      {
+        "project_id": 0,
+        "action": "soil",
+        "owner": 0,
+        "source": 0,
+        "target": 0,
+        "edge": null,
+        "workers": 4,
+        "used": {
+          "food": 0,
+          "ore": 2,
+          "tools": 2
+        },
+        "treated_tiles": 12,
+        "soil_gain": 4
+      }
+    ],
+    "region1_farm_levy": {
+      "assessed": {
+        "food": 45,
+        "ore": 0,
+        "tools": 0
+      },
+      "concession": {
+        "food": 0,
+        "ore": 0,
+        "tools": 0
+      },
+      "refused": {
+        "food": 0,
+        "ore": 0,
+        "tools": 0
+      },
+      "paid": {
+        "food": 45,
+        "ore": 0,
+        "tools": 0
+      }
+    },
+    "region0_food_output": 8223,
+    "region0_unmet_food": 2246,
+    "country_relief_food": 0,
+    "country_public_labor": 4,
+    "country_public_close": {
+      "food": 138,
+      "ore": 626,
+      "tools": 626
+    },
+    "country_private_close": {
+      "food": 618,
+      "ore": 70615,
+      "tools": 779
+    }
+  }
+}

@@ -25,4 +25,5 @@ jobs:
       - run: python -m civsim verify examples/phase5/seed7-integrated
       - run: python -m civsim verify examples/phase5b/seed0-feedback
       - run: python -m civsim verify examples/phase5c/seed0-elections
+      - run: python -m civsim verify examples/phase5d/seed0-actions
 

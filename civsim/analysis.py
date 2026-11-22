@@ -8,9 +8,13 @@ from .storage import _manifest, read_years
 
 
 def summary(directory: Path) -> dict:
-    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A", "5.0B", "5.0C"):
+    meta = _manifest(Path(directory))
+    if meta.get("model_version") in ("4.0", "5.0A", "5.0B", "5.0C", "5.0D"):
         from .regional_storage import regional_summary
-        return regional_summary(directory)
+        result = regional_summary(directory)
+        if meta["model_version"] == "5.0D":
+            result.update(model_version="5.0D", collective_enabled=meta["enabled"])
+        return result
     result = dict.fromkeys((
         "years", "initial_population", "final_population", "total_births", "total_deaths",
         "total_migrants", "total_food_traded", "shortage_country_years",
@@ -70,7 +74,7 @@ def _panel_rows(year: dict):
 
 def write_panel(directory: Path, output: Path) -> None:
     """Export one row per nation/year, refusing to overwrite any existing path."""
-    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A", "5.0B", "5.0C"):
+    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A", "5.0B", "5.0C", "5.0D"):
         from .regional_storage import regional_summary
         regional_summary(directory, output)
         return

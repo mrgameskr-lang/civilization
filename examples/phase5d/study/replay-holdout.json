@@ -1,0 +1,28 @@
+{
+  "sample": "holdout",
+  "first_seed": 20,
+  "seeds": 20,
+  "workers": 8,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "paths": 40,
+  "annual_transitions": 8000,
+  "archived_5c_checkpoints": 60,
+  "replayed_checkpoints": 120,
+  "table_sha256": {
+    "actions.csv": "21ae29fe84ff39b3b687d89c8acf956daab1f0322042d6a96a475bb77021a77c",
+    "cases.json": "e2524e9aa53e77140cc2c4c605f6910bbecc497bd0d124a4e85439afa36dda80",
+    "countries.csv": "5caf5702585f2f52f044bc5301ac51b74e1c5033ad567bbab29c23e41f3feac0",
+    "events.csv.gz": "b4e0081c8403779f508d08c6dfbad3dff128591ab760aa4c5d9b6b121e44829e",
+    "means.csv": "0784b793d3e0518c3a3a58c62435b6db11600c7ab9f0764b11b0b364b9c9df56",
+    "paired.csv": "abb53bf8199278e9e17577c32ec0328195ca403ed1c7f4c22d1ffcd2f251f626",
+    "regions.csv": "0daf37885c529c02f48563c9abc082c14e860ca155e5334226325f6e31ac8e35",
+    "responses.csv": "b425c177f5bb66d13eb333c6f6b07a154a30afc145edf739e5bc1339d878ac38",
+    "runs.csv": "5d988fbde44769edfee74468e612cd2194b6763c0ea3c820f1f86247a2435e70"
+  },
+  "python": "3.12.14",
+  "wall_seconds": 399.34957889991347
+}

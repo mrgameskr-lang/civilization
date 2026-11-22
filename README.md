@@ -16,6 +16,8 @@
 
 5.0C는 생산·소비·납세 원장에서 지역별 정책 선호를 계산한다. 대표 의회의 선거 결과가 기존 예산을 승인할 내각을 결정한다. [실행과 원장 읽기](docs/phase5c.md) · [선호·선거·정부 수식](docs/competition-rules.md) · [비교 실험](docs/phase5c-results.md) · [같은 연초의 실제 정권 교체 사례](docs/competition-forks5c.md)
 
+5.0D는 직전 해의 식량·현물세·정책 경험과 요구 지속 기간을 이용해 지역 집단의 청원, 시위, 부분 노동 중단, 현물세 미납과 종료를 계산한다. [실행과 행동 규칙](docs/collective5d.md) · [집단행동 실험](docs/phase5d-results.md) · [5.0C 선거 진단](docs/election-diagnostics5d.md) · [PR별 통합 점검](docs/integration5d.md)
+
 ## 실행
 
 Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용한다. 런타임과 테스트는 모두 표준 라이브러리를 사용한다.

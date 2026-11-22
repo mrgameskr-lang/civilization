@@ -99,11 +99,14 @@ def _cart(source, target, good, qty, edges, paths, project):
     return {**trip, "owner": project["owner"], "purpose": project["action"], "project_id": project["project_id"]}
 
 
-def execute_works(regions, roads, depots, road_units, decisions, *, width):
+def execute_works(regions, roads, depots, road_units, decisions, *, width, withheld=None):
     """Post standing service and one approved discretionary project per country; validate before mutation."""
     nodes, edges, _, paths = _opening(regions, roads, depots, width)
     balances = {i: stock.copy() for i,stock in depots.items()}
     workers = dict.fromkeys(nodes, 0)
+    withheld = {} if withheld is None else withheld
+    _check(withheld.keys()<=nodes.keys() and all(_count(n) and n<=nodes[i].population//2 for i,n in withheld.items()),
+           "civic withdrawal exceeds site's available labor")
     soil = {i:r.soil for i,r in nodes.items()}
     state = _road_state(edges, road_units)
     projects, trips, skipped = [], [], []
@@ -120,7 +123,7 @@ def execute_works(regions, roads, depots, road_units, decisions, *, width):
         a,b = key
         feasible = [(s,t) for s,t in ((a,b),(b,a)) if balances[s]["food"] >= freight
                     and balances[s]["ore"] >= ore and balances[s]["tools"] >= tools
-                    and nodes[t].population//2-workers[t] >= labor]
+                    and nodes[t].population//2-workers[t]-withheld.get(t,0) >= labor]
         if not feasible:
             return False
         s,t = max(feasible, key=lambda pair: (balances[pair[0]]["ore"] + balances[pair[0]]["tools"], -pair[0]))
@@ -160,7 +163,7 @@ def execute_works(regions, roads, depots, road_units, decisions, *, width):
             if (gain == 0 or budget["admin_units"] < 1 or budget["workers"] < labor
                     or min(budget["ore"], balances[target]["ore"]) < ore
                     or min(budget["tools"], balances[target]["tools"]) < tools
-                    or r.population//2 - workers[target] < labor):
+                    or r.population//2 - workers[target] - withheld.get(target,0) < labor):
                 skipped.append({"owner":owner,"action":action,"target":target})
                 continue
             project = _project("soil",owner,target,target,None,len(projects),treated,gain)
@@ -173,7 +176,7 @@ def execute_works(regions, roads, depots, road_units, decisions, *, width):
     trace = {"projects": projects, "shipments": trips, "roads": rows, "skipped": skipped,
              "nodes": _works_nodes(nodes, depots, balances, soil, workers),
              "cost_food": sum(s["cost_food"] for s in trips)}
-    audit_works(regions,roads,depots,road_units,decisions,trace,width=width)
+    audit_works(regions,roads,depots,road_units,decisions,trace,width=width,withheld=withheld)
     for i,r in nodes.items():
         depots[i] = balances[i]
         r.soil = soil[i]
@@ -207,8 +210,11 @@ def _audit_trip(s, nodes, edges, paths):
     return cost
 
 
-def audit_works(regions, roads, depots, road_units, decisions, trace, *, width):
+def audit_works(regions, roads, depots, road_units, decisions, trace, *, width, withheld=None):
     nodes, edges, _, paths = _opening(regions, roads, depots, width)
+    withheld = {} if withheld is None else withheld
+    _check(withheld.keys()<=nodes.keys() and all(_count(n) and n<=nodes[i].population//2 for i,n in withheld.items()),
+           "invalid unavailable workforce")
     state = _road_state(edges, road_units)
     balances = {i: s.copy() for i,s in depots.items()}
     workers = dict.fromkeys(nodes,0)
@@ -224,7 +230,7 @@ def audit_works(regions, roads, depots, road_units, decisions, trace, *, width):
         _check(p["used"]=={"food":0,"ore":ore,"tools":tools} and p["workers"]==labor,
                "incorrect project recipe or labor")
         workers[t] += labor
-        _check(workers[t]<=nodes[t].population//2, "builders spent twice or unavailable")
+        _check(workers[t]+withheld.get(t,0)<=nodes[t].population//2, "builders spent twice or unavailable")
         project_freight = 0
         if action=="soil":
             treated,gain = _soil(nodes[t].farmland, soil[t])
