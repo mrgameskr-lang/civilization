@@ -13,7 +13,7 @@ def _check(condition, message):
         raise BalanceError(message)
 
 
-def prepare(regions, decisions, memory, year, hold):
+def prepare(regions, decisions, memory, year, hold, *, knowledge=None):
     """Choose a method for the approved soil job before transport, climate or production."""
     prior = {s["id"]: s for s in memory or ()}
     _check(memory is None or (len(memory) == len(regions) and prior.keys() == {r.id for r in regions}),
@@ -23,9 +23,10 @@ def prepare(regions, decisions, memory, year, hold):
     for r in sorted(regions, key=lambda region: region.id):
         saved = prior.get(r.id, {})
         n, learned = saved.get("trials", 0), saved.get("adoption_year")
+        transferred = knowledge is not None and knowledge[r.id]["opening_method"] == "transfer"
         _check(type(n) is int and 0 <= n <= TRIALS and
                ((learned is None and n < TRIALS) or
-                (n == TRIALS and type(learned) is int and TRIALS <= learned < year)),
+                (n == (1 if transferred else TRIALS) and type(learned) is int and TRIALS <= learned < year)),
                "invalid prior field-trial state")
         plan, obs = decisions[r.owner], old[r.id]
         funded_target = plan["action"] == "soil" and plan["target_region"] == r.id
@@ -36,7 +37,7 @@ def prepare(regions, decisions, memory, year, hold):
         lost_food = (obs["food_output"] * lost_gain + soil - 1) // soil
         # Price a trial as one of two installments needed for a three-harvest return.
         expected = 3 * obs["food_output"] * FARM_BONUS // (1000 * TRIALS)
-        if n == TRIALS:
+        if learned is not None:
             reason = "already_learned"
         elif not funded_target:
             reason = "other_fiscal_choice"
@@ -50,13 +51,13 @@ def prepare(regions, decisions, memory, year, hold):
             reason = "awaiting_project"
             targets.add(r.id)
         rows.append({"id":r.id, "owner":r.owner, "opening_trials":n, "opening_adoption_year":learned,
-                     "level_before":int(n == TRIALS), "previous_production_level":int(learned is not None and learned < year-1),
+                     "level_before":int(learned is not None), "previous_production_level":int(learned is not None and learned < year-1),
                      "first_application":learned == year-1, "expected_food_per_trial":expected,
                      "foregone_food_estimate":lost_food, "reason":reason})
     return {"version":VERSION, "first_turn":memory is None, "hold":hold, "regions":rows}, targets
 
 
-def post(ledger, projects, year):
+def post(ledger, projects, year, *, knowledge=None):
     """Only an executed job can pay for one trial. Costs below classify its existing debits."""
     paid = {p["target"]: p for p in projects if p.get("field_trial") is True}
     for r in ledger["regions"]:
@@ -64,8 +65,11 @@ def post(ledger, projects, year):
         n = r["opening_trials"] + trial
         if r["reason"] == "awaiting_project":
             r["reason"] = "paid_trial" if trial else "project_unfunded"
-        learned = year if trial and n == TRIALS else r["opening_adoption_year"]
-        r.update(closing_trials=n, level_after=int(n == TRIALS), adoption_year=learned,
+        contact = knowledge[r["id"]]["opening_contact"] if knowledge is not None else None
+        learned = r["opening_adoption_year"]
+        if trial and (n == TRIALS or (contact is not None and contact["year"] < year)):
+            learned = year
+        r.update(closing_trials=n, level_after=int(learned is not None), adoption_year=learned,
                  project_id=paid[r["id"]]["project_id"] if trial else None,
                  trial_workers=2*trial, trial_ore=trial, trial_tools=trial,
                  cumulative_workers=2*n, cumulative_ore=n, cumulative_tools=n)
@@ -76,7 +80,7 @@ def closing(ledger):
             for r in ledger["regions"]]
 
 
-def audit(record, previous, local, plans):
+def audit(record, previous, local, plans, *, knowledge=None):
     """Rebuild decisions from fiscal observations, and match paid trials to physical jobs."""
     from .storage import canonical_line
     cfg = record["public_policy"]
@@ -102,7 +106,7 @@ def audit(record, previous, local, plans):
     else:
         memory = [{"id":r["id"], "trials":r["opening_trials"], "adoption_year":r["opening_adoption_year"]}
                   for r in ledger["regions"]]
-    expected, targets = prepare(local, plans, memory, year, ledger["hold"])
-    post(expected, record["government"]["works"]["projects"], year)
+    expected, targets = prepare(local, plans, memory, year, ledger["hold"], knowledge=knowledge)
+    post(expected, record["government"]["works"]["projects"], year, knowledge=knowledge)
     _check(canonical_line(expected) == canonical_line(ledger), "unreconciled research decision or cost")
     return targets, {r["id"]:r["level_before"] for r in expected["regions"]}
