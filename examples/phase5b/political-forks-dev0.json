@@ -1,0 +1,4151 @@
+{
+  "development_seed": 0,
+  "prior_policy": "integrated",
+  "cases": [
+    {
+      "seed": 0,
+      "year": 36,
+      "prior_feedback": true,
+      "prior_years": 35,
+      "prior_records_sha256": "95fcebae623a65eb33861f557412351eba61f45091694f2761a446f697092941",
+      "common_opening_sha256": "766ff6edced0ad7527015ac071f6225e2e9a34d6d174cd65d5b12a90259403d5",
+      "changed_country": 7,
+      "changed_country_count": 1,
+      "funded_candidates": [
+        {
+          "action": "relief",
+          "target_region": 28,
+          "target_edge": null,
+          "quantity": 84,
+          "eligible": true,
+          "economic_score": 560,
+          "political_score": 200,
+          "total_score": 760,
+          "target_regions": [
+            28
+          ],
+          "contributions": [
+            {
+              "region": 28,
+              "group": "industry",
+              "members": 2352,
+              "pressure": 127,
+              "member_pressure": 298704
+            },
+            {
+              "region": 28,
+              "group": "consumer",
+              "members": 4204,
+              "pressure": 120,
+              "member_pressure": 504480
+            }
+          ]
+        },
+        {
+          "action": "road",
+          "target_region": 30,
+          "target_edge": [
+            28,
+            30
+          ],
+          "quantity": 1,
+          "eligible": true,
+          "economic_score": 728,
+          "political_score": 0,
+          "total_score": 728,
+          "target_regions": [
+            28,
+            30
+          ],
+          "contributions": []
+        }
+      ],
+      "political_memory": [
+        {
+          "region": 28,
+          "owner": 7,
+          "year": 35,
+          "population": 8368,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 1812,
+              "support": 470,
+              "discontent": 78,
+              "demand": "soil",
+              "age": 27,
+              "pressure": 211,
+              "benefit": 0,
+              "burden": 63,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 50,
+                "road": 0,
+                "soil": 122,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 1812,
+                  "benefit": 0,
+                  "burden": 96,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 1812,
+                  "benefit": 0,
+                  "burden": 76,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 1812,
+                  "benefit": 0,
+                  "burden": 63,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 2352,
+              "support": 470,
+              "discontent": 79,
+              "demand": "relief",
+              "age": 5,
+              "pressure": 127,
+              "benefit": 0,
+              "burden": 63,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 50,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 2389,
+                  "benefit": 0,
+                  "burden": 96,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 2364,
+                  "benefit": 0,
+                  "burden": 76,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 2352,
+                  "benefit": 0,
+                  "burden": 63,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 4204,
+              "support": 476,
+              "discontent": 71,
+              "demand": "relief",
+              "age": 5,
+              "pressure": 120,
+              "benefit": 11,
+              "burden": 64,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 8,
+              "fiscal_burden": 1,
+              "signals": {
+                "relief": 50,
+                "road": 0,
+                "soil": 0,
+                "reserve": 13,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 4238,
+                  "benefit": 0,
+                  "burden": 97,
+                  "fiscal_burden": 1,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 6
+                },
+                {
+                  "year": 34,
+                  "members": 4215,
+                  "benefit": 11,
+                  "burden": 77,
+                  "fiscal_burden": 1,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 7
+                },
+                {
+                  "year": 35,
+                  "members": 4204,
+                  "benefit": 11,
+                  "burden": 64,
+                  "fiscal_burden": 1,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 8
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 8368,
+            "food_need": 8368,
+            "food_eaten": 7837,
+            "food_unmet": 531,
+            "country_food_need": 13652,
+            "country_food_unmet": 531,
+            "shortage_permille": 63,
+            "country_shortage_permille": 38,
+            "relative_shortage_permille": 25,
+            "previous_shortage_permille": 76,
+            "production": {
+              "food": 6755,
+              "ore": 511,
+              "tools": 79
+            },
+            "labor": {
+              "farm": 1812,
+              "mine": 1176,
+              "factory": 1176
+            },
+            "levied": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "relief_food": 0,
+            "public_workers": 8,
+            "public_soil_gain": 0,
+            "soil_close": 948,
+            "public_food_close": 0,
+            "reserve_gap_permille": 1000,
+            "road_enabled_receipts": {
+              "food": 48,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 1000,
+            "industrial_target_value": 4180,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        },
+        {
+          "region": 29,
+          "owner": 7,
+          "year": 35,
+          "population": 1710,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 500,
+              "support": 488,
+              "discontent": 20,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 20,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 500,
+                  "benefit": 0,
+                  "burden": 16,
+                  "fiscal_burden": 16,
+                  "relief_food": 0,
+                  "levy_value": 64,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 500,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 500,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 355,
+              "support": 487,
+              "discontent": 22,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 11,
+              "levy_value": 32,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 11,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 11
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 328,
+                  "benefit": 0,
+                  "burden": 18,
+                  "fiscal_burden": 18,
+                  "relief_food": 0,
+                  "levy_value": 48,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 341,
+                  "benefit": 0,
+                  "burden": 32,
+                  "fiscal_burden": 32,
+                  "relief_food": 0,
+                  "levy_value": 88,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 355,
+                  "benefit": 0,
+                  "burden": 11,
+                  "fiscal_burden": 11,
+                  "relief_food": 0,
+                  "levy_value": 32,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 855,
+              "support": 500,
+              "discontent": 0,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 828,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 842,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 855,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 1710,
+            "food_need": 1710,
+            "food_eaten": 1710,
+            "food_unmet": 0,
+            "country_food_need": 13652,
+            "country_food_unmet": 531,
+            "shortage_permille": 0,
+            "country_shortage_permille": 38,
+            "relative_shortage_permille": 0,
+            "previous_shortage_permille": 0,
+            "production": {
+              "food": 1920,
+              "ore": 76,
+              "tools": 22
+            },
+            "labor": {
+              "farm": 500,
+              "mine": 177,
+              "factory": 178
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "relief_food": 0,
+            "public_workers": 0,
+            "public_soil_gain": 0,
+            "soil_close": 959,
+            "public_food_close": 4,
+            "reserve_gap_permille": 981,
+            "road_enabled_receipts": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 0,
+            "industrial_target_value": 844,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        },
+        {
+          "region": 30,
+          "owner": 7,
+          "year": 35,
+          "population": 1736,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 600,
+              "support": 476,
+              "discontent": 45,
+              "demand": "defer",
+              "age": 17,
+              "pressure": 153,
+              "benefit": 0,
+              "burden": 45,
+              "levy_value": 216,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 45,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 15,
+                "reserve": 0,
+                "defer": 45
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 540,
+                  "benefit": 0,
+                  "burden": 44,
+                  "fiscal_burden": 44,
+                  "relief_food": 0,
+                  "levy_value": 192,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 585,
+                  "benefit": 0,
+                  "burden": 42,
+                  "fiscal_burden": 42,
+                  "relief_food": 0,
+                  "levy_value": 200,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 600,
+                  "benefit": 0,
+                  "burden": 45,
+                  "fiscal_burden": 45,
+                  "relief_food": 0,
+                  "levy_value": 216,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 268,
+              "support": 483,
+              "discontent": 30,
+              "demand": "defer",
+              "age": 3,
+              "pressure": 79,
+              "benefit": 0,
+              "burden": 63,
+              "levy_value": 136,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 63,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 63
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 232,
+                  "benefit": 0,
+                  "burden": 47,
+                  "fiscal_burden": 47,
+                  "relief_food": 0,
+                  "levy_value": 88,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 235,
+                  "benefit": 0,
+                  "burden": 34,
+                  "fiscal_burden": 34,
+                  "relief_food": 0,
+                  "levy_value": 64,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 268,
+                  "benefit": 0,
+                  "burden": 63,
+                  "fiscal_burden": 63,
+                  "relief_food": 0,
+                  "levy_value": 136,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 868,
+              "support": 500,
+              "discontent": 0,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 773,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 821,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 868,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 1736,
+            "food_need": 1736,
+            "food_eaten": 1736,
+            "food_unmet": 0,
+            "country_food_need": 13652,
+            "country_food_unmet": 531,
+            "shortage_permille": 0,
+            "country_shortage_permille": 38,
+            "relative_shortage_permille": 0,
+            "previous_shortage_permille": 0,
+            "production": {
+              "food": 2307,
+              "ore": 57,
+              "tools": 27
+            },
+            "labor": {
+              "farm": 600,
+              "mine": 133,
+              "factory": 135
+            },
+            "levied": {
+              "food": 27,
+              "ore": 10,
+              "tools": 8
+            },
+            "relief_food": 0,
+            "public_workers": 0,
+            "public_soil_gain": 0,
+            "soil_close": 969,
+            "public_food_close": 91,
+            "reserve_gap_permille": 580,
+            "road_enabled_receipts": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 1000,
+            "industrial_target_value": 860,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        },
+        {
+          "region": 31,
+          "owner": 7,
+          "year": 35,
+          "population": 1838,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 552,
+              "support": 493,
+              "discontent": 7,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 1,
+              "levy_value": 8,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 1,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 23,
+                "reserve": 0,
+                "defer": 1
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 528,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 552,
+                  "benefit": 0,
+                  "burden": 3,
+                  "fiscal_burden": 3,
+                  "relief_food": 0,
+                  "levy_value": 16,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 552,
+                  "benefit": 0,
+                  "burden": 1,
+                  "fiscal_burden": 1,
+                  "relief_food": 0,
+                  "levy_value": 8,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 355,
+              "support": 493,
+              "discontent": 9,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 5,
+              "levy_value": 16,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 5,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 5
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 350,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 352,
+                  "benefit": 0,
+                  "burden": 5,
+                  "fiscal_burden": 5,
+                  "relief_food": 0,
+                  "levy_value": 16,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 355,
+                  "benefit": 0,
+                  "burden": 5,
+                  "fiscal_burden": 5,
+                  "relief_food": 0,
+                  "levy_value": 16,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 931,
+              "support": 500,
+              "discontent": 0,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 33,
+                  "members": 903,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 34,
+                  "members": 905,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 35,
+                  "members": 931,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 1838,
+            "food_need": 1838,
+            "food_eaten": 1838,
+            "food_unmet": 0,
+            "country_food_need": 13652,
+            "country_food_unmet": 531,
+            "shortage_permille": 0,
+            "country_shortage_permille": 38,
+            "relative_shortage_permille": 0,
+            "previous_shortage_permille": 0,
+            "production": {
+              "food": 2086,
+              "ore": 73,
+              "tools": 26
+            },
+            "labor": {
+              "farm": 552,
+              "mine": 177,
+              "factory": 178
+            },
+            "levied": {
+              "food": 1,
+              "ore": 1,
+              "tools": 1
+            },
+            "relief_food": 0,
+            "public_workers": 0,
+            "public_soil_gain": 0,
+            "soil_close": 954,
+            "public_food_close": 3,
+            "reserve_gap_permille": 986,
+            "road_enabled_receipts": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 0,
+            "industrial_target_value": 904,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        }
+      ],
+      "economic_choice": {
+        "action": "road",
+        "target_region": 30,
+        "target_edge": [
+          28,
+          30
+        ],
+        "quantity": 1,
+        "economic_score": 728,
+        "political_score": 0,
+        "total_score": 728
+      },
+      "political_choice": {
+        "action": "relief",
+        "target_region": 28,
+        "target_edge": null,
+        "quantity": 84,
+        "economic_score": 560,
+        "political_score": 200,
+        "total_score": 760
+      },
+      "economic_approval": {
+        "world_unmet": 4623,
+        "world_harvest": 95176,
+        "country_unmet": 440,
+        "year_record_sha256": "c438d9f23e854b07f3cffaee00391d016e4ff9d22dedaf08836a9caeab62971f",
+        "budget": {
+          "food": 2,
+          "ore": 6,
+          "tools": 4,
+          "workers": 6,
+          "admin_units": 1
+        },
+        "country_totals": {
+          "relief_food": 0,
+          "public_freight_food": 8,
+          "road_build_units": 1,
+          "road_maintained_units": 3,
+          "road_lost_units": 0,
+          "works_ore": 9,
+          "works_tools": 7,
+          "public_labor": 9,
+          "soil_packages": 0,
+          "public_spoil_food": 9,
+          "collection_cost_food": 0,
+          "base_capacity": 1277,
+          "effective_capacity": 1421,
+          "next_capacity": 1469,
+          "public_cargo": 16,
+          "action_executed": 1,
+          "extra_food": 0,
+          "levied_food": 29,
+          "levied_ore": 14,
+          "levied_tools": 12
+        },
+        "regions": [
+          {
+            "region": 28,
+            "population": 8361,
+            "soil_open": 948,
+            "produced": {
+              "food": 6802,
+              "ore": 500,
+              "tools": 90
+            },
+            "meal": {
+              "opening_food": 7921,
+              "food_need": 8361,
+              "food_eaten": 7921,
+              "food_spoiled": 0,
+              "food_unmet": 440,
+              "used": {
+                "food": 7921,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 266,
+              "tools": 266
+            },
+            "levied": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 266,
+              "tools": 266
+            }
+          },
+          {
+            "region": 29,
+            "population": 1737,
+            "soil_open": 959,
+            "produced": {
+              "food": 1933,
+              "ore": 77,
+              "tools": 28
+            },
+            "meal": {
+              "opening_food": 1737,
+              "food_need": 1737,
+              "food_eaten": 1737,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 1737,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 4,
+              "ore": 53,
+              "tools": 53
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "depot_close": {
+              "food": 2,
+              "ore": 54,
+              "tools": 54
+            }
+          },
+          {
+            "region": 30,
+            "population": 1832,
+            "soil_open": 969,
+            "produced": {
+              "food": 2323,
+              "ore": 67,
+              "tools": 32
+            },
+            "meal": {
+              "opening_food": 1917,
+              "food_need": 1832,
+              "food_eaten": 1832,
+              "food_spoiled": 7,
+              "food_unmet": 0,
+              "used": {
+                "food": 1839,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 78
+            },
+            "depot_open": {
+              "food": 91,
+              "ore": 54,
+              "tools": 54
+            },
+            "levied": {
+              "food": 28,
+              "ore": 11,
+              "tools": 9
+            },
+            "depot_close": {
+              "food": 104,
+              "ore": 57,
+              "tools": 57
+            }
+          },
+          {
+            "region": 31,
+            "population": 1867,
+            "soil_open": 954,
+            "produced": {
+              "food": 2119,
+              "ore": 78,
+              "tools": 24
+            },
+            "meal": {
+              "opening_food": 1867,
+              "food_need": 1867,
+              "food_eaten": 1867,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 1867,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 3,
+              "ore": 57,
+              "tools": 57
+            },
+            "levied": {
+              "food": 1,
+              "ore": 1,
+              "tools": 1
+            },
+            "depot_close": {
+              "food": 4,
+              "ore": 58,
+              "tools": 58
+            }
+          }
+        ],
+        "projects": [
+          {
+            "project_id": 1,
+            "action": "service",
+            "owner": 7,
+            "source": 29,
+            "target": 28,
+            "edge": [
+              28,
+              29
+            ],
+            "workers": 1,
+            "used": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "treated_tiles": 0,
+            "soil_gain": 0
+          },
+          {
+            "project_id": 2,
+            "action": "service",
+            "owner": 7,
+            "source": 30,
+            "target": 28,
+            "edge": [
+              28,
+              30
+            ],
+            "workers": 1,
+            "used": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "treated_tiles": 0,
+            "soil_gain": 0
+          },
+          {
+            "project_id": 3,
+            "action": "service",
+            "owner": 7,
+            "source": 30,
+            "target": 28,
+            "edge": [
+              28,
+              30
+            ],
+            "workers": 1,
+            "used": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "treated_tiles": 0,
+            "soil_gain": 0
+          },
+          {
+            "project_id": 8,
+            "action": "build",
+            "owner": 7,
+            "source": 30,
+            "target": 28,
+            "edge": [
+              28,
+              30
+            ],
+            "workers": 6,
+            "used": {
+              "food": 0,
+              "ore": 6,
+              "tools": 4
+            },
+            "treated_tiles": 0,
+            "soil_gain": 0
+          }
+        ],
+        "works_shipments": [
+          {
+            "source": 29,
+            "target": 28,
+            "good": "ore",
+            "quantity": 1,
+            "path": [
+              29,
+              28
+            ],
+            "tile_path": [
+              767,
+              766,
+              765,
+              764,
+              763,
+              762,
+              810,
+              858,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 29,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 1
+          },
+          {
+            "source": 29,
+            "target": 28,
+            "good": "tools",
+            "quantity": 1,
+            "path": [
+              29,
+              28
+            ],
+            "tile_path": [
+              767,
+              766,
+              765,
+              764,
+              763,
+              762,
+              810,
+              858,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 29,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 1
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "ore",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 2
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "tools",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 2
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "ore",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 3
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "tools",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 3
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "ore",
+            "quantity": 6,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "build",
+            "project_id": 8
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "tools",
+            "quantity": 4,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "build",
+            "project_id": 8
+          }
+        ],
+        "relief_shipments": [],
+        "private_shipments": [
+          {
+            "source": 31,
+            "target": 28,
+            "good": "food",
+            "quantity": 224,
+            "path": [
+              31,
+              28
+            ],
+            "tile_path": [
+              804,
+              805,
+              806,
+              807,
+              808,
+              809,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 31,
+                "b": 28,
+                "distance": 12,
+                "cost_food": 27
+              }
+            ],
+            "cost_food": 27,
+            "distance": 12
+          },
+          {
+            "source": 29,
+            "target": 28,
+            "good": "food",
+            "quantity": 190,
+            "path": [
+              29,
+              28
+            ],
+            "tile_path": [
+              767,
+              766,
+              765,
+              764,
+              763,
+              762,
+              810,
+              858,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 29,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 27
+              }
+            ],
+            "cost_food": 27,
+            "distance": 14
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "food",
+            "quantity": 548,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 77
+              }
+            ],
+            "cost_food": 77,
+            "distance": 14
+          }
+        ],
+        "border_trades": [
+          {
+            "seller": 26,
+            "buyer": 28,
+            "good": "food",
+            "quantity": 157,
+            "distance": 14,
+            "cost_food": 22,
+            "unit_price": 9,
+            "value": 1413,
+            "buyer_cash_before": 4467
+          },
+          {
+            "seller": 22,
+            "buyer": 29,
+            "good": "food",
+            "quantity": 21,
+            "distance": 13,
+            "cost_food": 3,
+            "unit_price": 7,
+            "value": 147,
+            "buyer_cash_before": 4690
+          }
+        ],
+        "roads": [
+          {
+            "a": 28,
+            "b": 29,
+            "owner": 7,
+            "base": 311,
+            "opening_units": 1,
+            "closing_units": 1,
+            "capacity": 359,
+            "next_capacity": 359,
+            "works_use": 2,
+            "relief_use": 0,
+            "private_use": 190,
+            "unused": 167
+          },
+          {
+            "a": 28,
+            "b": 30,
+            "owner": 7,
+            "base": 466,
+            "opening_units": 2,
+            "closing_units": 3,
+            "capacity": 562,
+            "next_capacity": 610,
+            "works_use": 14,
+            "relief_use": 0,
+            "private_use": 548,
+            "unused": 0
+          },
+          {
+            "a": 28,
+            "b": 31,
+            "owner": 7,
+            "base": 350,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 350,
+            "next_capacity": 350,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 224,
+            "unused": 126
+          },
+          {
+            "a": 29,
+            "b": 31,
+            "owner": 7,
+            "base": 150,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 150,
+            "next_capacity": 150,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 150
+          }
+        ]
+      },
+      "political_approval": {
+        "world_unmet": 4609,
+        "world_harvest": 95176,
+        "country_unmet": 426,
+        "year_record_sha256": "6f03407b80a42edb61e62971ad7db919c019c318aa9e66461af10e104612dd67",
+        "budget": {
+          "food": 98,
+          "ore": 0,
+          "tools": 0,
+          "workers": 0,
+          "admin_units": 1
+        },
+        "country_totals": {
+          "relief_food": 84,
+          "public_freight_food": 20,
+          "road_build_units": 0,
+          "road_maintained_units": 3,
+          "road_lost_units": 0,
+          "works_ore": 3,
+          "works_tools": 3,
+          "public_labor": 3,
+          "soil_packages": 0,
+          "public_spoil_food": 1,
+          "collection_cost_food": 0,
+          "base_capacity": 1277,
+          "effective_capacity": 1421,
+          "next_capacity": 1421,
+          "public_cargo": 90,
+          "action_executed": 1,
+          "extra_food": 0,
+          "levied_food": 29,
+          "levied_ore": 8,
+          "levied_tools": 8
+        },
+        "regions": [
+          {
+            "region": 28,
+            "population": 8361,
+            "soil_open": 948,
+            "produced": {
+              "food": 6802,
+              "ore": 501,
+              "tools": 90
+            },
+            "meal": {
+              "opening_food": 7935,
+              "food_need": 8361,
+              "food_eaten": 7935,
+              "food_spoiled": 0,
+              "food_unmet": 426,
+              "used": {
+                "food": 7935,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 266,
+              "tools": 266
+            },
+            "levied": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 266,
+              "tools": 266
+            }
+          },
+          {
+            "region": 29,
+            "population": 1737,
+            "soil_open": 959,
+            "produced": {
+              "food": 1933,
+              "ore": 77,
+              "tools": 28
+            },
+            "meal": {
+              "opening_food": 1737,
+              "food_need": 1737,
+              "food_eaten": 1737,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 1737,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 4,
+              "ore": 53,
+              "tools": 53
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 54,
+              "tools": 54
+            }
+          },
+          {
+            "region": 30,
+            "population": 1832,
+            "soil_open": 969,
+            "produced": {
+              "food": 2323,
+              "ore": 67,
+              "tools": 32
+            },
+            "meal": {
+              "opening_food": 1997,
+              "food_need": 1832,
+              "food_eaten": 1832,
+              "food_spoiled": 13,
+              "food_unmet": 0,
+              "used": {
+                "food": 1845,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 152
+            },
+            "depot_open": {
+              "food": 91,
+              "ore": 54,
+              "tools": 54
+            },
+            "levied": {
+              "food": 28,
+              "ore": 5,
+              "tools": 5
+            },
+            "depot_close": {
+              "food": 22,
+              "ore": 57,
+              "tools": 57
+            }
+          },
+          {
+            "region": 31,
+            "population": 1867,
+            "soil_open": 954,
+            "produced": {
+              "food": 2119,
+              "ore": 78,
+              "tools": 24
+            },
+            "meal": {
+              "opening_food": 1867,
+              "food_need": 1867,
+              "food_eaten": 1867,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 1867,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 3,
+              "ore": 57,
+              "tools": 57
+            },
+            "levied": {
+              "food": 1,
+              "ore": 1,
+              "tools": 1
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 58,
+              "tools": 58
+            }
+          }
+        ],
+        "projects": [
+          {
+            "project_id": 1,
+            "action": "service",
+            "owner": 7,
+            "source": 29,
+            "target": 28,
+            "edge": [
+              28,
+              29
+            ],
+            "workers": 1,
+            "used": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "treated_tiles": 0,
+            "soil_gain": 0
+          },
+          {
+            "project_id": 2,
+            "action": "service",
+            "owner": 7,
+            "source": 30,
+            "target": 28,
+            "edge": [
+              28,
+              30
+            ],
+            "workers": 1,
+            "used": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "treated_tiles": 0,
+            "soil_gain": 0
+          },
+          {
+            "project_id": 3,
+            "action": "service",
+            "owner": 7,
+            "source": 30,
+            "target": 28,
+            "edge": [
+              28,
+              30
+            ],
+            "workers": 1,
+            "used": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "treated_tiles": 0,
+            "soil_gain": 0
+          }
+        ],
+        "works_shipments": [
+          {
+            "source": 29,
+            "target": 28,
+            "good": "ore",
+            "quantity": 1,
+            "path": [
+              29,
+              28
+            ],
+            "tile_path": [
+              767,
+              766,
+              765,
+              764,
+              763,
+              762,
+              810,
+              858,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 29,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 1
+          },
+          {
+            "source": 29,
+            "target": 28,
+            "good": "tools",
+            "quantity": 1,
+            "path": [
+              29,
+              28
+            ],
+            "tile_path": [
+              767,
+              766,
+              765,
+              764,
+              763,
+              762,
+              810,
+              858,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 29,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 1
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "ore",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 2
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "tools",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 2
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "ore",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 3
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "tools",
+            "quantity": 1,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "service",
+            "project_id": 3
+          }
+        ],
+        "relief_shipments": [
+          {
+            "source": 31,
+            "target": 28,
+            "good": "food",
+            "quantity": 3,
+            "path": [
+              31,
+              28
+            ],
+            "tile_path": [
+              804,
+              805,
+              806,
+              807,
+              808,
+              809,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 31,
+                "b": 28,
+                "distance": 12,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 12,
+            "owner": 7,
+            "purpose": "relief"
+          },
+          {
+            "source": 29,
+            "target": 28,
+            "good": "food",
+            "quantity": 1,
+            "path": [
+              29,
+              28
+            ],
+            "tile_path": [
+              767,
+              766,
+              765,
+              764,
+              763,
+              762,
+              810,
+              858,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 29,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 1
+              }
+            ],
+            "cost_food": 1,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "relief"
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "food",
+            "quantity": 80,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 12
+              }
+            ],
+            "cost_food": 12,
+            "distance": 14,
+            "owner": 7,
+            "purpose": "relief"
+          }
+        ],
+        "private_shipments": [
+          {
+            "source": 31,
+            "target": 28,
+            "good": "food",
+            "quantity": 224,
+            "path": [
+              31,
+              28
+            ],
+            "tile_path": [
+              804,
+              805,
+              806,
+              807,
+              808,
+              809,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 31,
+                "b": 28,
+                "distance": 12,
+                "cost_food": 27
+              }
+            ],
+            "cost_food": 27,
+            "distance": 12
+          },
+          {
+            "source": 29,
+            "target": 28,
+            "good": "food",
+            "quantity": 190,
+            "path": [
+              29,
+              28
+            ],
+            "tile_path": [
+              767,
+              766,
+              765,
+              764,
+              763,
+              762,
+              810,
+              858,
+              857,
+              905,
+              953,
+              1001,
+              1049,
+              1097,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 29,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 27
+              }
+            ],
+            "cost_food": 27,
+            "distance": 14
+          },
+          {
+            "source": 30,
+            "target": 28,
+            "good": "food",
+            "quantity": 478,
+            "path": [
+              30,
+              28
+            ],
+            "tile_path": [
+              1535,
+              1487,
+              1439,
+              1391,
+              1343,
+              1295,
+              1247,
+              1199,
+              1151,
+              1150,
+              1149,
+              1148,
+              1147,
+              1146,
+              1145
+            ],
+            "legs": [
+              {
+                "a": 30,
+                "b": 28,
+                "distance": 14,
+                "cost_food": 67
+              }
+            ],
+            "cost_food": 67,
+            "distance": 14
+          }
+        ],
+        "border_trades": [
+          {
+            "seller": 26,
+            "buyer": 28,
+            "good": "food",
+            "quantity": 157,
+            "distance": 14,
+            "cost_food": 22,
+            "unit_price": 9,
+            "value": 1413,
+            "buyer_cash_before": 4467
+          },
+          {
+            "seller": 22,
+            "buyer": 29,
+            "good": "food",
+            "quantity": 21,
+            "distance": 13,
+            "cost_food": 3,
+            "unit_price": 7,
+            "value": 147,
+            "buyer_cash_before": 4690
+          }
+        ],
+        "roads": [
+          {
+            "a": 28,
+            "b": 29,
+            "owner": 7,
+            "base": 311,
+            "opening_units": 1,
+            "closing_units": 1,
+            "capacity": 359,
+            "next_capacity": 359,
+            "works_use": 2,
+            "relief_use": 1,
+            "private_use": 190,
+            "unused": 166
+          },
+          {
+            "a": 28,
+            "b": 30,
+            "owner": 7,
+            "base": 466,
+            "opening_units": 2,
+            "closing_units": 2,
+            "capacity": 562,
+            "next_capacity": 562,
+            "works_use": 4,
+            "relief_use": 80,
+            "private_use": 478,
+            "unused": 0
+          },
+          {
+            "a": 28,
+            "b": 31,
+            "owner": 7,
+            "base": 350,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 350,
+            "next_capacity": 350,
+            "works_use": 0,
+            "relief_use": 3,
+            "private_use": 224,
+            "unused": 123
+          },
+          {
+            "a": 29,
+            "b": 31,
+            "owner": 7,
+            "base": 150,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 150,
+            "next_capacity": 150,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 150
+          }
+        ]
+      }
+    },
+    {
+      "seed": 0,
+      "year": 39,
+      "prior_feedback": true,
+      "prior_years": 38,
+      "prior_records_sha256": "830b253eacfbeaac5b08d06b6a10e8f24baf959b788b88f83f49f7ed13f28729",
+      "common_opening_sha256": "1bfca10ef1c8d1271cf5d8ae152441f9eb468552866f5e3b5bb50242c3dd6947",
+      "changed_country": 2,
+      "changed_country_count": 1,
+      "funded_candidates": [
+        {
+          "action": "soil",
+          "target_region": 8,
+          "target_edge": null,
+          "quantity": 1,
+          "eligible": true,
+          "economic_score": 632,
+          "political_score": 84,
+          "total_score": 716,
+          "target_regions": [
+            8
+          ],
+          "contributions": [
+            {
+              "region": 8,
+              "group": "farm",
+              "members": 1984,
+              "pressure": 171,
+              "member_pressure": 339264
+            }
+          ]
+        },
+        {
+          "action": "soil",
+          "target_region": 11,
+          "target_edge": null,
+          "quantity": 1,
+          "eligible": true,
+          "economic_score": 704,
+          "political_score": 9,
+          "total_score": 713,
+          "target_regions": [
+            11
+          ],
+          "contributions": [
+            {
+              "region": 11,
+              "group": "farm",
+              "members": 572,
+              "pressure": 66,
+              "member_pressure": 37752
+            }
+          ]
+        }
+      ],
+      "political_memory": [
+        {
+          "region": 8,
+          "owner": 2,
+          "year": 38,
+          "population": 10949,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 1984,
+              "support": 434,
+              "discontent": 183,
+              "demand": "soil",
+              "age": 1,
+              "pressure": 171,
+              "benefit": 0,
+              "burden": 102,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 83,
+                "road": 0,
+                "soil": 94,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 1984,
+                  "benefit": 3,
+                  "burden": 160,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 2008,
+                  "benefit": 0,
+                  "burden": 141,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 1984,
+                  "benefit": 0,
+                  "burden": 102,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 3478,
+              "support": 434,
+              "discontent": 184,
+              "demand": "relief",
+              "age": 9,
+              "pressure": 262,
+              "benefit": 0,
+              "burden": 102,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 83,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 3528,
+                  "benefit": 0,
+                  "burden": 160,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 3432,
+                  "benefit": 0,
+                  "burden": 141,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 3478,
+                  "benefit": 0,
+                  "burden": 102,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 5487,
+              "support": 435,
+              "discontent": 181,
+              "demand": "relief",
+              "age": 9,
+              "pressure": 260,
+              "benefit": 0,
+              "burden": 102,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 83,
+                "road": 0,
+                "soil": 0,
+                "reserve": 39,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 5544,
+                  "benefit": 0,
+                  "burden": 160,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 4
+                },
+                {
+                  "year": 37,
+                  "members": 5548,
+                  "benefit": 0,
+                  "burden": 141,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 5487,
+                  "benefit": 0,
+                  "burden": 102,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 10949,
+            "food_need": 10949,
+            "food_eaten": 9827,
+            "food_unmet": 1122,
+            "country_food_need": 21048,
+            "country_food_unmet": 1206,
+            "shortage_permille": 102,
+            "country_shortage_permille": 57,
+            "relative_shortage_permille": 45,
+            "previous_shortage_permille": 141,
+            "production": {
+              "food": 9403,
+              "ore": 676,
+              "tools": 84
+            },
+            "labor": {
+              "farm": 1984,
+              "mine": 1738,
+              "factory": 1740
+            },
+            "levied": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "relief_food": 0,
+            "public_workers": 0,
+            "public_soil_gain": 0,
+            "soil_close": 953,
+            "public_food_close": 0,
+            "reserve_gap_permille": 1000,
+            "road_enabled_receipts": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 0,
+            "industrial_target_value": 5464,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        },
+        {
+          "region": 9,
+          "owner": 2,
+          "year": 38,
+          "population": 3348,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 740,
+              "support": 486,
+              "discontent": 24,
+              "demand": "soil",
+              "age": 2,
+              "pressure": 44,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 26,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 740,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 740,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 740,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 928,
+              "support": 489,
+              "discontent": 18,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 4,
+              "levy_value": 32,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 4,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 4
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 875,
+                  "benefit": 0,
+                  "burden": 4,
+                  "fiscal_burden": 4,
+                  "relief_food": 0,
+                  "levy_value": 32,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 901,
+                  "benefit": 0,
+                  "burden": 2,
+                  "fiscal_burden": 2,
+                  "relief_food": 0,
+                  "levy_value": 16,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 928,
+                  "benefit": 0,
+                  "burden": 4,
+                  "fiscal_burden": 4,
+                  "relief_food": 0,
+                  "levy_value": 32,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 1680,
+              "support": 491,
+              "discontent": 16,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 1628,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 1654,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 1680,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 3348,
+            "food_need": 3348,
+            "food_eaten": 3348,
+            "food_unmet": 0,
+            "country_food_need": 21048,
+            "country_food_unmet": 1206,
+            "shortage_permille": 0,
+            "country_shortage_permille": 57,
+            "relative_shortage_permille": 0,
+            "previous_shortage_permille": 0,
+            "production": {
+              "food": 3461,
+              "ore": 167,
+              "tools": 42
+            },
+            "labor": {
+              "farm": 740,
+              "mine": 463,
+              "factory": 465
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "relief_food": 0,
+            "public_workers": 0,
+            "public_soil_gain": 0,
+            "soil_close": 948,
+            "public_food_close": 0,
+            "reserve_gap_permille": 1000,
+            "road_enabled_receipts": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 0,
+            "industrial_target_value": 1664,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        },
+        {
+          "region": 10,
+          "owner": 2,
+          "year": 38,
+          "population": 3832,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 856,
+              "support": 486,
+              "discontent": 23,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 19,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 808,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 832,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 856,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 1048,
+              "support": 493,
+              "discontent": 9,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 3,
+              "levy_value": 32,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 3,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 3
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 1036,
+                  "benefit": 0,
+                  "burden": 3,
+                  "fiscal_burden": 3,
+                  "relief_food": 0,
+                  "levy_value": 32,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 1042,
+                  "benefit": 0,
+                  "burden": 1,
+                  "fiscal_burden": 1,
+                  "relief_food": 0,
+                  "levy_value": 16,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 1048,
+                  "benefit": 0,
+                  "burden": 3,
+                  "fiscal_burden": 3,
+                  "relief_food": 0,
+                  "levy_value": 32,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 1928,
+              "support": 497,
+              "discontent": 4,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 0,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 0,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 1869,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 1898,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 1928,
+                  "benefit": 0,
+                  "burden": 0,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 3832,
+            "food_need": 3832,
+            "food_eaten": 3832,
+            "food_unmet": 0,
+            "country_food_need": 21048,
+            "country_food_unmet": 1206,
+            "shortage_permille": 0,
+            "country_shortage_permille": 57,
+            "relative_shortage_permille": 0,
+            "previous_shortage_permille": 0,
+            "production": {
+              "food": 4021,
+              "ore": 198,
+              "tools": 45
+            },
+            "labor": {
+              "farm": 856,
+              "mine": 523,
+              "factory": 525
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "relief_food": 0,
+            "public_workers": 0,
+            "public_soil_gain": 0,
+            "soil_close": 962,
+            "public_food_close": 0,
+            "reserve_gap_permille": 1000,
+            "road_enabled_receipts": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 0,
+            "industrial_target_value": 1904,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        },
+        {
+          "region": 11,
+          "owner": 2,
+          "year": 38,
+          "population": 2919,
+          "membership_known": true,
+          "unclassified": 0,
+          "groups": {
+            "farm": {
+              "members": 572,
+              "support": 491,
+              "discontent": 14,
+              "demand": "soil",
+              "age": 4,
+              "pressure": 66,
+              "benefit": 0,
+              "burden": 28,
+              "levy_value": 0,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 18,
+                "road": 0,
+                "soil": 37,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 572,
+                  "benefit": 0,
+                  "burden": 31,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 572,
+                  "benefit": 11,
+                  "burden": 24,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 572,
+                  "benefit": 0,
+                  "burden": 28,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "industry": {
+              "members": 875,
+              "support": 488,
+              "discontent": 19,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 30,
+              "levy_value": 16,
+              "relief_food": 0,
+              "public_workers": 0,
+              "fiscal_burden": 2,
+              "signals": {
+                "relief": 18,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 2
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 841,
+                  "benefit": 0,
+                  "burden": 35,
+                  "fiscal_burden": 4,
+                  "relief_food": 0,
+                  "levy_value": 32,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 853,
+                  "benefit": 0,
+                  "burden": 31,
+                  "fiscal_burden": 7,
+                  "relief_food": 0,
+                  "levy_value": 48,
+                  "public_workers": 0
+                },
+                {
+                  "year": 38,
+                  "members": 875,
+                  "benefit": 0,
+                  "burden": 30,
+                  "fiscal_burden": 2,
+                  "relief_food": 0,
+                  "levy_value": 16,
+                  "public_workers": 0
+                }
+              ]
+            },
+            "consumer": {
+              "members": 1472,
+              "support": 489,
+              "discontent": 16,
+              "demand": "none",
+              "age": 0,
+              "pressure": 0,
+              "benefit": 0,
+              "burden": 28,
+              "levy_value": 0,
+              "relief_food": 1,
+              "public_workers": 0,
+              "fiscal_burden": 0,
+              "signals": {
+                "relief": 18,
+                "road": 0,
+                "soil": 0,
+                "reserve": 0,
+                "defer": 0
+              },
+              "history": [
+                {
+                  "year": 36,
+                  "members": 1437,
+                  "benefit": 0,
+                  "burden": 31,
+                  "fiscal_burden": 0,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 0
+                },
+                {
+                  "year": 37,
+                  "members": 1458,
+                  "benefit": 0,
+                  "burden": 26,
+                  "fiscal_burden": 2,
+                  "relief_food": 0,
+                  "levy_value": 0,
+                  "public_workers": 4
+                },
+                {
+                  "year": 38,
+                  "members": 1472,
+                  "benefit": 0,
+                  "burden": 28,
+                  "fiscal_burden": 0,
+                  "relief_food": 1,
+                  "levy_value": 0,
+                  "public_workers": 0
+                }
+              ]
+            }
+          },
+          "evidence": {
+            "population": 2919,
+            "food_need": 2919,
+            "food_eaten": 2835,
+            "food_unmet": 84,
+            "country_food_need": 21048,
+            "country_food_unmet": 1206,
+            "shortage_permille": 28,
+            "country_shortage_permille": 57,
+            "relative_shortage_permille": 0,
+            "previous_shortage_permille": 24,
+            "production": {
+              "food": 2834,
+              "ore": 166,
+              "tools": 41
+            },
+            "labor": {
+              "farm": 572,
+              "mine": 437,
+              "factory": 438
+            },
+            "levied": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "relief_food": 1,
+            "public_workers": 0,
+            "public_soil_gain": 0,
+            "soil_close": 955,
+            "public_food_close": 0,
+            "reserve_gap_permille": 1000,
+            "road_enabled_receipts": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "road_congestion_permille": 0,
+            "industrial_target_value": 1444,
+            "industrial_shortage_value": 0,
+            "industrial_shortage_permille": 0
+          }
+        }
+      ],
+      "economic_choice": {
+        "action": "soil",
+        "target_region": 11,
+        "target_edge": null,
+        "quantity": 1,
+        "economic_score": 704,
+        "political_score": 9,
+        "total_score": 713
+      },
+      "political_choice": {
+        "action": "soil",
+        "target_region": 8,
+        "target_edge": null,
+        "quantity": 1,
+        "economic_score": 632,
+        "political_score": 84,
+        "total_score": 716
+      },
+      "economic_approval": {
+        "world_unmet": 2856,
+        "world_harvest": 101818,
+        "country_unmet": 1007,
+        "year_record_sha256": "e346815648bef2c5023011d95d51b81eac2bf0ee4b30b212f375a631390381d0",
+        "budget": {
+          "food": 0,
+          "ore": 2,
+          "tools": 2,
+          "workers": 4,
+          "admin_units": 1
+        },
+        "country_totals": {
+          "relief_food": 0,
+          "public_freight_food": 0,
+          "road_build_units": 0,
+          "road_maintained_units": 0,
+          "road_lost_units": 0,
+          "works_ore": 2,
+          "works_tools": 2,
+          "public_labor": 4,
+          "soil_packages": 1,
+          "public_spoil_food": 0,
+          "collection_cost_food": 0,
+          "base_capacity": 1311,
+          "effective_capacity": 1311,
+          "next_capacity": 1311,
+          "public_cargo": 0,
+          "action_executed": 1,
+          "extra_food": 0,
+          "levied_food": 0,
+          "levied_ore": 7,
+          "levied_tools": 7
+        },
+        "regions": [
+          {
+            "region": 8,
+            "population": 10970,
+            "soil_open": 953,
+            "produced": {
+              "food": 9476,
+              "ore": 678,
+              "tools": 86
+            },
+            "meal": {
+              "opening_food": 10029,
+              "food_need": 10970,
+              "food_eaten": 10029,
+              "food_spoiled": 0,
+              "food_unmet": 941,
+              "used": {
+                "food": 10029,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 354,
+              "tools": 354
+            },
+            "levied": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 354,
+              "tools": 354
+            }
+          },
+          {
+            "region": 9,
+            "population": 3401,
+            "soil_open": 948,
+            "produced": {
+              "food": 3529,
+              "ore": 169,
+              "tools": 49
+            },
+            "meal": {
+              "opening_food": 3401,
+              "food_need": 3401,
+              "food_eaten": 3401,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 3401,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 104,
+              "tools": 104
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 106,
+              "tools": 106
+            }
+          },
+          {
+            "region": 10,
+            "population": 3894,
+            "soil_open": 962,
+            "produced": {
+              "food": 4165,
+              "ore": 200,
+              "tools": 49
+            },
+            "meal": {
+              "opening_food": 3894,
+              "food_need": 3894,
+              "food_eaten": 3894,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 3894,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 119,
+              "tools": 119
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 121,
+              "tools": 121
+            }
+          },
+          {
+            "region": 11,
+            "population": 2954,
+            "soil_open": 955,
+            "produced": {
+              "food": 2888,
+              "ore": 169,
+              "tools": 40
+            },
+            "meal": {
+              "opening_food": 2888,
+              "food_need": 2954,
+              "food_eaten": 2888,
+              "food_spoiled": 0,
+              "food_unmet": 66,
+              "used": {
+                "food": 2888,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 91,
+              "tools": 91
+            },
+            "levied": {
+              "food": 0,
+              "ore": 3,
+              "tools": 3
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 92,
+              "tools": 92
+            }
+          }
+        ],
+        "projects": [
+          {
+            "project_id": 10,
+            "action": "soil",
+            "owner": 2,
+            "source": 11,
+            "target": 11,
+            "edge": null,
+            "workers": 4,
+            "used": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "treated_tiles": 12,
+            "soil_gain": 11
+          }
+        ],
+        "works_shipments": [],
+        "relief_shipments": [],
+        "private_shipments": [
+          {
+            "source": 9,
+            "target": 8,
+            "good": "food",
+            "quantity": 318,
+            "path": [
+              9,
+              8
+            ],
+            "tile_path": [
+              733,
+              732,
+              731,
+              730,
+              729,
+              728,
+              727,
+              775,
+              774,
+              822,
+              870,
+              918,
+              966,
+              1014,
+              1062,
+              1110
+            ],
+            "legs": [
+              {
+                "a": 9,
+                "b": 8,
+                "distance": 15,
+                "cost_food": 48
+              }
+            ],
+            "cost_food": 48,
+            "distance": 15
+          },
+          {
+            "source": 10,
+            "target": 8,
+            "good": "food",
+            "quantity": 235,
+            "path": [
+              10,
+              8
+            ],
+            "tile_path": [
+              1501,
+              1453,
+              1405,
+              1357,
+              1309,
+              1261,
+              1213,
+              1165,
+              1117,
+              1116,
+              1115,
+              1114,
+              1113,
+              1112,
+              1111,
+              1110
+            ],
+            "legs": [
+              {
+                "a": 10,
+                "b": 8,
+                "distance": 15,
+                "cost_food": 36
+              }
+            ],
+            "cost_food": 36,
+            "distance": 15
+          }
+        ],
+        "border_trades": [
+          {
+            "seller": 2,
+            "buyer": 9,
+            "good": "food",
+            "quantity": 238,
+            "distance": 1,
+            "cost_food": 3,
+            "unit_price": 7,
+            "value": 1666,
+            "buyer_cash_before": 16050
+          }
+        ],
+        "roads": [
+          {
+            "a": 8,
+            "b": 9,
+            "owner": 2,
+            "base": 357,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 357,
+            "next_capacity": 357,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 318,
+            "unused": 39
+          },
+          {
+            "a": 8,
+            "b": 10,
+            "owner": 2,
+            "base": 505,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 505,
+            "next_capacity": 505,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 235,
+            "unused": 270
+          },
+          {
+            "a": 8,
+            "b": 11,
+            "owner": 2,
+            "base": 355,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 355,
+            "next_capacity": 355,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 355
+          },
+          {
+            "a": 9,
+            "b": 11,
+            "owner": 2,
+            "base": 94,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 94,
+            "next_capacity": 94,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 94
+          }
+        ]
+      },
+      "political_approval": {
+        "world_unmet": 2858,
+        "world_harvest": 101816,
+        "country_unmet": 1009,
+        "year_record_sha256": "9e48736de169f59d5f39737507973447693d611ab3d0af3b3e8a825e9e528829",
+        "budget": {
+          "food": 0,
+          "ore": 2,
+          "tools": 2,
+          "workers": 4,
+          "admin_units": 1
+        },
+        "country_totals": {
+          "relief_food": 0,
+          "public_freight_food": 0,
+          "road_build_units": 0,
+          "road_maintained_units": 0,
+          "road_lost_units": 0,
+          "works_ore": 2,
+          "works_tools": 2,
+          "public_labor": 4,
+          "soil_packages": 1,
+          "public_spoil_food": 0,
+          "collection_cost_food": 0,
+          "base_capacity": 1311,
+          "effective_capacity": 1311,
+          "next_capacity": 1311,
+          "public_cargo": 0,
+          "action_executed": 1,
+          "extra_food": 0,
+          "levied_food": 0,
+          "levied_ore": 5,
+          "levied_tools": 5
+        },
+        "regions": [
+          {
+            "region": 8,
+            "population": 10970,
+            "soil_open": 953,
+            "produced": {
+              "food": 9506,
+              "ore": 678,
+              "tools": 86
+            },
+            "meal": {
+              "opening_food": 10059,
+              "food_need": 10970,
+              "food_eaten": 10059,
+              "food_spoiled": 0,
+              "food_unmet": 911,
+              "used": {
+                "food": 10059,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 354,
+              "tools": 354
+            },
+            "levied": {
+              "food": 0,
+              "ore": 0,
+              "tools": 0
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 352,
+              "tools": 352
+            }
+          },
+          {
+            "region": 9,
+            "population": 3401,
+            "soil_open": 948,
+            "produced": {
+              "food": 3529,
+              "ore": 169,
+              "tools": 49
+            },
+            "meal": {
+              "opening_food": 3401,
+              "food_need": 3401,
+              "food_eaten": 3401,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 3401,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 104,
+              "tools": 104
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 106,
+              "tools": 106
+            }
+          },
+          {
+            "region": 10,
+            "population": 3894,
+            "soil_open": 962,
+            "produced": {
+              "food": 4165,
+              "ore": 200,
+              "tools": 49
+            },
+            "meal": {
+              "opening_food": 3894,
+              "food_need": 3894,
+              "food_eaten": 3894,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 3894,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 119,
+              "tools": 119
+            },
+            "levied": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 121,
+              "tools": 121
+            }
+          },
+          {
+            "region": 11,
+            "population": 2954,
+            "soil_open": 955,
+            "produced": {
+              "food": 2856,
+              "ore": 170,
+              "tools": 40
+            },
+            "meal": {
+              "opening_food": 2856,
+              "food_need": 2954,
+              "food_eaten": 2856,
+              "food_spoiled": 0,
+              "food_unmet": 98,
+              "used": {
+                "food": 2856,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_open": {
+              "food": 0,
+              "ore": 91,
+              "tools": 91
+            },
+            "levied": {
+              "food": 0,
+              "ore": 1,
+              "tools": 1
+            },
+            "depot_close": {
+              "food": 0,
+              "ore": 92,
+              "tools": 92
+            }
+          }
+        ],
+        "projects": [
+          {
+            "project_id": 10,
+            "action": "soil",
+            "owner": 2,
+            "source": 8,
+            "target": 8,
+            "edge": null,
+            "workers": 4,
+            "used": {
+              "food": 0,
+              "ore": 2,
+              "tools": 2
+            },
+            "treated_tiles": 12,
+            "soil_gain": 3
+          }
+        ],
+        "works_shipments": [],
+        "relief_shipments": [],
+        "private_shipments": [
+          {
+            "source": 9,
+            "target": 8,
+            "good": "food",
+            "quantity": 318,
+            "path": [
+              9,
+              8
+            ],
+            "tile_path": [
+              733,
+              732,
+              731,
+              730,
+              729,
+              728,
+              727,
+              775,
+              774,
+              822,
+              870,
+              918,
+              966,
+              1014,
+              1062,
+              1110
+            ],
+            "legs": [
+              {
+                "a": 9,
+                "b": 8,
+                "distance": 15,
+                "cost_food": 48
+              }
+            ],
+            "cost_food": 48,
+            "distance": 15
+          },
+          {
+            "source": 10,
+            "target": 8,
+            "good": "food",
+            "quantity": 235,
+            "path": [
+              10,
+              8
+            ],
+            "tile_path": [
+              1501,
+              1453,
+              1405,
+              1357,
+              1309,
+              1261,
+              1213,
+              1165,
+              1117,
+              1116,
+              1115,
+              1114,
+              1113,
+              1112,
+              1111,
+              1110
+            ],
+            "legs": [
+              {
+                "a": 10,
+                "b": 8,
+                "distance": 15,
+                "cost_food": 36
+              }
+            ],
+            "cost_food": 36,
+            "distance": 15
+          }
+        ],
+        "border_trades": [
+          {
+            "seller": 2,
+            "buyer": 9,
+            "good": "food",
+            "quantity": 238,
+            "distance": 1,
+            "cost_food": 3,
+            "unit_price": 7,
+            "value": 1666,
+            "buyer_cash_before": 16050
+          }
+        ],
+        "roads": [
+          {
+            "a": 8,
+            "b": 9,
+            "owner": 2,
+            "base": 357,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 357,
+            "next_capacity": 357,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 318,
+            "unused": 39
+          },
+          {
+            "a": 8,
+            "b": 10,
+            "owner": 2,
+            "base": 505,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 505,
+            "next_capacity": 505,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 235,
+            "unused": 270
+          },
+          {
+            "a": 8,
+            "b": 11,
+            "owner": 2,
+            "base": 355,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 355,
+            "next_capacity": 355,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 355
+          },
+          {
+            "a": 9,
+            "b": 11,
+            "owner": 2,
+            "base": 94,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 94,
+            "next_capacity": 94,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 94
+          }
+        ]
+      }
+    }
+  ]
+}

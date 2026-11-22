@@ -16,6 +16,7 @@ from tempfile import TemporaryDirectory
 from civsim.model import GOODS, generate_world
 from civsim.regions import regionalize
 from civsim.storage import canonical_line
+from experiments.capacity5 import RoadCapacityAudit
 
 
 MODES = ("none", "relief", "infrastructure", "integrated")
@@ -29,7 +30,8 @@ FISCAL = (
 PAIRED = ("final_population", "food_need", "food_deficit", "deficit_share", "shortage_region_years",
           "regional_ration_disparity", "within_country_ration_disparity", "food_output", "final_soil",
           "civil_freight_food", "border_freight_food", "public_freight_food", "total_freight_food",
-          "civil_road_load", "public_cargo", "final_effective_capacity", "final_cash_hhi")
+          "civil_road_load", "public_cargo", "year_effective_capacity", "next_year_effective_capacity",
+          "final_effective_capacity", "final_cash_hhi")
 ARCHIVE = Path(__file__).resolve().parents[1] / "examples" / "phase4" / "study" / "runs.csv"
 
 
@@ -103,10 +105,12 @@ def _seed(job):
         init_cash = sum(n.cash for n in world.nations)
         digest, projection = hashlib.sha256(), hashlib.sha256()
         local, fiscal = defaultdict(Counter), defaultdict(Counter)
-        endpoint_capacity, best, evidence = {}, {}, {}
+        road_audit = RoadCapacityAudit(world)
+        best, evidence = {}, {}
         for year in range(1, max(horizons) + 1):
             record = step_government(sim, year, mode)
             gov = record["government"]
+            road_state = road_audit.observe(record)
             digest.update(canonical_line(record))
             if mode == "none":
                 projection.update(canonical_line({k: v for k, v in record.items() if k != "government"}))
@@ -139,7 +143,6 @@ def _seed(job):
                     chosen = action == decision["action"]
                     f[f"plans_{action}"] += int(chosen)
                     f[f"executions_{action}"] += t["action_executed"] if chosen else 0
-                endpoint_capacity[owner] = t["effective_capacity"]
             for levy in gov["levies"]:
                 i = levy["region"]
                 local[i].update({"levied_" + g: levy["levied"][g] for g in GOODS})
@@ -195,7 +198,8 @@ def _seed(job):
                 regions.append({**key, "region": i, "owner": owner, **c, "soil": close["soil"], **_rates(c)})
             for a in gov["accounts"]:
                 owner = a["id"]
-                c = {**region_by_owner[owner], **fiscal[owner], "final_effective_capacity": endpoint_capacity[owner],
+                c = {**region_by_owner[owner], **fiscal[owner], **road_state[owner],
+                     "final_effective_capacity": road_state[owner]["next_year_effective_capacity"],
                      "total_freight_food": sum(fiscal[owner][k] for k in (
                          "civil_freight_food", "border_freight_food", "public_freight_food")),
                      **{f"public_reserve_{g}": a["public_close"][g] for g in GOODS},
