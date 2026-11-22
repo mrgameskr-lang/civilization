@@ -1,0 +1,52 @@
+{
+  "different_selected_facts": true,
+  "policy": "existing annual game; public harvest and emergency relief from year 2; no player moves",
+  "worlds": [
+    {
+      "annual_rows_verified_per_replay": 200,
+      "candidates": 5628,
+      "chronicle_sha256": "671a6a512be2a1f4e9d99f15d24f75858da80ff707ca7419c97889e7ae5780a8",
+      "cited_values_checked": 5779,
+      "closing_state_sha256_all_three_runs": "fb1e703994238b98ef15983d6c79ea48bf2e3f7dcc3af6ab7fca79777b170d90",
+      "events_checked": 799,
+      "facts_without_record_hashes_sha256": "ab0a554ec18a7e0608715263561575b3d94ab26e267178d04dd0fc3224874cef",
+      "journal_sha256": "68e52998ab104c4ba0844abb6051dd2667d6d72e1b9099f78fa21818bedd7942",
+      "observer_replays": 2,
+      "repeat_chronicle_sha256": "671a6a512be2a1f4e9d99f15d24f75858da80ff707ca7419c97889e7ae5780a8",
+      "seed": 0,
+      "selected_by_kind": {
+        "collective_action": 547,
+        "food_crisis": 5,
+        "government_turnover": 98,
+        "large_relief": 99,
+        "population_fall": 1,
+        "population_rise": 12,
+        "trade_pact_started": 35,
+        "trade_pact_terminated": 2
+      },
+      "years": 200
+    },
+    {
+      "annual_rows_verified_per_replay": 200,
+      "candidates": 5447,
+      "chronicle_sha256": "c4d590c2f39f7192de08b98c8c5954c222346f9662916792412ab2387608521b",
+      "cited_values_checked": 5733,
+      "closing_state_sha256_all_three_runs": "a72f1d30626987868f5ccb2870d3ae742ab26e6b852dbbff8e1957f4533cefaf",
+      "events_checked": 790,
+      "facts_without_record_hashes_sha256": "b9d99eff429fd44b594a0f79ddb69cf6e2d447b2269badab1ae087b9870257a4",
+      "journal_sha256": "0a4cb9ea746c50f0f1f8458cb3da83f23a7bc01f5878d0686305301eeac07e55",
+      "observer_replays": 2,
+      "repeat_chronicle_sha256": "c4d590c2f39f7192de08b98c8c5954c222346f9662916792412ab2387608521b",
+      "seed": 20,
+      "selected_by_kind": {
+        "collective_action": 488,
+        "government_turnover": 89,
+        "large_relief": 139,
+        "population_rise": 16,
+        "trade_pact_started": 56,
+        "trade_pact_terminated": 2
+      },
+      "years": 200
+    }
+  ]
+}

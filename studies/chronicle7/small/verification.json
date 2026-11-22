@@ -1,0 +1,47 @@
+{
+  "different_selected_facts": true,
+  "policy": "existing annual game; public harvest and emergency relief from year 2; no player moves",
+  "worlds": [
+    {
+      "annual_rows_verified_per_replay": 6,
+      "candidates": 78,
+      "chronicle_sha256": "b629a4ea9eb6ba787ede65502b978271fac7a910f193a92260270b969cb997a5",
+      "cited_values_checked": 176,
+      "closing_state_sha256_all_three_runs": "d8caa910d8c390e761af17ba8b85fbe9197a52e0299a77c6be1559902ea079b3",
+      "events_checked": 24,
+      "facts_without_record_hashes_sha256": "6fa343df925ec153a341393b1a2244b431367084dbe4126ffdd9f10d738b2a41",
+      "journal_sha256": "097835ead23df5cf968d56733e365eccabca9d3ea16f4f9db8c7e155133dfe23",
+      "observer_replays": 2,
+      "repeat_chronicle_sha256": "b629a4ea9eb6ba787ede65502b978271fac7a910f193a92260270b969cb997a5",
+      "seed": 0,
+      "selected_by_kind": {
+        "collective_action": 10,
+        "food_crisis": 2,
+        "population_fall": 1,
+        "population_rise": 4,
+        "trade_pact_started": 6,
+        "trade_pact_terminated": 1
+      },
+      "years": 6
+    },
+    {
+      "annual_rows_verified_per_replay": 6,
+      "candidates": 26,
+      "chronicle_sha256": "b34b527d8eb3604648636c9d6b9a4f4c66509e4d282a5d824096182fb40695fb",
+      "cited_values_checked": 108,
+      "closing_state_sha256_all_three_runs": "9071798405fd1684c663f833ad7d4254c8e08687b5be408be1cd8d4376deefd0",
+      "events_checked": 16,
+      "facts_without_record_hashes_sha256": "bb479ca29eada9eda0e5ea51bd967f6357eb6f36b60f8f2046e63ae9cd3da603",
+      "journal_sha256": "5d3547e0abdc3116c9aa42192b1d9f8e72993c10eb292a73559a45f64edfc14d",
+      "observer_replays": 2,
+      "repeat_chronicle_sha256": "b34b527d8eb3604648636c9d6b9a4f4c66509e4d282a5d824096182fb40695fb",
+      "seed": 20,
+      "selected_by_kind": {
+        "collective_action": 8,
+        "population_rise": 1,
+        "trade_pact_started": 7
+      },
+      "years": 6
+    }
+  ]
+}

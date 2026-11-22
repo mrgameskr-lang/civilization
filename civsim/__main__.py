@@ -83,6 +83,10 @@ def main() -> int:
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
 
+    from .chronicle import add_arguments
+    chronicle = commands.add_parser("chronicle", help="연간 게임 저장에서 근거를 확인할 수 있는 한국어 연대기 출력")
+    add_arguments(chronicle)
+
     verify = commands.add_parser("verify", help="1.0~6.0B2의 저장 디렉터리를 재실행해 원장 대조")
     verify.add_argument("directory", type=Path, help="실행 디렉터리")
     args = parser.parse_args()
@@ -125,6 +129,9 @@ def main() -> int:
             write_competition_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation,
                                   arm=args.arm, tax_policy=args.tax_policy)
             print(f"5.0C 원장을 저장했습니다. {args.out.resolve()}")
+        elif args.command == "chronicle":
+            from .chronicle import print_chronicle
+            print_chronicle(args)
         elif args.command == "analyze":
             totals = summary(args.directory)
             if args.csv is not None:
