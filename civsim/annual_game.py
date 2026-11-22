@@ -18,13 +18,15 @@ def create(seed):
 
 def play(game, command):
     selection = None
+    priority = None
     if isinstance(command, dict) and "upkeep" in command:
         from .unit_upkeep import Upkeep
-        if command.keys() != {"upkeep", "move"}:
+        if command.keys() not in ({"upkeep", "move"}, {"upkeep", "move", "relief_first"}):
             raise ValueError("invalid game inventory command")
+        priority = command.get("relief_first")
         selection = Upkeep(**command["upkeep"])
         command = command["move"]
-    record = step_game(game, None if command is None else Move(**command), upkeep=selection)
+    record = step_game(game, None if command is None else Move(**command), upkeep=selection, relief_first=priority)
     # Historical annual records contain tuples and integer keys. Use exactly
     # their published JSON representation at the journal boundary.
     return json.loads(canonical_line(record))
@@ -73,6 +75,7 @@ def main(argv=None):
     advance.add_argument("--upkeep", nargs=2, type=int, metavar=("HOME","COUNT"),
                          help="mark up to two existing game pieces for local inventory checkout each turn")
     advance.add_argument("--out",type=Path,required=True)
+    advance.add_argument("--relief-first",action="store_true",help="give domestic relief first claim on inventory")
     show = commands.add_parser("show",help="replay and check a save")
     show.add_argument("save",type=Path)
     show.add_argument("--custody",action="store_true",help="include audited meal, office and population receipts")
@@ -99,6 +102,10 @@ def main(argv=None):
                 if args.upkeep is not None:
                     from .unit_upkeep import Upkeep
                     command = {"move":command, "upkeep":asdict(Upkeep(*args.upkeep))}
+                if args.relief_first:
+                    if args.upkeep is None:
+                        raise ValueError("--relief-first requires --upkeep HOME COUNT at activation")
+                    command["relief_first"] = True
                 row = play(game,command)
                 save(args.out,append_turn(journal,command,row),game.away,game.economy.game_upkeep)
                 result = {"year":row["year"],**row["unit_game"]}
