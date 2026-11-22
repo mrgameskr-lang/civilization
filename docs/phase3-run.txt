@@ -1,0 +1,59 @@
+3차 투자 실험 실행 기록
+환경: Windows, CPython 3.12.14. 저장소 루트에서 실행. python은 해당 인터프리터를 가리킨다.
+기준 Git 커밋: 102dd33cb2e9f56cbf4461a18f048d657a6de582
+정책 수식을 먼저 기록한 커밋: e2d2a6c
+실험 행렬을 실행한 규칙: 기본 8개국, 48×32 타일, 시드 0~19, 식량→광석→도구.
+
+[변경 전 확인]
+$ python -m unittest discover
+Ran 60 tests in 5.489s
+OK
+$ python -m civsim verify examples/seed-42
+9814b3c0409a7fcf4f65cc07a09f2d2b562ad1251857dcc6d8504b85272c7f11
+$ python -m civsim verify examples/phase2-seeds-0-19/seed13-reallocated
+062ae987fe753fe2af22cb6a209b1fb6f6ae3f7b2aebcd4809815a1c8dc6d9a4
+
+[최종 행렬 실행 및 독립 재실행]
+$ python -m experiments.phase3 --out examples/phase3 --seeds 20 --horizons 50,200
+80 runs, 2 horizons. examples\phase3
+경과 29.980초 (Stopwatch).
+$ python -m experiments.phase3 --out ../../work/phase3-final-repeat --seeds 20 --horizons 50,200
+80 runs, 2 horizons. ..\..\work\phase3-final-repeat
+경과 27.697초 (Stopwatch).
+동일 데이터로 별도 PC나 Python 버전에서의 성능을 비교한 수치가 아니다.
+기존 디렉터리에 재실행하면 실패한다. 재현할 때는 --out을 새 경로로 지정한다.
+
+두 디렉터리의 동일 이름 파일에 Get-FileHash -Algorithm SHA256를 적용해 모두 일치함을 확인했다.
+runs.csv         88618970040bef16ae070e75f349e3f1387499c4cdc3d519bd48272754f3c967
+assets.csv       cdc72777167d070ef3d6e2fefb31c5c66ca3fb811122c5e7927d2861af24ff84
+means.csv        af8d32e0d1891376faef277170b7c2575bc41810d4e88d4a39e872357569bbcc
+paired.csv       b510e84f0ec56ae23025deace30df8dd6e5c3705a9f2ddc6564ff747eff5b627
+
+[독립 저장·재생과 반례 추출]
+$ python -m civsim run --out examples/phase3/seed7-capital --seed 7 --years 50 --labor reallocate --investment capital
+저장 성공. manifest.json 175 B, world.json 113587 B, years.jsonl 1815989 B.
+$ python -m civsim verify examples/phase3/seed7-capital
+16f816f811017d2a7d9091cc2e4c52272b8939245e628a98a19156978acc5a08
+같은 시드·실험군·기간의 runs.csv 해시와 일치.
+$ python -m civsim analyze examples/phase3/seed7-capital
+기초 74,762명, 기말 115,623명, 출생 129,889명, 사망 89,028명, 누적 이동 2,653명.
+$ python -m experiments.investment_case --seed 7 --nation 7 --years 200 --out examples/phase3/case-seed7-country7.csv
+400개 국가·연도 행. SHA-256 5e507ff0ecf95a9dccae323d0dcb5135c0b995f7c90b3e91d3362f2e0632bceb.
+
+[최종 검증]
+$ python -m unittest discover -v
+Ran 91 tests in 7.895s
+OK
+전체 테스트별 로그: phase3-tests.txt.
+$ python -m unittest tests.test_phase3_results -v
+2개 게시 데이터 검증 통과. 160행의 실험 행렬, 동일 초기 세계, 화폐·광석 수지,
+기존 1.0·2.0의 40개 50년 경로의 지도 및 원장 해시를 검사한다. 전체 91개에 포함한다.
+$ python -m civsim verify examples/seed-42
+9814b3c0409a7fcf4f65cc07a09f2d2b562ad1251857dcc6d8504b85272c7f11
+$ python -m civsim verify examples/phase2-seeds-0-19/seed13-reallocated
+062ae987fe753fe2af22cb6a209b1fb6f6ae3f7b2aebcd4809815a1c8dc6d9a4
+$ python -m civsim verify examples/phase3/seed7-capital
+16f816f811017d2a7d9091cc2e4c52272b8939245e628a98a19156978acc5a08
+$baseFiles = git ls-tree -r --name-only 102dd33 examples
+git diff --exit-code 102dd33 -- $baseFiles
+종료 코드 0. 기존 실험 파일 13개 모두 보존.
