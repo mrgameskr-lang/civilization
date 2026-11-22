@@ -1,0 +1,11 @@
+{
+  "worlds": 40,
+  "trajectories": 80,
+  "journal_years": 16000,
+  "country_checkpoints": 1920,
+  "country_pair_checkpoints": 6720,
+  "world_checkpoints": 240,
+  "paired_checkpoints": 120,
+  "verified_transition_events": 2554,
+  "scope": "Checks published ledgers and seed geography; no economic replay."
+}
