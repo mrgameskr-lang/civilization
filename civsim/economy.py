@@ -7,7 +7,10 @@ from .rules import LEGACY, Rules
 def produce(nation: Nation, climate: int, rules: Rules = LEGACY) -> dict:
     """Allocate the year's workers and post real production and material costs."""
     if rules.investment != "off":
-        from .investment import produce as produce_with_capital
+        if rules.policy31 == "off":
+            from .investment import produce as produce_with_capital
+        else:
+            from .investment31 import produce as produce_with_capital
         return produce_with_capital(nation, climate, rules)
     return produce_sectors(nation, climate, rules, workers=nation.population // 2,
                            land_capacity=20 * nation.land)
