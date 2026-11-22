@@ -31,6 +31,7 @@ class SupplyWorld:
     roster: dict | None = None
     unit_positions: tuple | None = None
     game_upkeep: dict | None = None
+    public_farm: bool = False
 
     @property
     def world(self):
@@ -49,12 +50,14 @@ def snapshot62(sim):
         base = {**base, "unit_positions":[list(row) for row in sim.unit_positions]}
     if sim.game_upkeep is not None:
         base = {**base, "game_upkeep":deepcopy(sim.game_upkeep)}
+    if sim.public_farm:
+        base = {**base, "public_farm":True}
     return {**base, "public_arm":sim.arm,
             "service_roster":[[i,n] for i,n in sorted((sim.roster or {}).items())]}
 
 
 def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None,
-             unit_input=None, upkeep=None, relief_first=False):
+             unit_input=None, upkeep=None, relief_first=False, public_farm=False):
     ctx = _context(sim.engine, year, _mode('F'), None)
     collective = sim.engine.collective
     race = collective.competition
@@ -105,6 +108,10 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
         prod[i]["withheld_workers"]=n
     produced = {r.id:state(r) for r in local}
     audit_production(prod_open,produced,prod,climate,public_labor=reserved)
+    if public_farm:
+        from .public_harvest import apply_public_harvest
+        harvest = apply_public_harvest(local, prod, depots, fiscal.depots)
+        produced = {r.id:state(r) for r in local}
     foreign = charge_border(ctx, local, trial.borders, trial.width, depots, supply)
     market = border_market(local,trial.borders,access=foreign)
     audit_borders(local,trial.borders,market,produced,{r.id:(r.stock.copy(),r.cash) for r in local})
@@ -172,6 +179,9 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     record["public_policy"] = {"model_version":"6.0B2" if program else "6.0B1", "arm":arm,
                                "supply_enabled":enabled, "recruit":recruit, "diagnostic":diagnostic}
     record["supply"] = supply
+    if public_farm:
+        record["public_policy"]["harvest_rule"] = harvest["version"]
+        record["public_harvest"] = harvest
     if service is not None:
         record["service"] = service
     if unit_turn is not None:
@@ -201,8 +211,13 @@ def _require(sim, year, arm):
     _check(sim.arm is None or sim.arm == arm, "cannot switch policy during a trajectory")
 
 
-def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None, relief_first=None):
+def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None, relief_first=None,
+              public_farm=None):
     _require(sim, year, arm)
+    _check(public_farm is None or type(public_farm) is bool, "expected a boolean public farm selection")
+    _check(not sim.public_farm or public_farm is not False, "cannot remove elected harvest rule mid-run")
+    public_farm = sim.public_farm if public_farm is None else public_farm
+    _check(not public_farm or arm != "A", "historical control cannot run public farms")
     _check(relief_first is None or type(relief_first) is bool, "expected a boolean relief priority")
     if sim.game_upkeep is not None:
         from .unit_upkeep import Upkeep
@@ -223,7 +238,7 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
         record = step61(sim.engine, year, "F")
     else:
         fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input,
-                                  upkeep=upkeep, relief_first=relief_first)
+                                  upkeep=upkeep, relief_first=relief_first, public_farm=public_farm)
         pairs = {(p["a"],p["b"]):deepcopy(p["closing"]) for p in record["diplomacy"]["pairs"]}
         _commit_collective(sim.engine.collective, fiscal, record)
         sim.engine.pairs, sim.engine.arm = pairs, "F"
@@ -236,6 +251,7 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
             if relief_first:
                 sim.game_upkeep["priority"] = "relief_first"
     sim.arm = arm
+    sim.public_farm = public_farm
     return record
 
 
