@@ -27,14 +27,20 @@ def save(path, journal, away):
     save_json_slot(path,{"schema":"annual-game/1","journal":journal,"closing_away":away})
 
 
-def load(path):
+def load(path, *, observer=None):
+    def replay_step(game,command):
+        row = play(game,command)
+        if observer is not None:
+            observer.observe(row)
+        return row
+
     slot = json.loads(path.read_bytes())
     if isinstance(slot,dict) and slot.get("schema")=="game-journal/1":
         # Early replay-only slots published with this branch.
-        return slot, restore_journal(slot,create,play)
+        return slot, restore_journal(slot,create,replay_step)
     if type(slot) is not dict or slot.keys()!={"schema","journal","closing_away"} or slot["schema"]!="annual-game/1":
         raise ValueError("invalid annual game save")
-    game = restore_journal(slot["journal"],create,play)
+    game = restore_journal(slot["journal"],create,replay_step)
     if canonical_line(slot["closing_away"])!=canonical_line(game.away):
         raise ValueError("saved locations disagree with the replayed closing ledger")
     return slot["journal"], game
@@ -50,7 +56,9 @@ def main(argv=None):
     advance.add_argument("save",type=Path)
     advance.add_argument("--move",nargs=4,type=int,metavar=("HOME","FROM","TO","COUNT"))
     advance.add_argument("--out",type=Path,required=True)
-    commands.add_parser("show",help="replay and check a save").add_argument("save",type=Path)
+    show = commands.add_parser("show",help="replay and check a save")
+    show.add_argument("save",type=Path)
+    show.add_argument("--custody",action="store_true",help="include audited meal, office and population receipts")
     args = parser.parse_args(argv)
     try:
         if args.action == "new":
@@ -58,9 +66,15 @@ def main(argv=None):
             save(args.out,journal,[])
             result = {"seed":args.seed,"year":0,"closing_away":[]}
         else:
-            journal, game = load(args.save)
+            observer = None
+            if args.action == "show" and args.custody:
+                from .regional_custody import CustodyObserver
+                observer = CustodyObserver()
+            journal, game = load(args.save,observer=observer)
             if args.action == "show":
                 result = {"seed":journal["seed"],"year":game.economy.world.year,"closing_away":game.away}
+                if observer is not None:
+                    result["custody"] = observer.latest
             else:
                 command = asdict(Move(*args.move)) if args.move is not None else None
                 row = play(game,command)
