@@ -1,15 +1,73 @@
 """Streaming world summaries and country-year CSV extracts from saved runs."""
 
 import csv
+import json
+import os
 from pathlib import Path
+import shlex
 
 from .model import GOODS
 from .storage import _manifest, read_years
 
 
+REGIONAL_VERSIONS = ("4.0", "5.0A", "5.0B", "5.0C", "5.0D", "6.0A")
+REPLAY_MODULES = {"6.0A.1": "civsim.aid61", "6.0B1": "civsim.depot62_cli", "6.0B2": "civsim.peace62_cli"}
+
+
+def _shell_path(path):
+    """Quote guidance for the user's PowerShell or POSIX shell."""
+    text = str(path)
+    if os.name == "nt":
+        return "'" + text.replace("'", "''") + "'"
+    return shlex.quote(text)
+
+
+def _file_guidance(path):
+    message = "통계 분석에는 manifest.json이 들어 있는 실행 디렉터리를 지정하세요."
+    if path.name in ("manifest.json", "world.json", "years.jsonl") and (path.parent / "manifest.json").is_file():
+        return f"{message}\n원장을 검증하려면 python -m civsim verify {_shell_path(path.parent)}"
+
+    # Journal archives have a short header on line one. Data rows can be megabytes.
+    with path.open("rb") as stream:
+        if path.suffix.lower() == ".jsonl":
+            raw = stream.readline(4096)
+        else:
+            raw = stream.read(256 * 1024)
+    try:
+        value = json.loads(raw)
+    except (ValueError, RecursionError):
+        value = None
+    schema = value.get("schema") if isinstance(value, dict) else None
+    if schema in ("game-journal/1", "annual-game/1", "annual-game/2", "annual-game/3", "annual-game/4"):
+        reader = "civsim.annual_game show"
+    elif schema == "unit-board/1":
+        reader = "civsim.unit_game show"
+    elif schema == "m1-register/1":
+        reader = "civsim.posting_archive65 verify"
+    else:
+        return f"{message}\n기본 예제는 python -m civsim analyze examples/seed-42 로 분석할 수 있습니다."
+    return f"{message}\n이 저장 파일을 확인하려면 python -m {reader} {_shell_path(path)}"
+
+
+def _analysis_manifest(directory):
+    directory = Path(directory)
+    if directory.is_file():
+        raise ValueError(_file_guidance(directory))
+    meta = _manifest(directory)
+    version = meta.get("model_version")
+    if not isinstance(version, str):
+        raise ValueError("manifest.json의 model_version에는 버전 문자열이 필요합니다.")
+    if version in ("1", "1.0", "2.0", "3.0", "3.1", *REGIONAL_VERSIONS):
+        return meta
+    message = f"model_version {version!r} 형식의 통계 요약과 CSV 내보내기는 지원하지 않습니다."
+    if version in REPLAY_MODULES:
+        message += f"\n검증하려면 python -m {REPLAY_MODULES[version]} verify {_shell_path(directory)}"
+    raise ValueError(message + f"\n연간 기록을 읽으려면 python -m json.tool --json-lines {_shell_path(directory / 'years.jsonl')}")
+
+
 def summary(directory: Path) -> dict:
-    meta = _manifest(Path(directory))
-    if meta.get("model_version") in ("4.0", "5.0A", "5.0B", "5.0C", "5.0D", "6.0A"):
+    meta = _analysis_manifest(directory)
+    if meta["model_version"] in REGIONAL_VERSIONS:
         from .regional_storage import regional_summary
         result = regional_summary(directory)
         if meta["model_version"] == "5.0D":
@@ -76,7 +134,7 @@ def _panel_rows(year: dict):
 
 def write_panel(directory: Path, output: Path) -> None:
     """Export one row per nation/year, refusing to overwrite any existing path."""
-    if _manifest(Path(directory)).get("model_version") in ("4.0", "5.0A", "5.0B", "5.0C", "5.0D", "6.0A"):
+    if _analysis_manifest(directory)["model_version"] in REGIONAL_VERSIONS:
         from .regional_storage import regional_summary
         regional_summary(directory, output)
         return

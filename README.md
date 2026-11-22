@@ -12,7 +12,7 @@
 
 5.0A에서는 지역별 창고에 현물을 징수하는 정부가 구호·도로·토양·예비 비축·지출 유보 중 하나를 선택한다. 공사·구호는 민간과 도로를 공유하고 공공 노동은 민간 생산에서 차감한다. [재정 장부와 실행 방법](docs/phase5a.md) · [정책 수식](docs/fiscal-policy5.md) · [실험과 반례](docs/phase5a-results.md)
 
-5.0B는 5.0A 통합 재정에서 실제 집행된 구호·산업 부담·공공사업과 식량 사정을 지역 집단별로 관측한다. `python -m civsim politics --feedback on`은 그 기억을 다음 해 정책 순위에 반영하며, `off`는 같은 정치 지표를 관찰하면서 5.0A 경제 경로를 재생한다. [지역 정치 상태와 실행 방법](docs/phase5b.md) · [수식](docs/political-rules.md) · [검증 결과와 반례](docs/phase5b-results.md)
+5.0B는 5.0A 통합 재정에서 실제 집행된 구호·산업 부담·공공사업과 식량 사정을 지역 집단별로 관측한다. `python -m civsim politics --feedback on --seed 0 --years 3 --out runs/politics-0`은 그 기억을 다음 해 정책 순위에 반영하며, `off`는 같은 정치 지표를 관찰하면서 5.0A 경제 경로를 재생한다. [지역 정치 상태와 실행 방법](docs/phase5b.md) · [수식](docs/political-rules.md) · [검증 결과와 반례](docs/phase5b-results.md)
 
 5.0C는 생산·소비·납세 원장에서 지역별 정책 선호를 계산한다. 대표 의회의 선거 결과가 기존 예산을 승인할 내각을 결정한다. [실행과 원장 읽기](docs/phase5c.md) · [선호·선거·정부 수식](docs/competition-rules.md) · [비교 실험](docs/phase5c-results.md) · [같은 연초의 실제 정권 교체 사례](docs/competition-forks5c.md)
 
@@ -20,9 +20,26 @@
 
 6.0A는 8개국의 28개 국가 쌍에 신뢰, 교역 경험, 기간제 협정을 기록한다. 정부의 협력·식량 지원·수출 및 출입국 결정은 국경 도로와 양국 창고, 민간 거래와 정주 여력에 적용된다. `python -m civsim diplomacy --arm D --seed 0 --years 6 --out runs/diplomacy-0`으로 실행하고 `python -m civsim verify runs/diplomacy-0`으로 재생할 수 있다. [외교 수식](docs/diplomatic-rules.md) · [국경 운송·수지](docs/diplomatic-flows6a.md) · [40시드 결과와 반사실](docs/phase6a-results.md) · [실행·검증 로그](docs/phase6a-run.md) · [통합 순서](docs/integration6a.md)
 
+6.0A D에서는 국제 원조의 계획 운임과 실제 운임 차이로 공여국 지출이 예산을 넘을 수 있다. 6.0A.1 F는 각 송장의 실제 적재량과 운임을 같은 국가 예산에서 차감한다. 시드 0의 같은 4년차 연초를 비교하면 공여국 2의 지출은 기존 규칙에서 206, 상한을 적용하면 191이다. 다음 명령은 F로 4년을 실행하고 같은 원장을 다시 검증한다. [예산 규칙과 결과](docs/phase6a1.md)
+
+```sh
+python -m civsim.aid61 run --arm F --seed 0 --years 4 --out runs/aid61-0
+python -m civsim verify runs/aid61-0
+```
+
+`verify`는 6.0A.1·6.0B1·6.0B2의 보관 디렉터리도 지원한다. `analyze`의 통계 요약과 CSV 내보내기는 1.0부터 6.0A까지 제공한다. 후속 형식의 단년 원문을 보려면 예를 들어 `python -m json.tool --json-lines samples/phase6a1/seed0-capped/years.jsonl`을 실행한다. [공공창고 형식](docs/phase6b-study.md) · [후속 지역 경제 형식](docs/phase6b2-study.md)
+
 ## 실행
 
 공공 경작 목표를 7일·14일로 낮추거나, 남은 비축으로 주민 비상 구호를 집행할 수 있다. [정책과 구호 회계](docs/reserve-relief-rules.md) · [같은 연초 대조와 장기 결과](docs/reserve-relief-results.md)
+
+다음 명령은 시드 0에서 긴급 구호를 한 해 적용하고 저장 기록을 재생한다. 연간 게임의 `step` 또는 `show`에 `--relief-benefits`를 붙이면 지역별 정규·긴급 구호 수령량과 주민의 실제 섭취량을 따로 확인할 수 있다. [구호 수혜 기록 읽기](docs/relief-benefits.md)
+
+```sh
+python -m civsim.annual_game new --seed 0 --out runs/households-0.json
+python -m civsim.annual_game step runs/households-0.json --reserve-policy emergency --out runs/households-1.json
+python -m civsim.annual_game show runs/households-1.json --relief-benefits
+```
 
 주민 보호선을 유지한 상태에서 공공 경작과 식량 비축을 시험할 수 있다. [작물·노동 회계와 실행법](docs/food-reserve-rules.md) · [40개 세계의 장기 결과](docs/food-reserve-results.md)
 

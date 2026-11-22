@@ -1,0 +1,82 @@
+{
+  "comparison": "reading arrival benefits on/off",
+  "files": {
+    "seed-00-receipts.jsonl": {
+      "gzip_sha256": "be56d238eede488f8f0110754f5a35d5b01adcbfe7d014d1353126dd807d355e",
+      "rows": 16,
+      "sha256": "a27b27eda327678118370f5875a2b0ffb873a222d4725fa732f4fdb105695b5e"
+    },
+    "seed-00-years.jsonl": {
+      "gzip_sha256": "7fd5ebdc317682077f165554d28439b7dc2f8f2de7078bd755e752918b522358",
+      "rows": 200,
+      "sha256": "a8a1a75358365f60e4450d084ef77614ed4a3709201ece85a0e5f65bb6c4c166"
+    },
+    "seed-20-receipts.jsonl": {
+      "gzip_sha256": "faa2fdae691d84e50be554eb69b7146ec03c349c022fd8f7cc73fbb3a423cd5c",
+      "rows": 16,
+      "sha256": "473dfbe522d18949299e9a22baf75a4b759bb257451ad7841c474450aa724910"
+    },
+    "seed-20-years.jsonl": {
+      "gzip_sha256": "81660da322427d363694e70d43287f6affb4d4ae8fa687813fa9778b0b12b751",
+      "rows": 200,
+      "sha256": "a0e8f8478b6e0f7599eec57d6508394aa3acbdae1bda66366565c5793e23ab00"
+    }
+  },
+  "scenario": "E",
+  "worlds": [
+    {
+      "archived_e": {
+        "100": "bf6a6806a2c15644aa58df1a7881cb8cf52e9c9d874333277fed3ef5d18375d4",
+        "200": "389ca58420c118b7f33caf23ebb46c9dcaff88f73b1fc66ea38c1bb2ef09fe9f",
+        "50": "f56d50b080d0348710c9294e5b96e2c3fb06666d5f7b7d6520e0ad6afbe9fde7"
+      },
+      "closing": "fe872a407019c52c542c26b9ebe82e2661757069d3f21493d27bcbcc12ed147f",
+      "common_opening": "02083de237800912354df458846a5a1735ad83b2c5b9f0e6c0779473cea0ee08",
+      "equal_annual_records": 200,
+      "first_16_exposure": {
+        "emergency": 12675,
+        "emergency_region_years": 46,
+        "only_emergency": 11813,
+        "only_emergency_region_years": 42,
+        "ordinary": 13473,
+        "region_years": 512
+      },
+      "political_comparison_counts": {
+        "discontent": 0,
+        "election_results": 0,
+        "elections_observed": 392,
+        "policy_decisions": 0,
+        "support": 0
+      },
+      "seed": 0,
+      "years": 200
+    },
+    {
+      "archived_e": {
+        "100": "07d2813d8db0c7a5ca5b45e9165bd17f74e8f3db0345f7bb3226ef13fc3e9dae",
+        "200": "9a4ad5a0c1dc5283d406ba87339d0dcae0fa37a5f29024e90495212199ccb912",
+        "50": "359a70b0f87077b4c6a6fe1480030b1f5656caa71ad9f5a199f33e62ba4d0f4f"
+      },
+      "closing": "a1e2319b0aac168d3fb63ccf4bd66bfc2c88465c809e2cb0994fa80fa4d14056",
+      "common_opening": "c0762a85ebe69d8054c5e965bd329df359e6efa7d281a5b41cb1dd7ceb78153a",
+      "equal_annual_records": 200,
+      "first_16_exposure": {
+        "emergency": 12220,
+        "emergency_region_years": 47,
+        "only_emergency": 10990,
+        "only_emergency_region_years": 36,
+        "ordinary": 17903,
+        "region_years": 512
+      },
+      "political_comparison_counts": {
+        "discontent": 0,
+        "election_results": 0,
+        "elections_observed": 392,
+        "policy_decisions": 0,
+        "support": 0
+      },
+      "seed": 20,
+      "years": 200
+    }
+  ]
+}
