@@ -1,0 +1,24 @@
+python -B -m civsim verify examples/seed-42
+9814b3c0409a7fcf4f65cc07a09f2d2b562ad1251857dcc6d8504b85272c7f11
+exit 0
+python -B -m civsim verify examples/phase2-seeds-0-19/seed13-reallocated
+062ae987fe753fe2af22cb6a209b1fb6f6ae3f7b2aebcd4809815a1c8dc6d9a4
+exit 0
+python -B -m civsim verify examples/phase3/seed7-capital
+16f816f811017d2a7d9091cc2e4c52272b8939245e628a98a19156978acc5a08
+exit 0
+python -B -m civsim verify examples/phase5/seed7-integrated
+ea91ffa3f442b2c73ff6d1daf01bc05f75d5eea374410deb1855a7e9133c5293
+exit 0
+python -B -m civsim verify examples/phase5b/seed0-feedback
+d4784560f71c020b6aeafbe482af64315fb8976325c5470ba0d4bd62dbe96b52
+exit 0
+python -B -m civsim verify examples/phase5c/seed0-elections
+cd14aa60b4cd37f867de29c9eb86fc13c8d3360fb0d97465349bcd0b1145c664
+exit 0
+python -B -m civsim verify examples/phase5d/seed0-actions
+c96297045b5475154e9a6e0cebd0b21a37e9ab6e883b2cd8fe6fcecdbd00c169
+exit 0
+python -B -m civsim verify examples/phase6a/seed0-diplomacy
+d4ee8225688cde4dc82d967d450ca3f6f2f79769164e4762ee9583630de11507
+exit 0

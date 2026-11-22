@@ -1,0 +1,27 @@
+{
+  "annual_economic_records": 8800,
+  "comparison": {
+    "all_remaining_fields_identical": true,
+    "encoding": "Sorted-key compact JSON as UTF-8 with literal Unicode and one final LF",
+    "normalized_sha256": "cbe668c956f02cee89ccd9fc01202f2acf7c712d955bb5fe5345ba2947307ba3",
+    "omitted_fields": [
+      "wall_seconds"
+    ]
+  },
+  "economic_civic_checkpoint_pairs": 132,
+  "enabled_register_matches": 6,
+  "first": {
+    "file": "compatibility.json",
+    "file_sha256": "6f3c09a5d91d8ebf9409a7ade661a3242f4e263a61f9c1774c63a2f3b4d70e27",
+    "wall_seconds": 325.719
+  },
+  "first_procedure": "Replayed 44 live paths. The six additional register digests were joined after two separately repeated enabled paths matched their original economic and civic receipts. The first wall time covers the 44 paths.",
+  "paths": 44,
+  "reference_revision": "2114ca3",
+  "repeat": {
+    "file": "phase6c1-followup-final-independent.json",
+    "file_sha256": "891e1e72b36fc1391ff881829ce7319c4cb4519723135408c0c579b5a815bc15",
+    "wall_seconds": 328.976
+  },
+  "repeat_procedure": "One complete invocation generated the 44 paths, all three hash series and the comparisons to the published study."
+}
