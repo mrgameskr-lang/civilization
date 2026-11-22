@@ -22,24 +22,30 @@ def play(game, command):
     priority = None
     public_farm = None
     reserve_policy = None
-    if isinstance(command, dict) and command.keys() & {"upkeep","public_farm","reserve_policy"}:
+    research = None
+    if isinstance(command, dict) and command.keys() & {"upkeep","public_farm","reserve_policy","research"}:
         from .unit_upkeep import Upkeep
-        if "move" not in command or command.keys() - {"upkeep", "move", "relief_first", "public_farm","reserve_policy"}:
+        if "move" not in command or command.keys() - {"upkeep", "move", "relief_first", "public_farm","reserve_policy","research"}:
             raise ValueError("invalid game inventory command")
         priority = command.get("relief_first")
         if "upkeep" in command:
             selection = Upkeep(**command["upkeep"])
         public_farm = command.get("public_farm")
         reserve_policy = command.get("reserve_policy")
+        if "research" in command:
+            research = command["research"]
+            if type(research) is not bool:
+                raise ValueError("research must be a boolean")
         command = command["move"]
     record = step_game(game, None if command is None else Move(**command), upkeep=selection,
-                       relief_first=priority, public_farm=public_farm, reserve_policy=reserve_policy)
+                       relief_first=priority, public_farm=public_farm, reserve_policy=reserve_policy,
+                       research=research)
     # Historical annual records contain tuples and integer keys. Use exactly
     # their published JSON representation at the journal boundary.
     return json.loads(canonical_line(record))
 
 
-def save(path, journal, away, upkeep=None, *, public_farm=False, reserve_policy=None):
+def save(path, journal, away, upkeep=None, *, public_farm=False, reserve_policy=None, research=None):
     slot = {"schema":"annual-game/1","journal":journal,"closing_away":away}
     if upkeep is not None:
         slot.update(schema="annual-game/2", game_upkeep=upkeep)
@@ -49,6 +55,8 @@ def save(path, journal, away, upkeep=None, *, public_farm=False, reserve_policy=
         if not public_farm or reserve_policy not in RESERVE_POLICIES:
             raise ValueError("invalid saved reserve policy")
         slot.update(schema="annual-game/4", reserve_policy=reserve_policy)
+    if research is not None:
+        slot.update(schema="annual-game/5", research=research)
     save_json_slot(path,slot)
 
 
@@ -69,16 +77,27 @@ def load(path, *, observer=None, observers=()):
         return slot, restore_journal(slot,create,replay_step)
     fields = {"schema","journal","closing_away"}
     schemas = {"annual-game/1":fields, "annual-game/2":fields | {"game_upkeep"}}
-    harvest_slot = type(slot) is dict and slot.get("schema") in ("annual-game/3","annual-game/4")
+    if not isinstance(slot, dict):
+        raise ValueError("invalid annual game save")
+    research_slot = slot.get("schema") == "annual-game/5"
+    harvest_slot = slot.get("schema") in ("annual-game/3","annual-game/4") or (research_slot and "public_farm" in slot)
     if harvest_slot:
         schemas["annual-game/3"] = fields | {"public_farm"} | ({"game_upkeep"} if "game_upkeep" in slot else set())
         schemas["annual-game/4"] = schemas["annual-game/3"] | {"reserve_policy"}
-    if type(slot) is not dict or slot.keys() != schemas.get(slot.get("schema")) or (harvest_slot and slot["public_farm"] is not True):
+    if research_slot:
+        optional = {"public_farm", "game_upkeep"}
+        if harvest_slot:
+            optional.add("reserve_policy")
+        schemas["annual-game/5"] = fields | {"research"} | (optional & slot.keys())
+    if slot.keys() != schemas.get(slot.get("schema")) or (harvest_slot and slot["public_farm"] is not True):
         raise ValueError("invalid annual game save")
     game = restore_journal(slot["journal"],create,replay_step)
+    if (research_slot != (game.economy.research is not None)
+            or canonical_line(slot.get("research")) != canonical_line(game.economy.research)):
+        raise ValueError("saved research differs from replay")
     if harvest_slot != game.economy.public_farm:
         raise ValueError("saved public harvest rule disagrees with replay")
-    if slot.get("reserve_policy") != game.economy.reserve_policy or (slot["schema"] == "annual-game/4" and game.economy.reserve_policy is None):
+    if slot.get("reserve_policy") != game.economy.reserve_policy or ("reserve_policy" in slot and game.economy.reserve_policy is None):
         raise ValueError("saved reserve policy disagrees with replay")
     if canonical_line(slot["closing_away"])!=canonical_line(game.away):
         raise ValueError("saved locations disagree with the replayed closing ledger")
@@ -103,6 +122,7 @@ def main(argv=None):
     advance.add_argument("--relief-first",action="store_true",help="give domestic relief first claim on inventory")
     advance.add_argument("--public-farm",action="store_true",help="assign part of the existing crop to local reserves from this year")
     advance.add_argument("--reserve-policy",choices=RESERVE_POLICIES,help="select a lower harvest target or conditional emergency relief")
+    advance.add_argument("--research", action="store_true", help="enable autonomous local agricultural field trials")
     advance.add_argument("--relief-benefits",action="store_true",help="include this year's audited household receipts from ordinary and emergency relief")
     show = commands.add_parser("show",help="replay and check a save")
     show.add_argument("save",type=Path)
@@ -134,6 +154,8 @@ def main(argv=None):
                     result["public_farm"] = True
                 if game.economy.reserve_policy is not None:
                     result["reserve_policy"] = game.economy.reserve_policy
+                if game.economy.research is not None:
+                    result["research"] = game.economy.research
                 if custody is not None:
                     result["custody"] = custody.latest
                 if benefits is not None:
@@ -147,18 +169,22 @@ def main(argv=None):
                     if args.upkeep is None:
                         raise ValueError("--relief-first requires --upkeep HOME COUNT at activation")
                     command["relief_first"] = True
-                if args.public_farm or args.reserve_policy:
+                if args.public_farm or args.reserve_policy or args.research:
                     if args.upkeep is None:
                         command = {"move":command}
-                    command["public_farm"] = True
+                    if args.public_farm or args.reserve_policy:
+                        command["public_farm"] = True
                     if args.reserve_policy:
                         command["reserve_policy"] = args.reserve_policy
+                    if args.research:
+                        command["research"] = True
                 row = play(game,command)
                 if args.relief_benefits:
                     from .relief_benefits import VERSION, relief_benefits
                     benefit_report = {"version":VERSION, "years":[relief_benefits(row)]}
                 save(args.out,append_turn(journal,command,row),game.away,game.economy.game_upkeep,
-                     public_farm=game.economy.public_farm, reserve_policy=game.economy.reserve_policy)
+                     public_farm=game.economy.public_farm, reserve_policy=game.economy.reserve_policy,
+                     research=game.economy.research)
                 result = {"year":row["year"],**row["unit_game"]}
                 if args.relief_benefits:
                     result["relief_benefits"] = benefit_report
@@ -168,6 +194,8 @@ def main(argv=None):
                     result["public_harvest"] = row["public_harvest"]
                 if "emergency_relief" in row:
                     result["emergency_relief"] = row["emergency_relief"]
+                if "research" in row:
+                    result["research"] = row["research"]
         print(json.dumps(result,sort_keys=True))
     except (ValueError,OSError,TypeError) as exc:
         parser.exit(2,f"{parser.prog}: {exc}\n")

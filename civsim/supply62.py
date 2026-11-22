@@ -34,6 +34,7 @@ class SupplyWorld:
     game_upkeep: dict | None = None
     public_farm: bool = False
     reserve_policy: str | None = None
+    research: list | None = None
 
     @property
     def world(self):
@@ -56,12 +57,15 @@ def snapshot62(sim):
         base = {**base, "public_farm":True}
     if sim.reserve_policy is not None:
         base = {**base, "reserve_policy":sim.reserve_policy}
+    if sim.research is not None:
+        base = {**base, "research":deepcopy(sim.research)}
     return {**base, "public_arm":sim.arm,
             "service_roster":[[i,n] for i,n in sorted((sim.roster or {}).items())]}
 
 
 def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None,
-             unit_input=None, upkeep=None, relief_first=False, public_farm=False, reserve_policy=None):
+             unit_input=None, upkeep=None, relief_first=False, public_farm=False, reserve_policy=None,
+             research=False, hold_research=False):
     ctx = _context(sim.engine, year, _mode('F'), None)
     collective = sim.engine.collective
     race = collective.competition
@@ -91,8 +95,15 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
         service = program.plan_service(local, sim.roster, ctx, mode, withheld=unavailable, recruit=recruit)
         crew = {r["id"]:r["serving"] for r in service["regions"]}
     occupied = {r.id: unavailable[r.id] + crew[r.id] for r in local}
+    trial_targets = farm_levels = None
+    if research:
+        from .research71 import prepare, post
+        study, trial_targets = prepare(local, decisions, sim.research, year, hold_research)
+        farm_levels = {r["id"]:r["level_before"] for r in study["regions"]}
     works,next_units,after_works,labor = execute_works(local,roads,depots,fiscal.road_units,decisions,
-                                                   width=trial.width,withheld=occupied)
+                                                   width=trial.width,withheld=occupied,trial_targets=trial_targets)
+    if research:
+        post(study, works["projects"], year)
     supply, after_supply = execute_depot_supply(local, roads, trial.borders, depots, after_works, ctx, fiscal.previous,
                                                 width=trial.width, emergency=enabled, forward=enabled)
     residual = after_supply
@@ -107,11 +118,11 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     climate = {n.id:climate_factor(trial.seed,year,n.id) for n in trial.nations}
     prod_open = {r.id:{**opening[r.id],"soil":r.soil} for r in local}
     reserved = {i:n+occupied[i] for i,n in labor.items()}
-    prod = produce_regions(local,climate,public_labor=reserved)
+    prod = produce_regions(local,climate,public_labor=reserved,farm_levels=farm_levels)
     for i,n in unavailable.items():
         prod[i]["withheld_workers"]=n
     produced = {r.id:state(r) for r in local}
-    audit_production(prod_open,produced,prod,climate,public_labor=reserved)
+    audit_production(prod_open,produced,prod,climate,public_labor=reserved,farm_levels=farm_levels)
     if public_farm:
         from .public_harvest import apply_public_harvest
         harvest = apply_public_harvest(local, prod, depots, fiscal.depots, reserve_days=RESERVE_POLICIES.get(reserve_policy))
@@ -190,6 +201,9 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     record["public_policy"] = {"model_version":"6.0B2" if program else "6.0B1", "arm":arm,
                                "supply_enabled":enabled, "recruit":recruit, "diagnostic":diagnostic}
     record["supply"] = supply
+    if research:
+        record["public_policy"]["research_rule"] = study["version"]
+        record["research"] = study
     if public_farm:
         record["public_policy"]["harvest_rule"] = harvest["version"]
         record["public_harvest"] = harvest
@@ -227,8 +241,13 @@ def _require(sim, year, arm):
 
 
 def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None, relief_first=None,
-              public_farm=None, reserve_policy=None):
+              public_farm=None, reserve_policy=None, research=None, hold_research=False):
     _require(sim, year, arm)
+    _check(research is None or type(research) is bool, "expected boolean field-trial selection")
+    _check(sim.research is None or research is not False, "cannot remove acquired research state")
+    research = sim.research is not None if research is None else research
+    _check(not research or arm != "A", "historical control cannot activate field trials")
+    _check(type(hold_research) is bool and (not hold_research or research), "hold requires active field trials")
     _check(reserve_policy is None or (type(reserve_policy) is str and reserve_policy in RESERVE_POLICIES),
            "unknown public reserve policy")
     _check(sim.reserve_policy is None or reserve_policy in (None, sim.reserve_policy), "reserve policy changed mid-run")
@@ -262,7 +281,7 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
     else:
         fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input,
                                   upkeep=upkeep, relief_first=relief_first, public_farm=public_farm,
-                                  reserve_policy=reserve_policy)
+                                  reserve_policy=reserve_policy, research=research, hold_research=hold_research)
         pairs = {(p["a"],p["b"]):deepcopy(p["closing"]) for p in record["diplomacy"]["pairs"]}
         _commit_collective(sim.engine.collective, fiscal, record)
         sim.engine.pairs, sim.engine.arm = pairs, "F"
@@ -277,6 +296,9 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
     sim.arm = arm
     sim.public_farm = public_farm
     sim.reserve_policy = reserve_policy
+    if research:
+        from .research71 import closing
+        sim.research = closing(record["research"])
     return record
 
 

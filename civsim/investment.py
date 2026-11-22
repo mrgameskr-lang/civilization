@@ -55,10 +55,12 @@ def _effects(land, operating):
             "industry_multiplier": 1000 + 25 * operating["industry"]}
 
 
-def _forecast(n, climate, rules, workers, tool_target, operating):
+def _forecast(n, climate, rules, workers, tool_target, operating, farm_bonus=0):
     forecast = replace(n, stock=n.stock.copy())
+    effects = _effects(n.land, operating)
+    effects["farm_multiplier"] += farm_bonus
     return produce_sectors(forecast, climate, rules, workers=workers, tool_target=tool_target,
-                           **_effects(n.land, operating))
+                           **effects)
 
 
 def _spend_upkeep(n, opening_capital):
@@ -87,10 +89,10 @@ def _book_value(recipe, opening, additions, closing):
     }
 
 
-def _candidate(n, key, climate, rules, workers, target, operated, base, limits, wear, class_limit):
+def _candidate(n, key, climate, rules, workers, target, operated, base, limits, wear, class_limit, farm_bonus=0):
     recipe = RECIPES[key]
     hypothetical = {**operated, key: operated[key] + 1}
-    predicted = _forecast(n, climate, rules, workers, target, hypothetical)
+    predicted = _forecast(n, climate, rules, workers, target, hypothetical, farm_bonus)
     marginal_stock = {g: min(limits[g], predicted["closing_stock"][g])
                       - min(limits[g], base["closing_stock"][g]) for g in GOODS}
     annual_gain = sum(marginal_stock[g] * BASE_PRICES[g] for g in GOODS)
