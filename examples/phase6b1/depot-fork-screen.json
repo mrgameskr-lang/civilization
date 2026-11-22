@@ -1,0 +1,114 @@
+{
+  "counts": {
+    "country_edge_cargo": {
+      "drop_exceeds_public": 2,
+      "observations": 2400,
+      "public_active": 938,
+      "with_higher_world_shortage": 2
+    },
+    "road_edge_cargo": {
+      "drop_exceeds_public": 4,
+      "observations": 9500,
+      "public_active": 1743,
+      "with_higher_world_shortage": 2
+    },
+    "world_edge_cargo": {
+      "drop_exceeds_public": 0,
+      "observations": 300,
+      "public_active": 265,
+      "with_higher_world_shortage": 0
+    },
+    "world_private_domestic_and_foreign_units": {
+      "drop_exceeds_public": 1,
+      "observations": 300,
+      "public_active": 265,
+      "with_higher_world_shortage": 1
+    },
+    "world_private_domestic_units": {
+      "drop_exceeds_public": 1,
+      "observations": 300,
+      "public_active": 265,
+      "with_higher_world_shortage": 1
+    },
+    "world_private_foreign_units": {
+      "drop_exceeds_public": 0,
+      "observations": 300,
+      "public_active": 265,
+      "with_higher_world_shortage": 0
+    }
+  },
+  "largest": {
+    "country_edge_cargo": {
+      "excess": 16,
+      "key": 4,
+      "private_held": 1218,
+      "private_on": 1186,
+      "public": 16,
+      "seed": 0,
+      "world_deficit_delta": 16,
+      "year": 28
+    },
+    "road_edge_cargo": {
+      "excess": 7,
+      "key": [
+        8,
+        11
+      ],
+      "private_held": 76,
+      "private_on": 65,
+      "public": 4,
+      "seed": 2,
+      "world_deficit_delta": 0,
+      "year": 27
+    },
+    "world_edge_cargo": {
+      "excess": 0,
+      "key": null,
+      "private_held": 1128,
+      "private_on": 1057,
+      "public": 71,
+      "seed": 2,
+      "world_deficit_delta": 71,
+      "year": 46
+    },
+    "world_private_domestic_and_foreign_units": {
+      "excess": 14,
+      "key": null,
+      "private_held": 1545,
+      "private_on": 1465,
+      "public": 66,
+      "seed": 2,
+      "world_deficit_delta": 80,
+      "year": 42
+    },
+    "world_private_domestic_units": {
+      "excess": 14,
+      "key": null,
+      "private_held": 1279,
+      "private_on": 1199,
+      "public": 66,
+      "seed": 2,
+      "world_deficit_delta": 80,
+      "year": 42
+    },
+    "world_private_foreign_units": {
+      "excess": -2,
+      "key": null,
+      "private_held": 1605,
+      "private_on": 1605,
+      "public": 2,
+      "seed": 1,
+      "world_deficit_delta": 0,
+      "year": 2
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "years": 50
+}
