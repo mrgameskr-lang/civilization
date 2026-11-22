@@ -1,0 +1,137 @@
+{
+  "source_sha256": {
+    "dev": {
+      "economics": {
+        "foreign-years.csv.gz": "a3ade86cc40290eb4f13aa165edb1ddee34b8c37054d3139cf3319f03e1fc149",
+        "runs.csv": "8316548fb4678a2e0c5e3dbcead763028269960a7189e677ea46f4a48d1f9f10"
+      },
+      "consultations": {
+        "annual.jsonl.gz": "bd1daf03b9be835779e59af721f4d935abc72df518918caf535c2d370db54c09",
+        "runs.csv": "b22f9773c303bdfe7075af6e9c09daf0b273ae426c29ef7ad26f637ded5ad5e6"
+      }
+    },
+    "holdout": {
+      "economics": {
+        "foreign-years.csv.gz": "afe50a3682cc0fda51b3a0c984d1cf100cba840bd657a3a8bfee4e94bd30580b",
+        "runs.csv": "b82e38340ffac1dffb608854bf5832ae94d006d7aff2e9b3e3ae2f784ee26d58"
+      },
+      "consultations": {
+        "annual.jsonl.gz": "06b70e2fd5c76ee73b021ef1fb2fc652eaf89b6dc8c752fd573940f0694fd1c2",
+        "runs.csv": "4bf2ef00de76997f575b89ed835ac863cc39278f99a9e6b63c376d4d6dda0699"
+      }
+    }
+  },
+  "paths": [
+    {
+      "sample": "dev",
+      "seed": 0,
+      "mode": "observe",
+      "initial_sha256": "02083de237800912354df458846a5a1735ad83b2c5b9f0e6c0779473cea0ee08",
+      "annual_economic_ledgers": 200,
+      "annual_sidecar_rows_matched": 200,
+      "civic_pair_rows_matched": 5600,
+      "current_direction_rows_matched": 4400,
+      "matched_checkpoints": [
+        {
+          "year": 50,
+          "economic_years_sha256": "a5d465c3ac64c1720fd551ffb9490d8a88b5c8f349f002c254649d6ce512b75b",
+          "civic_years_sha256": "bb4aa7f719f491377c234ca13a11adde2e705924c4bd266cb8375bae01bc9bf9"
+        },
+        {
+          "year": 100,
+          "economic_years_sha256": "c070f59fc90ea6ed760fe3ec761e238aa880ea482308fd0e28533715dcd2c3f6",
+          "civic_years_sha256": "30c3ffc1b3c861de32a7f1a4b34d19963087030b92f64d7b7450f7ab2523b9de"
+        },
+        {
+          "year": 200,
+          "economic_years_sha256": "fcc01746ed5cd92a5215bb8c3d69632bd9005e134a2fea3c9a497dd628cb9084",
+          "civic_years_sha256": "b5ac5c5805f484bf0239fc994226ab94df78e6a9b6e5bb302e89eeb69c2a0dda"
+        }
+      ]
+    },
+    {
+      "sample": "dev",
+      "seed": 0,
+      "mode": "consult",
+      "initial_sha256": "02083de237800912354df458846a5a1735ad83b2c5b9f0e6c0779473cea0ee08",
+      "annual_economic_ledgers": 200,
+      "annual_sidecar_rows_matched": 200,
+      "civic_pair_rows_matched": 5600,
+      "current_direction_rows_matched": 4400,
+      "matched_checkpoints": [
+        {
+          "year": 50,
+          "economic_years_sha256": "a5d465c3ac64c1720fd551ffb9490d8a88b5c8f349f002c254649d6ce512b75b",
+          "civic_years_sha256": "ff144c785ef9ad10a806230efdc732fc40c807daa897dc229ee2a6f0f59b2de1"
+        },
+        {
+          "year": 100,
+          "economic_years_sha256": "c070f59fc90ea6ed760fe3ec761e238aa880ea482308fd0e28533715dcd2c3f6",
+          "civic_years_sha256": "1656818597f50c7018e7790668578917ec3cf8e758c401c51d909b9ff48b8bcb"
+        },
+        {
+          "year": 200,
+          "economic_years_sha256": "fcc01746ed5cd92a5215bb8c3d69632bd9005e134a2fea3c9a497dd628cb9084",
+          "civic_years_sha256": "7e2ecb186f83a911f9316e61083205737c21f26d8b7743753155751b987e4e23"
+        }
+      ]
+    },
+    {
+      "sample": "holdout",
+      "seed": 20,
+      "mode": "observe",
+      "initial_sha256": "c0762a85ebe69d8054c5e965bd329df359e6efa7d281a5b41cb1dd7ceb78153a",
+      "annual_economic_ledgers": 200,
+      "annual_sidecar_rows_matched": 200,
+      "civic_pair_rows_matched": 5600,
+      "current_direction_rows_matched": 4800,
+      "matched_checkpoints": [
+        {
+          "year": 50,
+          "economic_years_sha256": "710c8b8810adadd83d7831c167a8ad71ad95d6445c0203bb55b0a46530c36de1",
+          "civic_years_sha256": "6aad01e1ebe2b93fb4c57a6f6bb82f6b3cfde8cfd34177a2d9f2a057d5443f40"
+        },
+        {
+          "year": 100,
+          "economic_years_sha256": "2a90a1099ed3f1ff8c635898b137a6dee6fb1a56fcc8a9f07962390068bb05b4",
+          "civic_years_sha256": "9f701b86a362166da18abadd78f8843fa5f6720e067207d2f3db63d4fa44ae6f"
+        },
+        {
+          "year": 200,
+          "economic_years_sha256": "1211d7865aebbacf75095f0917b501e677f87fde818ee8eb3edad41fd41d0ffe",
+          "civic_years_sha256": "c63e93fc2de682c20ffdab1d6a5b9caaf196257ad2163a8ef986270ecb1f510f"
+        }
+      ]
+    },
+    {
+      "sample": "holdout",
+      "seed": 20,
+      "mode": "consult",
+      "initial_sha256": "c0762a85ebe69d8054c5e965bd329df359e6efa7d281a5b41cb1dd7ceb78153a",
+      "annual_economic_ledgers": 200,
+      "annual_sidecar_rows_matched": 200,
+      "civic_pair_rows_matched": 5600,
+      "current_direction_rows_matched": 4800,
+      "matched_checkpoints": [
+        {
+          "year": 50,
+          "economic_years_sha256": "710c8b8810adadd83d7831c167a8ad71ad95d6445c0203bb55b0a46530c36de1",
+          "civic_years_sha256": "7e52630a6380d95bda86ce43ef3706bc7e5b77d1a73ae43f873f38631abf5b83"
+        },
+        {
+          "year": 100,
+          "economic_years_sha256": "2a90a1099ed3f1ff8c635898b137a6dee6fb1a56fcc8a9f07962390068bb05b4",
+          "civic_years_sha256": "8a6fc76b872ba973aaab6f0c7dbf3c9738da58c833b70f79ee51b978a5c12784"
+        },
+        {
+          "year": 200,
+          "economic_years_sha256": "1211d7865aebbacf75095f0917b501e677f87fde818ee8eb3edad41fd41d0ffe",
+          "civic_years_sha256": "e8ccc537d01c84afdbed4f9cf79a749240965f3d0e57213d81f1904a35189e11"
+        }
+      ]
+    }
+  ],
+  "workers": 4,
+  "python": "3.12.14",
+  "wall_seconds": 35.702
+}

@@ -1,0 +1,50 @@
+{
+  "archive": "phase6b2/D",
+  "archive_sha256": {
+    "countries.csv": "62205f9db86f2ea650a6bbde7081ab7dd8f697dd7fead3f489d1e38fc95759e6",
+    "country-years.csv.gz": "e6d1b8267cf471ba7f6131efd65d7c412960c712dff2378cfe49bc7f3c54ef4b",
+    "depot-requests.csv.gz": "ec69f79e3b262b2695203d34d1a41ad979edc8a5d7fc8e6c060d7ac846f7cac3",
+    "foreign-years.csv.gz": "afe50a3682cc0fda51b3a0c984d1cf100cba840bd657a3a8bfee4e94bd30580b",
+    "means.csv": "773474131d91cd2a834a8b3070a4290401d93975ae9182478d177f962e367f20",
+    "paired.csv": "3c2a28301f4688fd538704df96974d16387423b3c97a6a0083b450ec69285e22",
+    "public-shipments.csv.gz": "c1b976021a972a337a42282de6f34cc91790fa07394c36ae5603975c366f660c",
+    "region-years.csv.gz": "05633273703c51b43dc0432d1549f26b48957b31bcc41df21741ce4d18caa487",
+    "regions.csv": "94d9f12a3577d390c9308758dd1b94f003c28d1c48107703a0c303c51c5d1c0b",
+    "road-years.csv.gz": "4091ded6876865e04129cbed76e454bfe37a454e546ef75249a0116895aec98e",
+    "runs.csv": "b82e38340ffac1dffb608854bf5832ae94d006d7aff2e9b3e3ae2f784ee26d58",
+    "service-moves.csv.gz": "93f324d11baa768c2142106999fbb6c01ba555d015f8720bd273e1d44f01c009",
+    "service-policy.csv.gz": "376c694e4094e015285b06a38441c77669a123f2e42f253bd606226bc5b32a00"
+  },
+  "checked_economic_checkpoints": 60,
+  "sample": "holdout",
+  "seeds": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "source_pair_years": {
+    "adjacent_0_directions": 0,
+    "adjacent_1_directions": 0,
+    "adjacent_2_directions": 50400,
+    "nonadjacent_0_directions": 61600,
+    "nonadjacent_1_directions": 0,
+    "nonadjacent_2_directions": 0
+  }
+}
