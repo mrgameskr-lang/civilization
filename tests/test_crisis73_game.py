@@ -41,6 +41,17 @@ class BorderCrisisGameTests(unittest.TestCase):
             self.assertEqual(canonical_line(play(legacy, command)),
                              canonical_line(play(off, {**command, "crisis": False})))
 
+    def test_midgame_activation_uses_the_existing_diplomatic_settlement(self):
+        game = create(0)
+        play(game, {"move": None, "research": True, "diffusion": True})
+        prior = play(game, {"move": None, "reserve_policy": "emergency", "public_farm": True})
+        self.assertNotIn("crisis", prior)
+        ledger = play(game, {"move": None, "crisis": True})["crisis"]
+        self.assertTrue(ledger["first_turn"])
+        self.assertTrue(all(p["evidence_year"] == 2 and p["opening_level"] == 0 for p in ledger["pairs"]))
+        starts = {(p["a"], p["b"]) for p in ledger["pairs"] if p["transition"] == "start"}
+        self.assertEqual(starts, {(0, 2), (2, 3)})
+
     def test_invalid_or_inactive_diagnostics_cannot_advance_year(self):
         game = create(1)
         for invalid in ({"crisis": 0}, {"crisis": None}, {"hold_response": 1},
