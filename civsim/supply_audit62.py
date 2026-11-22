@@ -346,7 +346,8 @@ def audit62(record, *, geography, previous_record=None, program=None):
                 ctx = entry.get("diplomacy",{})
                 _check(ctx.get("phase61",{}).get("arm")=="F" and ctx.get("intervention") is None
                        and "supply" not in entry and "service" not in entry and "unit_upkeep" not in entry
-                       and "public_harvest" not in entry and "emergency_relief" not in entry and "research" not in entry,
+                       and "public_harvest" not in entry and "emergency_relief" not in entry and "research" not in entry
+                       and "diffusion" not in entry,
                        "control requires the ordinary historical F policy")
         audit_fiscal61(record, geography=geography, previous_record=previous_record)
         _audit_domestic_delivery(record,geography)
@@ -419,7 +420,10 @@ def audit62(record, *, geography, previous_record=None, program=None):
     duty = {r["id"]:r for r in record.get("service",{}).get("regions",[])}
     occupied = {i:w+(duty[i]["serving"] if duty else 0) for i,w in withheld.items()}
     from .research71 import audit as audit_research
-    trial_targets, farm_levels = audit_research(record, previous_record, local, plans)
+    from . import diffusion72
+    exchange, migration_roads = diffusion72.audit_opening(record, previous_record, local, roads)
+    knowledge = diffusion72.by_region(exchange) if exchange is not None else None
+    trial_targets, farm_levels = audit_research(record, previous_record, local, plans, knowledge=knowledge)
     audit_works(local,roads,initial,units,plans,work,width=geography.width,withheld=occupied,trial_targets=trial_targets)
     balances = {r["id"]:r["depot_close"].copy() for r in work["nodes"]}
     after_works = {(e["a"],e["b"]):e["remaining"] for e in work["roads"]}
@@ -502,9 +506,11 @@ def audit62(record, *, geography, previous_record=None, program=None):
     audit_borders(local,borders,market,produced,{i:(taxes[i]["private_open"],rows[i]["closing"]["cash"]) for i in rows})
     for r in local:
         r.stock = rows[r.id]["closing"]["stock"].copy()
-    vital,moves = move_people(local,{i:r["consumption"] for i,r in rows.items()},[*roads,*borders],access=access)
+    vital,moves = move_people(local,{i:r["consumption"] for i,r in rows.items()},[*migration_roads,*borders],access=access)
     _check(moves == record["moves"] and all(vital[i]==r["demography"] for i,r in rows.items())
            and access.trace()==ctx["physical"], "foreign receipts or migration differ")
+    if exchange is not None:
+        diffusion72.audit_closing(exchange, record, moves, roads)
     _accounts(record, previous_record)
     _audit_domestic_delivery(record,geography)
     audit_rules61(record, previous_record)

@@ -1,0 +1,11 @@
+{
+  "annual_digest_entries": 16000,
+  "opening_worlds": 40,
+  "trajectories": 80,
+  "regional_checkpoints": 7680,
+  "farm_milestones": 1521,
+  "paired_world_checkpoints": 120,
+  "archived_research_controls": 40,
+  "country_checkpoints": 1920,
+  "scope": "Independent published-file check. Starting worlds regenerated; no annual replay by this command."
+}

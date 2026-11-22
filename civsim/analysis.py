@@ -38,7 +38,8 @@ def _file_guidance(path):
     except (ValueError, RecursionError):
         value = None
     schema = value.get("schema") if isinstance(value, dict) else None
-    if schema in ("game-journal/1", "annual-game/1", "annual-game/2", "annual-game/3", "annual-game/4"):
+    if schema in ("game-journal/1", "annual-game/1", "annual-game/2", "annual-game/3",
+                  "annual-game/4", "annual-game/5", "annual-game/6"):
         reader = "civsim.annual_game show"
     elif schema == "unit-board/1":
         reader = "civsim.unit_game show"

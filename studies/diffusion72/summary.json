@@ -1,0 +1,1520 @@
+{
+  "archived_country_checkpoints_verified": 960,
+  "cohorts": [
+    {
+      "arm_totals": {
+        "diffusion": {
+          "advanced_regions": 126,
+          "annual_food": 2044699,
+          "border_exports": 604788,
+          "chronicle_events": 4244,
+          "contacts": 239,
+          "domestic_migrants": 120092,
+          "domestic_shipments": 2144330,
+          "fixed_inputs_food_gain": 729402,
+          "food": 92004863,
+          "independent": 120,
+          "need": 95335530,
+          "population": 2234571,
+          "transfer_fixed_inputs_food_gain": 5661,
+          "transfers": 6,
+          "trial_ore": 260,
+          "trial_tools": 260,
+          "trial_workers": 520,
+          "trials": 260,
+          "turnovers": 611,
+          "unmet": 5912263
+        },
+        "research": {
+          "advanced_regions": 120,
+          "annual_food": 2044252,
+          "border_exports": 604635,
+          "chronicle_events": 3999,
+          "contacts": 0,
+          "domestic_migrants": 120043,
+          "domestic_shipments": 2142958,
+          "fixed_inputs_food_gain": 723742,
+          "food": 91999302,
+          "independent": 120,
+          "need": 95332570,
+          "population": 2234251,
+          "transfer_fixed_inputs_food_gain": 0,
+          "transfers": 0,
+          "trial_ore": 260,
+          "trial_tools": 260,
+          "trial_workers": 520,
+          "trials": 260,
+          "turnovers": 611,
+          "unmet": 5914375
+        }
+      },
+      "arrivals": [
+        {
+          "arrival_range": [
+            0,
+            0
+          ],
+          "contact": 0,
+          "independent": 113,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 174,
+          "transfer": 0
+        },
+        {
+          "arrival_range": [
+            1,
+            199
+          ],
+          "contact": 106,
+          "independent": 7,
+          "median_first_contact": 19.0,
+          "pending": 102,
+          "regions": 224,
+          "transfer": 4
+        },
+        {
+          "arrival_range": [
+            200,
+            999
+          ],
+          "contact": 133,
+          "independent": 0,
+          "median_first_contact": 13,
+          "pending": 131,
+          "regions": 242,
+          "transfer": 2
+        },
+        {
+          "arrival_range": [
+            1000,
+            null
+          ],
+          "contact": 0,
+          "independent": 0,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 0,
+          "transfer": 0
+        }
+      ],
+      "busiest_pending_region": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "763",
+        "domestic_receipts": "7",
+        "first_contact": "22",
+        "level": "0",
+        "method": "",
+        "owner": "6",
+        "paid_trials": "0",
+        "qualified_receipts": "3",
+        "region": "25",
+        "seed": "9",
+        "source": "24",
+        "year": "50"
+      },
+      "busiest_region_without_contact_or_adoption": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "758",
+        "domestic_receipts": "16",
+        "first_contact": "0",
+        "level": "0",
+        "method": "",
+        "owner": "7",
+        "paid_trials": "0",
+        "qualified_receipts": "0",
+        "region": "31",
+        "seed": "16",
+        "source": "",
+        "year": "50"
+      },
+      "cohort": "development",
+      "contact_to_adoption_years": {
+        "max": 28,
+        "median": 12.0,
+        "min": 4
+      },
+      "highest_population_delta": {
+        "advanced_regions": 2,
+        "annual_food": 268,
+        "border_exports": -156,
+        "chronicle_events": 10,
+        "cohort": "development",
+        "contacts": 8,
+        "domestic_migrants": 41,
+        "domestic_shipments": -14,
+        "fixed_inputs_food_gain": 2775,
+        "food": 2708,
+        "independent": 0,
+        "need": 1017,
+        "population": 192,
+        "seed": 2,
+        "shortage_rate_delta": -0.0002716895750147358,
+        "support_delta": 0.7746791073101349,
+        "transfer_fixed_inputs_food_gain": 2777,
+        "transfers": 2,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": -1320,
+        "year": 50
+      },
+      "lowest_population_delta": {
+        "advanced_regions": 0,
+        "annual_food": 0,
+        "border_exports": 0,
+        "chronicle_events": 13,
+        "cohort": "development",
+        "contacts": 13,
+        "domestic_migrants": 0,
+        "domestic_shipments": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 0,
+        "independent": 0,
+        "need": 0,
+        "population": 0,
+        "seed": 0,
+        "shortage_rate_delta": 0.0,
+        "support_delta": 0.0,
+        "transfer_fixed_inputs_food_gain": 0,
+        "transfers": 0,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": 0,
+        "year": 50
+      },
+      "paired_mean": {
+        "advanced_regions": 0.3,
+        "annual_food": 22.35,
+        "border_exports": 7.65,
+        "chronicle_events": 12.25,
+        "contacts": 11.95,
+        "domestic_migrants": 2.45,
+        "domestic_shipments": 68.6,
+        "fixed_inputs_food_gain": 283,
+        "food": 278.05,
+        "independent": 0,
+        "need": 148,
+        "population": 16,
+        "shortage_rate_delta": -2.3075089842116912e-05,
+        "support_delta": 0.04088942480294122,
+        "transfer_fixed_inputs_food_gain": 283.05,
+        "transfers": 0.3,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": -105.6
+      },
+      "pending_regions": 233,
+      "signs": {
+        "border_exports": {
+          "higher": 1,
+          "lower": 2,
+          "same": 17
+        },
+        "food": {
+          "higher": 4,
+          "lower": 0,
+          "same": 16
+        },
+        "population": {
+          "higher": 4,
+          "lower": 0,
+          "same": 16
+        },
+        "shortage_rate_delta": {
+          "higher": 0,
+          "lower": 4,
+          "same": 16
+        },
+        "turnovers": {
+          "higher": 0,
+          "lower": 0,
+          "same": 20
+        }
+      },
+      "worlds_with_transfer": 4,
+      "worlds_without_transfer": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19
+      ],
+      "year": 50
+    },
+    {
+      "arm_totals": {
+        "diffusion": {
+          "advanced_regions": 178,
+          "annual_food": 2074312,
+          "border_exports": 618385,
+          "chronicle_events": 8293,
+          "contacts": 239,
+          "domestic_migrants": 123004,
+          "domestic_shipments": 2404402,
+          "fixed_inputs_food_gain": 2029606,
+          "food": 195202684,
+          "independent": 137,
+          "need": 210339584,
+          "population": 2302290,
+          "transfer_fixed_inputs_food_gain": 66981,
+          "transfers": 41,
+          "trial_ore": 362,
+          "trial_tools": 362,
+          "trial_workers": 724,
+          "trials": 362,
+          "turnovers": 1011,
+          "unmet": 18755721
+        },
+        "research": {
+          "advanced_regions": 139,
+          "annual_food": 2071698,
+          "border_exports": 617946,
+          "chronicle_events": 8015,
+          "contacts": 0,
+          "domestic_migrants": 122885,
+          "domestic_shipments": 2401771,
+          "fixed_inputs_food_gain": 1964178,
+          "food": 195128736,
+          "independent": 139,
+          "need": 210277971,
+          "population": 2300026,
+          "transfer_fixed_inputs_food_gain": 0,
+          "transfers": 0,
+          "trial_ore": 361,
+          "trial_tools": 361,
+          "trial_workers": 722,
+          "trials": 361,
+          "turnovers": 1000,
+          "unmet": 18764470
+        }
+      },
+      "arrivals": [
+        {
+          "arrival_range": [
+            0,
+            0
+          ],
+          "contact": 0,
+          "independent": 112,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 153,
+          "transfer": 0
+        },
+        {
+          "arrival_range": [
+            1,
+            199
+          ],
+          "contact": 106,
+          "independent": 22,
+          "median_first_contact": 19.0,
+          "pending": 84,
+          "regions": 242,
+          "transfer": 21
+        },
+        {
+          "arrival_range": [
+            200,
+            999
+          ],
+          "contact": 133,
+          "independent": 3,
+          "median_first_contact": 13,
+          "pending": 113,
+          "regions": 245,
+          "transfer": 20
+        },
+        {
+          "arrival_range": [
+            1000,
+            null
+          ],
+          "contact": 0,
+          "independent": 0,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 0,
+          "transfer": 0
+        }
+      ],
+      "busiest_pending_region": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "763",
+        "domestic_receipts": "7",
+        "first_contact": "22",
+        "level": "0",
+        "method": "",
+        "owner": "6",
+        "paid_trials": "0",
+        "qualified_receipts": "3",
+        "region": "25",
+        "seed": "9",
+        "source": "24",
+        "year": "100"
+      },
+      "busiest_region_without_contact_or_adoption": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "758",
+        "domestic_receipts": "16",
+        "first_contact": "0",
+        "level": "0",
+        "method": "",
+        "owner": "7",
+        "paid_trials": "1",
+        "qualified_receipts": "0",
+        "region": "31",
+        "seed": "16",
+        "source": "",
+        "year": "100"
+      },
+      "cohort": "development",
+      "contact_to_adoption_years": {
+        "max": 94,
+        "median": 58,
+        "min": 4
+      },
+      "highest_population_delta": {
+        "advanced_regions": 4,
+        "annual_food": 420,
+        "border_exports": 0,
+        "chronicle_events": 22,
+        "cohort": "development",
+        "contacts": 18,
+        "domestic_migrants": 28,
+        "domestic_shipments": -11,
+        "fixed_inputs_food_gain": 6669,
+        "food": 7523,
+        "independent": 0,
+        "need": 5907,
+        "population": 301,
+        "seed": 10,
+        "shortage_rate_delta": -0.00018723328788015914,
+        "support_delta": 0.533183479235106,
+        "transfer_fixed_inputs_food_gain": 6670,
+        "transfers": 4,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": -1458,
+        "year": 100
+      },
+      "lowest_population_delta": {
+        "advanced_regions": 0,
+        "annual_food": 0,
+        "border_exports": 0,
+        "chronicle_events": 13,
+        "cohort": "development",
+        "contacts": 13,
+        "domestic_migrants": 0,
+        "domestic_shipments": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 0,
+        "independent": 0,
+        "need": 0,
+        "population": 0,
+        "seed": 0,
+        "shortage_rate_delta": 0.0,
+        "support_delta": 0.0,
+        "transfer_fixed_inputs_food_gain": 0,
+        "transfers": 0,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": 0,
+        "year": 100
+      },
+      "paired_mean": {
+        "advanced_regions": 1.95,
+        "annual_food": 130.7,
+        "border_exports": 21.95,
+        "chronicle_events": 13.9,
+        "contacts": 11.95,
+        "domestic_migrants": 5.95,
+        "domestic_shipments": 131.55,
+        "fixed_inputs_food_gain": 3271.4,
+        "food": 3697.4,
+        "independent": -0.1,
+        "need": 3080.65,
+        "population": 113.2,
+        "shortage_rate_delta": -6.788316418951946e-05,
+        "support_delta": 0.049991269120704375,
+        "transfer_fixed_inputs_food_gain": 3349.05,
+        "transfers": 2.05,
+        "trial_ore": 0.05,
+        "trial_tools": 0.05,
+        "trial_workers": 0.1,
+        "trials": 0.05,
+        "turnovers": 0.55,
+        "unmet": -437.45
+      },
+      "pending_regions": 197,
+      "signs": {
+        "border_exports": {
+          "higher": 4,
+          "lower": 3,
+          "same": 13
+        },
+        "food": {
+          "higher": 17,
+          "lower": 0,
+          "same": 3
+        },
+        "population": {
+          "higher": 17,
+          "lower": 0,
+          "same": 3
+        },
+        "shortage_rate_delta": {
+          "higher": 0,
+          "lower": 17,
+          "same": 3
+        },
+        "turnovers": {
+          "higher": 4,
+          "lower": 2,
+          "same": 14
+        }
+      },
+      "worlds_with_transfer": 17,
+      "worlds_without_transfer": [
+        0,
+        1,
+        9
+      ],
+      "year": 100
+    },
+    {
+      "arm_totals": {
+        "diffusion": {
+          "advanced_regions": 297,
+          "annual_food": 2090332,
+          "border_exports": 625167,
+          "chronicle_events": 16418,
+          "contacts": 245,
+          "domestic_migrants": 131143,
+          "domestic_shipments": 2503492,
+          "fixed_inputs_food_gain": 5312003,
+          "food": 401943756,
+          "independent": 181,
+          "need": 441643582,
+          "population": 2327246,
+          "transfer_fixed_inputs_food_gain": 617564,
+          "transfers": 116,
+          "trial_ore": 551,
+          "trial_tools": 551,
+          "trial_workers": 1102,
+          "trials": 551,
+          "turnovers": 1819,
+          "unmet": 45392062
+        },
+        "research": {
+          "advanced_regions": 219,
+          "annual_food": 2084417,
+          "border_exports": 624510,
+          "chronicle_events": 16095,
+          "contacts": 0,
+          "domestic_migrants": 131228,
+          "domestic_shipments": 2498544,
+          "fixed_inputs_food_gain": 4787330,
+          "food": 401383914,
+          "independent": 219,
+          "need": 441075379,
+          "population": 2320535,
+          "transfer_fixed_inputs_food_gain": 0,
+          "transfers": 0,
+          "trial_ore": 601,
+          "trial_tools": 601,
+          "trial_workers": 1202,
+          "trials": 601,
+          "turnovers": 1806,
+          "unmet": 45375069
+        }
+      },
+      "arrivals": [
+        {
+          "arrival_range": [
+            0,
+            0
+          ],
+          "contact": 0,
+          "independent": 107,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 131,
+          "transfer": 0
+        },
+        {
+          "arrival_range": [
+            1,
+            199
+          ],
+          "contact": 110,
+          "independent": 33,
+          "median_first_contact": 19.5,
+          "pending": 64,
+          "regions": 244,
+          "transfer": 44
+        },
+        {
+          "arrival_range": [
+            200,
+            999
+          ],
+          "contact": 135,
+          "independent": 40,
+          "median_first_contact": 13,
+          "pending": 63,
+          "regions": 264,
+          "transfer": 72
+        },
+        {
+          "arrival_range": [
+            1000,
+            null
+          ],
+          "contact": 0,
+          "independent": 1,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 1,
+          "transfer": 0
+        }
+      ],
+      "busiest_pending_region": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "763",
+        "domestic_receipts": "7",
+        "first_contact": "22",
+        "level": "0",
+        "method": "",
+        "owner": "6",
+        "paid_trials": "0",
+        "qualified_receipts": "3",
+        "region": "25",
+        "seed": "9",
+        "source": "24",
+        "year": "200"
+      },
+      "busiest_region_without_contact_or_adoption": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "758",
+        "domestic_receipts": "16",
+        "first_contact": "0",
+        "level": "0",
+        "method": "",
+        "owner": "7",
+        "paid_trials": "1",
+        "qualified_receipts": "0",
+        "region": "31",
+        "seed": "16",
+        "source": "",
+        "year": "200"
+      },
+      "cohort": "development",
+      "contact_to_adoption_years": {
+        "max": 192,
+        "median": 101.0,
+        "min": 4
+      },
+      "highest_population_delta": {
+        "advanced_regions": 9,
+        "annual_food": 979,
+        "border_exports": 87,
+        "chronicle_events": 20,
+        "cohort": "development",
+        "contacts": 11,
+        "domestic_migrants": -19,
+        "domestic_shipments": -738,
+        "fixed_inputs_food_gain": 42650,
+        "food": 56580,
+        "independent": 0,
+        "need": 55869,
+        "population": 965,
+        "seed": 14,
+        "shortage_rate_delta": -0.0002896214140205855,
+        "support_delta": 0.08894514676308063,
+        "transfer_fixed_inputs_food_gain": 43370,
+        "transfers": 9,
+        "trial_ore": 2,
+        "trial_tools": 2,
+        "trial_workers": 4,
+        "trials": 2,
+        "turnovers": 2,
+        "unmet": -393,
+        "year": 200
+      },
+      "lowest_population_delta": {
+        "advanced_regions": -2,
+        "annual_food": -529,
+        "border_exports": 60,
+        "chronicle_events": 7,
+        "cohort": "development",
+        "contacts": 9,
+        "domestic_migrants": 6,
+        "domestic_shipments": -179,
+        "fixed_inputs_food_gain": -1473,
+        "food": -5648,
+        "independent": -6,
+        "need": -3195,
+        "population": -404,
+        "seed": 16,
+        "shortage_rate_delta": 0.0001538791564946046,
+        "support_delta": -0.20202885100508183,
+        "transfer_fixed_inputs_food_gain": 20317,
+        "transfers": 4,
+        "trial_ore": -6,
+        "trial_tools": -6,
+        "trial_workers": -12,
+        "trials": -6,
+        "turnovers": 0,
+        "unmet": 2800,
+        "year": 200
+      },
+      "paired_mean": {
+        "advanced_regions": 3.9,
+        "annual_food": 295.75,
+        "border_exports": 32.85,
+        "chronicle_events": 16.15,
+        "contacts": 12.25,
+        "domestic_migrants": -4.25,
+        "domestic_shipments": 247.4,
+        "fixed_inputs_food_gain": 26233.65,
+        "food": 27992.1,
+        "independent": -1.9,
+        "need": 28410.15,
+        "population": 335.55,
+        "shortage_rate_delta": -9.31850394843392e-05,
+        "support_delta": 0.1543933812529133,
+        "transfer_fixed_inputs_food_gain": 30878.2,
+        "transfers": 5.8,
+        "trial_ore": -2.5,
+        "trial_tools": -2.5,
+        "trial_workers": -5,
+        "trials": -2.5,
+        "turnovers": 0.65,
+        "unmet": 849.65
+      },
+      "pending_regions": 127,
+      "signs": {
+        "border_exports": {
+          "higher": 9,
+          "lower": 6,
+          "same": 5
+        },
+        "food": {
+          "higher": 19,
+          "lower": 1,
+          "same": 0
+        },
+        "population": {
+          "higher": 16,
+          "lower": 4,
+          "same": 0
+        },
+        "shortage_rate_delta": {
+          "higher": 4,
+          "lower": 16,
+          "same": 0
+        },
+        "turnovers": {
+          "higher": 9,
+          "lower": 6,
+          "same": 5
+        }
+      },
+      "worlds_with_transfer": 20,
+      "worlds_without_transfer": [],
+      "year": 200
+    },
+    {
+      "arm_totals": {
+        "diffusion": {
+          "advanced_regions": 124,
+          "annual_food": 2132719,
+          "border_exports": 598703,
+          "chronicle_events": 4188,
+          "contacts": 224,
+          "domestic_migrants": 119188,
+          "domestic_shipments": 2095451,
+          "fixed_inputs_food_gain": 746653,
+          "food": 93321922,
+          "independent": 119,
+          "need": 95660188,
+          "population": 2293714,
+          "transfer_fixed_inputs_food_gain": 5007,
+          "transfers": 5,
+          "trial_ore": 265,
+          "trial_tools": 265,
+          "trial_workers": 530,
+          "trials": 265,
+          "turnovers": 597,
+          "unmet": 5416647
+        },
+        "research": {
+          "advanced_regions": 119,
+          "annual_food": 2132283,
+          "border_exports": 598750,
+          "chronicle_events": 3958,
+          "contacts": 0,
+          "domestic_migrants": 119201,
+          "domestic_shipments": 2094526,
+          "fixed_inputs_food_gain": 741646,
+          "food": 93317204,
+          "independent": 119,
+          "need": 95657429,
+          "population": 2293479,
+          "transfer_fixed_inputs_food_gain": 0,
+          "transfers": 0,
+          "trial_ore": 265,
+          "trial_tools": 265,
+          "trial_workers": 530,
+          "trials": 265,
+          "turnovers": 597,
+          "unmet": 5418021
+        }
+      },
+      "arrivals": [
+        {
+          "arrival_range": [
+            0,
+            0
+          ],
+          "contact": 0,
+          "independent": 113,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 190,
+          "transfer": 0
+        },
+        {
+          "arrival_range": [
+            1,
+            199
+          ],
+          "contact": 100,
+          "independent": 6,
+          "median_first_contact": 21.0,
+          "pending": 99,
+          "regions": 218,
+          "transfer": 1
+        },
+        {
+          "arrival_range": [
+            200,
+            999
+          ],
+          "contact": 124,
+          "independent": 0,
+          "median_first_contact": 14.0,
+          "pending": 120,
+          "regions": 232,
+          "transfer": 4
+        },
+        {
+          "arrival_range": [
+            1000,
+            null
+          ],
+          "contact": 0,
+          "independent": 0,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 0,
+          "transfer": 0
+        }
+      ],
+      "busiest_pending_region": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "859",
+        "domestic_receipts": "8",
+        "first_contact": "8",
+        "level": "0",
+        "method": "",
+        "owner": "5",
+        "paid_trials": "0",
+        "qualified_receipts": "2",
+        "region": "23",
+        "seed": "23",
+        "source": "20",
+        "year": "50"
+      },
+      "busiest_region_without_contact_or_adoption": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "920",
+        "domestic_receipts": "8",
+        "first_contact": "0",
+        "level": "0",
+        "method": "",
+        "owner": "7",
+        "paid_trials": "0",
+        "qualified_receipts": "0",
+        "region": "31",
+        "seed": "22",
+        "source": "",
+        "year": "50"
+      },
+      "cohort": "validation",
+      "contact_to_adoption_years": {
+        "max": 23,
+        "median": 16,
+        "min": 7
+      },
+      "highest_population_delta": {
+        "advanced_regions": 1,
+        "annual_food": 74,
+        "border_exports": -19,
+        "chronicle_events": 15,
+        "cohort": "validation",
+        "contacts": 14,
+        "domestic_migrants": -1,
+        "domestic_shipments": 143,
+        "fixed_inputs_food_gain": 1459,
+        "food": 1226,
+        "independent": 0,
+        "need": 913,
+        "population": 57,
+        "seed": 33,
+        "shortage_rate_delta": -7.821034961068979e-05,
+        "support_delta": -0.03660686254710299,
+        "transfer_fixed_inputs_food_gain": 1459,
+        "transfers": 1,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": -320,
+        "year": 50
+      },
+      "lowest_population_delta": {
+        "advanced_regions": 0,
+        "annual_food": 0,
+        "border_exports": 0,
+        "chronicle_events": 11,
+        "cohort": "validation",
+        "contacts": 11,
+        "domestic_migrants": 0,
+        "domestic_shipments": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 0,
+        "independent": 0,
+        "need": 0,
+        "population": 0,
+        "seed": 21,
+        "shortage_rate_delta": 0.0,
+        "support_delta": 0.0,
+        "transfer_fixed_inputs_food_gain": 0,
+        "transfers": 0,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": 0,
+        "year": 50
+      },
+      "paired_mean": {
+        "advanced_regions": 0.25,
+        "annual_food": 21.8,
+        "border_exports": -2.35,
+        "chronicle_events": 11.5,
+        "contacts": 11.2,
+        "domestic_migrants": -0.65,
+        "domestic_shipments": 46.25,
+        "fixed_inputs_food_gain": 250.35,
+        "food": 235.9,
+        "independent": 0,
+        "need": 137.95,
+        "population": 11.75,
+        "shortage_rate_delta": -1.5503118897662248e-05,
+        "support_delta": 0.012804396968948594,
+        "transfer_fixed_inputs_food_gain": 250.35,
+        "transfers": 0.25,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 0,
+        "unmet": -68.7
+      },
+      "pending_regions": 219,
+      "signs": {
+        "border_exports": {
+          "higher": 2,
+          "lower": 3,
+          "same": 15
+        },
+        "food": {
+          "higher": 5,
+          "lower": 0,
+          "same": 15
+        },
+        "population": {
+          "higher": 5,
+          "lower": 0,
+          "same": 15
+        },
+        "shortage_rate_delta": {
+          "higher": 0,
+          "lower": 5,
+          "same": 15
+        },
+        "turnovers": {
+          "higher": 0,
+          "lower": 0,
+          "same": 20
+        }
+      },
+      "worlds_with_transfer": 5,
+      "worlds_without_transfer": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        32,
+        34,
+        36,
+        38,
+        39
+      ],
+      "year": 50
+    },
+    {
+      "arm_totals": {
+        "diffusion": {
+          "advanced_regions": 181,
+          "annual_food": 2149645,
+          "border_exports": 618034,
+          "chronicle_events": 8242,
+          "contacts": 231,
+          "domestic_migrants": 122510,
+          "domestic_shipments": 2383422,
+          "fixed_inputs_food_gain": 2060930,
+          "food": 199097448,
+          "independent": 141,
+          "need": 213386460,
+          "population": 2383843,
+          "transfer_fixed_inputs_food_gain": 60950,
+          "transfers": 40,
+          "trial_ore": 363,
+          "trial_tools": 363,
+          "trial_workers": 726,
+          "trials": 363,
+          "turnovers": 1008,
+          "unmet": 18412686
+        },
+        "research": {
+          "advanced_regions": 148,
+          "annual_food": 2147559,
+          "border_exports": 617624,
+          "chronicle_events": 7977,
+          "contacts": 0,
+          "domestic_migrants": 122391,
+          "domestic_shipments": 2381955,
+          "fixed_inputs_food_gain": 2006848,
+          "food": 199041111,
+          "independent": 148,
+          "need": 213339895,
+          "population": 2381829,
+          "transfer_fixed_inputs_food_gain": 0,
+          "transfers": 0,
+          "trial_ore": 368,
+          "trial_tools": 368,
+          "trial_workers": 736,
+          "trials": 368,
+          "turnovers": 1004,
+          "unmet": 18421781
+        }
+      },
+      "arrivals": [
+        {
+          "arrival_range": [
+            0,
+            0
+          ],
+          "contact": 0,
+          "independent": 114,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 166,
+          "transfer": 0
+        },
+        {
+          "arrival_range": [
+            1,
+            199
+          ],
+          "contact": 107,
+          "independent": 23,
+          "median_first_contact": 22,
+          "pending": 91,
+          "regions": 239,
+          "transfer": 16
+        },
+        {
+          "arrival_range": [
+            200,
+            999
+          ],
+          "contact": 124,
+          "independent": 4,
+          "median_first_contact": 14.0,
+          "pending": 100,
+          "regions": 235,
+          "transfer": 24
+        },
+        {
+          "arrival_range": [
+            1000,
+            null
+          ],
+          "contact": 0,
+          "independent": 0,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 0,
+          "transfer": 0
+        }
+      ],
+      "busiest_pending_region": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "774",
+        "domestic_receipts": "6",
+        "first_contact": "15",
+        "level": "0",
+        "method": "",
+        "owner": "5",
+        "paid_trials": "0",
+        "qualified_receipts": "6",
+        "region": "22",
+        "seed": "23",
+        "source": "20",
+        "year": "100"
+      },
+      "busiest_region_without_contact_or_adoption": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "920",
+        "domestic_receipts": "8",
+        "first_contact": "0",
+        "level": "0",
+        "method": "",
+        "owner": "7",
+        "paid_trials": "0",
+        "qualified_receipts": "0",
+        "region": "31",
+        "seed": "22",
+        "source": "",
+        "year": "100"
+      },
+      "cohort": "validation",
+      "contact_to_adoption_years": {
+        "max": 93,
+        "median": 66.5,
+        "min": 7
+      },
+      "highest_population_delta": {
+        "advanced_regions": 3,
+        "annual_food": 360,
+        "border_exports": 90,
+        "chronicle_events": 16,
+        "cohort": "validation",
+        "contacts": 15,
+        "domestic_migrants": -10,
+        "domestic_shipments": 703,
+        "fixed_inputs_food_gain": 8209,
+        "food": 11553,
+        "independent": 0,
+        "need": 10111,
+        "population": 338,
+        "seed": 35,
+        "shortage_rate_delta": -0.00022618543025873517,
+        "support_delta": 0.9617924145129564,
+        "transfer_fixed_inputs_food_gain": 8222,
+        "transfers": 3,
+        "trial_ore": 1,
+        "trial_tools": 1,
+        "trial_workers": 2,
+        "trials": 1,
+        "turnovers": -2,
+        "unmet": -1469,
+        "year": 100
+      },
+      "lowest_population_delta": {
+        "advanced_regions": 0,
+        "annual_food": -52,
+        "border_exports": 25,
+        "chronicle_events": 8,
+        "cohort": "validation",
+        "contacts": 8,
+        "domestic_migrants": 109,
+        "domestic_shipments": -31,
+        "fixed_inputs_food_gain": -572,
+        "food": 344,
+        "independent": -1,
+        "need": 606,
+        "population": -10,
+        "seed": 32,
+        "shortage_rate_delta": 1.1936192799752443e-05,
+        "support_delta": 0.319850559743486,
+        "transfer_fixed_inputs_food_gain": 1005,
+        "transfers": 1,
+        "trial_ore": -2,
+        "trial_tools": -2,
+        "trial_workers": -4,
+        "trials": -2,
+        "turnovers": 0,
+        "unmet": 177,
+        "year": 100
+      },
+      "paired_mean": {
+        "advanced_regions": 1.65,
+        "annual_food": 104.3,
+        "border_exports": 20.5,
+        "chronicle_events": 13.25,
+        "contacts": 11.55,
+        "domestic_migrants": 5.95,
+        "domestic_shipments": 73.35,
+        "fixed_inputs_food_gain": 2704.1,
+        "food": 2816.85,
+        "independent": -0.35,
+        "need": 2328.25,
+        "population": 100.7,
+        "shortage_rate_delta": -6.141658214219164e-05,
+        "support_delta": 0.20385929993272214,
+        "transfer_fixed_inputs_food_gain": 3047.5,
+        "transfers": 2,
+        "trial_ore": -0.25,
+        "trial_tools": -0.25,
+        "trial_workers": -0.5,
+        "trials": -0.25,
+        "turnovers": 0.2,
+        "unmet": -454.75
+      },
+      "pending_regions": 191,
+      "signs": {
+        "border_exports": {
+          "higher": 6,
+          "lower": 4,
+          "same": 10
+        },
+        "food": {
+          "higher": 17,
+          "lower": 0,
+          "same": 3
+        },
+        "population": {
+          "higher": 16,
+          "lower": 1,
+          "same": 3
+        },
+        "shortage_rate_delta": {
+          "higher": 1,
+          "lower": 16,
+          "same": 3
+        },
+        "turnovers": {
+          "higher": 3,
+          "lower": 3,
+          "same": 14
+        }
+      },
+      "worlds_with_transfer": 18,
+      "worlds_without_transfer": [
+        28,
+        36
+      ],
+      "year": 100
+    },
+    {
+      "arm_totals": {
+        "diffusion": {
+          "advanced_regions": 298,
+          "annual_food": 2099028,
+          "border_exports": 624090,
+          "chronicle_events": 16362,
+          "contacts": 238,
+          "domestic_migrants": 132641,
+          "domestic_shipments": 2478136,
+          "fixed_inputs_food_gain": 5449536,
+          "food": 410155314,
+          "independent": 186,
+          "need": 449848684,
+          "population": 2371599,
+          "transfer_fixed_inputs_food_gain": 619606,
+          "transfers": 112,
+          "trial_ore": 561,
+          "trial_tools": 561,
+          "trial_workers": 1122,
+          "trials": 561,
+          "turnovers": 1837,
+          "unmet": 45919564
+        },
+        "research": {
+          "advanced_regions": 224,
+          "annual_food": 2094315,
+          "border_exports": 625011,
+          "chronicle_events": 16052,
+          "contacts": 0,
+          "domestic_migrants": 131534,
+          "domestic_shipments": 2469736,
+          "fixed_inputs_food_gain": 4985454,
+          "food": 409752425,
+          "independent": 224,
+          "need": 449439000,
+          "population": 2366866,
+          "transfer_fixed_inputs_food_gain": 0,
+          "transfers": 0,
+          "trial_ore": 608,
+          "trial_tools": 608,
+          "trial_workers": 1216,
+          "trials": 608,
+          "turnovers": 1837,
+          "unmet": 45905799
+        }
+      },
+      "arrivals": [
+        {
+          "arrival_range": [
+            0,
+            0
+          ],
+          "contact": 0,
+          "independent": 109,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 145,
+          "transfer": 0
+        },
+        {
+          "arrival_range": [
+            1,
+            199
+          ],
+          "contact": 109,
+          "independent": 29,
+          "median_first_contact": 22,
+          "pending": 68,
+          "regions": 239,
+          "transfer": 41
+        },
+        {
+          "arrival_range": [
+            200,
+            999
+          ],
+          "contact": 129,
+          "independent": 48,
+          "median_first_contact": 14,
+          "pending": 55,
+          "regions": 256,
+          "transfer": 71
+        },
+        {
+          "arrival_range": [
+            1000,
+            null
+          ],
+          "contact": 0,
+          "independent": 0,
+          "median_first_contact": null,
+          "pending": 0,
+          "regions": 0,
+          "transfer": 0
+        }
+      ],
+      "busiest_pending_region": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "734",
+        "domestic_receipts": "5",
+        "first_contact": "27",
+        "level": "0",
+        "method": "",
+        "owner": "7",
+        "paid_trials": "0",
+        "qualified_receipts": "5",
+        "region": "30",
+        "seed": "22",
+        "source": "28",
+        "year": "200"
+      },
+      "busiest_region_without_contact_or_adoption": {
+        "adoption_year": "0",
+        "arm": "diffusion",
+        "domestic_arrivals": "920",
+        "domestic_receipts": "8",
+        "first_contact": "0",
+        "level": "0",
+        "method": "",
+        "owner": "7",
+        "paid_trials": "0",
+        "qualified_receipts": "0",
+        "region": "31",
+        "seed": "22",
+        "source": "",
+        "year": "200"
+      },
+      "cohort": "validation",
+      "contact_to_adoption_years": {
+        "max": 190,
+        "median": 108.0,
+        "min": 7
+      },
+      "highest_population_delta": {
+        "advanced_regions": 6,
+        "annual_food": 669,
+        "border_exports": -244,
+        "chronicle_events": 20,
+        "cohort": "validation",
+        "contacts": 14,
+        "domestic_migrants": 3,
+        "domestic_shipments": 905,
+        "fixed_inputs_food_gain": 41951,
+        "food": 42512,
+        "independent": -2,
+        "need": 41867,
+        "population": 647,
+        "seed": 31,
+        "shortage_rate_delta": -0.00015700137476082343,
+        "support_delta": 0.05546828678205884,
+        "transfer_fixed_inputs_food_gain": 51785,
+        "transfers": 8,
+        "trial_ore": 2,
+        "trial_tools": 2,
+        "trial_workers": 4,
+        "trials": 2,
+        "turnovers": 5,
+        "unmet": 472,
+        "year": 200
+      },
+      "lowest_population_delta": {
+        "advanced_regions": 3,
+        "annual_food": -680,
+        "border_exports": -540,
+        "chronicle_events": 11,
+        "cohort": "validation",
+        "contacts": 8,
+        "domestic_migrants": 374,
+        "domestic_shipments": 1507,
+        "fixed_inputs_food_gain": 660,
+        "food": -45950,
+        "independent": -1,
+        "need": -45501,
+        "population": -636,
+        "seed": 32,
+        "shortage_rate_delta": 0.00019267439884707027,
+        "support_delta": -0.5151735862996816,
+        "transfer_fixed_inputs_food_gain": 17774,
+        "transfers": 4,
+        "trial_ore": -3,
+        "trial_tools": -3,
+        "trial_workers": -6,
+        "trials": -3,
+        "turnovers": -9,
+        "unmet": -538,
+        "year": 200
+      },
+      "paired_mean": {
+        "advanced_regions": 3.7,
+        "annual_food": 235.65,
+        "border_exports": -46.05,
+        "chronicle_events": 15.5,
+        "contacts": 11.9,
+        "domestic_migrants": 55.35,
+        "domestic_shipments": 420,
+        "fixed_inputs_food_gain": 23204.1,
+        "food": 20144.45,
+        "independent": -1.9,
+        "need": 20484.2,
+        "population": 236.65,
+        "shortage_rate_delta": -6.016118202242099e-05,
+        "support_delta": -0.040435217208889186,
+        "transfer_fixed_inputs_food_gain": 30980.3,
+        "transfers": 5.6,
+        "trial_ore": -2.35,
+        "trial_tools": -2.35,
+        "trial_workers": -4.7,
+        "trials": -2.35,
+        "turnovers": 0,
+        "unmet": 688.25
+      },
+      "pending_regions": 123,
+      "signs": {
+        "border_exports": {
+          "higher": 8,
+          "lower": 9,
+          "same": 3
+        },
+        "food": {
+          "higher": 19,
+          "lower": 1,
+          "same": 0
+        },
+        "population": {
+          "higher": 17,
+          "lower": 3,
+          "same": 0
+        },
+        "shortage_rate_delta": {
+          "higher": 4,
+          "lower": 16,
+          "same": 0
+        },
+        "turnovers": {
+          "higher": 7,
+          "lower": 10,
+          "same": 3
+        }
+      },
+      "worlds_with_transfer": 20,
+      "worlds_without_transfer": [],
+      "year": 200
+    }
+  ],
+  "domestic_road_degree": {
+    "1": 350,
+    "2": 608,
+    "3": 322
+  }
+}

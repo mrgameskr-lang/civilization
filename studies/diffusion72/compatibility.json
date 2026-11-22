@@ -1,0 +1,48 @@
+[
+  {
+    "annual_hashes_verified": 200,
+    "arm": "off",
+    "chronicle_sha256": "671a6a512be2a1f4e9d99f15d24f75858da80ff707ca7419c97889e7ae5780a8",
+    "closing_sha256": "fb1e703994238b98ef15983d6c79ea48bf2e3f7dcc3af6ab7fca79777b170d90",
+    "events": 799,
+    "files_verified_byte_for_byte": [
+      "chronicle.json",
+      "chronicle.md",
+      "highlights.md"
+    ],
+    "journal_sha256": "68e52998ab104c4ba0844abb6051dd2667d6d72e1b9099f78fa21818bedd7942",
+    "seed": 0
+  },
+  {
+    "annual_hashes_verified": 200,
+    "arm": "research",
+    "chronicle_sha256": "f58652329a5bd822b82bd7c49fd47bb0b650ea988903510518262bfa97a75538",
+    "closing_sha256": "1d552eadc35c3e69d5575007a416a5ca683ca9003c34cec1beebeb1cebe79ba6",
+    "events": 809,
+    "journal_sha256": "5c819f47939bb4a5a7f54ac4a4db70234ee86a2aa4a8c10db5f20f25d43fa6c8",
+    "seed": 0
+  },
+  {
+    "annual_hashes_verified": 200,
+    "arm": "off",
+    "chronicle_sha256": "c4d590c2f39f7192de08b98c8c5954c222346f9662916792412ab2387608521b",
+    "closing_sha256": "a72f1d30626987868f5ccb2870d3ae742ab26e6b852dbbff8e1957f4533cefaf",
+    "events": 790,
+    "files_verified_byte_for_byte": [
+      "chronicle.json",
+      "chronicle.md",
+      "highlights.md"
+    ],
+    "journal_sha256": "0a4cb9ea746c50f0f1f8458cb3da83f23a7bc01f5878d0686305301eeac07e55",
+    "seed": 20
+  },
+  {
+    "annual_hashes_verified": 200,
+    "arm": "research",
+    "chronicle_sha256": "625397511c13d39f524b057d6bc8b969007ff3ab47902ca712e625f690176508",
+    "closing_sha256": "e00a7a2e2148820a40fd01361a6abfb2b147405b9bf8d725dad1bd2393ad7fc6",
+    "events": 800,
+    "journal_sha256": "b12a66d41f74ed2fb1e4f5f45dff89d4785eeab1a9450b7ca550d513f2e1dbdd",
+    "seed": 20
+  }
+]
