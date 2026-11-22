@@ -1,0 +1,501 @@
+{
+  "held": {
+    "attempts_on_road": {
+      "migration_attempts": [
+        {
+          "pointer": "/diplomacy/physical/migration_attempts/2",
+          "receipt": {
+            "denied_entry": 0,
+            "denied_exit": 3,
+            "entry_limit": 184,
+            "entry_used_before": 51,
+            "exit_limit": 8,
+            "exit_used_before": 0,
+            "feasible": 11,
+            "people": 8,
+            "source": 15,
+            "target": 9
+          }
+        }
+      ],
+      "trade_attempts": []
+    },
+    "closing_diplomacy": {
+      "relation": 227,
+      "tension": 195,
+      "trust": 624
+    },
+    "flows_for_pair": [
+      {
+        "access_kept": 1,
+        "agreement_breach": 0,
+        "aid_freight": 22,
+        "aid_handling": 10,
+        "aid_offer": 271,
+        "aid_offer_rejected": 0,
+        "aid_quantity": 271,
+        "aid_received": 261,
+        "aid_request": 271,
+        "aid_request_rejected": 0,
+        "aid_sent": 271,
+        "all_export_value": 4482,
+        "all_import_value": 0,
+        "export_exposure": 651,
+        "food_import_share": 0,
+        "goods": {
+          "food": 354,
+          "ore": 0,
+          "tools": 0
+        },
+        "import_dependence": 0,
+        "migrants": 0,
+        "migration_denied_entry": 0,
+        "migration_denied_exit": 0,
+        "pact_proposals": 0,
+        "pact_rejections": 0,
+        "source": 2,
+        "source_food_need": 14378,
+        "target": 3,
+        "trade_denied": 0,
+        "trade_freight": 51,
+        "trade_opportunity": 354,
+        "trade_value": 2920,
+        "trades": 3
+      },
+      {
+        "access_kept": 0,
+        "agreement_breach": 0,
+        "aid_freight": 0,
+        "aid_handling": 0,
+        "aid_offer": 0,
+        "aid_offer_rejected": 0,
+        "aid_quantity": 0,
+        "aid_received": 0,
+        "aid_request": 0,
+        "aid_request_rejected": 0,
+        "aid_sent": 0,
+        "all_export_value": 0,
+        "all_import_value": 5176,
+        "export_exposure": 0,
+        "food_import_share": 40,
+        "goods": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "import_dependence": 564,
+        "migrants": 61,
+        "migration_denied_entry": 0,
+        "migration_denied_exit": 3,
+        "pact_proposals": 0,
+        "pact_rejections": 0,
+        "source": 3,
+        "source_food_need": 8695,
+        "target": 2,
+        "trade_denied": 0,
+        "trade_freight": 0,
+        "trade_opportunity": 0,
+        "trade_value": 0,
+        "trades": 0
+      }
+    ],
+    "local_production": [
+      {
+        "food_unmet": 0,
+        "opening_population": 2058,
+        "private_workers": 1004,
+        "produced": {
+          "food": 2848,
+          "ore": 83,
+          "tools": 41
+        },
+        "region": 9
+      },
+      {
+        "food_unmet": 140,
+        "opening_population": 866,
+        "private_workers": 415,
+        "produced": {
+          "food": 716,
+          "ore": 23,
+          "tools": 11
+        },
+        "region": 15
+      }
+    ],
+    "pair": {
+      "a": 2,
+      "b": 3,
+      "breaches": 0,
+      "choices": [
+        {
+          "available_workers": 1004,
+          "country": 2,
+          "eligible": true,
+          "score": 69,
+          "selected": true,
+          "shortage_permille": 0
+        },
+        {
+          "available_workers": 419,
+          "country": 3,
+          "eligible": true,
+          "score": 138,
+          "selected": true,
+          "shortage_permille": 199
+        }
+      ],
+      "closing_level": 2,
+      "evidence_year": 5,
+      "goods_released": 0,
+      "opening_level": 2,
+      "people_denied": 69,
+      "people_released": 0,
+      "response": "hold",
+      "road": [
+        9,
+        15
+      ],
+      "staffed": false,
+      "substantial": true,
+      "tension": 194,
+      "trade_denied": 0,
+      "transition": "none",
+      "trust": 610,
+      "workers": 0
+    },
+    "pair_pointer": "/crisis/pairs/4",
+    "record_sha256": "edd70e457c8cea1abbce066dafce48c19a1b90ded0712f19fe2baab5a64e62ea",
+    "world": {
+      "adjacent_tension_sum": 993,
+      "adjacent_trust_sum": 6054,
+      "advanced_regions": 1,
+      "annual_food": 79326,
+      "goods_released": 0,
+      "members": 76435,
+      "migrants": 123,
+      "migration_denied_entry": 0,
+      "migration_denied_exit": 5,
+      "need": 76435,
+      "people_released": 0,
+      "population": 77379,
+      "public_food": 7337,
+      "quantity": 1403,
+      "support_points": 36342319,
+      "trade_denied": 190,
+      "turnovers": 0,
+      "unmet": 2024,
+      "workers": 0
+    },
+    "year": 6
+  },
+  "hold_command": {
+    "hold_response": true,
+    "move": null
+  },
+  "no_history_case": {
+    "active_pairs": 0,
+    "control_sha256": "4514fc324a398dd7d6f4977c292af179a003f49cad5c24f89088886dccfeec30",
+    "pairs_considered": 11,
+    "record_sha256": "9bffd6d1da33e6f608b7566f60f2feefe865e391e7659dd47f94863d3342209a",
+    "seed": 0,
+    "workers": 0,
+    "year": 1
+  },
+  "normal": {
+    "attempts_on_road": {
+      "migration_attempts": [
+        {
+          "pointer": "/diplomacy/physical/migration_attempts/2",
+          "receipt": {
+            "appeal_granted": 3,
+            "appeal_remaining_before": 4,
+            "denied_entry": 0,
+            "denied_exit": 0,
+            "entry_limit": 184,
+            "entry_used_before": 51,
+            "exit_limit": 8,
+            "exit_used_before": 0,
+            "feasible": 11,
+            "ordinary_passed": 8,
+            "people": 11,
+            "source": 15,
+            "target": 9
+          }
+        }
+      ],
+      "trade_attempts": []
+    },
+    "closing_diplomacy": {
+      "relation": 278,
+      "tension": 145,
+      "trust": 650
+    },
+    "flows_for_pair": [
+      {
+        "access_kept": 1,
+        "agreement_breach": 0,
+        "aid_freight": 22,
+        "aid_handling": 10,
+        "aid_offer": 271,
+        "aid_offer_rejected": 0,
+        "aid_quantity": 271,
+        "aid_received": 261,
+        "aid_request": 271,
+        "aid_request_rejected": 0,
+        "aid_sent": 271,
+        "all_export_value": 4482,
+        "all_import_value": 0,
+        "export_exposure": 651,
+        "food_import_share": 0,
+        "goods": {
+          "food": 354,
+          "ore": 0,
+          "tools": 0
+        },
+        "import_dependence": 0,
+        "migrants": 0,
+        "migration_denied_entry": 0,
+        "migration_denied_exit": 0,
+        "pact_proposals": 0,
+        "pact_rejections": 0,
+        "source": 2,
+        "source_food_need": 14378,
+        "target": 3,
+        "trade_denied": 0,
+        "trade_freight": 51,
+        "trade_opportunity": 354,
+        "trade_value": 2920,
+        "trades": 3
+      },
+      {
+        "access_kept": 0,
+        "agreement_breach": 0,
+        "aid_freight": 0,
+        "aid_handling": 0,
+        "aid_offer": 0,
+        "aid_offer_rejected": 0,
+        "aid_quantity": 0,
+        "aid_received": 0,
+        "aid_request": 0,
+        "aid_request_rejected": 0,
+        "aid_sent": 0,
+        "all_export_value": 0,
+        "all_import_value": 5176,
+        "export_exposure": 0,
+        "food_import_share": 40,
+        "goods": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "import_dependence": 564,
+        "migrants": 64,
+        "migration_denied_entry": 0,
+        "migration_denied_exit": 0,
+        "pact_proposals": 0,
+        "pact_rejections": 0,
+        "source": 3,
+        "source_food_need": 8695,
+        "target": 2,
+        "trade_denied": 0,
+        "trade_freight": 0,
+        "trade_opportunity": 0,
+        "trade_value": 0,
+        "trades": 0
+      }
+    ],
+    "local_production": [
+      {
+        "food_unmet": 0,
+        "opening_population": 2058,
+        "private_workers": 1003,
+        "produced": {
+          "food": 2843,
+          "ore": 83,
+          "tools": 41
+        },
+        "region": 9
+      },
+      {
+        "food_unmet": 143,
+        "opening_population": 866,
+        "private_workers": 414,
+        "produced": {
+          "food": 713,
+          "ore": 23,
+          "tools": 11
+        },
+        "region": 15
+      }
+    ],
+    "pair": {
+      "a": 2,
+      "b": 3,
+      "breaches": 0,
+      "choices": [
+        {
+          "available_workers": 1004,
+          "country": 2,
+          "eligible": true,
+          "score": 69,
+          "selected": true,
+          "shortage_permille": 0
+        },
+        {
+          "available_workers": 419,
+          "country": 3,
+          "eligible": true,
+          "score": 138,
+          "selected": true,
+          "shortage_permille": 199
+        }
+      ],
+      "closing_level": 2,
+      "evidence_year": 5,
+      "goods_released": 0,
+      "opening_level": 2,
+      "people_denied": 69,
+      "people_released": 3,
+      "response": "staffed",
+      "road": [
+        9,
+        15
+      ],
+      "staffed": true,
+      "substantial": true,
+      "tension": 194,
+      "trade_denied": 0,
+      "transition": "none",
+      "trust": 610,
+      "workers": 2
+    },
+    "pair_pointer": "/crisis/pairs/4",
+    "record_sha256": "560af08778ac3b21710e3988fdb9070b3d3009e99b372328c436d8da3fe05223",
+    "world": {
+      "adjacent_tension_sum": 943,
+      "adjacent_trust_sum": 6080,
+      "advanced_regions": 1,
+      "annual_food": 79318,
+      "goods_released": 0,
+      "members": 76435,
+      "migrants": 126,
+      "migration_denied_entry": 0,
+      "migration_denied_exit": 2,
+      "need": 76435,
+      "people_released": 3,
+      "population": 77378,
+      "public_food": 7337,
+      "quantity": 1403,
+      "support_points": 36341940,
+      "trade_denied": 190,
+      "turnovers": 0,
+      "unmet": 2027,
+      "workers": 2
+    },
+    "year": 6
+  },
+  "opening_sha256": "11076432abd181d8c610b4d7e46bb3128d170812a6bf3b05113090149ef4a2da",
+  "pair": [
+    2,
+    3
+  ],
+  "previous_sha256": "c361b08c524363b82eea27476ed3ed7281c1f4b1dd4a389cf8bd991fa662f548",
+  "prior_flows": [
+    {
+      "access_kept": 1,
+      "agreement_breach": 0,
+      "aid_freight": 21,
+      "aid_handling": 10,
+      "aid_offer": 278,
+      "aid_offer_rejected": 0,
+      "aid_quantity": 278,
+      "aid_received": 260,
+      "aid_request": 278,
+      "aid_request_rejected": 0,
+      "aid_sent": 270,
+      "all_export_value": 4674,
+      "all_import_value": 0,
+      "export_exposure": 654,
+      "food_import_share": 0,
+      "goods": {
+        "food": 359,
+        "ore": 0,
+        "tools": 0
+      },
+      "import_dependence": 0,
+      "migrants": 0,
+      "migration_denied_entry": 0,
+      "migration_denied_exit": 0,
+      "pact_proposals": 0,
+      "pact_rejections": 0,
+      "source": 2,
+      "source_food_need": 14008,
+      "target": 3,
+      "trade_denied": 0,
+      "trade_freight": 52,
+      "trade_opportunity": 359,
+      "trade_value": 3058,
+      "trades": 3
+    },
+    {
+      "access_kept": 0,
+      "agreement_breach": 0,
+      "aid_freight": 0,
+      "aid_handling": 0,
+      "aid_offer": 0,
+      "aid_offer_rejected": 0,
+      "aid_quantity": 0,
+      "aid_received": 0,
+      "aid_request": 0,
+      "aid_request_rejected": 0,
+      "aid_sent": 0,
+      "all_export_value": 0,
+      "all_import_value": 5446,
+      "export_exposure": 0,
+      "food_import_share": 40,
+      "goods": {
+        "food": 0,
+        "ore": 0,
+        "tools": 0
+      },
+      "import_dependence": 561,
+      "migrants": 108,
+      "migration_denied_entry": 0,
+      "migration_denied_exit": 69,
+      "pact_proposals": 0,
+      "pact_rejections": 0,
+      "source": 3,
+      "source_food_need": 8910,
+      "target": 2,
+      "trade_denied": 0,
+      "trade_freight": 0,
+      "trade_opportunity": 0,
+      "trade_value": 0,
+      "trades": 0
+    }
+  ],
+  "seed": 0,
+  "world_difference": {
+    "adjacent_tension_sum": -50,
+    "adjacent_trust_sum": 26,
+    "advanced_regions": 0,
+    "annual_food": -8,
+    "goods_released": 0,
+    "members": 0,
+    "migrants": 3,
+    "migration_denied_entry": 0,
+    "migration_denied_exit": -3,
+    "need": 0,
+    "people_released": 3,
+    "population": -1,
+    "public_food": 0,
+    "quantity": 0,
+    "support_points": -379,
+    "trade_denied": 0,
+    "turnovers": 0,
+    "unmet": 3,
+    "workers": 2
+  },
+  "year": 6
+}

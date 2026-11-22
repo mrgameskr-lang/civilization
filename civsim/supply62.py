@@ -1,7 +1,7 @@
 """Annual public-depot economy. Arm A delegates directly to the archived F rules."""
 from copy import deepcopy
 from dataclasses import dataclass, replace
-from . import diffusion72
+from . import crisis73, diffusion72
 
 from .border import border_market, move_people, validate_border_paths
 from .civic_fiscal import collect_civic, respond, withheld_labor
@@ -37,6 +37,7 @@ class SupplyWorld:
     reserve_policy: str | None = None
     research: list | None = None
     diffusion: list | None = None
+    crisis: list | None = None
 
     @property
     def world(self):
@@ -63,13 +64,16 @@ def snapshot62(sim):
         base = {**base, "research":deepcopy(sim.research)}
     if sim.diffusion is not None:
         base = {**base, "diffusion":deepcopy(sim.diffusion)}
+    if sim.crisis is not None:
+        base = {**base, "crisis":deepcopy(sim.crisis)}
     return {**base, "public_arm":sim.arm,
             "service_roster":[[i,n] for i,n in sorted((sim.roster or {}).items())]}
 
 
 def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None,
              unit_input=None, upkeep=None, relief_first=False, public_farm=False, reserve_policy=None,
-             research=False, hold_research=False, diffusion=False, blocked_migration=None):
+             research=False, hold_research=False, diffusion=False, blocked_migration=None,
+             crisis=False, hold_response=False):
     ctx = _context(sim.engine, year, _mode('F'), None)
     collective = sim.engine.collective
     race = collective.competition
@@ -126,6 +130,11 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     climate = {n.id:climate_factor(trial.seed,year,n.id) for n in trial.nations}
     prod_open = {r.id:{**opening[r.id],"soil":r.soil} for r in local}
     reserved = {i:n+occupied[i] for i,n in labor.items()}
+    if crisis:
+        free = {r.id: r.population // 2 - reserved[r.id] for r in local}
+        crisis_log = crisis73.plan(ctx, local, trial.borders, free, sim.crisis, hold_response)
+        for i, workers in crisis73.staff(crisis_log).items():
+            reserved[i] += workers
     prod = produce_regions(local,climate,public_labor=reserved,farm_levels=farm_levels)
     for i,n in unavailable.items():
         prod[i]["withheld_workers"]=n
@@ -136,6 +145,8 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
         harvest = apply_public_harvest(local, prod, depots, fiscal.depots, reserve_days=RESERVE_POLICIES.get(reserve_policy))
         produced = {r.id:state(r) for r in local}
     foreign = charge_border(ctx, local, trial.borders, trial.width, depots, supply)
+    if crisis:
+        foreign = crisis73.Appeals(foreign, crisis_log)
     market = border_market(local,trial.borders,access=foreign)
     audit_borders(local,trial.borders,market,produced,{r.id:(r.stock.copy(),r.cash) for r in local})
     levies = collect_civic(local,depots,decisions,civic)
@@ -211,6 +222,9 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     record["public_policy"] = {"model_version":"6.0B2" if program else "6.0B1", "arm":arm,
                                "supply_enabled":enabled, "recruit":recruit, "diagnostic":diagnostic}
     record["supply"] = supply
+    if crisis:
+        record["public_policy"]["crisis_rule"] = crisis73.VERSION
+        record["crisis"] = crisis_log
     if research:
         record["public_policy"]["research_rule"] = study["version"]
         record["research"] = study
@@ -255,8 +269,13 @@ def _require(sim, year, arm):
 
 def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None, relief_first=None,
               public_farm=None, reserve_policy=None, research=None, hold_research=False,
-              diffusion=None, blocked_migration=None):
+              diffusion=None, blocked_migration=None, crisis=None, hold_response=False):
     _require(sim, year, arm)
+    _check(crisis is None or type(crisis) is bool, "expected boolean border crisis selection")
+    _check(sim.crisis is None or crisis is not False, "cannot remove active border crisis register")
+    crisis = sim.crisis is not None if crisis is None else crisis
+    _check(not crisis or arm != "A", "historical control cannot activate border appeals")
+    _check(type(hold_response) is bool and (not hold_response or crisis), "hold requires active border appeals")
     _check(research is None or type(research) is bool, "expected boolean field-trial selection")
     _check(sim.research is None or research is not False, "cannot remove acquired research state")
     research = sim.research is not None if research is None else research
@@ -303,7 +322,8 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
         fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input,
                                   upkeep=upkeep, relief_first=relief_first, public_farm=public_farm,
                                   reserve_policy=reserve_policy, research=research, hold_research=hold_research,
-                                  diffusion=diffusion, blocked_migration=blocked_migration)
+                                  diffusion=diffusion, blocked_migration=blocked_migration,
+                                  crisis=crisis, hold_response=hold_response)
         pairs = {(p["a"],p["b"]):deepcopy(p["closing"]) for p in record["diplomacy"]["pairs"]}
         _commit_collective(sim.engine.collective, fiscal, record)
         sim.engine.pairs, sim.engine.arm = pairs, "F"
@@ -323,6 +343,8 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
         sim.research = closing(record["research"])
     if diffusion:
         sim.diffusion = diffusion72.closing(record["diffusion"])
+    if crisis:
+        sim.crisis = crisis73.closing(record["crisis"])
     return record
 
 

@@ -164,7 +164,8 @@ def audit_positions(turn, service):
 
 
 def step_game(game, command=None, *, upkeep=None, relief_first=None, public_farm=None, reserve_policy=None,
-              research=None, hold_research=False, diffusion=None, blocked_migration=None):
+              research=None, hold_research=False, diffusion=None, blocked_migration=None,
+              crisis=None, hold_response=False):
     """Run a full year of the existing fixed 6.0B2 economy and commit its closing positions."""
     from . import service62
     from .supply62 import advance62
@@ -173,7 +174,8 @@ def step_game(game, command=None, *, upkeep=None, relief_first=None, public_farm
                      unit_input=(game.away, command), upkeep=upkeep, relief_first=relief_first,
                      public_farm=public_farm, reserve_policy=reserve_policy,
                      research=research, hold_research=hold_research,
-                     diffusion=diffusion, blocked_migration=blocked_migration)
+                     diffusion=diffusion, blocked_migration=blocked_migration,
+                     crisis=crisis, hold_response=hold_response)
 
 
 def audit_game(record, geography, previous=None):
@@ -182,4 +184,14 @@ def audit_game(record, geography, previous=None):
     from .posting_engine65 import audit_households
     _check(record.get("unit_game",{}).get("version")==VERSION, "missing annual game record")
     audit62(record, geography=geography, previous_record=previous)
+    if "crisis" in record:
+        # The archived census checker reads all civilian public labor from one sequence
+        # of (target, workers) entries. Project these two independently audited job books
+        # onto that input without changing the fiscal ledger or any source receipt.
+        from .crisis73 import staff
+        government = record["government"]
+        works = government["works"]
+        desk_jobs = [{"target": site, "workers": n} for site, n in staff(record["crisis"]).items()]
+        jobs = [*works["projects"], *desk_jobs]
+        record = {**record, "government": {**government, "works": {**works, "projects": jobs}}}
     audit_households(record,previous=previous)

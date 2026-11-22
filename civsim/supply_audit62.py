@@ -1,6 +1,7 @@
 """Independent public/private, border and local physical audits for the depot economy."""
 from collections import Counter
 from types import SimpleNamespace
+from . import crisis73
 
 from .aid_budget61 import audit_fiscal61
 from .appropriation_audit import audit_appropriations
@@ -24,6 +25,8 @@ def accounts62(record, decisions):
     for account in accounts:
         n = account["id"]
         totals = account["totals"]
+        if "crisis" in record:
+            totals["border_appeal_workers"] = sum(p["staffed"] for p in record["crisis"]["pairs"] if n in (p["a"], p["b"]))
         supply = next(c for c in record["supply"]["countries"] if c["owner"] == n)
         totals["depot_freight_food"] = supply["aid_freight_food"] + supply["domestic_freight_food"]
         totals["public_freight_food"] += totals["depot_freight_food"]
@@ -129,6 +132,7 @@ def _accounts(record, previous_record=None):
     private = {i: r["opening"]["stock"].copy() for i, r in regions.items()}
     cash = {i: r["opening"]["cash"] for i, r in regions.items()}
     reserved, restored = Counter(), Counter()
+    appeal_workers = crisis73.staff(record["crisis"]) if "crisis" in record else Counter()
     transfers = {i: dict.fromkeys(GOODS, 0) for i in regions}
     countries = _by(record["countries"], "id")
     _check(countries.keys() == accounts.keys(), "fiscal and private country accounts differ")
@@ -253,7 +257,7 @@ def _accounts(record, previous_record=None):
         p = r["production"]
         if civic is not None:
             _check(p["withheld_workers"]==withheld[i],"unavailable civic labor differs from group actions")
-        _check(withheld.get(i,0) + (duties[i]["serving"] if duties else 0) + reserved[i] + p["workers"] + p["soil_care"]["workers"] + p["investment"]["construction_labor"]
+        _check(withheld.get(i,0) + (duties[i]["serving"] if duties else 0) + appeal_workers[i] + reserved[i] + p["workers"] + p["soil_care"]["workers"] + p["investment"]["construction_labor"]
                == r["opening"]["population"] // 2, "public and private worker allocation")
         _check(r["opening"]["soil"] + restored[i] == p["soil_before"], "public soil treatment")
     audit_national_year(record, private_transfers=transfers)
@@ -347,12 +351,22 @@ def audit62(record, *, geography, previous_record=None, program=None):
                 _check(ctx.get("phase61",{}).get("arm")=="F" and ctx.get("intervention") is None
                        and "supply" not in entry and "service" not in entry and "unit_upkeep" not in entry
                        and "public_harvest" not in entry and "emergency_relief" not in entry and "research" not in entry
-                       and "diffusion" not in entry,
+                       and "diffusion" not in entry and "crisis" not in entry,
                        "control requires the ordinary historical F policy")
         audit_fiscal61(record, geography=geography, previous_record=previous_record)
         _audit_domestic_delivery(record,geography)
         return
     cfg = record["public_policy"]
+    crisis_log = record.get("crisis")
+    prior_crisis = (previous_record or {}).get("crisis")
+    _check(("crisis_rule" in cfg) == ("crisis" in record) == (crisis_log is not None)
+           and (prior_crisis is None or crisis_log is not None), "missing border crisis rule or register")
+    if crisis_log is not None:
+        _check(crisis_log["version"] == cfg["crisis_rule"] == crisis73.VERSION
+               and type(crisis_log["hold_response"]) is bool and type(crisis_log["first_turn"]) is bool,
+               "unknown border crisis policy")
+        if previous_record is not None or record["year"] == 1:
+            _check(crisis_log["first_turn"] is (prior_crisis is None), "unexpected border crisis activation")
     harvest = record.get("public_harvest")
     reserve_policy = cfg.get("reserve_policy")
     _check("reserve_policy" not in cfg or (type(reserve_policy) is str and reserve_policy in RESERVE_POLICIES
@@ -454,8 +468,19 @@ def audit62(record, *, geography, previous_record=None, program=None):
             for g in GOODS:
                 balances[i][g] -= r["used"][g]
     borders = _network(ctx["physical"], nodes)
+    labor = {w["id"]:occupied[w["id"]] + w["workers_reserved"] for w in work["nodes"]}
+    if crisis_log is not None:
+        memory = None
+        if prior_crisis is not None:
+            memory = crisis73.closing(prior_crisis)
+        elif not crisis_log["first_turn"]:
+            memory = [{"a": p["a"], "b": p["b"], "level": p["opening_level"]} for p in crisis_log["pairs"]]
+        free = {r.id: r.population // 2 - labor[r.id] for r in local}
+        expected_crisis = crisis73.plan(ctx, local, geography.borders, free, memory, crisis_log["hold_response"])
+        for i, workers in crisis73.staff(expected_crisis).items():
+            labor[i] += workers
     public_crop = {}
-    if harvest is not None or farm_levels is not None:
+    if harvest is not None or farm_levels is not None or crisis_log is not None:
         from .model import climate_factor
         from .public_harvest import harvest_row, harvest_version
         from .regional_production import audit_production
@@ -465,7 +490,6 @@ def audit62(record, *, geography, previous_record=None, program=None):
         gross_open = {i:{**r["opening"], "soil":after_soil[i]} for i,r in rows.items()}
         gross_close = {i:{**r["opening"], "stock":r["production"]["closing_stock"],
                           **{k:r["closing"][k] for k in ("soil","capital","deposit")}} for i,r in rows.items()}
-        labor = {w["id"]:occupied[w["id"]] + w["workers_reserved"] for w in work["nodes"]}
         weather = {n.id:climate_factor(geography.seed, record["year"], n.id) for n in geography.nations}
         _check(all(r["climate"] == weather[r["owner"]] for r in rows.values()), "crop climate differs from seed")
         audit_production(gross_open, gross_close, {i:r["production"] for i,r in rows.items()},
@@ -495,6 +519,8 @@ def audit62(record, *, geography, previous_record=None, program=None):
     _audit_aid(record,nodes,borders,balances)
     audit_envelope(ctx,record["supply"])
     access = charge_border(ctx,local,borders,geography.width,balances,record["supply"])
+    if crisis_log is not None:
+        access = crisis73.Appeals(access, expected_crisis)
     for r in local:
         p = rows[r.id]["production"]
         r.stock = {g:r.stock[g]+p["produced"][g]-p["used"][g] for g in GOODS}
@@ -511,6 +537,8 @@ def audit62(record, *, geography, previous_record=None, program=None):
            and access.trace()==ctx["physical"], "foreign receipts or migration differ")
     if exchange is not None:
         diffusion72.audit_closing(exchange, record, moves, roads)
+    if crisis_log is not None:
+        _check(canonical_line(expected_crisis) == canonical_line(crisis_log), "unreconciled border crisis decision or expenditure")
     _accounts(record, previous_record)
     _audit_domestic_delivery(record,geography)
     audit_rules61(record, previous_record)
