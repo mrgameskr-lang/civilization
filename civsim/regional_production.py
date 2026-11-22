@@ -7,6 +7,7 @@ from .economy import BASE_PRICES, produce_sectors
 from .investment import ASSETS, HORIZON, LIFE, RECIPES, _book_value, _candidate, _forecast, _spend_upkeep, _target
 from .model import GOODS
 from .rules import Rules
+from .research71 import FARM_BONUS
 
 
 LOCAL_RULES = Rules("reallocate", investment="capital")
@@ -21,7 +22,7 @@ def _care_plan(farmland, soil, stock, workers, enabled):
             "workers": 4*packages, "used": {"food": 0, "ore": packages, "tools": packages}}
 
 
-def _plan(r, climate, care_enabled, workers):
+def _plan(r, climate, care_enabled, workers, farm_bonus):
     opening = r.stock.copy()
     cohorts = r.capital
     operated, upkeep = _spend_upkeep(r, cohorts)
@@ -37,9 +38,9 @@ def _plan(r, climate, care_enabled, workers):
     parts = _target(view, workers, class_limit)
     target = sum(parts.values())
     limits = {"food": r.population + r.population//8, "ore": r.population//20, "tools": target}
-    base = _forecast(view, climate, LOCAL_RULES, workers, target, operated)
+    base = _forecast(view, climate, LOCAL_RULES, workers, target, operated, farm_bonus)
     proposals = {k: _candidate(view, k, climate, LOCAL_RULES, workers, target, operated, base, limits,
-                               parts["farm_wear"], class_limit) for k in ASSETS}
+                               parts["farm_wear"], class_limit, farm_bonus) for k in ASSETS}
     eligible = [k for k in ASSETS if not proposals[k]["constraints"]]
     chosen = max(eligible, key=lambda k: proposals[k]["net_value"]) if eligible else None
     built = {k: int(k == chosen) for k in ASSETS}
@@ -89,14 +90,16 @@ def _allocate(owners, operating, scope):
     return effects
 
 
-def _finish(r, opening, plan, care, effect, climate, workers):
+def _finish(r, opening, plan, care, effect, climate, workers, level):
     workers -= plan["construction_labor"] + care["workers"]
     field_capacity = 20*r.farmland
     added = min(4*r.farmland, 24*plan["operated"]["land"])
     multipliers = {k: 1000 + effect["applied_bonus"][k] for k in BONUS}
+    bonus = FARM_BONUS * (level or 0)
+    multipliers["farm"] += bonus
     reference_view = replace(r, stock=r.stock.copy())
     reference = produce_sectors(reference_view, climate, LOCAL_RULES, workers=workers,
-                                land_capacity=field_capacity, tool_target=plan["tool_target"])
+                                land_capacity=field_capacity, tool_target=plan["tool_target"], farm_multiplier=1000+bonus)
     p = produce_sectors(r, climate, LOCAL_RULES, workers=workers, land_capacity=field_capacity+added,
                         tool_target=plan["tool_target"], farm_multiplier=multipliers["farm"],
                         industry_multiplier=multipliers["industry"])
@@ -111,6 +114,10 @@ def _finish(r, opening, plan, care, effect, climate, workers):
     p.update(opening_stock=opening, soil_after=r.soil, farmland=r.farmland, investment=plan, soil_care=care,
              capital_effect=effect, used={g: sum(post[g] for post in
                  (plan["upkeep_used"], care["used"], plan["build_used"], plan["sector_used"])) for g in GOODS})
+    if level is not None:
+        numerator = (p["active_farmers"] * 32 * r.productivity * r.technology * r.fertility *
+                     p["soil_before"] * climate * p["equipment"])
+        p.update(farm_tech_level=level, food_without_tech=numerator*(multipliers["farm"]-bonus)//(10*1000**7))
     return p
 
 
@@ -120,11 +127,15 @@ def _private_workers(population, assigned):
     return population//2 - assigned
 
 
-def produce_regions(regions, climate_by_owner, investment_scope="regional", soil_care=True, *, public_labor=None):
+def produce_regions(regions, climate_by_owner, investment_scope="regional", soil_care=True, *, public_labor=None,
+                    farm_levels=None):
     """Plan from local opening stocks first; commit all regions together after production."""
     if investment_scope not in ("regional", "national") or type(soil_care) is not bool:
         raise ValueError("expected regional/national investment scope and boolean soil_care")
     originals = {r.id: r for r in regions}
+    if farm_levels is not None and (farm_levels.keys() != originals.keys() or
+                                    any(type(v) is not int or v not in (0, 1) for v in farm_levels.values())):
+        raise ValueError("field-trial levels must cover actual regions and be zero or one")
     public_labor = {} if public_labor is None else public_labor
     if public_labor.keys() - originals.keys():
         raise ValueError("public labor assigned to unknown region")
@@ -147,12 +158,14 @@ def produce_regions(regions, climate_by_owner, investment_scope="regional", soil
         r = replace(source, stock=source.stock.copy(), capital={k:v.copy() for k,v in source.capital.items()})
         working[uid] = r
         workers = _private_workers(r.population, public_labor.get(uid, 0))
-        plans[uid] = _plan(r, climate_by_owner[r.owner], soil_care, workers)
+        level = farm_levels[uid] if farm_levels is not None else 0
+        plans[uid] = _plan(r, climate_by_owner[r.owner], soil_care, workers, FARM_BONUS*level)
         operating[uid] = plans[uid][1]["operated"]
         owners[r.owner].append((uid, workers, r.farmland))
     effects = _allocate(owners, operating, investment_scope)
     traces = {uid: _finish(r, *plans[uid], effects[uid], climate_by_owner[r.owner],
-                           r.population//2 - public_labor.get(uid, 0)) for uid,r in working.items()}
+                           r.population//2 - public_labor.get(uid, 0),
+                           None if farm_levels is None else farm_levels[uid]) for uid,r in working.items()}
     for uid, source in originals.items():
         r = working[uid]
         source.stock, source.capital, source.soil, source.deposit = r.stock, r.capital, r.soil, r.deposit
@@ -205,7 +218,7 @@ def _physical(state, opening, workers, climate, capacity, farm_factor, industry_
     }
 
 
-def _check_host(s, end, p, climate, care_enabled, workers):
+def _check_host(s, end, p, climate, care_enabled, workers, farm_bonus):
     farmland, area, opening = s["farmland"], s["land"], s["stock"]
     if not 0 <= farmland <= area or set(opening) != set(GOODS):
         raise ValueError("invalid regional opening stocks or land")
@@ -250,7 +263,7 @@ def _check_host(s, end, p, climate, care_enabled, workers):
 
     def forecast(equipment):
         return _physical(s,local,workers,climate,20*farmland+min(4*farmland,24*equipment["land"]),
-                         1000+12*equipment["farm"],1000+25*equipment["industry"],target)["closing_stock"]
+                         1000+farm_bonus+12*equipment["farm"],1000+25*equipment["industry"],target)["closing_stock"]
 
     base = forecast(operated)
     _equal(plan["forecast_base_stock"],base,"base forecast")
@@ -299,7 +312,7 @@ def _check_host(s, end, p, climate, care_enabled, workers):
 
 
 def audit_production(opening, closing, traces, climate_by_owner, investment_scope="regional", soil_care=True,
-                     *, public_labor=None):
+                     *, public_labor=None, farm_levels=None):
     """Verify saved country-group effects and every local sector using independent formulas."""
     before, after, rows = ({int(i):v for i,v in source.items()} for source in (opening, closing, traces))
     climate_by_owner = {int(owner): weather for owner, weather in climate_by_owner.items()}
@@ -313,7 +326,8 @@ def audit_production(opening, closing, traces, climate_by_owner, investment_scop
         _equal(s["id"],uid,"region ID")
         owners[s["owner"]].append(uid)
         workers = _private_workers(s["population"], public_labor.get(uid, 0))
-        prepared[uid] = _check_host(s,after[uid],rows[uid],climate_by_owner[s["owner"]],soil_care,workers)
+        level = farm_levels[uid] if farm_levels is not None else 0
+        prepared[uid] = _check_host(s,after[uid],rows[uid],climate_by_owner[s["owner"]],soil_care,workers,FARM_BONUS*level)
     for owner,ids in owners.items():
         eligible = {k:sorted(i for i in ids if before[i]["population"]//2 > public_labor.get(i, 0)
                              and (k=="industry" or before[i]["farmland"]>0))
@@ -340,13 +354,21 @@ def audit_production(opening, closing, traces, climate_by_owner, investment_scop
             extra = min(4*s["farmland"],24*operated["land"])
             cap=20*s["farmland"]
             climate=climate_by_owner[owner]
-            actual=_physical(s,stock,workers,climate,cap+extra,1000+applied["farm"],1000+applied["industry"],target)
-            reference=_physical(s,stock,workers,climate,cap,1000,1000,target)
+            bonus = FARM_BONUS * (farm_levels[uid] if farm_levels is not None else 0)
+            actual=_physical(s,stock,workers,climate,cap+extra,1000+bonus+applied["farm"],1000+applied["industry"],target)
+            reference=_physical(s,stock,workers,climate,cap,1000+bonus,1000,target)
+            if farm_levels is not None:
+                if type(p.get("farm_tech_level")) is not int or type(p.get("food_without_tech")) is not int:
+                    raise ValueError("field-trial production quantities must be integers")
+                untreated = (_physical(s,stock,workers,climate,cap+extra,1000+applied["farm"],1000+applied["industry"],target)
+                             if bonus else actual)
+                _check_fields(p, {"farm_tech_level":farm_levels[uid], "food_without_tech":untreated["produced"]["food"]},
+                              "agricultural technique")
             sector=actual.pop("used")
             _check_fields(p,actual,"posted sector")
             differences={g:actual["produced"][g]-sector[g]-reference["produced"][g]+reference["used"][g] for g in GOODS}
             _check_fields(plan, {"sector_used":sector,"reference_output":reference["produced"],"reference_used":reference["used"],
-                                 "farm_multiplier":1000+applied["farm"],"industry_multiplier":1000+applied["industry"],
+                                 "farm_multiplier":1000+bonus+applied["farm"],"industry_multiplier":1000+applied["industry"],
                                  "added_land_capacity":extra,"net_output_gain":differences,
                                  "gross_gain_value":sum(BASE_PRICES[g]*differences[g] for g in GOODS)},"actual equipment")
             natural = min(1150,max(550,s["soil"]+6-actual["erosion"])) if s["farmland"] else s["soil"]

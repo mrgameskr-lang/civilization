@@ -75,8 +75,8 @@ def _fee(q, distance):
     return (q * distance + 99) // 100
 
 
-def _soil(farmland, soil):
-    treated = min(12, farmland)
+def _soil(farmland, soil, *, max_tiles=12):
+    treated = min(max_tiles, farmland)
     gain = min(max(0, 1150-soil), 24 * treated // max(1, farmland))
     return treated, gain
 
@@ -99,7 +99,7 @@ def _cart(source, target, good, qty, edges, paths, project):
     return {**trip, "owner": project["owner"], "purpose": project["action"], "project_id": project["project_id"]}
 
 
-def execute_works(regions, roads, depots, road_units, decisions, *, width, withheld=None):
+def execute_works(regions, roads, depots, road_units, decisions, *, width, withheld=None, trial_targets=None):
     """Post standing service and one approved discretionary project per country; validate before mutation."""
     nodes, edges, _, paths = _opening(regions, roads, depots, width)
     balances = {i: stock.copy() for i,stock in depots.items()}
@@ -159,7 +159,8 @@ def execute_works(regions, roads, depots, road_units, decisions, *, width, withh
             _check(target in nodes and nodes[target].owner == owner, "foreign or nonexistent soil selection")
             ore, tools, labor = RECIPES["soil"]
             r = nodes[target]
-            treated,gain = _soil(r.farmland, soil[target])
+            field_trial = trial_targets is not None and target in trial_targets
+            treated,gain = _soil(r.farmland, soil[target], max_tiles=6 if field_trial else 12)
             if (gain == 0 or budget["admin_units"] < 1 or budget["workers"] < labor
                     or min(budget["ore"], balances[target]["ore"]) < ore
                     or min(budget["tools"], balances[target]["tools"]) < tools
@@ -167,6 +168,8 @@ def execute_works(regions, roads, depots, road_units, decisions, *, width, withh
                 skipped.append({"owner":owner,"action":action,"target":target})
                 continue
             project = _project("soil",owner,target,target,None,len(projects),treated,gain)
+            if field_trial:
+                project["field_trial"] = True
             balances[target]["ore"] -= ore
             balances[target]["tools"] -= tools
             workers[target] += labor
@@ -176,7 +179,7 @@ def execute_works(regions, roads, depots, road_units, decisions, *, width, withh
     trace = {"projects": projects, "shipments": trips, "roads": rows, "skipped": skipped,
              "nodes": _works_nodes(nodes, depots, balances, soil, workers),
              "cost_food": sum(s["cost_food"] for s in trips)}
-    audit_works(regions,roads,depots,road_units,decisions,trace,width=width,withheld=withheld)
+    audit_works(regions,roads,depots,road_units,decisions,trace,width=width,withheld=withheld,trial_targets=trial_targets)
     for i,r in nodes.items():
         depots[i] = balances[i]
         r.soil = soil[i]
@@ -210,7 +213,7 @@ def _audit_trip(s, nodes, edges, paths):
     return cost
 
 
-def audit_works(regions, roads, depots, road_units, decisions, trace, *, width, withheld=None):
+def audit_works(regions, roads, depots, road_units, decisions, trace, *, width, withheld=None, trial_targets=None):
     nodes, edges, _, paths = _opening(regions, roads, depots, width)
     withheld = {} if withheld is None else withheld
     _check(withheld.keys()<=nodes.keys() and all(_count(n) and n<=nodes[i].population//2 for i,n in withheld.items()),
@@ -232,8 +235,10 @@ def audit_works(regions, roads, depots, road_units, decisions, trace, *, width, 
         workers[t] += labor
         _check(workers[t]+withheld.get(t,0)<=nodes[t].population//2, "builders spent twice or unavailable")
         project_freight = 0
+        trial = action == "soil" and trial_targets is not None and t in trial_targets
+        _check(p.get("field_trial", False) is trial, "unapproved field trial or missing trial receipt")
         if action=="soil":
-            treated,gain = _soil(nodes[t].farmland, soil[t])
+            treated,gain = _soil(nodes[t].farmland, soil[t], max_tiles=6 if trial else 12)
             _check(s==t and p["edge"] is None and gain>0 and p["treated_tiles"]==treated and p["soil_gain"]==gain,
                    "soil area, location or gain mismatch")
             soil[t] += gain

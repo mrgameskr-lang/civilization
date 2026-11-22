@@ -1,0 +1,28 @@
+{
+  "comparison_commit": "39a64cbbbe768e86babe104200f602b36ab25f39",
+  "research_enabled": false,
+  "worlds": [
+    {
+      "seed": 0,
+      "years_replayed": 200,
+      "event_count": 799,
+      "command": "python -m civsim chronicle studies/chronicle7/long/seed-0/save.json --format json",
+      "journal_sha256": "68e52998ab104c4ba0844abb6051dd2667d6d72e1b9099f78fa21818bedd7942",
+      "report_sha256": "671a6a512be2a1f4e9d99f15d24f75858da80ff707ca7419c97889e7ae5780a8",
+      "full_markdown_sha256": "18eb5a8d46e557824ddd7c8bbe1aa0e7978130e084966667f65f45fcea99b490",
+      "highlights_markdown_sha256": "aaa2b36684927f7a95d41dafb635fe2b9ca0389c1e0fddecf55a9868a8df40a2",
+      "matched_pr28_full_report_and_both_markdown_views": true
+    },
+    {
+      "seed": 20,
+      "years_replayed": 200,
+      "event_count": 790,
+      "command": "python -m civsim chronicle studies/chronicle7/long/seed-20/save.json --format json",
+      "journal_sha256": "0a4cb9ea746c50f0f1f8458cb3da83f23a7bc01f5878d0686305301eeac07e55",
+      "report_sha256": "c4d590c2f39f7192de08b98c8c5954c222346f9662916792412ab2387608521b",
+      "full_markdown_sha256": "fd47c4523807ddc340e503224023f8f445e14ce05d8a762069cf65bd66b3f623",
+      "highlights_markdown_sha256": "cd9c0cde756f96d2bde86128e73c3a61e92a0e7be2e0f46716a5d1bf6cd9cc99",
+      "matched_pr28_full_report_and_both_markdown_views": true
+    }
+  ]
+}

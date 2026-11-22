@@ -1,0 +1,125 @@
+{
+  "source_save": "seed0-year6.json",
+  "seed": 0,
+  "years": 6,
+  "events": [
+    {
+      "application": {
+        "evidence": {
+          "adoption_year": {
+            "pointer": "/research/regions/28/adoption_year",
+            "value": 5
+          },
+          "farm_tech_level": {
+            "pointer": "/regions/28/production/farm_tech_level",
+            "value": 1
+          },
+          "first_application": {
+            "pointer": "/research/regions/28/first_application",
+            "value": true
+          },
+          "food_produced": {
+            "pointer": "/regions/28/production/produced/food",
+            "value": 7248
+          },
+          "food_without_tech": {
+            "pointer": "/regions/28/production/food_without_tech",
+            "value": 7037
+          },
+          "owner": {
+            "pointer": "/regions/28/owner",
+            "value": 7
+          },
+          "region": {
+            "pointer": "/regions/28/id",
+            "value": 28
+          }
+        },
+        "record_sha256": "bf4cc9284f44b5dde09b77cb911f619414413f74fce08c5ca2127d780708228e",
+        "year": 6
+      },
+      "counterparty": null,
+      "country": 7,
+      "description": "이 지역이 연말에 새 농법을 습득해 농법 수준이 0에서 1로 올랐다. 시험에 누적 노동 4인년, 광석 2단위, 도구 2단위를 썼다.",
+      "evidence": {
+        "adoption_year": {
+          "pointer": "/research/regions/28/adoption_year",
+          "value": 5
+        },
+        "country_name": {
+          "pointer": "/countries/7/opening/name",
+          "value": "타비르"
+        },
+        "cumulative_ore": {
+          "pointer": "/research/regions/28/cumulative_ore",
+          "value": 2
+        },
+        "cumulative_tools": {
+          "pointer": "/research/regions/28/cumulative_tools",
+          "value": 2
+        },
+        "cumulative_workers": {
+          "pointer": "/research/regions/28/cumulative_workers",
+          "value": 4
+        },
+        "id": {
+          "pointer": "/research/regions/28/id",
+          "value": 28
+        },
+        "level_after": {
+          "pointer": "/research/regions/28/level_after",
+          "value": 1
+        },
+        "level_before": {
+          "pointer": "/research/regions/28/level_before",
+          "value": 0
+        },
+        "owner": {
+          "pointer": "/research/regions/28/owner",
+          "value": 7
+        },
+        "project_id": {
+          "pointer": "/research/regions/28/project_id",
+          "value": 0
+        },
+        "project_ore_total": {
+          "pointer": "/government/works/projects/0/used/ore",
+          "value": 2
+        },
+        "project_target": {
+          "pointer": "/government/works/projects/0/target",
+          "value": 28
+        },
+        "project_tools_total": {
+          "pointer": "/government/works/projects/0/used/tools",
+          "value": 2
+        },
+        "project_trial": {
+          "pointer": "/government/works/projects/0/field_trial",
+          "value": true
+        },
+        "project_workers_total": {
+          "pointer": "/government/works/projects/0/workers",
+          "value": 4
+        },
+        "trial_ore": {
+          "pointer": "/research/regions/28/trial_ore",
+          "value": 1
+        },
+        "trial_tools": {
+          "pointer": "/research/regions/28/trial_tools",
+          "value": 1
+        },
+        "trial_workers": {
+          "pointer": "/research/regions/28/trial_workers",
+          "value": 2
+        }
+      },
+      "importance": 90,
+      "kind": "farm_tech_adoption",
+      "record_sha256": "1124cec5f56ad41d5d323a282fac93a688222073173095f2837256762f0f99ce",
+      "region": 28,
+      "year": 5
+    }
+  ]
+}

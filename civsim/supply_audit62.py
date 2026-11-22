@@ -346,7 +346,7 @@ def audit62(record, *, geography, previous_record=None, program=None):
                 ctx = entry.get("diplomacy",{})
                 _check(ctx.get("phase61",{}).get("arm")=="F" and ctx.get("intervention") is None
                        and "supply" not in entry and "service" not in entry and "unit_upkeep" not in entry
-                       and "public_harvest" not in entry and "emergency_relief" not in entry,
+                       and "public_harvest" not in entry and "emergency_relief" not in entry and "research" not in entry,
                        "control requires the ordinary historical F policy")
         audit_fiscal61(record, geography=geography, previous_record=previous_record)
         _audit_domestic_delivery(record,geography)
@@ -418,7 +418,9 @@ def audit62(record, *, geography, previous_record=None, program=None):
     withheld = withheld_labor(local,record["collective"])
     duty = {r["id"]:r for r in record.get("service",{}).get("regions",[])}
     occupied = {i:w+(duty[i]["serving"] if duty else 0) for i,w in withheld.items()}
-    audit_works(local,roads,initial,units,plans,work,width=geography.width,withheld=occupied)
+    from .research71 import audit as audit_research
+    trial_targets, farm_levels = audit_research(record, previous_record, local, plans)
+    audit_works(local,roads,initial,units,plans,work,width=geography.width,withheld=occupied,trial_targets=trial_targets)
     balances = {r["id"]:r["depot_close"].copy() for r in work["nodes"]}
     after_works = {(e["a"],e["b"]):e["remaining"] for e in work["roads"]}
     after_soil = {w["id"]:w["soil_close"] for w in work["nodes"]}
@@ -449,7 +451,7 @@ def audit62(record, *, geography, previous_record=None, program=None):
                 balances[i][g] -= r["used"][g]
     borders = _network(ctx["physical"], nodes)
     public_crop = {}
-    if harvest is not None:
+    if harvest is not None or farm_levels is not None:
         from .model import climate_factor
         from .public_harvest import harvest_row, harvest_version
         from .regional_production import audit_production
@@ -463,7 +465,8 @@ def audit62(record, *, geography, previous_record=None, program=None):
         weather = {n.id:climate_factor(geography.seed, record["year"], n.id) for n in geography.nations}
         _check(all(r["climate"] == weather[r["owner"]] for r in rows.values()), "crop climate differs from seed")
         audit_production(gross_open, gross_close, {i:r["production"] for i,r in rows.items()},
-                         weather, public_labor=labor)
+                         weather, public_labor=labor, farm_levels=farm_levels)
+    if harvest is not None:
         reserve_days = RESERVE_POLICIES.get(reserve_policy)
         version = harvest_version(reserve_days)
         expected = [harvest_row(i, rows[i]["owner"], rows[i]["production"], initial[i], balances[i], reserve_days=reserve_days)

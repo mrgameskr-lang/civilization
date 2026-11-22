@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 
 from .chronicle_event import resolve
+from .chronicle_research import farm_adoptions, farm_applications
 from .storage import canonical_line
 
 
@@ -35,14 +36,8 @@ def _episode(candidate):
     return (candidate.kind, candidate.country, candidate.region, candidate.counterparty)
 
 
-def _entry(row, digest, candidate):
+def _evidence(row, pointers):
     evidence = {}
-    pointers = candidate.evidence.copy()
-    for index, country in enumerate(row.get("countries", ())):
-        if country["id"] == candidate.country:
-            pointers["country_name"] = f"/countries/{index}/opening/name"
-        if country["id"] == candidate.counterparty:
-            pointers["counterparty_name"] = f"/countries/{index}/opening/name"
     for label, pointer in pointers.items():
         value = resolve(row, pointer)
         if isinstance(value, (dict, list)):
@@ -50,10 +45,20 @@ def _entry(row, digest, candidate):
         evidence[label] = {"pointer": pointer, "value": value}
     if not evidence:
         raise ValueError("chronicle entry has no evidence")
+    return evidence
+
+
+def _entry(row, digest, candidate):
+    pointers = candidate.evidence.copy()
+    for index, country in enumerate(row.get("countries", ())):
+        if country["id"] == candidate.country:
+            pointers["country_name"] = f"/countries/{index}/opening/name"
+        if country["id"] == candidate.counterparty:
+            pointers["counterparty_name"] = f"/countries/{index}/opening/name"
     return {"year": row["year"], "country": candidate.country, "region": candidate.region,
             "counterparty": candidate.counterparty, "kind": candidate.kind,
             "importance": candidate.importance, "description": candidate.description,
-            "record_sha256": digest, "evidence": evidence}
+            "record_sha256": digest, "evidence": _evidence(row, pointers)}
 
 
 class Chronicle:
@@ -63,6 +68,7 @@ class Chronicle:
         self._year = self._total = self._repeats = self._excluded = 0
         self._episodes = {}
         self._events = []
+        self._awaiting_application = {}
 
     def observe(self, row):
         year = row["year"]
@@ -80,15 +86,30 @@ class Chronicle:
                     continue
             eligible.append(candidate)
         selected = eligible[:YEAR_LIMIT]
-        digest = sha256(canonical_line(row)).hexdigest() if selected else None
+        advances = sorted(farm_adoptions(row), key=_order)
+        applications = list(farm_applications(row))
+        digest = sha256(canonical_line(row)).hexdigest() if selected or advances or applications else None
         entries = [_entry(row, digest, candidate) for candidate in selected]
+        # Every attained level is history, even during a year with four other headlines.
+        milestones = [_entry(row, digest, candidate) for candidate in advances]
+        resolved = {}
+        for key, pointers in applications:
+            if key not in self._awaiting_application or key in resolved:
+                raise ValueError("first farm application has no unique preceding completion")
+            resolved[key] = {"year": year, "record_sha256": digest, "evidence": _evidence(row, pointers)}
+        for key, application in resolved.items():
+            self._awaiting_application.pop(key)["application"] = application
+        for event in milestones:
+            event["application"] = None
+            self._awaiting_application[event["country"], event["region"], year] = event
         for candidate in selected:
             if candidate.kind in EPISODES:
                 ongoing[_episode(candidate)] = candidate.importance
         self._episodes = ongoing
         self._events.extend(entries)
+        self._events.extend(milestones)
         self._year = year
-        self._total += len(candidates)
+        self._total += len(candidates) + len(advances)
         self._repeats += len(candidates) - len(eligible)
         self._excluded += len(eligible) - len(selected)
 
@@ -112,7 +133,7 @@ def _location(event):
 def _source_pointer(event):
     facts = event["evidence"]
     # Prefer the quantity behind the statement over an identity or classification.
-    for key in ("food_unmet", "closing_population", "seats", "participants", "quantity"):
+    for key in ("food_unmet", "closing_population", "seats", "participants", "quantity", "level_after"):
         if key in facts:
             return facts[key]["pointer"]
     keys = sorted(facts)
@@ -121,8 +142,17 @@ def _source_pointer(event):
 
 
 def _markdown_event(event):
-    return (f"**{_location(event)}** · {event['description']} "
-            f"(`{_source_pointer(event)}`)")
+    text = f"**{_location(event)}** · {event['description']} (`{_source_pointer(event)}`)"
+    if event["kind"] == "farm_tech_adoption":
+        application = event["application"]
+        if application is None:
+            return f"{text} 첫 적용 예정 연도는 {event['year'] + 1}년이다. 해당 생산 원장은 아직 관측되지 않았다."
+        food = application["evidence"]["food_produced"]
+        without = application["evidence"]["food_without_tech"]["value"]
+        return (f"{text} {application['year']}년 첫 적용 때 이 지역의 식량 생산량은 "
+                f"{food['value']:,}단위였다. 같은 투입으로 기존 농법을 계산한 값은 {without:,}단위다. "
+                f"(`{food['pointer']}`)")
+    return text
 
 
 def render_markdown(report):

@@ -1,0 +1,716 @@
+[
+  {
+    "checkpoints": [
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 13697,
+        "arm": "off",
+        "base_technology": 850,
+        "cabinet": "mutualists",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 556811,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 578850,
+        "ore": 34183,
+        "other_fiscal_choice": 0,
+        "owner": 2,
+        "paid_trial": 0,
+        "population": 14420,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 14304,
+        "seed": 22,
+        "support_points": 6876123,
+        "tools": 8433,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 5,
+        "unmet": 24408,
+        "urgent_hunger": 0,
+        "year": 50
+      },
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 13553,
+        "arm": "off",
+        "base_technology": 850,
+        "cabinet": "mutualists",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 1209288,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 1303356,
+        "ore": 79776,
+        "other_fiscal_choice": 0,
+        "owner": 2,
+        "paid_trial": 0,
+        "population": 15382,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 15412,
+        "seed": 22,
+        "support_points": 7249035,
+        "tools": 19166,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 7,
+        "unmet": 101460,
+        "urgent_hunger": 0,
+        "year": 100
+      },
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 13034,
+        "arm": "off",
+        "base_technology": 850,
+        "cabinet": "stewards",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 2512888,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 2767361,
+        "ore": 172586,
+        "other_fiscal_choice": 0,
+        "owner": 2,
+        "paid_trial": 0,
+        "population": 15237,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 15331,
+        "seed": 22,
+        "support_points": 7041892,
+        "tools": 40707,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 10,
+        "unmet": 275137,
+        "urgent_hunger": 0,
+        "year": 200
+      },
+      {
+        "advanced_regions": 1,
+        "already_learned": 47,
+        "annual_food": 14007,
+        "arm": "research",
+        "base_technology": 850,
+        "cabinet": "mutualists",
+        "first_adoption": 3,
+        "fixed_inputs_food_gain": 8107,
+        "food": 565296,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 585612,
+        "ore": 35087,
+        "other_fiscal_choice": 151,
+        "owner": 2,
+        "paid_trial": 2,
+        "population": 14657,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 14531,
+        "seed": 22,
+        "support_points": 7002944,
+        "tools": 8490,
+        "trial_ore": 2,
+        "trial_tools": 2,
+        "trial_workers": 4,
+        "trials": 2,
+        "turnovers": 7,
+        "unmet": 22899,
+        "urgent_hunger": 0,
+        "year": 50
+      },
+      {
+        "advanced_regions": 1,
+        "already_learned": 97,
+        "annual_food": 13765,
+        "arm": "research",
+        "base_technology": 850,
+        "cabinet": "mutualists",
+        "first_adoption": 3,
+        "fixed_inputs_food_gain": 16755,
+        "food": 1226312,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 1319599,
+        "ore": 81956,
+        "other_fiscal_choice": 300,
+        "owner": 2,
+        "paid_trial": 3,
+        "population": 15575,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 15600,
+        "seed": 22,
+        "support_points": 7345220,
+        "tools": 19246,
+        "trial_ore": 3,
+        "trial_tools": 3,
+        "trial_workers": 6,
+        "trials": 3,
+        "turnovers": 9,
+        "unmet": 101297,
+        "urgent_hunger": 0,
+        "year": 100
+      },
+      {
+        "advanced_regions": 2,
+        "already_learned": 282,
+        "annual_food": 13286,
+        "arm": "research",
+        "base_technology": 850,
+        "cabinet": "stewards",
+        "first_adoption": 3,
+        "fixed_inputs_food_gain": 40535,
+        "food": 2553765,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 2806205,
+        "ore": 177766,
+        "other_fiscal_choice": 513,
+        "owner": 2,
+        "paid_trial": 5,
+        "population": 15543,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 15638,
+        "seed": 22,
+        "support_points": 7202914,
+        "tools": 40849,
+        "trial_ore": 5,
+        "trial_tools": 5,
+        "trial_workers": 10,
+        "trials": 5,
+        "turnovers": 12,
+        "unmet": 275080,
+        "urgent_hunger": 0,
+        "year": 200
+      }
+    ],
+    "chronicles": {
+      "off": {
+        "events_by_kind": {
+          "collective_action": 67,
+          "government_turnover": 10,
+          "large_relief": 32,
+          "population_rise": 1,
+          "trade_pact_started": 2
+        },
+        "first_advance": null,
+        "first_other": {
+          "counterparty": 3,
+          "country": 2,
+          "description": "두 나라 사이의 무역 협정 1건이 체결됐다.",
+          "evidence": {
+            "counterparty": {
+              "pointer": "/diplomacy/events/5/b",
+              "value": 3
+            },
+            "counterparty_name": {
+              "pointer": "/countries/3/opening/name",
+              "value": "다르온"
+            },
+            "country": {
+              "pointer": "/diplomacy/events/5/a",
+              "value": 2
+            },
+            "country_name": {
+              "pointer": "/countries/2/opening/name",
+              "value": "세린"
+            },
+            "event": {
+              "pointer": "/diplomacy/events/5/kind",
+              "value": "pact_started"
+            },
+            "quantity": {
+              "pointer": "/diplomacy/events/5/quantity",
+              "value": 1
+            }
+          },
+          "importance": 77,
+          "kind": "trade_pact_started",
+          "record_sha256": "05d32fa35c61404cebc85c11327a742f6966137786ca41a2d23e7a433293ce2e",
+          "region": null,
+          "year": 3
+        }
+      },
+      "research": {
+        "events_by_kind": {
+          "collective_action": 65,
+          "farm_tech_adoption": 2,
+          "government_turnover": 12,
+          "large_relief": 16,
+          "population_rise": 2,
+          "trade_pact_started": 3
+        },
+        "first_advance": {
+          "application": {
+            "evidence": {
+              "adoption_year": {
+                "pointer": "/research/regions/8/adoption_year",
+                "value": 3
+              },
+              "farm_tech_level": {
+                "pointer": "/regions/8/production/farm_tech_level",
+                "value": 1
+              },
+              "first_application": {
+                "pointer": "/research/regions/8/first_application",
+                "value": true
+              },
+              "food_produced": {
+                "pointer": "/regions/8/production/produced/food",
+                "value": 5292
+              },
+              "food_without_tech": {
+                "pointer": "/regions/8/production/food_without_tech",
+                "value": 5138
+              },
+              "owner": {
+                "pointer": "/regions/8/owner",
+                "value": 2
+              },
+              "region": {
+                "pointer": "/regions/8/id",
+                "value": 8
+              }
+            },
+            "record_sha256": "1866ef3ace76770385d959f6f35f24939f4aabb3ce1678e1bf97fab52a1841c5",
+            "year": 4
+          },
+          "counterparty": null,
+          "country": 2,
+          "description": "이 지역이 연말에 새 농법을 습득해 농법 수준이 0에서 1로 올랐다. 시험에 누적 노동 4인년, 광석 2단위, 도구 2단위를 썼다.",
+          "evidence": {
+            "adoption_year": {
+              "pointer": "/research/regions/8/adoption_year",
+              "value": 3
+            },
+            "country_name": {
+              "pointer": "/countries/2/opening/name",
+              "value": "세린"
+            },
+            "cumulative_ore": {
+              "pointer": "/research/regions/8/cumulative_ore",
+              "value": 2
+            },
+            "cumulative_tools": {
+              "pointer": "/research/regions/8/cumulative_tools",
+              "value": 2
+            },
+            "cumulative_workers": {
+              "pointer": "/research/regions/8/cumulative_workers",
+              "value": 4
+            },
+            "id": {
+              "pointer": "/research/regions/8/id",
+              "value": 8
+            },
+            "level_after": {
+              "pointer": "/research/regions/8/level_after",
+              "value": 1
+            },
+            "level_before": {
+              "pointer": "/research/regions/8/level_before",
+              "value": 0
+            },
+            "owner": {
+              "pointer": "/research/regions/8/owner",
+              "value": 2
+            },
+            "project_id": {
+              "pointer": "/research/regions/8/project_id",
+              "value": 0
+            },
+            "project_ore_total": {
+              "pointer": "/government/works/projects/0/used/ore",
+              "value": 2
+            },
+            "project_target": {
+              "pointer": "/government/works/projects/0/target",
+              "value": 8
+            },
+            "project_tools_total": {
+              "pointer": "/government/works/projects/0/used/tools",
+              "value": 2
+            },
+            "project_trial": {
+              "pointer": "/government/works/projects/0/field_trial",
+              "value": true
+            },
+            "project_workers_total": {
+              "pointer": "/government/works/projects/0/workers",
+              "value": 4
+            },
+            "trial_ore": {
+              "pointer": "/research/regions/8/trial_ore",
+              "value": 1
+            },
+            "trial_tools": {
+              "pointer": "/research/regions/8/trial_tools",
+              "value": 1
+            },
+            "trial_workers": {
+              "pointer": "/research/regions/8/trial_workers",
+              "value": 2
+            }
+          },
+          "importance": 90,
+          "kind": "farm_tech_adoption",
+          "record_sha256": "2bbab2830df913a40ddb1135688bab6d5d1c2fe32f27e55ba16b5d743f4b18a9",
+          "region": 8,
+          "year": 3
+        },
+        "first_other": {
+          "counterparty": 3,
+          "country": 2,
+          "description": "두 나라 사이의 무역 협정 1건이 체결됐다.",
+          "evidence": {
+            "counterparty": {
+              "pointer": "/diplomacy/events/5/b",
+              "value": 3
+            },
+            "counterparty_name": {
+              "pointer": "/countries/3/opening/name",
+              "value": "다르온"
+            },
+            "country": {
+              "pointer": "/diplomacy/events/5/a",
+              "value": 2
+            },
+            "country_name": {
+              "pointer": "/countries/2/opening/name",
+              "value": "세린"
+            },
+            "event": {
+              "pointer": "/diplomacy/events/5/kind",
+              "value": "pact_started"
+            },
+            "quantity": {
+              "pointer": "/diplomacy/events/5/quantity",
+              "value": 1
+            }
+          },
+          "importance": 77,
+          "kind": "trade_pact_started",
+          "record_sha256": "2bbab2830df913a40ddb1135688bab6d5d1c2fe32f27e55ba16b5d743f4b18a9",
+          "region": null,
+          "year": 3
+        }
+      }
+    },
+    "owner": 2,
+    "seed": 22
+  },
+  {
+    "checkpoints": [
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 18322,
+        "arm": "off",
+        "base_technology": 1038,
+        "cabinet": "stewards",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 709226,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 715669,
+        "ore": 44932,
+        "other_fiscal_choice": 0,
+        "owner": 2,
+        "paid_trial": 0,
+        "population": 18522,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 18251,
+        "seed": 37,
+        "support_points": 8982113,
+        "tools": 8966,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 5,
+        "unmet": 25041,
+        "urgent_hunger": 0,
+        "year": 50
+      },
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 18126,
+        "arm": "off",
+        "base_technology": 1038,
+        "cabinet": "mutualists",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 1499927,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 1606075,
+        "ore": 103356,
+        "other_fiscal_choice": 0,
+        "owner": 2,
+        "paid_trial": 0,
+        "population": 18012,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 17729,
+        "seed": 37,
+        "support_points": 8590319,
+        "tools": 20146,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 6,
+        "unmet": 132004,
+        "urgent_hunger": 0,
+        "year": 100
+      },
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 15487,
+        "arm": "off",
+        "base_technology": 1038,
+        "cabinet": "mutualists",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 3018671,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 3316842,
+        "ore": 211004,
+        "other_fiscal_choice": 0,
+        "owner": 2,
+        "paid_trial": 0,
+        "population": 17045,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 17016,
+        "seed": 37,
+        "support_points": 7864458,
+        "tools": 42932,
+        "trial_ore": 0,
+        "trial_tools": 0,
+        "trial_workers": 0,
+        "trials": 0,
+        "turnovers": 12,
+        "unmet": 337447,
+        "urgent_hunger": 0,
+        "year": 200
+      },
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 18157,
+        "arm": "research",
+        "base_technology": 1038,
+        "cabinet": "stewards",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 709744,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 717009,
+        "ore": 45057,
+        "other_fiscal_choice": 199,
+        "owner": 2,
+        "paid_trial": 1,
+        "population": 18521,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 18265,
+        "seed": 37,
+        "support_points": 8973051,
+        "tools": 8986,
+        "trial_ore": 1,
+        "trial_tools": 1,
+        "trial_workers": 2,
+        "trials": 1,
+        "turnovers": 5,
+        "unmet": 25345,
+        "urgent_hunger": 0,
+        "year": 50
+      },
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 18027,
+        "arm": "research",
+        "base_technology": 1038,
+        "cabinet": "mutualists",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 1500200,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 1607710,
+        "ore": 103396,
+        "other_fiscal_choice": 399,
+        "owner": 2,
+        "paid_trial": 1,
+        "population": 18004,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 17719,
+        "seed": 37,
+        "support_points": 8577232,
+        "tools": 20176,
+        "trial_ore": 1,
+        "trial_tools": 1,
+        "trial_workers": 2,
+        "trials": 1,
+        "turnovers": 6,
+        "unmet": 132402,
+        "urgent_hunger": 0,
+        "year": 100
+      },
+      {
+        "advanced_regions": 0,
+        "already_learned": 0,
+        "annual_food": 15438,
+        "arm": "research",
+        "base_technology": 1038,
+        "cabinet": "mutualists",
+        "first_adoption": 0,
+        "fixed_inputs_food_gain": 0,
+        "food": 3019100,
+        "insufficient_expected_return": 0,
+        "name": "세린",
+        "need": 3318514,
+        "ore": 211060,
+        "other_fiscal_choice": 797,
+        "owner": 2,
+        "paid_trial": 3,
+        "population": 17028,
+        "project_unfunded": 0,
+        "regions": 4,
+        "represented_members": 17022,
+        "seed": 37,
+        "support_points": 7890135,
+        "tools": 42942,
+        "trial_ore": 3,
+        "trial_tools": 3,
+        "trial_workers": 6,
+        "trials": 3,
+        "turnovers": 12,
+        "unmet": 337820,
+        "urgent_hunger": 0,
+        "year": 200
+      }
+    ],
+    "chronicles": {
+      "off": {
+        "events_by_kind": {
+          "collective_action": 56,
+          "government_turnover": 12,
+          "large_relief": 11,
+          "population_rise": 4,
+          "trade_pact_started": 6
+        },
+        "first_advance": null,
+        "first_other": {
+          "counterparty": 3,
+          "country": 2,
+          "description": "두 나라 사이의 무역 협정 1건이 체결됐다.",
+          "evidence": {
+            "counterparty": {
+              "pointer": "/diplomacy/events/4/b",
+              "value": 3
+            },
+            "counterparty_name": {
+              "pointer": "/countries/3/opening/name",
+              "value": "다르온"
+            },
+            "country": {
+              "pointer": "/diplomacy/events/4/a",
+              "value": 2
+            },
+            "country_name": {
+              "pointer": "/countries/2/opening/name",
+              "value": "세린"
+            },
+            "event": {
+              "pointer": "/diplomacy/events/4/kind",
+              "value": "pact_started"
+            },
+            "quantity": {
+              "pointer": "/diplomacy/events/4/quantity",
+              "value": 1
+            }
+          },
+          "importance": 77,
+          "kind": "trade_pact_started",
+          "record_sha256": "a8d70ae058d68f2a017351bb11ffeafc2cb38b1cbbc5ad03a6f9c65ce008bba6",
+          "region": null,
+          "year": 3
+        }
+      },
+      "research": {
+        "events_by_kind": {
+          "collective_action": 67,
+          "government_turnover": 12,
+          "large_relief": 11,
+          "population_rise": 4,
+          "trade_pact_started": 5
+        },
+        "first_advance": null,
+        "first_other": {
+          "counterparty": 3,
+          "country": 2,
+          "description": "두 나라 사이의 무역 협정 1건이 체결됐다.",
+          "evidence": {
+            "counterparty": {
+              "pointer": "/diplomacy/events/4/b",
+              "value": 3
+            },
+            "counterparty_name": {
+              "pointer": "/countries/3/opening/name",
+              "value": "다르온"
+            },
+            "country": {
+              "pointer": "/diplomacy/events/4/a",
+              "value": 2
+            },
+            "country_name": {
+              "pointer": "/countries/2/opening/name",
+              "value": "세린"
+            },
+            "event": {
+              "pointer": "/diplomacy/events/4/kind",
+              "value": "pact_started"
+            },
+            "quantity": {
+              "pointer": "/diplomacy/events/4/quantity",
+              "value": 1
+            }
+          },
+          "importance": 77,
+          "kind": "trade_pact_started",
+          "record_sha256": "1ae0fc9f2ad22d125c5adc75fea664c5a4eba86d158ccdb6813191596bbe72ce",
+          "region": null,
+          "year": 3
+        }
+      }
+    },
+    "owner": 2,
+    "seed": 37
+  }
+]

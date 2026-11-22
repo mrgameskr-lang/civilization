@@ -1,0 +1,250 @@
+{
+  "hold": {
+    "applied_level": 0,
+    "food": 6847,
+    "food_pointer": "/regions/28/production/produced/food",
+    "food_without_tech": 6847,
+    "global_cash": 355436,
+    "owner": 7,
+    "political_faction": "builders",
+    "population": 6953,
+    "record_sha256": "de166b1cc03c38be03dc11c2a332d393cdfc9c57054495fb8f749ae39c513e9b",
+    "region": 28,
+    "trial_receipt": {
+      "adoption_year": null,
+      "closing_trials": 1,
+      "cumulative_ore": 1,
+      "cumulative_tools": 1,
+      "cumulative_workers": 2,
+      "expected_food_per_trial": 298,
+      "first_application": false,
+      "foregone_food_estimate": 15,
+      "id": 28,
+      "level_after": 0,
+      "level_before": 0,
+      "opening_adoption_year": null,
+      "opening_trials": 1,
+      "owner": 7,
+      "previous_production_level": 0,
+      "project_id": null,
+      "reason": "diagnostic_hold",
+      "trial_ore": 0,
+      "trial_tools": 0,
+      "trial_workers": 0
+    },
+    "works_node": {
+      "depot_close": {
+        "food": 501,
+        "ore": 17,
+        "tools": 145
+      },
+      "depot_open": {
+        "food": 501,
+        "ore": 19,
+        "tools": 147
+      },
+      "id": 28,
+      "owner": 7,
+      "soil_close": 928,
+      "soil_open": 925,
+      "workers_reserved": 4
+    },
+    "works_project": {
+      "action": "soil",
+      "edge": null,
+      "owner": 7,
+      "project_id": 0,
+      "soil_gain": 3,
+      "source": 28,
+      "target": 28,
+      "treated_tiles": 12,
+      "used": {
+        "food": 0,
+        "ore": 2,
+        "tools": 2
+      },
+      "workers": 4
+    },
+    "year": 5
+  },
+  "hold_next": {
+    "applied_level": 0,
+    "food": 7052,
+    "food_pointer": "/regions/28/production/produced/food",
+    "food_without_tech": 7052,
+    "global_cash": 355436,
+    "owner": 7,
+    "political_faction": "builders",
+    "population": 7064,
+    "record_sha256": "d10b8a3e8a88983ebe31718d198d1d5cdf05b472447e8ee4f37e4eae05f42358",
+    "region": 28,
+    "trial_receipt": {
+      "adoption_year": null,
+      "closing_trials": 1,
+      "cumulative_ore": 1,
+      "cumulative_tools": 1,
+      "cumulative_workers": 2,
+      "expected_food_per_trial": 308,
+      "first_application": false,
+      "foregone_food_estimate": 15,
+      "id": 28,
+      "level_after": 0,
+      "level_before": 0,
+      "opening_adoption_year": null,
+      "opening_trials": 1,
+      "owner": 7,
+      "previous_production_level": 0,
+      "project_id": null,
+      "reason": "other_fiscal_choice",
+      "trial_ore": 0,
+      "trial_tools": 0,
+      "trial_workers": 0
+    },
+    "works_node": {
+      "depot_close": {
+        "food": 587,
+        "ore": 45,
+        "tools": 180
+      },
+      "depot_open": {
+        "food": 587,
+        "ore": 45,
+        "tools": 180
+      },
+      "id": 28,
+      "owner": 7,
+      "soil_close": 934,
+      "soil_open": 934,
+      "workers_reserved": 0
+    },
+    "works_project": null,
+    "year": 6
+  },
+  "intervention": "defer field trials for one turn only; other appropriations and later autonomy unchanged",
+  "invest": {
+    "applied_level": 0,
+    "food": 6832,
+    "food_pointer": "/regions/28/production/produced/food",
+    "food_without_tech": 6832,
+    "global_cash": 355436,
+    "owner": 7,
+    "political_faction": "builders",
+    "population": 6953,
+    "record_sha256": "1124cec5f56ad41d5d323a282fac93a688222073173095f2837256762f0f99ce",
+    "region": 28,
+    "trial_receipt": {
+      "adoption_year": 5,
+      "closing_trials": 2,
+      "cumulative_ore": 2,
+      "cumulative_tools": 2,
+      "cumulative_workers": 4,
+      "expected_food_per_trial": 298,
+      "first_application": false,
+      "foregone_food_estimate": 15,
+      "id": 28,
+      "level_after": 1,
+      "level_before": 0,
+      "opening_adoption_year": null,
+      "opening_trials": 1,
+      "owner": 7,
+      "previous_production_level": 0,
+      "project_id": 0,
+      "reason": "paid_trial",
+      "trial_ore": 1,
+      "trial_tools": 1,
+      "trial_workers": 2
+    },
+    "works_node": {
+      "depot_close": {
+        "food": 501,
+        "ore": 17,
+        "tools": 145
+      },
+      "depot_open": {
+        "food": 501,
+        "ore": 19,
+        "tools": 147
+      },
+      "id": 28,
+      "owner": 7,
+      "soil_close": 926,
+      "soil_open": 925,
+      "workers_reserved": 4
+    },
+    "works_project": {
+      "action": "soil",
+      "edge": null,
+      "field_trial": true,
+      "owner": 7,
+      "project_id": 0,
+      "soil_gain": 1,
+      "source": 28,
+      "target": 28,
+      "treated_tiles": 6,
+      "used": {
+        "food": 0,
+        "ore": 2,
+        "tools": 2
+      },
+      "workers": 4
+    },
+    "year": 5
+  },
+  "invest_next": {
+    "applied_level": 1,
+    "food": 7248,
+    "food_pointer": "/regions/28/production/produced/food",
+    "food_without_tech": 7037,
+    "global_cash": 355436,
+    "owner": 7,
+    "political_faction": "builders",
+    "population": 7064,
+    "record_sha256": "bf4cc9284f44b5dde09b77cb911f619414413f74fce08c5ca2127d780708228e",
+    "region": 28,
+    "trial_receipt": {
+      "adoption_year": 5,
+      "closing_trials": 2,
+      "cumulative_ore": 2,
+      "cumulative_tools": 2,
+      "cumulative_workers": 4,
+      "expected_food_per_trial": 307,
+      "first_application": true,
+      "foregone_food_estimate": 15,
+      "id": 28,
+      "level_after": 1,
+      "level_before": 1,
+      "opening_adoption_year": 5,
+      "opening_trials": 2,
+      "owner": 7,
+      "previous_production_level": 0,
+      "project_id": null,
+      "reason": "already_learned",
+      "trial_ore": 0,
+      "trial_tools": 0,
+      "trial_workers": 0
+    },
+    "works_node": {
+      "depot_close": {
+        "food": 573,
+        "ore": 45,
+        "tools": 180
+      },
+      "depot_open": {
+        "food": 573,
+        "ore": 45,
+        "tools": 180
+      },
+      "id": 28,
+      "owner": 7,
+      "soil_close": 932,
+      "soil_open": 932,
+      "workers_reserved": 0
+    },
+    "works_project": null,
+    "year": 6
+  },
+  "matched_opening_sha256": "8b49afe3ea4224e04f81903477743078363194a8f584f687dc86eab67072e5fc",
+  "region": 28,
+  "seed": 0,
+  "year": 5
+}
