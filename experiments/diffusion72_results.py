@@ -8,7 +8,7 @@ from statistics import mean, median
 
 from civsim.annual_game import create
 from experiments.diffusion72 import ARMS, CHECKPOINTS, METRICS
-from experiments.research71 import write_json
+from experiments.research71 import ROOT, write_json
 
 
 def read_csv(path):
@@ -65,12 +65,23 @@ def summarize(folder):
     countries = read_csv(folder / "countries.csv")
     regions = read_csv(folder / "regions.csv")
     pairs = json.loads((folder / "paired.json").read_bytes())
+    previous = read_csv(ROOT / "studies/research71/long/countries.csv")
+    def key(row):
+        return row["seed"], row["year"], row["owner"]
+    controls = {key(row): row for row in countries if row["arm"] == "research"}
+    archived = {key(row): row for row in previous if row["arm"] == "research"}
+    if controls.keys() != archived.keys() or len(controls) != 40 * 3 * 8:
+        raise ValueError("missing a published research-control country checkpoint")
+    for identity, old in archived.items():
+        for field, value in old.items():
+            if controls[identity][field] != value:
+                raise ValueError(f"7.1 country measurement differs at {identity} for {field}")
     degree = Counter()
     for seed in range(40):
         world = create(seed).economy.world
         count = Counter(i for edge in world.roads for i in (edge.a, edge.b))
         degree.update(count[r.id] for r in world.regions)
-    return {"domestic_road_degree": dict(degree), "cohorts": [
+    return {"archived_country_checkpoints_verified": len(controls), "domestic_road_degree": dict(degree), "cohorts": [
         cohort(countries, regions, pairs, start, year) for start in (0, 20) for year in CHECKPOINTS]}
 
 

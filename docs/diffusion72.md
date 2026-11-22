@@ -36,3 +36,14 @@ python -m civsim chronicle examples/diffusion72/seed2-year17.json --format json
 | 다음 해 수확·동일 투입 비교 | `/regions/{순번}/production`의 `farm_tech_level`, `produced/food`, `food_without_tech` |
 
 경로 차단 진단인 `--block-migration 16 19`는 지정한 한 해에 두 지역 사이의 양방향 주민 이동을 막는다. 같은 도로의 화물 운송은 원래 규칙을 따르며 다른 이주로를 이용한 인구 이동도 가능하다. 이 차단은 실제 지역별 인구도 바꿀 수 있다. 열린 길과 닫힌 길의 전체 수확 차이에는 이주에 따른 경제 변화가 포함된다. 농법의 직접 효과는 해당 수확에서 투입을 고정한 차이로 읽는다. [시드별 비교와 반례](diffusion72-results.md)
+
+## 원자료 재검산
+
+```console
+python -X utf8 -m experiments.check_diffusion72 studies/diffusion72/long
+python -X utf8 -m experiments.replay_diffusion72_legacy
+python -X utf8 -m experiments.replay_diffusion72_off --workers 5 --out replay72/no-research.json
+python -X utf8 -m unittest discover -v
+```
+
+첫 명령은 시작 세계 40개를 다시 만들고 보고 자료의 지역·국가 합계, 사건·저장 해시, 짝지은 세계 차이를 대조한다. 두 번째는 두 시드에서 7.0·7.1의 저장을 불러와 실제로 800년을 재생한다. 세 번째는 연구·전파를 모두 끈 40개 세계를 원래 시드부터 새로 실행하여 PR #29의 기초·기말 상태, 연대기, 연간 원장 해시를 담은 저장의 해시와 대조한다. [원자료 검산 결과](../studies/diffusion72/accounts.json) · [보관 파일 재생 결과](../studies/diffusion72/compatibility.json)
