@@ -184,4 +184,14 @@ def audit_game(record, geography, previous=None):
     from .posting_engine65 import audit_households
     _check(record.get("unit_game",{}).get("version")==VERSION, "missing annual game record")
     audit62(record, geography=geography, previous_record=previous)
+    if "crisis" in record:
+        # The archived census checker reads all civilian public labor from one sequence
+        # of (target, workers) entries. Project these two independently audited job books
+        # onto that input without changing the fiscal ledger or any source receipt.
+        from .crisis73 import staff
+        government = record["government"]
+        works = government["works"]
+        desk_jobs = [{"target": site, "workers": n} for site, n in staff(record["crisis"]).items()]
+        jobs = [*works["projects"], *desk_jobs]
+        record = {**record, "government": {**government, "works": {**works, "projects": jobs}}}
     audit_households(record,previous=previous)

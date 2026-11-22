@@ -81,7 +81,9 @@ class CivilBorderTests(unittest.TestCase):
         held = deepcopy(game)
         actual = step_game(game)
         control = step_game(held, hold_response=True)
+        original_works = deepcopy(actual["government"]["works"])
         audit_game(actual, game.economy.world, previous=previous)
+        self.assertEqual(actual["government"]["works"], original_works)
         audit_game(control, held.economy.world, previous=previous)
         i, pair = next((i, p) for i, p in enumerate(actual["crisis"]["pairs"]) if p["staffed"])
         self.assertEqual((pair["a"], pair["b"], pair["road"], pair["workers"], pair["people_released"]),

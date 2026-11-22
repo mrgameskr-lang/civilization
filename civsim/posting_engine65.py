@@ -77,9 +77,6 @@ def audit_households(record,previous=None):
     for job in record["government"]["works"]["projects"]:
         _require(job["target"] in regions and _natural(job["workers"]),"project worker receipt")
         projects[job["target"]]+=job["workers"]
-    if "crisis" in record:
-        from .crisis73 import staff as appeal_staff
-        projects.update(appeal_staff(record["crisis"]))
     people=[SimpleNamespace(id=i,owner=r["owner"],population=r["opening"]["population"]) for i,r in regions.items()]
     withheld=withheld_labor(people,record["collective"])
     if previous is not None:
