@@ -27,4 +27,5 @@ jobs:
       - run: python -m civsim verify examples/phase5c/seed0-elections
       - run: python -m civsim verify examples/phase5d/seed0-actions
       - run: python -m civsim verify examples/phase6a/seed0-diplomacy
+      - run: python -m civsim verify samples/phase6a1/seed0-capped
 

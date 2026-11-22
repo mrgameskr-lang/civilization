@@ -11,7 +11,9 @@ from .storage import verify_run, write_run
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(prog="python -m civsim", description="자율 문명 시뮬레이션")
+    parser = argparse.ArgumentParser(prog="python -m civsim", description="자율 문명 시뮬레이션",
+        epilog="6.0A.1 생성은 python -m civsim.aid61 --help, 연간 게임은 "
+               "python -m civsim.annual_game --help에서 확인하세요.")
     commands = parser.add_subparsers(dest="command", required=True)
     run = commands.add_parser("run", help="새 디렉터리에 세계 지도와 연간 원장 저장")
     run.add_argument("--out", required=True, type=Path, help="새 실행 디렉터리")
@@ -77,11 +79,11 @@ def main() -> int:
     diplomacy.add_argument("--per-nation", type=int, default=4)
     diplomacy.add_argument("--arm", choices=("A", "B", "C", "D"), default="D")
 
-    analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
+    analyze = commands.add_parser("analyze", help="1.0~6.0A 연간 기록의 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
 
-    verify = commands.add_parser("verify", help="같은 조건으로 재실행해 원장 대조")
+    verify = commands.add_parser("verify", help="1.0~6.0B2의 저장 디렉터리를 재실행해 원장 대조")
     verify.add_argument("directory", type=Path, help="실행 디렉터리")
     args = parser.parse_args()
 

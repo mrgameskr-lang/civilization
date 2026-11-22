@@ -111,6 +111,16 @@ def verify_run(directory):
     """Audit stored ledgers, regenerate the map and every trace, return exact file SHA-256."""
     path = Path(directory)
     meta = _manifest(path)
+    if meta.get("model_version") == "6.0A.1":
+        from .aid61 import verify_run61
+        return verify_run61(path)
+    if meta.get("model_version") == "6.0B1":
+        from .depot62_cli import archive
+        return archive(path)
+    if meta.get("model_version") == "6.0B2":
+        from .depot62_cli import archive
+        from . import peace62
+        return archive(path, model="6.0B2", arms=("A", "B", "C", "D"), engine=peace62)
     if meta.get("model_version") == "6.0A":
         from .diplomacy_storage import verify_diplomacy
         return verify_diplomacy(path, meta)

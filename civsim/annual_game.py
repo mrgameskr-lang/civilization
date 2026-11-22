@@ -52,11 +52,15 @@ def save(path, journal, away, upkeep=None, *, public_farm=False, reserve_policy=
     save_json_slot(path,slot)
 
 
-def load(path, *, observer=None):
+def load(path, *, observer=None, observers=()):
+    observers = tuple(observers)
+    if observer is not None:
+        observers = (observer, *observers)
+
     def replay_step(game,command):
         row = play(game,command)
-        if observer is not None:
-            observer.observe(row)
+        for active in observers:
+            active.observe(row)
         return row
 
     slot = json.loads(path.read_bytes())
@@ -99,9 +103,11 @@ def main(argv=None):
     advance.add_argument("--relief-first",action="store_true",help="give domestic relief first claim on inventory")
     advance.add_argument("--public-farm",action="store_true",help="assign part of the existing crop to local reserves from this year")
     advance.add_argument("--reserve-policy",choices=RESERVE_POLICIES,help="select a lower harvest target or conditional emergency relief")
+    advance.add_argument("--relief-benefits",action="store_true",help="include this year's audited household receipts from ordinary and emergency relief")
     show = commands.add_parser("show",help="replay and check a save")
     show.add_argument("save",type=Path)
     show.add_argument("--custody",action="store_true",help="include audited meal, office and population receipts")
+    show.add_argument("--relief-benefits",action="store_true",help="include direct political relief benefits by region for every saved year")
     args = parser.parse_args(argv)
     try:
         if args.action == "new":
@@ -109,11 +115,17 @@ def main(argv=None):
             save(args.out,journal,[])
             result = {"seed":args.seed,"year":0,"closing_away":[]}
         else:
-            observer = None
+            observers = []
+            custody = benefits = None
             if args.action == "show" and args.custody:
                 from .regional_custody import CustodyObserver
-                observer = CustodyObserver()
-            journal, game = load(args.save,observer=observer)
+                custody = CustodyObserver()
+                observers.append(custody)
+            if args.action == "show" and args.relief_benefits:
+                from .relief_benefits import ReliefBenefitsObserver
+                benefits = ReliefBenefitsObserver()
+                observers.append(benefits)
+            journal, game = load(args.save,observers=observers)
             if args.action == "show":
                 result = {"seed":journal["seed"],"year":game.economy.world.year,"closing_away":game.away}
                 if game.economy.game_upkeep is not None:
@@ -122,8 +134,10 @@ def main(argv=None):
                     result["public_farm"] = True
                 if game.economy.reserve_policy is not None:
                     result["reserve_policy"] = game.economy.reserve_policy
-                if observer is not None:
-                    result["custody"] = observer.latest
+                if custody is not None:
+                    result["custody"] = custody.latest
+                if benefits is not None:
+                    result["relief_benefits"] = benefits.report()
             else:
                 command = asdict(Move(*args.move)) if args.move is not None else None
                 if args.upkeep is not None:
@@ -140,9 +154,14 @@ def main(argv=None):
                     if args.reserve_policy:
                         command["reserve_policy"] = args.reserve_policy
                 row = play(game,command)
+                if args.relief_benefits:
+                    from .relief_benefits import VERSION, relief_benefits
+                    benefit_report = {"version":VERSION, "years":[relief_benefits(row)]}
                 save(args.out,append_turn(journal,command,row),game.away,game.economy.game_upkeep,
                      public_farm=game.economy.public_farm, reserve_policy=game.economy.reserve_policy)
                 result = {"year":row["year"],**row["unit_game"]}
+                if args.relief_benefits:
+                    result["relief_benefits"] = benefit_report
                 if "unit_upkeep" in row:
                     result["unit_upkeep"] = row["unit_upkeep"]
                 if "public_harvest" in row:
