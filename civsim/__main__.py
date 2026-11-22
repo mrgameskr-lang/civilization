@@ -29,6 +29,17 @@ def main() -> int:
     run.add_argument("--policy31", choices=("off", *POLICIES31), default="off",
                      help="3.1 실물투자 규칙. --investment capital과 함께 선택")
 
+    regional = commands.add_parser("regional", help="4.0 지역 생산·도로 운송 원장 저장")
+    regional.add_argument("--out", required=True, type=Path)
+    regional.add_argument("--seed", type=int, default=42)
+    regional.add_argument("--years", type=int, default=50)
+    regional.add_argument("--per-nation", type=int, default=4)
+    regional.add_argument("--logistics", choices=("limited", "unlimited"), default="limited")
+    regional.add_argument("--investment-scope", choices=("regional", "national"), default="regional")
+    regional.add_argument("--no-soil-care", action="store_true")
+    regional.add_argument("--close-road", action="append", default=[], metavar="A-B",
+                          help="해당 국내 도로 폐쇄. 지역 번호 두 개를 작은 순서로 지정")
+
     analyze = commands.add_parser("analyze", help="연간 기록을 읽어 JSON 요약 출력")
     analyze.add_argument("directory", type=Path, help="실행 디렉터리")
     analyze.add_argument("--csv", type=Path, help="국가별 연간 지표를 저장할 새 CSV 파일")
@@ -44,6 +55,13 @@ def main() -> int:
             write_run(args.out, seed=args.seed, width=args.width, height=args.height,
                       nations=args.nations, years=args.years, rules=rules)
             print(f"{args.years}년 실행 기록을 저장했습니다. {args.out.resolve()}")
+        elif args.command == "regional":
+            from .regional_engine import RegionalPolicy
+            from .regional_storage import write_regional_run
+            closed = tuple(sorted(tuple(int(i) for i in edge.split("-")) for edge in args.close_road))
+            policy = RegionalPolicy(args.logistics, args.investment_scope, not args.no_soil_care, closed)
+            write_regional_run(args.out, seed=args.seed, years=args.years, per_nation=args.per_nation, policy=policy)
+            print(f"4.0 지역 원장을 저장했습니다. {args.out.resolve()}")
         elif args.command == "analyze":
             totals = summary(args.directory)
             if args.csv is not None:
