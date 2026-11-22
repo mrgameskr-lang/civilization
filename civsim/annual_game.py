@@ -7,6 +7,7 @@ from pathlib import Path
 from .game_journal import append_turn, new_journal, restore_journal, save_json_slot
 from .model import generate_world
 from .peace62 import start62
+from .public_harvest import RESERVE_POLICIES
 from .regions import regionalize
 from .storage import canonical_line
 from .unit_economy import AnnualUnitGame, Move, step_game
@@ -20,28 +21,34 @@ def play(game, command):
     selection = None
     priority = None
     public_farm = None
-    if isinstance(command, dict) and ("upkeep" in command or "public_farm" in command):
+    reserve_policy = None
+    if isinstance(command, dict) and command.keys() & {"upkeep","public_farm","reserve_policy"}:
         from .unit_upkeep import Upkeep
-        if "move" not in command or command.keys() - {"upkeep", "move", "relief_first", "public_farm"}:
+        if "move" not in command or command.keys() - {"upkeep", "move", "relief_first", "public_farm","reserve_policy"}:
             raise ValueError("invalid game inventory command")
         priority = command.get("relief_first")
         if "upkeep" in command:
             selection = Upkeep(**command["upkeep"])
         public_farm = command.get("public_farm")
+        reserve_policy = command.get("reserve_policy")
         command = command["move"]
     record = step_game(game, None if command is None else Move(**command), upkeep=selection,
-                       relief_first=priority, public_farm=public_farm)
+                       relief_first=priority, public_farm=public_farm, reserve_policy=reserve_policy)
     # Historical annual records contain tuples and integer keys. Use exactly
     # their published JSON representation at the journal boundary.
     return json.loads(canonical_line(record))
 
 
-def save(path, journal, away, upkeep=None, *, public_farm=False):
+def save(path, journal, away, upkeep=None, *, public_farm=False, reserve_policy=None):
     slot = {"schema":"annual-game/1","journal":journal,"closing_away":away}
     if upkeep is not None:
         slot.update(schema="annual-game/2", game_upkeep=upkeep)
     if public_farm:
         slot.update(schema="annual-game/3", public_farm=True)
+    if reserve_policy is not None:
+        if not public_farm or reserve_policy not in RESERVE_POLICIES:
+            raise ValueError("invalid saved reserve policy")
+        slot.update(schema="annual-game/4", reserve_policy=reserve_policy)
     save_json_slot(path,slot)
 
 
@@ -58,14 +65,17 @@ def load(path, *, observer=None):
         return slot, restore_journal(slot,create,replay_step)
     fields = {"schema","journal","closing_away"}
     schemas = {"annual-game/1":fields, "annual-game/2":fields | {"game_upkeep"}}
-    harvest_slot = type(slot) is dict and slot.get("schema") == "annual-game/3"
+    harvest_slot = type(slot) is dict and slot.get("schema") in ("annual-game/3","annual-game/4")
     if harvest_slot:
         schemas["annual-game/3"] = fields | {"public_farm"} | ({"game_upkeep"} if "game_upkeep" in slot else set())
+        schemas["annual-game/4"] = schemas["annual-game/3"] | {"reserve_policy"}
     if type(slot) is not dict or slot.keys() != schemas.get(slot.get("schema")) or (harvest_slot and slot["public_farm"] is not True):
         raise ValueError("invalid annual game save")
     game = restore_journal(slot["journal"],create,replay_step)
     if harvest_slot != game.economy.public_farm:
         raise ValueError("saved public harvest rule disagrees with replay")
+    if slot.get("reserve_policy") != game.economy.reserve_policy or (slot["schema"] == "annual-game/4" and game.economy.reserve_policy is None):
+        raise ValueError("saved reserve policy disagrees with replay")
     if canonical_line(slot["closing_away"])!=canonical_line(game.away):
         raise ValueError("saved locations disagree with the replayed closing ledger")
     if (("game_upkeep" in slot) != (game.economy.game_upkeep is not None)
@@ -88,6 +98,7 @@ def main(argv=None):
     advance.add_argument("--out",type=Path,required=True)
     advance.add_argument("--relief-first",action="store_true",help="give domestic relief first claim on inventory")
     advance.add_argument("--public-farm",action="store_true",help="assign part of the existing crop to local reserves from this year")
+    advance.add_argument("--reserve-policy",choices=RESERVE_POLICIES,help="select a lower harvest target or conditional emergency relief")
     show = commands.add_parser("show",help="replay and check a save")
     show.add_argument("save",type=Path)
     show.add_argument("--custody",action="store_true",help="include audited meal, office and population receipts")
@@ -109,6 +120,8 @@ def main(argv=None):
                     result["game_upkeep"] = game.economy.game_upkeep
                 if game.economy.public_farm:
                     result["public_farm"] = True
+                if game.economy.reserve_policy is not None:
+                    result["reserve_policy"] = game.economy.reserve_policy
                 if observer is not None:
                     result["custody"] = observer.latest
             else:
@@ -120,18 +133,22 @@ def main(argv=None):
                     if args.upkeep is None:
                         raise ValueError("--relief-first requires --upkeep HOME COUNT at activation")
                     command["relief_first"] = True
-                if args.public_farm:
+                if args.public_farm or args.reserve_policy:
                     if args.upkeep is None:
                         command = {"move":command}
                     command["public_farm"] = True
+                    if args.reserve_policy:
+                        command["reserve_policy"] = args.reserve_policy
                 row = play(game,command)
                 save(args.out,append_turn(journal,command,row),game.away,game.economy.game_upkeep,
-                     public_farm=game.economy.public_farm)
+                     public_farm=game.economy.public_farm, reserve_policy=game.economy.reserve_policy)
                 result = {"year":row["year"],**row["unit_game"]}
                 if "unit_upkeep" in row:
                     result["unit_upkeep"] = row["unit_upkeep"]
                 if "public_harvest" in row:
                     result["public_harvest"] = row["public_harvest"]
+                if "emergency_relief" in row:
+                    result["emergency_relief"] = row["emergency_relief"]
         print(json.dumps(result,sort_keys=True))
     except (ValueError,OSError,TypeError) as exc:
         parser.exit(2,f"{parser.prog}: {exc}\n")

@@ -15,6 +15,7 @@ from .government_audit import _check
 from .logistics import ship
 from .model import climate_factor
 from .politics import political_ledger
+from .public_harvest import RESERVE_POLICIES
 from .public_works import ROAD_BONUS, execute_relief, execute_works, residual_roads
 from .regional_engine import _audit_residents, _copy, audit_borders, state
 from .regional_production import audit_production, produce_regions
@@ -32,6 +33,7 @@ class SupplyWorld:
     unit_positions: tuple | None = None
     game_upkeep: dict | None = None
     public_farm: bool = False
+    reserve_policy: str | None = None
 
     @property
     def world(self):
@@ -52,12 +54,14 @@ def snapshot62(sim):
         base = {**base, "game_upkeep":deepcopy(sim.game_upkeep)}
     if sim.public_farm:
         base = {**base, "public_farm":True}
+    if sim.reserve_policy is not None:
+        base = {**base, "reserve_policy":sim.reserve_policy}
     return {**base, "public_arm":sim.arm,
             "service_roster":[[i,n] for i,n in sorted((sim.roster or {}).items())]}
 
 
 def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None,
-             unit_input=None, upkeep=None, relief_first=False, public_farm=False):
+             unit_input=None, upkeep=None, relief_first=False, public_farm=False, reserve_policy=None):
     ctx = _context(sim.engine, year, _mode('F'), None)
     collective = sim.engine.collective
     race = collective.competition
@@ -110,7 +114,7 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     audit_production(prod_open,produced,prod,climate,public_labor=reserved)
     if public_farm:
         from .public_harvest import apply_public_harvest
-        harvest = apply_public_harvest(local, prod, depots, fiscal.depots)
+        harvest = apply_public_harvest(local, prod, depots, fiscal.depots, reserve_days=RESERVE_POLICIES.get(reserve_policy))
         produced = {r.id:state(r) for r in local}
     foreign = charge_border(ctx, local, trial.borders, trial.width, depots, supply)
     market = border_market(local,trial.borders,access=foreign)
@@ -130,7 +134,12 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     relief,left = execute_relief(local,roads,depots,decisions,after_move,admin,width=trial.width)
     if relief_first:
         kit = settle(upkeep, previous, unit_turn, service, depots, relief_first=True)
-    freight = ship(local,residual_roads(roads,left),"limited",width=trial.width)
+    after_emergency = left
+    if reserve_policy == "emergency":
+        from .emergency_relief import execute_emergency_relief
+        paid = {r["id"]:r["ration_food"] for r in service["regions"]} if service else dict.fromkeys(opening, 0)
+        emergency, after_emergency = execute_emergency_relief(local, roads, depots, left, relief, paid, width=trial.width)
+    freight = ship(local,residual_roads(roads,after_emergency),"limited",width=trial.width)
     if service is not None:
         program.apply_service_rations(service, local)
     delivered = {r.id:r.stock.copy() for r in local}
@@ -173,6 +182,8 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
                           "private_use":civil["used"],"unused":civil["remaining"]})
         if unit_turn is not None:
             edge_rows[-1]["unit_use"] = residual[key]-after_move[key]
+        if reserve_policy == "emergency":
+            edge_rows[-1]["emergency_use"] = left[key]-after_emergency[key]
     gov = {"mode":mode_fiscal,"depots":warehouses,"levies":levies,"works":works,"relief":relief,"roads":edge_rows}
     ctx["physical"] = foreign.trace()
     record.update(government=gov,diplomacy=ctx)
@@ -182,6 +193,10 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     if public_farm:
         record["public_policy"]["harvest_rule"] = harvest["version"]
         record["public_harvest"] = harvest
+    if reserve_policy is not None:
+        record["public_policy"]["reserve_policy"] = reserve_policy
+    if reserve_policy == "emergency":
+        record["emergency_relief"] = emergency
     if service is not None:
         record["service"] = service
     if unit_turn is not None:
@@ -212,8 +227,16 @@ def _require(sim, year, arm):
 
 
 def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkeep=None, relief_first=None,
-              public_farm=None):
+              public_farm=None, reserve_policy=None):
     _require(sim, year, arm)
+    _check(reserve_policy is None or (type(reserve_policy) is str and reserve_policy in RESERVE_POLICIES),
+           "unknown public reserve policy")
+    _check(sim.reserve_policy is None or reserve_policy in (None, sim.reserve_policy), "reserve policy changed mid-run")
+    reserve_policy = sim.reserve_policy if reserve_policy is None else reserve_policy
+    if reserve_policy is not None:
+        _check(public_farm is not False, "reserve policy uses public harvests")
+        if public_farm is None:
+            public_farm = True
     _check(public_farm is None or type(public_farm) is bool, "expected a boolean public farm selection")
     _check(not sim.public_farm or public_farm is not False, "cannot remove elected harvest rule mid-run")
     public_farm = sim.public_farm if public_farm is None else public_farm
@@ -238,7 +261,8 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
         record = step61(sim.engine, year, "F")
     else:
         fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input,
-                                  upkeep=upkeep, relief_first=relief_first, public_farm=public_farm)
+                                  upkeep=upkeep, relief_first=relief_first, public_farm=public_farm,
+                                  reserve_policy=reserve_policy)
         pairs = {(p["a"],p["b"]):deepcopy(p["closing"]) for p in record["diplomacy"]["pairs"]}
         _commit_collective(sim.engine.collective, fiscal, record)
         sim.engine.pairs, sim.engine.arm = pairs, "F"
@@ -252,6 +276,7 @@ def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None, upkee
                 sim.game_upkeep["priority"] = "relief_first"
     sim.arm = arm
     sim.public_farm = public_farm
+    sim.reserve_policy = reserve_policy
     return record
 
 

@@ -22,6 +22,8 @@
 
 ## 실행
 
+공공 경작 목표를 7일·14일로 낮추거나, 남은 비축으로 주민 비상 구호를 집행할 수 있다. [정책과 구호 회계](docs/reserve-relief-rules.md) · [같은 연초 대조와 장기 결과](docs/reserve-relief-results.md)
+
 주민 보호선을 유지한 상태에서 공공 경작과 식량 비축을 시험할 수 있다. [작물·노동 회계와 실행법](docs/food-reserve-rules.md) · [40개 세계의 장기 결과](docs/food-reserve-results.md)
 
 유닛 유지비와 국내 구호가 같은 창고에서 경쟁할 때 집행 순서를 선택할 수 있다. [선택 방법, 장기 보급 병목, 주민 생활 대조](docs/relief-priority.md)에 실제 시드별 원장과 재현 명령이 있다.

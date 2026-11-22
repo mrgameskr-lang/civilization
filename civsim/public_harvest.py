@@ -12,7 +12,17 @@ from .model import GOODS
 
 
 VERSION = 'public-harvest/1'
+RESERVE_POLICIES = {"7-day": 7, "14-day": 14, "emergency": None}
 DENOMINATOR = 10 * 1000**7
+
+
+def harvest_version(reserve_days=None):
+    """Identify the historical population-share rule or one of the two day targets."""
+    if reserve_days is None:
+        return VERSION
+    if type(reserve_days) is not int or reserve_days not in (7, 14):
+        raise ValueError('reserve_days must be None, 7, or 14')
+    return f'public-harvest/2-d{reserve_days}'
 
 
 def _count(value, name):
@@ -27,13 +37,14 @@ def _goods(stock):
     return {good: _count(stock[good], good) for good in GOODS}
 
 
-def harvest_row(region_id, owner, production, opening_depot, depot_before):
+def harvest_row(region_id, owner, production, opening_depot, depot_before, *, reserve_days=None):
     """Reconstruct a single region's harvest without changing any of its inputs.
 
     The year-opening depot triggers work. The depot immediately before harvest
     provides the current storage headroom. The full production record still
     represents the gross crop, before the two owners receive their respective shares.
     """
+    harvest_version(reserve_days)
     p = production
     region_id, owner = _count(region_id, 'region ID'), _count(owner, 'owner')
     initial = _goods(opening_depot)
@@ -56,7 +67,7 @@ def harvest_row(region_id, owner, production, opening_depot, depot_before):
     if full != _count(p['produced']['food'], 'posted harvest') or private['food'] < full:
         raise ValueError('posted crop differs from physical yield or gross inventory')
 
-    target = population // 8
+    target = population // 8 if reserve_days is None else population * reserve_days // 365
     store_limit = _bounds(population)[1]['food']
     headroom = max(0, min(target, store_limit) - depot['food'])
     worker_limit = active // 8 if initial['food'] < target else 0
@@ -71,7 +82,7 @@ def harvest_row(region_id, owner, production, opening_depot, depot_before):
     if not public_food:
         public_workers = 0
 
-    return {
+    row = {
         'id': region_id, 'owner': owner, 'population': population,
         'annual_open_food': initial['food'], 'reserve_target': target, 'storage_limit': store_limit,
         'headroom': headroom, 'eligible_worker_limit': worker_limit,
@@ -84,15 +95,19 @@ def harvest_row(region_id, owner, production, opening_depot, depot_before):
         'private_before': private, 'private_after': {**private, 'food': private['food'] - public_food},
         'depot_before': depot, 'depot_after': {**depot, 'food': depot['food'] + public_food},
     }
+    if reserve_days is not None:
+        row['reserve_days'] = reserve_days
+    return row
 
 
-def apply_public_harvest(regions, production, depots, opening_depots):
+def apply_public_harvest(regions, production, depots, opening_depots, *, reserve_days=None):
     """Assign each gross crop once after production and before trade or collection.
 
     Compute and validate all entries before posting. Only the live stock accounts
     change. The regional production trace and the separate year-opening depot
     snapshot are retained for independent replay.
     """
+    version = harvest_version(reserve_days)
     homes = {}
     for region in regions:
         if region.id in homes:
@@ -105,10 +120,10 @@ def apply_public_harvest(regions, production, depots, opening_depots):
         p = production[i]
         if r.population != p['population'] or r.stock != p['closing_stock']:
             raise ValueError('live private store or population differs from the gross production boundary')
-        rows.append(harvest_row(i, r.owner, p, opening_depots[i], depots[i]))
+        rows.append(harvest_row(i, r.owner, p, opening_depots[i], depots[i], reserve_days=reserve_days))
     for row in rows:
         if row['food_public']:
             i = row['id']
             homes[i].stock = row['private_after'].copy()
             depots[i] = row['depot_after'].copy()
-    return {'version': VERSION, 'regions': rows}
+    return {'version': version, 'regions': rows}
