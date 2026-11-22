@@ -1,0 +1,701 @@
+{
+  "year": 1,
+  "seed_range_inclusive": [
+    0,
+    19
+  ],
+  "world_pairs": 20,
+  "region_pairs": 640,
+  "increased": 18,
+  "unchanged": 622,
+  "decreased": 0,
+  "changed_regions": [
+    {
+      "seed": 0,
+      "owner": 0,
+      "region": 0,
+      "none": 1220,
+      "integrated": 1239,
+      "difference": 19
+    },
+    {
+      "seed": 0,
+      "owner": 3,
+      "region": 12,
+      "none": 1732,
+      "integrated": 1743,
+      "difference": 11
+    },
+    {
+      "seed": 2,
+      "owner": 5,
+      "region": 20,
+      "none": 918,
+      "integrated": 955,
+      "difference": 37
+    },
+    {
+      "seed": 3,
+      "owner": 7,
+      "region": 28,
+      "none": 893,
+      "integrated": 910,
+      "difference": 17
+    },
+    {
+      "seed": 5,
+      "owner": 3,
+      "region": 12,
+      "none": 260,
+      "integrated": 265,
+      "difference": 5
+    },
+    {
+      "seed": 6,
+      "owner": 0,
+      "region": 0,
+      "none": 135,
+      "integrated": 158,
+      "difference": 23
+    },
+    {
+      "seed": 9,
+      "owner": 5,
+      "region": 20,
+      "none": 1671,
+      "integrated": 1683,
+      "difference": 12
+    },
+    {
+      "seed": 11,
+      "owner": 2,
+      "region": 8,
+      "none": 349,
+      "integrated": 383,
+      "difference": 34
+    },
+    {
+      "seed": 12,
+      "owner": 2,
+      "region": 8,
+      "none": 247,
+      "integrated": 263,
+      "difference": 16
+    },
+    {
+      "seed": 12,
+      "owner": 7,
+      "region": 28,
+      "none": 1601,
+      "integrated": 1631,
+      "difference": 30
+    },
+    {
+      "seed": 14,
+      "owner": 2,
+      "region": 8,
+      "none": 711,
+      "integrated": 743,
+      "difference": 32
+    },
+    {
+      "seed": 14,
+      "owner": 3,
+      "region": 12,
+      "none": 1758,
+      "integrated": 1759,
+      "difference": 1
+    },
+    {
+      "seed": 15,
+      "owner": 1,
+      "region": 4,
+      "none": 55,
+      "integrated": 75,
+      "difference": 20
+    },
+    {
+      "seed": 16,
+      "owner": 0,
+      "region": 0,
+      "none": 1281,
+      "integrated": 1293,
+      "difference": 12
+    },
+    {
+      "seed": 16,
+      "owner": 6,
+      "region": 24,
+      "none": 1797,
+      "integrated": 1822,
+      "difference": 25
+    },
+    {
+      "seed": 17,
+      "owner": 4,
+      "region": 16,
+      "none": 250,
+      "integrated": 270,
+      "difference": 20
+    },
+    {
+      "seed": 17,
+      "owner": 5,
+      "region": 20,
+      "none": 388,
+      "integrated": 398,
+      "difference": 10
+    },
+    {
+      "seed": 18,
+      "owner": 6,
+      "region": 24,
+      "none": 721,
+      "integrated": 732,
+      "difference": 11
+    }
+  ],
+  "largest_increase": {
+    "seed": 2,
+    "owner": 5,
+    "region": 20,
+    "none": 918,
+    "integrated": 955,
+    "difference": 37,
+    "initial_fiscal_sha256": "7600ed6655a29f6249d432fbbbcd08898f28776235bd506e48dea93878d01d03",
+    "arms": {
+      "none": {
+        "decision": "defer",
+        "regions": [
+          {
+            "region": 20,
+            "food_before_tax": 4892,
+            "protected_food": 7571,
+            "standing_food_tax": 0,
+            "extra_food_tax": 0,
+            "food_after_tax": 4892,
+            "private_food_before_meal": 5812,
+            "meal": {
+              "opening_food": 5812,
+              "food_need": 6730,
+              "food_eaten": 5812,
+              "food_spoiled": 0,
+              "food_unmet": 918,
+              "used": {
+                "food": 5812,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_spoiled_food": 0,
+            "depot_closing_food": 0
+          },
+          {
+            "region": 21,
+            "food_before_tax": 1717,
+            "protected_food": 1407,
+            "standing_food_tax": 0,
+            "extra_food_tax": 0,
+            "food_after_tax": 1717,
+            "private_food_before_meal": 1251,
+            "meal": {
+              "opening_food": 1251,
+              "food_need": 1251,
+              "food_eaten": 1251,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 1251,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_spoiled_food": 0,
+            "depot_closing_food": 0
+          },
+          {
+            "region": 22,
+            "food_before_tax": 1064,
+            "protected_food": 891,
+            "standing_food_tax": 0,
+            "extra_food_tax": 0,
+            "food_after_tax": 1064,
+            "private_food_before_meal": 792,
+            "meal": {
+              "opening_food": 792,
+              "food_need": 792,
+              "food_eaten": 792,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 792,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_spoiled_food": 0,
+            "depot_closing_food": 0
+          },
+          {
+            "region": 23,
+            "food_before_tax": 1099,
+            "protected_food": 903,
+            "standing_food_tax": 0,
+            "extra_food_tax": 0,
+            "food_after_tax": 1099,
+            "private_food_before_meal": 803,
+            "meal": {
+              "opening_food": 803,
+              "food_need": 803,
+              "food_eaten": 803,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 803,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_spoiled_food": 0,
+            "depot_closing_food": 0
+          }
+        ],
+        "food_shipments_to_target": [
+          {
+            "source": 23,
+            "target": 20,
+            "good": "food",
+            "quantity": 266,
+            "path": [
+              23,
+              20
+            ],
+            "tile_path": [
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              89,
+              137,
+              185,
+              233,
+              281,
+              329
+            ],
+            "legs": [
+              {
+                "a": 23,
+                "b": 20,
+                "distance": 11,
+                "cost_food": 30
+              }
+            ],
+            "cost_food": 30,
+            "distance": 11
+          },
+          {
+            "source": 22,
+            "target": 20,
+            "good": "food",
+            "quantity": 242,
+            "path": [
+              22,
+              20
+            ],
+            "tile_path": [
+              47,
+              46,
+              45,
+              44,
+              43,
+              42,
+              90,
+              89,
+              137,
+              185,
+              233,
+              281,
+              329
+            ],
+            "legs": [
+              {
+                "a": 22,
+                "b": 20,
+                "distance": 12,
+                "cost_food": 30
+              }
+            ],
+            "cost_food": 30,
+            "distance": 12
+          },
+          {
+            "source": 21,
+            "target": 20,
+            "good": "food",
+            "quantity": 412,
+            "path": [
+              21,
+              20
+            ],
+            "tile_path": [
+              671,
+              623,
+              575,
+              527,
+              479,
+              431,
+              383,
+              335,
+              334,
+              333,
+              332,
+              331,
+              330,
+              329
+            ],
+            "legs": [
+              {
+                "a": 21,
+                "b": 20,
+                "distance": 13,
+                "cost_food": 54
+              }
+            ],
+            "cost_food": 54,
+            "distance": 13
+          }
+        ],
+        "roads": [
+          {
+            "a": 20,
+            "b": 21,
+            "owner": 5,
+            "base": 494,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 494,
+            "next_capacity": 494,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 412,
+            "unused": 82
+          },
+          {
+            "a": 20,
+            "b": 22,
+            "owner": 5,
+            "base": 350,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 350,
+            "next_capacity": 350,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 242,
+            "unused": 108
+          },
+          {
+            "a": 20,
+            "b": 23,
+            "owner": 5,
+            "base": 373,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 373,
+            "next_capacity": 373,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 266,
+            "unused": 107
+          },
+          {
+            "a": 22,
+            "b": 23,
+            "owner": 5,
+            "base": 106,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 106,
+            "next_capacity": 106,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 106
+          }
+        ]
+      },
+      "integrated": {
+        "decision": "defer",
+        "regions": [
+          {
+            "region": 20,
+            "food_before_tax": 4892,
+            "protected_food": 7571,
+            "standing_food_tax": 0,
+            "extra_food_tax": 0,
+            "food_after_tax": 4892,
+            "private_food_before_meal": 5775,
+            "meal": {
+              "opening_food": 5775,
+              "food_need": 6730,
+              "food_eaten": 5775,
+              "food_spoiled": 0,
+              "food_unmet": 955,
+              "used": {
+                "food": 5775,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_spoiled_food": 0,
+            "depot_closing_food": 0
+          },
+          {
+            "region": 21,
+            "food_before_tax": 1717,
+            "protected_food": 1407,
+            "standing_food_tax": 19,
+            "extra_food_tax": 0,
+            "food_after_tax": 1698,
+            "private_food_before_meal": 1251,
+            "meal": {
+              "opening_food": 1251,
+              "food_need": 1251,
+              "food_eaten": 1251,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 1251,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_spoiled_food": 1,
+            "depot_closing_food": 18
+          },
+          {
+            "region": 22,
+            "food_before_tax": 1064,
+            "protected_food": 891,
+            "standing_food_tax": 10,
+            "extra_food_tax": 0,
+            "food_after_tax": 1054,
+            "private_food_before_meal": 793,
+            "meal": {
+              "opening_food": 793,
+              "food_need": 792,
+              "food_eaten": 792,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 792,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 1
+            },
+            "depot_spoiled_food": 0,
+            "depot_closing_food": 10
+          },
+          {
+            "region": 23,
+            "food_before_tax": 1099,
+            "protected_food": 903,
+            "standing_food_tax": 12,
+            "extra_food_tax": 0,
+            "food_after_tax": 1087,
+            "private_food_before_meal": 803,
+            "meal": {
+              "opening_food": 803,
+              "food_need": 803,
+              "food_eaten": 803,
+              "food_spoiled": 0,
+              "food_unmet": 0,
+              "used": {
+                "food": 803,
+                "ore": 0,
+                "tools": 0
+              },
+              "closing_food": 0
+            },
+            "depot_spoiled_food": 1,
+            "depot_closing_food": 11
+          }
+        ],
+        "food_shipments_to_target": [
+          {
+            "source": 23,
+            "target": 20,
+            "good": "food",
+            "quantity": 255,
+            "path": [
+              23,
+              20
+            ],
+            "tile_path": [
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              89,
+              137,
+              185,
+              233,
+              281,
+              329
+            ],
+            "legs": [
+              {
+                "a": 23,
+                "b": 20,
+                "distance": 11,
+                "cost_food": 29
+              }
+            ],
+            "cost_food": 29,
+            "distance": 11
+          },
+          {
+            "source": 22,
+            "target": 20,
+            "good": "food",
+            "quantity": 233,
+            "path": [
+              22,
+              20
+            ],
+            "tile_path": [
+              47,
+              46,
+              45,
+              44,
+              43,
+              42,
+              90,
+              89,
+              137,
+              185,
+              233,
+              281,
+              329
+            ],
+            "legs": [
+              {
+                "a": 22,
+                "b": 20,
+                "distance": 12,
+                "cost_food": 28
+              }
+            ],
+            "cost_food": 28,
+            "distance": 12
+          },
+          {
+            "source": 21,
+            "target": 20,
+            "good": "food",
+            "quantity": 395,
+            "path": [
+              21,
+              20
+            ],
+            "tile_path": [
+              671,
+              623,
+              575,
+              527,
+              479,
+              431,
+              383,
+              335,
+              334,
+              333,
+              332,
+              331,
+              330,
+              329
+            ],
+            "legs": [
+              {
+                "a": 21,
+                "b": 20,
+                "distance": 13,
+                "cost_food": 52
+              }
+            ],
+            "cost_food": 52,
+            "distance": 13
+          }
+        ],
+        "roads": [
+          {
+            "a": 20,
+            "b": 21,
+            "owner": 5,
+            "base": 494,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 494,
+            "next_capacity": 494,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 395,
+            "unused": 99
+          },
+          {
+            "a": 20,
+            "b": 22,
+            "owner": 5,
+            "base": 350,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 350,
+            "next_capacity": 350,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 233,
+            "unused": 117
+          },
+          {
+            "a": 20,
+            "b": 23,
+            "owner": 5,
+            "base": 373,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 373,
+            "next_capacity": 373,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 255,
+            "unused": 118
+          },
+          {
+            "a": 22,
+            "b": 23,
+            "owner": 5,
+            "base": 106,
+            "opening_units": 0,
+            "closing_units": 0,
+            "capacity": 106,
+            "next_capacity": 106,
+            "works_use": 0,
+            "relief_use": 0,
+            "private_use": 0,
+            "unused": 106
+          }
+        ]
+      }
+    }
+  }
+}

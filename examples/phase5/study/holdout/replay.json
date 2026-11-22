@@ -1,0 +1,47 @@
+{
+  "frozen_policy_commit": "75af26cd4bee1b8ef114f3cee028cbf8b37e5a74",
+  "sample": "holdout",
+  "seed_start": 20,
+  "seeds": 20,
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "modes": [
+    "none",
+    "relief",
+    "infrastructure",
+    "integrated"
+  ],
+  "workers": 8,
+  "paths": 80,
+  "transitions": 16000,
+  "replayed_checkpoints": 240,
+  "archived_control_checkpoints": 0,
+  "replayed_tables": [
+    "cases.json",
+    "countries.csv",
+    "means.csv",
+    "paired.csv",
+    "regions.csv",
+    "runs.csv"
+  ],
+  "python": "3.12.14",
+  "wall_seconds": 233.16535450005904,
+  "replay_source_lf_sha256": {
+    "government.py": "d9ad134b3f00ecb0f2240b80adf7edb066d3f73ecb74e5b071dd63e0a0aeb00f",
+    "government_audit.py": "3b54bc346b2df68c3b22b3f9d1a51ede1a361ec0b86a35afbd19e8a9824b7d08",
+    "appropriation_audit.py": "5497dbef99dfd288efae0e17da1f3984d8bc62a7e7b1dada23739ef62c263132",
+    "fiscal_policy.py": "40b3ba62c992e168c0594bdf1005e569e49562d8f855052e0498897850876c18",
+    "public_works.py": "e12d5b32d92494941d3c01284061371f88209aa1afc8aeb7d6012976fd2aee73"
+  },
+  "matched_file_sha256": {
+    "cases.json": "fb33c58b709f2eaced5445ec5b3ae5cb3eeeab7bf30a202250537755e02d3f40",
+    "countries.csv": "ba75ec4b7cb7c6cc08f3900e6c121f3ade24a9634195948e3c70181678caec48",
+    "means.csv": "0b8f21cadb3bd73388b5dbd18fff50f9cf376f6c5ac13ef034cf70788cd4dd1b",
+    "paired.csv": "dceaa085696801092588289144e4ea11f6d198fe2f2335550ac3d4274a293d1f",
+    "regions.csv": "82e42a9a39bb403e219596a9201690c0f0b3c7e72d102e2513f96a2181d646de",
+    "runs.csv": "8e56f3b22467c89e3fce7de727387b110646f304d527e4d8b50eca9b4212ad21"
+  }
+}
