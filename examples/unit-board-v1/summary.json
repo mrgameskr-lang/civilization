@@ -1,0 +1,18 @@
+{
+  "accepted_on_turn_one": 40,
+  "checkpoint_rows": 240,
+  "controlled_failures": {
+    "no_capacity": "insufficient_capacity",
+    "no_food": "insufficient_food"
+  },
+  "failed_on_turn_one": 0,
+  "move_commands": 40,
+  "original_group_present_at_destination_on_turn_200": 40,
+  "seeds": 40,
+  "six_short_checks_passed_before_games": true,
+  "source": "standalone two-space game fixtures",
+  "turns_per_game": 200,
+  "turns_with_hold_policy": 8000,
+  "turns_with_move_policy": 8000,
+  "unique_openings": 40
+}

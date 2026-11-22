@@ -1,0 +1,113 @@
+{
+  "command": {
+    "home": 0,
+    "affiliation": 1,
+    "source": 0,
+    "destination": 1,
+    "count": 1
+  },
+  "accepted": {
+    "before": {
+      "turn": 1,
+      "group_at_A": 2,
+      "group_at_B": 0,
+      "food_A": 2,
+      "food_B": 2,
+      "road_left": 2
+    },
+    "after": {
+      "turn": 1,
+      "group_at_A": 1,
+      "group_at_B": 1,
+      "food_A": 1,
+      "food_B": 2,
+      "road_left": 1
+    },
+    "next_turn_from_disk": {
+      "turn": 2,
+      "group_at_A": 1,
+      "group_at_B": 1,
+      "food_A": 1,
+      "food_B": 2,
+      "road_left": 2
+    },
+    "moves": [
+      {
+        "affiliation": 1,
+        "count": 1,
+        "destination": 1,
+        "home": 0,
+        "source": 0,
+        "turn": 1
+      }
+    ]
+  },
+  "failures": {
+    "insufficient_capacity": {
+      "input": {
+        "turn": 1,
+        "group_at_A": 2,
+        "group_at_B": 0,
+        "food_A": 2,
+        "food_B": 2,
+        "road_left": 0
+      },
+      "output": {
+        "turn": 1,
+        "group_at_A": 2,
+        "group_at_B": 0,
+        "food_A": 2,
+        "food_B": 2,
+        "road_left": 0
+      },
+      "receipt": {
+        "turn": 1,
+        "home": 0,
+        "affiliation": 1,
+        "source": 0,
+        "destination": 1,
+        "count": 1,
+        "ok": false,
+        "reason": "insufficient_capacity",
+        "food_spent": 0,
+        "road_used": 0
+      },
+      "before_sha256": "3ded12d6a1878e7f1c088ace4d21a2006b46042f5a9a7eef827a5100620dc410",
+      "after_sha256": "3ded12d6a1878e7f1c088ace4d21a2006b46042f5a9a7eef827a5100620dc410",
+      "cli_exit": 1
+    },
+    "insufficient_food": {
+      "input": {
+        "turn": 1,
+        "group_at_A": 2,
+        "group_at_B": 0,
+        "food_A": 0,
+        "food_B": 2,
+        "road_left": 2
+      },
+      "output": {
+        "turn": 1,
+        "group_at_A": 2,
+        "group_at_B": 0,
+        "food_A": 0,
+        "food_B": 2,
+        "road_left": 2
+      },
+      "receipt": {
+        "turn": 1,
+        "home": 0,
+        "affiliation": 1,
+        "source": 0,
+        "destination": 1,
+        "count": 1,
+        "ok": false,
+        "reason": "insufficient_food",
+        "food_spent": 0,
+        "road_used": 0
+      },
+      "before_sha256": "0814334307facb3d8cffa1e29766f81dcc5e9071222cda98b9a99059c25081c5",
+      "after_sha256": "0814334307facb3d8cffa1e29766f81dcc5e9071222cda98b9a99059c25081c5",
+      "cli_exit": 1
+    }
+  }
+}

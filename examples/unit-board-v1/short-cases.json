@@ -1,0 +1,732 @@
+{
+  "no_capacity": {
+    "after": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 0,
+      "initial_turn": 1,
+      "moves": [],
+      "nodes": [
+        {
+          "food": 3,
+          "food_spent": 0,
+          "id": 0,
+          "initial_food": 3,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 0,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 1
+    },
+    "input": {
+      "affiliation": 1,
+      "count": 2,
+      "destination": 1,
+      "home": 0,
+      "source": 0
+    },
+    "next_turn": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 0,
+      "initial_turn": 1,
+      "moves": [],
+      "nodes": [
+        {
+          "food": 3,
+          "food_spent": 0,
+          "id": 0,
+          "initial_food": 3,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 3,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 2
+    },
+    "opening": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 0,
+      "initial_turn": 1,
+      "moves": [],
+      "nodes": [
+        {
+          "food": 3,
+          "food_spent": 0,
+          "id": 0,
+          "initial_food": 3,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 0,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 1
+    },
+    "receipt": {
+      "affiliation": 1,
+      "count": 2,
+      "destination": 1,
+      "food_spent": 0,
+      "home": 0,
+      "ok": false,
+      "reason": "insufficient_capacity",
+      "road_used": 0,
+      "source": 0,
+      "turn": 1
+    }
+  },
+  "no_food": {
+    "after": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 3,
+      "initial_turn": 1,
+      "moves": [],
+      "nodes": [
+        {
+          "food": 0,
+          "food_spent": 0,
+          "id": 0,
+          "initial_food": 0,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 3,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 1
+    },
+    "input": {
+      "affiliation": 1,
+      "count": 2,
+      "destination": 1,
+      "home": 0,
+      "source": 0
+    },
+    "next_turn": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 3,
+      "initial_turn": 1,
+      "moves": [],
+      "nodes": [
+        {
+          "food": 0,
+          "food_spent": 0,
+          "id": 0,
+          "initial_food": 0,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 3,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 2
+    },
+    "opening": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 3,
+      "initial_turn": 1,
+      "moves": [],
+      "nodes": [
+        {
+          "food": 0,
+          "food_spent": 0,
+          "id": 0,
+          "initial_food": 0,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 3,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 1
+    },
+    "receipt": {
+      "affiliation": 1,
+      "count": 2,
+      "destination": 1,
+      "food_spent": 0,
+      "home": 0,
+      "ok": false,
+      "reason": "insufficient_food",
+      "road_used": 0,
+      "source": 0,
+      "turn": 1
+    }
+  },
+  "success": {
+    "after": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 3,
+      "initial_turn": 1,
+      "moves": [
+        {
+          "affiliation": 1,
+          "count": 2,
+          "destination": 1,
+          "home": 0,
+          "source": 0,
+          "turn": 1
+        }
+      ],
+      "nodes": [
+        {
+          "food": 1,
+          "food_spent": 2,
+          "id": 0,
+          "initial_food": 3,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 1,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 1,
+          "count": 2,
+          "home": 0,
+          "location": 1
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 1,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 1
+    },
+    "fresh_process": {
+      "loaded": {
+        "capacity": 3,
+        "edge": [
+          0,
+          1
+        ],
+        "initial_remaining": 3,
+        "initial_turn": 1,
+        "moves": [
+          {
+            "affiliation": 1,
+            "count": 2,
+            "destination": 1,
+            "home": 0,
+            "source": 0,
+            "turn": 1
+          }
+        ],
+        "nodes": [
+          {
+            "food": 1,
+            "food_spent": 2,
+            "id": 0,
+            "initial_food": 3,
+            "population": 9
+          },
+          {
+            "food": 2,
+            "food_spent": 0,
+            "id": 1,
+            "initial_food": 2,
+            "population": 6
+          }
+        ],
+        "positions": [
+          {
+            "affiliation": 1,
+            "count": 1,
+            "home": 0,
+            "location": 0
+          },
+          {
+            "affiliation": 1,
+            "count": 2,
+            "home": 0,
+            "location": 1
+          },
+          {
+            "affiliation": 0,
+            "count": 2,
+            "home": 1,
+            "location": 1
+          }
+        ],
+        "remaining": 1,
+        "roster": [
+          {
+            "affiliation": 1,
+            "count": 3,
+            "home": 0
+          },
+          {
+            "affiliation": 0,
+            "count": 2,
+            "home": 1
+          }
+        ],
+        "schema": "unit-board/1",
+        "turn": 1
+      },
+      "next_turn": {
+        "capacity": 3,
+        "edge": [
+          0,
+          1
+        ],
+        "initial_remaining": 3,
+        "initial_turn": 1,
+        "moves": [
+          {
+            "affiliation": 1,
+            "count": 2,
+            "destination": 1,
+            "home": 0,
+            "source": 0,
+            "turn": 1
+          }
+        ],
+        "nodes": [
+          {
+            "food": 1,
+            "food_spent": 2,
+            "id": 0,
+            "initial_food": 3,
+            "population": 9
+          },
+          {
+            "food": 2,
+            "food_spent": 0,
+            "id": 1,
+            "initial_food": 2,
+            "population": 6
+          }
+        ],
+        "positions": [
+          {
+            "affiliation": 1,
+            "count": 1,
+            "home": 0,
+            "location": 0
+          },
+          {
+            "affiliation": 1,
+            "count": 2,
+            "home": 0,
+            "location": 1
+          },
+          {
+            "affiliation": 0,
+            "count": 2,
+            "home": 1,
+            "location": 1
+          }
+        ],
+        "remaining": 3,
+        "roster": [
+          {
+            "affiliation": 1,
+            "count": 3,
+            "home": 0
+          },
+          {
+            "affiliation": 0,
+            "count": 2,
+            "home": 1
+          }
+        ],
+        "schema": "unit-board/1",
+        "turn": 2
+      }
+    },
+    "input": {
+      "affiliation": 1,
+      "count": 2,
+      "destination": 1,
+      "home": 0,
+      "source": 0
+    },
+    "next_turn": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 3,
+      "initial_turn": 1,
+      "moves": [
+        {
+          "affiliation": 1,
+          "count": 2,
+          "destination": 1,
+          "home": 0,
+          "source": 0,
+          "turn": 1
+        }
+      ],
+      "nodes": [
+        {
+          "food": 1,
+          "food_spent": 2,
+          "id": 0,
+          "initial_food": 3,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 1,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 1,
+          "count": 2,
+          "home": 0,
+          "location": 1
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 3,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 2
+    },
+    "opening": {
+      "capacity": 3,
+      "edge": [
+        0,
+        1
+      ],
+      "initial_remaining": 3,
+      "initial_turn": 1,
+      "moves": [],
+      "nodes": [
+        {
+          "food": 3,
+          "food_spent": 0,
+          "id": 0,
+          "initial_food": 3,
+          "population": 9
+        },
+        {
+          "food": 2,
+          "food_spent": 0,
+          "id": 1,
+          "initial_food": 2,
+          "population": 6
+        }
+      ],
+      "positions": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0,
+          "location": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1,
+          "location": 1
+        }
+      ],
+      "remaining": 3,
+      "roster": [
+        {
+          "affiliation": 1,
+          "count": 3,
+          "home": 0
+        },
+        {
+          "affiliation": 0,
+          "count": 2,
+          "home": 1
+        }
+      ],
+      "schema": "unit-board/1",
+      "turn": 1
+    },
+    "receipt": {
+      "affiliation": 1,
+      "count": 2,
+      "destination": 1,
+      "food_spent": 2,
+      "home": 0,
+      "ok": true,
+      "reason": "moved",
+      "road_used": 2,
+      "source": 0,
+      "turn": 1
+    }
+  }
+}
