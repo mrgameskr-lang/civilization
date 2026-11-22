@@ -1,0 +1,68 @@
+{
+  "baseline_git_commit": "7099a7c2ce801f69c1f450669605b058685b1ee5",
+  "cases": [
+    {
+      "arm_years": 5,
+      "bytes": 126409,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "experiments.region_custody_case",
+        "--verify",
+        "examples/location-upkeep-v1/custody-case.json"
+      ],
+      "elapsed_seconds": 2.189182,
+      "reference": "examples/location-upkeep-v1/custody-case.json",
+      "reference_sha256": "bd707c60936dda41f93063e8cf660e4ebc0e48ac4f258aed83d6ef2652974048",
+      "replayed_sha256": "bd707c60936dda41f93063e8cf660e4ebc0e48ac4f258aed83d6ef2652974048"
+    },
+    {
+      "arm_years": 5,
+      "bytes": 1635,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "experiments.region_custody_case",
+        "--stocked-destination",
+        "--verify",
+        "examples/location-upkeep-v1/stocked-destination.json"
+      ],
+      "elapsed_seconds": 1.909167,
+      "reference": "examples/location-upkeep-v1/stocked-destination.json",
+      "reference_sha256": "0c69f1e550e3853dbacd432179fedbc39a95a59625f4e4330919a957ed4062b6",
+      "replayed_sha256": "0c69f1e550e3853dbacd432179fedbc39a95a59625f4e4330919a957ed4062b6"
+    },
+    {
+      "arm_years": 5,
+      "bytes": 2214,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "experiments.region_custody_case",
+        "--shrinking-home",
+        "--verify",
+        "examples/location-upkeep-v1/shrinking-home.json"
+      ],
+      "elapsed_seconds": 2.110279,
+      "reference": "examples/location-upkeep-v1/shrinking-home.json",
+      "reference_sha256": "f07483b23248c9cfea9156ea549b24d2e79840ed7f7c0f302c81e1214c199d47",
+      "replayed_sha256": "f07483b23248c9cfea9156ea549b24d2e79840ed7f7c0f302c81e1214c199d47"
+    }
+  ],
+  "elapsed_seconds": 6.598206,
+  "matched_bytes": 130258,
+  "matched_files": 3,
+  "mode": "historical default (new option disabled)",
+  "python": "3.12.14",
+  "schema": "prior-case-compat/1",
+  "started_utc": "2026-11-21T18:59:17.920667+00:00"
+}

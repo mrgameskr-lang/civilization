@@ -1,0 +1,132 @@
+[
+  {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "civsim.annual_game",
+      "new",
+      "--seed",
+      "0",
+      "--out",
+      "TEMP\\year-0.json"
+    ],
+    "exit": 0,
+    "year": 0,
+    "closing": null,
+    "position": []
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "civsim.annual_game",
+      "step",
+      "TEMP\\year-0.json",
+      "--out",
+      "TEMP\\year-1.json"
+    ],
+    "exit": 0,
+    "year": 1,
+    "closing": null,
+    "position": []
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "civsim.annual_game",
+      "step",
+      "TEMP\\year-1.json",
+      "--move",
+      "5",
+      "5",
+      "7",
+      "2",
+      "--upkeep",
+      "5",
+      "2",
+      "--out",
+      "TEMP\\year-2.json"
+    ],
+    "exit": 0,
+    "year": 2,
+    "closing": [
+      [
+        7,
+        2,
+        1
+      ]
+    ],
+    "position": [
+      [
+        5,
+        7,
+        2
+      ]
+    ]
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "civsim.annual_game",
+      "step",
+      "TEMP\\year-2.json",
+      "--out",
+      "TEMP\\year-3.json"
+    ],
+    "exit": 0,
+    "year": 3,
+    "closing": [
+      [
+        7,
+        2,
+        0
+      ]
+    ],
+    "position": [
+      [
+        5,
+        7,
+        2
+      ]
+    ]
+  },
+  {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "civsim.annual_game",
+      "show",
+      "TEMP\\year-3.json",
+      "--custody"
+    ],
+    "exit": 0,
+    "year": 3,
+    "closing": {
+      "closing": [
+        [
+          7,
+          2,
+          0
+        ]
+      ],
+      "selection": {
+        "count": 2,
+        "home": 5
+      }
+    },
+    "position": [
+      [
+        5,
+        7,
+        2
+      ]
+    ]
+  }
+]
