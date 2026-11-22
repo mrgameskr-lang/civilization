@@ -1,6 +1,8 @@
 """Player moves on a two-square board, including exact restoration after play."""
 from copy import deepcopy
+from hashlib import sha256
 import json
+from pathlib import Path
 import unittest
 
 from civsim.unit_board import UnitBoard
@@ -14,6 +16,49 @@ def game(**changes):
 
 
 class BoardTests(unittest.TestCase):
+    def test_flat_crossing_cost_and_rejection_order(self):
+        from civsim.unit_board import assess_crossing
+
+        cases = [
+            (0, 0, 0, 0, ('invalid_count', 0, 0)),
+            (True, 1, 1, 1, ('invalid_count', 0, 0)),
+            (3, 2, 0, 0, ('insufficient_tokens', 0, 0)),
+            (3, 3, 2, 1, ('insufficient_food', 0, 0)),
+            (3, 3, 3, 2, ('insufficient_capacity', 0, 0)),
+            (3, 3, 3, 3, ('moved', 3, 3)),
+        ]
+        for count,tokens,food,left,want in cases:
+            with self.subTest(count=count,tokens=tokens,food=food,remaining=left):
+                self.assertEqual(assess_crossing(count=count,tokens=tokens,food=food,remaining=left),want)
+        for field in ('tokens','food','remaining'):
+            values = dict(count=1,tokens=1,food=1,remaining=1)
+            for invalid in (False,-1,2.0):
+                with self.subTest(field=field,invalid=invalid), self.assertRaises(ValueError):
+                    assess_crossing(**{**values,field:invalid})
+        self.assertEqual(game().move(99,False,2,2,0)['reason'],'invalid_count')
+
+    def test_published_idle_and_moved_snapshots_remain_compatible(self):
+        from civsim.storage import canonical_line
+        from civsim.unit_board_scenario import demo_board
+
+        archived = Path(__file__).resolve().parents[1] / 'examples' / 'unit-board-checks'
+        gold = {
+            'start':'555e22eacfefe2eed4a02b7bbf48d6d5cf02b4a1607ad4198e9bcb40d5b93e9e',
+            'moved':'fa7211993c1ca275643a625250f49b541c2a1d3ee267586aee6d1f43a75dcd2e',
+            'turn-2':'e1dfd1eeb184c82ddba65583e9158d6986ffeb5923e7d0f4434347d6904cd9c9',
+        }
+        board = demo_board(0)
+        for step,digest in gold.items():
+            if step == 'moved':
+                self.assertTrue(board.move(0,1,0,1,1)['ok'])
+            elif step == 'turn-2':
+                board.next_turn()
+            original = json.loads((archived / (step + '.json')).read_bytes())
+            reconstructed = UnitBoard.restore(original).snapshot()
+            self.assertEqual(reconstructed,original)
+            self.assertEqual(board.snapshot(),original)
+            self.assertEqual(sha256(canonical_line(reconstructed)).hexdigest(),digest)
+
     def test_external_and_neighbor_affiliations_are_labels_and_start_at_home(self):
         b = game()
         self.assertEqual(b.edge, (3,7))

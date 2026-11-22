@@ -1,0 +1,26 @@
+{
+  "independent_game_only": true,
+  "original_and_regenerated_sha256": {
+    "examples/unit-board-checks/moved.json": "fa7211993c1ca275643a625250f49b541c2a1d3ee267586aee6d1f43a75dcd2e",
+    "examples/unit-board-checks/start.json": "555e22eacfefe2eed4a02b7bbf48d6d5cf02b4a1607ad4198e9bcb40d5b93e9e",
+    "examples/unit-board-checks/turn-2.json": "e1dfd1eeb184c82ddba65583e9158d6986ffeb5923e7d0f4434347d6904cd9c9",
+    "examples/unit-board-v1/seeds.csv": "4d19cbfd3012d29c6a3872b7cb4cf757a562f815c26033cf7da365747c2c95b8",
+    "examples/unit-board-v1/short-cases.json": "71b781c783e9e59a2d34d245dadd89686b8a5be20f44c1eebf697af9b7b390c3",
+    "examples/unit-board-v1/summary.json": "18aebbc5b27d40b8c5fb8b71191efe1cdecf6894ad91e92f6ca2e39052995b10",
+    "examples/unit-board-v1/traces.jsonl.gz": "fcc92df3f7f3f6f8fe9f8b9016deb4646ad61236fc08c6ba5c57c0a6357a8874",
+    "examples/unit-board-v1/zero-maximum.json": "2cc7b95f8d64977b65699f6cec18f1af0bbc90d306037201a0b3a19496871c7a"
+  },
+  "pinned_files_compared": 8,
+  "reference_commit": "b0490cdd8c987342258f992f4234f3c8a3330614",
+  "seed_path_checkpoints": 240,
+  "seeds": 40,
+  "turn_states": 16000,
+  "turns_per_path": 200,
+  "working_source_sha256": {
+    "civsim/unit_board.py": "1c88827fd3441fbf5504fcf1748eb6f0f523f8f92cfbe34da2d8716a0467ef8e",
+    "civsim/unit_board_scenario.py": "9f7f0843360bbc294fba44e83a319a188e2df6eea2b6272c936044485882d034",
+    "civsim/unit_game.py": "f556fd605cf1db1dbae38790eb90b97455269eb299fcf319dc27596117a1562a",
+    "experiments/unit_board_trials.py": "f58f735904624c0f75d0cd92f6df381dde975db9a2db6d665ab8b39249b1996b"
+  },
+  "world_years": 0
+}

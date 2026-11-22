@@ -162,7 +162,7 @@ def _check_roads(roads,nodes,residual):
     _check(set(residual)==keys and all(_count(v) for v in residual.values()),"invalid shared road balances")
 
 
-def settle_service(trace,regions,depots,roads,residual):
+def settle_service(trace,regions,depots,roads,residual,*,away=None):
     """Reserve home rations, settle paid round trips, then pay for tools where work is performed."""
     _check(trace["stage"]=="planned","service has already settled")
     nodes=_nodes(regions)
@@ -194,6 +194,9 @@ def settle_service(trace,regions,depots,roads,residual):
             fed=origin["ration_food"]-origin["reassignment_out"]
             affordable=100*balances[home]["food"]//(2*e.distance)
             people=min(surplus,demand,tool_places,fed,left[key]//2,affordable)
+            if away:
+                # A returning daily commute must start with a resident physically at home.
+                people=min(people,max(0,origin["serving"]-away.get(home,0)-origin["reassignment_out"]))
             if people==0:
                 continue
             fee=(2*people*e.distance+99)//100
@@ -266,12 +269,12 @@ def close_service(trace,vitals):
     return {i:v["closing_roster"] for i,v in pending.items()}
 
 
-def audit_service(trace,*,regions,roster,diplomacy_ctx,withheld,depots,roads,residual,vitals):
+def audit_service(trace,*,regions,roster,diplomacy_ctx,withheld,depots,roads,residual,vitals,away=None):
     """Rebuild all choices and cashless postings from original opening evidence and census receipts."""
     expected=plan_service(regions,roster,diplomacy_ctx,trace["mode"],withheld=withheld,recruit=trace["recruit"])
     copies=deepcopy(list(_nodes(regions).values()))
     funds=deepcopy(depots)
-    left=settle_service(expected,copies,funds,roads,residual)
+    left=settle_service(expected,copies,funds,roads,residual,away=away)
     charged={k:0 for k in residual}
     for m in trace["moves"]:
         key=tuple(sorted((m["home"],m["station"])))

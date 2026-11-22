@@ -27,6 +27,9 @@ def accounts62(record, decisions):
         totals["depot_freight_food"] = supply["aid_freight_food"] + supply["domestic_freight_food"]
         totals["public_freight_food"] += totals["depot_freight_food"]
         totals["public_cargo"] += sum(e["supply_use"] for e in record["government"]["roads"] if e["owner"] == n)
+        if "unit_game" in record:
+            receipt = record["unit_game"]["receipt"]
+            totals["unit_move_food"] = receipt["food_spent"] if receipt and receipt["owner"] == n else 0
         if duty:
             local = [r for r in duty.values() if r["owner"] == n]
             totals["duty_workers"] = sum(r["serving"] for r in local)
@@ -57,6 +60,11 @@ def _roads(record):
         if p["edge"] is not None:
             projects[tuple(p["edge"]),p["action"]] += 1
     kinds = ("works_use","supply_use","duty_use","relief_use","private_use")
+    if "unit_game" in record:
+        kinds += ("unit_use",)
+        receipt = record["unit_game"]["receipt"]
+        if receipt and receipt["ok"]:
+            loads[tuple(receipt["road"]), "unit_use"] += receipt["count"]
     for key,e in edges.items():
         _check(all(e[k] == loads[key,k] >= 0 for k in kinds), "overlapping domestic capacity")
         _check(0 <= projects[key,"service"] <= e["opening_units"] and
@@ -159,6 +167,13 @@ def _accounts(record, previous_record=None):
             pub[i][g] += q-fee
             combined[l["owner"]][g] -= fee
         _check(l["private_close"] == private[i] and l["depot_close"] == pub[i], "collection closing mismatch")
+    receipt = record.get("unit_game",{}).get("receipt")
+    if receipt and receipt["ok"]:
+        i = receipt["source"]
+        _check(pub[i]["food"] == receipt["food_before"], "unit move depot opening differs")
+        pub[i]["food"] -= receipt["food_spent"]
+        combined[regions[i]["owner"]]["food"] -= receipt["food_spent"]
+        _check(pub[i]["food"] == receipt["food_after"] >= 0, "unit move depot closing differs")
     for s in gov["relief"]["shipments"]:
         a, b, qty, fee = s["source"], s["target"], s["quantity"], s["cost_food"]
         _check(regions[a]["owner"] == regions[b]["owner"] == s["owner"], "foreign domestic relief")
@@ -224,7 +239,7 @@ def _audit_domestic_delivery(record, geography):
         place = SimpleNamespace(**row["opening"],members=places[i].members)
         place.stock = levies[i]["private_close"].copy()
         local.append(place)
-    depots = {i:l["depot_close"] for i,l in levies.items()}
+    depots = {i:l["depot_close"].copy() for i,l in levies.items()}
     plans = {a["id"]:a["decision"] for a in gov["accounts"]}
     admin = {r["id"]:r["admin_remaining"] for r in record["collective"]["responses"]}
     stage = record.get("supply",gov["works"])
@@ -233,6 +248,15 @@ def _audit_domestic_delivery(record, geography):
         edge = tuple(sorted((move["home"],move["station"])))
         _check(edge in left and left[edge]>=move["road_load"]>=0,"unfunded travel before domestic relief")
         left[edge] -= move["road_load"]
+    if "unit_game" in record:
+        from .unit_economy import Move, apply_move, audit_positions, begin_turn, close_turn
+        game = record["unit_game"]
+        cmd = Move(**game["command"]) if game["command"] is not None else None
+        rebuilt = begin_turn(game["opening_away"],cmd,record["service"])
+        apply_move(rebuilt,record["service"],geography.roads,depots,left)
+        close_turn(rebuilt,record["service"])
+        _check(rebuilt == game, "unit receipt, position or population differs from replay")
+        audit_positions(game,record["service"])
     relief = gov["relief"]
     audit_relief(local,geography.roads,depots,plans,left,admin,relief,width=geography.width)
     relief_nodes = _by(relief["nodes"],"id")
@@ -258,6 +282,16 @@ def audit62(record, *, geography, previous_record=None, program=None):
         return
     cfg = record["public_policy"]
     arm = cfg["arm"]
+    game = record.get("unit_game")
+    if game is not None or "unit_rule" in cfg:
+        from .unit_economy import VERSION
+        _check(game is not None and arm=="C" and cfg.get("unit_rule")==game["version"]==VERSION,
+               "invalid game rule")
+        if previous_record is not None or record["year"]==1:
+            prior_positions = (previous_record or {}).get("unit_game",{}).get("closing_away",[])
+            _check(game["opening_away"]==prior_positions, "discontinuous unit positions")
+    elif previous_record is not None:
+        _check("unit_game" not in previous_record, "lost unit position ledger")
     _check(arm in ("B","C","D") and (arm != "B") == ("service" in record) == (program is not None),
            "public program missing or mismatched")
     _check(cfg["model_version"] == ("6.0B1" if arm=="B" else "6.0B2") and
@@ -306,9 +340,13 @@ def audit62(record, *, geography, previous_record=None, program=None):
         else:
             previous_roster = {i:r["opening_roster"] for i,r in duty.items()}
         remaining = {(e["a"],e["b"]):e["remaining"] for e in record["supply"]["roads"]}
+        options = {}
+        if game is not None:
+            from .unit_economy import absent_from_home, begin_turn
+            options["away"] = absent_from_home(begin_turn(game["opening_away"],None,record["service"]))
         program.audit_service(record["service"], regions=local, roster=previous_roster, diplomacy_ctx=ctx,
                               withheld=withheld,depots=balances,roads=roads,residual=remaining,
-                              vitals={i:r["demography"] for i,r in rows.items()})
+                              vitals={i:r["demography"] for i,r in rows.items()}, **options)
         _check(record["service"]["mode"] == ("fixed" if arm=="C" else "adaptive") and
                record["service"]["recruit"] is cfg["recruit"], "unapproved roster policy")
         for i,r in duty.items():

@@ -29,6 +29,7 @@ class SupplyWorld:
     engine: object
     arm: str | None = None
     roster: dict | None = None
+    unit_positions: tuple | None = None
 
     @property
     def world(self):
@@ -43,11 +44,13 @@ def snapshot62(sim):
     base = snapshot61(sim.engine)
     if sim.arm in (None, "A"):
         return base
+    if sim.unit_positions is not None:
+        base = {**base, "unit_positions":[list(row) for row in sim.unit_positions]}
     return {**base, "public_arm":sim.arm,
             "service_roster":[[i,n] for i,n in sorted((sim.roster or {}).items())]}
 
 
-def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None):
+def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=True, diagnostic=None, unit_input=None):
     ctx = _context(sim.engine, year, _mode('F'), None)
     collective = sim.engine.collective
     race = collective.competition
@@ -82,8 +85,14 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     supply, after_supply = execute_depot_supply(local, roads, trial.borders, depots, after_works, ctx, fiscal.previous,
                                                 width=trial.width, emergency=enabled, forward=enabled)
     residual = after_supply
+    unit_turn = None
+    if unit_input is not None:
+        from .unit_economy import absent_from_home, apply_move, begin_turn, close_turn
+        _check(arm == "C" and service is not None, "annual game requires the fixed roster")
+        unit_turn = begin_turn(*unit_input, service)
     if service is not None:
-        residual = program.settle_service(service, local, depots, roads, after_supply)
+        options = {"away":absent_from_home(unit_turn)} if unit_turn is not None else {}
+        residual = program.settle_service(service, local, depots, roads, after_supply, **options)
     climate = {n.id:climate_factor(trial.seed,year,n.id) for n in trial.nations}
     prod_open = {r.id:{**opening[r.id],"soil":r.soil} for r in local}
     reserved = {i:n+occupied[i] for i,n in labor.items()}
@@ -96,8 +105,12 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     market = border_market(local,trial.borders,access=foreign)
     audit_borders(local,trial.borders,market,produced,{r.id:(r.stock.copy(),r.cash) for r in local})
     levies = collect_civic(local,depots,decisions,civic)
+    after_move = residual
+    if unit_turn is not None:
+        after_move = residual.copy()
+        apply_move(unit_turn,service,roads,depots,after_move)
     admin = {r["id"]:r["admin_remaining"] for r in civic["responses"]}
-    relief,left = execute_relief(local,roads,depots,decisions,residual,admin,width=trial.width)
+    relief,left = execute_relief(local,roads,depots,decisions,after_move,admin,width=trial.width)
     freight = ship(local,residual_roads(roads,left),"limited",width=trial.width)
     if service is not None:
         program.apply_service_rations(service, local)
@@ -108,6 +121,8 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     _audit_residents(local,opening,meals,vital,moves,paths,delivered)
     if service is not None:
         program.close_service(service, vital)
+    if unit_turn is not None:
+        close_turn(unit_turn, service)
     warehouses = []
     for r in local:
         remaining = depots[r.id]
@@ -132,8 +147,10 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
                           "opening_units":fiscal.road_units[key],"closing_units":next_units[key],
                           "capacity":capacity,"next_capacity":e.capacity+ROAD_BONUS*next_units[key],
                           "works_use":capacity-after_works[key], "supply_use":after_works[key]-after_supply[key],
-                          "duty_use":after_supply[key]-residual[key], "relief_use":residual[key]-left[key],
+                          "duty_use":after_supply[key]-residual[key], "relief_use":after_move[key]-left[key],
                           "private_use":civil["used"],"unused":civil["remaining"]})
+        if unit_turn is not None:
+            edge_rows[-1]["unit_use"] = residual[key]-after_move[key]
     gov = {"mode":mode_fiscal,"depots":warehouses,"levies":levies,"works":works,"relief":relief,"roads":edge_rows}
     ctx["physical"] = foreign.trace()
     record.update(government=gov,diplomacy=ctx)
@@ -142,6 +159,9 @@ def _stage62(sim, year, arm, *, enabled=True, program=None, mode=None, recruit=T
     record["supply"] = supply
     if service is not None:
         record["service"] = service
+    if unit_turn is not None:
+        record["public_policy"]["unit_rule"] = unit_turn["version"]
+        record["unit_game"] = unit_turn
     gov["accounts"] = accounts62(record,decisions)
     record["competition"] = election
     record["politics"] = political_ledger(record,states,recommendations,True)
@@ -163,17 +183,24 @@ def _require(sim, year, arm):
     _check(sim.arm is None or sim.arm == arm, "cannot switch policy during a trajectory")
 
 
-def advance62(sim, year, arm, *, program=None, mode=None):
+def advance62(sim, year, arm, *, program=None, mode=None, unit_input=None):
     _require(sim, year, arm)
+    if sim.unit_positions is not None:
+        _check(unit_input is not None and unit_input[0]==[list(row) for row in sim.unit_positions],
+               "use the previous closing unit positions")
+    elif unit_input is not None:
+        _check(unit_input[0]==[], "first activation begins at home")
     if arm == "A":
         record = step61(sim.engine, year, "F")
     else:
-        fiscal, record = _stage62(sim, year, arm, program=program, mode=mode)
+        fiscal, record = _stage62(sim, year, arm, program=program, mode=mode, unit_input=unit_input)
         pairs = {(p["a"],p["b"]):deepcopy(p["closing"]) for p in record["diplomacy"]["pairs"]}
         _commit_collective(sim.engine.collective, fiscal, record)
         sim.engine.pairs, sim.engine.arm = pairs, "F"
         if program is not None:
             sim.roster = {r["id"]:r["closing_roster"] for r in record["service"]["regions"]}
+        if unit_input is not None:
+            sim.unit_positions = tuple(tuple(row) for row in record["unit_game"]["closing_away"])
     sim.arm = arm
     return record
 

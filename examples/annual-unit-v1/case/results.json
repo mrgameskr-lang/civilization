@@ -1,0 +1,1915 @@
+{
+  "closing_away": [
+    [
+      5,
+      4,
+      1
+    ]
+  ],
+  "failures": [
+    {
+      "case": "empty_store",
+      "closing_state_sha256": "54e36e38dea6942b4b926c8ff38411018b82e6aad3a4f5dbaf787631a8db2ebd",
+      "command": {
+        "count": 1,
+        "destination": 5,
+        "home": 4,
+        "source": 4
+      },
+      "failed_economy_sha256": "7ca23058dc6c76efe5ad11c3ddaf1db99b45941ad914298c1583403c66f92116",
+      "held_economy_sha256": "7ca23058dc6c76efe5ad11c3ddaf1db99b45941ad914298c1583403c66f92116",
+      "map_override": null,
+      "receipt": {
+        "count": 1,
+        "destination": 5,
+        "eligible_at_source": 31,
+        "food_after": 0,
+        "food_before": 0,
+        "food_spent": 0,
+        "home": 4,
+        "ok": false,
+        "owner": 1,
+        "reason": "insufficient_food",
+        "remaining_after": 346,
+        "remaining_before": 346,
+        "road": [
+          4,
+          5
+        ],
+        "road_used": 0,
+        "source": 4
+      },
+      "road": {
+        "a": 4,
+        "b": 5,
+        "base": 352,
+        "capacity": 352,
+        "closing_units": 0,
+        "duty_use": 6,
+        "next_capacity": 352,
+        "opening_units": 0,
+        "owner": 1,
+        "private_use": 125,
+        "relief_use": 0,
+        "supply_use": 0,
+        "unit_use": 0,
+        "unused": 221,
+        "works_use": 0
+      }
+    },
+    {
+      "case": "roster_exceeded",
+      "closing_state_sha256": "54e36e38dea6942b4b926c8ff38411018b82e6aad3a4f5dbaf787631a8db2ebd",
+      "command": {
+        "count": 99999,
+        "destination": 4,
+        "home": 5,
+        "source": 5
+      },
+      "failed_economy_sha256": "7ca23058dc6c76efe5ad11c3ddaf1db99b45941ad914298c1583403c66f92116",
+      "held_economy_sha256": "7ca23058dc6c76efe5ad11c3ddaf1db99b45941ad914298c1583403c66f92116",
+      "map_override": null,
+      "receipt": {
+        "count": 99999,
+        "destination": 4,
+        "eligible_at_source": 2,
+        "food_after": 3,
+        "food_before": 3,
+        "food_spent": 0,
+        "home": 5,
+        "ok": false,
+        "owner": 1,
+        "reason": "insufficient_tokens",
+        "remaining_after": 346,
+        "remaining_before": 346,
+        "road": [
+          4,
+          5
+        ],
+        "road_used": 0,
+        "source": 5
+      },
+      "road": {
+        "a": 4,
+        "b": 5,
+        "base": 352,
+        "capacity": 352,
+        "closing_units": 0,
+        "duty_use": 6,
+        "next_capacity": 352,
+        "opening_units": 0,
+        "owner": 1,
+        "private_use": 125,
+        "relief_use": 0,
+        "supply_use": 0,
+        "unit_use": 0,
+        "unused": 221,
+        "works_use": 0
+      }
+    },
+    {
+      "case": "exhausted_road",
+      "closing_state_sha256": "c6a0a91c598cff5f0050683928ee615cc498d86772effd5b03b92d0e17d97412",
+      "command": {
+        "count": 1,
+        "destination": 0,
+        "home": 3,
+        "source": 3
+      },
+      "failed_economy_sha256": "a5c8ed254797b5cd1e29a7f09d8049bae37ee1c17576089aced518fb4ae03d16",
+      "held_economy_sha256": "a5c8ed254797b5cd1e29a7f09d8049bae37ee1c17576089aced518fb4ae03d16",
+      "map_override": {
+        "base_capacity": 1,
+        "road": [
+          0,
+          3
+        ]
+      },
+      "receipt": {
+        "count": 1,
+        "destination": 0,
+        "eligible_at_source": 6,
+        "food_after": 4,
+        "food_before": 4,
+        "food_spent": 0,
+        "home": 3,
+        "ok": false,
+        "owner": 0,
+        "reason": "insufficient_capacity",
+        "remaining_after": 0,
+        "remaining_before": 0,
+        "road": [
+          0,
+          3
+        ],
+        "road_used": 0,
+        "source": 3
+      },
+      "road": {
+        "a": 0,
+        "b": 3,
+        "base": 1,
+        "capacity": 1,
+        "closing_units": 0,
+        "duty_use": 0,
+        "next_capacity": 1,
+        "opening_units": 0,
+        "owner": 0,
+        "private_use": 0,
+        "relief_use": 0,
+        "supply_use": 1,
+        "unit_use": 0,
+        "unused": 0,
+        "works_use": 0
+      }
+    }
+  ],
+  "hold": {
+    "countries": {
+      "0": {
+        "food_eaten": 8599,
+        "received": {
+          "food": 199,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 199,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "1": {
+        "food_eaten": 6920,
+        "received": {
+          "food": 270,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 270,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "2": {
+        "food_eaten": 12340,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "3": {
+        "food_eaten": 6874,
+        "received": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "4": {
+        "food_eaten": 7820,
+        "received": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "5": {
+        "food_eaten": 6993,
+        "received": {
+          "food": 197,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 197,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "6": {
+        "food_eaten": 6495,
+        "received": {
+          "food": 347,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 347,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "7": {
+        "food_eaten": 8914,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        }
+      }
+    },
+    "regions": {
+      "0": {
+        "cash": 36781,
+        "depot_close": {
+          "food": 0,
+          "ore": 69,
+          "tools": 91
+        },
+        "food_eaten": 5578,
+        "owner": 0,
+        "population": 7998,
+        "received": {
+          "food": 199,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 83
+      },
+      "1": {
+        "cash": 5326,
+        "depot_close": {
+          "food": 0,
+          "ore": 9,
+          "tools": 2
+        },
+        "food_eaten": 1010,
+        "owner": 0,
+        "population": 1026,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 45,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "2": {
+        "cash": 5744,
+        "depot_close": {
+          "food": 0,
+          "ore": 9,
+          "tools": 3
+        },
+        "food_eaten": 1008,
+        "owner": 0,
+        "population": 1024,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 110,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "3": {
+        "cash": 4641,
+        "depot_close": {
+          "food": 0,
+          "ore": 12,
+          "tools": 1
+        },
+        "food_eaten": 1003,
+        "owner": 0,
+        "population": 1019,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 44,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "4": {
+        "cash": 29325,
+        "depot_close": {
+          "food": 0,
+          "ore": 108,
+          "tools": 73
+        },
+        "food_eaten": 4356,
+        "owner": 1,
+        "population": 5868,
+        "received": {
+          "food": 270,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 61
+      },
+      "5": {
+        "cash": 4994,
+        "depot_close": {
+          "food": 3,
+          "ore": 9,
+          "tools": 8
+        },
+        "food_eaten": 846,
+        "owner": 1,
+        "population": 869,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 125,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "6": {
+        "cash": 7785,
+        "depot_close": {
+          "food": 2,
+          "ore": 6,
+          "tools": 10
+        },
+        "food_eaten": 1050,
+        "owner": 1,
+        "population": 1078,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 115,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "7": {
+        "cash": 3513,
+        "depot_close": {
+          "food": 1,
+          "ore": 4,
+          "tools": 3
+        },
+        "food_eaten": 668,
+        "owner": 1,
+        "population": 686,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 30,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      },
+      "8": {
+        "cash": 40920,
+        "depot_close": {
+          "food": 33,
+          "ore": 25,
+          "tools": 97
+        },
+        "food_eaten": 8645,
+        "owner": 2,
+        "population": 8773,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 89
+      },
+      "9": {
+        "cash": 9617,
+        "depot_close": {
+          "food": 20,
+          "ore": 3,
+          "tools": 7
+        },
+        "food_eaten": 1245,
+        "owner": 2,
+        "population": 1483,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 13
+      },
+      "10": {
+        "cash": 11278,
+        "depot_close": {
+          "food": 23,
+          "ore": 3,
+          "tools": 9
+        },
+        "food_eaten": 1408,
+        "owner": 2,
+        "population": 1432,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 16
+      },
+      "11": {
+        "cash": 7792,
+        "depot_close": {
+          "food": 15,
+          "ore": 0,
+          "tools": 6
+        },
+        "food_eaten": 1042,
+        "owner": 2,
+        "population": 1248,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 11
+      },
+      "12": {
+        "cash": 22349,
+        "depot_close": {
+          "food": 0,
+          "ore": 26,
+          "tools": 85
+        },
+        "food_eaten": 4018,
+        "owner": 3,
+        "population": 6938,
+        "received": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 73
+      },
+      "13": {
+        "cash": 2709,
+        "depot_close": {
+          "food": 0,
+          "ore": 1,
+          "tools": 3
+        },
+        "food_eaten": 920,
+        "owner": 3,
+        "population": 999,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "14": {
+        "cash": 4595,
+        "depot_close": {
+          "food": 0,
+          "ore": 0,
+          "tools": 3
+        },
+        "food_eaten": 1012,
+        "owner": 3,
+        "population": 1146,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 13
+      },
+      "15": {
+        "cash": 1270,
+        "depot_close": {
+          "food": 0,
+          "ore": 0,
+          "tools": 3
+        },
+        "food_eaten": 924,
+        "owner": 3,
+        "population": 938,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "16": {
+        "cash": 22805,
+        "depot_close": {
+          "food": 0,
+          "ore": 101,
+          "tools": 56
+        },
+        "food_eaten": 5165,
+        "owner": 4,
+        "population": 5185,
+        "received": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 54
+      },
+      "17": {
+        "cash": 3451,
+        "depot_close": {
+          "food": 12,
+          "ore": 2,
+          "tools": 14
+        },
+        "food_eaten": 744,
+        "owner": 4,
+        "population": 756,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      },
+      "18": {
+        "cash": 5926,
+        "depot_close": {
+          "food": 18,
+          "ore": 8,
+          "tools": 19
+        },
+        "food_eaten": 1101,
+        "owner": 4,
+        "population": 1118,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "19": {
+        "cash": 3924,
+        "depot_close": {
+          "food": 12,
+          "ore": 2,
+          "tools": 14
+        },
+        "food_eaten": 810,
+        "owner": 4,
+        "population": 886,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 9
+      },
+      "20": {
+        "cash": 21920,
+        "depot_close": {
+          "food": 0,
+          "ore": 94,
+          "tools": 73
+        },
+        "food_eaten": 4457,
+        "owner": 5,
+        "population": 5672,
+        "received": {
+          "food": 197,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 59
+      },
+      "21": {
+        "cash": 2582,
+        "depot_close": {
+          "food": 0,
+          "ore": 2,
+          "tools": 7
+        },
+        "food_eaten": 800,
+        "owner": 5,
+        "population": 817,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 88,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "22": {
+        "cash": 2956,
+        "depot_close": {
+          "food": 0,
+          "ore": 2,
+          "tools": 9
+        },
+        "food_eaten": 965,
+        "owner": 5,
+        "population": 991,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 106,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 11
+      },
+      "23": {
+        "cash": 2921,
+        "depot_close": {
+          "food": 0,
+          "ore": 2,
+          "tools": 7
+        },
+        "food_eaten": 771,
+        "owner": 5,
+        "population": 791,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 3,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 9
+      },
+      "24": {
+        "cash": 24545,
+        "depot_close": {
+          "food": 0,
+          "ore": 50,
+          "tools": 52
+        },
+        "food_eaten": 3829,
+        "owner": 6,
+        "population": 4907,
+        "received": {
+          "food": 347,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 51
+      },
+      "25": {
+        "cash": 4172,
+        "depot_close": {
+          "food": 4,
+          "ore": 9,
+          "tools": 1
+        },
+        "food_eaten": 817,
+        "owner": 6,
+        "population": 830,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 143,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "26": {
+        "cash": 7602,
+        "depot_close": {
+          "food": 2,
+          "ore": 12,
+          "tools": 3
+        },
+        "food_eaten": 1097,
+        "owner": 6,
+        "population": 1125,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 120,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "27": {
+        "cash": 3688,
+        "depot_close": {
+          "food": 3,
+          "ore": 8,
+          "tools": 1
+        },
+        "food_eaten": 752,
+        "owner": 6,
+        "population": 772,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 84,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      },
+      "28": {
+        "cash": 35786,
+        "depot_close": {
+          "food": 0,
+          "ore": 0,
+          "tools": 79
+        },
+        "food_eaten": 6430,
+        "owner": 7,
+        "population": 6631,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 67
+      },
+      "29": {
+        "cash": 4711,
+        "depot_close": {
+          "food": 11,
+          "ore": 0,
+          "tools": 6
+        },
+        "food_eaten": 801,
+        "owner": 7,
+        "population": 814,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "30": {
+        "cash": 5558,
+        "depot_close": {
+          "food": 67,
+          "ore": 0,
+          "tools": 7
+        },
+        "food_eaten": 944,
+        "owner": 7,
+        "population": 959,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "31": {
+        "cash": 4250,
+        "depot_close": {
+          "food": 12,
+          "ore": 0,
+          "tools": 6
+        },
+        "food_eaten": 739,
+        "owner": 7,
+        "population": 751,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      }
+    },
+    "road": {
+      "a": 4,
+      "b": 5,
+      "base": 352,
+      "capacity": 352,
+      "closing_units": 0,
+      "duty_use": 6,
+      "next_capacity": 352,
+      "opening_units": 0,
+      "owner": 1,
+      "private_use": 125,
+      "relief_use": 0,
+      "supply_use": 0,
+      "unit_use": 0,
+      "unused": 221,
+      "works_use": 0
+    },
+    "world": {
+      "cash": 355436,
+      "food_eaten": 64955,
+      "received": {
+        "food": 1293,
+        "ore": 0,
+        "tools": 0
+      },
+      "sent": {
+        "food": 1293,
+        "ore": 0,
+        "tools": 0
+      }
+    },
+    "year": 2
+  },
+  "move": {
+    "countries": {
+      "0": {
+        "food_eaten": 8599,
+        "received": {
+          "food": 199,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 199,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "1": {
+        "food_eaten": 6920,
+        "received": {
+          "food": 270,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 270,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "2": {
+        "food_eaten": 12340,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "3": {
+        "food_eaten": 6874,
+        "received": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "4": {
+        "food_eaten": 7820,
+        "received": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "5": {
+        "food_eaten": 6993,
+        "received": {
+          "food": 197,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 197,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "6": {
+        "food_eaten": 6495,
+        "received": {
+          "food": 347,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 347,
+          "ore": 0,
+          "tools": 0
+        }
+      },
+      "7": {
+        "food_eaten": 8914,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        }
+      }
+    },
+    "regions": {
+      "0": {
+        "cash": 36781,
+        "depot_close": {
+          "food": 0,
+          "ore": 69,
+          "tools": 91
+        },
+        "food_eaten": 5578,
+        "owner": 0,
+        "population": 7998,
+        "received": {
+          "food": 199,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 83
+      },
+      "1": {
+        "cash": 5326,
+        "depot_close": {
+          "food": 0,
+          "ore": 9,
+          "tools": 2
+        },
+        "food_eaten": 1010,
+        "owner": 0,
+        "population": 1026,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 45,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "2": {
+        "cash": 5744,
+        "depot_close": {
+          "food": 0,
+          "ore": 9,
+          "tools": 3
+        },
+        "food_eaten": 1008,
+        "owner": 0,
+        "population": 1024,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 110,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "3": {
+        "cash": 4641,
+        "depot_close": {
+          "food": 0,
+          "ore": 12,
+          "tools": 1
+        },
+        "food_eaten": 1003,
+        "owner": 0,
+        "population": 1019,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 44,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "4": {
+        "cash": 29325,
+        "depot_close": {
+          "food": 0,
+          "ore": 108,
+          "tools": 73
+        },
+        "food_eaten": 4356,
+        "owner": 1,
+        "population": 5868,
+        "received": {
+          "food": 270,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 62
+      },
+      "5": {
+        "cash": 4994,
+        "depot_close": {
+          "food": 2,
+          "ore": 9,
+          "tools": 8
+        },
+        "food_eaten": 846,
+        "owner": 1,
+        "population": 869,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 125,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 9
+      },
+      "6": {
+        "cash": 7785,
+        "depot_close": {
+          "food": 2,
+          "ore": 6,
+          "tools": 10
+        },
+        "food_eaten": 1050,
+        "owner": 1,
+        "population": 1078,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 115,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "7": {
+        "cash": 3513,
+        "depot_close": {
+          "food": 1,
+          "ore": 4,
+          "tools": 3
+        },
+        "food_eaten": 668,
+        "owner": 1,
+        "population": 686,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 30,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      },
+      "8": {
+        "cash": 40920,
+        "depot_close": {
+          "food": 33,
+          "ore": 25,
+          "tools": 97
+        },
+        "food_eaten": 8645,
+        "owner": 2,
+        "population": 8773,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 89
+      },
+      "9": {
+        "cash": 9617,
+        "depot_close": {
+          "food": 20,
+          "ore": 3,
+          "tools": 7
+        },
+        "food_eaten": 1245,
+        "owner": 2,
+        "population": 1483,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 13
+      },
+      "10": {
+        "cash": 11278,
+        "depot_close": {
+          "food": 23,
+          "ore": 3,
+          "tools": 9
+        },
+        "food_eaten": 1408,
+        "owner": 2,
+        "population": 1432,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 16
+      },
+      "11": {
+        "cash": 7792,
+        "depot_close": {
+          "food": 15,
+          "ore": 0,
+          "tools": 6
+        },
+        "food_eaten": 1042,
+        "owner": 2,
+        "population": 1248,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 11
+      },
+      "12": {
+        "cash": 22349,
+        "depot_close": {
+          "food": 0,
+          "ore": 26,
+          "tools": 85
+        },
+        "food_eaten": 4018,
+        "owner": 3,
+        "population": 6938,
+        "received": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 73
+      },
+      "13": {
+        "cash": 2709,
+        "depot_close": {
+          "food": 0,
+          "ore": 1,
+          "tools": 3
+        },
+        "food_eaten": 920,
+        "owner": 3,
+        "population": 999,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "14": {
+        "cash": 4595,
+        "depot_close": {
+          "food": 0,
+          "ore": 0,
+          "tools": 3
+        },
+        "food_eaten": 1012,
+        "owner": 3,
+        "population": 1146,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 13
+      },
+      "15": {
+        "cash": 1270,
+        "depot_close": {
+          "food": 0,
+          "ore": 0,
+          "tools": 3
+        },
+        "food_eaten": 924,
+        "owner": 3,
+        "population": 938,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 102,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "16": {
+        "cash": 22805,
+        "depot_close": {
+          "food": 0,
+          "ore": 101,
+          "tools": 56
+        },
+        "food_eaten": 5165,
+        "owner": 4,
+        "population": 5185,
+        "received": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 54
+      },
+      "17": {
+        "cash": 3451,
+        "depot_close": {
+          "food": 12,
+          "ore": 2,
+          "tools": 14
+        },
+        "food_eaten": 744,
+        "owner": 4,
+        "population": 756,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      },
+      "18": {
+        "cash": 5926,
+        "depot_close": {
+          "food": 18,
+          "ore": 8,
+          "tools": 19
+        },
+        "food_eaten": 1101,
+        "owner": 4,
+        "population": 1118,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "19": {
+        "cash": 3924,
+        "depot_close": {
+          "food": 12,
+          "ore": 2,
+          "tools": 14
+        },
+        "food_eaten": 810,
+        "owner": 4,
+        "population": 886,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 178,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 9
+      },
+      "20": {
+        "cash": 21920,
+        "depot_close": {
+          "food": 0,
+          "ore": 94,
+          "tools": 73
+        },
+        "food_eaten": 4457,
+        "owner": 5,
+        "population": 5672,
+        "received": {
+          "food": 197,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 59
+      },
+      "21": {
+        "cash": 2582,
+        "depot_close": {
+          "food": 0,
+          "ore": 2,
+          "tools": 7
+        },
+        "food_eaten": 800,
+        "owner": 5,
+        "population": 817,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 88,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "22": {
+        "cash": 2956,
+        "depot_close": {
+          "food": 0,
+          "ore": 2,
+          "tools": 9
+        },
+        "food_eaten": 965,
+        "owner": 5,
+        "population": 991,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 106,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 11
+      },
+      "23": {
+        "cash": 2921,
+        "depot_close": {
+          "food": 0,
+          "ore": 2,
+          "tools": 7
+        },
+        "food_eaten": 771,
+        "owner": 5,
+        "population": 791,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 3,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 9
+      },
+      "24": {
+        "cash": 24545,
+        "depot_close": {
+          "food": 0,
+          "ore": 50,
+          "tools": 52
+        },
+        "food_eaten": 3829,
+        "owner": 6,
+        "population": 4907,
+        "received": {
+          "food": 347,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 51
+      },
+      "25": {
+        "cash": 4172,
+        "depot_close": {
+          "food": 4,
+          "ore": 9,
+          "tools": 1
+        },
+        "food_eaten": 817,
+        "owner": 6,
+        "population": 830,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 143,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "26": {
+        "cash": 7602,
+        "depot_close": {
+          "food": 2,
+          "ore": 12,
+          "tools": 3
+        },
+        "food_eaten": 1097,
+        "owner": 6,
+        "population": 1125,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 120,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 12
+      },
+      "27": {
+        "cash": 3688,
+        "depot_close": {
+          "food": 3,
+          "ore": 8,
+          "tools": 1
+        },
+        "food_eaten": 752,
+        "owner": 6,
+        "population": 772,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 84,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      },
+      "28": {
+        "cash": 35786,
+        "depot_close": {
+          "food": 0,
+          "ore": 0,
+          "tools": 79
+        },
+        "food_eaten": 6430,
+        "owner": 7,
+        "population": 6631,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 67
+      },
+      "29": {
+        "cash": 4711,
+        "depot_close": {
+          "food": 11,
+          "ore": 0,
+          "tools": 6
+        },
+        "food_eaten": 801,
+        "owner": 7,
+        "population": 814,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "30": {
+        "cash": 5558,
+        "depot_close": {
+          "food": 67,
+          "ore": 0,
+          "tools": 7
+        },
+        "food_eaten": 944,
+        "owner": 7,
+        "population": 959,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 10
+      },
+      "31": {
+        "cash": 4250,
+        "depot_close": {
+          "food": 12,
+          "ore": 0,
+          "tools": 6
+        },
+        "food_eaten": 739,
+        "owner": 7,
+        "population": 751,
+        "received": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "sent": {
+          "food": 0,
+          "ore": 0,
+          "tools": 0
+        },
+        "units_present": 8
+      }
+    },
+    "road": {
+      "a": 4,
+      "b": 5,
+      "base": 352,
+      "capacity": 352,
+      "closing_units": 0,
+      "duty_use": 6,
+      "next_capacity": 352,
+      "opening_units": 0,
+      "owner": 1,
+      "private_use": 125,
+      "relief_use": 0,
+      "supply_use": 0,
+      "unit_use": 1,
+      "unused": 220,
+      "works_use": 0
+    },
+    "world": {
+      "cash": 355436,
+      "food_eaten": 64955,
+      "received": {
+        "food": 1293,
+        "ore": 0,
+        "tools": 0
+      },
+      "sent": {
+        "food": 1293,
+        "ore": 0,
+        "tools": 0
+      }
+    },
+    "year": 2
+  },
+  "next_opening_away": [
+    [
+      5,
+      4,
+      1
+    ]
+  ],
+  "opening_roster_home5": [
+    5,
+    5
+  ],
+  "opening_sha256": "1cc4d4f66c6d1702e4439fd2b10137d24196a8672a6d5041508ebd35598abf73",
+  "receipt": {
+    "count": 1,
+    "destination": 4,
+    "eligible_at_source": 2,
+    "food_after": 2,
+    "food_before": 3,
+    "food_spent": 1,
+    "home": 5,
+    "ok": true,
+    "owner": 1,
+    "reason": "moved",
+    "remaining_after": 345,
+    "remaining_before": 346,
+    "road": [
+      4,
+      5
+    ],
+    "road_used": 1,
+    "source": 5
+  },
+  "road": {
+    "a": 4,
+    "b": 5,
+    "capacity": 352,
+    "distance": 13,
+    "path": [
+      355,
+      307,
+      259,
+      211,
+      163,
+      115,
+      67,
+      68,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ]
+  },
+  "seed": 0,
+  "year": 2
+}
