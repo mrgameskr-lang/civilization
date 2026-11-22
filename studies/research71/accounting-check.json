@@ -1,0 +1,26 @@
+{
+  "trajectories": 80,
+  "regenerated_opening_worlds": 40,
+  "research_journals": 40,
+  "annual_digest_entries": 8000,
+  "controls_with_published_pr28_hashes": [
+    0,
+    20
+  ],
+  "country_checkpoints": 1920,
+  "unique_regional_adoptions": 443,
+  "sample_blocks": 6,
+  "paired_world_checkpoints": 120,
+  "selected_cases": [
+    {
+      "seed": 22,
+      "owner": 2
+    },
+    {
+      "seed": 37,
+      "owner": 2
+    }
+  ],
+  "case_country_rows": 12,
+  "scope": "Published-file and accounting cross-check; this command performs no annual economic replay."
+}

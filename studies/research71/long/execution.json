@@ -1,0 +1,12 @@
+{
+  "arms": [
+    "off",
+    "research"
+  ],
+  "independent_research_replay_steps": 400,
+  "seconds": 750.205,
+  "steps": 16000,
+  "workers": 8,
+  "worlds": 40,
+  "years": 200
+}
