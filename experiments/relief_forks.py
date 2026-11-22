@@ -307,7 +307,28 @@ def scan_study(study, output):
                 first_case = (seed,first)
         report["samples"][name] = {"seeds":list(seeds),"world_years":len(seeds)*200,
                                    "world_years_with_obstruction":cases,"unfilled_at_stop":amounts}
-    report["first_observed_case"] = _natural_case(*first_case) if first_case is not None else None
+    report["first_observed_case"] = None
+    if first_case is not None:
+        seed, year = first_case
+        case = _natural_case(seed, year)
+        path = study / f"seed-{seed:02}-E-totals.jsonl.gz"
+        with gzip.open(path,"rb") as lines:
+            pub = next(json.loads(line)["world"] for y,line in enumerate(lines,1) if y == year)
+        replay = case["observed"]
+        checked = {k:replay["world"][v] for k,v in (
+            ("population","population_open"), ("closing_population","population_close"),
+            ("harvest_total","crop"), ("harvest_public","crop_public"),
+            ("public_open","public_open"), ("public_close","public_close"),
+            ("private_open","private_open"), ("private_close","private_close"),
+            ("food_eaten","food_eaten"), ("food_unmet","food_unmet"),
+            ("ordinary_received_food","regular_received"), ("emergency_received_food","emergency_received"),
+            ("emergency_freight_food","emergency_freight"))}
+        for reason in ("stock","road","freight","handling","admin"):
+            checked["emergency_unfilled_"+reason] = sum(a["unfilled"][reason] for a in replay["emergency"]["applications"])
+        _require(all(pub[k] == q for k,q in checked.items()), "natural fork differs from published economic outcomes")
+        case["published_replay_check"] = {"file":path.name,"sha256":sha256(path.read_bytes()).hexdigest(),
+                                          "year":year,"verified_totals":checked}
+        report["first_observed_case"] = case
     output.parent.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(dir=output.parent) as directory:
         path = Path(directory) / "result.json"

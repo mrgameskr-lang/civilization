@@ -65,3 +65,8 @@ class ReliefForkTests(unittest.TestCase):
         # Exercise the documented one-year hold on an actual pre-existing E path.
         with self.assertRaisesRegex(ValueError, "no natural constraints"):
             _natural_case(0, 3)
+
+    def test_archived_year_three_economic_receipts_match_fresh_engine_run(self):
+        archive = Path(__file__).resolve().parents[1] / "examples" / "reserve-relief-v1" / "forks"
+        actual = json.loads(gzip.decompress((archive / "seed-00-year-003.json.gz").read_bytes()))
+        self.assertEqual(actual, self.case)

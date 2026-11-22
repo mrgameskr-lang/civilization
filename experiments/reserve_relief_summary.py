@@ -230,6 +230,7 @@ def summarize(study):
                        for j, arm in enumerate(ARMS) for ref in ARMS[:j]}}
     return {'schema': 'civil-reserve-relief-summary/1', 'source_sha256': hashes, 'world_years': 40000,
             'country_years': 320000, 'cohorts': cohorts, 'definitions': {
+                'source': 'Seed and arm are identified by the published totals filename. Individual SHA-256 digests bind the 200 files read by this analysis; the study separately validates historical annual ledger hashes.',
                 'units': 'Food measures are food units, labor is people per annual observation and worker-years when accumulated. Counts of deaths and residents are people. Rates are fractions, not percentages.',
                 'time': 'Annual is the named year; cumulative sums flows from year 1 through that year. Stocks, cash and population appear at their boundaries only. All cohort sums are over 20 worlds. Dividing sums by 20 gives a mean per world.',
                 'paired': 'Each difference is arm minus reference, computed within a seed. Paired means equally weight each defined seed, or each defined seed/country for the late national comparison. Lower unmet share means improvement; exact fractions classify direction and ties before rounding for JSON.',
