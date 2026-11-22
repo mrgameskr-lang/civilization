@@ -162,6 +162,11 @@ def _accounts(record, previous_record=None):
             pub[i][g] -= duty["used"][g]
             combined[regions[i]["owner"]][g] -= duty["used"][g]
         _check(_valid(pub[i]), "unfunded public duty")
+    for h in record.get("public_harvest", {}).get("regions", ()):
+        i, q = h["id"], h["food_public"]
+        private[i]["food"] -= q
+        transfers[i]["food"] -= q
+        pub[i]["food"] += q
     if "diplomacy" in record:
         for s in record["diplomacy"]["physical"]["aid"]["shipments"]:
             a,b = s["source"],s["target"]
@@ -309,12 +314,18 @@ def audit62(record, *, geography, previous_record=None, program=None):
             if entry is not None:
                 ctx = entry.get("diplomacy",{})
                 _check(ctx.get("phase61",{}).get("arm")=="F" and ctx.get("intervention") is None
-                       and "supply" not in entry and "service" not in entry and "unit_upkeep" not in entry,
+                       and "supply" not in entry and "service" not in entry and "unit_upkeep" not in entry
+                       and "public_harvest" not in entry,
                        "control requires the ordinary historical F policy")
         audit_fiscal61(record, geography=geography, previous_record=previous_record)
         _audit_domestic_delivery(record,geography)
         return
     cfg = record["public_policy"]
+    harvest = record.get("public_harvest")
+    _check(("public_harvest" in record) == ("harvest_rule" in cfg)
+           and (harvest is not None or "public_harvest" not in record)
+           and (harvest is not None or "public_harvest" not in (previous_record or {})),
+           "missing or discontinuous public harvest rule")
     arm = cfg["arm"]
     game = record.get("unit_game")
     if game is not None or "unit_rule" in cfg:
@@ -400,6 +411,19 @@ def audit62(record, *, geography, previous_record=None, program=None):
             for g in GOODS:
                 balances[i][g] -= r["used"][g]
     borders = _network(ctx["physical"], nodes)
+    public_crop = {}
+    if harvest is not None:
+        from .public_harvest import VERSION as HARVEST_VERSION, harvest_row
+        from .storage import canonical_line
+        expected = [harvest_row(i, rows[i]["owner"], rows[i]["production"], initial[i], balances[i])
+                    for i in sorted(rows)]
+        _check(cfg["harvest_rule"] == HARVEST_VERSION and
+               canonical_line(harvest) == canonical_line({"version":HARVEST_VERSION, "regions":expected}),
+               "public harvest allocation mismatch")
+        for h in expected:
+            i, q = h["id"], h["food_public"]
+            public_crop[i] = q
+            balances[i]["food"] += q
     _check(borders == sorted(geography.borders,key=lambda e:(e.a,e.b)) and
            ctx["physical"]["width"]==geography.width, "international network mismatch")
     domestic_only, exported = Counter(), Counter()
@@ -416,6 +440,7 @@ def audit62(record, *, geography, previous_record=None, program=None):
     for r in local:
         p = rows[r.id]["production"]
         r.stock = {g:r.stock[g]+p["produced"][g]-p["used"][g] for g in GOODS}
+        r.stock["food"] -= public_crop.get(r.id, 0)
     produced = {r.id:{"stock":r.stock.copy(),"cash":r.cash} for r in local}
     market = border_market(local,borders,access=access)
     _check(market == record["border_market"], "private market not settled against actual border residual")
